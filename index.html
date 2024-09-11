@@ -1,72 +1,198 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-br" dir="ltr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Engesud Engenharia</title>
-
-    <!-- Open Graph Meta Tags para Pré-visualização -->
-    <meta property="og:title" content="Engesud Engenharia">
-    <meta property="og:description" content="Excelência em projetos imobiliários e intermediação de áreas para incorporação e loteamento.">
-    <meta property="og:image" content="https://i.imgur.com/3YKn2xW.png">
-    <meta property="og:url" content="https://www.engesudsmart.com.br">
-    <meta property="og:type" content="website">
-    
+    <meta property="og:title" content="Oportunidade de Investimento: Complexo Multiuso com Mesquita em Tijucas do Sul - PR">
+    <meta property="og:description" content="Área de 1.000.000 m² para venda, com potencial para complexos hoteleiros, mesquita e centro comercial.">
+    <meta property="og:image" content="https://imgur.com/y9Ld20g.jpg">
+    <meta property="og:url" content="https://www.engesudsmart.com.br/Tijucas_do_Sul">
+    <meta name="twitter:card" content="summary_large_image">
+    <title>Oportunidade de Investimento: Complexo Multiuso com Mesquita em Tijucas do Sul - PR</title>
     <style>
+        @import url('https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Roboto:wght@300;400;700&display=swap');
+        
+        :root {
+            --primary-color: #2c3e50;
+            --secondary-color: #e67e22;
+            --accent-color: #3498db;
+            --text-color: #333;
+            --bg-color: #f8f9fa;
+        }
+        
         body {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
+            font-family: 'Roboto', 'Amiri', sans-serif;
             margin: 0;
-            background-color: #f8f9fa;
-            font-family: 'Roboto', sans-serif;
+            padding: 0;
+            background-color: var(--bg-color);
+            color: var(--text-color);
         }
-
+        
         .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 40px;
+            background-color: #fff;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+        }
+        
+        h1, h2, h3 {
+            font-family: 'Amiri', serif;
+            color: var(--primary-color);
+        }
+        
+        h1 {
+            font-size: 2.5em;
             text-align: center;
+            margin-bottom: 30px;
+            border-bottom: 2px solid var(--secondary-color);
+            padding-bottom: 10px;
         }
-
-        .container img {
-            height: 150px;
+        
+        h2 {
+            font-size: 1.8em;
+            margin-top: 40px;
+        }
+        
+        p {
+            line-height: 1.8;
+            color: var(--text-color);
+        }
+        
+        ul {
+            list-style: none;
+            padding-left: 0;
+        }
+        
+        ul li {
+            position: relative;
+            padding-left: 25px;
+            margin-bottom: 10px;
+        }
+        
+        ul li:before {
+            content: "☪";
+            position: absolute;
+            left: 0;
+            color: var(--secondary-color);
+        }
+        
+        .footer {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 40px 0;
+            text-align: center;
+            font-size: 16px;
+        }
+        
+        .footer img {
+            height: 100px;
             border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            margin-bottom: 20px;
         }
-
-        .description {
-            margin-top: 20px;
-            color: #2c3e50;
-            font-size: 18px;
-            line-height: 1.6;
-        }
-
-        .contact {
-            margin-top: 15px;
-        }
-
-        .contact a {
+        
+        .footer a {
+            color: white;
             text-decoration: none;
-            color: #3498db;
-            font-size: 20px;
-            font-weight: bold;
+            padding: 10px 20px;
+            background-color: var(--secondary-color);
+            border-radius: 5px;
+            display: inline-block;
+            margin-top: 20px;
+            transition: background-color 0.3s ease;
         }
-
-        .contact a:hover {
-            color: #2980b9;
+        
+        .footer a:hover {
+            background-color: #d35400;
+        }
+        
+        .highlight {
+            background-color: #f1f8ff;
+            border-left: 4px solid var(--accent-color);
+            padding: 20px;
+            margin: 30px 0;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+        
+        iframe {
+            width: 100%;
+            height: 400px;
+            border: 0;
+            margin-top: 20px;
+        }
+        
+        .implantacao {
+            display: block;
+            margin: 30px auto;
+            max-width: 100%;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        
+        .arabic-pattern {
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='80' height='80' viewBox='0 0 80 80'%3E%3Cg fill='%23e67e22' fill-opacity='0.1'%3E%3Cpath d='M0 0h80v80H0V0zm20 20v40h40V20H20zm20 35a15 15 0 1 1 0-30 15 15 0 0 1 0 30z' /%3E%3C/g%3E%3C/svg%3E");
+            padding: 20px;
+            border-radius: 10px;
+            margin: 30px 0;
+        }
+        
+        @media (max-width: 768px) {
+            .container {
+                padding: 20px;
+            }
+            h1 {
+                font-size: 2em;
+            }
+            h2 {
+                font-size: 1.5em;
+            }
         }
     </style>
 </head>
 <body>
     <div class="container">
-        <img src="https://i.imgur.com/3YKn2xW.png" alt="Logotipo Engesud">
-        <div class="description">
-            <p><strong>Engesud Engenharia</strong> — Excelência em projetos imobiliários e intermediação de áreas para incorporação e loteamento.</p>
+        <h1>Oportunidade de Investimento: Complexo Multiuso com Mesquita em Tijucas do Sul - PR</h1>
+        
+        <div class="arabic-pattern">
+            <p>É com grande satisfação que apresentamos esta oportunidade única de investimento em uma área estratégica em Tijucas do Sul, Paraná, ideal para o desenvolvimento de um complexo multiuso que atenda às necessidades de um público diversificado, incluindo a comunidade islâmica.</p>
         </div>
-        <div class="contact">
-            <p>Entre em contato: <a href="https://wa.me/554497013489" target="_blank">WhatsApp</a></p>
+
+        <h2>A Área</h2>
+        <p>A área em questão, com aproximadamente 1.000.000 m², está localizada em uma região privilegiada, com fácil acesso à BR-376, principal via de ligação entre Curitiba e o litoral paranaense, e próxima à BR-277, que conecta Curitiba ao interior do estado.</p>
+
+        <h2>Infraestrutura</h2>
+        <p>O terreno já conta com investimentos significativos em infraestrutura, incluindo licenças ambientais e terraplanagem, o que representa uma economia considerável para o futuro investidor.</p>
+
+        <h2>Potencial do Complexo</h2>
+        <div class="highlight">
+            <p>A localização estratégica e a infraestrutura existente tornam a área ideal para a construção de um complexo que abrigue:</p>
+            <ul>
+                <li><strong>Uma mesquita majestosa</strong>, que servirá como ponto de encontro e referência para a comunidade islâmica local e visitantes, tornando-se um marco arquitetônico e espiritual na região.</li>
+                <li><strong>Dois complexos hoteleiros de alto padrão</strong>, com capacidade para atender à demanda crescente por hospedagem na região, impulsionada pelo turismo religioso e de negócios.</li>
+                <li><strong>Um centro comercial</strong>, que oferecerá uma variedade de lojas, restaurantes e serviços para atender às necessidades da população local e turistas, incluindo produtos e serviços específicos para a comunidade islâmica.</li>
+            </ul>
         </div>
+
+        <h2>Legislação e Viabilidade</h2>
+        <p>A legislação de uso e ocupação do solo permite a construção de empreendimentos de grande porte na área, o que garante a viabilidade do projeto, incluindo a construção de uma mesquita e estruturas complementares.</p>
+
+        <h2>Negociação</h2>
+        <p>O proprietário está aberto a negociações, reconhecendo o potencial único deste projeto para atender às necessidades da comunidade islâmica e fomentar o desenvolvimento econômico da região.</p>
+
+        <h2>Conclusão</h2>
+        <p>Acreditamos que esta é uma oportunidade imperdível para investidores que buscam um projeto de grande impacto e com potencial de retorno significativo, especialmente considerando a crescente demanda por espaços que atendam às necessidades específicas da comunidade islâmica no Brasil.</p>
+        <p>Estamos à disposição para fornecer mais informações e auxiliar na estruturação da negociação, garantindo que o projeto atenda plenamente às expectativas e requisitos dos investidores e da comunidade.</p>
+
+        <h2>Localização:</h2>
+        <iframe src="https://www.google.com/maps/d/embed?mid=1Eh_qMlzx5z4TQk_RnAgXM4s47vR5K64&ehbc=2E312F"></iframe>
+
+        <h2>Implantação:</h2>
+        <img src="https://imgur.com/c917Qw6.jpg" alt="Implantação do projeto" class="implantacao">
     </div>
 
-    <!-- Este conteúdo é protegido por direitos autorais creditados à Engesud Engenharia e Intermediação LTDA, inscrita no CNPJ 40.601.637/0001-58 -->
+    <div class="footer">
+        <img src="https://i.imgur.com/3YKn2xW.png" alt="Logotipo Engesud">
+        <p>Robson Luis da Costa: +55 (44) 99701-3489</p>
+        <a href="https://wa.me/4497013489?text=Vamos%20conversar%20sobre%20este%20assunto">Fale no WhatsApp</a>
+    </div>
 </body>
 </html>
