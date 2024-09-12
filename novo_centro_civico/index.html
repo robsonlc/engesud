@@ -9,112 +9,131 @@
     <meta property="og:url" content="https://www.engesudsmart.com.br/novo_centro_civico">
     <meta property="og:type" content="website">
     <title>Proposta de Parceria - Centro Cívico Maringá</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
     <style>
+        :root {
+            --primary-color: #3498db;
+            --secondary-color: #2c3e50;
+            --accent-color: #e74c3c;
+            --background-color: #f8f9fa;
+            --text-color: #333;
+        }
         body {
             font-family: 'Roboto', sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #f8f9fa;
-            color: #333;
+            background-color: var(--background-color);
+            color: var(--text-color);
+            line-height: 1.6;
         }
         .container {
             max-width: 1200px;
             margin: 0 auto;
-            padding: 20px;
+            padding: 40px 20px;
         }
         h1, h2, h3 {
-            color: #2c3e50;
-            margin-top: 20px;
+            color: var(--secondary-color);
+            margin-top: 30px;
         }
         h1 {
-            font-size: 32px;
+            font-size: 36px;
             text-align: center;
-            border-bottom: 3px solid #3498db;
-            padding-bottom: 10px;
+            border-bottom: 3px solid var(--primary-color);
+            padding-bottom: 15px;
+            margin-bottom: 30px;
         }
         h2 {
-            font-size: 24px;
-            color: #2980b9;
+            font-size: 28px;
+            color: var(--primary-color);
         }
         h3 {
-            font-size: 20px;
-            color: #16a085;
+            font-size: 22px;
+            color: var(--accent-color);
         }
         p {
             line-height: 1.8;
+            margin-bottom: 20px;
         }
         img {
             max-width: 100%;
-            border-radius: 8px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            margin: 20px 0;
+            border-radius: 10px;
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+            margin: 30px 0;
         }
         ul {
-            padding-left: 20px;
+            padding-left: 25px;
+            margin-bottom: 20px;
         }
-        .highlight {
-            background-color: #f1c40f;
-            padding: 4px 8px;
-            border-radius: 3px;
-        }
-        .footer {
-            background-color: #34495e;
-            color: white;
-            text-align: center;
-            padding: 20px;
-            margin-top: 40px;
-        }
-        .footer img {
-            height: 80px;
+        li {
             margin-bottom: 10px;
         }
+        .highlight {
+            background-color: #ffeaa7;
+            padding: 4px 8px;
+            border-radius: 3px;
+            font-weight: bold;
+        }
+        .footer {
+            background-color: var(--secondary-color);
+            color: white;
+            text-align: center;
+            padding: 30px;
+            margin-top: 60px;
+        }
+        .footer img {
+            height: 100px;
+            margin-bottom: 20px;
+        }
         .footer p {
-            margin: 5px 0;
+            margin: 10px 0;
         }
         .cta-button {
             display: inline-block;
-            background-color: #3498db;
+            background-color: var(--primary-color);
             color: white;
-            padding: 10px 20px;
+            padding: 12px 24px;
             text-decoration: none;
             border-radius: 5px;
-            margin-top: 20px;
+            margin-top: 30px;
             font-weight: bold;
+            transition: background-color 0.3s ease;
         }
         .cta-button:hover {
             background-color: #2980b9;
         }
-        .iframe-container {
-            margin-top: 40px;
-        }
-        iframe {
-            width: 100%;
-            height: 480px;
-            border: 0;
-            border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-        }
         .section-call {
             background-color: #ecf0f1;
-            padding: 20px;
-            border-radius: 8px;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-            margin-top: 30px;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            margin-top: 40px;
         }
         .whatsapp {
             color: #25D366;
             font-weight: bold;
             text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            transition: opacity 0.3s ease;
+        }
+        .whatsapp:hover {
+            opacity: 0.8;
         }
         .whatsapp span {
             margin-left: 8px;
         }
         @media (max-width: 768px) {
             h1 {
+                font-size: 28px;
+            }
+            h2 {
                 font-size: 24px;
             }
-            iframe {
-                height: 300px;
+            h3 {
+                font-size: 20px;
+            }
+            .container {
+                padding: 20px;
             }
         }
     </style>
@@ -122,34 +141,35 @@
 <body>
     <div class="container">
         <h1>Oportunidade de Parceria - Projeto Centro Cívico</h1>
-        
+
         <h2>Introdução</h2>
-        <p>Esta proposta refere-se ao desenvolvimento de um terreno nobre de <strong>19.169,86 m²</strong> no Centro Cívico de Maringá, próximo ao **Hospital da Criança** e ao bairro planejado **Eurogarden**, um dos projetos mais sustentáveis do mundo. O terreno está situado em uma área estratégica com alto potencial de valorização, perfeito para investidores interessados em empreendimentos imobiliários de alto padrão.</p>
-        
+        <p>Esta proposta refere-se ao desenvolvimento de um terreno nobre de <strong>19.169,86 m²</strong> no Centro Cívico de Maringá, próximo ao <strong>Hospital da Criança</strong> e ao bairro planejado <strong>Eurogarden</strong>, um dos projetos mais sustentáveis do mundo. O terreno está situado em uma área estratégica com alto potencial de valorização, perfeito para investidores interessados em empreendimentos imobiliários de alto padrão.</p>
+
         <h2>Fases do Projeto</h2>
-        <p>A Engesud sugere uma **subdivisão estratégica** do terreno em 4 fases, com o objetivo de facilitar a comercialização e atrair investidores com diferentes perfis. Essa subdivisão é flexível, ajustando-se conforme a evolução do projeto e a demanda do mercado local.</p>
-        
+        <p>A Engesud sugere uma <strong>subdivisão estratégica</strong> do terreno em 4 fases, com o objetivo de facilitar a comercialização e atrair investidores com diferentes perfis. Essa subdivisão é flexível, ajustando-se conforme a evolução do projeto e a demanda do mercado local.</p>
+
         <img src="https://i.imgur.com/fqEMw05.jpeg" alt="Imagem das 4 fases do terreno">
-        
+
         <ul>
             <li><strong>Fase 1:</strong> 3.800 m² - Valor estimado: <span class="highlight">R$ 4.000/m²</span> (Venda à vista ou parcelada).</li>
             <li><strong>Fase 2:</strong> 3.800 m² - Parceria imobiliária com permuta financeira.</li>
             <li><strong>Fase 3:</strong> 3.500 m² - Parceria imobiliária com permuta financeira.</li>
             <li><strong>Fase 4:</strong> 7.800 m² - Parceria imobiliária com permuta financeira.</li>
         </ul>
-        
+
         <h2>Potencial do Terreno</h2>
-        <p>O terreno está localizado em uma área de grande valorização imobiliária, próximo a marcos importantes de Maringá, como o **Hospital da Criança** e o **Eurogarden**, um bairro sustentável que combina áreas comerciais e residenciais de alto padrão, ciclovias e infraestrutura moderna. Além disso, a região abriga o **Novo Centro Cívico**, que já conta com o Fórum Eleitoral e a Justiça do Trabalho, gerando grande atratividade e dinamismo econômico.</p>
-        
+        <p>O terreno está localizado em uma área de grande valorização imobiliária, próximo a marcos importantes de Maringá, como o <strong>Hospital da Criança</strong> e o <strong>Eurogarden</strong>, um bairro sustentável que combina áreas comerciais e residenciais de alto padrão, ciclovias e infraestrutura moderna. Além disso, a região abriga o <strong>Novo Centro Cívico</strong>, que já conta com o Fórum Eleitoral e a Justiça do Trabalho, gerando grande atratividade e dinamismo econômico.</p>
+
         <h2>Benefícios da Parceria</h2>
         <ul>
             <li><strong>Flexibilidade:</strong> A subdivisão proposta permite negociações personalizadas, com condições ajustáveis conforme o perfil do investidor e a fase de aquisição.</li>
             <li><strong>Localização Privilegiada:</strong> Situado ao lado do Eurogarden e de importantes infraestruturas públicas, como o Hospital da Criança, o terreno oferece uma localização estratégica para empreendimentos de alto valor agregado.</li>
             <li><strong>Valorização Contínua:</strong> Com a expansão do Centro Cívico e a evolução do Eurogarden, a área se beneficia de uma valorização constante, gerando retornos significativos aos investidores.</li>
         </ul>
-        
+
         <h2>Manifestação de Interesse</h2>
-        <p>Para avançar na negociação e garantir exclusividade nos estudos de viabilidade, sugerimos que os investidores interessados enviem uma **Carta de Interesse**. Essa carta formaliza o compromisso em realizar os estudos necessários e facilita a obtenção de um **Memorando de Entendimento (MOU)** com exclusividade, permitindo a análise detalhada do potencial do terreno.</p>
+        <p>Para avançar na negociação e garantir exclusividade nos estudos de viabilidade, sugerimos que os investidores interessados enviem uma <strong>Carta de Interesse</strong>. Essa carta formaliza o compromisso em realizar os estudos necessários e facilita a obtenção de um <strong>Memorando de Entendimento (MOU)</strong> com exclusividade, permitindo a análise detalhada do potencial do terreno.</p>
+        
         <div class="section-call">
             <h3>Próximos Passos</h3>
             <ul>
@@ -159,8 +179,10 @@
                 <li>Formalização do contrato de parceria ou compra após a conclusão dos estudos de viabilidade.</li>
             </ul>
         </div>
-        
-        <div class="footer">
+
+        <a href="#contact" class="cta-button">Entre em Contato</a>
+
+        <div class="footer" id="contact">
             <img src="https://i.imgur.com/3YKn2xW.png" alt="Logotipo Engesud">
             <p>Engesud Engenharia e Intermediação LTDA - CNPJ 40.601.637/0001-58</p>
             <p>Robson Luis da Costa - <a href="https://wa.me/4497013489?text=Gostaria%20de%20conversar%20sobre%20a%20proposta" class="whatsapp">📲 WhatsApp<span>(44) 99701-3489</span></a></p>
