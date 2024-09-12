@@ -5,100 +5,138 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Proposta de Parceria - Novo Centro Cívico</title>
     <style>
+        @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap');
+        
         body {
-            font-family: 'Arial', sans-serif;
-            background-color: #f8f8f8;
-            color: #333;
+            font-family: 'Roboto', sans-serif;
             margin: 0;
             padding: 0;
-        }
-
-        header {
-            background-color: #fff;
-            padding: 20px;
-            text-align: center;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-        }
-
-        header img {
-            max-width: 200px; 
-        }
-
-        main {
-            padding: 20px;
-        }
-
-        h1, h2, h3 {
+            background-color: #f8f9fa;
             color: #333;
-        }
-
-        p {
             line-height: 1.6;
         }
-
-        footer {
+        .container {
+            max-width: 960px;
+            margin: 20px auto;
+            padding: 20px;
             background-color: #fff;
-            padding: 10px;
-            text-align: center;
-            font-size: 14px;
-            color: #666;
-            box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.1);
-            position: fixed;
-            bottom: 0;
-            width: 100%;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
         }
-
-        footer a {
-            color: #007bff;
-            text-decoration: none;
+        h1 {
+            font-size: 28px;
+            color: #2962ff;
+            margin-bottom: 20px;
+            border-bottom: 2px solid #3498db;
+            padding-bottom: 10px;
         }
-
-        .map-container {
+        h2, h3 {
+            color: #2980b9;
             margin-top: 20px;
+        }
+        img {
+            max-width: 100%;
+            height: auto;
+            margin: 20px 0;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+        footer {
+            background-color: #34495e;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+        footer img {
+            max-width: 100px;
+            margin-bottom: 10px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+        .contact-info {
+            font-size: 14px;
+            text-align: center;
+        }
+        .contact-info a {
+            color: #fff;
+            background-color: #4CAF50;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+        .contact-info a:hover {
+            background-color: #45a049;
+        }
+        iframe {
+            width: 100%;
+            height: 480px;
+            border: 0;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        @media (max-width: 768px) {
+            .container {
+                padding: 10px;
+            }
+            h1 {
+                font-size: 24px;
+            }
+            iframe {
+                height: 300px;
+            }
         }
     </style>
     <!-- Metatags Open Graph para pré-visualização no WhatsApp -->
     <meta property="og:title" content="Proposta de Parceria - Novo Centro Cívico">
-    <meta property="og:description" content="Oportunidade única de investimento em área nobre de Maringá.">
+    <meta property="og:description" content="Proposta de parceria para desenvolvimento de um novo centro cívico em Maringá no terreno da Atlantica Imóveis">
     <meta property="og:image" content="https://raw.githubusercontent.com/robsonlc/meu-site/main/imagens/LMT.png">
     <meta property="og:image:width" content="800">
     <meta property="og:image:height" content="800">
     <meta property="og:url" content="https://www.engesudsmart.com.br/novo_centro_civico">
     <meta property="og:type" content="website">
     <meta property="og:site_name" content="Engesud Smart">
-    <!-- Este conteúdo é protegido por direitos autorais creditados à Engesud Engenharia e Intermediação LTDA, inscrita no CNPJ 40.601.637/0001-58 -->
 </head>
 <body>
-
-    <header>
-        <img src="https://i.imgur.com/6z1r7cp.jpeg" alt="Logotipo Engesud">
-    </header>
-
-    <main>
+    <div class="container">
         <h1>Proposta de Parceria - Novo Centro Cívico</h1>
 
-        <h2>Oportunidade Única de Investimento</h2>
-        <p>Apresentamos uma oportunidade exclusiva de investimento em uma área nobre de Maringá, com alto potencial de valorização. O terreno, com 19.169,86 m², está localizado no Centro Cívico e oferece diversas possibilidades de desenvolvimento, como edifícios residenciais, comerciais ou mistos.</p>
+        <!-- Seção 1: Introdução -->
+        <h2>Introdução</h2>
+        <p>Apresentação da Engesud e do projeto de desenvolvimento de um novo centro cívico em Maringá.</p>
 
-        <h2>Localização Privilegiada</h2>
-        <p>O terreno está situado em uma região estratégica, com fácil acesso às principais vias da cidade e próximo a diversos serviços e comércios. Sua localização privilegiada garante alta liquidez para os empreendimentos que forem desenvolvidos na área.</p>
+        <!-- Seção 2: Oportunidade -->
+        <h2>A Oportunidade</h2>
+        <p>Descrição do terreno da Atlantica Imóveis, localização, características e potencial de desenvolvimento.</p>
 
-        <h2>Possibilidades de Desenvolvimento</h2>
+        <!-- Seção 3: Proposta -->
+        <h2>Proposta de Parceria</h2>
+        <p>Detalhes da proposta de parceria para desenvolvimento do projeto (subdivisão do lote, incorporação, loteamento, etc.).</p>
+        <p>Apresentação dos modelos de negócio e estruturas de pagamento (permuta, parcelamento, etc.).</p>
 
-        <p>O terreno pode ser subdividido em 4 partes, conforme ilustração abaixo, permitindo a criação de projetos personalizados e que atendam às demandas do mercado. Nossa equipe está à disposição para auxiliar na elaboração de estudos de viabilidade e na estruturação de parcerias para o desenvolvimento da área.</p>
-        <div class="map-container">
-            <iframe
-                src="https://www.google.com/maps/d/embed?mid=18xqaZXGpSCU1AlbkT6pOTzNhlKzbaao&ehbc=2E312F"
-                width="100%"
-                height="480"
-                style="border: 0; border-radius: 10px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);"
-                allowfullscreen></iframe>
-        </div>
-    </main>
+        <!-- Seção 4: Mapa -->
+        <h2>Localização</h2>
+        <iframe
+            src="https://www.google.com/maps/d/embed?mid=18xqaZXGpSCU1AlbkT6pOTzNhlKzbaao&ehbc=2E312F"
+            allowfullscreen></iframe>
+
+        <!-- Seção 5: Contato -->
+        <h2>Contato</h2>
+        <p>Informações de contato da Engesud.</p>
+    </div>
 
     <footer>
-        <p>Robson Luis da Costa: <a href="https://wa.me/554497013489?text=Vamos%20conversar%20sobre%20este%20assunto">+55 (44) 99701-3489</a></p>
+        <img src="https://i.imgur.com/3YKn2xW.png" alt="Logotipo Engesud"> 
+        <div class="contact-info">
+            Engesud Engenharia e Intermediação LTDA - CNPJ 40.601.637/0001-58 <br>
+            Robson Luis da Costa: +55 (44) 99701-3489 |
+            <a href="https://wa.me/5544997013489?text=Vamos%20conversar%20sobre%20este%20assunto" target="_blank">WhatsApp</a>
+        </div>
     </footer>
-
+    <!-- Este conteúdo é protegido por direitos autorais creditados à Engesud Engenharia e Intermediação LTDA, inscrita no CNPJ 40.601.637/0001-58 -->
 </body>
 </html>
