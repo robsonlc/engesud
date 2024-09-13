@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-br" prefix="og: http://ogp.me/ns#">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,8 +9,8 @@
     <meta property="og:title" content="Proposta de Parceria - Kakogawa Incorporadora">
     <meta property="og:description" content="Proposta de parceria para desenvolvimento de empreendimento residencial na Av. Kakogawa">
     <meta property="og:image" content="https://raw.githubusercontent.com/robsonlc/meu-site/main/imagens/IMG_20240913_114904.jpg">
-    <meta property="og:image:width" content="800">
-    <meta property="og:image:height" content="800">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
     <meta property="og:url" content="https://www.engesudsmart.com.br/kakogawa/">
     <meta property="og:type" content="website">
     <meta property="og:site_name" content="Engesud Smart">
@@ -108,7 +108,6 @@
         .footer p {
             margin: 5px 0;
         }
-        /* Estilos para o card de resumo */
         .summary-card {
             background-color: #e6f2ff;
             border-left: 5px solid #007bff;
@@ -124,13 +123,24 @@
             list-style: disc;
             padding-left: 20px;
         }
+        @media (max-width: 600px) {
+            .container {
+                padding: 10px;
+            }
+            table {
+                font-size: 0.8em;
+            }
+            iframe {
+                width: 100%;
+                height: 300px;
+            }
+        }
     </style>
 </head>
 <body>
     <div class="container">
         <h1>Empreendimento Kakogawa - Parceria Engesud</h1>
-        
-        <!-- Card de Resumo na Introdução -->
+
         <div class="summary-card">
             <h2>Resumo da Proposta</h2>
             <ul>
@@ -143,7 +153,6 @@
                 <li><b>Benefícios:</b> Lucratividade, segurança, valorização patrimonial</li>
             </ul>
         </div>
-        <!-- Fim do Card de Resumo -->
 
         <p>Estimativa de estruturação para viabilidade de empreendimento residencial.</p>
 
