@@ -3,11 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Terreno de 12.000m² para incorporação em Maringá, próximo ao Shopping Catuaí. Potencial para empreendimento de médio ou alto padrão.">
     <title>Proposta de Incorporação - Área Próxima ao Catuaí Maringá</title>
 
     <!-- Meta Tags Open Graph -->
     <meta property="og:title" content="Proposta de Incorporação - Área Próxima ao Shopping Catuaí">
-    <meta property="og:description" content="Terreno de 12.000m² com grande potencial de incorporação residencial e comercial. Potencial para um condomínio clube ou empreendimento de médio padrão.">
+    <meta property="og:description" content="Terreno de 12.000m² com grande potencial de incorporação residencial e comercial. Potencial para um condomínio clube ou empreendimento de médio ou alto padrão.">
     <meta property="og:image" content="https://i.imgur.com/o6P06zc.png">
     <meta property="og:image:width" content="800">
     <meta property="og:image:height" content="800">
@@ -17,114 +18,175 @@
     
     <!-- Estilos -->
     <style>
+        :root {
+            --primary-color: #3498db;
+            --secondary-color: #2c3e50;
+            --text-color: #333;
+            --bg-color: #f4f4f4;
+            --card-bg: #fff;
+        }
+
         body {
             font-family: 'Arial', sans-serif;
-            color: #333;
+            color: var(--text-color);
             margin: 0;
             padding: 0;
-            background-color: #f4f4f4;
+            background-color: var(--bg-color);
             line-height: 1.6;
         }
+
         .container {
             width: 90%;
             max-width: 1200px;
             margin: 20px auto;
             padding: 20px;
-            background-color: #fff;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            border-radius: 10px;
+            background-color: var(--card-bg);
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+            border-radius: 15px;
         }
+
         h1, h2 {
-            color: #2c3e50;
+            color: var(--secondary-color);
             text-align: center;
             margin-top: 30px;
         }
+
         h1 {
             font-size: 2.5em;
-            border-bottom: 2px solid #3498db;
-            padding-bottom: 10px;
+            border-bottom: 3px solid var(--primary-color);
+            padding-bottom: 15px;
+            margin-bottom: 30px;
         }
+
         h2 {
             font-size: 1.8em;
-            color: #2980b9;
+            color: var(--primary-color);
+            margin-top: 40px;
         }
+
         .info {
             display: flex;
             flex-wrap: wrap;
             justify-content: space-between;
-            margin-bottom: 20px;
+            margin-bottom: 30px;
         }
+
         .info img {
             max-width: 100%;
-            border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            transition: transform 0.3s ease;
+            border-radius: 15px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
+
         .info img:hover {
-            transform: scale(1.05);
+            transform: scale(1.03);
+            box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
         }
+
         .info-text {
             flex: 1;
             margin-right: 20px;
         }
+
         iframe {
             border: 0;
-            border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 15px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
             width: 100%;
-            height: 400px;
+            height: 450px;
         }
+
         ul {
             padding-left: 20px;
+            list-style-type: none;
         }
+
         li {
-            margin-bottom: 10px;
+            margin-bottom: 15px;
+            position: relative;
+            padding-left: 25px;
         }
+
+        li::before {
+            content: '•';
+            color: var(--primary-color);
+            font-size: 1.5em;
+            position: absolute;
+            left: 0;
+            top: -5px;
+        }
+
         footer {
-            background-color: #2c3e50;
+            background-color: var(--secondary-color);
             color: #ecf0f1;
             text-align: center;
-            padding: 20px 0;
-            margin-top: 30px;
+            padding: 30px 0;
+            margin-top: 40px;
+            border-radius: 0 0 15px 15px;
         }
+
         footer img {
-            max-width: 150px;
-            margin-bottom: 10px;
+            max-width: 180px;
+            margin-bottom: 15px;
         }
+
         footer p {
-            margin: 5px 0;
-            font-size: 14px;
+            margin: 8px 0;
+            font-size: 16px;
         }
+
         footer a {
-            color: #3498db;
+            color: var(--primary-color);
             text-decoration: none;
             transition: color 0.3s ease;
         }
+
         footer a:hover {
             color: #2980b9;
+            text-decoration: underline;
         }
+
         .cta-button {
             display: inline-block;
-            background-color: #3498db;
+            background-color: var(--primary-color);
             color: #fff;
-            padding: 10px 20px;
+            padding: 12px 25px;
             text-decoration: none;
-            border-radius: 5px;
-            transition: background-color 0.3s ease;
+            border-radius: 30px;
+            transition: all 0.3s ease;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-top: 20px;
         }
+
         .cta-button:hover {
             background-color: #2980b9;
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
         }
+
+        .highlight-box {
+            background-color: #e8f4fd;
+            border-left: 5px solid var(--primary-color);
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 5px;
+        }
+
         @media (max-width: 768px) {
             .container {
                 width: 95%;
-                padding: 10px;
+                padding: 15px;
             }
             h1 {
                 font-size: 2em;
             }
             h2 {
                 font-size: 1.5em;
+            }
+            iframe {
+                height: 350px;
             }
         }
     </style>
@@ -134,7 +196,6 @@
 <div class="container">
     <h1>Área Disponível para Incorporação - Próxima ao Shopping Catuaí</h1>
 
-    <!-- Descrição dos Lotes -->
     <h2>Descrição dos Lotes</h2>
     <p>O terreno é composto por dois sublotes, totalizando uma área de 12.338,30 m². Abaixo estão os detalhes dos dois sublotes:</p>
     
@@ -145,7 +206,9 @@
     
     <img src="https://i.imgur.com/V1RYXOI.png" alt="Imagem dos sublotes do terreno" style="width:100%; margin: 20px 0;">
 
-    <p><strong>Expectativa do Proprietário:</strong> O proprietário espera um valor base de R$ 1.250,00/m² para o terreno. No entanto, está aberto a discutir parcerias financeiras, especialmente se o projeto desenvolvido for de qualidade elevada e valorizado. Dependendo da proposta, outras condições podem ser negociadas.</p>
+    <div class="highlight-box">
+        <p><strong>Expectativa do Proprietário:</strong> O proprietário espera um valor base de R$ 1.250,00/m² para o terreno. No entanto, está aberto a discutir parcerias financeiras, como permuta por unidades no futuro empreendimento ou aportes graduais. A flexibilidade depende da qualidade do projeto e da viabilidade proposta.</p>
+    </div>
 
     <h2>Localização e Entorno</h2>
     <p>O terreno está localizado em uma das áreas mais estratégicas de Maringá, próximo ao Shopping Catuaí, o maior shopping da região. Além disso, está cercado por importantes estabelecimentos como:</p>
@@ -164,11 +227,10 @@
     <ul>
         <li>Área com alto potencial de valorização.</li>
         <li>Próxima a comércios, parques e infraestrutura completa.</li>
-        <li>Opções para empreendimentos de médio padrão.</li>
-        <li>Possibilidade de financiamento, permuta ou parceria financeira.</li>
+        <li>Opções para empreendimentos de médio ou alto padrão, dependendo da proposta.</li>
+        <li>Possibilidade de financiamento, permuta ou parceria financeira, incluindo a participação no VGV (Valor Geral de Vendas).</li>
     </ul>
 
-    <!-- Próximos passos -->
     <h2>Próximos Passos</h2>
     <p>Se você tiver interesse em discutir uma possível parceria ou viabilidade do projeto, entre em contato para avançarmos com os seguintes passos:</p>
     <ul>
@@ -177,7 +239,7 @@
         <li><strong>Realização de Estudos de Viabilidade</strong>: Com o MOU assinado, os estudos técnicos e de mercado poderão ser realizados para validar o potencial de desenvolvimento da área.</li>
     </ul>
 
-    <div style="text-align: center; margin-top: 30px;">
+    <div style="text-align: center; margin-top: 40px;">
         <a href="https://wa.me/4497013489?text=Vamos%20conversar%20sobre%20este%20assunto" target="_blank" class="cta-button">Entre em Contato Agora</a>
     </div>
 
