@@ -14,38 +14,96 @@
     <meta property="og:site_name" content="Engesud Smart">
     <style>
         body {
-            font-family: Arial, sans-serif;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             margin: 0;
             padding: 0;
             background-color: #f4f4f4;
             color: #333;
+            line-height: 1.6;
         }
         .container {
             width: 90%;
             max-width: 1200px;
             margin: 20px auto;
-            padding: 20px;
+            padding: 30px;
             background-color: #fff;
-            border-radius: 8px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 12px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
         }
         h1, h2, h3 {
             color: #0056b3;
+            margin-top: 30px;
+        }
+        h1 {
+            font-size: 2.5em;
+            border-bottom: 2px solid #0056b3;
+            padding-bottom: 10px;
+        }
+        h2 {
+            font-size: 1.8em;
+        }
+        h3 {
+            font-size: 1.4em;
+        }
+        p, ul {
+            margin-bottom: 20px;
+        }
+        ul {
+            padding-left: 20px;
+        }
+        li {
+            margin-bottom: 10px;
+        }
+        .highlight {
+            background-color: #e6f3ff;
+            padding: 15px;
+            border-radius: 8px;
+            margin-bottom: 20px;
         }
         .footer {
             text-align: center;
-            padding: 20px;
+            padding: 30px;
             background-color: #0056b3;
             color: white;
             margin-top: 40px;
-            border-radius: 0 0 8px 8px;
+            border-radius: 0 0 12px 12px;
         }
         .footer img {
-            width: 100px;
+            width: 120px;
+            margin-bottom: 15px;
         }
         .footer p {
-            margin: 10px 0;
-            font-size: 0.9em;
+            margin: 5px 0;
+            font-size: 1em;
+        }
+        .cta-button {
+            display: inline-block;
+            background-color: #28a745;
+            color: white;
+            padding: 12px 24px;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+            margin-top: 20px;
+            transition: background-color 0.3s;
+        }
+        .cta-button:hover {
+            background-color: #218838;
+        }
+        @media (max-width: 768px) {
+            .container {
+                width: 95%;
+                padding: 20px;
+            }
+            h1 {
+                font-size: 2em;
+            }
+            h2 {
+                font-size: 1.5em;
+            }
+            h3 {
+                font-size: 1.2em;
+            }
         }
     </style>
 </head>
@@ -54,13 +112,24 @@
 <div class="container">
     <h1>Grande Oportunidade em Porto Belo e Itapema</h1>
     <h2>Área de 1.055.218,20 m² disponível para empreendimento de alto potencial</h2>
-    <p>Localização estratégica próxima a Balneário Camboriú, fácil acesso à BR 101, e com grande potencial de valorização devido a novos empreendimentos próximos, como o condomínio aeronáutico Costa Esmeralda e o Viva Park.</p>
+    
+    <div class="highlight">
+        <p>Localização estratégica próxima a Balneário Camboriú, fácil acesso à BR 101, e com grande potencial de valorização devido a novos empreendimentos próximos, como o condomínio aeronáutico Costa Esmeralda e o Viva Park.</p>
+    </div>
 
     <h3>Detalhes do Negócio:</h3>
     <ul>
         <li><strong>Aporte Inicial:</strong> R$ 35 milhões, com devolução ou lotes no futuro empreendimento.</li>
         <li><strong>Divisão do Empreendimento:</strong> 50% para o proprietário, 50% para o loteador.</li>
         <li><strong>Modelo de Negócio:</strong> Aporte retornável com correção monetária, deduzido na permuta física ou financeira.</li>
+    </ul>
+
+    <h3>Vantagens do Investimento:</h3>
+    <ul>
+        <li>Localização privilegiada em uma das regiões que mais crescem no Brasil</li>
+        <li>Potencial para desenvolvimento de um empreendimento com perfil de Smart City</li>
+        <li>Proximidade de praias paradisíacas e infraestrutura turística consolidada</li>
+        <li>Valorização imobiliária acima da média do mercado</li>
     </ul>
 
     <h3>Mapa da Área</h3>
@@ -70,14 +139,16 @@
             style="border: 0; border-radius: 10px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);" 
             allowfullscreen>
     </iframe>
+
+   
 </div>
 
-<div class="footer">
+<div class="footer" id="contato">
     <img src="https://i.imgur.com/3YKn2xW.png" alt="Engesud Logo">
-    <p>Robson Luis da Costa | Engesud Smart</p>
-    <p>Contato: +55 (44) 99701-3489</p>
+    <p><strong>Robson Luis da Costa</strong> | Engesud Smart</p>
+    <p>Contato: <a href="tel:+5544997013489" style="color: white;">+55 (44) 99701-3489</a></p>
+   
 </div>
 
 </body>
 </html>
-
