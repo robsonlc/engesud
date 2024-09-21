@@ -1,1 +1,321 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta property="og:title" content="Simulação de Proposta de Parceria Financeira" />
+    <meta property="og:description" content="Simulação interativa para ajustar a taxa de permuta e o preço médio dos apartamentos no desenvolvimento residencial." />
+    <meta property="og:image" content="https://i.imgur.com/DHJbIhG.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:url" content="https://www.engesudsmart.com.br/lbk/tsr/Tulipa/tip/simul/index.html" />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Engesud Smart" />
+    <title>Simulação de Proposta de Parceria - Engesud Smart</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap');
+        
+        :root {
+            --primary-color: #0056b3;
+            --secondary-color: #f8f9fa;
+            --text-color: #333;
+            --accent-color: #17a2b8;
+        }
+        body {
+            font-family: 'Roboto', sans-serif;
+            color: var(--text-color);
+            margin: 0;
+            padding: 0;
+            background-color: var(--secondary-color);
+            line-height: 1.6;
+        }
+        header {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 2rem 1rem;
+            text-align: center;
+        }
+        header h1 {
+            color: white;
+            font-size: 2rem;
+            margin-bottom: 0.5rem;
+        }
+        .container {
+            max-width: 100%;
+            margin: 0 auto;
+            padding: 1rem;
+        }
+        h2 {
+            color: var(--primary-color);
+            margin-top: 0;
+            font-size: 1.5rem;
+        }
+        .section {
+            margin-bottom: 2rem;
+            background-color: white;
+            padding: 1.5rem;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+        .image, .map {
+            width: 100%;
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+            margin: 1rem 0;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        .map {
+            height: 300px;
+        }
+        footer {
+            background-color: var(--primary-color);
+            color: white;
+            text-align: center;
+            padding: 1.5rem;
+            margin-top: 2rem;
+        }
+        footer img {
+            width: 120px;
+            margin: 1rem 0;
+        }
+        .cta-button {
+            display: inline-block;
+            background-color: var(--accent-color);
+            color: white;
+            padding: 0.8rem 1.5rem;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin: 0.5rem;
+            font-size: 0.9rem;
+        }
+        .cta-button:hover {
+            background-color: #138496;
+            transform: scale(1.05);
+        }
+        ul {
+            padding-left: 1.5rem;
+        }
+        li {
+            margin-bottom: 0.5rem;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1rem 0;
+            font-size: 0.9rem;
+        }
+        table, th, td {
+            border: 1px solid #ddd;
+        }
+        th, td {
+            padding: 0.5rem;
+            text-align: center;
+        }
+        th {
+            background-color: var(--primary-color);
+            color: white;
+        }
+        .input-group {
+            margin-bottom: 1.5rem;
+        }
+        .input-group label {
+            display: block;
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+        }
+        .input-group input {
+            width: 100%;
+            padding: 0.5rem;
+            font-size: 1rem;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        @media (max-width: 768px) {
+            .container {
+                padding: 0.5rem;
+            }
+            header h1 {
+                font-size: 1.5rem;
+            }
+            .section {
+                padding: 1rem;
+            }
+            table {
+                font-size: 0.8rem;
+            }
+            th, td {
+                padding: 0.3rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Simulação de Proposta de Parceria Financeira</h1>
+        <p>Desenvolvimento Residencial na Rua Tulipa & Rotatória, Maringá</p>
+    </header>
 
+    <div class="container">
+        <section class="section">
+            <h2>Parâmetros da Simulação</h2>
+            <div class="input-group">
+                <label for="permutaRate">Taxa de Permuta (%):</label>
+                <input type="number" id="permutaRate" name="permutaRate" value="8" min="0" max="100" step="0.1">
+            </div>
+            <div class="input-group">
+                <label for="apartmentPrice">Preço Médio do Apartamento (R$):</label>
+                <input type="number" id="apartmentPrice" name="apartmentPrice" value="250000" min="0" step="1000">
+            </div>
+        </section>
+
+        <section class="section">
+            <h2>Resultados da Simulação</h2>
+            <div style="overflow-x: auto;">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Fase</th>
+                            <th>Torres</th>
+                            <th>Aptos</th>
+                            <th>VGV</th>
+                            <th>Permuta (%)</th>
+                            <th>Permuta (R$)</th>
+                            <th>20% Inicial</th>
+                            <th>80% Vendas</th>
+                        </tr>
+                    </thead>
+                    <tbody id="resultsTableBody">
+                        <!-- Os resultados serão inseridos aqui pelo JavaScript -->
+                    </tbody>
+                </table>
+            </div>
+            <p><strong>Total Permuta:</strong> R$ <span id="totalPermuta">15.360.000</span></p>
+            <p><strong>Total Pagamentos Iniciais:</strong> R$ <span id="totalInitialPayments">3.072.000</span></p>
+            <p><strong>Total Pagamentos ao Longo das Vendas:</strong> R$ <span id="totalOngoingPayments">12.288.000</span></p>
+            <p><strong>Total Geral a Pagar ao Proprietário:</strong> R$ <span id="totalPayments">15.360.000</span></p>
+        </section>
+
+        <section class="section">
+            <h2>Projeção do Preço do Terreno</h2>
+            <p>Com base na permuta total, o preço do terreno está estimado em:</p>
+            <ul>
+                <li><strong>Valor Total da Permuta:</strong> R$ <span id="priceTerrenoPermuta">15.360.000</span></li>
+                <li><strong>Preço por Metro Quadrado (m²):</strong> R$ <span id="pricePerSquare">930</span>/m²</li>
+                <li><strong>Preço Total do Terreno:</strong> R$ <span id="pricePerSquare">930</span>/m² × 16.500 m² = R$ <span id="priceTerrenoTotalCalc">15.360.000</span></li>
+            </ul>
+        </section>
+    </div>
+
+    <footer>
+        <img src="https://i.imgur.com/3YKn2xW.png" alt="Logotipo Engesud">
+        <p><strong>Engesud Engenharia e Intermediação Ltda.</strong></p>
+        <p>Robson Luis da Costa</p>
+        <p>Telefone/WhatsApp: <a href="https://wa.me/4497013489" style="color: white;">+55 (44) 99701-3489</a></p>
+    </footer>
+
+    <script>
+        // Função para formatar números como moeda
+        function formatCurrency(value) {
+            return parseFloat(value).toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
+        }
+
+        // Função para atualizar os resultados
+        function updateResults() {
+            // Obter valores de entrada
+            const permutaRate = parseFloat(document.getElementById('permutaRate').value) || 0;
+            const apartmentPrice = parseFloat(document.getElementById('apartmentPrice').value) || 0;
+
+            // Parâmetros fixos
+            const totalApartments = 768;
+            const areaResidential = 16500; // em m²
+            const phases = [
+                { phase: 'Fase 1', towers: 2, apartments: 192, monthsCarencia: 18, monthsInterval: 0 },
+                { phase: 'Fase 2', towers: 3, apartments: 288, monthsCarencia: 0, monthsInterval: 12 },
+                { phase: 'Fase 3', towers: 3, apartments: 288, monthsCarencia: 0, monthsInterval: 18 }
+            ];
+
+            // Cálculo do VGV total
+            const vgvTotal = totalApartments * apartmentPrice;
+
+            // Cálculo da Permuta total (permutaRate% do VGV)
+            const permutaTotal = (permutaRate / 100) * vgvTotal;
+
+            // Preço por m²
+            const pricePerSquare = permutaTotal / areaResidential;
+
+            // Preço total do terreno
+            const priceTerrenoTotal = pricePerSquare * areaResidential;
+
+            // Cálculos por fase
+            let totalInitialPayments = 0;
+            let totalOngoingPayments = 0;
+            let resultsHTML = '';
+
+            phases.forEach((fase, index) => {
+                // VGV da fase
+                const vgvFase = fase.apartments * apartmentPrice;
+
+                // Permuta da fase
+                const permutaFase = (permutaRate / 100) * vgvFase;
+
+                // Pagamento inicial (20% da permuta da fase)
+                const initialPayment = 0.20 * permutaFase;
+
+                // Pagamento ao longo das vendas (80% da permuta da fase)
+                const ongoingPayment = 0.80 * permutaFase;
+
+                // Acumulando os totais
+                totalInitialPayments += initialPayment;
+                totalOngoingPayments += ongoingPayment;
+
+                // Formatação dos valores
+                const formattedVGV = formatCurrency(vgvFase);
+                const formattedPermuta = formatCurrency(permutaFase);
+                const formattedInitial = formatCurrency(initialPayment);
+                const formattedOngoing = formatCurrency(ongoingPayment);
+
+                // Adicionando à tabela HTML
+                resultsHTML += `
+                    <tr>
+                        <td>${fase.phase}</td>
+                        <td>${fase.towers}</td>
+                        <td>${fase.apartments}</td>
+                        <td>${formattedVGV}</td>
+                        <td>${permutaRate}%</td>
+                        <td>${formattedPermuta}</td>
+                        <td>${formattedInitial}</td>
+                        <td>${formattedOngoing}</td>
+                    </tr>
+                `;
+            });
+
+            // Atualizar o corpo da tabela
+            document.getElementById('resultsTableBody').innerHTML = resultsHTML;
+
+            // Atualizar os totais
+            document.getElementById('totalPermuta').innerText = formatCurrency(permutaTotal);
+            document.getElementById('totalInitialPayments').innerText = formatCurrency(totalInitialPayments);
+            document.getElementById('totalOngoingPayments').innerText = formatCurrency(totalOngoingPayments);
+            document.getElementById('totalPayments').innerText = formatCurrency(permutaTotal);
+
+            // Atualizar a projeção do preço do terreno
+            document.getElementById('priceTerrenoPermuta').innerText = formatCurrency(permutaTotal);
+            document.getElementById('pricePerSquare').innerText = pricePerSquare.toFixed(2);
+            document.getElementById('priceTerrenoTotal').innerText = formatCurrency(pricePerSquare);
+            document.getElementById('priceTerrenoTotalCalc').innerText = formatCurrency(priceTerrenoTotal);
+        }
+
+        // Adicionar event listeners aos inputs
+        document.getElementById('permutaRate').addEventListener('input', updateResults);
+        document.getElementById('apartmentPrice').addEventListener('input', updateResults);
+
+        // Inicializar os resultados na carga da página
+        window.onload = updateResults;
+    </script>
+</body>
+</html>
