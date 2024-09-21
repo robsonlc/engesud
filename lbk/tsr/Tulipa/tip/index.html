@@ -32,7 +32,7 @@
         header {
             background-color: var(--primary-color);
             color: white;
-            padding: 3rem 1rem;
+            padding: 3rem 0;
             text-align: center;
         }
         header h1 {
@@ -43,7 +43,7 @@
         .container {
             max-width: 1200px;
             margin: 0 auto;
-            padding: 2rem 1rem;
+            padding: 2rem;
         }
         h2 {
             color: var(--primary-color);
@@ -75,7 +75,7 @@
             background-color: var(--primary-color);
             color: white;
             text-align: center;
-            padding: 2rem 1rem;
+            padding: 2rem;
             margin-top: 2rem;
         }
         footer img {
@@ -109,8 +109,6 @@
             width: 100%;
             border-collapse: collapse;
             margin: 1rem 0;
-            overflow-x: auto;
-            display: block;
         }
         table, th, td {
             border: 1px solid #ddd;
@@ -123,25 +121,43 @@
             background-color: var(--primary-color);
             color: white;
         }
+        /* Estilos para o fluxograma */
+        .mermaid {
+            max-width: 100%;
+            margin: 0 auto;
+        }
+        /* Customização de cores e fontes para Mermaid */
+        .node rect {
+            fill: #0056b3;
+            stroke: #333;
+            stroke-width: 2px;
+        }
+        .node text {
+            fill: #fff;
+            font-family: 'Roboto', sans-serif;
+            font-size: 14px;
+        }
+        .edgePath path {
+            stroke: #17a2b8;
+            stroke-width: 2px;
+        }
         @media (max-width: 768px) {
+            .container {
+                padding: 1rem;
+            }
             header h1 {
                 font-size: 2rem;
             }
             .section {
                 padding: 1.5rem;
             }
-            .cta-button {
-                display: block;
-                margin: 0.5rem 0;
-            }
-            table {
-                font-size: 0.9rem;
-            }
-            th, td {
-                padding: 0.5rem;
-            }
         }
     </style>
+    <!-- Incluir Mermaid.js via CDN -->
+    <script type="module">
+        import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs';
+        mermaid.initialize({ startOnLoad: true });
+    </script>
 </head>
 <body>
     <header>
@@ -168,50 +184,48 @@
 
         <section class="section">
             <h2>Estrutura das Fases do Empreendimento</h2>
-            <div style="overflow-x: auto;">
-                <table>
-                    <thead>
-                        <tr>
-                            <th>Fase</th>
-                            <th>Número de Torres</th>
-                            <th>Número de Apartamentos</th>
-                            <th>Receita Estimada (VGV)</th>
-                            <th>Permuta (8% do VGV)</th>
-                            <th>20% da Permuta (Pagamento Inicial)</th>
-                            <th>80% da Permuta (Pagamento ao Longo das Vendas)</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>Fase 1</td>
-                            <td>2</td>
-                            <td>192</td>
-                            <td>R$ 48.000.000</td>
-                            <td>R$ 3.840.000</td>
-                            <td>R$ 768.000</td>
-                            <td>R$ 3.072.000</td>
-                        </tr>
-                        <tr>
-                            <td>Fase 2</td>
-                            <td>3</td>
-                            <td>288</td>
-                            <td>R$ 72.000.000</td>
-                            <td>R$ 5.760.000</td>
-                            <td>R$ 1.152.000</td>
-                            <td>R$ 4.608.000</td>
-                        </tr>
-                        <tr>
-                            <td>Fase 3</td>
-                            <td>3</td>
-                            <td>288</td>
-                            <td>R$ 72.000.000</td>
-                            <td>R$ 5.760.000</td>
-                            <td>R$ 1.152.000</td>
-                            <td>R$ 4.608.000</td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Fase</th>
+                        <th>Número de Torres</th>
+                        <th>Número de Apartamentos</th>
+                        <th>Receita Estimada (VGV)</th>
+                        <th>Permuta (8% do VGV)</th>
+                        <th>20% da Permuta (Pagamento Inicial)</th>
+                        <th>80% da Permuta (Pagamento ao Longo das Vendas)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Fase 1</td>
+                        <td>2</td>
+                        <td>192</td>
+                        <td>R$ 48.000.000</td>
+                        <td>R$ 3.840.000</td>
+                        <td>R$ 768.000</td>
+                        <td>R$ 3.072.000</td>
+                    </tr>
+                    <tr>
+                        <td>Fase 2</td>
+                        <td>3</td>
+                        <td>288</td>
+                        <td>R$ 72.000.000</td>
+                        <td>R$ 5.760.000</td>
+                        <td>R$ 1.152.000</td>
+                        <td>R$ 4.608.000</td>
+                    </tr>
+                    <tr>
+                        <td>Fase 3</td>
+                        <td>3</td>
+                        <td>288</td>
+                        <td>R$ 72.000.000</td>
+                        <td>R$ 5.760.000</td>
+                        <td>R$ 1.152.000</td>
+                        <td>R$ 4.608.000</td>
+                    </tr>
+                </tbody>
+            </table>
             <p><strong>Total Permuta (8% do VGV):</strong> R$ 15.360.000</p>
             <p><strong>Total Pagamentos Iniciais (20% de cada fase):</strong> R$ 3.072.000</p>
             <p><strong>Total Pagamentos ao Longo das Vendas (80% de cada fase):</strong> R$ 12.288.000</p>
@@ -227,6 +241,30 @@
             </ul>
         </section>
 
+        <!-- Fluxograma Interativo -->
+        <section class="section">
+            <h2>Estrutura da Parceria</h2>
+            <div class="mermaid">
+                graph TD
+                    A[<a href="#inicio">Início da Parceria</a>] --> B{<a href="#definicao">Definição de Fases</a>}
+                    B --> C[<a href="#fase1">Fase 1</a>]
+                    B --> D[<a href="#fase2">Fase 2</a>]
+                    B --> E[<a href="#fase3">Fase 3</a>]
+                    C --> F[<a href="#pagamentosIniciais1">Pagamentos Iniciais</a>]
+                    C --> G[<a href="#pagamentosVendas1">Pagamentos ao Longo das Vendas</a>]
+                    D --> H[<a href="#pagamentosIniciais2">Pagamentos Iniciais</a>]
+                    D --> I[<a href="#pagamentosVendas2">Pagamentos ao Longo das Vendas</a>]
+                    E --> J[<a href="#pagamentosIniciais3">Pagamentos Iniciais</a>]
+                    E --> K[<a href="#pagamentosVendas3">Pagamentos ao Longo das Vendas</a>]
+                    F --> L[<a href="#totalPagamentosIniciais">Total de Pagamentos Iniciais</a>]
+                    G --> M[<a href="#totalPagamentosVendas">Total de Pagamentos ao Longo das Vendas</a>]
+                    L --> N[<a href="#permutaTotal">Permuta Total</a>]
+                    M --> N
+                    N --> O[<a href="#projecaoTerreno">Projeção do Preço do Terreno</a>]
+            </div>
+        </section>
+
+        <!-- Botão para a Página de Simulação -->
         <section class="section">
             <h2>Simule os Cálculos</h2>
             <a href="https://www.engesudsmart.com.br/lbk/tsr/Tulipa/simul/" class="cta-button">Acessar Simulador</a>
