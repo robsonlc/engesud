@@ -3,15 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta property="og:title" content="Oportunidade de Desenvolvimento Imobiliário em Maringá" />
-    <meta property="og:description" content="Proposta para desenvolvimento de 48.299,09 m² com 08 edificações residenciais e 768 apartamentos em localização estratégica." />
-    <meta property="og:image" content="https://i.imgur.com/7OakUpH.png" />
+    <meta property="og:title" content="Proposta de Parceria Financeira para Desenvolvimento Residencial" />
+    <meta property="og:description" content="Apresentação detalhada da proposta de parceria financeira para o desenvolvimento de 768 apartamentos em Maringá." />
+    <meta property="og:image" content="https://i.imgur.com/DHJbIhG.png" />
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
-    <meta property="og:url" content="https://www.engesudsmart.com.br/lbk/tsr/Tulipa" />
+    <meta property="og:url" content="https://www.engesudsmart.com.br/lbk/tsr/Tulipa/tip" />
     <meta property="og:type" content="website" />
     <meta property="og:site_name" content="Engesud Smart" />
-    <title>Oportunidade de Desenvolvimento - Rua Tulipa & Rotatória</title>
+    <title>Proposta de Parceria Financeira - Engesud Smart</title>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap');
         
@@ -36,7 +36,7 @@
             text-align: center;
         }
         header h1 {
-            color: white; /* Corrigido: título em branco */
+            color: white;
             font-size: 2.5rem;
             margin-bottom: 0.5rem;
         }
@@ -93,6 +93,7 @@
             transition: all 0.3s ease;
             text-transform: uppercase;
             letter-spacing: 1px;
+            margin: 0.5rem;
         }
         .cta-button:hover {
             background-color: #138496;
@@ -103,6 +104,42 @@
         }
         li {
             margin-bottom: 0.5rem;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1rem 0;
+        }
+        table, th, td {
+            border: 1px solid #ddd;
+        }
+        th, td {
+            padding: 1rem;
+            text-align: center;
+        }
+        th {
+            background-color: var(--primary-color);
+            color: white;
+        }
+        /* Estilos para o fluxograma */
+        .mermaid {
+            max-width: 100%;
+            margin: 0 auto;
+        }
+        /* Customização de cores e fontes para Mermaid */
+        .node rect {
+            fill: #0056b3;
+            stroke: #333;
+            stroke-width: 2px;
+        }
+        .node text {
+            fill: #fff;
+            font-family: 'Roboto', sans-serif;
+            font-size: 14px;
+        }
+        .edgePath path {
+            stroke: #17a2b8;
+            stroke-width: 2px;
         }
         @media (max-width: 768px) {
             .container {
@@ -116,51 +153,150 @@
             }
         }
     </style>
+    <!-- Incluir Mermaid.js via CDN -->
+    <script type="module">
+        import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs';
+        mermaid.initialize({ startOnLoad: true });
+    </script>
 </head>
 <body>
     <header>
-        <h1>Oportunidade de Desenvolvimento Imobiliário em Maringá</h1>
-        <p>Área total de 48.299,09 m² com potencial para 768 apartamentos</p>
+        <h1>Proposta de Parceria Financeira</h1>
+        <p>Desenvolvimento Residencial na Rua Tulipa & Rotatória, Maringá</p>
     </header>
 
     <div class="container">
         <section class="section">
-            <h2>Visão Geral do Projeto</h2>
-            <p>Esta área oferece um potencial significativo para o desenvolvimento de um grande empreendimento habitacional. A proposta inclui:</p>
+            <h2>Visão Geral da Proposta</h2>
+            <p>A Engesud Smart, como intermediadora de negócios, propõe uma parceria financeira para o desenvolvimento de uma área residencial de 16.500 m², com a construção de 768 apartamentos distribuídos em 8 torres. A proposta está estruturada em 3 fases, com pagamentos escalonados ao proprietário com base na venda dos apartamentos.</p>
+        </section>
+
+        <section class="section">
+            <h2>Detalhamento do Projeto</h2>
             <ul>
-                <li>08 edificações habitacionais com 12 pavimentos cada;</li>
-                <li>Um total de 768 apartamentos construídos em alvenaria;</li>
-                <li>03 edificações acessórias, incluindo salão de festas.</li>
+                <li><strong>Total de Torres:</strong> 8</li>
+                <li><strong>Total de Apartamentos:</strong> 768</li>
+                <li><strong>Preço Médio por Apartamento:</strong> R$ 250.000</li>
+                <li><strong>Área Residencial:</strong> 16.500 m²</li>
             </ul>
             <img src="https://i.imgur.com/h12dDpe.png" alt="Esquema do Projeto" class="image">
         </section>
 
         <section class="section">
-            <h2>Localização Estratégica</h2>
-            <p>A área está posicionada estrategicamente em Maringá, com fácil acesso pela Rodovia PR-317 e proximidade à Rotatória Reynaldo Costa, garantindo excelente visibilidade e conectividade.</p>
-            <iframe class="map" src="https://www.google.com/maps/d/embed?mid=19C3TWNokNmnj5_B6S3NWpk1my53ygVU&ehbc=2E312F" allowfullscreen></iframe>
+            <h2>Estrutura das Fases do Empreendimento</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Fase</th>
+                        <th>Número de Torres</th>
+                        <th>Número de Apartamentos</th>
+                        <th>Receita Estimada (VGV)</th>
+                        <th>Permuta (8% do VGV)</th>
+                        <th>20% da Permuta (Pagamento Inicial)</th>
+                        <th>80% da Permuta (Pagamento ao Longo das Vendas)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Fase 1</td>
+                        <td>2</td>
+                        <td>192</td>
+                        <td>R$ 48.000.000</td>
+                        <td>R$ 3.840.000</td>
+                        <td>R$ 768.000</td>
+                        <td>R$ 3.072.000</td>
+                    </tr>
+                    <tr>
+                        <td>Fase 2</td>
+                        <td>3</td>
+                        <td>288</td>
+                        <td>R$ 72.000.000</td>
+                        <td>R$ 5.760.000</td>
+                        <td>R$ 1.152.000</td>
+                        <td>R$ 4.608.000</td>
+                    </tr>
+                    <tr>
+                        <td>Fase 3</td>
+                        <td>3</td>
+                        <td>288</td>
+                        <td>R$ 72.000.000</td>
+                        <td>R$ 5.760.000</td>
+                        <td>R$ 1.152.000</td>
+                        <td>R$ 4.608.000</td>
+                    </tr>
+                </tbody>
+            </table>
+            <p><strong>Total Permuta (8% do VGV):</strong> R$ 15.360.000</p>
+            <p><strong>Total Pagamentos Iniciais (20% de cada fase):</strong> R$ 3.072.000</p>
+            <p><strong>Total Pagamentos ao Longo das Vendas (80% de cada fase):</strong> R$ 12.288.000</p>
         </section>
 
         <section class="section">
-            <h2>Zoneamento e Potencial de Construção</h2>
-            <p>Classificada como ZR2 - Zona Residencial 2 e parte do Eixo Residencial B (ERB), esta área permite:</p>
+            <h2>Projeção do Preço do Terreno</h2>
+            <p>Com base na permuta de 8% do VGV total, o preço do terreno está estimado em:</p>
             <ul>
-                <li>Verticalização e adensamento multifamiliar;</li>
-                <li>Aproveitamento do coeficiente de construção em até 3,5 vezes a área do lote através de outorga onerosa;</li>
-                <li>Flexibilidade para projetos residenciais de alto padrão.</li>
+                <li><strong>Valor Total da Permuta (8% do VGV):</strong> R$ 15.360.000</li>
+                <li><strong>Preço por Metro Quadrado (m²):</strong> R$ 930/m²</li>
+                <li><strong>Preço Total do Terreno:</strong> R$ 930/m² × 16.500 m² = R$ 15.360.000</li>
+            </ul>
+        </section>
+
+        <!-- Fluxograma Interativo -->
+        <section class="section">
+            <h2>Estrutura da Parceria</h2>
+            <div class="mermaid">
+                graph TD
+                    A[<a href="#inicio">Início da Parceria</a>] --> B{<a href="#definicao">Definição de Fases</a>}
+                    B --> C[<a href="#fase1">Fase 1</a>]
+                    B --> D[<a href="#fase2">Fase 2</a>]
+                    B --> E[<a href="#fase3">Fase 3</a>]
+                    C --> F[<a href="#pagamentosIniciais1">Pagamentos Iniciais</a>]
+                    C --> G[<a href="#pagamentosVendas1">Pagamentos ao Longo das Vendas</a>]
+                    D --> H[<a href="#pagamentosIniciais2">Pagamentos Iniciais</a>]
+                    D --> I[<a href="#pagamentosVendas2">Pagamentos ao Longo das Vendas</a>]
+                    E --> J[<a href="#pagamentosIniciais3">Pagamentos Iniciais</a>]
+                    E --> K[<a href="#pagamentosVendas3">Pagamentos ao Longo das Vendas</a>]
+                    F --> L[<a href="#totalPagamentosIniciais">Total de Pagamentos Iniciais</a>]
+                    G --> M[<a href="#totalPagamentosVendas">Total de Pagamentos ao Longo das Vendas</a>]
+                    L --> N[<a href="#permutaTotal">Permuta Total</a>]
+                    M --> N
+                    N --> O[<a href="#projecaoTerreno">Projeção do Preço do Terreno</a>]
+            </div>
+        </section>
+
+        <!-- Botão para a Página de Simulação -->
+        <section class="section">
+            <h2>Simule os Cálculos</h2>
+            <a href="https://www.engesudsmart.com.br/lbk/tsr/Tulipa/simul/" class="cta-button">Acessar Simulador</a>
+        </section>
+
+        <section class="section">
+            <h2>Benefícios da Parceria</h2>
+            <ul>
+                <li><strong>Minimização de Riscos:</strong> Compartilhamento de investimentos e riscos entre as partes.</li>
+                <li><strong>Expertise e Eficiência:</strong> Utilização da experiência da Engesud Smart em gestão de projetos e vendas.</li>
+                <li><strong>Aumento do Valor do Terreno:</strong> O sucesso do projeto residencial contribui para a valorização do terreno e das áreas comerciais adjacentes.</li>
+                <li><strong>Flexibilidade Financeira:</strong> Pagamentos escalonados de acordo com o progresso das vendas, garantindo estabilidade financeira para ambas as partes.</li>
             </ul>
         </section>
 
         <section class="section">
-            <h2>Oportunidades de Parceria</h2>
-            <p>Estamos abertos a discutir propostas de parceria para o desenvolvimento desta área premium, incluindo:</p>
-            <ul>
-                <li>Incorporação conjunta;</li>
-                <li>Permuta de área por unidades construídas;</li>
-                <li>Modelos financeiros customizados para atender às necessidades da sua empresa.</li>
-            </ul>
-            <p>Entre em contato para explorar como podemos criar valor juntos neste empreendimento de alto potencial.</p>
-            <a href="https://wa.me/4497013489?text=Olá,%20gostaria%20de%20saber%20mais%20sobre%20a%20oportunidade%20de%20desenvolvimento%20na%20Rua%20Tulipa" class="cta-button">Agende uma Consulta</a>
+            <h2>Próximos Passos</h2>
+            <ol>
+                <li>Revisar e validar os valores apresentados.</li>
+                <li>Elaborar a proposta formal detalhada com todas as condições acordadas.</li>
+                <li>Agendar uma reunião com a construtora para discutir a proposta.</li>
+                <li>Negociar e ajustar os termos conforme necessário.</li>
+                <li>Formalizar a parceria com contratos claros e detalhados.</li>
+            </ol>
+            <a href="https://wa.me/4497013489?text=Gostaria%20de%20discutir%20a%20proposta%20de%20parceria%20financeira" class="cta-button">Agende uma Consulta</a>
+        </section>
+
+        <section class="section">
+            <h2>Consultas das Plantas do Projeto</h2>
+            <a href="https://drive.google.com/open?id=1sECDt5m5cwHGxst4Z2iArLULxsU6271T&usp=drive_fs" class="cta-button">Planta Arquitetônica de Implantação</a>
+            <a href="https://drive.google.com/open?id=1sLhwmIVXcY147bg0JWpEudFm8M2hxQGB&usp=drive_fs" class="cta-button">Planta Arquitetônica com Tipologia</a>
+            <a href="https://drive.google.com/open?id=1s-9msMuuAlxFqKRgJarj26Ec4mQdBfRq&usp=drive_fs" class="cta-button">Planta Arquitetônica com Cortes</a>
         </section>
     </div>
 
