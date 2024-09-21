@@ -125,6 +125,7 @@
         .mermaid {
             max-width: 100%;
             margin: 0 auto;
+            overflow-x: auto;
         }
         /* Customização de cores e fontes para Mermaid */
         .node rect {
@@ -151,12 +152,26 @@
             .section {
                 padding: 1.5rem;
             }
+            table {
+                font-size: 0.8rem;
+            }
+            th, td {
+                padding: 0.5rem;
+            }
         }
     </style>
     <!-- Incluir Mermaid.js via CDN -->
     <script type="module">
         import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs';
-        mermaid.initialize({ startOnLoad: true });
+        mermaid.initialize({ 
+            startOnLoad: true,
+            theme: 'default',
+            flowchart: {
+                useMaxWidth: true,
+                htmlLabels: true,
+                curve: 'basis'
+            }
+        });
     </script>
 </head>
 <body>
@@ -243,26 +258,26 @@
 
         <!-- Fluxograma Interativo -->
         <section class="section">
-            <h2>Estrutura da Parceria</h2>
-            <div class="mermaid">
-                graph TD
-                    A[<a href="#inicio">Início da Parceria</a>] --> B{<a href="#definicao">Definição de Fases</a>}
-                    B --> C[<a href="#fase1">Fase 1</a>]
-                    B --> D[<a href="#fase2">Fase 2</a>]
-                    B --> E[<a href="#fase3">Fase 3</a>]
-                    C --> F[<a href="#pagamentosIniciais1">Pagamentos Iniciais</a>]
-                    C --> G[<a href="#pagamentosVendas1">Pagamentos ao Longo das Vendas</a>]
-                    D --> H[<a href="#pagamentosIniciais2">Pagamentos Iniciais</a>]
-                    D --> I[<a href="#pagamentosVendas2">Pagamentos ao Longo das Vendas</a>]
-                    E --> J[<a href="#pagamentosIniciais3">Pagamentos Iniciais</a>]
-                    E --> K[<a href="#pagamentosVendas3">Pagamentos ao Longo das Vendas</a>]
-                    F --> L[<a href="#totalPagamentosIniciais">Total de Pagamentos Iniciais</a>]
-                    G --> M[<a href="#totalPagamentosVendas">Total de Pagamentos ao Longo das Vendas</a>]
-                    L --> N[<a href="#permutaTotal">Permuta Total</a>]
-                    M --> N
-                    N --> O[<a href="#projecaoTerreno">Projeção do Preço do Terreno</a>]
-            </div>
-        </section>
+        <h2>Estrutura da Parceria</h2>
+        <div class="mermaid">
+            graph TD
+                A[Início da Parceria] --> B{Definição de Fases}
+                B --> C[Fase 1]
+                B --> D[Fase 2]
+                B --> E[Fase 3]
+                C --> F[Pagamentos Iniciais]
+                C --> G[Pagamentos ao Longo das Vendas]
+                D --> H[Pagamentos Iniciais]
+                D --> I[Pagamentos ao Longo das Vendas]
+                E --> J[Pagamentos Iniciais]
+                E --> K[Pagamentos ao Longo das Vendas]
+                F --> L[Total de Pagamentos Iniciais]
+                G --> M[Total de Pagamentos ao Longo das Vendas]
+                L --> N[Permuta Total]
+                M --> N
+                N --> O[Projeção do Preço do Terreno]
+        </div>
+    </section>
 
         <!-- Botão para a Página de Simulação -->
         <section class="section">
