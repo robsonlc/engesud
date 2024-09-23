@@ -9,8 +9,8 @@
     <meta property="og:title" content="Proposta de Parceria - Empreendimento Kakogawa">
     <meta property="og:description" content="Proposta de parceria para desenvolvimento de empreendimento residencial na Av. Kakogawa">
     <meta property="og:image" content="https://i.imgur.com/7vb29It.png">
-    <meta property="og:image:width" content="800">
-    <meta property="og:image:height" content="800">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
     <meta property="og:url" content="https://www.engesudsmart.com.br/lbk/tsr/kakogawa">
     <meta property="og:type" content="website">
     <meta property="og:site_name" content="Engesud Smart">
@@ -135,6 +135,8 @@
         }
         /* Estilos para o Fluxograma */
         .mermaid {
+            display: flex;
+            justify-content: center;
             margin: 0 auto 20px auto; /* Centraliza horizontalmente */
             background-color: #f4f4f4;
             padding: 15px;
@@ -244,18 +246,20 @@
         </table>
 
         <h3>Cronograma</h3>
-        <!-- Fluxograma Mermaid -->
+        <!-- Fluxograma Mermaid Corrigido -->
         <div class="mermaid">
             graph TB
-                A[Fase 1] -->|18 meses de vendas| B[Lançamento Fase 2]
-                B -->|12 meses de intervalo| C[Início Fase 2]
-                C -->|18 meses de vendas| D[Lançamento Fase 3]
-                D -->|12 meses de intervalo| E[Início Fase 3]
-                E -->|18 meses de vendas| F[Lançamento Fase 4]
-                F -->|12 meses de intervalo| G[Início Fase 4]
-                G -->|18 meses de vendas| H[Lançamento Fase 5]
-                H -->|12 meses de intervalo| I[Início Fase 5]
-                I -->|18 meses de vendas| J[Conclusão do Projeto]
+                A[Início do Projeto] -->|18 meses de aprovações e lançamento| B[Lançamento Fase 1]
+                B -->|18 meses de vendas| C[Vendas Fase 1]
+                C -->|12 meses de intervalo| D[Lançamento Fase 2]
+                D -->|18 meses de vendas| E[Vendas Fase 2]
+                E -->|12 meses de intervalo| F[Lançamento Fase 3]
+                F -->|18 meses de vendas| G[Vendas Fase 3]
+                G -->|12 meses de intervalo| H[Lançamento Fase 4]
+                H -->|18 meses de vendas| I[Vendas Fase 4]
+                I -->|12 meses de intervalo| J[Lançamento Fase 5]
+                J -->|18 meses de vendas| K[Vendas Fase 5]
+                K -->|Conclusão do Projeto| L[Conclusão]
         </div>
 
         <ul>
