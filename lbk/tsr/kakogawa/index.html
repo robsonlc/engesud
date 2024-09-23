@@ -15,6 +15,20 @@
     <meta property="og:type" content="website">
     <meta property="og:site_name" content="Engesud Smart">
 
+    <!-- Inclusão da Biblioteca Mermaid -->
+    <script type="module">
+        import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs';
+        mermaid.initialize({ 
+            startOnLoad: true,
+            theme: 'default',
+            flowchart: { 
+                curve: 'linear',
+                fontSize: 16
+            }
+        });
+    </script>
+    <script nomodule src="https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js"></script>
+
     <style>
         body {
             font-family: 'Arial', sans-serif;
@@ -135,6 +149,23 @@
                 height: 300px;
             }
         }
+        /* Estilos para o Fluxograma */
+        .mermaid {
+            margin-bottom: 20px;
+            background-color: #f4f4f4;
+            padding: 15px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            overflow-x: auto;
+        }
+        /* Ajustes para melhor visualização em telas maiores */
+        @media (min-width: 768px) {
+            .mermaid {
+                max-width: 100%;
+                height: auto;
+                font-size: 1.2em;
+            }
+        }
     </style>
 </head>
 <body>
@@ -185,6 +216,20 @@
         </table>
 
         <h3>Cronograma</h3>
+        <!-- Fluxograma Mermaid -->
+        <div class="mermaid">
+            graph LR
+                A[Fase 1] -->|18 meses de vendas| B[Lançamento Fase 2]
+                B -->|12 meses de intervalo| C[Início Fase 2]
+                C -->|18 meses de vendas| D[Lançamento Fase 3]
+                D -->|12 meses de intervalo| E[Início Fase 3]
+                E -->|18 meses de vendas| F[Lançamento Fase 4]
+                F -->|12 meses de intervalo| G[Início Fase 4]
+                G -->|18 meses de vendas| H[Lançamento Fase 5]
+                H -->|12 meses de intervalo| I[Início Fase 5]
+                I -->|18 meses de vendas| J[Conclusão do Projeto]
+        </div>
+
         <ul>
             <li><b>Fase 1:</b> Lançamento em 18 meses (considerando aprovações necessárias).</li>
             <li><b>Demais fases:</b> Lançamento a cada 12 meses após a fase anterior, com vendas previstas por 18 meses cada fase.</li>
@@ -276,4 +321,3 @@
 
 </body>
 </html>
-
