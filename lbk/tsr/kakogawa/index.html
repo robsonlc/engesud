@@ -8,9 +8,9 @@
     <!-- Metatags Open Graph para pré-visualização no WhatsApp -->
     <meta property="og:title" content="Proposta de Parceria - Empreendimento Kakogawa">
     <meta property="og:description" content="Proposta de parceria para desenvolvimento de empreendimento residencial na Av. Kakogawa">
-    <meta property="og:image" content="https://i.imgur.com/5JlteGC.png">
-    <meta property="og:image:width" content="800">
-    <meta property="og:image:height" content="800">
+    <meta property="og:image" content="https://i.imgur.com/5JlteGC.png?v=2">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
     <meta property="og:url" content="https://www.engesudsmart.com.br/lbk/tsr/kakogawa">
     <meta property="og:type" content="website">
     <meta property="og:site_name" content="Engesud Smart">
@@ -23,7 +23,8 @@
             theme: 'default',
             flowchart: { 
                 curve: 'linear',
-                fontSize: 16
+                fontSize: 16,
+                direction: 'TB' // Alterado para Top-Bottom
             }
         });
     </script>
@@ -157,13 +158,13 @@
             border-radius: 8px;
             box-shadow: 0 2px 4px rgba(0,0,0,0.1);
             overflow-x: auto;
+            /* Definindo a largura máxima para evitar overflow */
+            max-width: 100%;
         }
         /* Ajustes para melhor visualização em telas maiores */
         @media (min-width: 768px) {
             .mermaid {
-                max-width: 100%;
-                height: auto;
-                font-size: 1.2em;
+                font-size: 1.2em; /* Aumenta o tamanho da fonte */
             }
         }
     </style>
@@ -218,7 +219,7 @@
         <h3>Cronograma</h3>
         <!-- Fluxograma Mermaid -->
         <div class="mermaid">
-            graph LR
+            graph TB
                 A[Fase 1] -->|18 meses de vendas| B[Lançamento Fase 2]
                 B -->|12 meses de intervalo| C[Início Fase 2]
                 C -->|18 meses de vendas| D[Lançamento Fase 3]
