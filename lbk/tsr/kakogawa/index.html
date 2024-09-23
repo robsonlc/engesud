@@ -24,13 +24,23 @@
             flowchart: { 
                 curve: 'linear',
                 fontSize: 16,
-                direction: 'TB' // Alterado para Top-Bottom
+                direction: 'TB' // Top-Bottom
             }
         });
     </script>
     <script nomodule src="https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js"></script>
 
     <style>
+        /* Variáveis CSS para cores primárias e secundárias */
+        :root {
+            --primary-color: #003366; /* Azul escuro */
+            --secondary-color: #007bff; /* Azul claro */
+            --footer-bg-color: #003366; /* Cor de fundo do rodapé */
+            --footer-text-color: #fff; /* Cor do texto no rodapé */
+            --summary-bg-color: #e6f2ff;
+            --summary-border-color: #007bff;
+        }
+
         body {
             font-family: 'Arial', sans-serif;
             margin: 0;
@@ -47,7 +57,7 @@
             border-radius: 8px;
         }
         h1, h2, h3 {
-            color: #003366;
+            color: var(--primary-color);
             margin-bottom: 10px;
         }
         h1 {
@@ -90,7 +100,7 @@
             font-size: 0.9em;
         }
         th {
-            background-color: #003366;
+            background-color: var(--primary-color);
             color: #fff;
             padding: 12px;
             text-align: left;
@@ -104,28 +114,13 @@
             font-size: 1em;
         }
         .highlight {
-            color: #007bff;
+            color: var(--secondary-color);
             font-weight: bold;
         }
-        .footer {
-            text-align: center;
-            font-size: 0.8em;
-            color: #666;
-            margin-top: 30px;
-            padding: 20px;
-            background-color: #f2f2f2;
-            border-top: 1px solid #ddd;
-        }
-        .footer img {
-            max-width: 80px;
-            margin-bottom: 10px;
-        }
-        .footer p {
-            margin: 5px 0;
-        }
+        /* Estilos para o Summary Card */
         .summary-card {
-            background-color: #e6f2ff;
-            border-left: 5px solid #007bff;
+            background-color: var(--summary-bg-color);
+            border-left: 5px solid var(--summary-border-color);
             padding: 15px 20px;
             margin-bottom: 20px;
             border-radius: 4px;
@@ -138,33 +133,65 @@
             list-style: disc;
             padding-left: 20px;
         }
-        @media (max-width: 600px) {
-            .container {
-                padding: 10px;
-            }
-            table {
-                font-size: 0.8em;
-            }
-            iframe {
-                width: 100%;
-                height: 300px;
-            }
-        }
         /* Estilos para o Fluxograma */
         .mermaid {
-            margin-bottom: 20px;
+            margin: 0 auto 20px auto; /* Centraliza horizontalmente */
             background-color: #f4f4f4;
             padding: 15px;
             border-radius: 8px;
             box-shadow: 0 2px 4px rgba(0,0,0,0.1);
             overflow-x: auto;
-            /* Definindo a largura máxima para evitar overflow */
             max-width: 100%;
         }
         /* Ajustes para melhor visualização em telas maiores */
         @media (min-width: 768px) {
             .mermaid {
                 font-size: 1.2em; /* Aumenta o tamanho da fonte */
+            }
+        }
+        /* Estilos do Rodapé */
+        .footer {
+            text-align: center;
+            padding: 40px 0;
+            background-color: var(--footer-bg-color);
+            color: var(--footer-text-color);
+            margin-top: 50px;
+        }
+
+        .footer img {
+            max-width: 120px;
+            margin-bottom: 20px;
+        }
+
+        .footer p {
+            margin: 5px 0;
+            font-size: 1em;
+        }
+
+        /* Responsividade */
+        @media (max-width: 768px) {
+            .container {
+                padding: 10px;
+            }
+
+            h1 {
+                font-size: 2em;
+            }
+
+            h2 {
+                font-size: 1.5em;
+            }
+
+            h3 {
+                font-size: 1.2em;
+            }
+
+            table {
+                font-size: 0.8em;
+            }
+
+            .footer p {
+                font-size: 0.9em;
             }
         }
     </style>
