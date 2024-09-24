@@ -15,21 +15,6 @@
     <meta property="og:type" content="website">
     <meta property="og:site_name" content="Engesud Smart">
 
-    <!-- Inclusão da Biblioteca Mermaid -->
-    <script type="module">
-        import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs';
-        mermaid.initialize({ 
-            startOnLoad: true,
-            theme: 'default',
-            flowchart: { 
-                curve: 'linear',
-                fontSize: 16,
-                direction: 'TB' // Top-Bottom
-            }
-        });
-    </script>
-    <script nomodule src="https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js"></script>
-
     <style>
         /* Variáveis CSS para cores primárias e secundárias */
         :root {
@@ -133,24 +118,86 @@
             list-style: disc;
             padding-left: 20px;
         }
-        /* Estilos para o Fluxograma */
-        .mermaid {
-            display: flex;
-            justify-content: center;
-            margin: 0 auto 20px auto; /* Centraliza horizontalmente */
-            background-color: #f4f4f4;
-            padding: 15px;
-            border-radius: 8px;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-            overflow-x: auto;
-            max-width: 100%;
+
+        /* Estilos para a Linha do Tempo */
+        .timeline {
+            position: relative;
+            max-width: 960px;
+            margin: 20px auto;
         }
-        /* Ajustes para melhor visualização em telas maiores */
-        @media (min-width: 768px) {
-            .mermaid {
-                font-size: 1.2em; /* Aumenta o tamanho da fonte */
+
+        .timeline::after {
+            content: '';
+            position: absolute;
+            width: 6px;
+            background-color: var(--secondary-color);
+            top: 0;
+            bottom: 0;
+            left: 50%;
+            margin-left: -3px;
+        }
+
+        .timeline-item {
+            padding: 10px 40px;
+            position: relative;
+            background-color: inherit;
+            width: 50%;
+        }
+
+        .timeline-item::after {
+            content: ' ';
+            position: absolute;
+            width: 25px;
+            height: 25px;
+            right: -12.5px;
+            background-color: white;
+            border: 4px solid var(--secondary-color);
+            top: 15px;
+            border-radius: 50%;
+            z-index: 1;
+        }
+
+        .timeline-item.left {
+            left: 0;
+        }
+
+        .timeline-item.right {
+            left: 50%;
+        }
+
+        .timeline-content {
+            padding: 20px;
+            background-color: #f9f9f9;
+            position: relative;
+            border-radius: 6px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .timeline-item h3 {
+            margin-top: 0;
+            color: var(--primary-color);
+        }
+
+        @media screen and (max-width: 768px) {
+            .timeline-item.left, .timeline-item.right {
+                width: 100%;
+                left: 0;
+            }
+
+            .timeline-item::before {
+                left: 60px;
+                border: medium none;
+                border-radius: 4px;
+                padding: 10px 40px;
+                box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+                background-color: #f9f9f9;
+            }
+
+            .timeline-item.right::before {
+                left: -15px;
             }
         }
+
         /* Estilos do Rodapé */
         .footer {
             text-align: center;
@@ -246,20 +293,50 @@
         </table>
 
         <h3>Cronograma</h3>
-        <!-- Fluxograma Mermaid Corrigido -->
-        <div class="mermaid">
-            graph TB
-                A[Início do Projeto] -->|18 meses de aprovações e lançamento| B[Lançamento Fase 1]
-                B -->|18 meses de vendas| C[Vendas Fase 1]
-                C -.->|6 meses antes do fim das vendas F1| D[Lançamento Fase 2]
-                D -->|18 meses de vendas| E[Vendas Fase 2]
-                E -.->|6 meses antes do fim das vendas F2| F[Lançamento Fase 3]
-                F -->|18 meses de vendas| G[Vendas Fase 3]
-                G -.->|6 meses antes do fim das vendas F3| H[Lançamento Fase 4]
-                H -->|18 meses de vendas| I[Vendas Fase 4]
-                I -.->|6 meses antes do fim das vendas F4| J[Lançamento Fase 5]
-                J -->|18 meses de vendas| K[Vendas Fase 5]
-                K -->|Conclusão do Projeto| L[Conclusão]
+        <!-- Linha do Tempo Simples -->
+        <div class="timeline">
+            <div class="timeline-item left">
+                <div class="timeline-content">
+                    <h3>Início do Projeto</h3>
+                    <p>18 meses de aprovações e lançamento da Fase 1.</p>
+                </div>
+            </div>
+            <div class="timeline-item right">
+                <div class="timeline-content">
+                    <h3>Lançamento Fase 1</h3>
+                    <p>18 meses de vendas.</p>
+                </div>
+            </div>
+            <div class="timeline-item left">
+                <div class="timeline-content">
+                    <h3>Lançamento Fase 2</h3>
+                    <p>18 meses de vendas.</p>
+                </div>
+            </div>
+            <div class="timeline-item right">
+                <div class="timeline-content">
+                    <h3>Lançamento Fase 3</h3>
+                    <p>18 meses de vendas.</p>
+                </div>
+            </div>
+            <div class="timeline-item left">
+                <div class="timeline-content">
+                    <h3>Lançamento Fase 4</h3>
+                    <p>18 meses de vendas.</p>
+                </div>
+            </div>
+            <div class="timeline-item right">
+                <div class="timeline-content">
+                    <h3>Lançamento Fase 5</h3>
+                    <p>18 meses de vendas.</p>
+                </div>
+            </div>
+            <div class="timeline-item left">
+                <div class="timeline-content">
+                    <h3>Conclusão do Projeto</h3>
+                    <p>Conclusão.</p>
+                </div>
+            </div>
         </div>
 
         <ul>
