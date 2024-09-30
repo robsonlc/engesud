@@ -14,8 +14,8 @@
     <title>Proposta - Área 100 Alqueires - Maringá</title>
     <style>
         :root {
-            --primary-color: #333;
-            --secondary-color: #00aaff;
+            --primary-color: #00aaff;
+            --secondary-color: #333;
             --background-color: #f4f4f4;
             --text-color: #333;
         }
@@ -28,10 +28,14 @@
             line-height: 1.6;
         }
         header {
-            background-color: var(--primary-color);
+            background-color: var(--secondary-color);
             color: white;
             padding: 2rem 1rem;
             text-align: center;
+        }
+        header h1 {
+            color: var(--primary-color);
+            margin-bottom: 0.5rem;
         }
         .container {
             width: 90%;
@@ -42,8 +46,8 @@
             box-shadow: 0 0 10px rgba(0,0,0,0.1);
             border-radius: 10px;
         }
-        h1, h2 {
-            color: var(--primary-color);
+        h2 {
+            color: var(--secondary-color);
         }
         .section {
             margin-bottom: 2rem;
@@ -60,30 +64,51 @@
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
             border: none;
         }
-        .images img {
+        .image-grid {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+        .image-item {
+            width: 23%;
+            margin-bottom: 1rem;
+        }
+        .image-item img {
             width: 100%;
             border-radius: 10px;
-            margin: 1rem 0;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
         }
         footer {
             text-align: center;
-            background-color: var(--primary-color);
+            background-color: var(--secondary-color);
             color: #fff;
             padding: 2rem 1rem;
             font-size: 0.9rem;
         }
         footer a {
-            color: var(--secondary-color);
+            color: var(--primary-color);
             text-decoration: none;
         }
         footer img {
             max-width: 150px;
             margin: 1rem 0;
         }
+        @media (max-width: 1200px) {
+            .image-item {
+                width: 31%;
+            }
+        }
+        @media (max-width: 992px) {
+            .image-item {
+                width: 48%;
+            }
+        }
         @media (max-width: 768px) {
             .container {
                 width: 95%;
+            }
+            .image-item {
+                width: 100%;
             }
         }
     </style>
@@ -106,11 +131,19 @@
         
         <div class="section">
             <h2>Distribuição das Áreas</h2>
-            <div class="images">
-                <img src="https://i.imgur.com/mz5qN6t.png" alt="Tabela de Matrículas">
-                <img src="https://i.imgur.com/0x8zLRd.png" alt="Mapa de Matrículas">
-                <img src="https://i.imgur.com/eGBBll6.png" alt="Zoneamento Rural de Maringá">
-                <img src="https://i.imgur.com/jxL7Gjm.png" alt="Desenvolvimento Imediato e Futuro">
+            <div class="image-grid">
+                <div class="image-item">
+                    <img src="https://i.imgur.com/mz5qN6t.png" alt="Tabela de Matrículas">
+                </div>
+                <div class="image-item">
+                    <img src="https://i.imgur.com/0x8zLRd.png" alt="Mapa de Matrículas">
+                </div>
+                <div class="image-item">
+                    <img src="https://i.imgur.com/eGBBll6.png" alt="Zoneamento Rural de Maringá">
+                </div>
+                <div class="image-item">
+                    <img src="https://i.imgur.com/jxL7Gjm.png" alt="Desenvolvimento Imediato e Futuro">
+                </div>
             </div>
         </div>
 
