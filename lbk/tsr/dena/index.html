@@ -15,90 +15,188 @@
     <meta property="og:site_name" content="Engesud Smart">
 
     <style>
-        body {
-            font-family: 'Roboto', sans-serif;
+        @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap');
+
+        :root {
+            --primary-color: #2a4d69;
+            --secondary-color: #41729f;
+            --background-color: #f2f2f2;
+            --text-color: #333;
+            --white: #fff;
+        }
+
+        * {
+            box-sizing: border-box;
             margin: 0;
             padding: 0;
-            background-color: #f2f2f2;
-            color: #333;
         }
+
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: var(--background-color);
+            color: var(--text-color);
+            line-height: 1.6;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
         header {
             background: url('https://i.imgur.com/oQ5OyuB.png') center/cover no-repeat;
-            height: 300px;
+            height: 400px;
             display: flex;
             justify-content: center;
             align-items: center;
-            color: #fff;
+            color: var(--white);
+            position: relative;
         }
+
+        header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.5);
+        }
+
         header h1 {
-            font-size: 48px;
-            background: rgba(0, 0, 0, 0.6);
+            font-size: 3rem;
+            text-align: center;
             padding: 20px;
             border-radius: 10px;
+            position: relative;
+            z-index: 1;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
         }
+
         .content {
+            flex: 1;
             padding: 40px 20px;
             max-width: 1100px;
             margin: 0 auto;
-            background: #fff;
+            background: var(--white);
             border-radius: 8px;
             box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
         }
+
         h2, h3 {
-            color: #2a4d69;
+            color: var(--primary-color);
+            margin-bottom: 20px;
         }
+
         p, li {
-            line-height: 1.6;
+            margin-bottom: 15px;
         }
+
         .mapa, .zoneamento {
             margin: 30px 0;
         }
-        iframe {
+
+        iframe, img {
             width: 100%;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+
+        iframe {
             height: 480px;
             border: 0;
-            border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
         }
-        img {
-            width: 100%;
-            border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+
+        iframe:hover, img:hover {
+            transform: scale(1.02);
         }
+
         .buttons {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
             margin-top: 20px;
         }
+
         .button-link {
-            display: inline-block;
-            background: #2a4d69;
-            color: #fff;
+            background: var(--primary-color);
+            color: var(--white);
             text-decoration: none;
             padding: 12px 24px;
             border-radius: 5px;
-            margin-right: 10px;
-            margin-bottom: 10px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            transition: background 0.3s;
+            transition: background 0.3s, transform 0.3s;
         }
+
         .button-link:hover {
-            background: #41729f;
+            background: var(--secondary-color);
+            transform: translateY(-2px);
         }
+
         footer {
-            text-align: center;
-            padding: 20px;
-            background-color: #2a4d69;
-            color: #fff;
+            background-color: var(--primary-color);
+            color: var(--white);
+            padding: 30px 0;
+            margin-top: auto;
         }
-        footer img {
-            height: 40px;
+
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 20px;
         }
+
+        .footer-logo img {
+            height: 60px;
+            width: auto;
+        }
+
+        .footer-info {
+            text-align: right;
+        }
+
         footer p {
             font-size: 14px;
             margin: 5px 0;
         }
+
         footer a {
-            color: #fff;
+            color: var(--white);
             text-decoration: none;
+            transition: opacity 0.3s;
+        }
+
+        footer a:hover {
+            opacity: 0.8;
+        }
+
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 2rem;
+            }
+
+            .content {
+                padding: 20px;
+            }
+
+            iframe {
+                height: 300px;
+            }
+
+            .footer-content {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .footer-logo {
+                margin-bottom: 20px;
+            }
+
+            .footer-info {
+                text-align: center;
+            }
         }
     </style>
 </head>
@@ -131,9 +229,16 @@
     </div>
 
     <footer>
-        <img src="https://i.imgur.com/3YKn2xW.png" alt="Logotipo Engesud">
-        <p>Robson Luis da Costa - Engenheiro Civil | +55 (44) 99701-3489</p>
-        <p><a href="https://wa.me/4497013489">Entre em contato via WhatsApp</a></p>
+        <div class="footer-content">
+            <div class="footer-logo">
+                <img src="https://i.imgur.com/3YKn2xW.png" alt="Logotipo Engesud">
+            </div>
+            <div class="footer-info">
+                <p>Robson Luis da Costa - Engenheiro Civil</p>
+                <p>+55 (44) 99701-3489</p>
+                <p><a href="https://wa.me/4497013489">Entre em contato via WhatsApp</a></p>
+            </div>
+        </div>
     </footer>
 
     <!-- Este conteúdo é protegido por direitos autorais creditados à Engesud Engenharia e Intermediação LTDA, inscrita no CNPJ 40.601.637/0001-58 -->
