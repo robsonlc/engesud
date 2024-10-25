@@ -62,6 +62,20 @@
             padding: 2rem;
         }
 
+        .card {
+            background: var(--accent-color);
+            color: white;
+            padding: 1.5rem;
+            border-radius: 10px;
+            margin-bottom: 2rem;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            text-align: center;
+        }
+
+        .card h2 {
+            margin-bottom: 1rem;
+        }
+
         .section {
             background: white;
             border-radius: 15px;
@@ -107,8 +121,16 @@
             background: white;
             padding: 2rem;
             border-radius: 10px;
-            margin: 2rem 0;
+            margin: 2rem auto; /* Centraliza horizontalmente */
             box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            text-align: center; /* Centraliza o conteúdo SVG */
+            display: flex;
+            justify-content: center; /* Centraliza flexbox */
+        }
+
+        .mermaid svg {
+            max-width: 100%; /* Garante responsividade */
+            margin: 0 auto; /* Centraliza o SVG */
         }
 
         .btn {
@@ -176,15 +198,28 @@
 
     <script type="module">
         import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs';
-        mermaid.initialize({ startOnLoad: true });
+        mermaid.initialize({ 
+            startOnLoad: true,
+            theme: 'default',
+            securityLevel: 'loose',
+            htmlLabels: true
+        });
     </script>
 </head>
 <body>
+    <!-- Resto do código HTML permanece exatamente igual -->
     <header>
         <h1>Proposta de Parceria - U3 Urbanismo</h1>
     </header>
 
     <div class="container">
+        <div class="card">
+            <h2>Resumo da Proposta</h2>
+            <p>Proprietário com 40% de participação no VGV do empreendimento.</p>
+            <p>Expectativa de receita para o proprietário: <strong>R$ 43.000.000,00</strong></p>
+            <p>Parceria com a U3 Urbanismo para desenvolver um empreendimento residencial em área de 11 alqueires, valorizando a proximidade com o Jardim Monique.</p>
+        </div>
+
         <section class="section">
             <h2>Introdução à Proposta</h2>
             <p>Esta proposta visa apresentar uma oportunidade de parceria entre a U3 Urbanismo e os proprietários da área de 11 alqueires localizada ao lado do Jardim Monique, em Maringá-PR. Nosso objetivo é desenvolver um empreendimento residencial que valorize o potencial do terreno, aproveitando a proximidade com o bairro consolidado e os benefícios da infraestrutura existente.</p>
@@ -230,7 +265,6 @@
                 <li><strong>Azul</strong>: Terreno comercial (avenida) - R$ 800/m²</li>
             </ul>
             <p>A proposta prevê uma participação de <strong>40% para o proprietário</strong> no VGV, com possibilidade de negociação de até 5% adicional dependendo da resposta do mercado e do desempenho inicial das vendas.</p>
-            <p>Com essa estrutura, buscamos assegurar a transparência e a viabilidade econômica do projeto, oferecendo um retorno justo e competitivo ao proprietário.</p>
             <a href="https://www.engesudsmart.com.br/ibipitanga/condou3/Proposta%20de%20Parceria%20para%20Desenvolvimento%20de%20Empreendimento%20Residencial.pdf" class="btn" target="_blank">Baixar Proposta em PDF</a>
         </section>
     </div>
