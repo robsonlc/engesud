@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Proposta de Parceria - U3 Urbanismo</title>
+    
+    <!-- Metatags Open Graph para pré-visualização no WhatsApp -->
+    <meta property="og:title" content="Proposta de Parceria - U3 Urbanismo em Maringá">
+    <meta property="og:description" content="Proposta de parceria para desenvolvimento de empreendimento residencial na área de 11 alqueires ao lado do Jardim Monique.">
+    <meta property="og:image" content="https://i.imgur.com/oJuJEKs.png">
+    <meta property="og:image:width" content="800">
+    <meta property="og:image:height" content="800">
+    <meta property="og:url" content="https://www.engesudsmart.com.br/ibipitanga/condou3">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Engesud Smart">
+    
+    <style>
+        :root {
+            --primary-color: #2C5282;
+            --secondary-color: #4A5568;
+            --accent-color: #48BB78;
+            --light-bg: #F7FAFC;
+            --dark-bg: #2D3748;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--secondary-color);
+            background: var(--light-bg);
+        }
+
+        header {
+            background: linear-gradient(rgba(44, 82, 130, 0.9), rgba(44, 82, 130, 0.9)),
+                        url('https://i.imgur.com/V0ARQXQ.png') center/cover;
+            height: 400px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: white;
+            padding: 2rem;
+        }
+
+        header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        .section {
+            background: white;
+            border-radius: 15px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+
+        h2 {
+            color: var(--primary-color);
+            margin-bottom: 1.5rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 3px solid var(--accent-color);
+        }
+
+        .map-container {
+            width: 100%;
+            margin: 1.5rem 0;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        iframe {
+            width: 100%;
+            height: 480px;
+            border: none;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+
+        .image-overlay {
+            margin: 1.5rem 0;
+            text-align: center;
+        }
+
+        .image-overlay img {
+            width: 100%;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+
+        .mermaid {
+            background: white;
+            padding: 2rem;
+            border-radius: 10px;
+            margin: 2rem auto;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            text-align: center;
+            display: flex;
+            justify-content: center;
+        }
+
+        .mermaid svg {
+            max-width: 100%;
+            margin: 0 auto;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 0.75rem 1.5rem;
+            background-color: var(--accent-color);
+            color: white;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: background-color 0.3s;
+            margin-top: 1rem;
+        }
+
+        .btn:hover {
+            background-color: #3e9b6f;
+        }
+
+        footer {
+            background: var(--dark-bg);
+            color: white;
+            padding: 3rem 2rem;
+            text-align: center;
+            margin-top: 2rem;
+        }
+
+        footer img {
+            height: 50px;
+            margin: 1rem 0;
+        }
+
+        .contact {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .contact a {
+            color: var(--accent-color);
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .contact a:hover {
+            text-decoration: underline;
+        }
+
+        @media (max-width: 768px) {
+            header {
+                height: 300px;
+            }
+
+            header h1 {
+                font-size: 2rem;
+            }
+
+            .container {
+                padding: 1rem;
+            }
+
+            .section {
+                padding: 1.5rem;
+            }
+        }
+
+        /* Adicione este CSS para o novo card */
+        .card {
+            background: linear-gradient(135deg, #1a365d 0%, #2C5282 100%);
+            color: white;
+            padding: 2rem;
+            border-radius: 15px;
+            margin: -50px auto 2rem;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+            max-width: 900px;
+            position: relative;
+        }
+
+        .card-inner {
+            position: relative;
+        }
+
+        .card h2 {
+            color: white;
+            text-align: center;
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
+            border: none;
+        }
+
+        .highlight-box {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            margin: 2rem 0;
+            flex-wrap: wrap;
+            gap: 2rem;
+        }
+
+        .value-item {
+            text-align: center;
+            flex: 1;
+            min-width: 200px;
+        }
+
+        .value-item.main-value {
+            transform: scale(1.1);
+        }
+
+        .value-item .value {
+            display: block;
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: #48BB78;
+            margin-bottom: 0.5rem;
+        }
+
+        .value-item .label {
+            font-size: 1rem;
+            color: #E2E8F0;
+        }
+
+        .location-highlight {
+            text-align: center;
+            font-size: 1.2rem;
+            color: #48BB78;
+            margin-top: 1.5rem;
+            padding-top: 1.5rem;
+            border-top: 1px solid rgba(255,255,255,0.1);
+        }
+
+        @media (max-width: 768px) {
+            .card {
+                margin: -30px 1rem 2rem;
+                padding: 1.5rem;
+            }
+
+            .highlight-box {
+                flex-direction: column;
+                gap: 1.5rem;
+            }
+
+            .value-item.main-value {
+                transform: scale(1.05);
+            }
+        }
+    </style>
+
+    <script type="module">
+        import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs';
+        mermaid.initialize({ 
+            startOnLoad: true,
+            theme: 'default',
+            securityLevel: 'loose',
+            htmlLabels: true
+        });
+    </script>
+</head>
+<body>
+    <header>
+        <h1>Proposta de Parceria - U3 Urbanismo</h1>
+    </header>
+
+    <div class="container">
+        <div class="card">
+            <div class="card-inner">
+                <h2>Resumo da Proposta</h2>
+                <div class="highlight-box">
+                    <div class="value-item">
+                        <span class="value">40%</span>
+                        <span class="label">Participação do Proprietário</span>
+                    </div>
+                    <div class="value-item main-value">
+                        <span class="value">R$ 43M</span>
+                        <span class="label">Expectativa de Receita</span>
+                    </div>
+                    <div class="value-item">
+                        <span class="value">11 alq</span>
+                        <span class="label">Área Total</span>
+                    </div>
+                </div>
+                <p class="location-highlight">Localização privilegiada ao lado do Jardim Monique</p>
+            </div>
+        </div>
+
+        <section class="section">
+            <h2>Introdução à Proposta</h2>
+            <p>Esta proposta visa apresentar uma oportunidade de parceria entre a U3 Urbanismo e os proprietários da área de 11 alqueires localizada ao lado do Jardim Monique, em Maringá-PR. Nosso objetivo é desenvolver um empreendimento residencial que valorize o potencial do terreno, aproveitando a proximidade com o bairro consolidado e os benefícios da infraestrutura existente.</p>
+        </section>
+
+        <section class="section">
+            <h2>Visão Geral da Área</h2>
+            <iframe src="https://www.google.com/maps/d/embed?mid=1sPK9iMdkrwZtv8mFFPOawngB6qoPSYM&ehbc=2E312F"></iframe>
+        </section>
+
+        <section class="section">
+            <h2>Croqui de Implantação</h2>
+            <div class="image-overlay">
+                <img src="https://i.imgur.com/DVzRr6i.png" alt="Croqui de Implantação do Loteamento">
+                <p>Layout do loteamento proposto sobreposto na imagem do Google Earth, destacando a ponte de travessia entre o empreendimento e o Jardim Monique, um loteamento já executado pela U3 Urbanismo.</p>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2>Fluxograma do Processo de Negociação e Desenvolvimento</h2>
+            <div class="mermaid">
+                graph TD;
+                    A[Proposta Comercial Aceita] --> B[Produção do Estudo de Viabilidade Completo];
+                    B --> C[Pesquisa de Mercado];
+                    B --> D[Estudo Urbanístico Detalhado];
+                    B --> E[Diligências Jurídicas e Ambientais];
+                    C --> F[Relatório Final do Estudo de Viabilidade];
+                    D --> F;
+                    E --> F;
+                    F --> G[Apresentação do Relatório ao Conselho da U3];
+                    G -->|Aprovado| H[Validação da Proposta e Início da Execução];
+                    G -->|Rejeitado| I[Revisão do Estudo e Ajustes na Proposta];
+                    I --> F;
+            </div>
+        </section>
+
+        <section class="section">
+            <h2>Detalhamento da Parceria</h2>
+            <p>A proposta de parceria considera três tipos de produtos no terreno, com valores de mercado diferenciados:</p>
+            <ul>
+                <li><strong>Laranja</strong>: Terreno mais valorizado (acesso restrito) - R$ 900/m²</li>
+                <li><strong>Amarelo</strong>: Terreno comum - R$ 600/m²</li>
+                <li><strong>Azul</strong>: Terreno comercial (avenida) - R$ 800/m²</li>
+            </ul>
+            <p>A proposta prevê uma participação de <strong>40% para o proprietário</strong> no VGV, com possibilidade de negociação de até 5% adicional dependendo da resposta do mercado e do desempenho inicial das vendas.</p>
+            <a href="https://www.engesudsmart.com.br/ibipitanga/condou3/Proposta%20de%20Parceria%20para%20Desenvolvimento%20de%20Empreendimento%20Residencial.pdf" class="btn" target="_blank">Baixar Proposta em PDF</a>
+        </section>
+    </div>
+
+    <footer>
+        <img src="https://i.imgur.com/6z1r7cp.jpeg" alt="Logotipo da Engesud">
+        <div class="contact">
+            <p>Robson Luis da Costa - Engenheiro Civil e Corretor de Imóveis - CRECI-PR nº 41.250</p>
+            <p>Contato: +55 (44) 99701-3489</p>
+            <p><a href="https://wa.me/4497013489?text=Vamos%20conversar%20sobre%20este%20assunto">Clique aqui para conversar pelo WhatsApp</a></p>
+        </div>
+    </footer>
+</body>
+</html>
