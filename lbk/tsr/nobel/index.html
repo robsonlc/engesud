@@ -29,6 +29,7 @@
             --text-color: #333;
             --bg-color: #f4f4f4;
             --white: #ffffff;
+            --header-overlay-color: rgba(0, 0, 0, 0.7);
         }
         
         body {
@@ -41,10 +42,28 @@
         }
         
         header {
-            background-color: var(--primary-color);
-            color: var(--white);
+            background: url('https://i.imgur.com/MeVL5dS.png') center/cover no-repeat;
+            position: relative;
             padding: 2rem;
             text-align: center;
+            color: var(--white);
+        }
+        
+        header::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: var(--header-overlay-color);
+            opacity: 0.7;
+            z-index: 1;
+        }
+        
+        header h1, header p {
+            position: relative;
+            z-index: 2;
         }
         
         h1, h2 {
@@ -119,6 +138,7 @@
         footer img {
             width: 180px;
             margin-bottom: 1rem;
+            border-radius: 10px;
         }
         
         footer p {
@@ -183,7 +203,7 @@
     </main>
 
     <footer>
-        <img src="https://i.imgur.com/3YKn2xW.png" alt="Engesud Logotipo">
+        <img src="https://i.imgur.com/3YKn2xW.png" alt="Engesud Logotipo" style="border-radius: 10px;">
         <p>Contato: Robson Luis da Costa</p>
         <p><a href="https://wa.me/4497013489?text=Vamos%20conversar%20sobre%20este%20assunto"><i class="fab fa-whatsapp"></i> Fale comigo no WhatsApp</a></p>
     </footer>
