@@ -1,248 +1,193 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Proposta de Parceria Estratégica para Desenvolvimento Imobiliário</title>
-
-    <!-- Open Graph para Pré-visualização WhatsApp -->
-    <meta property="og:title" content="Proposta de Parceria - Terreno Av. Carlos Borges" />
-    <meta property="og:description" content="A Engesud Smart apresenta uma oportunidade única de parceria para o desenvolvimento imobiliário do terreno na Av. Carlos Borges." />
-    <meta property="og:image" content="https://i.imgur.com/Oq6MxOX.png" />
-    <meta property="og:url" content="https://www.engesudsmart.com.br/lbk/tsr/CANALAM" />
-
+    <title>Área Comercial e Industrial - Maringá</title>
+    
+    <!-- Metatags Open Graph para pré-visualização no WhatsApp -->
+    <meta property="og:title" content="Área Comercial e Industrial em Maringá - Próximo ao Aeroporto">
+    <meta property="og:description" content="Excelente oportunidade para instalação de galpões em área de 20.720,48 m², com testada de 113,94 m, a apenas 600 reais/m².">
+    <meta property="og:image" content="https://i.imgur.com/gSC3jcN.png">
+    <meta property="og:image:width" content="800">
+    <meta property="og:image:height" content="800">
+    <meta property="og:url" content="https://www.engesudsmart.com.br/lbk/tsr/nobel/index.html">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Engesud Smart">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+    
+    <!-- Estilo da Página -->
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap');
+        :root {
+            --primary-color: #00796B;
+            --secondary-color: #004D40;
+            --text-color: #333;
+            --bg-color: #f4f4f4;
+            --white: #ffffff;
+        }
         
         body {
             font-family: 'Roboto', sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
             margin: 0;
             padding: 0;
-            background-color: #f8f9fa;
-            color: #333;
             line-height: 1.6;
         }
-        .container {
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 20px;
-            background-color: #ffffff;
-            box-shadow: 0 0 10px rgba(0,0,0,0.1);
-        }
-        h1, h2, h3 {
-            color: #2c3e50;
-            margin-top: 30px;
-        }
-        h1 {
-            font-size: 28px;
-            border-bottom: 2px solid #3498db;
-            padding-bottom: 10px;
-        }
-        h2 {
-            font-size: 24px;
-            color: #2980b9;
-        }
-        h3 {
-            font-size: 20px;
-            color: #16a085;
-        }
-        img {
-            max-width: 100%;
-            height: auto;
-            display: block;
-            margin: 20px auto;
-            border-radius: 8px;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-        }
-        ul {
-            padding-left: 20px;
-        }
-        li {
-            margin-bottom: 10px;
-        }
-        .highlight {
-            background-color: #f1c40f;
-            padding: 2px 5px;
-            border-radius: 3px;
-        }
-        .footer {
-            background-color: #34495e;
-            color: #ecf0f1;
-            padding: 15px;
+        
+        header {
+            background-color: var(--primary-color);
+            color: var(--white);
+            padding: 2rem;
             text-align: center;
-            font-size: 14px;
-            margin-top: 30px;
         }
-        .footer img {
-            max-width: 120px;
-            margin-bottom: 10px;
-            box-shadow: none;
+        
+        h1, h2 {
+            font-family: 'Montserrat', sans-serif;
+            margin-bottom: 1rem;
         }
-        .button {
-            display: inline-block;
-            padding: 10px 20px;
-            background-color: #25D366;
-            color: #fff;
-            text-decoration: none;
-            border-radius: 5px;
-            transition: background-color 0.3s;
+        
+        h1 {
+            font-size: 2.5rem;
+            font-weight: 700;
         }
-        .button:hover {
-            background-color: #128C7E;
+        
+        h2 {
+            font-size: 1.8rem;
+            color: var(--primary-color);
+            border-bottom: 2px solid var(--primary-color);
+            padding-bottom: 0.5rem;
+            margin-top: 2rem;
         }
-        .valor-estimado {
-            font-weight: bold;
-            color: #27ae60;
+        
+        main {
+            padding: 2rem;
+            max-width: 1000px;
+            margin: 2rem auto;
+            background-color: var(--white);
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
         }
-        .card-container {
+        
+        p {
+            margin-bottom: 1rem;
+        }
+        
+        ul {
+            list-style-type: none;
+            padding-left: 0;
+        }
+        
+        li {
+            margin-bottom: 0.5rem;
             display: flex;
-            flex-wrap: wrap;
-            justify-content: space-between;
-            gap: 20px;
+            align-items: center;
         }
-        .card {
-            background-color: #fff;
-            border-radius: 8px;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-            padding: 20px;
-            flex: 1 1 300px;
-            margin-bottom: 20px;
+        
+        li i {
+            color: var(--primary-color);
+            margin-right: 0.5rem;
         }
-        .card h3 {
-            margin-top: 0;
-            color: #2c3e50;
+        
+        .map-container, .image-container {
+            margin: 2rem 0;
         }
-        .card img {
-            max-width: 100%;
-            height: auto;
-            margin-bottom: 15px;
-        }
-        .card p {
-            margin: 10px 0;
-        }
-        @media (max-width: 768px) {
-            .card {
-                flex: 1 1 100%;
-            }
-        }
-        .map-container {
-            position: relative;
-            padding-bottom: 56.25%; /* Ratio 16:9 */
-            height: 0;
-            overflow: hidden;
-            margin-bottom: 20px;
-            border-radius: 8px;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-        }
-        .map-container iframe {
-            position: absolute;
-            top: 0;
-            left: 0;
+        
+        iframe, .image-container img {
             width: 100%;
-            height: 100%;
-            border: 0;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        iframe {
+            height: 450px;
+        }
+        
+        footer {
+            text-align: center;
+            margin-top: 3rem;
+            padding: 2rem;
+            background-color: var(--secondary-color);
+            color: var(--white);
+        }
+        
+        footer img {
+            width: 180px;
+            margin-bottom: 1rem;
+        }
+        
+        footer p {
+            margin: 0.5rem 0;
+            font-size: 0.9rem;
+        }
+        
+        footer a {
+            color: var(--white);
+            text-decoration: none;
+            font-weight: bold;
+            transition: opacity 0.3s ease;
+        }
+        
+        footer a:hover {
+            opacity: 0.8;
+        }
+        
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2rem;
+            }
+            
+            h2 {
+                font-size: 1.5rem;
+            }
+            
+            main {
+                padding: 1rem;
+            }
         }
     </style>
 </head>
 <body>
-    <div class="container">
-        <h1>Proposta de Parceria Estratégica para Desenvolvimento Imobiliário</h1>
 
-        <h2>Apresentação Engesud Smart</h2>
-        <p>A Engesud Smart, em sua expertise em intermediação de negócios imobiliários, tem o prazer de apresentar esta proposta de parceria estratégica para o desenvolvimento de um empreendimento imobiliário de alto potencial, maximizando o retorno financeiro para ambas as partes.</p>
+    <header>
+        <h1>Área Comercial e Industrial</h1>
+        <p>Próximo ao Aeroporto Regional de Maringá</p>
+    </header>
 
-        <h2>O Terreno e o Desafio</h2>
-        <p>O terreno situado na Av. Carlos Borges possui uma localização privilegiada, próximo a comércios, serviços e áreas verdes. No entanto, atualmente, o terreno possui uma diretriz viária que impede seu aproveitamento pleno. A <span class="highlight">supressão dessa diretriz</span> é crucial para viabilizar o empreendimento ideal e destravar o potencial máximo da área.</p>
-        <img src="https://i.imgur.com/mHBXipo.jpeg" alt="Croqui com a diretriz">
-
-        <h2>Localização do Terreno</h2>
-        <p>Veja abaixo a localização exata do terreno na Av. Carlos Borges. Esta localização privilegiada proporciona acesso fácil a diversos serviços e áreas comerciais, tornando o empreendimento uma excelente oportunidade de desenvolvimento:</p>
-        <div class="map-container">
-            <iframe src="https://www.google.com/maps/d/embed?mid=1gwAfGEfP9MAZH6_k7jYR5nk17KQRgRo&ehbc=2E312F"></iframe>
-        </div>
-
-        <h2>A Solução Proposta</h2>
-        <p>Estamos confiantes na viabilidade da supressão da diretriz viária. Para alcançar esse objetivo, propõe-se uma parceria estratégica com o proprietário do terreno, com o objetivo de desenvolver um empreendimento único. A divisão dos resultados se dará em regime de participação progressiva, iniciando em 62% para o proprietário e 38% para o desenvolvedor parceiro, a ser negociada conforme o cenário de desenvolvimento viabilizado. O desenvolvimento prevê a doação de 10% da área total do terreno (2.300 m²) para área institucional, conforme legislação municipal.</p>
-
-        <h2>Cenários de Desenvolvimento e Retorno Estimado para o Proprietário</h2>
-        <p>A Engesud Smart apresenta dois cenários de desenvolvimento, com diferentes potenciais de valorização e retorno estimado para o proprietário, a depender da aprovação da supressão da diretriz viária. Os números apresentados são sugestivos, cabendo a cada empresa desenvolvedora com potencial interesse analisar a oportunidade sob o prisma delas:</p>
-
-        <div class="card-container">
-            <div class="card">
-                <h3>Cenário 1</h3>
-                <img src="https://i.imgur.com/Xk8NXVz.jpeg" alt="Croqui Cenário 1">
-                <p><strong>Descrição:</strong> Supressão da diretriz viária, com verticalização na frente do terreno (limite de 120 metros de profundidade, conforme zoneamento) e loteamento padrão na área restante.</p>
-                <p><strong>Área Verticalizável:</strong></p>
-                <ul>
-                  <li>Área vendável de edificação: 23.760,00 m²</li>
-                  <li>Preço do metro quadrado do apartamento: R$ 8.500,00/m²</li>
-                  <li>Taxa de permuta mínima: 11%</li>
-                </ul>
-                <p><strong>Área de Loteamento Padrão:</strong></p>
-                <ul>
-                  <li>Área vendável de loteamento: 7.827,72 m²</li>
-                  <li>Preço do metro quadrado dos lotes: R$ 1.300,00/m²</li>
-                </ul>
-                <p><strong>Participação do Desenvolvedor no VGV:</strong> 40%</p>
-                <p><strong>Retorno Estimado (Proprietário):</strong> <span class="valor-estimado">R$ 19.434.981,60</span></p>
-            </div>
-
-            <div class="card">
-                <h3>Cenário 2</h3>
-                <img src="https://i.imgur.com/SL6JPYr.jpeg" alt="Croqui Cenário 2">
-                <p><strong>Descrição:</strong> Sem supressão da diretriz, com verticalização apenas nos lotes que tangenciam a avenida (área menor) e loteamento padrão na área restante.</p>
-                <p><strong>Área Verticalizável:</strong></p>
-                <ul>
-                  <li>Área vendável de edificação: 22.255,20 m²</li>
-                  <li>Preço do metro quadrado do apartamento: R$ 7.500,00/m²</li>
-                  <li>Taxa de permuta mínima: 11%</li>
-                </ul>
-                <p><strong>Área de Loteamento Padrão:</strong></p>
-                <ul>
-                  <li>Área vendável de loteamento: 7.827,72 m²</li>
-                  <li>Preço do metro quadrado dos lotes: R$ 1.300,00/m²</li>
-                </ul>
-                <p><strong>Participação do Desenvolvedor no VGV:</strong> 38%</p>
-                <p><strong>Retorno Estimado (Proprietário):</strong> <span class="valor-estimado">R$ 16.203.918,60</span></p>
-            </div>
-        </div>
-
-        <p><strong>Observação:</strong> Os valores acima são estimativas, calculadas com base nos dados fornecidos e nas projeções de mercado. O retorno final para o proprietário dependerá de diversos fatores, incluindo o VGV efetivamente realizado.</p>
-
-        <h3>Participação do Desenvolvedor no Desenvolvimento:</h3>
-        <p>A permuta será negociada com base em, no mínimo, 11%, tanto para a incorporação pelo desenvolvedor parceiro quanto por terceiros. A divisão do resultado da permuta (60/40 ou 62/38) incidirá sobre os 11% negociados. O desenvolvedor parceiro se compromete a buscar as melhores condições de permuta para maximizar o retorno financeiro do proprietário.</p>
-
-        <h2>Esquema da Estruturação do Projeto</h2>
-        <div class="mermaid">
-            graph TD;
-                A[Início da Parceria] --> B{Viabilidade da Supressão da Diretriz};
-                B -->|Aprovada| C[Desenvolvimento com Verticalização Completa];
-                B -->|Não Aprovada| D[Desenvolvimento com Verticalização Parcial];
-                C --> E[Divisão do Retorno: Proprietário 60%, Desenvolvedor 40%];
-                D --> F[Divisão do Retorno: Proprietário 62%, Desenvolvedor 38%];
-                E --> G[Finalização do Empreendimento];
-                F --> G;
-        </div>
-
-        <h2>Documentos da Proposta</h2>
-        <p>Para facilitar a análise da proposta, disponibilizamos o seguinte documento:</p>
+    <main>
+        <p>Apresentamos uma excelente oportunidade de investimento em uma área com vocação para a instalação de galpões, situada próximo ao Aeroporto Regional de Maringá. Esta área é ideal para empresas que buscam uma localização estratégica, com fácil acesso a importantes rodovias e infraestrutura adequada para operações logísticas.</p>
+        
+        <h2>Detalhes da Propriedade</h2>
         <ul>
-            <li><a href="https://www.engesudsmart.com.br/lbk/tsr/CANALAM/MOU%20-%20CANALAM%20-%20Rev.02.pdf" target="_blank" class="button">Modelo de MOU</a></li>
+            <li><i class="fas fa-map-marker-alt"></i> <strong>Localização:</strong> Zona 47, Gleba Ribeirão Pinguim, Maringá - PR</li>
+            <li><i class="fas fa-chart-area"></i> <strong>Área Total:</strong> 20.720,48 m²</li>
+            <li><i class="fas fa-ruler-horizontal"></i> <strong>Testada Principal:</strong> 113,94 m</li>
+            <li><i class="fas fa-tag"></i> <strong>Preço:</strong> R$ 600/m²</li>
+            <li><i class="fas fa-home"></i> <strong>Número Predial:</strong> nº 7.910, Rodovia PR 317</li>
         </ul>
 
-        <h2>Próximos Passos</h2>
-        <p>Após a análise da proposta e do modelo de MOU, a Engesud Smart convida o proprietário para uma reunião, a fim de discutir os termos e formalizar a parceria.</p>
-
-        <h2>Compromisso com o Sucesso da Parceria</h2>
-        <p>A Engesud Smart se compromete a fornecer total suporte ao longo de todas as fases do desenvolvimento, garantindo transparência, comunicação aberta e um trabalho colaborativo. Nosso objetivo é maximizar o potencial de valorização do terreno, proporcionando um retorno financeiro expressivo para o proprietário e uma parceria de sucesso com o desenvolvedor parceiro.</p>
-    </div>
-    <div class="footer">
-        <img src="https://i.imgur.com/6z1r7cp.jpeg" alt="Logotipo da Engesud">
-        <div class="contact">
-            <p>Robson Luis da Costa - Engenheiro Civil e Corretor de Imóveis - CRECI-PR nº 41.250</p>
-            <p>Contato: +55 (44) 99701-3489</p>
-            <p><a href="https://wa.me/44997013489?text=Vamos%20conversar%20sobre%20este%20projeto" target="_blank" class="button">Entre em Contato pelo WhatsApp</a></p>
+        <div class="map-container">
+            <h2>Localização no Google Maps</h2>
+            <iframe src="https://www.google.com/maps/d/embed?mid=1PPvGELk73RVzzq1cHJQOE6CgSQWe48k&ehbc=2E312F" allowfullscreen></iframe>
         </div>
-    </div>
+
+        <div class="image-container">
+            <h2>Georeferenciamento - Mapa de Identificação</h2>
+            <img src="https://i.imgur.com/TlY2lHr.png" alt="Mapa de Georeferenciamento - Maringá">
+        </div>
+    </main>
+
+    <footer>
+        <img src="https://i.imgur.com/3YKn2xW.png" alt="Engesud Logotipo">
+        <p>Contato: Robson Luis da Costa</p>
+        <p><a href="https://wa.me/4497013489?text=Vamos%20conversar%20sobre%20este%20assunto"><i class="fab fa-whatsapp"></i> Fale comigo no WhatsApp</a></p>
+    </footer>
+
+    <!-- Este conteúdo é protegido por direitos autorais creditados à Engesud Engenharia e Intermediação LTDA, inscrita no CNPJ 40.601.637/0001-58 -->
 </body>
 </html>
