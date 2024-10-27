@@ -13,8 +13,7 @@
 
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap');
-
-        /* Estilos Globais */
+        
         body {
             font-family: 'Roboto', sans-serif;
             margin: 0;
@@ -23,166 +22,125 @@
             color: #333;
             line-height: 1.6;
         }
-
-        /* Container Principal */
         .container {
-            max-width: 900px;
+            max-width: 800px;
             margin: 0 auto;
             padding: 20px;
             background-color: #ffffff;
-            box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
-            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
         }
-
-        /* Estilos de Cabeçalhos */
-        h1 {
-            font-size: 32px;
+        h1, h2, h3 {
             color: #2c3e50;
+            margin-top: 30px;
+        }
+        h1 {
+            font-size: 28px;
             border-bottom: 2px solid #3498db;
             padding-bottom: 10px;
         }
-
         h2 {
-            font-size: 26px;
+            font-size: 24px;
             color: #2980b9;
-            margin-top: 40px;
         }
-
         h3 {
-            font-size: 22px;
+            font-size: 20px;
             color: #16a085;
         }
-
-        /* Estilo de Texto */
-        p {
-            margin: 20px 0;
-            font-size: 16px;
-        }
-
-        ul {
-            padding-left: 20px;
-            margin: 10px 0;
-        }
-
-        li {
-            margin-bottom: 8px;
-        }
-
-        /* Destaques */
-        .highlight {
-            background-color: #f1c40f;
-            padding: 3px 7px;
-            border-radius: 3px;
-        }
-
-        /* Imagens Responsivas */
         img {
             max-width: 100%;
             height: auto;
             display: block;
             margin: 20px auto;
             border-radius: 8px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
         }
-
-        /* Botões */
-        .button {
-            display: inline-block;
-            padding: 12px 25px;
-            background-color: #25D366;
-            color: #fff;
-            text-decoration: none;
-            border-radius: 5px;
-            transition: background-color 0.3s;
-            font-size: 16px;
+        ul {
+            padding-left: 20px;
         }
-
-        .button:hover {
-            background-color: #128C7E;
+        li {
+            margin-bottom: 10px;
         }
-
-        /* Valor Estimado */
-        .valor-estimado {
-            font-weight: bold;
-            color: #27ae60;
+        .highlight {
+            background-color: #f1c40f;
+            padding: 2px 5px;
+            border-radius: 3px;
         }
-
-        /* Cartões de Cenários */
-        .card-container {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: space-between;
-            gap: 20px;
-            margin-top: 20px;
-        }
-
-        .card {
-            background-color: #ffffff;
-            border-radius: 10px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-            padding: 20px;
-            flex: 1 1 300px;
-            margin-bottom: 20px;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-
-        .card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
-        }
-
-        .card h3 {
-            margin-top: 0;
-            color: #2c3e50;
-        }
-
-        .card img {
-            max-width: 100%;
-            height: auto;
-            margin-bottom: 15px;
-            border-radius: 5px;
-        }
-
-        /* Rodapé */
         .footer {
             background-color: #34495e;
             color: #ecf0f1;
-            padding: 20px;
+            padding: 15px;
             text-align: center;
             font-size: 14px;
-            border-radius: 0 0 10px 10px;
+            margin-top: 30px;
         }
-
         .footer img {
             max-width: 120px;
             margin-bottom: 10px;
             box-shadow: none;
         }
-
-        .footer p, 
-        .footer a {
-            color: #ecf0f1;
-            margin: 5px 0;
-        }
-
-        .footer a {
+        .button {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #25D366;
+            color: #fff;
             text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s;
         }
-
-        /* Estilos Responsivos */
+        .button:hover {
+            background-color: #128C7E;
+        }
+        .valor-estimado {
+            font-weight: bold;
+            color: #27ae60;
+        }
+        .card-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            gap: 20px;
+        }
+        .card {
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            padding: 20px;
+            flex: 1 1 300px;
+            margin-bottom: 20px;
+        }
+        .card h3 {
+            margin-top: 0;
+            color: #2c3e50;
+        }
+        .card img {
+            max-width: 100%;
+            height: auto;
+            margin-bottom: 15px;
+        }
+        .card p {
+            margin: 10px 0;
+        }
         @media (max-width: 768px) {
-            .card-container {
-                flex-direction: column;
-            }
-
             .card {
                 flex: 1 1 100%;
             }
-
-            iframe {
-                width: 100%;
-                height: 300px;
-            }
+        }
+        .map-container {
+            position: relative;
+            padding-bottom: 56.25%; /* Ratio 16:9 */
+            height: 0;
+            overflow: hidden;
+            margin-bottom: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+        .map-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: 0;
         }
     </style>
 </head>
@@ -199,7 +157,9 @@
 
         <h2>Localização do Terreno</h2>
         <p>Veja abaixo a localização exata do terreno na Av. Carlos Borges. Esta localização privilegiada proporciona acesso fácil a diversos serviços e áreas comerciais, tornando o empreendimento uma excelente oportunidade de desenvolvimento:</p>
-        <iframe src="https://www.google.com/maps/d/embed?mid=1gwAfGEfP9MAZH6_k7jYR5nk17KQRgRo&ehbc=2E312F" width="640" height="480"></iframe>
+        <div class="map-container">
+            <iframe src="https://www.google.com/maps/d/embed?mid=1gwAfGEfP9MAZH6_k7jYR5nk17KQRgRo&ehbc=2E312F"></iframe>
+        </div>
 
         <h2>A Solução Proposta</h2>
         <p>Estamos confiantes na viabilidade da supressão da diretriz viária. Para alcançar esse objetivo, propõe-se uma parceria estratégica com o proprietário do terreno, com o objetivo de desenvolver um empreendimento único. A divisão dos resultados se dará em regime de participação progressiva, iniciando em 62% para o proprietário e 38% para o desenvolvedor parceiro, a ser negociada conforme o cenário de desenvolvimento viabilizado. O desenvolvimento prevê a doação de 10% da área total do terreno (2.300 m²) para área institucional, conforme legislação municipal.</p>
@@ -214,14 +174,14 @@
                 <p><strong>Descrição:</strong> Supressão da diretriz viária, com verticalização na frente do terreno (limite de 120 metros de profundidade, conforme zoneamento) e loteamento padrão na área restante.</p>
                 <p><strong>Área Verticalizável:</strong></p>
                 <ul>
-                    <li>Área vendável de edificação: 23.760,00 m²</li>
-                    <li>Preço do metro quadrado do apartamento: R$ 8.500,00/m²</li>
-                    <li>Taxa de permuta mínima: 11%</li>
+                  <li>Área vendável de edificação: 23.760,00 m²</li>
+                  <li>Preço do metro quadrado do apartamento: R$ 8.500,00/m²</li>
+                  <li>Taxa de permuta mínima: 11%</li>
                 </ul>
                 <p><strong>Área de Loteamento Padrão:</strong></p>
                 <ul>
-                    <li>Área vendável de loteamento: 7.827,72 m²</li>
-                    <li>Preço do metro quadrado dos lotes: R$ 1.300,00/m²</li>
+                  <li>Área vendável de loteamento: 7.827,72 m²</li>
+                  <li>Preço do metro quadrado dos lotes: R$ 1.300,00/m²</li>
                 </ul>
                 <p><strong>Participação do Desenvolvedor no VGV:</strong> 40%</p>
                 <p><strong>Retorno Estimado (Proprietário):</strong> <span class="valor-estimado">R$ 19.434.981,60</span></p>
@@ -233,14 +193,14 @@
                 <p><strong>Descrição:</strong> Sem supressão da diretriz, com verticalização apenas nos lotes que tangenciam a avenida (área menor) e loteamento padrão na área restante.</p>
                 <p><strong>Área Verticalizável:</strong></p>
                 <ul>
-                    <li>Área vendável de edificação: 22.255,20 m²</li>
-                    <li>Preço do metro quadrado do apartamento: R$ 7.500,00/m²</li>
-                    <li>Taxa de permuta mínima: 11%</li>
+                  <li>Área vendável de edificação: 22.255,20 m²</li>
+                  <li>Preço do metro quadrado do apartamento: R$ 7.500,00/m²</li>
+                  <li>Taxa de permuta mínima: 11%</li>
                 </ul>
                 <p><strong>Área de Loteamento Padrão:</strong></p>
                 <ul>
-                    <li>Área vendável de loteamento: 7.827,72 m²</li>
-                    <li>Preço do metro quadrado dos lotes: R$ 1.300,00/m²</li>
+                  <li>Área vendável de loteamento: 7.827,72 m²</li>
+                  <li>Preço do metro quadrado dos lotes: R$ 1.300,00/m²</li>
                 </ul>
                 <p><strong>Participação do Desenvolvedor no VGV:</strong> 38%</p>
                 <p><strong>Retorno Estimado (Proprietário):</strong> <span class="valor-estimado">R$ 16.203.918,60</span></p>
@@ -274,23 +234,15 @@
         <p>Após a análise da proposta e do modelo de MOU, a Engesud Smart convida o proprietário para uma reunião, a fim de discutir os termos e formalizar a parceria.</p>
 
         <h2>Compromisso com o Sucesso da Parceria</h2>
-        <p>A Engesud Smart se coloca à disposição para intermediar a negociação, visando a construção de uma parceria sólida e transparente. Acreditamos que a expertise dos parceiros desenvolvedores, aliada à localização privilegiada do terreno, criam as condições ideais para o sucesso do empreendimento.</p>
-
+        <p>A Engesud Smart se compromete a fornecer total suporte ao longo de todas as fases do desenvolvimento, garantindo transparência, comunicação aberta e um trabalho colaborativo. Nosso objetivo é maximizar o potencial de valorização do terreno, proporcionando um retorno financeiro expressivo para o proprietário e uma parceria de sucesso com o desenvolvedor parceiro.</p>
     </div>
-
     <div class="footer">
         <img src="https://i.imgur.com/6z1r7cp.jpeg" alt="Logotipo da Engesud">
         <div class="contact">
             <p>Robson Luis da Costa - Engenheiro Civil e Corretor de Imóveis - CRECI-PR nº 41.250</p>
             <p>Contato: +55 (44) 99701-3489</p>
-            <p><a href="https://wa.me/44997013489?text=Vamos%20conversar%20sobre%20este%20assunto" class="button">Conversar pelo WhatsApp</a></p>
+            <p><a href="https://wa.me/44997013489?text=Vamos%20conversar%20sobre%20este%20projeto" target="_blank" class="button">Entre em Contato pelo WhatsApp</a></p>
         </div>
     </div>
-
-    <!-- Mermaid Script -->
-    <script type="module">
-        import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs';
-        mermaid.initialize({ startOnLoad: true });
-    </script>
 </body>
 </html>
