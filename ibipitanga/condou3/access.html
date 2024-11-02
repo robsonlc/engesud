@@ -4,6 +4,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Proposta de Parceria - U3 Urbanismo</title>
+    
+    <!-- Metatags Open Graph para pré-visualização no WhatsApp -->
+    <meta property="og:title" content="Proposta de Parceria - U3 Urbanismo em Maringá">
+    <meta property="og:description" content="Proposta de parceria para desenvolvimento de empreendimento residencial na área de 11 alqueires ao lado do Jardim Munique.">
+    <meta property="og:image" content="https://i.imgur.com/oJuJEKs.png">
+    <meta property="og:image:width" content="800">
+    <meta property="og:image:height" content="800">
+    <meta property="og:url" content="https://www.engesudsmart.com.br/ibipitanga/condou3">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Engesud Smart">
 
     <style>
         :root {
@@ -70,11 +80,15 @@
             border-bottom: 3px solid var(--accent-color);
         }
 
+        .image-overlay {
+            margin: 1.5rem 0;
+            text-align: center;
+        }
+
         .image-overlay img {
             width: 100%;
             border-radius: 10px;
             box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-            margin-bottom: 1.5rem;
         }
 
         .btn-container {
@@ -96,6 +110,89 @@
         .btn:hover {
             background-color: #3e9b6f;
         }
+
+        footer {
+            background: var(--dark-bg);
+            color: white;
+            padding: 3rem 2rem;
+            text-align: center;
+            margin-top: 2rem;
+        }
+
+        footer img {
+            height: 57.5px;
+            margin: 1rem 0;
+            border-radius: 8px;
+        }
+
+        .contact {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .contact a {
+            color: var(--accent-color);
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .contact a:hover {
+            text-decoration: underline;
+        }
+
+        /* Estilo do Card de Resumo da Proposta */
+        .card {
+            background: var(--card-bg);
+            color: var(--card-text-color);
+            padding: 2rem;
+            border-radius: 15px;
+            margin: -50px auto 2rem;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+            max-width: 900px;
+            position: relative;
+            border: 2px solid var(--card-accent);
+        }
+
+        .highlight-box {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            margin: 2rem 0;
+            flex-wrap: wrap;
+            gap: 2rem;
+        }
+
+        .value-item {
+            text-align: center;
+            flex: 1;
+            min-width: 200px;
+        }
+
+        .value-item.main-value {
+            transform: scale(1.1);
+        }
+
+        .value-item .value {
+            display: block;
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: var(--card-accent);
+            margin-bottom: 0.5rem;
+        }
+
+        .value-item .label {
+            font-size: 1rem;
+            color: #E2E8F0;
+        }
+
+        .location-highlight {
+            text-align: center;
+            font-size: 1.2rem;
+            color: var(--card-accent);
+            margin-top: 1.5rem;
+            padding-top: 1.5rem;
+            border-top: 1px solid rgba(255,255,255,0.1);
+        }
     </style>
 </head>
 <body>
@@ -104,19 +201,40 @@
     </header>
 
     <div class="container">
+        <!-- Card de Resumo da Proposta -->
+        <div class="section card">
+            <p>Proposta de parceria para o desenvolvimento de um empreendimento residencial na área de 11 alqueires ao lado do Jardim Munique, em Maringá-PR.</p>
+            <div class="highlight-box">
+                <div class="value-item">
+                    <span class="value">40%</span>
+                    <span class="label">Participação do Proprietário</span>
+                </div>
+                <div class="value-item main-value">
+                    <span class="value">R$ 43M</span>
+                    <span class="label">Expectativa de Receita</span>
+                </div>
+                <div class="value-item">
+                    <span class="value">11 alq</span>
+                    <span class="label">Área Total</span>
+                </div>
+            </div>
+            <p class="location-highlight">Localização privilegiada ao lado do Jardim Munique</p>
+        </div>
+
         <!-- Contextualização da Proposta -->
         <section class="section">
             <h2>Contextualização da Proposta</h2>
-            <p>Após uma análise detalhada, a U3 Urbanismo identificou que a área ao lado do Jardim Monique em Maringá-PR possui grande potencial para desenvolvimento, sugerindo a criação de um loteamento com acesso controlado. Esta proposta busca adaptar-se melhor às demandas do mercado local, mantendo a valorização do terreno e o padrão de segurança esperado.</p>
+            <p>Após uma análise detalhada, a U3 Urbanismo identificou que a área ao lado do Jardim Munique em Maringá-PR possui grande potencial para desenvolvimento, sugerindo a criação de um loteamento com acesso controlado. Esta proposta busca adaptar-se melhor às demandas do mercado local, mantendo a valorização do terreno e o padrão de segurança esperado.</p>
+            <p>Embora o desejo inicial dos proprietários fosse um condomínio fechado, um loteamento com acesso controlado oferece uma flexibilidade maior, mantendo um nível elevado de segurança e exclusividade, ao mesmo tempo que reduz os custos de manutenção e permite uma valorização contínua e sustentável da área.</p>
         </section>
 
         <!-- Vantagens do Loteamento com Acesso Controlado -->
         <section class="section">
             <h2>Vantagens do Loteamento com Acesso Controlado</h2>
             <ul>
-                <li><strong>Acesso Flexível ao Mercado:</strong> Atrai uma base de clientes diversificada com facilidades de comercialização de lotes individuais.</li>
-                <li><strong>Infraestrutura Otimizada:</strong> Redução dos custos de manutenção e implantação em comparação com um condomínio fechado.</li>
-                <li><strong>Segurança e Valorização:</strong> Acesso controlado oferece um ambiente seguro e mantém a valorização, sem os custos adicionais de um condomínio fechado.</li>
+                <li><strong>Acesso Flexível ao Mercado:</strong> Atrai uma base de clientes diversificada com facilidades de comercialização de lotes individuais, tornando o empreendimento mais acessível e atrativo para diferentes perfis de compradores.</li>
+                <li><strong>Infraestrutura Otimizada:</strong> Redução dos custos de manutenção e implantação em comparação com um condomínio fechado, mantendo o valor do investimento mais competitivo.</li>
+                <li><strong>Segurança e Valorização:</strong> O acesso controlado proporciona um ambiente seguro, adequado para famílias e investidores, preservando a valorização sem os custos extras de um condomínio fechado.</li>
             </ul>
         </section>
 
@@ -144,17 +262,27 @@
         <!-- Experiência da U3 Urbanismo -->
         <section class="section">
             <h2>Experiência da U3 Urbanismo</h2>
-            <p>A U3 Urbanismo tem experiência em desenvolver projetos que atendem com sucesso às demandas do mercado. Um exemplo disso é o empreendimento Jardim Monique, onde a abordagem de desenvolvimento se mostrou bem-sucedida na região, gerando resultados sólidos e boa aceitação no mercado.</p>
+            <p>A U3 Urbanismo tem experiência em desenvolver projetos que atendem com sucesso às demandas do mercado. Um exemplo disso é o empreendimento Jardim Munique, onde a abordagem de desenvolvimento se mostrou bem-sucedida na região, gerando resultados sólidos e boa aceitação no mercado.</p>
+            <p>Nosso foco é sempre criar empreendimentos que se integram à comunidade local, garantindo segurança, conforto e um alto potencial de valorização. A experiência adquirida nos permite adaptar soluções que atendam às expectativas de todos os envolvidos, especialmente dos proprietários do terreno.</p>
         </section>
 
         <!-- Próximos Passos -->
         <section class="section">
             <h2>Próximos Passos</h2>
-            <p>Estamos abertos para discutir essa proposta em detalhes e explorar as possibilidades dessa parceria. Sinta-se à vontade para agendar uma conversa conosco, onde podemos tirar dúvidas e apresentar as projeções deste modelo de loteamento com acesso controlado.</p>
+            <p>Estamos abertos para discutir essa proposta em detalhes e explorar as possibilidades dessa parceria. Sinta-se à vontade para agendar uma conversa conosco, onde podemos tirar dúvidas e apresentar as projeções deste modelo de loteamento com acesso controlado. Estamos confiantes de que, ao optar por esta abordagem, todos os envolvidos terão benefícios a longo prazo, tanto em termos de valorização do terreno quanto na viabilidade comercial.</p>
             <div class="btn-container">
                 <a href="https://wa.me/44997013489?text=Gostaria%20de%20conversar%20sobre%20a%20proposta%20do%20loteamento%20com%20acesso%20controlado." class="btn" target="_blank">Conversar pelo WhatsApp</a>
             </div>
         </section>
     </div>
+
+    <footer>
+        <img src="https://i.imgur.com/6z1r7cp.jpeg" alt="Logotipo da Engesud">
+        <div class="contact">
+            <p>Robson Luis da Costa - Engenheiro Civil e Corretor de Imóveis - CRECI-PR nº 41.250</p>
+            <p>Contato: +55 (44) 99701-3489</p>
+            <p><a href="https://wa.me/44997013489?text=Vamos%20conversar%20sobre%20este%20assunto">Clique aqui para conversar pelo WhatsApp</a></p>
+        </div>
+    </footer>
 </body>
 </html>
