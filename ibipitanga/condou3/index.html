@@ -51,6 +51,7 @@
             text-align: center;
             color: white;
             padding: 2rem;
+            position: relative;
         }
 
         header h1 {
@@ -67,18 +68,18 @@
             border-radius: 8px;
             text-decoration: none;
             font-weight: bold;
-            transition: background-color 0.3s;
-            margin-top: 1rem;
+            transition: all 0.3s;
             text-align: center;
         }
 
         .btn:hover {
             background-color: #3e9b6f;
+            transform: translateY(-3px);
         }
 
-        .btn-container-header {
+        .btn-container {
             text-align: center;
-            margin-top: 1rem;
+            margin-top: 2rem;
         }
 
         .container {
@@ -189,85 +190,75 @@
             .section {
                 padding: 1.5rem;
             }
+
+            .btn {
+                padding: 0.6rem 1.2rem;
+                font-size: 0.9rem;
+            }
         }
 
         /* Estilo do Card de Resumo da Proposta */
         .card {
-            background: var(--card-bg);
-            color: var(--card-text-color);
-            padding: 1.6rem;
-            border-radius: 15px;
-            margin: -40px auto 2rem;
-            box-shadow: 0 8px 20px rgba(0,0,0,0.2);
-            max-width: 720px;
+            background: linear-gradient(135deg, #1a365d, #2c5282);
+            color: white;
+            padding: 2.5rem;
+            border-radius: 20px;
+            margin: -60px auto 3rem;
+            box-shadow: 0 15px 30px rgba(0,0,0,0.2);
+            max-width: 800px;
             position: relative;
-            border: 2px solid var(--card-accent);
-        }
-
-        .card h2 {
-            color: var(--card-text-color);
-            text-align: center;
-            font-size: 2rem;
-            margin-bottom: 1.5rem;
-            border: none;
-        }
-
-        .card p {
-            font-size: 1.1rem;
-            margin-bottom: 1rem;
-            text-align: center;
         }
 
         .highlight-box {
-            display: flex;
-            justify-content: space-around;
-            align-items: center;
-            margin: 2rem 0;
-            flex-wrap: wrap;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
             gap: 2rem;
+            margin: 2.5rem 0;
         }
 
         .value-item {
             text-align: center;
-            flex: 1;
-            min-width: 200px;
+            padding: 1.5rem;
+            background: rgba(255,255,255,0.1);
+            border-radius: 15px;
+            transition: transform 0.3s ease;
         }
 
-        .value-item.main-value {
-            transform: scale(1.1);
+        .value-item:hover {
+            transform: translateY(-5px);
         }
 
-        .value-item .value {
+        .value {
+            font-size: 2.8rem;
+            font-weight: 800;
+            color: #4299e1;
+            margin-bottom: 0.75rem;
             display: block;
-            font-size: 2.5rem;
-            font-weight: bold;
-            color: var(--card-accent);
-            margin-bottom: 0.5rem;
         }
 
-        .value-item .label {
-            font-size: 1rem;
-            color: #E2E8F0;
+        .label {
+            font-size: 1.1rem;
+            color: rgba(255,255,255,0.9);
         }
 
         .location-highlight {
             text-align: center;
-            font-size: 1.2rem;
-            color: var(--card-accent);
-            margin-top: 1.5rem;
-            padding-top: 1.5rem;
-            border-top: 1px solid rgba(255,255,255,0.1);
+            font-size: 1.3rem;
+            color: #4299e1;
+            margin-top: 1.8rem;
+            padding-top: 1.8rem;
+            border-top: 1px solid rgba(255,255,255,0.15);
         }
 
         @media (max-width: 768px) {
             .card {
-                margin: -30px 1rem 2rem;
-                padding: 1.2rem;
+                margin: -40px 1rem 2rem;
+                padding: 1.5rem;
             }
             
             .highlight-box {
                 flex-direction: column;
-                gap: 1.5rem;
+                gap: 1.8rem;
             }
             
             .value-item.main-value {
@@ -275,62 +266,78 @@
             }
         }
 
-        /* Estilo do Cronograma */
-        .timeline {
-            position: relative;
+        /* Estilo do Cronograma Responsivo */
+        .accordion {
             max-width: 800px;
             margin: 0 auto;
+            border-radius: 10px;
+            overflow: hidden;
         }
 
-        .timeline::after {
-            content: '';
-            position: absolute;
-            width: 6px;
+        .accordion-item {
+            border-bottom: 1px solid #ddd;
+        }
+
+        .accordion-header {
+            width: 100%;
+            padding: 1rem;
             background-color: var(--primary-color);
-            top: 0;
-            bottom: 0;
-            left: 50%;
-            margin-left: -3px;
-        }
-
-        .timeline-item {
-            padding: 10px 40px;
-            position: relative;
-            background-color: inherit;
-            width: 50%;
-        }
-
-        .timeline-item.left {
-            left: 0;
-        }
-
-        .timeline-item.right {
-            left: 50%;
-        }
-
-        .timeline-item::after {
-            content: ' ';
-            position: absolute;
-            width: 25px;
-            height: 25px;
-            right: -17px;
-            background-color: white;
-            border: 4px solid var(--primary-color);
-            top: 15px;
-            border-radius: 50%;
-            z-index: 1;
-        }
-
-        .timeline-item.right::after {
-            left: -17px;
-        }
-
-        .timeline-content {
-            padding: 20px;
-            background-color: var(--card-bg);
-            position: relative;
-            border-radius: 6px;
             color: white;
+            text-align: left;
+            border: none;
+            outline: none;
+            font-size: 1.2rem;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .accordion-header:hover {
+            background-color: #1d3e6e;
+        }
+
+        .accordion-content {
+            display: none;
+            padding: 0.75rem;
+            background-color: #f9f9f9;
+            font-size: 0.9rem;
+        }
+
+        .accordion-content p {
+            margin: 0;
+        }
+
+        .accordion-item.active .accordion-content {
+            display: block;
+        }
+
+        /* Estilo do Produto e Potencial de Valor */
+        .product-value-details {
+            background: var(--light-bg);
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
+            margin: 1.5rem 0;
+        }
+
+        .product-value-details ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .product-value-details ul li {
+            background: var(--secondary-color);
+            color: white;
+            margin: 0.75rem 0;
+            padding: 0.75rem;
+            border-radius: 8px;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+        }
+
+        .product-value-details ul li strong {
+            color: var(--accent-color);
+            margin-right: 0.5rem;
         }
     </style>
 
@@ -342,14 +349,21 @@
             securityLevel: 'loose',
             htmlLabels: true
         });
+
+        document.addEventListener('DOMContentLoaded', function () {
+            const accordionHeaders = document.querySelectorAll('.accordion-header');
+            accordionHeaders.forEach(header => {
+                header.addEventListener('click', function () {
+                    const item = this.parentElement;
+                    item.classList.toggle('active');
+                });
+            });
+        });
     </script>
 </head>
 <body>
     <header>
         <h1>Empreendimento Residencial - Ibipitanga</h1>
-        <div class="btn-container-header">
-            <a href="https://www.engesudsmart.com.br/ibipitanga/condou3/access" class="btn" target="_blank">Loteamento de Acesso Controlado</a>
-        </div>
     </header>
 
     <div class="container">
@@ -390,7 +404,20 @@
             <div class="image-overlay">
                 <img src="https://i.imgur.com/kSiVC37.png" alt="Croqui de Implantação do Loteamento">
                 <p>Layout do loteamento proposto sobreposto na imagem do Google Earth, destacando a ponte de travessia entre o empreendimento e o Jardim Munique, um loteamento já executado pela U3 Urbanismo.</p>
+                <div class="btn-container">
+                    <a href="https://www.engesudsmart.com.br/ibipitanga/condou3/access" class="btn" target="_blank">Loteamento de Acesso Controlado</a>
+                </div>
             </div>
+        </section>
+
+        <section class="product-value-details">
+            <h2>Tipos de Terrenos e Potencial de Valor</h2>
+            <p>Os terrenos deste empreendimento foram cuidadosamente planejados para atender diferentes perfis de compradores, oferecendo alto potencial de valorização:</p>
+            <ul>
+                <li><strong>Laranja:</strong> Terreno mais valorizado (acesso restrito) - R$ 900/m²</li>
+                <li><strong>Amarelo:</strong> Terreno comum - R$ 600/m²</li>
+                <li><strong>Azul:</strong> Terreno comercial (avenida) - R$ 800/m²</li>
+            </ul>
         </section>
 
         <section class="section">
@@ -410,30 +437,59 @@
                     I --> F;
             </div>
         </section>
-
-        <section class="section">
-            <h2>Detalhamento da Parceria</h2>
-            <p>A proposta de parceria considera três tipos de produtos no terreno, com valores de mercado diferenciados:</p>
-            <ul>
-                <li><strong>Laranja</strong>: Terreno mais valorizado (acesso restrito) - R$ 900/m²</li>
-                <li><strong>Amarelo</strong>: Terreno comum - R$ 600/m²</li>
-                <li><strong>Azul</strong>: Terreno comercial (avenida) - R$ 800/m²</li>
-            </ul>
-            
-        </section>
-
+        
         <section class="section">
             <h2>Cronograma Proposto</h2>
-            <p><strong>Fase 1 - Estudo de Viabilidade:</strong> 3 meses para levantamento e análise completa da área.</p>
-            <p><strong>Fase 2 - Aprovação e Licenciamento:</strong> 6 a 9 meses para obtenção de todas as licenças necessárias.</p>
-            <p><strong>Fase 3 - Desenvolvimento do Projeto:</strong> 4 meses para detalhamento e aprovação do projeto urbanístico.</p>
-            <p><strong>Fase 4 - Obras de Infraestrutura:</strong> 12 a 18 meses para execução das obras de infraestrutura e preparação dos lotes.</p>
-            <p><strong>Fase 5 - Comercialização:</strong> A comercialização dos lotes pode iniciar paralelamente às obras de infraestrutura, conforme avançam as etapas.</p>
+            <div class="accordion">
+                <div class="accordion-item">
+                    <button class="accordion-header">Fase 1 - Estudo de Viabilidade</button>
+                    <div class="accordion-content">
+                        <p>3 meses para levantamento e análise completa da área.</p>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <button class="accordion-header">Fase 2 - Aprovação e Licenciamento</button>
+                    <div class="accordion-content">
+                        <p>6 a 9 meses para obtenção de todas as licenças necessárias.</p>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <button class="accordion-header">Fase 3 - Desenvolvimento do Projeto</button>
+                    <div class="accordion-content">
+                        <p>4 meses para detalhamento e aprovação do projeto urbanístico.</p>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <button class="accordion-header">Fase 4 - Obras de Infraestrutura</button>
+                    <div class="accordion-content">
+                        <p>12 a 18 meses para execução das obras de infraestrutura e preparação dos lotes.</p>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <button class="accordion-header">Fase 5 - Comercialização</button>
+                    <div class="accordion-content">
+                        <p>A comercialização dos lotes pode iniciar paralelamente às obras de infraestrutura, conforme avançam as etapas.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Experiência da U3 Urbanismo -->
+        <section class="section">
+            <h2>Experiência da U3 Urbanismo</h2>
+            <p>A U3 Urbanismo tem experiência em desenvolver projetos que atendem com sucesso às demandas do mercado. Um exemplo disso é o empreendimento Jardim Munique, onde a abordagem de desenvolvimento se mostrou bem-sucedida na região, gerando resultados sólidos e boa aceitação no mercado.</p>
+            <p>Nosso foco é sempre criar empreendimentos que se integram à comunidade local, garantindo segurança, conforto e um alto potencial de valorização. A experiência adquirida nos permite adaptar soluções que atendam às expectativas de todos os envolvidos, especialmente dos proprietários do terreno.</p>
+        </section>
+
+        <!-- Próximos Passos -->
+        <section class="section">
+            <h2>Próximos Passos</h2>
+            <p>Estamos disponíveis para discutir a proposta em detalhes e explorar as possibilidades da parceria. Entre em contato conosco para tirar dúvidas e agendar uma reunião.</p>
         </section>
     </div>
 
-    <footer>
-        <img src="https://i.imgur.com/6z1r7cp.jpeg" alt="Logotipo da Engesud" style="height: 80px; border-radius: 8px;">
+   <footer>
+        <img src="https://i.imgur.com/6z1r7cp.jpeg" alt="Logotipo da Engesud">
         <div class="contact">
             <p>Robson Luis da Costa - Engenheiro Civil e Corretor de Imóveis - CRECI-PR nº 41.250</p>
             <p>Contato: +55 (44) 99701-3489</p>
