@@ -43,7 +43,7 @@
         header {
             background: linear-gradient(rgba(44, 82, 130, 0.9), rgba(44, 82, 130, 0.9)),
                         url('https://i.imgur.com/V0ARQXQ.png') center/cover;
-            height: 300px;
+            height: 250px;
             display: flex;
             flex-direction: column;
             justify-content: center;
@@ -140,65 +140,6 @@
         .contact a:hover {
             text-decoration: underline;
         }
-
-        /* Estilo do Card de Resumo da Proposta */
-        .card {
-            background: var(--card-bg);
-            color: var(--card-text-color);
-            padding: 2rem;
-            border-radius: 15px;
-            margin: -50px auto 2rem;
-            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
-            max-width: 900px;
-            position: relative;
-            border: 2px solid var(--card-accent);
-            text-align: center;
-            font-size: 1rem;
-        }
-
-        .highlight-box {
-            display: flex;
-            justify-content: space-around;
-            align-items: center;
-            margin: 2rem 0;
-            flex-wrap: wrap;
-            gap: 2rem;
-            text-align: center;
-        }
-
-        .value-item {
-            text-align: center;
-            flex: 1;
-            min-width: 200px;
-        }
-
-        .value-item.main-value {
-            transform: scale(1.1);
-        }
-
-        .value-item .value {
-            display: block;
-            font-size: 2rem;
-            font-weight: bold;
-            color: var(--card-accent);
-            margin-bottom: 0.5rem;
-            text-align: center;
-        }
-
-        .value-item .label {
-            font-size: 1rem;
-            color: #E2E8F0;
-            text-align: center;
-        }
-
-        .location-highlight {
-            text-align: center;
-            font-size: 1.2rem;
-            color: var(--card-accent);
-            margin-top: 1.5rem;
-            padding-top: 1.5rem;
-            border-top: 1px solid rgba(255,255,255,0.1);
-        }
     </style>
 </head>
 <body>
@@ -207,26 +148,6 @@
     </header>
 
     <div class="container">
-        <!-- Card de Resumo da Proposta -->
-        <div class="section card">
-            <p>Proposta de parceria para o desenvolvimento de um empreendimento residencial na área de 11 alqueires ao lado do Jardim Munique, em Maringá-PR.</p>
-            <div class="highlight-box">
-                <div class="value-item">
-                    <span class="value">40%</span>
-                    <span class="label">Participação do Proprietário</span>
-                </div>
-                <div class="value-item main-value">
-                    <span class="value">R$ 43M</span>
-                    <span class="label">Expectativa de Receita</span>
-                </div>
-                <div class="value-item">
-                    <span class="value">11 alq</span>
-                    <span class="label">Área Total</span>
-                </div>
-            </div>
-            <p class="location-highlight">Localização privilegiada ao lado do Jardim Munique</p>
-        </div>
-
         <!-- Contextualização da Proposta -->
         <section class="section">
             <h2>Contextualização da Proposta</h2>
@@ -272,17 +193,20 @@
             <p>Nosso foco é sempre criar empreendimentos que se integram à comunidade local, garantindo segurança, conforto e um alto potencial de valorização. A experiência adquirida nos permite adaptar soluções que atendam às expectativas de todos os envolvidos, especialmente dos proprietários do terreno.</p>
         </section>
 
-               <!-- Próximos Passos -->
+        <!-- Próximos Passos -->
         <section class="section">
             <h2>Próximos Passos</h2>
             <p>Estamos disponíveis para discutir a proposta em detalhes e explorar as possibilidades da parceria. Entre em contato conosco para tirar dúvidas e agendar uma reunião.</p>
-            <footer>
-    <img src="https://i.imgur.com/6z1r7cp.jpeg" alt="Logotipo da Engesud">
-    <div class="contact">
-        <p>Robson Luis da Costa - Engenheiro Civil e Corretor de Imóveis - CRECI-PR nº 41.250</p>
-        <p>Contato: +55 (44) 99701-3489</p>
-        <p><a href="https://wa.me/44997013489?text=Vamos%20conversar%20sobre%20este%20assunto">Clique aqui para conversar pelo WhatsApp</a></p>
+        </section>
     </div>
-</footer>
+
+    <footer>
+        <img src="https://i.imgur.com/6z1r7cp.jpeg" alt="Logotipo da Engesud">
+        <div class="contact">
+            <p>Robson Luis da Costa - Engenheiro Civil e Corretor de Imóveis - CRECI-PR nº 41.250</p>
+            <p>Contato: +55 (44) 99701-3489</p>
+            <p><a href="https://wa.me/44997013489?text=Vamos%20conversar%20sobre%20este%20assunto">Clique aqui para conversar pelo WhatsApp</a></p>
+        </div>
+    </footer>
 </body>
 </html>
