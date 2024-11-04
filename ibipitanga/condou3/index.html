@@ -93,7 +93,7 @@
             border-radius: 15px;
             padding: 2rem;
             margin-bottom: 2rem;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.1);
         }
 
         h2 {
@@ -126,7 +126,7 @@
         .image-overlay img {
             width: 100%;
             border-radius: 10px;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            box-shadow: 0 6px 15px rgba(0,0,0,0.1);
         }
 
         .mermaid {
@@ -134,7 +134,7 @@
             padding: 2rem;
             border-radius: 10px;
             margin: 2rem auto;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.1);
             text-align: center;
             display: flex;
             justify-content: center;
@@ -148,30 +148,42 @@
         footer {
             background: var(--dark-bg);
             color: white;
-            padding: 3rem 2rem;
+            padding: 4rem 2rem;
             text-align: center;
-            margin-top: 2rem;
+            margin-top: 3rem;
+            width: 100%;
+            position: relative;
+            left: 0;
         }
 
         footer img {
-            height: 57.5px;
-            margin: 1rem 0;
+            height: 80px;
+            margin: 1.5rem 0;
             border-radius: 8px;
+            transition: transform 0.3s ease;
+        }
+
+        footer img:hover {
+            transform: scale(1.05);
         }
 
         .contact {
             max-width: 600px;
             margin: 0 auto;
+            text-align: center;
+            line-height: 1.8;
         }
 
         .contact a {
             color: var(--accent-color);
             text-decoration: none;
             font-weight: bold;
+            transition: color 0.3s;
         }
 
         .contact a:hover {
             text-decoration: underline;
+            color: #3e9b6f;
         }
 
         @media (max-width: 768px) {
@@ -315,8 +327,8 @@
             background: var(--light-bg);
             padding: 2rem;
             border-radius: 10px;
-            box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
-            margin: 1.5rem 0;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+            margin: 2.5rem 0;
         }
 
         .product-value-details ul {
