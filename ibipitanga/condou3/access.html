@@ -55,7 +55,7 @@
         }
 
         header h1 {
-            font-size: 2.5rem;
+            font-size: 2rem;
             margin-bottom: 1rem;
             text-shadow: 3px 3px 6px rgba(0,0,0,0.4);
         }
@@ -69,8 +69,8 @@
         .section {
             background: white;
             border-radius: 15px;
-            padding: 2.5rem;
-            margin-bottom: 2.5rem;
+            padding: 2rem;
+            margin-bottom: 2rem;
             box-shadow: 0 8px 20px rgba(0,0,0,0.1);
         }
 
@@ -79,7 +79,7 @@
             margin-bottom: 1.5rem;
             padding-bottom: 0.5rem;
             border-bottom: 3px solid var(--accent-color);
-            font-size: 2.2rem;
+            font-size: 1.8rem;
         }
 
         .image-overlay {
@@ -101,7 +101,7 @@
 
         .btn {
             display: inline-block;
-            padding: 1rem 2rem;
+            padding: 0.75rem 1.5rem;
             background-color: var(--accent-color);
             color: white;
             border-radius: 10px;
@@ -181,6 +181,38 @@
         ul li strong {
             color: var(--accent-color);
             margin-right: 0.5rem;
+        }
+
+        @media (max-width: 768px) {
+            header {
+                height: 180px;
+                padding: 1.5rem;
+            }
+
+            header h1 {
+                font-size: 1.8rem;
+            }
+
+            .container {
+                padding: 1.5rem;
+            }
+
+            .section {
+                padding: 1.5rem;
+            }
+
+            h2 {
+                font-size: 1.5rem;
+            }
+
+            .btn {
+                padding: 0.6rem 1.2rem;
+                font-size: 0.9rem;
+            }
+
+            ul li {
+                padding: 0.75rem;
+            }
         }
     </style>
 </head>
