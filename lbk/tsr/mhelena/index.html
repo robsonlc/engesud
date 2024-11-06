@@ -85,6 +85,11 @@
         .logo {
             width: 150px;
             margin-bottom: 10px;
+            transition: transform 0.3s ease, filter 0.3s ease;
+        }
+        .logo:hover {
+            transform: scale(1.1);
+            filter: brightness(1.2);
         }
         @media (max-width: 768px) {
             .container {
