@@ -9,98 +9,158 @@
     <meta property="og:description" content="Área de 44 alqueires disponível para desenvolvimento de condomínio horizontal fechado." />
     <title>Oportunidade de Desenvolvimento - Área em Ibipitanga</title>
     <style>
+        :root {
+            --primary-color: #4CAF50;
+            --secondary-color: #388e3c;
+            --text-color: #333;
+            --light-bg: #f9f9f9;
+            --border-radius: 12px;
+            --box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+        }
+
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
+
         body {
-            font-family: Arial, sans-serif;
-            line-height: 1.6;
-            color: #333;
-            background-color: #f9f9f9;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.8;
+            color: var(--text-color);
+            background-color: var(--light-bg);
         }
+
         header {
-            background: url('https://i.imgur.com/3jHnO8C.png') center/cover no-repeat;
-            height: 200px;
-            opacity: 0.8;
+            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), 
+                        url('https://i.imgur.com/3jHnO8C.png') center/cover no-repeat;
+            height: 300px;
             display: flex;
             align-items: center;
             justify-content: center;
             color: white;
             text-align: center;
+            position: relative;
         }
+
         header h1 {
-            font-size: 2.5rem;
-            margin: 0;
+            font-size: 3rem;
+            font-weight: 700;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+            padding: 0 20px;
         }
+
         .content {
-            max-width: 900px;
-            margin: 0 auto;
-            padding: 20px;
+            max-width: 1100px;
+            margin: -50px auto 0;
+            padding: 40px;
             background-color: white;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            box-shadow: var(--box-shadow);
+            border-radius: var(--border-radius);
+            position: relative;
         }
+
         h2 {
-            font-size: 1.8rem;
-            margin-bottom: 10px;
-            color: #4a4a4a;
+            font-size: 2.2rem;
+            margin-bottom: 20px;
+            color: var(--secondary-color);
+            border-bottom: 3px solid var(--primary-color);
+            padding-bottom: 10px;
         }
+
         p {
-            margin: 10px 0;
-            font-size: 1rem;
-            color: #666;
+            margin: 15px 0;
+            font-size: 1.1rem;
+            color: #555;
         }
+
         .details {
-            margin: 20px 0;
-            padding: 15px;
-            background-color: #f4f6f8;
-            border-radius: 8px;
+            margin: 30px 0;
+            padding: 25px;
+            background-color: #f8f9fa;
+            border-radius: var(--border-radius);
+            border-left: 5px solid var(--primary-color);
         }
-        .details p {
-            margin: 5px 0;
-        }
+
         .map {
-            margin: 20px 0;
+            margin: 40px 0;
             text-align: center;
         }
+
         iframe, img {
             max-width: 100%;
-            border-radius: 8px;
-            border: 1px solid #ddd;
+            border-radius: var(--border-radius);
+            box-shadow: var(--box-shadow);
+            margin: 20px 0;
         }
+
         .next-steps {
-            margin-top: 30px;
-            padding: 20px;
-            background-color: #e8f5e9;
-            border-radius: 8px;
-        }
-        .next-steps h2 {
-            color: #388e3c;
-        }
-        footer {
             margin-top: 40px;
-            padding: 20px;
-            background: #333;
+            padding: 30px;
+            background-color: #e8f5e9;
+            border-radius: var(--border-radius);
+            border: 2px solid var(--primary-color);
+        }
+
+        footer {
+            margin-top: 60px;
+            padding: 40px 20px;
+            background: linear-gradient(to right, #2c3e50, #3498db);
             color: white;
             text-align: center;
-            border-top: 4px solid #4CAF50;
         }
+
         footer img {
-            max-width: 120px;
-            margin-bottom: 10px;
+            max-width: 150px;
+            margin-bottom: 20px;
+            border-radius: 10px;
         }
+
+        footer .contact {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
         footer .contact p {
-            margin: 5px 0;
-            font-size: 0.9rem;
+            margin: 10px 0;
+            font-size: 1.1rem;
+            color: white;
         }
+
         footer a {
-            color: #4CAF50;
+            color: white;
             text-decoration: none;
             font-weight: bold;
+            background-color: var(--primary-color);
+            padding: 10px 20px;
+            border-radius: 25px;
+            display: inline-block;
+            margin-top: 15px;
+            transition: all 0.3s ease;
         }
+
         footer a:hover {
-            text-decoration: underline;
+            background-color: var(--secondary-color);
+            transform: translateY(-2px);
+        }
+
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 2rem;
+            }
+
+            .content {
+                padding: 20px;
+                margin-top: -30px;
+            }
+
+            h2 {
+                font-size: 1.8rem;
+            }
+
+            p {
+                font-size: 1rem;
+            }
         }
     </style>
 </head>
@@ -123,6 +183,7 @@
             <h2>Localização no Google Maps</h2>
             <iframe src="https://www.google.com/maps/d/embed?mid=1OP-kbpVcnrOUdmi9-G5gxKVo64eM8dw&ehbc=2E312F" width="640" height="480"></iframe>
             <p><img src="https://i.imgur.com/DWc47CX.png" alt="Imagem com localização no Google Maps das áreas"></p>
+            <p><img src="https://www.engesudsmart.com.br/lbk/tsr/edi/Esq.%2044%20alq.svg" alt="Esquema da área de 44 alqueires"></p>
         </div>
 
         <div class="details">
@@ -145,4 +206,3 @@
     </footer>
 </body>
 </html>
-
