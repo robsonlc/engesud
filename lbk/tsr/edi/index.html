@@ -102,6 +102,35 @@
             border: 2px solid var(--primary-color);
         }
 
+        .action-buttons {
+            margin: 40px 0;
+            text-align: center;
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .action-button {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 15px 30px;
+            border-radius: 25px;
+            text-decoration: none;
+            font-weight: bold;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+
+        .action-button:hover {
+            background-color: var(--secondary-color);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+        }
+
         footer {
             margin-top: 60px;
             padding: 40px 20px;
@@ -127,23 +156,6 @@
             color: white;
         }
 
-        footer a {
-            color: white;
-            text-decoration: none;
-            font-weight: bold;
-            background-color: var(--primary-color);
-            padding: 10px 20px;
-            border-radius: 25px;
-            display: inline-block;
-            margin-top: 15px;
-            transition: all 0.3s ease;
-        }
-
-        footer a:hover {
-            background-color: var(--secondary-color);
-            transform: translateY(-2px);
-        }
-
         @media (max-width: 768px) {
             header h1 {
                 font-size: 2rem;
@@ -160,6 +172,17 @@
 
             p {
                 font-size: 1rem;
+            }
+
+            .action-buttons {
+                flex-direction: column;
+                align-items: stretch;
+                padding: 0 20px;
+            }
+
+            .action-button {
+                text-align: center;
+                justify-content: center;
             }
         }
     </style>
@@ -195,13 +218,22 @@
             <h2>Próximos Passos</h2>
             <p>Estamos à disposição para agendar uma reunião e discutir as possibilidades de parceria. Apresentaremos todos os detalhes necessários para que cada desenvolvedor possa avaliar a viabilidade e as oportunidades desta área. Entre em contato para prosseguir com uma visita técnica ou iniciar uma negociação formal.</p>
         </div>
+
+        <div class="action-buttons">
+            <a href="https://www3.maringa.pr.gov.br/site/index.php?sessao=422d107f31mg42" target="_blank" class="action-button">
+                📋 Consultar Normas Técnicas Urbanísticas de Maringá
+            </a>
+            <a href="https://wa.me/44997013489?text=Vamos%20conversar%20sobre%20este%20assunto" class="action-button">
+                💬 Iniciar Conversa no WhatsApp
+            </a>
+        </div>
     </div>
+
     <footer>
         <img src="https://i.imgur.com/6z1r7cp.jpeg" alt="Logotipo da Engesud">
         <div class="contact">
             <p>Robson Luis da Costa - Engenheiro Civil e Corretor de Imóveis - CRECI-PR nº 41.250</p>
             <p>Contato: +55 (44) 99701-3489</p>
-            <p><a href="https://wa.me/44997013489?text=Vamos%20conversar%20sobre%20este%20assunto">Clique aqui para conversar pelo WhatsApp</a></p>
         </div>
     </footer>
 </body>
