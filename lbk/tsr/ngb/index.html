@@ -86,6 +86,29 @@
             border-left: 5px solid var(--primary-color);
         }
 
+        .svg-container {
+            margin: 30px auto;
+            padding: 20px;
+            background: white;
+            border-radius: var(--border-radius);
+            box-shadow: var(--box-shadow);
+            max-width: 900px;
+            overflow: hidden;
+        }
+
+        .svg-container object {
+            width: 100%;
+            height: auto;
+            min-height: 500px;
+            display: block;
+            margin: 0 auto;
+            transition: transform 0.3s ease;
+        }
+
+        .svg-container:hover object {
+            transform: scale(1.02);
+        }
+
         .map {
             margin: 40px 0;
             text-align: center;
@@ -170,6 +193,15 @@
                 font-size: 1rem;
             }
 
+            .svg-container {
+                padding: 10px;
+                margin: 20px auto;
+            }
+
+            .svg-container object {
+                min-height: 300px;
+            }
+
             .action-buttons {
                 flex-direction: column;
                 align-items: stretch;
@@ -196,6 +228,12 @@
         <div class="details">
             <h2>Viabilidade do Empreendimento</h2>
             <p>De acordo com análise prévia, o terreno permite a implantação de dois empreendimentos imobiliários, cada um composto por até 6 torres residenciais multifamiliares verticais (T+3), com 8 apartamentos por pavimento. Cada empreendimento totaliza 192 unidades habitacionais de 44 m², com 2 quartos, banheiro, sala de jantar/tv, cozinha, lavanderia e sacada gourmet com churrasqueira. A permuta física envolverá a entrega de 38 apartamentos, correspondendo a 10% do total, ao proprietário.</p>
+            
+            <div class="svg-container">
+                <object data="https://www.engesudsmart.com.br/lbk/tsr/ngb/napkin-ngb.svg" type="image/svg+xml">
+                    Seu navegador não suporta SVG
+                </object>
+            </div>
         </div>
 
         <div class="details">
