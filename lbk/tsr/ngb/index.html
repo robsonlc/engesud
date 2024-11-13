@@ -14,129 +14,220 @@
     <title>Proposta de Parceria - Empreendimento Imobiliário</title>
     <style>
         :root {
-            --primary-color: #3498db;
-            --secondary-color: #2C3E50;
-            --background-color: #f4f4f4;
+            --primary-color: #4CAF50;
+            --secondary-color: #388e3c;
             --text-color: #333;
+            --light-bg: #f9f9f9;
+            --border-radius: 12px;
+            --box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
         }
-        body {
-            font-family: 'Arial', sans-serif;
-            color: var(--text-color);
-            line-height: 1.6;
+
+        * {
             margin: 0;
             padding: 0;
+            box-sizing: border-box;
         }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.8;
+            color: var(--text-color);
+            background-color: var(--light-bg);
+        }
+
         header {
-            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('https://i.imgur.com/X5ipykj.png') center/cover no-repeat;
-            padding: 50px 20px;
-            text-align: center;
+            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), 
+                        url('https://i.imgur.com/X5ipykj.png') center/cover no-repeat;
+            height: 300px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
             color: white;
+            text-align: center;
+            position: relative;
         }
+
         header h1 {
-            font-size: 2.5em;
-            margin: 0;
+            font-size: 3rem;
+            font-weight: 700;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+            padding: 0 20px;
         }
-        header p {
-            font-size: 1.2em;
-            opacity: 0.9;
+
+        .content {
+            max-width: 1100px;
+            margin: -50px auto 0;
+            padding: 40px;
+            background-color: white;
+            box-shadow: var(--box-shadow);
+            border-radius: var(--border-radius);
+            position: relative;
         }
-        section {
-            padding: 40px 20px;
-            max-width: 1000px;
-            margin: 0 auto;
-        }
+
         h2 {
-            font-size: 1.8em;
+            font-size: 2.2rem;
+            margin-bottom: 20px;
             color: var(--secondary-color);
-            border-bottom: 2px solid var(--primary-color);
+            border-bottom: 3px solid var(--primary-color);
             padding-bottom: 10px;
         }
+
         p {
+            margin: 15px 0;
+            font-size: 1.1rem;
+            color: #555;
+        }
+
+        .details {
+            margin: 30px 0;
+            padding: 25px;
+            background-color: #f8f9fa;
+            border-radius: var(--border-radius);
+            border-left: 5px solid var(--primary-color);
+        }
+
+        .map {
+            margin: 40px 0;
+            text-align: center;
+        }
+
+        iframe, img {
+            max-width: 100%;
+            border-radius: var(--border-radius);
+            box-shadow: var(--box-shadow);
             margin: 20px 0;
         }
-        .button {
+
+        .action-buttons {
+            margin: 40px 0;
+            text-align: center;
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .action-button {
             background-color: var(--primary-color);
             color: white;
-            padding: 12px 24px;
+            padding: 15px 30px;
+            border-radius: 25px;
             text-decoration: none;
-            border-radius: 5px;
-            display: inline-block;
-            margin-top: 10px;
-            transition: background-color 0.3s ease;
+            font-weight: bold;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
         }
-        .button:hover {
-            background-color: #2980b9;
+
+        .action-button:hover {
+            background-color: var(--secondary-color);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 12px rgba(0,0,0,0.15);
         }
-        iframe, img {
-            border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            margin-top: 20px;
-            max-width: 100%;
-            height: auto;
-        }
+
         footer {
+            margin-top: 60px;
+            padding: 40px 20px;
+            background: linear-gradient(to right, #2c3e50, #3498db);
+            color: white;
             text-align: center;
-            margin-top: 40px;
-            font-size: 0.9em;
-            padding: 20px;
-            background-color: var(--background-color);
         }
+
         footer img {
-            width: 100px;
+            max-width: 150px;
+            margin-bottom: 20px;
+            border-radius: 10px;
         }
+
+        footer .contact {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        footer .contact p {
+            margin: 10px 0;
+            font-size: 1.1rem;
+            color: white;
+        }
+
         @media (max-width: 768px) {
             header h1 {
-                font-size: 2em;
+                font-size: 2rem;
             }
-            header p {
-                font-size: 1em;
+
+            .content {
+                padding: 20px;
+                margin-top: -30px;
             }
+
             h2 {
-                font-size: 1.5em;
+                font-size: 1.8rem;
+            }
+
+            p {
+                font-size: 1rem;
+            }
+
+            .action-buttons {
+                flex-direction: column;
+                align-items: stretch;
+                padding: 0 20px;
+            }
+
+            .action-button {
+                text-align: center;
+                justify-content: center;
             }
         }
     </style>
 </head>
 <body>
+    <header>
+        <h1>Proposta de Parceria - Empreendimento Imobiliário</h1>
+    </header>
+    <div class="content">
+        <div class="details">
+            <h2>Informações do Terreno</h2>
+            <p>O terreno disponível para negociação é composto por dois lotes, subdivididos em fases. A Fase 1 conta com uma área de 12.142,73 m² e a Fase 2 com 11.744,06 m², conforme a imagem já apresentada abaixo. O proprietário será responsável por entregar a área com infraestrutura de água, esgoto e energia elétrica, além de realizar a pavimentação da diretriz viária longitudinal.</p>
+        </div>
 
-<header>
-    <h1>Proposta de Parceria - Empreendimento Imobiliário</h1>
-    <p>Viabilidade de Empreendimento em Área de Interesse Social - Marialva-PR</p>
-</header>
+        <div class="details">
+            <h2>Viabilidade do Empreendimento</h2>
+            <p>De acordo com análise prévia, o terreno permite a implantação de dois empreendimentos imobiliários, cada um composto por até 6 torres residenciais multifamiliares verticais (T+3), com 8 apartamentos por pavimento. Cada empreendimento totaliza 192 unidades habitacionais de 44 m², com 2 quartos, banheiro, sala de jantar/tv, cozinha, lavanderia e sacada gourmet com churrasqueira. A permuta física envolverá a entrega de 38 apartamentos, correspondendo a 10% do total, ao proprietário.</p>
+        </div>
 
-<section>
-    <h2>Informações do Terreno</h2>
-    <p>O terreno disponível para negociação é composto por dois lotes, subdivididos em fases. A Fase 1 conta com uma área de 12.142,73 m² e a Fase 2 com 11.744,06 m², conforme a imagem já apresentada abaixo. O proprietário será responsável por entregar a área com infraestrutura de água, esgoto e energia elétrica, além de realizar a pavimentação da diretriz viária longitudinal.</p>
-</section>
+        <div class="details">
+            <h2>Área e Infraestrutura</h2>
+            <p>Além da área do projeto, destaca-se que o Supermercado Nova Era de Marialva construirá uma nova loja em área vizinha de 6.000 m². Isso valoriza o empreendimento e oferece conveniência aos futuros moradores. A área restante poderá ser utilizada para futuras fases de expansão do projeto.</p>
+            <img src="https://i.imgur.com/SpTnb05.png" alt="Esquema Google Earth com marcações">
+        </div>
 
-<section>
-    <h2>Viabilidade do Empreendimento</h2>
-    <p>De acordo com análise prévia, o terreno permite a implantação de dois empreendimentos imobiliários, cada um composto por até 6 torres residenciais multifamiliares verticais (T+3), com 8 apartamentos por pavimento. Cada empreendimento totaliza 192 unidades habitacionais de 44 m², com 2 quartos, banheiro, sala de jantar/tv, cozinha, lavanderia e sacada gourmet com churrasqueira. A permuta física envolverá a entrega de 38 apartamentos, correspondendo a 10% do total, ao proprietário.</p>
-</section>
+        <div class="map">
+            <h2>Localização</h2>
+            <iframe src="https://www.google.com/maps/d/embed?mid=1rRhhyU79CdJVl1wO5W6bar6obExoV8c&ehbc=2E312F" width="100%" height="450"></iframe>
+        </div>
 
-<section>
-    <h2>Área e Infraestrutura</h2>
-    <p>Além da área do projeto, destaca-se que o Supermercado Nova Era de Marialva construirá uma nova loja em área vizinha de 6.000 m². Isso valoriza o empreendimento e oferece conveniência aos futuros moradores. A área restante poderá ser utilizada para futuras fases de expansão do projeto.</p>
-    <img src="https://i.imgur.com/SpTnb05.png" alt="Esquema Google Earth com marcações" width="100%">
-</section>
+        <div class="action-buttons">
+            <a href="https://www.engesudsmart.com.br/lbk/tsr/ngb/docs/Matr%C3%ADcula%2043.866.pdf" class="action-button">
+                📄 Matrícula 43.866 - Fase 1
+            </a>
+            <a href="https://www.engesudsmart.com.br/lbk/tsr/ngb/docs/Subdivis%C3%A3o%20lote%2083-F%20-%20Matricula.pdf" class="action-button">
+                📑 Planta de Subdivisão dos Lotes
+            </a>
+            <a href="https://wa.me/4497013489" class="action-button">
+                💬 Iniciar Conversa no WhatsApp
+            </a>
+        </div>
+    </div>
 
-<section>
-    <h2>Localização</h2>
-    <iframe src="https://www.google.com/maps/d/embed?mid=1rRhhyU79CdJVl1wO5W6bar6obExoV8c&ehbc=2E312F" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
-</section>
-
-<section>
-    <h2>Documentação</h2>
-    <p>Os documentos relevantes para análise estão disponíveis para download abaixo:</p>
-    <p><a href="https://www.engesudsmart.com.br/lbk/tsr/ngb/docs/Matr%C3%ADcula%2043.866.pdf" class="button">Matrícula 43.866 - Fase 1</a></p>
-    <p><a href="https://www.engesudsmart.com.br/lbk/tsr/ngb/docs/Subdivis%C3%A3o%20lote%2083-F%20-%20Matricula.pdf" class="button">Planta de Subdivisão dos Lotes - Fases 1 e 2</a></p>
-</section>
-
-<footer>
-    <p>Entre em contato: <a href="https://wa.me/4497013489" class="button">WhatsApp</a></p>
-    <img src="https://i.imgur.com/3YKn2xW.png" alt="Engesud Logotipo">
-    <p>&copy; Engesud Engenharia e Intermediação Ltda. Todos os direitos reservados.</p>
-</footer>
-
+    <footer>
+        <img src="https://i.imgur.com/3YKn2xW.png" alt="Engesud Logotipo">
+        <div class="contact">
+            <p>Engesud Engenharia e Intermediação Ltda.</p>
+            <p>Contato: +55 (44) 99701-3489</p>
+        </div>
+    </footer>
 </body>
 </html>
