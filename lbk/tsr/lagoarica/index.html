@@ -1,1 +1,317 @@
-Novo
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta property="og:url" content="https://www.engesudsmart.com.br/lbk/tsr/lagoarica" />
+    <meta property="og:image" content="https://i.imgur.com/noS8o6g.png" />
+    <meta property="og:title" content="Oportunidade de Parceria - Área Lagoa Rica, Campo Grande" />
+    <meta property="og:description" content="Área estratégica para desenvolvimento de condomínios fechados em Campo Grande - MS. Parcerias financeiras disponíveis." />
+    <title>Oportunidade de Parceria - Área Lagoa Rica</title>
+    <style>
+        :root {
+            --primary-color: #2563eb;
+            --secondary-color: #1e40af;
+            --text-color: #1f2937;
+            --light-bg: #f3f4f6;
+            --border-radius: 16px;
+            --box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            --transition: all 0.3s ease-in-out;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+            line-height: 1.8;
+            color: var(--text-color);
+            background-color: var(--light-bg);
+        }
+
+        .header-container {
+            position: relative;
+            height: 400px;
+            overflow: hidden;
+        }
+
+        header {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.7)), 
+                        url('https://i.imgur.com/otZdrSy.png') center/cover no-repeat;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+            padding: 20px;
+        }
+
+        header h1 {
+            font-size: clamp(2rem, 5vw, 3.5rem);
+            font-weight: 800;
+            text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5);
+            animation: fadeIn 1s ease-out;
+        }
+
+        .content {
+            max-width: 1200px;
+            margin: -80px auto 0;
+            padding: 40px 20px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .card {
+            background-color: white;
+            border-radius: var(--border-radius);
+            box-shadow: var(--box-shadow);
+            padding: 40px;
+            margin-bottom: 30px;
+            transform: translateY(0);
+            transition: var(--transition);
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 30px rgba(0, 0, 0, 0.15);
+        }
+
+        h2 {
+            font-size: clamp(1.8rem, 4vw, 2.5rem);
+            margin-bottom: 25px;
+            color: var(--secondary-color);
+            border-bottom: 4px solid var(--primary-color);
+            padding-bottom: 15px;
+            position: relative;
+        }
+
+        p {
+            margin: 20px 0;
+            font-size: clamp(1rem, 2vw, 1.2rem);
+            color: #4b5563;
+            line-height: 1.8;
+        }
+
+        .details {
+            background: linear-gradient(to right, #f8f9fa, white);
+            border-radius: var(--border-radius);
+            border-left: 6px solid var(--primary-color);
+            padding: 30px;
+            margin: 30px 0;
+        }
+
+        .map-container, .image-container {
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            margin: 30px 0;
+        }
+
+        iframe {
+            width: 100%;
+            height: 500px;
+            border: none;
+        }
+
+        img {
+            width: 100%;
+            height: auto;
+            object-fit: cover;
+            border-radius: var(--border-radius);
+            transition: var(--transition);
+        }
+
+        img:hover {
+            transform: scale(1.02);
+        }
+
+        .action-buttons {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin: 40px 0;
+        }
+
+        .action-button {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: white;
+            padding: 18px 30px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+            transition: var(--transition);
+            text-align: center;
+        }
+
+        .action-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(37, 99, 235, 0.3);
+        }
+
+        footer {
+            background: linear-gradient(to right, var(--secondary-color), #1e3a8a);
+            color: white;
+            padding: 60px 20px;
+            text-align: center;
+            margin-top: 80px;
+        }
+
+        footer img {
+            max-width: 180px;
+            margin-bottom: 30px;
+            filter: brightness(0) invert(1);
+        }
+
+        footer p {
+            color: #e5e7eb;
+            margin: 10px 0;
+            font-size: 1.1rem;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .content {
+                margin-top: -60px;
+                padding: 20px;
+            }
+
+            .card {
+                padding: 25px;
+            }
+
+            .action-buttons {
+                grid-template-columns: 1fr;
+            }
+
+            iframe {
+                height: 300px;
+            }
+        }
+
+        .scroll-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background: var(--primary-color);
+            color: white;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            opacity: 0;
+            transition: var(--transition);
+            cursor: pointer;
+        }
+
+        .scroll-top.visible {
+            opacity: 1;
+        }
+    </style>
+</head>
+<body>
+    <div class="header-container">
+        <header>
+            <h1>Área Lagoa Rica - Campo Grande</h1>
+        </header>
+    </div>
+
+    <div class="content">
+        <div class="card">
+            <h2>Oportunidade de Desenvolvimento</h2>
+            <p>Área estratégica em Campo Grande - MS, ideal para o desenvolvimento de condomínios fechados. Parcerias financeiras podem ser negociadas para viabilizar o projeto.</p>
+            
+            <div class="details">
+                <h2>Características da Área</h2>
+                <p>Área com localização privilegiada, oferecendo fácil acesso e proximidade a serviços essenciais. Excelente potencial para valorização e desenvolvimento de empreendimentos de alto padrão.</p>
+            </div>
+        </div>
+
+        <div class="card">
+            <h2>Localização</h2>
+            <div class="map-container">
+                <iframe src="https://www.google.com/maps/d/embed?mid=1lJteQ52-1Flx5BBw41hfBxYrXBOdTxo&ehbc=2E312F"></iframe>
+            </div>
+        </div>
+
+        <div class="card">
+            <h2>Estudos Disponíveis</h2>
+            <div class="image-container">
+                <img src="https://i.imgur.com/hkNvl3u.jpeg" alt="Mapa com distâncias de referência">
+            </div>
+            <div class="image-container">
+                <img src="https://i.imgur.com/37geje7.png" alt="Estudo geométrico sugerido">
+            </div>
+        </div>
+
+        <div class="action-buttons">
+            <a href="https://www.engesudsmart.com.br/lbk/tsr/lagoarica/planta%20sugerida.pdf" target="_blank" class="action-button">
+                📄 Estudo Geométrico
+            </a>
+            <a href="https://prefcg-repositorio.campogrande.ms.gov.br/wp-cdn/uploads/2020/03/Lei-Complementar-n.-74-de-6-de-setembro-de-2005.pdf" target="_blank" class="action-button">
+                📜 Lei de Uso do Solo
+            </a>
+            <a href="https://wa.me/44997013489?text=Vamos%20conversar%20sobre%20este%20assunto" class="action-button">
+                💬 Negociar Agora
+            </a>
+        </div>
+    </div>
+
+    <footer>
+        <img src="https://i.imgur.com/6z1r7cp.jpeg" alt="Logotipo da Engesud">
+        <p>Robson Luis da Costa - Engenheiro Civil e Corretor de Imóveis</p>
+        <p>Contato: +55 (44) 99701-3489</p>
+    </footer>
+
+    <a href="#" class="scroll-top" id="scrollTop">↑</a>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const scrollTop = document.getElementById('scrollTop');
+            
+            window.addEventListener('scroll', function() {
+                if (window.pageYOffset > 300) {
+                    scrollTop.classList.add('visible');
+                } else {
+                    scrollTop.classList.remove('visible');
+                }
+            });
+
+            scrollTop.addEventListener('click', function(e) {
+                e.preventDefault();
+                window.scrollTo({
+                    top: 0,
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+</body>
+</html>
