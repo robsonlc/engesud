@@ -4,9 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Terreno de 12.000m² para incorporação em Maringá, próximo ao Shopping Catuaí. Potencial para empreendimento de médio ou alto padrão.">
-    <title>Proposta de Incorporação - Área Próxima ao Catuaí Maringá</title>
-
-    <!-- Meta Tags Open Graph -->
     <meta property="og:title" content="Proposta de Incorporação - Área Próxima ao Shopping Catuaí">
     <meta property="og:description" content="Terreno de 12.000m² com grande potencial de incorporação residencial e comercial. Potencial para um condomínio clube ou empreendimento de médio ou alto padrão.">
     <meta property="og:image" content="https://i.imgur.com/XHWEvsa.png">
@@ -15,196 +12,191 @@
     <meta property="og:url" content="https://www.engesudsmart.com.br/harryprochet">
     <meta property="og:type" content="website">
     <meta property="og:site_name" content="Engesud Smart">
-    
-    <!-- Estilos -->
+    <title>Proposta de Incorporação - Área Próxima ao Catuaí Maringá</title>
+
     <style>
         :root {
-            --primary-color: #3498db;
-            --secondary-color: #2c3e50;
-            --text-color: #333;
-            --bg-color: #f4f4f4;
-            --card-bg: #fff;
+            --primary-color: #2563eb;
+            --secondary-color: #1e40af;
+            --text-color: #1f2937;
+            --light-bg: #f3f4f6;
+            --border-radius: 16px;
+            --box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            --transition: all 0.3s ease-in-out;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
         }
 
         body {
-            font-family: 'Arial', sans-serif;
+            font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+            line-height: 1.8;
             color: var(--text-color);
-            margin: 0;
-            padding: 0;
-            background-color: var(--bg-color);
-            line-height: 1.6;
+            background-color: var(--light-bg);
         }
 
-        .container {
-            width: 90%;
-            max-width: 1200px;
-            margin: 20px auto;
-            padding: 20px;
-            background-color: var(--card-bg);
-            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
-            border-radius: 15px;
-        }
-
-        h1, h2 {
-            color: var(--secondary-color);
+        header {
+            position: relative;
+            background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.7)), 
+                        url('https://i.imgur.com/V1RYXOI.png') center/cover no-repeat;
+            height: 300px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
             text-align: center;
-            margin-top: 30px;
+            color: white;
         }
 
-        h1 {
-            font-size: 2.5em;
-            border-bottom: 3px solid var(--primary-color);
-            padding-bottom: 15px;
-            margin-bottom: 30px;
+        header h1 {
+            font-size: clamp(2rem, 5vw, 3.5rem);
+            font-weight: 800;
+            text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5);
+        }
+
+        .content {
+            max-width: 1200px;
+            margin: -80px auto 0;
+            padding: 40px 20px;
+            position: relative;
+            z-index: 1;
+            background-color: white;
+            border-radius: var(--border-radius);
+            box-shadow: var(--box-shadow);
         }
 
         h2 {
-            font-size: 1.8em;
-            color: var(--primary-color);
-            margin-top: 40px;
+            font-size: clamp(1.8rem, 4vw, 2.5rem);
+            margin-bottom: 25px;
+            color: var(--secondary-color);
+            border-bottom: 4px solid var(--primary-color);
+            padding-bottom: 15px;
         }
 
-        .info {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: space-between;
-            margin-bottom: 30px;
-        }
-
-        .info img {
-            max-width: 100%;
-            border-radius: 15px;
-            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-
-        .info img:hover {
-            transform: scale(1.03);
-            box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
-        }
-
-        .info-text {
-            flex: 1;
-            margin-right: 20px;
-        }
-
-        iframe {
-            border: 0;
-            border-radius: 15px;
-            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
-            width: 100%;
-            height: 450px;
+        p, li {
+            font-size: clamp(1rem, 2vw, 1.2rem);
+            color: #4b5563;
+            line-height: 1.8;
+            margin-bottom: 15px;
         }
 
         ul {
             padding-left: 20px;
-            list-style-type: none;
+            list-style: disc;
         }
 
-        li {
-            margin-bottom: 15px;
-            position: relative;
-            padding-left: 25px;
+        iframe, img {
+            width: 100%;
+            height: auto;
+            border-radius: var(--border-radius);
+            box-shadow: var(--box-shadow);
+            margin: 20px 0;
         }
 
-        li::before {
-            content: '•';
-            color: var(--primary-color);
-            font-size: 1.5em;
-            position: absolute;
-            left: 0;
-            top: -5px;
+        .highlight-box {
+            background: linear-gradient(to right, #f8f9fa, white);
+            border-radius: var(--border-radius);
+            border-left: 6px solid var(--primary-color);
+            padding: 30px;
+            margin: 30px 0;
+        }
+
+        .action-buttons {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+            margin-top: 40px;
+        }
+
+        .action-button {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: white;
+            padding: 15px 30px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: var(--transition);
+        }
+
+        .action-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(37, 99, 235, 0.3);
         }
 
         footer {
-            background-color: var(--secondary-color);
-            color: #ecf0f1;
+            background: linear-gradient(to right, var(--secondary-color), #1e3a8a);
+            color: white;
+            padding: 40px 20px;
             text-align: center;
-            padding: 30px 0;
-            margin-top: 40px;
-            border-radius: 0 0 15px 15px;
         }
 
         footer img {
-            max-width: 180px;
+            width: 150px;
+            height: auto;
             margin-bottom: 15px;
         }
 
         footer p {
-            margin: 8px 0;
-            font-size: 16px;
+            margin: 10px 0;
+            color: #e5e7eb;
         }
 
-        footer a {
-            color: var(--primary-color);
+        .scroll-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background: var(--primary-color);
+            color: white;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
             text-decoration: none;
-            transition: color 0.3s ease;
+            font-size: 1.5rem;
+            opacity: 0;
+            cursor: pointer;
+            box-shadow: var(--box-shadow);
+            transition: var(--transition);
         }
 
-        footer a:hover {
-            color: #2980b9;
-            text-decoration: underline;
-        }
-
-        .cta-button {
-            display: inline-block;
-            background-color: var(--primary-color);
-            color: #fff;
-            padding: 12px 25px;
-            text-decoration: none;
-            border-radius: 30px;
-            transition: all 0.3s ease;
-            font-weight: bold;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            margin-top: 20px;
-        }
-
-        .cta-button:hover {
-            background-color: #2980b9;
-            transform: translateY(-3px);
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-        }
-
-        .highlight-box {
-            background-color: #e8f4fd;
-            border-left: 5px solid var(--primary-color);
-            padding: 15px;
-            margin: 20px 0;
-            border-radius: 5px;
+        .scroll-top.visible {
+            opacity: 1;
         }
 
         @media (max-width: 768px) {
-            .container {
-                width: 95%;
-                padding: 15px;
+            .content {
+                padding: 20px;
             }
-            h1 {
-                font-size: 2em;
-            }
-            h2 {
-                font-size: 1.5em;
-            }
+
             iframe {
-                height: 350px;
+                height: 300px;
             }
         }
     </style>
 </head>
 <body>
 
-<div class="container">
-    <h1>Área Disponível para Incorporação - Próxima ao Shopping Catuaí</h1>
+<header>
+    <h1>Área Próxima ao Shopping Catuaí</h1>
+</header>
 
+<div class="content">
     <h2>Descrição dos Lotes</h2>
     <p>O terreno é composto por dois sublotes, totalizando uma área de 12.338,30 m². Abaixo estão os detalhes dos dois sublotes:</p>
-    
     <ul>
         <li><strong>Lote 111</strong> - Área de 9.556,35 m²</li>
         <li><strong>Lote 111-A</strong> - Área de 2.781,95 m²</li>
     </ul>
-    
-    <img src="https://i.imgur.com/V1RYXOI.png" alt="Imagem dos sublotes do terreno" style="width:100%; margin: 20px 0;">
+    <img src="https://i.imgur.com/V1RYXOI.png" alt="Imagem dos sublotes do terreno">
 
     <div class="highlight-box">
         <p><strong>Expectativa do Proprietário:</strong> O proprietário espera um valor base de R$ 1.250,00/m² para o terreno. No entanto, está aberto a discutir parcerias financeiras, como permuta por unidades no futuro empreendimento ou aportes graduais. A flexibilidade depende da qualidade do projeto e da viabilidade proposta.</p>
@@ -218,10 +210,10 @@
         <li><strong>Balaroti</strong> - Loja de materiais de construção</li>
         <li><strong>Feitep</strong> - Faculdade de engenharia e tecnologia</li>
     </ul>
-    <img src="https://i.imgur.com/UYhhAmc.png" alt="Mapa com Localização do Terreno e Pontos Importantes" style="width:100%; margin: 20px 0;">
+    <img src="https://i.imgur.com/UYhhAmc.png" alt="Mapa com Localização do Terreno e Pontos Importantes">
 
     <h2>Localização no Google Maps</h2>
-    <iframe src="https://www.google.com/maps/d/embed?mid=1Nmy50VO-faXndM7kYNww3EllQwh3jsM&ehbc=2E312F" allowfullscreen></iframe>
+    <iframe src="https://www.google.com/maps/d/embed?mid=1Nmy50VO-faXndM7kYNww3EllQwh3jsM&ehbc=2E312F"></iframe>
 
     <h2>Vantagens e Potenciais do Terreno</h2>
     <ul>
@@ -231,9 +223,6 @@
         <li>Possibilidade de financiamento, permuta ou parceria financeira, incluindo a participação no VGV (Valor Geral de Vendas).</li>
     </ul>
 
-Aqui está a continuação com o **tópico "Próximos Passos"** reescrito conforme solicitado:
-
-```html
     <h2>Próximos Passos</h2>
     <p>Caso tenha interesse em discutir uma parceria ou a viabilidade do projeto, entre em contato para avançarmos com:</p>
     <ul>
@@ -242,16 +231,37 @@ Aqui está a continuação com o **tópico "Próximos Passos"** reescrito confor
         <li><strong>Estudos de Viabilidade</strong>: Realize análises técnicas e de mercado para validar o potencial de desenvolvimento da área.</li>
     </ul>
 
-    
+    <div class="action-buttons">
+        <a href="https://wa.me/4497013489?text=Vamos%20conversar%20sobre%20este%20assunto" class="action-button">💬 Negociar Agora</a>
+    </div>
 </div>
 
 <footer>
-    <img src="https://i.imgur.com/3YKn2xW.png" alt="Logo Engesud">
-    <p>Robson Luis da Costa</p>
+    <img src="https://i.imgur.com/6z1r7cp.jpeg" alt="Logotipo da Engesud">
+    <p>Robson Luis da Costa - Engenheiro Civil</p>
     <p>Contato: +55 (44) 99701-3489</p>
-    <p><a href="https://wa.me/4497013489?text=Vamos%20conversar%20sobre%20este%20assunto" target="_blank">Clique aqui para conversar via WhatsApp</a></p>
-    <!-- Este conteúdo é protegido por direitos autorais creditados à Engesud Engenharia e Intermediação LTDA, inscrita no CNPJ 40.601.637/0001-58 -->
 </footer>
+
+<a href="#" class="scroll-top" id="scrollTop">↑</a>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        const scrollTop = document.getElementById('scrollTop');
+
+        window.addEventListener('scroll', function () {
+            if (window.pageYOffset > 300) {
+                scrollTop.classList.add('visible');
+            } else {
+                scrollTop.classList.remove('visible');
+            }
+        });
+
+        scrollTop.addEventListener('click', function (e) {
+            e.preventDefault();
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+    });
+</script>
 
 </body>
 </html>
