@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Oportunidade de Parceria - Condomínio Horizontal em Sarandi</title>
-    <!-- Metatags Open Graph para pré-visualização no WhatsApp -->
     <meta property="og:title" content="Oportunidade de Parceria - Condomínio Horizontal em Sarandi">
     <meta property="og:description" content="Apresentação de área de 50 alqueires com potencial de desenvolvimento para condomínio horizontal em Sarandi-PR.">
     <meta property="og:image" content="https://i.imgur.com/VlbeUZO.png">
@@ -15,14 +14,15 @@
     <meta property="og:site_name" content="Engesud Smart">
 
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
 
         :root {
-            --primary-color: #2a4d69;
-            --secondary-color: #41729f;
-            --background-color: #f2f2f2;
-            --text-color: #333;
-            --white: #fff;
+            --primary-color: #1a365d;
+            --secondary-color: #2c5282;
+            --accent-color: #4299e1;
+            --background-color: #f7fafc;
+            --text-color: #2d3748;
+            --white: #ffffff;
         }
 
         * {
@@ -32,10 +32,10 @@
         }
 
         body {
-            font-family: 'Roboto', sans-serif;
+            font-family: 'Poppins', sans-serif;
             background-color: var(--background-color);
             color: var(--text-color);
-            line-height: 1.6;
+            line-height: 1.8;
             display: flex;
             flex-direction: column;
             min-height: 100vh;
@@ -43,7 +43,7 @@
 
         header {
             background: url('https://i.imgur.com/oQ5OyuB.png') center/cover no-repeat;
-            height: 400px;
+            height: 500px;
             display: flex;
             justify-content: center;
             align-items: center;
@@ -58,135 +58,188 @@
             left: 0;
             right: 0;
             bottom: 0;
-            background: rgba(0, 0, 0, 0.5);
+            background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.7));
         }
 
         header h1 {
-            font-size: 3rem;
+            font-size: 3.5rem;
             text-align: center;
-            padding: 20px;
-            border-radius: 10px;
+            padding: 30px;
             position: relative;
             z-index: 1;
             text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+            max-width: 800px;
+            animation: fadeIn 1s ease-out;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
         }
 
         .content {
             flex: 1;
-            padding: 40px 20px;
-            max-width: 1100px;
-            margin: 0 auto;
+            padding: 60px 30px;
+            max-width: 1200px;
+            margin: -60px auto 40px;
             background: var(--white);
-            border-radius: 8px;
-            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            position: relative;
+            z-index: 2;
         }
 
         h2, h3 {
             color: var(--primary-color);
-            margin-bottom: 20px;
+            margin-bottom: 25px;
+            font-weight: 600;
         }
 
-        p, li {
-            margin-bottom: 15px;
+        h2 {
+            font-size: 2.2rem;
+            border-bottom: 3px solid var(--accent-color);
+            padding-bottom: 10px;
+            display: inline-block;
+        }
+
+        h3 {
+            font-size: 1.8rem;
+            margin-top: 40px;
+        }
+
+        p {
+            margin-bottom: 20px;
+            font-size: 1.1rem;
+            color: var(--text-color);
         }
 
         .mapa, .zoneamento {
-            margin: 30px 0;
-        }
-
-        iframe, img {
-            width: 100%;
-            border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            margin: 40px 0;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
             transition: transform 0.3s ease;
         }
 
-        iframe {
-            height: 480px;
-            border: 0;
+        .mapa:hover, .zoneamento:hover {
+            transform: translateY(-5px);
         }
 
-        iframe:hover, img:hover {
-            transform: scale(1.02);
+        iframe, .zoneamento img {
+            width: 100%;
+            border-radius: 15px;
+            transition: all 0.3s ease;
+        }
+
+        iframe {
+            height: 500px;
+            border: none;
         }
 
         .buttons {
             display: flex;
             flex-wrap: wrap;
-            gap: 10px;
-            margin-top: 20px;
+            gap: 15px;
+            margin-top: 30px;
         }
 
         .button-link {
             background: var(--primary-color);
             color: var(--white);
             text-decoration: none;
-            padding: 12px 24px;
-            border-radius: 5px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            transition: background 0.3s, transform 0.3s;
+            padding: 15px 30px;
+            border-radius: 8px;
+            font-weight: 500;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+            font-size: 1rem;
         }
 
         .button-link:hover {
-            background: var(--secondary-color);
-            transform: translateY(-2px);
+            background: var(--accent-color);
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(66, 153, 225, 0.3);
         }
 
         footer {
-            background-color: var(--primary-color);
-            color: var(--white);
-            padding: 30px 0;
-            margin-top: auto;
-        }
+        background-color: var(--primary-color);
+        color: var(--white);
+        padding: 40px 0;
+        margin-top: auto;
+        text-align: center;
+    }
 
-        .footer-content {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            text-align: center;
-            max-width: 1100px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
+    .footer-content {
+        max-width: 1200px;
+        margin: 0 auto;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+    }
 
-        .footer-logo img {
-            height: 60px;
-            width: auto;
-            margin-bottom: 20px;
-        }
+    .footer-logo img {
+        height: 70px; /* Garantindo altura consistente */
+        width: auto;
+        display: block; /* Assegura que a imagem respeite o layout */
+    }
 
-        footer p {
-            font-size: 14px;
-            margin: 5px 0;
-        }
+    .footer-info p {
+        font-size: 1rem;
+        margin: 5px 0;
+        color: var(--white);
+    }
 
-        footer a {
-            color: var(--white);
-            text-decoration: none;
-            transition: opacity 0.3s;
-        }
+    footer a {
+        color: var(--white);
+        text-decoration: none;
+        font-weight: 500;
+        transition: color 0.3s;
+    }
 
-        footer a:hover {
-            opacity: 0.8;
-        }
+    footer a:hover {
+        color: var(--accent-color);
+    }
 
         @media (max-width: 768px) {
-            header h1 {
-                font-size: 2rem;
+            header {
+                height: 400px;
             }
 
-            .content {
+            header h1 {
+                font-size: 2rem;
                 padding: 20px;
             }
 
+            .content {
+                padding: 30px 20px;
+                margin: -40px 15px 20px;
+            }
+
+            h2 {
+                font-size: 1.8rem;
+            }
+
+            h3 {
+                font-size: 1.5rem;
+            }
+
+            p {
+                font-size: 1rem;
+            }
+
             iframe {
-                height: 300px;
+                height: 350px;
+            }
+
+            .button-link {
+                width: 100%;
+                text-align: center;
             }
         }
     </style>
 </head>
 <body>
-
     <header>
         <h1>Oportunidade de Desenvolvimento em Sarandi/PR</h1>
     </header>
@@ -214,18 +267,17 @@
     </div>
 
     <footer>
-        <div class="footer-content">
-            <div class="footer-logo">
-                <img src="https://i.imgur.com/3YKn2xW.png" alt="Logotipo Engesud">
-            </div>
-            <div class="footer-info">
-                <p>Robson Luis da Costa - Engenheiro Civil</p>
-                <p>+55 (44) 99701-3489</p>
-                <p><a href="https://wa.me/4497013489">Entre em contato via WhatsApp</a></p>
-            </div>
+    <div class="footer-content">
+        <div class="footer-logo">
+            <!-- Removido o filtro de brilho para garantir a exibição correta -->
+            <img src="https://i.imgur.com/3YKn2xW.png" alt="Logotipo Engesud">
         </div>
-    </footer>
-
-    <!-- Este conteúdo é protegido por direitos autorais creditados à Engesud Engenharia e Intermediação LTDA, inscrita no CNPJ 40.601.637/0001-58 -->
+        <div class="footer-info">
+            <p>Robson Luis da Costa - Engenheiro Civil</p>
+            <p>+55 (44) 99701-3489</p>
+            <p><a href="https://wa.me/4497013489">Entre em contato via WhatsApp</a></p>
+        </div>
+    </div>
+</footer>
 </body>
 </html>
