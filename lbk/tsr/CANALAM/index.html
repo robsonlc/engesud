@@ -147,12 +147,14 @@
             background: #f4f4f4;
             border-radius: 8px;
             padding: 10px;
+            overflow-x: auto;
         }
     </style>
 
-    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script>
-    <script>
-        mermaid.initialize({ startOnLoad: true });
+    <!-- Mermaid.js para Diagramas -->
+    <script type="module">
+        import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs';
+        mermaid.initialize({ startOnLoad: true, theme: 'default' });
     </script>
 </head>
 <body>
