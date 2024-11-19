@@ -1,4 +1,227 @@
-.image-container {
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Desenvolvimento Imobiliário - Clube Hípico e Georgeto</title>
+    
+    <!-- Metatags Open Graph -->
+    <meta property="og:title" content="Oportunidade de Desenvolvimento - Clube Hípico e Georgeto">
+    <meta property="og:description" content="Proposta de um empreendimento inovador, aproveitando a localização estratégica junto ao Shopping Catuaí, para atrair investidores e atender o público de alto poder aquisitivo da região de Maringá.">
+    <meta property="og:image" content="https://i.imgur.com/cLELvaH.png">
+    <meta property="og:image:width" content="800">
+    <meta property="og:image:height" content="800">
+    <meta property="og:url" content="https://www.engesudsmart.com.br/lbk/tsr/Clube_Hipico/">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Engesud Smart">
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+    <style>
+        :root {
+            --primary-color: #2e7d32;
+            --secondary-color: #4caf50;
+            --accent-color: #1b5e20;
+            --background-color: #f8f9fa;
+            --text-color: #2c3e50;
+            --card-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: var(--background-color);
+            color: var(--text-color);
+            line-height: 1.8;
+        }
+
+        .container {
+            width: 92%;
+            max-width: 1400px;
+            margin: 40px auto;
+            background-color: #fff;
+            border-radius: 20px;
+            box-shadow: var(--card-shadow);
+            padding: 40px;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 50px;
+            position: relative;
+            padding-bottom: 20px;
+        }
+
+        .header:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 4px;
+            background: var(--primary-color);
+            border-radius: 2px;
+        }
+
+        h1 {
+            font-size: 2.8em;
+            color: var(--primary-color);
+            margin-bottom: 20px;
+            font-weight: 700;
+        }
+
+        h2 {
+            font-size: 2.2em;
+            color: var(--accent-color);
+            margin: 40px 0 25px;
+            font-weight: 600;
+        }
+
+        .intro-text {
+            font-size: 1.2em;
+            max-width: 900px;
+            margin: 0 auto 40px;
+            text-align: center;
+            color: #555;
+        }
+
+        .content-section {
+            margin: 60px 0;
+            padding: 30px;
+            background: #fff;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+        }
+
+        .map-container, .image-container {
+            margin: 40px 0;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: var(--card-shadow);
+        }
+
+        iframe, .main-image {
+            width: 100%;
+            border: none;
+            display: block;
+        }
+
+        iframe {
+            height: 600px;
+        }
+
+        .main-image {
+            max-height: 600px;
+            object-fit: cover;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            margin: 40px 0;
+        }
+
+        .feature-card {
+            background: #fff;
+            padding: 25px;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            transition: transform 0.3s ease;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .feature-icon {
+            color: var(--primary-color);
+            font-size: 2.5em;
+            margin-bottom: 15px;
+        }
+
+        .highlight-box {
+            background: linear-gradient(135deg, #e8f5e9 0%, #c8e6c9 100%);
+            padding: 30px;
+            border-radius: 15px;
+            margin: 40px 0;
+            position: relative;
+            border-left: 6px solid var(--primary-color);
+        }
+
+        .highlight-box:before {
+            content: '\201C';
+            font-size: 4em;
+            color: var(--primary-color);
+            position: absolute;
+            left: 20px;
+            top: 10px;
+            opacity: 0.2;
+        }
+
+        .footer {
+            text-align: center;
+            margin-top: 60px;
+            padding-top: 40px;
+            border-top: 2px solid #eee;
+        }
+
+        .footer img {
+            width: 150px;
+            margin-bottom: 20px;
+        }
+
+        .contact-button {
+            display: inline-block;
+            padding: 15px 30px;
+            background: var(--primary-color);
+            color: white;
+            text-decoration: none;
+            border-radius: 30px;
+            margin-top: 20px;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+
+        .contact-button:hover {
+            background: var(--accent-color);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                width: 95%;
+                padding: 20px;
+            }
+
+            h1 {
+                font-size: 2em;
+            }
+
+            h2 {
+                font-size: 1.8em;
+            }
+
+            .intro-text {
+                font-size: 1.1em;
+            }
+
+            iframe {
+                height: 400px;
+            }
+
+            .feature-card {
+                padding: 20px;
+            }
+        }.image-container {
     margin: 40px auto;
     text-align: center;
     background: #f8f9fa;
@@ -36,3 +259,73 @@
     color: #666;
     padding: 0 10px;
 }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <h1>Oportunidade de Desenvolvimento Imobiliário</h1>
+            <p class="intro-text">Clube Hípico e Georgeto - Uma localização premium junto ao Shopping Catuaí Maringá</p>
+        </header>
+
+        <section class="content-section">
+            <p>Localizada em uma área estratégica de Maringá-PR, junto ao maior shopping da região, o <strong>Shopping Catuaí</strong>, a propriedade formada pelos terrenos do Clube Hípico (44.808,14 m²) e do Georgeto (18.634,00 m²) oferece um potencial único para o desenvolvimento de um empreendimento sofisticado e multifuncional.</p>
+            
+            <div class="map-container">
+                <iframe src="https://www.google.com/maps/d/embed?mid=1cCHoUAiL2Oo0AhlZj5_LBFv52nud_Wo&ehbc=2E312F" allowfullscreen></iframe>
+            </div>
+        </section>
+
+        <section class="content-section">
+            <h2>Visualização da Área</h2>
+            <div class="image-container">
+                <img src="https://i.imgur.com/u5YlLtr.png" alt="Área do Clube Hípico e Georgeto" class="main-image">
+            </div>
+        </section>
+
+        <section class="content-section">
+            <h2>Potencial de Desenvolvimento</h2>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <i class="fas fa-building feature-icon"></i>
+                    <h3>Torres Comerciais e Corporativas</h3>
+                    <p>Espaços de negócios de alto padrão com escritórios e áreas de coworking</p>
+                </div>
+                <div class="feature-card">
+                    <i class="fas fa-home feature-icon"></i>
+                    <h3>Residências de Luxo</h3>
+                    <p>Apartamentos premium com conexão direta ao shopping</p>
+                </div>
+                <div class="feature-card">
+                    <i class="fas fa-hotel feature-icon"></i>
+                    <h3>Hotel Boutique</h3>
+                    <p>Hospedagem exclusiva para executivos e turistas</p>
+                </div>
+                <div class="feature-card">
+                    <i class="fas fa-calendar-alt feature-icon"></i>
+                    <h3>Centro de Eventos</h3>
+                    <p>Espaço multiuso para exposições e eventos</p>
+                </div>
+                <div class="feature-card">
+                    <i class="fas fa-tree feature-icon"></i>
+                    <h3>Parque Verde Urbano</h3>
+                    <p>Área verde integrada para lazer e bem-estar</p>
+                </div>
+            </div>
+        </section>
+
+        <div class="highlight-box">
+            <p>O <strong>Shopping Catuaí</strong> demonstrou grande interesse em integrar-se ao novo empreendimento. A direção do Allos manifestou apoio à prospecção de parceiros estratégicos para criar uma extensão natural do shopping, eliminando barreiras físicas e maximizando o potencial da área.</p>
+        </div>
+
+        <footer class="footer">
+            <img src="https://i.imgur.com/3YKn2xW.png" alt="Logotipo Engesud">
+            <p>Robson Luis da Costa</p>
+            <p>+55 (44) 99701-3489</p>
+            <a href="https://wa.me/4497013489?text=Vamos%20conversar%20sobre%20este%20assunto" class="contact-button">
+                <i class="fab fa-whatsapp"></i> Fale Conosco pelo WhatsApp
+            </a>
+        </footer>
+    </div>
+</body>
+</html>
