@@ -32,58 +32,86 @@
         }
 
         header {
-            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)),
+            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)),
                         url('https://www.engesudsmart.com.br/lbk/tsr/yld/fundo.png') center/cover no-repeat;
-            height: 400px;
+            height: 500px;
             display: flex;
             flex-direction: column;
             align-items: center;
             justify-content: center;
             text-align: center;
             color: white;
+            position: relative;
+        }
+
+        header::after {
+            content: '';
+            position: absolute;
+            bottom: -50px;
+            left: 0;
+            right: 0;
+            height: 100px;
+            background: linear-gradient(to bottom right, transparent 49%, white 51%);
         }
 
         header h1 {
-            font-size: 3rem;
+            font-size: 3.5rem;
             margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
         }
 
         header p {
-            font-size: 1.5rem;
+            font-size: 1.8rem;
             max-width: 800px;
             margin: 0 auto;
+            text-shadow: 1px 1px 3px rgba(0,0,0,0.3);
         }
 
         .content {
             max-width: 1200px;
             margin: -60px auto 0;
-            padding: 20px;
+            padding: 40px;
             background: white;
             border-radius: var(--border-radius);
             box-shadow: var(--box-shadow);
+            position: relative;
+            z-index: 1;
+        }
+
+        .feature-box {
+            background: var(--light-bg);
+            padding: 30px;
+            border-radius: var(--border-radius);
+            margin: 30px 0;
+            border-left: 5px solid var(--primary-color);
         }
 
         h2 {
             color: var(--secondary-color);
-            margin-bottom: 20px;
-            font-size: 1.8rem;
+            margin-bottom: 30px;
+            font-size: 2rem;
             border-bottom: 3px solid var(--primary-color);
-            padding-bottom: 10px;
+            padding-bottom: 15px;
         }
 
         p {
-            font-size: 1.1rem;
+            font-size: 1.2rem;
             color: #555;
-            margin: 15px 0;
+            margin: 20px 0;
         }
 
         .map {
             margin: 40px 0;
+            position: relative;
+            padding-top: 56.25%;
         }
 
         iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
             width: 100%;
-            height: 480px;
+            height: 100%;
             border: none;
             border-radius: var(--border-radius);
             box-shadow: var(--box-shadow);
@@ -92,90 +120,152 @@
         .image-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 20px;
+            gap: 30px;
+            margin: 40px 0;
         }
 
         .image-grid img {
             width: 100%;
+            height: 300px;
+            object-fit: cover;
             border-radius: var(--border-radius);
             box-shadow: var(--box-shadow);
+            transition: transform 0.3s ease;
+        }
+
+        .image-grid img:hover {
+            transform: scale(1.05);
         }
 
         .action-buttons {
-            margin: 40px 0;
+            margin: 60px 0 40px;
             display: flex;
-            gap: 20px;
+            gap: 30px;
             justify-content: center;
         }
 
         .action-button {
             background-color: var(--primary-color);
             color: white;
-            padding: 15px 30px;
-            border-radius: 25px;
+            padding: 20px 40px;
+            border-radius: 50px;
             text-decoration: none;
             font-weight: bold;
-            transition: background-color 0.3s;
+            font-size: 1.2rem;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 10px;
         }
 
         .action-button:hover {
             background-color: var(--secondary-color);
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(0,0,0,0.2);
+        }
+
+        .highlight {
+            background-color: #E8F5E9;
+            padding: 20px;
+            border-radius: var(--border-radius);
+            margin: 30px 0;
         }
 
         footer {
             text-align: center;
-            padding: 40px 20px;
-            background: var(--secondary-color);
+            padding: 60px 20px;
+            background: linear-gradient(to bottom, var(--secondary-color), #003330);
             color: white;
+            margin-top: 60px;
         }
 
         footer img {
-            max-width: 150px;
-            margin-bottom: 20px;
+            max-width: 180px;
+            margin-bottom: 30px;
+            border-radius: 10px;
         }
 
         footer p {
+            color: white;
             margin: 10px 0;
+            font-size: 1.1rem;
+        }
+
+        @media (max-width: 768px) {
+            header {
+                height: 400px;
+            }
+
+            header h1 {
+                font-size: 2.5rem;
+            }
+
+            header p {
+                font-size: 1.3rem;
+            }
+
+            .content {
+                padding: 20px;
+            }
+
+            .action-buttons {
+                flex-direction: column;
+                align-items: stretch;
+            }
+
+            .action-button {
+                text-align: center;
+                justify-content: center;
+            }
         }
     </style>
 </head>
 <body>
     <header>
-        <h1>Oportunidade - 15 Alqueires</h1>
-        <p>Área disponível em Maringá, com localização estratégica e flexibilidade negocial.</p>
+        <h1>Área Premium de 15 Alqueires</h1>
+        <p>Oportunidade única em Maringá para desenvolvimento urbano</p>
     </header>
 
     <div class="content">
-        <h2>Informações Principais</h2>
-        <p>Localizada em uma região de alto potencial de desenvolvimento, esta área oferece ótimas condições para novos empreendimentos imobiliários.</p>
-        <p><strong>Área Total:</strong> 15 Alqueires</p>
-        <p><strong>Valor Estimado:</strong> R$ 3 milhões por alqueire (negociável)</p>
+        <div class="feature-box">
+            <h2>Características do Empreendimento</h2>
+            <p>Localizada em uma região de alto potencial de desenvolvimento, esta área oferece condições excepcionais para projetos imobiliários de grande porte.</p>
+            <p><strong>Área Total:</strong> 15 Alqueires</p>
+            <p><strong>Localização:</strong> Região em expansão de Maringá</p>
+            <p><strong>Características:</strong> Topografia favorável, fácil acesso e infraestrutura completa nas proximidades</p>
+        </div>
 
-        <h2>Localização no Google Maps</h2>
+        <h2>Localização Estratégica</h2>
         <div class="map">
             <iframe src="https://www.google.com/maps/d/embed?mid=1xHWMQE_It7SKT_CVcsRwvl8rzeUAVYk&ehbc=2E312F"></iframe>
         </div>
 
-        <h2>Visualizações e Mapas</h2>
+        <h2>Análise Técnica</h2>
         <div class="image-grid">
             <img src="https://www.engesudsmart.com.br/lbk/tsr/yld/ete.png" alt="Mapa com raio sanitário ETE Mandacarú">
             <img src="https://www.engesudsmart.com.br/lbk/tsr/yld/diretrizes.png" alt="Mapa com diretrizes viárias">
         </div>
 
-        <h2>Regulamentações</h2>
-        <p>De acordo com a legislação municipal, o setor de proteção da ETE Mandacarú não impacta o desenvolvimento desta área. Os estudos indicam que o raio de 500 a 1000 m interfere minimamente no terreno.</p>
-        <p><a href="https://www3.maringa.pr.gov.br/site/index.php?sessao=422d107f31mg42" target="_blank">🔗 Consultar Leis Urbanísticas de Maringá</a></p>
+        <div class="highlight">
+            <h2>Aspectos Legais e Regulamentações</h2>
+            <p>✓ Área em conformidade com as diretrizes municipais</p>
+            <p>✓ Setor de proteção da ETE Mandacarú com impacto mínimo</p>
+            <p>✓ Documentação completa e regular</p>
+            <p><a href="https://www3.maringa.pr.gov.br/site/index.php?sessao=422d107f31mg42" target="_blank">🔗 Consultar Legislação Urbanística de Maringá</a></p>
+        </div>
 
         <div class="action-buttons">
-            <a href="https://wa.me/44997013489?text=Olá,%20gostaria%20de%20mais%20informações%20sobre%20a%20área." class="action-button">
-                💬 Negociar pelo WhatsApp
+            <a href="https://wa.me/44997013489?text=Olá,%20gostaria%20de%20mais%20informações%20sobre%20a%20área%20de%2015%20alqueires." class="action-button">
+                💬 Solicitar Informações
             </a>
         </div>
     </div>
 
     <footer>
         <img src="https://i.imgur.com/6z1r7cp.jpeg" alt="Logotipo da Engesud">
-        <p>Robson Luis da Costa - Engenheiro Civil e Corretor de Imóveis</p>
+        <p>Robson Luis da Costa</p>
+        <p>Engenheiro Civil e Corretor de Imóveis</p>
+        <p>CREA-PR 19.449/D | CRECI-PR 32.093</p>
         <p>Contato: +55 (44) 99701-3489</p>
     </footer>
 </body>
