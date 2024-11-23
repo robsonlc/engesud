@@ -3,26 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta property="og:title" content="Oferta de Terrenos para Venda - Potencial de Desenvolvimento">
-    <meta property="og:description" content="Áreas disponíveis para venda direta em Marialva-PR com grande potencial de empreendimento">
-    <meta property="og:image" content="https://i.imgur.com/OW1mRr6.png">
-    <meta property="og:image:width" content="800">
-    <meta property="og:image:height" content="800">
-    <meta property="og:url" content="https://www.engesudsmart.com.br/lbk/tsr/ngb/vnd/">
-    <meta property="og:type" content="website">
-    <meta property="og:site_name" content="Engesud Smart">
-    <title>Oferta de Terrenos para Venda - Potencial de Desenvolvimento</title>
-
-    <link rel="shortcut icon" href="https://i.imgur.com/ZQ2U8eO.png" type="image/x-icon">
-    
+    <title>Apresentação do Terreno - Marialva-PR</title>
     <style>
         :root {
-            --primary-color: #4CAF50;
-            --secondary-color: #388e3c;
-            --text-color: #333;
-            --light-bg: #f9f9f9;
-            --border-radius: 12px;
-            --box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+            --primary-color: #2c3e50;
+            --secondary-color: #e74c3c;
+            --background-color: #f5f6fa;
+            --text-color: #2c3e50;
+            --border-radius: 8px;
+            --box-shadow: 0 2px 4px rgba(0,0,0,0.1);
         }
 
         * {
@@ -32,174 +21,173 @@
         }
 
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            line-height: 1.8;
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            background-color: var(--background-color);
             color: var(--text-color);
-            background-color: var(--light-bg);
         }
 
         header {
-            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), 
-                        url('https://i.imgur.com/X5ipykj.png') center/cover no-repeat;
-            height: 300px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
+            background-color: var(--primary-color);
             color: white;
+            padding: 2rem;
             text-align: center;
-            position: relative;
-        }
-
-        header h1 {
-            font-size: 3rem;
-            font-weight: 700;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
-            padding: 0 20px;
         }
 
         .content {
-            max-width: 1100px;
-            margin: -50px auto 0;
-            padding: 40px;
-            background-color: white;
-            box-shadow: var(--box-shadow);
-            border-radius: var(--border-radius);
-            position: relative;
-        }
-
-        h2 {
-            font-size: 2.2rem;
-            margin-bottom: 20px;
-            color: var(--secondary-color);
-            border-bottom: 3px solid var(--primary-color);
-            padding-bottom: 10px;
-        }
-
-        p {
-            margin: 15px 0;
-            font-size: 1.1rem;
-            color: #555;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
         }
 
         .details {
-            margin: 30px 0;
-            padding: 25px;
-            background-color: #f8f9fa;
-            border-radius: var(--border-radius);
-            border-left: 5px solid var(--primary-color);
-        }
-
-        .map {
-            margin: 40px 0;
-            text-align: center;
-        }
-
-        iframe, img {
-            max-width: 100%;
+            background: white;
+            padding: 2rem;
+            margin-bottom: 2rem;
             border-radius: var(--border-radius);
             box-shadow: var(--box-shadow);
-            margin: 20px 0;
         }
 
-        .action-buttons {
-            margin: 40px 0;
-            text-align: center;
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        h2 {
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+            font-size: 1.8rem;
+        }
+
+        p {
+            margin-bottom: 1rem;
+        }
+
+        .price-cards {
             display: flex;
-            gap: 20px;
             flex-wrap: wrap;
+            gap: 20px;
             justify-content: center;
+            margin: 30px 0;
         }
 
-        .action-button {
-            background-color: var(--primary-color);
-            color: white;
-            padding: 15px 30px;
-            border-radius: 25px;
-            text-decoration: none;
+        .price-card {
+            background: white;
+            padding: 25px;
+            border-radius: var(--border-radius);
+            box-shadow: var(--box-shadow);
+            flex: 1;
+            min-width: 250px;
+            text-align: center;
+            border: 2px solid var(--primary-color);
+            transition: transform 0.3s ease;
+        }
+
+        .price-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .price-card h3 {
+            color: var(--primary-color);
+            margin-bottom: 15px;
+            font-size: 1.5rem;
+        }
+
+        .price-card .price {
+            font-size: 1.8rem;
             font-weight: bold;
-            display: inline-flex;
-            align-items: center;
-            gap: 10px;
-            transition: all 0.3s ease;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            color: var(--secondary-color);
+            margin: 15px 0;
         }
 
-        .action-button:hover {
-            background-color: var(--secondary-color);
-            transform: translateY(-2px);
-            box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+        .price-card .area {
+            font-size: 1.2rem;
+            color: #666;
+            margin-bottom: 15px;
+        }
+
+        .contact-info {
+            background: var(--primary-color);
+            color: white;
+            padding: 2rem;
+            text-align: center;
+            margin-top: 2rem;
+            border-radius: var(--border-radius);
+        }
+
+        .contact-info h2 {
+            color: white;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            margin: 1rem 0;
+            border-radius: var(--border-radius);
         }
 
         footer {
-            margin-top: 60px;
-            padding: 40px 20px;
-            background: linear-gradient(to right, #2c3e50, #3498db);
+            background-color: var(--primary-color);
             color: white;
             text-align: center;
-        }
-
-        footer img {
-            max-width: 150px;
-            margin-bottom: 20px;
-            border-radius: 10px;
-        }
-
-        footer .contact {
-            max-width: 600px;
-            margin: 0 auto;
-        }
-
-        footer .contact p {
-            margin: 10px 0;
-            font-size: 1.1rem;
-            color: white;
+            padding: 1rem;
+            margin-top: 2rem;
         }
 
         @media (max-width: 768px) {
-            header h1 {
+            .content {
+                padding: 1rem;
+            }
+            
+            .details {
+                padding: 1rem;
+            }
+            
+            .price-card {
+                flex: 1 1 100%;
+            }
+            
+            h1 {
                 font-size: 2rem;
             }
-
-            .content {
-                padding: 20px;
-                margin-top: -30px;
-            }
-
+            
             h2 {
-                font-size: 1.8rem;
-            }
-
-            p {
-                font-size: 1rem;
-            }
-
-            .action-buttons {
-                flex-direction: column;
-                align-items: stretch;
-                padding: 0 20px;
-            }
-
-            .action-button {
-                text-align: center;
-                justify-content: center;
+                font-size: 1.5rem;
             }
         }
     </style>
 </head>
 <body>
     <header>
-        <h1>Oferta de Terrenos para Venda - Potencial de Desenvolvimento</h1>
+        <h1>Terreno para Desenvolvimento Imobiliário</h1>
+        <p>Localização Estratégica em Marialva-PR</p>
     </header>
+
     <div class="content">
         <div class="details">
             <h2>Informações do Terreno</h2>
             <p>Estão disponíveis para venda direta três áreas estrategicamente localizadas em Marialva-PR, subdivididas em fases:</p>
-            <ul>
-                <li><strong>Fase 1:</strong> 12.142,73 m² - Valor: R$ 150/m²</li>
-                <li><strong>Fase 2:</strong> 11.744,06 m² - Valor: R$ 150/m²</li>
-                <li><strong>Fase 3:</strong> 18.566,51 m² - Valor: R$ 100/m²</li>
-            </ul>
-            <p>As Fases 1 e 2 estão localizadas em frente ao futuro Supermercado Nova Era, enquanto a Fase 3 está situada nos fundos do terreno, oferecendo diversas possibilidades de desenvolvimento.</p>
+            
+            <div class="price-cards">
+                <div class="price-card">
+                    <h3>Fase 1</h3>
+                    <div class="area">12.142,73 m²</div>
+                    <div class="price">R$ 150/m²</div>
+                    <p>Localização privilegiada em frente ao futuro Supermercado Nova Era</p>
+                </div>
+                <div class="price-card">
+                    <h3>Fase 2</h3>
+                    <div class="area">11.744,06 m²</div>
+                    <div class="price">R$ 150/m²</div>
+                    <p>Localização privilegiada em frente ao futuro Supermercado Nova Era</p>
+                </div>
+                <div class="price-card">
+                    <h3>Fase 3</h3>
+                    <div class="area">18.566,51 m²</div>
+                    <div class="price">R$ 100/m²</div>
+                    <p>Área situada nos fundos do terreno</p>
+                </div>
+            </div>
         </div>
 
         <div class="details">
@@ -210,28 +198,19 @@
 
         <div class="details">
             <h2>Infraestrutura e Localização</h2>
-            <p>A proximidade com o futuro Supermercado Nova Era, que construirá uma nova loja em área vizinha de 6.000 m², agrega valor ao empreendimento e oferece conveniência aos futuros moradores. A região conta com infraestrutura completa de água, esgoto e energia elétrica, facilitando o desenvolvimento dos projetos.</p>
-            <img src="https://i.imgur.com/SpTnb05.png" alt="Esquema Google Earth com marcações">
+            <p>A proximidade com o futuro Supermercado Nova Era, que construirá uma nova loja em área vizinha de 6.000 m², agrega valor ao empreendimento e oferece conveniência aos futuros moradores. A região conta com infraestrutura de água e energia elétrica, facilitando o desenvolvimento dos projetos.</p>
         </div>
 
-        <div class="map">
-            <h2>Localização</h2>
-            <iframe src="https://www.google.com/maps/d/embed?mid=1rRhhyU79CdJVl1wO5W6bar6obExoV8c&ehbc=2E312F" width="100%" height="450"></iframe>
-        </div>
-
-        <div class="action-buttons">
-            <a href="https://wa.me/44997013489" class="action-button">
-                💬 Iniciar Conversa no WhatsApp
-            </a>
+        <div class="contact-info">
+            <h2>Informações de Contato</h2>
+            <p>Para mais informações sobre o terreno e condições de negociação, entre em contato:</p>
+            <p>Telefone: (XX) XXXX-XXXX</p>
+            <p>Email: contato@email.com</p>
         </div>
     </div>
 
     <footer>
-        <img src="https://i.imgur.com/3YKn2xW.png" alt="Engesud Logotipo">
-        <div class="contact">
-            <p>Engesud Engenharia e Intermediação Ltda.</p>
-            <p>Contato: +55 (44) 99701-3489</p>
-        </div>
+        <p>&copy; 2024 Apresentação do Terreno - Marialva-PR. Todos os direitos reservados.</p>
     </footer>
 </body>
 </html>
