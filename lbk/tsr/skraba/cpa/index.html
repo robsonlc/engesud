@@ -21,10 +21,16 @@
         body {
             font-family: 'Roboto', sans-serif;
             margin: 0;
-            padding: 20px;
+            padding: 0;
             background-color: #f0f4f8;
             color: #333;
             line-height: 1.6;
+        }
+        .header {
+            width: 100%;
+            height: 200px;
+            background: url('https://i.imgur.com/t8D9Jyn.png') center/cover no-repeat;
+            opacity: 0.3;
         }
         .container {
             max-width: 800px;
@@ -33,6 +39,9 @@
             padding: 30px;
             box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
             border-radius: 15px;
+            margin-top: -100px;
+            position: relative;
+            z-index: 2;
         }
         h1, h2 {
             color: #0066cc;
@@ -145,6 +154,8 @@
 </head>
 <body>
 
+<div class="header"></div>
+
 <div class="container">
     <h1>Oportunidade de Valorização</h1>
 
@@ -155,16 +166,16 @@
     <div class="value-card">
         <h2>💰 Valor Total Estimado</h2>
         <div class="value-number">R$ 37.870.000,00</div>
-        <div style="text-align: center">
-            <p>► R$ 21.120.000,00 - Área da Testada (17.600 m²)</p>
-            <p>► R$ 16.750.000,00 - Área ZEIS (33.500 m²)</p>
+        <div>
+            <p>► R$ 21.120.000,00 - Área da Testada (17.600 m²) - R$ 1.200,00/m² </p>
+            <p>► R$ 16.750.000,00 - Área ZEIS (33.500 m²) - R$ 500,00 /m² </p>
         </div>
     </div>
 
     <div class="section">
         <h2>Benefícios Exclusivos para Você</h2>
         <div class="highlight-box">
-            <p>✓ A área da testada (17.600 m²) será entregue desmembrada e livre para você negociar quando quiser</p>
+            <p>✓ A área da testada, que possui 17.600 m², será entregue desmembrada e pronta para você negociar conforme desejar. Esta área não está atualmente destinada ao desenvolvimento de incorporação e será entregue ao proprietário de forma livre, permitindo total liberdade para comercialização. A área é valorizada devido ao zoneamento favorável que permite a verticalização, proporcionado pelo eixo da avenida principal.</p>
             <p>✓ Valorização imediata através do programa Prozeis</p>
             <p>✓ Processo simplificado e prioridade na aprovação</p>
         </div>
@@ -174,19 +185,20 @@
         <h2>Divisão Estratégica da Área</h2>
         <div class="image-container">
             <img src="https://raw.githubusercontent.com/robsonlc/engesud/main/lbk/tsr/skraba/subdivisão.svg" alt="Subdivisão da Propriedade">
+            <p style="margin-top: 15px;">A área será subdividida em duas partes: uma destinada ao desenvolvimento ZEIS, conforme o interesse desta abordagem, e outra entregue ao proprietário livre para negociação futura.</p>
         </div>
     </div>
 
     <div class="section">
-        <h2>Plano de Pagamentos</h2>
+        <h2>Plano de Pagamentos (Área de Zeis - Desenvolvimento em Duas Fases)</h2>
         <div class="timeline">
             <div class="timeline-item">
-                <h3>Fase 1: R$ 5.875.000,00</h3>
-                <p>• Entrada de R$ 2.512.500,00 após estimados 18 meses</p>
+                <h3>Fase 1: R$ 8.375.000,00</h3>
+                <p>• Início de pagamento após estimados 18 meses</p>
             </div>
             <div class="timeline-item">
-                <h3>Fase 2: R$ 5.875.000,00</h3>
-                <p>• Entrada de R$ 2.512.500,00 após 30 meses</p>
+                <h3>Fase 2: R$ 8.375.000,00</h3>
+                <p>• Início de pagamento após estimados 30 meses (12 meses após o lançamento da fase 1)</p>
             </div>
         </div>
         <div class="image-container">
@@ -199,16 +211,25 @@
         <div class="image-container">
             <img src="https://raw.githubusercontent.com/robsonlc/engesud/main/lbk/tsr/skraba/contrutoras.svg" alt="Construtoras Recomendadas">
         </div>
+        <div class="highlight-box">
+            <p>A Engesud sugere as seguintes construtoras para promover o desenvolvimento da área:</p>
+            <ul>
+                <li><strong>Blendi:</strong> Empresa reconhecida por sua experiência em projetos de médio e grande porte, com foco em inovação e sustentabilidade. A Blendi tem um histórico comprovado de sucesso em desenvolver áreas urbanas estratégicas.</li>
+                <li><strong>MRV:</strong> A maior construtora da América Latina, especializada em habitações populares e empreendimentos de alta densidade. A MRV é conhecida por seu compromisso com a qualidade e por entregar projetos dentro dos prazos estabelecidos.</li>
+                <li><strong>VPL3:</strong> Construtora com forte atuação no mercado residencial, especialmente em empreendimentos verticais. A VPL3 é valorizada por sua capacidade de adaptar-se rapidamente às necessidades do mercado e por entregar projetos com excelente custo-benefício.</li>
+            </ul>
+        </div>
     </div>
 
     <div class="section">
         <h2>Análise Comparativa</h2>
         <div class="image-container">
             <img src="https://raw.githubusercontent.com/robsonlc/engesud/main/lbk/tsr/skraba/comparativo.svg" alt="Comparativo de Valores">
+            <p style="margin-top: 20px;">Se a área não for enquadrada no programa Prozeis, a chácara terá que passar pelo complexo e oneroso processo de loteamento, resultando em um retorno financeiro que pode ser significativamente inferior ao modelo proposto aqui.</p>
         </div>
     </div>
 
-     <div class="footer">
+    <div class="footer">
         <img src="https://i.imgur.com/6z1r7cp.jpeg" alt="Logotipo da Engesud">
         <p>Engesud - Empresa de Intermediação<br>Contato: +55 (44) 99701-3489</p>
     </div>
