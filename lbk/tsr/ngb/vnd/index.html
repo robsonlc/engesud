@@ -3,15 +3,25 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Apresentação do Terreno - Marialva-PR</title>
+    <meta property="og:title" content="Oferta de Terrenos para Venda - Potencial de Desenvolvimento">
+    <meta property="og:description" content="Áreas disponíveis para venda direta em Marialva-PR com grande potencial de empreendimento">
+    <meta property="og:image" content="https://i.imgur.com/OW1mRr6.png">
+    <meta property="og:image:width" content="800">
+    <meta property="og:image:height" content="800">
+    <meta property="og:url" content="https://www.engesudsmart.com.br/lbk/tsr/ngb/vnd">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Engesud Smart">
+    <title>Oferta de Terrenos para Venda - Potencial de Desenvolvimento</title>
+    <link rel="shortcut icon" href="https://i.imgur.com/ZQ2U8eO.png" type="image/x-icon">
+
     <style>
         :root {
             --primary-color: #2c3e50;
             --secondary-color: #e74c3c;
-            --background-color: #f5f6fa;
-            --text-color: #2c3e50;
-            --border-radius: 8px;
-            --box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            --text-color: #333;
+            --light-bg: #f5f6fa;
+            --border-radius: 12px;
+            --box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
         }
 
         * {
@@ -21,46 +31,63 @@
         }
 
         body {
-            font-family: 'Arial', sans-serif;
-            line-height: 1.6;
-            background-color: var(--background-color);
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.8;
             color: var(--text-color);
+            background-color: var(--light-bg);
         }
 
         header {
-            background-color: var(--primary-color);
+            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)),
+                        url('https://i.imgur.com/X5ipykj.png') center/cover no-repeat;
+            height: 300px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
             color: white;
-            padding: 2rem;
             text-align: center;
+            position: relative;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        header h1 {
+            font-size: 3rem;
+            font-weight: 700;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+            padding: 0 20px;
         }
 
         .content {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 2rem;
-        }
-
-        .details {
-            background: white;
-            padding: 2rem;
-            margin-bottom: 2rem;
-            border-radius: var(--border-radius);
+            max-width: 1100px;
+            margin: -50px auto 0;
+            padding: 40px;
+            background-color: white;
             box-shadow: var(--box-shadow);
-        }
-
-        h1 {
-            font-size: 2.5rem;
-            margin-bottom: 1rem;
+            border-radius: var(--border-radius);
+            position: relative;
         }
 
         h2 {
+            font-size: 2.2rem;
+            margin-bottom: 20px;
             color: var(--primary-color);
-            margin-bottom: 1rem;
-            font-size: 1.8rem;
+            border-bottom: 3px solid var(--secondary-color);
+            padding-bottom: 10px;
         }
 
         p {
-            margin-bottom: 1rem;
+            margin: 15px 0;
+            font-size: 1.1rem;
+            color: #555;
+        }
+
+        .details {
+            margin: 30px 0;
+            padding: 25px;
+            background-color: #f8f9fa;
+            border-radius: var(--border-radius);
+            border-left: 5px solid var(--primary-color);
         }
 
         .price-cards {
@@ -106,53 +133,135 @@
             margin-bottom: 15px;
         }
 
-        .contact-info {
-            background: var(--primary-color);
-            color: white;
-            padding: 2rem;
-            text-align: center;
-            margin-top: 2rem;
+        .svg-container {
+            margin: 30px auto;
+            padding: 20px;
+            background: white;
             border-radius: var(--border-radius);
+            box-shadow: var(--box-shadow);
+            max-width: 900px;
+            overflow: hidden;
         }
 
-        .contact-info h2 {
-            color: white;
-        }
-
-        img {
-            max-width: 100%;
+        .svg-container object {
+            width: 100%;
             height: auto;
-            margin: 1rem 0;
+            min-height: 500px;
+            display: block;
+            margin: 0 auto;
+            transition: transform 0.3s ease;
+        }
+
+        .svg-container:hover object {
+            transform: scale(1.02);
+        }
+
+        .map {
+            margin: 40px 0;
+            text-align: center;
+        }
+
+        iframe, img {
+            max-width: 100%;
             border-radius: var(--border-radius);
+            box-shadow: var(--box-shadow);
+            margin: 20px 0;
+        }
+
+        .action-buttons {
+            margin: 40px 0;
+            text-align: center;
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .action-button {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 15px 30px;
+            border-radius: 25px;
+            text-decoration: none;
+            font-weight: bold;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+
+        .action-button:hover {
+            background-color: var(--secondary-color);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 12px rgba(0,0,0,0.15);
         }
 
         footer {
-            background-color: var(--primary-color);
+            margin-top: 60px;
+            padding: 40px 20px;
+            background: linear-gradient(to right, #2c3e50, #3498db);
             color: white;
             text-align: center;
-            padding: 1rem;
-            margin-top: 2rem;
+        }
+
+        footer img {
+            max-width: 150px;
+            margin-bottom: 20px;
+            border-radius: 10px;
+        }
+
+        footer .contact {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        footer .contact p {
+            margin: 10px 0;
+            font-size: 1.1rem;
+            color: white;
         }
 
         @media (max-width: 768px) {
-            .content {
-                padding: 1rem;
-            }
-            
-            .details {
-                padding: 1rem;
-            }
-            
-            .price-card {
-                flex: 1 1 100%;
-            }
-            
-            h1 {
+            header h1 {
                 font-size: 2rem;
             }
-            
+
+            .content {
+                padding: 20px;
+                margin-top: -30px;
+            }
+
             h2 {
-                font-size: 1.5rem;
+                font-size: 1.8rem;
+            }
+
+            p {
+                font-size: 1rem;
+            }
+
+            .svg-container {
+                padding: 10px;
+                margin: 20px auto;
+            }
+
+            .svg-container object {
+                min-height: 300px;
+            }
+
+            .action-buttons {
+                flex-direction: column;
+                align-items: stretch;
+                padding: 0 20px;
+            }
+
+            .action-button {
+                text-align: center;
+                justify-content: center;
+            }
+
+            .price-card {
+                flex: 1 1 100%;
             }
         }
     </style>
@@ -167,50 +276,64 @@
         <div class="details">
             <h2>Informações do Terreno</h2>
             <p>Estão disponíveis para venda direta três áreas estrategicamente localizadas em Marialva-PR, subdivididas em fases:</p>
-            
+
             <div class="price-cards">
                 <div class="price-card">
                     <h3>Fase 1</h3>
                     <div class="area">12.142,73 m²</div>
-                    <div class="price">R$ 150/m²</div>
-                    <p>Localização privilegiada em frente ao futuro Supermercado Nova Era</p>
+                    <div class="price">R\\$ 150/m²</div>
+                    <p>Localização privilegiada ao lado do futuro Supermercado Nova Era</p>
                 </div>
                 <div class="price-card">
                     <h3>Fase 2</h3>
                     <div class="area">11.744,06 m²</div>
-                    <div class="price">R$ 150/m²</div>
-                    <p>Localização privilegiada em frente ao futuro Supermercado Nova Era</p>
+                    <div class="price">R\\$ 150/m²</div>
+                     <p>Localização privilegiada ao lado do futuro Supermercado Nova Era</p>
                 </div>
                 <div class="price-card">
                     <h3>Fase 3</h3>
                     <div class="area">18.566,51 m²</div>
-                    <div class="price">R$ 100/m²</div>
-                    <p>Área situada nos fundos do terreno</p>
+                    <div class="price">R\\$ 100/m²</div>
+                    <p>Área situada nos fundos do futuro Supermercado Nova Era</p>
                 </div>
             </div>
         </div>
 
         <div class="details">
             <h2>Potencial de Desenvolvimento</h2>
-            <p>As áreas das Fases 1 e 2 possuem grande potencial para a implantação de empreendimentos imobiliários. Com base em análises prévias, é possível desenvolver projetos residenciais multifamiliares verticais, com até 6 torres por empreendimento, totalizando 192 unidades habitacionais de 44 m² por fase.</p>
+            <p>As áreas disponíveis das fases 1 e 2 possuem grande potencial para a implantação de empreendimentos imobiliários. Com base em análises prévias, é possível desenvolver projetos residenciais multifamiliares verticais, com até 6 torres por empreendimento, totalizando 192 unidades habitacionais de 44 m² por fase. Informamos também haver possibilidade de permuta física ou financeira para o desenvolvimento de empreendimento.</p>
             <p>As unidades podem ser compostas por 2 quartos, banheiro, sala de jantar/TV, cozinha, lavanderia e sacada gourmet com churrasqueira, atendendo à demanda por moradias modernas e funcionais na região.</p>
+
         </div>
 
         <div class="details">
             <h2>Infraestrutura e Localização</h2>
-            <p>A proximidade com o futuro Supermercado Nova Era, que construirá uma nova loja em área vizinha de 6.000 m², agrega valor ao empreendimento e oferece conveniência aos futuros moradores. A região conta com infraestrutura de água e energia elétrica, facilitando o desenvolvimento dos projetos.</p>
+            <p>A proximidade com o futuro Supermercado Nova Era, que construirá uma nova loja em área vizinha de 6.000 m², agrega valor ao empreendimento e oferece conveniência aos futuros moradores. Um ponto negativo é a falta de infraestrutura de esgoto. É necessário investimento em ETE compacta para viabilizar os condomínios de blocos. A região conta com infraestrutura completa de água e energia elétrica, facilitando o desenvolvimento dos projetos.</p>
+            <img src="https://i.imgur.com/SpTnb05.png" alt="Esquema Google Earth com marcações">
         </div>
 
-        <div class="contact-info">
-            <h2>Informações de Contato</h2>
-            <p>Para mais informações sobre o terreno e condições de negociação, entre em contato:</p>
-            <p>Telefone: (XX) XXXX-XXXX</p>
-            <p>Email: contato@email.com</p>
+        <div class="map">
+            <h2>Localização</h2>
+            <iframe src="https://www.google.com/maps/d/embed?mid=1rRhhyU79CdJVl1wO5W6bar6obExoV8c&ehbc=2E312F" width="100%" height="450"></iframe>
+        </div>
+
+        <div class="action-buttons">
+
+            <a href="https://www.engesudsmart.com.br/lbk/tsr/ngb/docs/Subdivis%C3%A3o%20lote%2083-F%20-%20Matricula.pdf" class="action-button">
+                📑 Planta de Subdivisão dos Lotes
+            </a>
+            <a href="https://wa.me/44997013489" class="action-button">
+                💬 Iniciar Conversa no WhatsApp
+            </a>
         </div>
     </div>
 
     <footer>
-        <p>&copy; 2024 Apresentação do Terreno - Marialva-PR. Todos os direitos reservados.</p>
+        <img src="https://i.imgur.com/3YKn2xW.png" alt="Engesud Logotipo">
+        <div class="contact">
+            <p>Engesud Engenharia e Intermediação Ltda.</p>
+            <p>Contato: +55 (44) 99701-3489</p>
+        </div>
     </footer>
 </body>
 </html>
