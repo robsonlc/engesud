@@ -18,137 +18,185 @@
     <link rel="shortcut icon" href="https://i.imgur.com/ZQ2U8eO.png" type="image/x-icon">
 
     <style>
-        body {
-            font-family: 'Roboto', sans-serif;
+        :root {
+            --primary-color: #0066cc;
+            --secondary-color: #004999;
+            --bg-light: #f0f4f8;
+            --text-dark: #333;
+            --shadow-color: rgba(0, 0, 0, 0.1);
+        }
+
+        * {
             margin: 0;
             padding: 0;
-            background-color: #f0f4f8;
-            color: #333;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: var(--bg-light);
+            color: var(--text-dark);
             line-height: 1.6;
         }
+
         .header {
             width: 100%;
-            height: 200px;
-            background: url('https://i.imgur.com/t8D9Jyn.png') center/cover no-repeat;
-            opacity: 0.3;
+            height: 300px;
+            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)),
+                        url('https://i.imgur.com/t8D9Jyn.png') center/cover no-repeat;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: -150px;
         }
+
         .container {
-            max-width: 800px;
+            max-width: 1000px;
             margin: auto;
             background-color: #fff;
-            padding: 30px;
-            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
-            border-radius: 15px;
-            margin-top: -100px;
+            padding: 40px;
+            box-shadow: 0 0 30px var(--shadow-color);
+            border-radius: 20px;
             position: relative;
             z-index: 2;
         }
-        h1, h2 {
-            color: #0066cc;
-            margin-top: 1.5em;
-        }
+
         h1 {
-            font-size: 2.5em;
+            font-size: 3em;
             text-align: center;
-            margin-bottom: 1em;
+            color: var(--primary-color);
+            margin-bottom: 1.5em;
+            text-transform: uppercase;
+            letter-spacing: 1px;
         }
+
         h2 {
-            font-size: 1.8em;
-            border-bottom: 2px solid #0066cc;
-            padding-bottom: 10px;
+            font-size: 2em;
+            color: var(--primary-color);
+            border-bottom: 3px solid var(--primary-color);
+            padding-bottom: 15px;
+            margin: 1.5em 0 1em;
         }
+
         .value-card {
-            background: linear-gradient(135deg, #0066cc, #004999);
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
             color: white;
-            padding: 30px;
-            margin: 30px 0;
-            border-radius: 15px;
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+            padding: 40px;
+            margin: 40px 0;
+            border-radius: 20px;
+            box-shadow: 0 15px 30px var(--shadow-color);
+            transform: translateY(0);
+            transition: transform 0.3s ease;
         }
-        .value-card h2 {
-            color: white;
-            border: none;
-            margin-top: 0;
-            text-align: center;
+
+        .value-card:hover {
+            transform: translateY(-5px);
         }
+
         .value-number {
-            font-size: 2.5em;
+            font-size: 3em;
             font-weight: bold;
             text-align: center;
-            margin: 20px 0;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+            margin: 30px 0;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
         }
-        .section {
-            margin-bottom: 40px;
-            padding: 20px;
-            background: #fff;
-            border-radius: 10px;
-        }
+
         .highlight-box {
             background-color: #f8f9fa;
-            border-left: 4px solid #0066cc;
-            padding: 20px;
-            margin: 20px 0;
+            border-left: 6px solid var(--primary-color);
+            padding: 25px;
+            margin: 25px 0;
+            border-radius: 0 15px 15px 0;
         }
-        .image-container {
-            text-align: center;
-            margin: 30px 0;
-        }
-        .image-container img {
-            max-width: 100%;
-            height: auto;
-            border-radius: 10px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-        }
+
         .area-image {
             width: 100%;
-            height: 400px;
-            background-color: #f8f9fa;
-            margin: 20px 0;
-            border-radius: 15px;
+            height: 500px;
+            border-radius: 20px;
             overflow: hidden;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            margin: 30px 0;
+            box-shadow: 0 15px 30px var(--shadow-color);
         }
+
         .area-image img {
             width: 100%;
             height: 100%;
             object-fit: cover;
+            transition: transform 0.3s ease;
         }
+
+        .area-image:hover img {
+            transform: scale(1.05);
+        }
+
         .timeline {
             background: #f8f9fa;
-            padding: 20px;
-            border-radius: 10px;
-            margin: 20px 0;
+            padding: 30px;
+            border-radius: 15px;
+            margin: 30px 0;
         }
+
         .timeline-item {
-            margin: 15px 0;
-            padding-left: 20px;
-            border-left: 3px solid #0066cc;
+            margin: 20px 0;
+            padding-left: 30px;
+            border-left: 4px solid var(--primary-color);
         }
+
         .footer {
             text-align: center;
-            margin-top: 50px;
-            padding: 20px;
+            margin-top: 60px;
+            padding: 30px;
             background: #f8f9fa;
-            border-radius: 10px;
+            border-radius: 15px;
         }
+
         .footer img {
-            width: 150px;
-            margin-bottom: 15px;
+            width: 200px;
+            margin-bottom: 20px;
+            transition: transform 0.3s ease;
         }
+
+        .footer img:hover {
+            transform: scale(1.1);
+        }
+
         .cta-button {
             display: inline-block;
             background-color: #25D366;
             color: white;
-            padding: 15px 30px;
-            border-radius: 30px;
+            padding: 20px 40px;
+            border-radius: 50px;
             text-decoration: none;
-            margin: 20px 0;
+            margin: 30px 0;
             font-weight: bold;
-            transition: background-color 0.3s;
+            font-size: 1.2em;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba(37, 211, 102, 0.3);
         }
+
         .cta-button:hover {
             background-color: #128C7E;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(37, 211, 102, 0.4);
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 20px;
+                margin: 20px;
+            }
+
+            h1 {
+                font-size: 2em;
+            }
+
+            .value-number {
+                font-size: 2em;
+            }
+
+            .area-image {
+                height: 300px;
+            }
         }
     </style>
 </head>
@@ -232,8 +280,17 @@
     <div class="footer">
         <img src="https://i.imgur.com/6z1r7cp.jpeg" alt="Logotipo da Engesud">
         <p>Engesud - Empresa de Intermediação<br>Contato: +55 (44) 99701-3489</p>
+        <p id="data-atualizacao" class="last-update">Última atualização: <span id="data"></span></p>
     </div>
 </div>
+
+<script>
+    document.getElementById('data').textContent = new Date().toLocaleDateString('pt-BR', {
+        day: '2-digit',
+        month: 'long',
+        year: 'numeric'
+    });
+</script>
 
 </body>
 </html>
