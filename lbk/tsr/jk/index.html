@@ -11,11 +11,12 @@
     <meta property="og:image" content="https://i.imgur.com/Arp45nU.png">
     <meta property="og:image:width" content="800">
     <meta property="og:image:height" content="800">
-    <meta property="og:url" content="https://www.engesudsmart.com.br//lbk/tsr/jk">
+    <meta property="og:url" content="https://www.engesudsmart.com.br/lbk/tsr/jk">
     <meta property="og:type" content="website">
     <meta property="og:site_name" content="Engesud Smart">
-    <!-- Favicon para melhor visualização em guias -->
-<link rel="shortcut icon" href="https://i.imgur.com/ZQ2U8eO.png" type="image/x-icon">
+
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="https://i.imgur.com/ZQ2U8eO.png" type="image/x-icon">
 
     <style>
         body {
@@ -28,17 +29,18 @@
         }
         .container {
             max-width: 600px;
-            margin: 0 auto;
+            margin: 20px auto;
             padding: 20px;
             background-color: #fff;
-            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
         }
         h1, h2 {
             color: #0066cc;
             margin-top: 0;
         }
         h1 {
-            font-size: 24px;
+            font-size: 26px;
             text-align: center;
         }
         h2 {
@@ -53,6 +55,10 @@
             border-left: 4px solid #0066cc;
             padding: 10px;
             margin-bottom: 20px;
+        }
+        ul {
+            padding-left: 20px;
+            list-style-type: disc;
         }
         .map-container {
             position: relative;
@@ -74,10 +80,16 @@
             background-color: #0066cc;
             color: white;
             text-align: center;
-            padding: 10px;
+            padding: 12px;
             text-decoration: none;
+            font-size: 16px;
+            font-weight: bold;
             border-radius: 5px;
             margin-top: 20px;
+            transition: background-color 0.3s;
+        }
+        .cta-button:hover {
+            background-color: #004c99;
         }
         .logo {
             display: block;
@@ -89,6 +101,11 @@
             margin-top: 20px;
             font-size: 14px;
             color: #666;
+        }
+        .last-update {
+            margin-top: 10px;
+            color: #999;
+            font-size: 12px;
         }
     </style>
 </head>
@@ -126,6 +143,7 @@
             Engesud Engenharia e Intermediação Ltda.<br>
             +55 (44) 99701-3489</p>
             <p>&copy; 2024 Engesud Engenharia e Intermediação Ltda.</p>
+            <p id="data-atualizacao" class="last-update">Última atualização: 25 de novembro de 2024</p>
         </div>
     </div>
 </body>
