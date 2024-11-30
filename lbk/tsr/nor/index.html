@@ -1,1 +1,82 @@
-Logo vem o website!
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta property="og:title" content="Proposta de Empreendimento | Engesud">
+    <meta property="og:description" content="Detalhes sobre o terreno em Londrina para o programa Minha Casa Minha Vida.">
+    <meta property="og:image" content="https://i.imgur.com/i5vU3Ks.png">
+    <meta property="og:url" content="https://www.engesudsmart.com.br/lbk/tsr/nor">
+    <meta name="description" content="Apresentação do terreno para o programa Minha Casa Minha Vida.">
+    <title>Proposta - Engesud</title>
+    <link rel="shortcut icon" href="https://i.imgur.com/HjwVm8x.png" type="image/x-icon">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+        }
+        header {
+            background: url('https://i.imgur.com/VjJD38G.png') center/cover no-repeat;
+            opacity: 0.3;
+            height: 200px;
+            text-align: center;
+        }
+        main {
+            padding: 20px;
+        }
+        .thumbnail {
+            display: inline-block;
+            margin: 20px;
+            text-align: center;
+        }
+        footer {
+            text-align: center;
+            padding: 20px;
+            background: #f4f4f4;
+            font-size: 0.9em;
+        }
+        footer img {
+            width: 100px;
+            margin-bottom: 10px;
+        }
+        .last-update {
+            color: #777;
+        }
+    </style>
+</head>
+<body>
+    <header></header>
+    <main>
+        <h1>Proposta de Empreendimento</h1>
+        <p>Detalhes sobre o terreno em Londrina para o programa Minha Casa Minha Vida.</p>
+        
+        <h2>Mapeamento da Área</h2>
+        <div>
+            <iframe src="https://www.google.com/maps/d/embed?mid=15z8WE5Q2fDQs6PoGH_Gm_MisgRva9pI&ehbc=2E312F" width="640" height="480"></iframe>
+        </div>
+
+        <h2>Documentos e Imagens</h2>
+        <div class="thumbnail">
+            <a href="https://www.engesudsmart.com.br/lbk/tsr/nor/implantacao.pdf" target="_blank">
+                <img src="https://i.imgur.com/3hnNZSX.png" alt="Implantação Sugestiva" width="200">
+                <p>Implantação Sugestiva (PDF)</p>
+            </a>
+        </div>
+        <div class="thumbnail">
+            <a href="https://www.engesudsmart.com.br/lbk/tsr/nor/levantamento" target="_blank">
+                <img src="https://i.imgur.com/xcySpo3.png" alt="Levantamento Topográfico" width="200">
+                <p>Levantamento Topográfico (PDF)</p>
+            </a>
+        </div>
+    </main>
+    <footer>
+        <img src="https://i.imgur.com/3YKn2xW.png" alt="Logo Engesud">
+        <p><strong>Engesud Engenharia e Intermediação LTDA</strong></p>
+        <p>Robson Luis da Costa | <a href="https://wa.me/4497013489">+55 (44) 99701-3489</a></p>
+        <p id="data-atualizacao" class="last-update">Última atualização: <script>document.getElementById('data-atualizacao').innerText += new Date().toLocaleDateString('pt-BR');</script></p>
+    </footer>
+</body>
+</html>
+
