@@ -35,7 +35,7 @@
         header {
             background: linear-gradient(rgba(0, 95, 115, 0.8), rgba(0, 95, 115, 0.9)), 
                         url('https://i.imgur.com/SINJDdK.png') center/cover no-repeat;
-            height: 400px;
+            height: 500px;
             text-align: center;
             display: flex;
             flex-direction: column;
@@ -43,56 +43,48 @@
             align-items: center;
             color: #fff;
             position: relative;
-            animation: fadeIn 1.5s ease-out;
-        }
-
-        @keyframes fadeIn {
-            from { opacity: 0; }
-            to { opacity: 1; }
+            padding: 0 20px;
         }
 
         header h1 {
-            font-size: 3.2em;
+            font-size: 4em;
             margin: 0;
-            margin-bottom: 20px;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+            margin-bottom: 30px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
         }
 
         header p {
-            font-size: 1.4em;
+            font-size: 1.6em;
             max-width: 800px;
             margin: 0;
-            padding: 0 20px;
-            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+            text-shadow: 1px 1px 3px rgba(0,0,0,0.3);
         }
 
         main {
-            padding: 60px 20px;
+            padding: 80px 20px;
             max-width: 1200px;
             margin: 0 auto;
         }
 
         .info-section {
             background: white;
-            border-radius: 15px;
-            padding: 40px;
-            margin-bottom: 40px;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
-            transform: translateY(0);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border-radius: 20px;
+            padding: 50px;
+            margin-bottom: 50px;
+            box-shadow: 0 8px 30px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
         }
 
         .info-section:hover {
             transform: translateY(-5px);
-            box-shadow: 0 6px 25px rgba(0,0,0,0.12);
         }
 
         .info-section h2 {
             color: var(--primary-color);
-            margin-bottom: 20px;
-            font-size: 2em;
+            margin-bottom: 30px;
+            font-size: 2.2em;
             position: relative;
-            padding-bottom: 10px;
+            padding-bottom: 15px;
         }
 
         .info-section h2::after {
@@ -100,89 +92,73 @@
             position: absolute;
             bottom: 0;
             left: 0;
-            width: 60px;
-            height: 3px;
+            width: 80px;
+            height: 4px;
             background: var(--secondary-color);
         }
 
-        .documents-grid {
+        .statistics-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
             gap: 30px;
             margin: 30px 0;
         }
 
-        .document-card {
-            background: white;
+        .statistics-card {
+            background: var(--light-bg);
+            padding: 30px;
             border-radius: 15px;
-            overflow: hidden;
-            transition: all 0.3s ease;
             box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-            position: relative;
+            transition: all 0.3s ease;
         }
 
-        .document-card:hover {
-            transform: translateY(-8px);
+        .statistics-card:hover {
+            transform: translateY(-5px);
             box-shadow: 0 8px 25px rgba(0,0,0,0.15);
         }
 
-        .document-card a {
-            text-decoration: none;
-            color: var(--text-color);
-        }
-
-        .document-card img {
-            width: 100%;
-            height: 220px;
-            object-fit: cover;
-            transition: transform 0.3s ease;
-        }
-
-        .document-card:hover img {
-            transform: scale(1.05);
-        }
-
-        .document-card .content {
-            padding: 25px;
-            text-align: center;
-        }
-
-        .document-card h3 {
+        .statistics-card h3 {
             color: var(--primary-color);
-            margin-bottom: 10px;
+            margin-bottom: 15px;
+            font-size: 1.4em;
+        }
+
+        .statistics-card p {
+            font-size: 1.2em;
+            font-weight: 600;
+            color: var(--secondary-color);
         }
 
         .cta-button {
             display: inline-block;
             background: var(--secondary-color);
             color: white;
-            padding: 18px 40px;
-            margin: 25px 0;
-            text-align: center;
+            padding: 15px 40px;
+            border-radius: 30px;
             text-decoration: none;
-            border-radius: 8px;
             font-weight: bold;
-            font-size: 1.1em;
+            font-size: 1.2em;
+            margin-top: 30px;
             transition: all 0.3s ease;
-            box-shadow: 0 4px 15px rgba(238, 155, 0, 0.2);
+            box-shadow: 0 4px 15px rgba(238, 155, 0, 0.3);
         }
 
         .cta-button:hover {
-            background: #d68a00;
-            transform: translateY(-3px);
-            box-shadow: 0 6px 20px rgba(238, 155, 0, 0.3);
+            background: #f4a261;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(238, 155, 0, 0.4);
         }
 
         footer {
             background: var(--primary-color);
             color: white;
-            padding: 60px 20px;
+            padding: 80px 20px;
             text-align: center;
         }
 
         footer img {
-            width: 140px;
-            margin-bottom: 25px;
+            width: 160px;
+            margin-bottom: 30px;
             transition: transform 0.3s ease;
         }
 
@@ -191,7 +167,8 @@
         }
 
         footer p {
-            margin: 10px 0;
+            margin: 15px 0;
+            font-size: 1.1em;
         }
 
         footer a {
@@ -201,29 +178,38 @@
         }
 
         footer a:hover {
-            color: #ffb703;
-            text-decoration: underline;
+            color: #f4a261;
         }
 
         @media (max-width: 768px) {
             header {
-                height: 300px;
+                height: 400px;
             }
 
             header h1 {
-                font-size: 2.4em;
+                font-size: 2.8em;
             }
 
             header p {
-                font-size: 1.2em;
+                font-size: 1.3em;
             }
 
             .info-section {
-                padding: 25px;
+                padding: 30px;
             }
 
-            .cta-button {
-                padding: 15px 30px;
+            .statistics-card {
+                padding: 20px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            header h1 {
+                font-size: 2.2em;
+            }
+
+            header p {
+                font-size: 1.1em;
             }
         }
     </style>
@@ -236,12 +222,45 @@
     <main>
         <div class="info-section">
             <h2>Detalhes do Projeto</h2>
-            <p>O empreendimento "Flores dos Campos" tem alto potencial de desenvolvimento no programa Minha Casa Minha Vida, oferecendo uma excelente oportunidade de investimento com retorno garantido.</p>
+            <p>O empreendimento "Flores dos Campos" está localizado estrategicamente em Londrina, abrangendo uma área total de <strong>394.269,50 m²</strong>, com potencial significativo para desenvolvimento residencial e comercial.</p>
+            <p>Com a recente correção dos dados pelo proprietário, Sr. Norberto, os destaques incluem:</p>
+            <div class="statistics-grid">
+                <div class="statistics-card">
+                    <h3>Área Total do Projeto</h3>
+                    <p>394.269,50 m²</p>
+                </div>
+                <div class="statistics-card">
+                    <h3>Área Comercial</h3>
+                    <p>40.024,24 m²</p>
+                </div>
+                <div class="statistics-card">
+                    <h3>Unidades Residenciais - OP</h3>
+                    <p>Aproximadamente 1.800 unidades</p>
+                </div>
+                <div class="statistics-card">
+                    <h3>Unidades Residenciais - Caixa</h3>
+                    <p>Aproximadamente 1.600 unidades</p>
+                </div>
+                <div class="statistics-card">
+                    <h3>Área Institucional</h3>
+                    <p>29.627,42 m²</p>
+                </div>
+                <div class="statistics-card">
+                    <h3>Área de Praças</h3>
+                    <p>28.469,14 m²</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="info-section">
+            <h2>Contexto Atual</h2>
+            <p>Proprietário iniciou diálogos com o Secretário de Obras da Prefeitura, abordando a possibilidade de desocupação, demolição das áreas invadidas e desenvolvimento de um novo projeto, incluindo a parcela pertencente à Caixa Econômica Federal.</p>
+            <p>Reuniões com stakeholders, incluindo a superintendência da Caixa em Londrina, estão sendo programadas para alinhar cronogramas e definir as premissas de execução.</p>
         </div>
 
         <div class="info-section">
             <h2>Localização Estratégica</h2>
-            <iframe src="https://www.google.com/maps/d/embed?mid=19v9Zu2LoXorYcW6cmnDlHXGAxSG6OcQ&ehbc=2E312F" width="100%" height="480" style="border-radius: 15px; margin: 20px 0; box-shadow: 0 4px 15px rgba(0,0,0,0.1);"></iframe>
+            <iframe src="https://www.google.com/maps/d/embed?mid=19v9Zu2LoXorYcW6cmnDlHXGAxSG6OcQ&ehbc=2E312F" width="100%" height="480" style="border-radius: 15px;"></iframe>
         </div>
 
         <div class="info-section">
@@ -252,7 +271,7 @@
                         <img src="https://i.imgur.com/BH2M6yY.png" alt="Planta Geométrica do Loteamento">
                         <div class="content">
                             <h3>Planta Geométrica</h3>
-                            <p>Detalhes técnicos e especificações do terreno</p>
+                            <p>Acesse os detalhes técnicos do terreno e áreas designadas.</p>
                         </div>
                     </a>
                 </div>
