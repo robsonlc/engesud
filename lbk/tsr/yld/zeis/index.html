@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta property="og:url" content="https://www.engesudsmart.com.br/lbk/tsr/yld/zeis" />
+    <meta property="og:image" content="https://www.engesudsmart.com.br/lbk/tsr/yld/Yld.png" />
+    <meta property="og:title" content="Oportunidade de Desenvolvimento em Programa ProZEIS - Maringá" />
+    <meta property="og:description" content="Área com potencial para habitação social em blocos T+3. Condições adequadas para empreendimentos no âmbito do ProZEIS e MCMV." />
+    <title>Oportunidade - Área para Empreendimentos Sociais T+3 em Maringá</title>
+
+    <link rel="shortcut icon" href="https://i.imgur.com/ZQ2U8eO.png" type="image/x-icon">
+    
+    <style>
+        :root {
+            --primary-color: #00796B;
+            --secondary-color: #004D40;
+            --text-color: #37474F;
+            --light-bg: #F5F5F5;
+            --border-radius: 12px;
+            --box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--light-bg);
+            color: var(--text-color);
+            line-height: 1.8;
+        }
+
+        header {
+            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)),
+                        url('https://www.engesudsmart.com.br/lbk/tsr/yld/fundo.png') center/cover no-repeat;
+            height: 500px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+            position: relative;
+        }
+
+        header::after {
+            content: '';
+            position: absolute;
+            bottom: -50px;
+            left: 0;
+            right: 0;
+            height: 100px;
+            background: linear-gradient(to bottom right, transparent 49%, white 51%);
+        }
+
+        header h1 {
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        header p {
+            font-size: 1.8rem;
+            max-width: 800px;
+            margin: 0 auto;
+            text-shadow: 1px 1px 3px rgba(0,0,0,0.3);
+        }
+
+        .content {
+            max-width: 1200px;
+            margin: -60px auto 0;
+            padding: 40px;
+            background: white;
+            border-radius: var(--border-radius);
+            box-shadow: var(--box-shadow);
+            position: relative;
+            z-index: 1;
+        }
+
+        .feature-box {
+            background: var(--light-bg);
+            padding: 30px;
+            border-radius: var(--border-radius);
+            margin: 30px 0;
+            border-left: 5px solid var(--primary-color);
+        }
+
+        h2 {
+            color: var(--secondary-color);
+            margin-bottom: 30px;
+            font-size: 2rem;
+            border-bottom: 3px solid var(--primary-color);
+            padding-bottom: 15px;
+        }
+
+        p {
+            font-size: 1.2rem;
+            color: #555;
+            margin: 20px 0;
+        }
+
+        .map {
+            margin: 40px 0;
+            position: relative;
+            padding-top: 56.25%;
+        }
+
+        iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: none;
+            border-radius: var(--border-radius);
+            box-shadow: var(--box-shadow);
+        }
+
+        .image-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin: 40px 0;
+        }
+
+        .image-grid img {
+            width: 100%;
+            height: auto;
+            object-fit: contain;
+            border-radius: var(--border-radius);
+            box-shadow: var(--box-shadow);
+            transition: transform 0.3s ease;
+        }
+
+        .image-grid img:hover {
+            transform: scale(1.05);
+        }
+
+        .highlight {
+            background-color: #E8F5E9;
+            padding: 20px;
+            border-radius: var(--border-radius);
+            margin: 30px 0;
+        }
+
+        .flex-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 30px;
+            align-items: flex-start;
+        }
+
+        .flex-item {
+            flex: 1;
+            min-width: 300px;
+        }
+
+        .action-buttons {
+            margin: 60px 0 40px;
+            display: flex;
+            gap: 30px;
+            justify-content: center;
+        }
+
+        .action-button {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 20px 40px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1.2rem;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .action-button:hover {
+            background-color: var(--secondary-color);
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(0,0,0,0.2);
+        }
+
+        footer {
+            text-align: center;
+            padding: 60px 20px;
+            background: linear-gradient(to bottom, var(--secondary-color), #003330);
+            color: white;
+            margin-top: 60px;
+        }
+
+        footer img {
+            max-width: 180px;
+            margin-bottom: 30px;
+            border-radius: 10px;
+        }
+
+        footer p {
+            color: white;
+            margin: 10px 0;
+            font-size: 1.1rem;
+        }
+
+        .svg-charts {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .chart-label {
+            font-size: 1.1rem;
+            margin-bottom: 5px;
+            color: #333;
+        }
+
+        /* Responsividade */
+        @media (max-width: 768px) {
+            header {
+                height: 400px;
+            }
+
+            header h1 {
+                font-size: 2.5rem;
+            }
+
+            header p {
+                font-size: 1.3rem;
+            }
+
+            .content {
+                padding: 20px;
+            }
+
+            .action-buttons {
+                flex-direction: column;
+                align-items: stretch;
+            }
+
+            .action-button {
+                text-align: center;
+                justify-content: center;
+            }
+
+            .flex-container {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Área para Empreendimentos T+3</h1>
+        <p>Potencial para Habitação Social no âmbito do ProZEIS em Maringá</p>
+    </header>
+
+    <div class="content">
+        <div class="feature-box">
+            <h2>Contas Rápidas de Viabilidade</h2>
+            <div class="flex-container">
+                <div class="flex-item">
+                    <p><strong>Áreas Líquidas por Quadra:</strong></p>
+                    <ul style="font-size:1.2rem; color:#555; line-height:1.5; list-style:disc; margin-left:20px;">
+                        <li>Quadra 01: 24.200 m²</li>
+                        <li>Quadra 02: 24.200 m²</li>
+                        <li>Quadra 03: 36.400 m²</li>
+                        <li>Quadra 04: 36.400 m²</li>
+                        <li>Quadra 05: 15.700 m²</li>
+                        <li>Quadra 06: 15.700 m²</li>
+                        <li>Quadra 07: 44.800 m²</li>
+                        <li>Quadra 08: 44.800 m²</li>
+                        <li>Quadra 09: 15.800 m²</li>
+                        <li>Quadra 10: 16.800 m²</li>
+                    </ul>
+                    <p><strong>Total:</strong> 274.800 m²</p>
+                    <p><strong>Aproveitamento:</strong><br>
+                    ~274 torres (1 torre/1.000 m²)<br>
+                    274 torres × 16 unidades/torre = 4.384 unidades</p>
+                    <p><strong>Ticket Médio:</strong> R$ 210.000/unidade</p>
+                    <p><strong>VGV Estimado:</strong><br>
+                    4.384 unidades × R$ 210.000 ≈ R$ 920,64 milhões</p>
+                    <p><strong>Permuta (8%):</strong><br>
+                    8% de R$ 920,64 mi ≈ R$ 73,65 mi</p>
+
+                    <!-- Gráficos simples em SVG -->
+                    <div class="svg-charts">
+                        <div>
+                            <div class="chart-label">Total de Área (274.800 m²)</div>
+                            <svg width="100%" height="20">
+                                <rect x="0" y="0" width="100%" height="20" fill="#EEE"/>
+                                <rect x="0" y="0" width="100%" height="20" fill="#00796B" style="width:100%;"/>
+                            </svg>
+                        </div>
+
+                        <div>
+                            <div class="chart-label">Unidades (4.384 unidades)</div>
+                            <svg width="100%" height="20">
+                                <rect x="0" y="0" width="100%" height="20" fill="#EEE"/>
+                                <rect x="0" y="0" width="100%" height="20" fill="#004D40" style="width:100%;"/>
+                            </svg>
+                        </div>
+
+                        <div>
+                            <div class="chart-label">VGV: R$ 920,64 mi</div>
+                            <svg width="100%" height="20">
+                                <rect x="0" y="0" width="100%" height="20" fill="#EEE"/>
+                                <rect x="0" y="0" width="100%" height="20" fill="#00AB9A" style="width:100%;"/>
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="flex-item">
+                    <p><strong>Distribuição das Quadras:</strong></p>
+                    <img src="https://i.imgur.com/QqzfsZN.png" alt="Ilustração da área e possíveis lotes T+3" style="max-width:100%; border-radius:var(--border-radius); box-shadow:var(--box-shadow);">
+                </div>
+            </div>
+        </div>
+
+        <h2>Localização Estratégica</h2>
+        <div class="map">
+            <iframe src="https://www.google.com/maps/d/embed?mid=1xHWMQE_It7SKT_CVcsRwvl8rzeUAVYk&ehbc=2E312F"></iframe>
+        </div>
+
+        <h2>Viabilidade Técnica e Urbanística</h2>
+        <p>A topografia e a proximidade com infraestrutura urbana favorecem a implantação. Ao enquadrar-se no ProZEIS, o projeto tem maior agilidade de aprovação, atende à demanda por habitação social e pode alcançar rápida comercialização, garantindo liquidez e retorno sólido.</p>
+        
+        <div class="image-grid">
+            <img src="https://www.engesudsmart.com.br/lbk/tsr/yld/ete.png" alt="Mapa com raio sanitário ETE Mandacarú">
+            <img src="https://www.engesudsmart.com.br/lbk/tsr/yld/diretrizes.png" alt="Mapa com diretrizes viárias">
+        </div>
+
+        <div class="highlight">
+            <h2>Aspectos Legais e Regulamentações</h2>
+            <p>✓ Área compatível com as diretrizes do ProZEIS em Maringá</p>
+            <p>✓ Considerações ambientais e sanitárias já analisadas</p>
+            <p>✓ Documentação completa e potencial para habitação social</p>
+            <p><a href="https://www3.maringa.pr.gov.br/site/index.php?sessao=422d107f31mg42" target="_blank">🔗 Consultar Legislação Urbanística de Maringá</a></p>
+        </div>
+
+        <h2>Oportunidade de Negócio</h2>
+        <p>Este material visa atrair construtoras e o proprietário para negociações. O modelo T+3 no âmbito do ProZEIS permite um produto habitacional acessível, com demanda consistente, garantindo velocidade nas vendas e um retorno financeiro robusto para todos os envolvidos.</p>
+
+        <div class="action-buttons">
+            <a href="https://wa.me/44997013489?text=Olá,%20gostaria%20de%20mais%20informações%20sobre%20o%20potencial%20de%20desenvolvimento%20T+3%20nesta%20área." class="action-button">
+                💬 Solicitar Informações
+            </a>
+        </div>
+    </div>
+
+    <footer>
+        <img src="https://i.imgur.com/6z1r7cp.jpeg" alt="Logotipo da Engesud">
+        <p>Robson Luis da Costa</p>
+        <p>Engenheiro Civil e Corretor de Imóveis</p>
+        <p>CREA-PR 19.449/D | CRECI-PR 32.093</p>
+        <p>Contato: +55 (44) 99701-3489</p>
+    </footer>
+</body>
+</html>
