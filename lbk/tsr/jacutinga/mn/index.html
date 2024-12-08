@@ -47,7 +47,6 @@
             justify-content: center;
             color: white;
             text-align: center;
-            position: relative;
             padding: 0 20px;
         }
 
@@ -68,10 +67,9 @@
             max-width: 1200px;
             margin: -100px auto 0;
             padding: 40px;
-            background-color: white;
+            background-color: #fff;
             box-shadow: var(--box-shadow);
             border-radius: var(--border-radius);
-            position: relative;
         }
 
         h2 {
@@ -83,18 +81,6 @@
             display: inline-block;
         }
 
-        .map {
-            margin-bottom: 60px;
-        }
-
-        .map iframe {
-            width: 100%;
-            height: 500px;
-            border: none;
-            border-radius: var(--border-radius);
-            box-shadow: var(--box-shadow);
-        }
-
         .grid-container {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
@@ -103,12 +89,12 @@
         }
 
         .feature-card {
-            background: white;
+            background: #fff;
             padding: 35px;
             border-radius: var(--border-radius);
             box-shadow: var(--box-shadow);
-            transition: transform 0.3s ease;
             border: 1px solid rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
         }
 
         .feature-card:hover {
@@ -121,47 +107,96 @@
             font-size: 1.5rem;
         }
 
-        .action-buttons {
-            margin-top: 50px;
-            text-align: center;
-            display: flex;
+        .comparison-section {
+            margin-top: 60px;
+        }
+
+        .comparison-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
             gap: 20px;
-            flex-wrap: wrap;
+        }
+
+        .comparison-card {
+            background-color: #fff;
+            border: 1px solid rgba(0,0,0,0.1);
+            border-radius: var(--border-radius);
+            padding: 20px;
+            box-shadow: var(--box-shadow);
+        }
+
+        .comparison-card h4 {
+            color: var(--secondary-color);
+            margin-bottom: 10px;
+            font-size: 1.3rem;
+        }
+
+        .comparison-card ul {
+            list-style-type: none;
+            padding-left: 0;
+        }
+
+        .comparison-card ul li {
+            margin-bottom: 10px;
+        }
+
+        .map {
+            margin-top: 80px;
+        }
+
+        .map iframe {
+            width: 100%;
+            height: 500px;
+            border: none;
+            border-radius: var(--border-radius);
+            box-shadow: var(--box-shadow);
+        }
+
+        .timeline-section {
+            margin-top: 60px;
+        }
+
+        .timeline-section p {
+            margin-bottom: 20px;
+        }
+
+        .timeline-section ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .timeline-section ul li {
+            margin-bottom: 10px;
+        }
+
+        .svg-timeline {
+            margin-top: 30px;
+            display: flex;
             justify-content: center;
-        }
-
-        .action-button {
-            background-color: var(--primary-color);
-            color: white;
-            padding: 20px 40px;
-            border-radius: 50px;
-            text-decoration: none;
-            font-weight: 600;
-            font-size: 1.2rem;
-            box-shadow: 0 4px 15px rgba(33, 150, 243, 0.3);
-            transition: all 0.3s ease;
-            display: inline-flex;
-            align-items: center;
-            gap: 10px;
-        }
-
-        .action-button:hover {
-            background-color: var(--secondary-color);
-            transform: translateY(-2px);
-            box-shadow: 0 6px 20px rgba(33, 150, 243, 0.4);
         }
 
         footer {
             margin-top: 80px;
-            padding: 60px 20px;
+            padding: 40px 20px;
             background: linear-gradient(135deg, #1976D2 0%, #2196F3 100%);
             color: white;
             text-align: center;
         }
 
+        footer img {
+            width: 150px;
+            height: auto;
+            margin-bottom: 10px;
+        }
+
         footer p {
-            margin: 10px 0;
+            margin: 5px 0;
             font-size: 1.1rem;
+        }
+
+        footer a {
+            color: white;
+            text-decoration: none;
         }
 
         @media (max-width: 768px) {
@@ -183,11 +218,6 @@
             header {
                 height: 400px;
             }
-
-            .action-button {
-                width: 100%;
-                justify-content: center;
-            }
         }
     </style>
 </head>
@@ -198,43 +228,130 @@
     </header>
     
     <div class="content">
-        <div class="map">
-            <h2>Localização Estratégica</h2>
-            <iframe src="https://www.google.com/maps/d/embed?mid=1WQ579rRMoAnnYh5mSiAqoq9mTh4mkxc&ehbc=2E312F" width="640" height="480"></iframe>
-        </div>
-
         <div class="next-steps">
             <h2>Cenários de Negociação</h2>
-            <p>Com base no potencial da área, apresentamos três cenários possíveis:</p>
+            <p>Os cenários abaixo foram desenvolvidos com base em uma estimativa de adensamento de aproximadamente 900 lotes de 160 m² cada. Quaisquer propostas deverão passar por estudos e diligências para validação de sua viabilidade.</p>
             <div class="grid-container">
                 <div class="feature-card">
                     <h3>Venda Direta</h3>
-                    <p>Preço à vista: <strong>R$ 16 milhões</strong>.</p>
+                    <p><strong>Valor à vista:</strong> R$ 16 milhões</p>
+                    <p><strong>Recebimento:</strong> Imediato após a venda</p>
+                    <p><strong>Risco:</strong> Baixo, pagamento integral imediato</p>
                 </div>
                 <div class="feature-card">
-                    <h3>Parceria para Loteamento Padrão</h3>
-                    <p>Modelo: Divisão de 60% (construtora) e 40% (proprietário).</p>
-                    <p>Estimativa de retorno: <strong>R$ 54 milhões</strong> (40% de 900 lotes a R$ 150 mil cada).</p>
+                    <h3>Loteamento Padrão</h3>
+                    <p>Participação do proprietário: <strong>40%</strong> dos lotes</p>
+                    <p>Retorno estimado: <strong>R$ 54 milhões</strong> (40% de 900 lotes a R$ 150 mil cada)</p>
+                    <p><strong>Prazo:</strong> Mais longo, depende de aprovação, obras e comercialização gradual</p>
+                    <p><strong>Risco:</strong> Moderado, atrelado à velocidade de venda e custos de implantação</p>
                 </div>
                 <div class="feature-card">
-                    <h3>Casas Prontas (MCMV)</h3>
-                    <p>Modelo: Parceria financeira com 9% a 12% de participação no VGV.</p>
-                    <p>Estimativa de retorno: entre <strong>R$ 18 milhões</strong> e <strong>R$ 24 milhões</strong>.</p>
+                    <h3>Casas Prontas (MCMV) - Cenário Geral</h3>
+                    <p>Modelo: 9% a 12% de participação no VGV</p>
+                    <p>Retorno: entre <strong>R$ 18 milhões</strong> e <strong>R$ 24 milhões</strong></p>
+                    <p><strong>Prazo:</strong> Mais curto que o loteamento puro, devido à agilidade na comercialização</p>
+                    <p><strong>Risco:</strong> Baixo, alta liquidez e demanda consolidada</p>
+                </div>
+                <div class="feature-card">
+                    <h3>Menin Engenharia (Casas MCMV)</h3>
+                    <p>A Menin Engenharia é uma empresa com ampla experiência na construção de casas prontas no modelo Minha Casa Minha Vida, priorizando a agilidade na execução e comercialização.</p>
+                    <p>Nesta modalidade, não há compra direta do terreno e nem desenvolvimento de loteamento padrão, apenas o foco em casas prontas MCMV. A Menin demonstra interesse em negociar uma parceria financeira, estruturando uma permuta que atenda às expectativas do proprietário, com maior segurança, rapidez e liquidez.</p>
                 </div>
             </div>
-            <p>A modalidade de Casas Prontas (MCMV) permite maior liquidez e agilidade na comercialização, reduzindo o tempo de retorno e otimizando os resultados financeiros.</p>
+            <p>A parceria com a Menin tem potencial de alinhar valor, prazo e segurança, garantindo uma execução ágil e um retorno mais rápido se comparado ao loteamento padrão.</p>
         </div>
 
-        <div class="action-buttons">
-            <a href="https://wa.me/44997013489?text=Olá,%20gostaria%20de%20mais%20informações%20sobre%20a%20Área%20Jacutinga" class="action-button">
-                <i class="fab fa-whatsapp"></i> Solicitar Informações
-            </a>
+        <div class="comparison-section">
+            <h2>Prós e Contras de Cada Alternativa</h2>
+            <div class="comparison-grid">
+                <div class="comparison-card">
+                    <h4>Venda Direta</h4>
+                    <ul>
+                        <li><strong>Prós:</strong> Pagamento imediato, sem riscos de execução</li>
+                        <li><strong>Contras:</strong> Valor fixo, sem potencial de ganho futuro adicional</li>
+                    </ul>
+                </div>
+                <div class="comparison-card">
+                    <h4>Loteamento Padrão</h4>
+                    <ul>
+                        <li><strong>Prós:</strong> Potencial de retorno elevado (R$ 54 milhões)</li>
+                        <li><strong>Contras:</strong> Prazo longo e complexidade de aprovação e vendas graduais</li>
+                    </ul>
+                </div>
+                <div class="comparison-card">
+                    <h4>Casas Prontas (MCMV) - Geral</h4>
+                    <ul>
+                        <li><strong>Prós:</strong> Liquidez alta, demanda sólida, prazo mais curto</li>
+                        <li><strong>Contras:</strong> Retorno menor que o loteamento, porém mais seguro e rápido</li>
+                    </ul>
+                </div>
+                <div class="comparison-card">
+                    <h4>Menin Engenharia (MCMV)</h4>
+                    <ul>
+                        <li><strong>Prós:</strong>
+                            <ul>
+                                <li>Experiência e solidez da Menin no segmento MCMV</li>
+                                <li>Rapidez na execução, comercialização e recebimento</li>
+                                <li>Possibilidade de estruturar uma permuta financeira atraente</li>
+                            </ul>
+                        </li>
+                        <li><strong>Contras:</strong>
+                            <ul>
+                                <li>Necessidade de negociação dos percentuais para alinhar expectativas</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <p>Ao optar pela parceria com a Menin, o proprietário pode obter um equilíbrio interessante entre prazo, valor e previsibilidade.</p>
         </div>
+
+        <div class="map">
+            <h2>Localização Estratégica</h2>
+            <p>A área Jacutinga está próxima, mas ainda não integrada ao tecido urbano de Londrina. Essa condição pode resultar em valorização futura, enquanto o modelo MCMV se beneficia de alta demanda e comercialização rápida.</p>
+            <iframe src="https://www.google.com/maps/d/embed?mid=1WQ579rRMoAnnYh5mSiAqoq9mTh4mkxc&ehbc=2E312F"></iframe>
+        </div>
+
+        <div class="timeline-section">
+            <h2>Cronograma Típico do Empreendimento (Casas MCMV)</h2>
+            <p>Após a assinatura do contrato definitivo, o desenvolvimento costuma seguir estas etapas:</p>
+            <ul>
+                <li><strong>0 a 6 meses:</strong> Estudos, aprovações e licenças</li>
+                <li><strong>6 a 24 meses:</strong> Implantação (obras de infraestrutura e construção das casas)</li>
+                <li><strong>Durante a construção:</strong> Lançamento e comercialização das unidades</li>
+                <li><strong>Até 24 meses após assinatura:</strong> Pagamentos ao proprietário conforme avanço das vendas e recebíveis</li>
+            </ul>
+            <p>Esse prazo pode variar conforme o projeto, número de unidades e condições de mercado.</p>
+
+            <div class="svg-timeline">
+                <svg width="600" height="200" viewBox="0 0 600 200">
+                    <!-- Linha base -->
+                    <line x1="50" y1="100" x2="550" y2="100" stroke="#1976D2" stroke-width="4"/>
+                    <!-- Marcos do cronograma -->
+                    <circle cx="50" cy="100" r="10" fill="#2196F3"/>
+                    <circle cx="200" cy="100" r="10" fill="#2196F3"/>
+                    <circle cx="350" cy="100" r="10" fill="#2196F3"/>
+                    <circle cx="500" cy="100" r="10" fill="#2196F3"/>
+
+                    <!-- Textos -->
+                    <text x="40" y="130" fill="#333" font-size="14">0 meses</text>
+                    <text x="170" y="130" fill="#333" font-size="14">6 meses</text>
+                    <text x="320" y="130" fill="#333" font-size="14">12 a 18 meses</text>
+                    <text x="470" y="130" fill="#333" font-size="14">24 meses</text>
+                </svg>
+            </div>
+        </div>
+
+        <h2>Próximos Passos</h2>
+        <p>O próximo passo sugerido é uma reunião inicial por videoconferência com a Menin Engenharia, na qual:</p>
+        <p>Será apresentada a empresa e sua experiência no segmento MCMV, detalhando o conceito pensado para a área; discutindo cenários de negociação, parâmetros de permuta e a abordagem para estruturar os estudos e diligências. Esse encontro inicial serve para alinhar expectativas, esclarecer dúvidas e estabelecer um plano de trabalho claro e organizado.</p>
     </div>
 
     <footer>
-        <p>Robson Luis da Costa - Engenheiro Civil e Corretor de Imóveis</p>
-        <p><i class="fas fa-phone"></i> +55 (44) 99701-3489</p>
+        <img src="https://i.imgur.com/3YKn2xW.png" alt="Logo Engesud">
+        <p><strong>Engesud Engenharia e Intermediação LTDA</strong></p>
+        <p>Robson Luis da Costa | <a href="https://wa.me/44997013489">+55 (44) 99701-3489</a></p>
+        <p>Última atualização: 08 de dezembro de 2024</p>
     </footer>
 </body>
 </html>
