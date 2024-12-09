@@ -3,70 +3,123 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Oportunidade de Investimento - Alto Padrão Residencial em Maringá</title>
+    <title>Apresentação de Oportunidade - Área Exclusiva em Maringá</title>
 
-    <!-- Metatags Open Graph para pré-visualização no WhatsApp -->
-    <meta property="og:title" content="Oportunidade de Investimento - Alto Padrão Residencial em Maringá">
-    <meta property="og:description" content="Terreno de 7.115 m², localizado próximo ao Parque do Ingá. Ideal para desenvolvimento residencial de luxo.">
-    <meta property="og:image" content="https://i.imgur.com/Arp45nU.png">
+    <!-- Metatags Open Graph -->
+    <meta property="og:title" content="Apresentação de Oportunidade - Área Exclusiva em Maringá">
+    <meta property="og:description" content="Área exclusiva de 7.115 m² próxima ao Parque do Ingá, ideal para um empreendimento de alto padrão.">
+    <meta property="og:image" content="https://i.imgur.com/tfIfiS8.png">
     <meta property="og:image:width" content="800">
     <meta property="og:image:height" content="800">
     <meta property="og:url" content="https://www.engesudsmart.com.br/lbk/tsr/jk">
     <meta property="og:type" content="website">
-    <meta property="og:site_name" content="Engesud Smart">
+    <meta property="og:site_name" content="Engesud Engenharia">
 
     <!-- Favicon -->
-    <link rel="shortcut icon" href="https://i.imgur.com/ZQ2U8eO.png" type="image/x-icon">
+    <link rel="shortcut icon" href="https://i.imgur.com/HjwVm8x.png" type="image/x-icon">
 
     <style>
-        body {
-            font-family: Arial, sans-serif;
+        :root {
+            --primary-color: #0066cc;
+            --secondary-color: #e7f0fa;
+            --text-color: #333;
+            --background-color: #f9f9f9;
+            --shadow-color: rgba(0, 0, 0, 0.1);
+        }
+
+        * {
             margin: 0;
             padding: 0;
-            background-color: #f0f0f0;
-            color: #333;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: var(--background-color);
+            color: var(--text-color);
             line-height: 1.6;
         }
-        .container {
-            max-width: 600px;
-            margin: 20px auto;
-            padding: 20px;
-            background-color: #fff;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            border-radius: 8px;
+
+        header {
+            position: relative;
+            height: 300px;
+            overflow: hidden;
         }
-        h1, h2 {
-            color: #0066cc;
-            margin-top: 0;
+
+        .header-bg {
+            background: url('https://i.imgur.com/GFEPrA3.png') center/cover no-repeat;
+            height: 100%;
+            width: 100%;
+            position: absolute;
+            filter: brightness(0.7);
         }
-        h1 {
-            font-size: 26px;
+
+        .header-content {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
             text-align: center;
+            color: white;
+            width: 100%;
+            padding: 0 20px;
+            z-index: 1;
         }
-        h2 {
-            font-size: 20px;
-            margin-top: 20px;
-        }
-        p {
+
+        .header-content h1 {
+            font-size: 2.5em;
             margin-bottom: 15px;
+            color: white;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
         }
+
+        .container {
+            max-width: 1000px;
+            margin: -50px auto 20px;
+            padding: 30px;
+            background-color: #fff;
+            box-shadow: 0 0 20px var(--shadow-color);
+            border-radius: 12px;
+            position: relative;
+        }
+
+        h2 {
+            color: var(--primary-color);
+            font-size: 1.8em;
+            margin: 30px 0 20px;
+            border-bottom: 2px solid var(--secondary-color);
+            padding-bottom: 10px;
+        }
+
         .highlight {
-            background-color: #e7f0fa;
-            border-left: 4px solid #0066cc;
-            padding: 10px;
-            margin-bottom: 20px;
+            background-color: var(--secondary-color);
+            border-left: 4px solid var(--primary-color);
+            padding: 20px;
+            margin: 25px 0;
+            border-radius: 0 8px 8px 0;
         }
-        ul {
-            padding-left: 20px;
-            list-style-type: disc;
+
+        .highlight ul {
+            list-style-position: inside;
+            margin-top: 10px;
         }
+
+        .highlight li {
+            margin: 8px 0;
+        }
+
         .map-container {
             position: relative;
             padding-bottom: 56.25%;
             height: 0;
             overflow: hidden;
-            margin-bottom: 20px;
+            margin: 25px 0;
+            border-radius: 12px;
+            box-shadow: 0 4px 8px var(--shadow-color);
         }
+
         .map-container iframe {
             position: absolute;
             top: 0;
@@ -75,76 +128,109 @@
             height: 100%;
             border: 0;
         }
-        .cta-button {
-            display: block;
-            background-color: #0066cc;
-            color: white;
+
+        .image-container {
             text-align: center;
-            padding: 12px;
-            text-decoration: none;
-            font-size: 16px;
-            font-weight: bold;
-            border-radius: 5px;
-            margin-top: 20px;
-            transition: background-color 0.3s;
+            margin: 30px 0;
         }
-        .cta-button:hover {
-            background-color: #004c99;
+
+        .image-container img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 12px;
+            box-shadow: 0 4px 8px var(--shadow-color);
+            transition: transform 0.3s ease;
         }
-        .logo {
-            display: block;
-            margin: 20px auto;
-            max-width: 150px;
+
+        .image-container img:hover {
+            transform: scale(1.02);
         }
-        .footer {
-            text-align: center;
-            margin-top: 20px;
-            font-size: 14px;
+
+        .image-container p {
+            margin-top: 15px;
+            font-style: italic;
             color: #666;
         }
-        .last-update {
-            margin-top: 10px;
-            color: #999;
-            font-size: 12px;
+
+        footer {
+            background-color: #fff;
+            padding: 40px 20px;
+            text-align: center;
+            border-top: 1px solid #eee;
+            margin-top: 50px;
+        }
+
+        footer img {
+            width: 120px;
+            margin-bottom: 20px;
+            transition: transform 0.3s ease;
+        }
+
+        footer img:hover {
+            transform: scale(1.1);
+        }
+
+        footer p {
+            margin: 8px 0;
+            color: #666;
+        }
+
+        @media (max-width: 768px) {
+            .header-content h1 {
+                font-size: 1.8em;
+            }
+
+            .container {
+                margin: -30px 15px 20px;
+                padding: 20px;
+            }
+
+            h2 {
+                font-size: 1.5em;
+            }
         }
     </style>
 </head>
 <body>
-    <div class="container">
-        <h1>Oportunidade de Investimento em Maringá</h1>
-        <h2>Terreno de Alto Padrão Residencial</h2>
-        
-        <div class="highlight">
-            <strong>Área:</strong> 7.115 m²<br>
-            <strong>Localização:</strong> Próximo ao Parque do Ingá
+    <header>
+        <div class="header-bg"></div>
+        <div class="header-content">
+            <h1>Oportunidade Exclusiva em Maringá</h1>
         </div>
-        
-        <p>Terreno exclusivo com grande potencial para desenvolvimento residencial de alto padrão. Localização privilegiada, próxima a comércios e serviços.</p>
-        
-        <h2>Características</h2>
-        <ul>
-            <li>Área de alta valorização</li>
-            <li>Topografia favorável para projetos inovadores</li>
-            <li>Vistas privilegiadas</li>
-            <li>Ideal para empreendimentos de luxo</li>
-        </ul>
-        
-        <h2>Localização</h2>
+    </header>
+
+    <div class="container">
+        <p>A área de 7.115 m², próxima ao Parque do Ingá, apresenta características excepcionais para um empreendimento residencial de alto padrão. Este terreno exclusivo possui localização estratégica e potencial de valorização significativo.</p>
+
+        <div class="highlight">
+            <strong>Características principais:</strong>
+            <ul>
+                <li>Localização: Próxima ao Parque do Ingá</li>
+                <li>Área: 7.115 m²</li>
+                <li>Topografia favorável para projetos arquitetônicos inovadores</li>
+                <li>Vistas privilegiadas e excelente infraestrutura urbana</li>
+            </ul>
+        </div>
+
+        <h2>Localização Estratégica</h2>
         <div class="map-container">
             <iframe src="https://www.google.com/maps/d/embed?mid=1tAt85pN1-Yez57lqaMwwwPBllfGKvFU&ehbc=2E312F"></iframe>
         </div>
         
-        <a href="https://wa.me/4497013489?text=Olá,%20gostaria%20de%20saber%20mais%20sobre%20o%20terreno%20de%20alto%20padrão%20em%20Maringá" class="cta-button">Saiba mais via WhatsApp</a>
-        
-        <img src="https://i.imgur.com/3YKn2xW.png" alt="Logo Engesud" class="logo">
-        
-        <div class="footer">
-            <p>Robson Luis da Costa<br>
-            Engesud Engenharia e Intermediação Ltda.<br>
-            +55 (44) 99701-3489</p>
-            <p>&copy; 2024 Engesud Engenharia e Intermediação Ltda.</p>
-            <p id="data-atualizacao" class="last-update">Última atualização: 25 de novembro de 2024</p>
+        <h2>Visão Detalhada da Área</h2>
+        <div class="image-container">
+            <img src="https://i.imgur.com/0pGVjXz.png" alt="Polígono da área sobre o mapa de georreferenciamento">
+            <p>Figura: Polígono delimitando a área de 7.115 m²</p>
         </div>
+
+        <p>Essa é uma oportunidade rara de transformar o potencial dessa área em um projeto de referência na cidade de Maringá. Caso considere iniciar uma negociação ou avaliar o potencial dessa área, estamos à disposição para esclarecer quaisquer detalhes adicionais.</p>
     </div>
+
+    <footer>
+        <img src="https://i.imgur.com/3YKn2xW.png" alt="Logo Engesud">
+        <p><strong>Engesud Engenharia e Intermediação LTDA</strong></p>
+        <p>Robson Luis da Costa</p>
+        <p>Última atualização: 08 de dezembro de 2024</p>
+    </footer>
 </body>
 </html>
