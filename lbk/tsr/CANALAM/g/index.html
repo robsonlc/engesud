@@ -10,7 +10,7 @@
     <meta property="og:url" content="https://www.engesudsmart.com.br/lbk/tsr/CANALAM/g" />
     <link rel="shortcut icon" href="https://i.imgur.com/ZQ2U8eO.png" type="image/x-icon">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
-    
+
     <style>
         :root {
             --primary-color: #2c3e50;
@@ -33,23 +33,26 @@
             background-color: var(--light-bg);
         }
 
-        .header {
+        header.header {
             position: relative;
-            height: 60vh;
             display: flex;
             align-items: center;
             justify-content: center;
             text-align: center;
+            height: 50vh;
             overflow: hidden;
         }
 
-        .header::before {
+        @media (max-width: 768px) {
+            header.header {
+                height: 40vh;
+            }
+        }
+
+        header.header::before {
             content: '';
             position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
+            inset: 0;
             background: url('https://i.imgur.com/C0YhQ9i.png') center/cover no-repeat;
             opacity: 0.3;
             z-index: 1;
@@ -63,8 +66,8 @@
             background: rgba(255, 255, 255, 0.9);
             border-radius: 15px;
             box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-            max-width: 800px;
-            margin: 0 20px;
+            max-width: 90%;
+            margin: 0 auto;
         }
 
         .header-content h1 {
@@ -73,13 +76,20 @@
             color: var(--primary-color);
         }
 
-        .container {
+        @media (max-width: 768px) {
+            .header-content h1 {
+                font-size: 1.8rem;
+            }
+        }
+
+        main.container {
             max-width: 1200px;
-            margin: -100px auto 0;
-            padding: 2rem;
+            margin: 0 auto;
+            padding: 2rem 1rem;
             background: white;
             border-radius: 20px;
             box-shadow: 0 0 30px rgba(0,0,0,0.1);
+            margin-top: -5vh;
             position: relative;
             z-index: 3;
         }
@@ -100,12 +110,16 @@
             color: var(--accent-color);
         }
 
+        p {
+            margin-bottom: 1.5rem;
+        }
+
         img {
             max-width: 100%;
             height: auto;
             border-radius: 12px;
             box-shadow: 0 8px 16px rgba(0,0,0,0.1);
-            margin: 2rem auto;
+            margin: 2rem 0;
         }
 
         .map-container {
@@ -143,11 +157,20 @@
             border-radius: 4px;
         }
 
+        .mermaid {
+            background: white;
+            padding: 2rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+            margin: 2rem 0;
+            overflow-x: auto;
+        }
+
         footer {
             background: var(--primary-color);
             color: white;
             text-align: center;
-            padding: 2rem;
+            padding: 2rem 1rem;
             margin-top: 4rem;
         }
 
@@ -163,30 +186,11 @@
         }
 
         @media (max-width: 768px) {
-            .container {
-                margin: -50px 1rem 0;
-                padding: 1.5rem;
+            main.container {
+                margin-top: 0;
+                border-radius: 0;
+                box-shadow: none;
             }
-
-            .header {
-                height: 40vh;
-            }
-
-            .header-content {
-                padding: 1rem;
-            }
-
-            .header-content h1 {
-                font-size: 1.8rem;
-            }
-        }
-
-        .mermaid {
-            background: white;
-            padding: 2rem;
-            border-radius: 12px;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
-            margin: 2rem 0;
         }
     </style>
 
@@ -203,8 +207,7 @@
         </div>
     </header>
 
-  
-
+    <main class="container">
         <h2>Contextualização</h2>
         <p>Apresenta-se uma oportunidade de desenvolvimento imobiliário em uma área situada na Av. Carlos Borges, em Maringá. O objetivo é viabilizar um produto no padrão da marca <strong>Sensia</strong>, subsidiária da MRV, em um lote frontal de aproximadamente <span class="highlight">9.600 m²</span>, com potencial de verticalização aproveitando o eixo residencial da avenida (profundidade de até 120 metros).</p>
 
@@ -230,7 +233,7 @@
         </ul>
 
         <h2>Cenário da Negociação</h2>
-        <p>A presente proposta visa estabelecer um entendimento inicial para que a MRV possa avaliar o potencial da área de 9.600 m² e considerá-la no seu portfólio de projetos <strong>Sensia</strong>. O modelo proposto busca oferecer segurança quanto à regularização do terreno, minimizando riscos e agilizando o desenvolvimento do produto.</p>
+        <p>A proposta visa estabelecer um entendimento inicial para que a MRV possa avaliar o potencial da área de 9.600 m² e considerá-la no seu portfólio de projetos <strong>Sensia</strong>. O modelo proposto busca oferecer segurança quanto à regularização do terreno, minimizando riscos e agilizando o desenvolvimento do produto.</p>
 
         <h2>Fluxo de Aprovação e Desenvolvimento</h2>
         <div class="mermaid">
@@ -242,11 +245,12 @@
         </div>
 
         <h2>Próximos Passos</h2>
-        <p>Uma vez analisada esta proposta, a ideia é estabelecer um Memorando de Entendimento (MOU) ou outra forma de acordo inicial, garantindo à MRV a exclusividade na negociação da área frontal para o produto <strong>Sensia</strong>, enquanto o processo de loteamento é encaminhado. Isso assegura tempo para a análise interna, projeções financeiras e planejamento comercial por parte da MRV, sem a necessidade de lidar diretamente com a burocracia do loteamento.</p>
+        <p>Uma vez analisada esta proposta, a ideia é estabelecer um Memorando de Entendimento (MOU) ou outro instrumento preliminar, garantindo à MRV exclusividade na negociação da área frontal para o produto <strong>Sensia</strong>, enquanto o processo de loteamento é encaminhado. Isso assegura tempo para análise interna, projeções financeiras e planejamento comercial sem a necessidade de lidar diretamente com a burocracia do loteamento.</p>
 
         <h2>Compromisso</h2>
-        <p>A proposta é conduzida de forma transparente e profissional, visando criar um ambiente seguro para a MRV avaliar a viabilidade do produto <strong>Sensia</strong> nesta localização estratégica. Com a contratação de um profissional independente para o loteamento e a supressão da diretriz, a MRV passa a contar com um cenário mais claro e pronto para o desenvolvimento imobiliário.</p>
-    </div>
+        <p>A proposta é conduzida com transparência e profissionalismo, visando criar um ambiente seguro para a MRV avaliar a viabilidade do produto <strong>Sensia</strong> nesta localização estratégica. Com a contratação de um profissional independente para o loteamento e a supressão da diretriz, a MRV conta com um cenário mais claro e pronto para o desenvolvimento imobiliário.</p>
+    </main>
+
     <footer>
         <img src="https://i.imgur.com/3YKn2xW.png" alt="Logo Engesud">
         <p><strong>Engesud Engenharia e Intermediação LTDA</strong></p>
