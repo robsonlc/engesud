@@ -14,107 +14,238 @@
     <meta property="og:image:height" content="800">
     <meta property="og:type" content="website">
     <meta property="og:site_name" content="Engesud Engenharia e Intermediação LTDA">
+    <link rel="shortcut icon" href="https://i.imgur.com/HjwVm8x.png" type="image/x-icon">
 
     <!-- Estilos CSS Aprimorados -->
     <style>
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            line-height: 1.6;
+        :root {
+            --primary-color: #1a365d;
+            --secondary-color: #2b6cb0;
+            --accent-color: #3182ce;
+            --bg-color: #f7fafc;
+            --text-color: #2d3748;
+            --footer-bg: #2d3748;
+            --footer-text: #fff;
+            --link-color: #4299e1;
+        }
+        
+        * {
+            box-sizing: border-box;
             margin: 0;
             padding: 0;
-            background-color: #f8f9fa;
-            color: #333;
         }
-        .container {
-            max-width: 900px;
-            margin: 20px auto;
-            padding: 20px;
-            background-color: #fff;
-            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
-            border-radius: 8px; /* Suaviza os cantos */
+        
+        body {
+            font-family: 'Inter', system-ui, -apple-system, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            line-height: 1.7;
         }
-        h1, h2, h3 {
-            color: #2c3e50;
-        }
-        h1 {
+
+        header {
+            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), 
+                        url('https://i.imgur.com/lIPbqwI.png') center/cover no-repeat;
+            min-height: 60vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
             text-align: center;
+            padding: 80px 20px;
+            position: relative;
+            margin-bottom: 0;
+        }
+        
+        header h1 {
+            font-size: 3.5rem;
+            font-weight: 800;
             margin-bottom: 20px;
+            color: #fff;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
         }
+
+        header p {
+            font-size: 1.5rem;
+            color: #fff;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 40px;
+            background-color: #fff;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            border-radius: 8px;
+            margin-top: -60px;
+            position: relative;
+            z-index: 2;
+        }
+        
         h2 {
-            margin-top: 30px;
-            border-bottom: 2px solid #eaeaea; /* Destaca seções */
+            color: var(--primary-color);
+            font-size: 2rem;
+            margin: 40px 0 20px;
+            border-bottom: 3px solid var(--accent-color);
             padding-bottom: 10px;
+            display: inline-block;
         }
+
         h3 {
-            margin-top: 20px;
+            color: var(--secondary-color);
+            font-size: 1.5rem;
+            margin-top: 40px;
+            margin-bottom: 15px;
         }
-        p {
-            text-align: justify; /* Melhor legibilidade */
+        
+        p, ul {
+            margin-bottom: 25px;
+            font-size: 1.1rem;
         }
+        
         ul {
-            list-style-type: disc;
-            margin-left: 20px;
+            padding-left: 25px;
         }
+        
+        ul li {
+            margin-bottom: 15px;
+        }
+        
+        .highlight {
+            color: var(--accent-color);
+            font-weight: 600;
+        }
+        
+        .images {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin: 40px 0;
+        }
+        
+        .images img {
+            width: 100%;
+            height: auto;
+            border-radius: 12px;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .images img:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 25px rgba(0,0,0,0.2);
+        }
+        
+        .map-container {
+            margin: 40px 0;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+        }
+        
+        .map-container iframe {
+            width: 100%;
+            height: 500px;
+            border: none;
+        }
+
         table {
             width: 100%;
             border-collapse: collapse;
-            margin-top: 20px;
+            margin-top: 30px;
         }
+
         th, td {
-            padding: 12px;
-            border: 1px solid #ddd;
+            padding: 15px;
             text-align: left;
+            border-bottom: 1px solid var(--bg-color);
         }
+
         th {
-            background-color: #f2f2f2;
-            font-weight: bold;
+            background-color: var(--bg-color);
+            font-weight: 600;
         }
-        img {
-            max-width: 100%;
-            height: auto;
-            display: block; /* Impede o espaço extra abaixo da imagem */
-            margin: 20px 0;
-            border-radius: 4px; /* Suaviza os cantos das imagens */
-        }
+
         .mermaid {
             display: flex;
             justify-content: center;
-            margin: 20px 0;
-            overflow-x: auto; /* Para diagramas grandes */
+            margin: 30px 0;
+            overflow-x: auto;
         }
+        
         footer {
-            background-color: #34495e;
-            color: white;
+            background-color: var(--footer-bg);
+            color: var(--footer-text);
+            padding: 50px 20px;
             text-align: center;
-            padding: 20px;
-            margin-top: 40px;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
+            margin-top: 60px;
         }
+        
         footer img {
-            max-width: 150px; /* Melhor proporção */
-            margin-bottom: 10px;
+            max-width: 150px;
+            margin-bottom: 20px;
         }
+
+        footer .logo-footer {
+            filter: none;
+        }
+        
+        footer p {
+            margin: 8px 0;
+            font-size: 1.1rem;
+        }
+        
         footer a {
-            color: #1abc9c;
+            color: var(--link-color);
             text-decoration: none;
+            transition: color 0.3s ease;
+            font-weight: 600;
         }
+        
         footer a:hover {
-            text-decoration: underline;
+            color: #fff;
         }
-        /* Responsividade aprimorada para dispositivos menores */
-        @media (max-width: 600px) {
+        
+        .last-update {
+            margin-top: 20px;
+            font-size: 0.9rem;
+            color: #a0aec0;
+        }
+        
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 2.5rem;
+            }
+            
+            header p {
+                font-size: 1.2rem;
+            }
+            
             .container {
-                padding: 15px;
+                padding: 20px;
+                margin-top: -40px;
             }
-            th, td {
-                padding: 8px;
+            
+            h2 {
+                font-size: 1.8rem;
             }
-            footer img {
-                max-width: 120px;
+            
+            .images {
+                grid-template-columns: 1fr;
             }
+        }
+
+        @media (min-width: 1400px) {
+            .container {
+                max-width: 1400px;
+            }
+        }
+
+        .money-bag-icon {
+            width: 64px;
+            height: 64px;
+            margin-bottom: 20px;
+            fill: var(--accent-color);
         }
     </style>
 
@@ -125,9 +256,13 @@
     </script> 
 </head>
 <body>
-    <div class="container">
-        <h1>Proposta de Estruturação - Área Av. Paranavaí</h1>
+    <header>
+        <h1>Proposta de Estruturação</h1>
+        <p>Área Avenida Paranavaí, Maringá - PR</p>
+    </header>
 
+    <div class="container">
+        <svg class="money-bag-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--!Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path d="M480 96c35.3 0 64 28.7 64 64v16c0 8.8-7.2 16-16 16H384v32h64c17.7 0 32 14.3 32 32s-14.3 32-32 32H384v32h64c8.8 0 16 7.2 16 16v16c0 35.3-28.7 64-64 64H96c-35.3 0-64-28.7-64-64V368c0-8.8 7.2-16 16-16h64V320c-17.7 0-32-14.3-32-32s14.3-32 32-32h64V224c-8.8 0-16-7.2-16-16V192c0-35.3 28.7-64 64-64h288M160 384H128v32c0 17.7 14.3 32 32 32h32c17.7 0 32-14.3 32-32V384H192c-17.7 0-32-14.3-32-32V320zm256 0v32c0 17.7-14.3 32-32 32h-32c-17.7 0-32-14.3-32-32V384h32c17.7 0 32 14.3 32 32v32zM288 288a64 64 0 1 1 128 0 64 64 0 1 1 -128 0zM176 160a48 48 0 1 1 96 0 48 48 0 1 1 -96 0z"/></svg>
         <p>Apresenta-se uma proposta de estruturação para a área de <strong>48.456m²</strong> localizada na Av. Paranavaí, Maringá, com o objetivo de maximizar o potencial de valorização e retorno sobre o investimento. A proposta contempla a subdivisão em lotes residenciais e uma área comercial destinada ao desenvolvimento de um strip mall.</p>
 
         <h2>Estratégia de Subdivisão e Desenvolvimento</h2>
@@ -137,10 +272,11 @@
             <li><strong>6 Sublotes Residenciais:</strong> 6.000m² cada, destinados à construção de torres residenciais de até 12 pavimentos.</li>
         </ul>
 
-        <img src="https://i.imgur.com/DyJ6sIP.png" alt="Imagem da subdivisão proposta">
+        <div class="images">
+            <img src="https://i.imgur.com/DyJ6sIP.png" alt="Imagem da subdivisão proposta">
+        </div>
 
         <h2>Projeção de Receitas e Valor Médio por m²</h2>
-
         <table>
             <thead>
                 <tr>
@@ -175,25 +311,25 @@
         <p>Considerando a receita total estimada (R$ 68.112.000,00) e a área total (48.456m²), o valor médio por m² seria de aproximadamente <strong>R$ 1.405,66.</strong></p>
 
         <h2>Cronograma Preliminar (Sujeito a Alterações)</h2>
-
         <div class="mermaid">
             graph TD
-                A[Início do Projeto] --> B[Subdivisão de Lotes]
-                B --> C[Desenvolvimento do Strip Mall]
-                C --> D[Construção das Torres Residenciais]
-                D --> E[Finalização e Entrega]
+                A[Início do Projeto] --> B{Subdivisão de Lotes}
+                B -->|Área Comercial| C[Desenvolvimento do Strip Mall]
+                B -->|Área Residencial| D[Construção das Torres Residenciais]
+                C --> E{Finalização e Entrega}
+                D --> E
         </div>
 
         <h2>Fluxograma do Processo</h2>
-
         <div class="mermaid">
             graph TD
-                Início --> Planejamento
-                Planejamento --> Aprovação
-                Aprovação --> Execução
-                Execução --> Monitoramento
-                Monitoramento --> Conclusão
-                Conclusão --> Fim
+                Início --> A{Planejamento e Estudo de Viabilidade}
+                A --> B{Aprovação do Projeto e Licenciamento}
+                B --> C{Execução da Subdivisão}
+                C --> D{Monitoramento e Ajustes}
+                D --> E{Conclusão da Subdivisão}
+                E --> F{Comercialização e Parcerias}
+                F --> G[Fim]
         </div>
 
         <h2>Considerações sobre Infraestrutura</h2>
@@ -201,16 +337,18 @@
 
         <h2>Conclusão</h2>
         <p>A proposta demonstra o potencial de valorização da área e oferece uma estrutura clara para o desenvolvimento do empreendimento. Estamos à disposição para discutir os detalhes e ajustar a proposta conforme as necessidades e expectativas dos interessados.</p>
-
     </div>
 
     <footer>
-        <img src="https://i.imgur.com/3YKn2xW.png" alt="Logo Engesud">
+        <img src="https://i.imgur.com/3YKn2xW.png" alt="Logo Engesud" class="logo-footer">
         <p><strong>Engesud Engenharia e Intermediação LTDA</strong></p>
         <p>Robson Luis da Costa | <a href="https://wa.me/554497013489">+55 (44) 9701-3489</a></p>
-        <p>&copy; 2024 Engesud Engenharia e Intermediação LTDA. Todos os direitos reservados.</p>
-       
+        <p id="data-atualizacao" class="last-update"></p>
     </footer>
+    <script>
+        const today = new Date();
+        const formattedDate = `${today.getDate()} de ${today.toLocaleString('default', { month: 'long' })} de ${today.getFullYear()}`;
+        document.getElementById('data-atualizacao').textContent = `Última atualização: ${formattedDate}`;
+    </script>
 </body>
 </html>
-
