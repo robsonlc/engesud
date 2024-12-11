@@ -41,20 +41,20 @@
 
         .header {
             width: 100%;
-            height: 300px;
             background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)),
                         url('https://i.imgur.com/t8D9Jyn.png') center/cover no-repeat;
             display: flex;
             align-items: center;
             justify-content: center;
-            margin-bottom: -150px;
+            margin-bottom: 20px; /* Ajuste para evitar sobreposição em telas menores */
+            padding: 20px;
         }
 
         .container {
             max-width: 1000px;
             margin: auto;
             background-color: #fff;
-            padding: 40px;
+            padding: 20px; /* Ajuste para melhor responsividade */
             box-shadow: 0 0 30px var(--shadow-color);
             border-radius: 20px;
             position: relative;
@@ -62,27 +62,27 @@
         }
 
         h1 {
-            font-size: 3em;
+            font-size: 2.5em; /* Reduzido para melhor ajuste em telas menores */
             text-align: center;
             color: var(--primary-color);
-            margin-bottom: 1.5em;
+            margin-bottom: 1em; /* Reduzido para melhor ajuste em telas menores */
             text-transform: uppercase;
             letter-spacing: 1px;
         }
 
         h2 {
-            font-size: 2em;
+            font-size: 1.8em; /* Reduzido para melhor ajuste em telas menores */
             color: var(--primary-color);
             border-bottom: 3px solid var(--primary-color);
-            padding-bottom: 15px;
-            margin: 1.5em 0 1em;
+            padding-bottom: 10px; /* Reduzido para melhor ajuste em telas menores */
+            margin: 1em 0; /* Reduzido para melhor ajuste em telas menores */
         }
 
         .value-card {
             background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
             color: white;
-            padding: 40px;
-            margin: 40px 0;
+            padding: 20px; /* Ajuste para melhor responsividade */
+            margin: 20px 0; /* Ajuste para melhor responsividade */
             border-radius: 20px;
             box-shadow: 0 15px 30px var(--shadow-color);
             transform: translateY(0);
@@ -94,34 +94,34 @@
         }
 
         .value-number {
-            font-size: 3em;
+            font-size: 2.5em; /* Reduzido para melhor ajuste em telas menores */
             font-weight: bold;
             text-align: center;
-            margin: 30px 0;
+            margin: 20px 0; /* Reduzido para melhor ajuste em telas menores */
             text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
         }
 
         .highlight-box {
             background-color: #f8f9fa;
             border-left: 6px solid var(--primary-color);
-            padding: 25px;
-            margin: 25px 0;
+            padding: 15px; /* Ajuste para melhor responsividade */
+            margin: 15px 0; /* Ajuste para melhor responsividade */
             border-radius: 0 15px 15px 0;
         }
 
         .area-image {
             width: 100%;
-            height: 500px;
+            max-height: 500px; /* Ajuste para evitar imagens muito grandes em telas pequenas */
             border-radius: 20px;
             overflow: hidden;
-            margin: 30px 0;
+            margin: 20px 0; /* Ajuste para melhor responsividade */
             box-shadow: 0 15px 30px var(--shadow-color);
         }
 
         .area-image img {
             width: 100%;
-            height: 100%;
-            object-fit: cover;
+            height: auto; /* Ajuste para manter a proporção da imagem */
+            display: block; /* Ajuste para centralizar a imagem */
             transition: transform 0.3s ease;
         }
 
@@ -131,28 +131,29 @@
 
         .timeline {
             background: #f8f9fa;
-            padding: 30px;
+            padding: 20px; /* Ajuste para melhor responsividade */
             border-radius: 15px;
-            margin: 30px 0;
+            margin: 20px 0; /* Ajuste para melhor responsividade */
         }
 
         .timeline-item {
-            margin: 20px 0;
-            padding-left: 30px;
+            margin: 15px 0; /* Ajuste para melhor responsividade */
+            padding-left: 20px; /* Ajuste para melhor responsividade */
             border-left: 4px solid var(--primary-color);
         }
 
         .footer {
             text-align: center;
-            margin-top: 60px;
-            padding: 30px;
+            margin-top: 30px; /* Ajuste para melhor responsividade */
+            padding: 20px; /* Ajuste para melhor responsividade */
             background: #f8f9fa;
             border-radius: 15px;
         }
 
         .footer img {
-            width: 200px;
-            margin-bottom: 20px;
+            max-width: 200px;
+            width: 80%; /* Ajuste para melhor responsividade */
+            margin-bottom: 15px; /* Ajuste para melhor responsividade */
             transition: transform 0.3s ease;
         }
 
@@ -161,17 +162,20 @@
         }
 
         .cta-button {
-            display: inline-block;
+            display: block; /* Ajuste para melhor responsividade */
+            width: 80%; /* Ajuste para melhor responsividade */
+            max-width: 300px; /* Ajuste para evitar botões muito largos */
+            margin: 20px auto; /* Ajuste para centralizar o botão */
             background-color: #25D366;
             color: white;
-            padding: 20px 40px;
+            padding: 15px 20px; /* Ajuste para melhor responsividade */
             border-radius: 50px;
             text-decoration: none;
-            margin: 30px 0;
             font-weight: bold;
             font-size: 1.2em;
             transition: all 0.3s ease;
             box-shadow: 0 5px 15px rgba(37, 211, 102, 0.3);
+            text-align: center;
         }
 
         .cta-button:hover {
@@ -180,10 +184,22 @@
             box-shadow: 0 8px 20px rgba(37, 211, 102, 0.4);
         }
 
+        .image-container {
+            margin: 20px 0; /* Ajuste para melhor responsividade */
+        }
+
+        .image-container img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: 0 auto;
+        }
+
+        /* Media Queries para Responsividade */
         @media (max-width: 768px) {
             .container {
-                padding: 20px;
-                margin: 20px;
+                padding: 15px;
+                margin: 15px;
             }
 
             h1 {
@@ -195,7 +211,25 @@
             }
 
             .area-image {
-                height: 300px;
+                max-height: 300px;
+            }
+
+            .header {
+                margin-bottom: 0; /* Reduz ainda mais a margem em telas menores */
+            }
+        }
+
+        @media (max-width: 480px) {
+            h1 {
+                font-size: 1.8em;
+            }
+
+            h2 {
+                font-size: 1.5em;
+            }
+
+            .value-number {
+                font-size: 1.8em;
             }
         }
     </style>
