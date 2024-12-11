@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Oportunidade de Incorporação - Av. Paranavaí</title>
     
-    <!-- Meta Tags para Pré-visualização no WhatsApp -->
     <meta property="og:title" content="Oportunidade de Incorporação - Avenida Paranavaí">
     <meta property="og:description" content="Área de 48.456m² em localização privilegiada em Maringá, com grande potencial de valorização e oportunidades para desenvolvimento imobiliário.">
     <meta property="og:url" content="https://www.engesudsmart.com.br/Cocari">
@@ -15,14 +14,14 @@
     <link rel="shortcut icon" href="https://i.imgur.com/HjwVm8x.png" type="image/x-icon">
     <style>
         :root {
-            --primary-color: #2c3e50;
-            --secondary-color: #2980b9;
-            --accent-color: #16a085;
-            --bg-color: #f8f9fa;
-            --text-color: #333;
-            --footer-bg: #34495e;
+            --primary-color: #1a365d;
+            --secondary-color: #2b6cb0;
+            --accent-color: #3182ce;
+            --bg-color: #f7fafc;
+            --text-color: #2d3748;
+            --footer-bg: #2d3748;
             --footer-text: #fff;
-            --link-color: #1abc9c;
+            --link-color: #4299e1;
         }
         
         * {
@@ -32,176 +31,190 @@
         }
         
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-family: 'Inter', system-ui, -apple-system, sans-serif;
             background-color: var(--bg-color);
             color: var(--text-color);
-            line-height: 1.6;
+            line-height: 1.7;
         }
 
         header {
-            background: url('https://i.imgur.com/lIPbqwI.png') center/cover no-repeat;
-            padding: 60px 20px;
+            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), 
+                        url('https://i.imgur.com/lIPbqwI.png') center/cover no-repeat;
+            min-height: 60vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
             text-align: center;
+            padding: 80px 20px;
             position: relative;
-            color: white;
-            margin-bottom: 40px;
-        }
-
-        header::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(0, 0, 0, 0.7);
-            z-index: 1;
+            margin-bottom: 0;
         }
         
         header h1 {
-            font-size: 3rem;
-            position: relative;
-            z-index: 2;
-            margin-bottom: 15px;
+            font-size: 3.5rem;
+            font-weight: 800;
+            margin-bottom: 20px;
             color: #fff;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
         }
 
         header p {
-            font-size: 1.2rem;
-            position: relative;
-            z-index: 2;
+            font-size: 1.5rem;
             color: #fff;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
         }
 
         .container {
-            max-width: 100%;
+            max-width: 1200px;
             margin: 0 auto;
-            padding: 20px;
+            padding: 40px;
             background-color: #fff;
-            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
-        }
-        
-        h1 {
-            text-align: center;
-            color: var(--primary-color);
-            margin-bottom: 30px;
-            font-size: 2rem;
-            padding-bottom: 10px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            border-radius: 8px;
+            margin-top: -60px;
+            position: relative;
+            z-index: 2;
         }
         
         h2 {
-            color: var(--secondary-color);
-            margin-top: 30px;
-            margin-bottom: 15px;
-            font-size: 1.5rem;
+            color: var(--primary-color);
+            font-size: 2rem;
+            margin: 40px 0 20px;
+            border-bottom: 3px solid var(--accent-color);
+            padding-bottom: 10px;
+            display: inline-block;
         }
         
         p, ul {
-            margin-bottom: 20px;
+            margin-bottom: 25px;
+            font-size: 1.1rem;
         }
         
         ul {
-            padding-left: 20px;
+            padding-left: 25px;
+        }
+        
+        ul li {
+            margin-bottom: 15px;
         }
         
         .highlight {
             color: var(--accent-color);
-            font-weight: bold;
+            font-weight: 600;
         }
         
         .images {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: space-around;
-            margin: 30px 0;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin: 40px 0;
         }
         
         .images img {
-            max-width: 100%;
+            width: 100%;
             height: auto;
-            border-radius: 8px;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-            margin-bottom: 20px;
-            transition: transform 0.3s ease;
+            border-radius: 12px;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
         
         .images img:hover {
-            transform: scale(1.05);
+            transform: translateY(-5px);
+            box-shadow: 0 12px 25px rgba(0,0,0,0.2);
         }
         
         .map-container {
-            margin: 30px 0;
-            border-radius: 8px;
+            margin: 40px 0;
+            border-radius: 12px;
             overflow: hidden;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.15);
         }
         
         .map-container iframe {
             width: 100%;
-            height: 400px;
+            height: 500px;
             border: none;
         }
         
         footer {
             background-color: var(--footer-bg);
             color: var(--footer-text);
-            padding: 30px 20px;
+            padding: 50px 20px;
             text-align: center;
+            margin-top: 60px;
         }
         
         footer img {
-            max-width: 120px;
-            margin-bottom: 15px;
+            max-width: 150px;
+            margin-bottom: 20px;
+        }
+
+        /* Estilo específico para o logo no rodapé */
+        footer .logo-footer {
+            filter: none; /* Remove o filtro para o logo */
         }
         
         footer p {
-            margin: 5px 0;
+            margin: 8px 0;
+            font-size: 1.1rem;
         }
         
         footer a {
             color: var(--link-color);
             text-decoration: none;
             transition: color 0.3s ease;
+            font-weight: 600;
         }
         
         footer a:hover {
             color: #fff;
         }
         
-        footer .last-update {
-            margin-top: 15px;
+        .last-update {
+            margin-top: 20px;
             font-size: 0.9rem;
-            color: #ccc;
+            color: #a0aec0;
         }
         
-        @media (min-width: 768px) {
-            .container {
-                max-width: 900px;
-                padding: 40px;
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 2.5rem;
             }
             
-            h1 {
-                font-size: 2.5rem;
+            header p {
+                font-size: 1.2rem;
+            }
+            
+            .container {
+                padding: 20px;
+                margin-top: -40px;
             }
             
             h2 {
                 font-size: 1.8rem;
             }
             
-            .images img {
-                max-width: 45%;
+            .images {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (min-width: 1400px) {
+            .container {
+                max-width: 1400px;
             }
         }
     </style>
 </head>
 <body>
+    <!-- Resto do conteúdo HTML permanece o mesmo -->
     <header>
         <h1>Oportunidade de Incorporação</h1>
         <p>Avenida Paranavaí, Maringá - PR</p>
     </header>
     <div class="container">
-
-        <p>Esta é uma excelente oportunidade de incorporação imobiliária na <strong>Avenida Paranavaí, Maringá</strong>. A área total de <strong>48.456m²</strong> está em localização privilegiada, com grande potencial para valorização devido às melhorias urbanas e ao novo zoneamento da região. A concepção apresentada abaixo é apenas uma sugestão de ocupação elaborada pela Engesud Smart e pode ser ajustada para atender à criatividade e as necessidades da construtora.</p>
+        <p>Esta é uma excelente oportunidade de incorporação imobiliária na <strong>Avenida Paranavaí, Maringá</strong>. A área total de <strong>48.456m²</strong> está em localização privilegiada, com grande potencial de valorização devido às melhorias urbanas e ao novo zoneamento da região. A concepção apresentada abaixo é apenas uma sugestão de ocupação elaborada pela Engesud Smart e pode ser ajustada para atender à criatividade e as necessidades da construtora.</p>
 
         <h2>Localização</h2>
         <div class="map-container">
@@ -230,18 +243,16 @@
     </div>
 
     <footer>
-        <img src="https://i.imgur.com/3YKn2xW.png" alt="Logo Engesud">
+        <img src="https://i.imgur.com/3YKn2xW.png" alt="Logo Engesud" class="logo-footer">
         <p><strong>Engesud Engenharia e Intermediação LTDA</strong></p>
         <p>Robson Luis da Costa | <a href="https://wa.me/4497013489">+55 (44) 99701-3489</a></p>
         <p id="data-atualizacao" class="last-update"></p>
     </footer>
+    
     <script>
-        // Obtém a data atual e formata para exibição
         const today = new Date();
         const formattedDate = `${today.getDate()} de ${today.toLocaleString('default', { month: 'long' })} de ${today.getFullYear()}`;
         document.getElementById('data-atualizacao').textContent = `Última atualização: ${formattedDate}`;
     </script>
-
-    <!-- Este conteúdo é protegido por direitos autorais creditados à Engesud Engenharia e Intermediação LTDA, inscrita no CNPJ 40.601.637/0001-58 -->
 </body>
 </html>
