@@ -1,1 +1,335 @@
-<p></p>Em Breve</p>
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="Oportunidade única de parceria em área nobre de Londrina (PR) para desenvolvimento de condomínio comercial. Divisão: 50% desenvolvedor/investidor e 50% proprietário.">
+    <meta name="keywords" content="Londrina, parceria, loteamento, condomínio comercial, investimento imobiliário, Gleba Palhano">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Meta OG -->
+    <meta property="og:title" content="Parceria em Área Comercial Premium - Londrina" />
+    <meta property="og:description" content="Oportunidade imperdível de parceria em área comercial na valorizada região da Gleba Palhano, Londrina. Ideal para desenvolvimento de condomínio comercial de alto padrão. 50% para investidor e 50% para proprietário." />
+    <meta property="og:url" content="https://www.engesudsmart.com.br/lbk/tsr/cldn" />
+    <meta property="og:image" content="https://i.imgur.com/Du8esYX.png" />
+    <meta property="og:type" content="website" />
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="https://i.imgur.com/HjwVm8x.png" type="image/x-icon">
+    <title>Parceria em Área Comercial Premium - Londrina</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #007BFF;
+            --secondary-color: #673AB7;
+            --background-color: #f8f9fa;
+            --text-color: #212529;
+            --highlight-color: #FFC107;
+        }
+
+        body {
+            margin: 0;
+            font-family: 'Roboto', sans-serif;
+            color: var(--text-color);
+            background: var(--background-color);
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1rem;
+        }
+
+        header {
+            position: relative;
+            height: 350px;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .header-image {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('https://i.imgur.com/TjpEjI7.png') center/cover no-repeat;
+            filter: brightness(70%);
+            z-index: -1;
+        }
+
+        .header-content {
+            text-align: center;
+            color: white;
+            z-index: 1;
+        }
+
+        .header-content h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            font-weight: 700;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+
+        .header-content p {
+            font-size: 1.2rem;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+        }
+
+        section {
+            padding: 3rem 0;
+        }
+
+        h2 {
+            font-weight: 500;
+            margin-bottom: 1.5rem;
+            color: var(--secondary-color);
+            text-align: center;
+        }
+
+        .info p {
+            margin-bottom: 1rem;
+        }
+
+        .highlight {
+            font-weight: bold;
+            color: var(--primary-color);
+        }
+
+        .map-container,
+        .docs-container {
+            text-align: center;
+        }
+
+        .map-iframe {
+            width: 100%;
+            max-width: 800px;
+            height: 450px;
+            border: none;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+        }
+
+        .btn {
+            display: inline-block;
+            background-color: var(--primary-color);
+            color: white;
+            padding: 0.8rem 1.5rem;
+            border-radius: 5px;
+            text-decoration: none;
+            transition: background-color 0.3s ease;
+            margin-top: 1rem;
+            font-weight: 500;
+        }
+
+        .btn:hover {
+            background-color: var(--secondary-color);
+        }
+
+        .table-container {
+            overflow-x: auto;
+            margin-bottom: 3rem;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background: white;
+        }
+
+        th, td {
+            padding: 0.8rem;
+            text-align: left;
+            border: 1px solid #ddd;
+        }
+
+        th {
+            background-color: var(--secondary-color);
+            color: white;
+        }
+
+        .thumbnail {
+            margin-bottom: 2rem;
+            text-align: center;
+        }
+
+        .thumbnail img {
+            max-width: 250px;
+            border: 1px solid #ccc;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease;
+        }
+
+        .thumbnail img:hover {
+            transform: scale(1.05);
+        }
+
+        footer {
+            background-color: var(--secondary-color);
+            color: white;
+            text-align: center;
+            padding: 2rem 0;
+        }
+
+        footer a {
+            color: white;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        footer a:hover {
+            color: var(--highlight-color);
+        }
+
+        .footer-logo {
+            max-width: 180px;
+            margin-bottom: 1rem;
+        }
+
+        .footer-contact p {
+            margin: 0.5rem 0;
+        }
+
+        /* Responsividade */
+        @media (max-width: 768px) {
+            .header-content h1 {
+                font-size: 2rem;
+            }
+
+            .header-content p {
+                font-size: 1rem;
+            }
+
+            .map-iframe {
+                height: 300px;
+            }
+
+            .thumbnail img {
+                max-width: 90%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-image"></div>
+        <div class="header-content container">
+            <h1>Parceria em Área Comercial Premium - Londrina</h1>
+            <p>Oportunidade única na região da Gleba Palhano</p>
+        </div>
+    </header>
+
+    <div class="container">
+        <section class="intro">
+            <h2>Oportunidade de Investimento</h2>
+            <div class="info">
+                <p>Apresentamos uma oportunidade excepcional de parceria para o desenvolvimento de um <span class="highlight">condomínio comercial de alto padrão</span> em uma área nobre e em expansão na cidade de Londrina, Paraná. Situado na valorizada <span class="highlight">Gleba Palhano</span>, este terreno oferece um potencial incrível para investidores e desenvolvedores visionários.</p>
+                <p>A proposta é uma <span class="highlight">parceria 50/50</span>, onde o desenvolvedor/investidor e o proprietário compartilham igualmente os riscos e os lucros, criando uma sinergia perfeita para o sucesso do empreendimento.</p>
+            </div>
+        </section>
+
+        <section class="costs">
+            <h2>Resumo de Custos de Infraestrutura (Estimativa)</h2>
+            <p>Abaixo, apresentamos uma estimativa inicial dos custos de infraestrutura para o desenvolvimento do condomínio. Estes valores são referenciais e servem como um guia para o planejamento financeiro do projeto:</p>
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Itens/Serviços</th>
+                            <th>Valor Estimado (R$)</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Processo de parcelamento do solo</td>
+                            <td>199.000,00</td>
+                        </tr>
+                        <tr>
+                            <td>Limpeza do terreno</td>
+                            <td>21.000,00</td>
+                        </tr>
+                        <tr>
+                            <td>Muros de divisa (aprox. 1.194m x 3,20m)</td>
+                            <td>1.926.000,00</td>
+                        </tr>
+                        <tr>
+                            <td>Pavimentação asfáltica, calçada, meio-fio</td>
+                            <td>3.100.000,00</td>
+                        </tr>
+                        <tr>
+                            <td>Instalações elétricas</td>
+                            <td>468.000,00</td>
+                        </tr>
+                        <tr>
+                            <td>Drenagem (incluindo dissipador)</td>
+                            <td>897.000,00</td>
+                        </tr>
+                        <tr>
+                            <td>Rede de água</td>
+                            <td>269.000,00</td>
+                        </tr>
+                        <tr>
+                            <td>Rede de esgoto</td>
+                            <td>177.000,00</td>
+                        </tr>
+                        <tr>
+                            <td>Construção de área administrativa, guarita e área comum</td>
+                            <td>1.310.000,00</td>
+                        </tr>
+                        <tr>
+                            <th>Total Previsto</th>
+                            <th>8.587.000,00</th>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <section class="location">
+            <h2>Localização Privilegiada</h2>
+            <p>A área está localizada na <span class="highlight">Gleba Palhano</span>, uma das regiões mais desejadas de Londrina. Com fácil acesso às principais vias da cidade e cercada por uma infraestrutura completa de comércios, serviços e opções de lazer, esta localização é ideal para um condomínio comercial de sucesso.</p>
+            <div class="map-container">
+                <iframe class="map-iframe" src="https://www.google.com/maps/d/embed?mid=1ZnHqCsU_lr3FRqNA5xTHVC4XEu3NGhQ&ehbc=2E312F"></iframe>
+            </div>
+        </section>
+
+        <section class="documents">
+            <h2>Documentação e Estudo de Implantação</h2>
+            <p>Disponibilizamos um estudo completo de implantação do condomínio comercial, que detalha todos os aspectos técnicos e legais do projeto. Este documento é essencial para uma compreensão aprofundada do potencial da área e do empreendimento proposto.</p>
+            <div class="docs-container">
+                <div class="thumbnail">
+                    <a href="https://www.engesudsmart.com.br/lbk/tsr/cldn/estudo.pdf" target="_blank">
+                        <img src="https://i.imgur.com/TG7FDXg.png" alt="Estudo de Implantação - PDF">
+                    </a>
+                </div>
+                <a href="https://www.engesudsmart.com.br/lbk/tsr/cldn/estudo.pdf" target="_blank" class="btn">Acessar Estudo Completo (PDF)</a>
+            </div>
+        </section>
+    </div>
+
+    <footer>
+        <div class="container">
+            <img src="https://i.imgur.com/3YKn2xW.png" alt="Logo Engesud" class="footer-logo">
+            <div class="footer-contact">
+                <p><strong>Engesud Engenharia e Intermediação LTDA</strong></p>
+                <p>Robson Luis da Costa | <a href="https://wa.me/4497013489">+55 (44) 99701-3489</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            // Atualizar a data no rodapé para a data de hoje
+            var today = new Date();
+            var formattedDate = today.toLocaleDateString('pt-BR');
+            var footerDateElements = document.querySelectorAll('.footer-date');
+            footerDateElements.forEach(function(element) {
+                element.textContent = "Atualizado em: " + formattedDate;
+            });
+        });
+    </script>
+</body>
+</html>
