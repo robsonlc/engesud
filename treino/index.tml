@@ -8,34 +8,53 @@
     <title>Plano de Treino Semanal</title>
     <link rel="shortcut icon" href="https://i.imgur.com/HjwVm8x.png" type="image/x-icon">
     <style>
-        body {
+        :root {
+            --primary-color: #4CAF50;
+            --secondary-color: #45a049;
+            --text-color: #333;
+            --background-color: #f5f5f5;
+        }
+
+        * {
             margin: 0;
-            font-family: Arial, sans-serif;
-            color: #333;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Roboto', Arial, sans-serif;
+            color: var(--text-color);
+            background-color: var(--background-color);
+            line-height: 1.6;
         }
 
         header {
-            background: url('https://i.imgur.com/doi27ld.png') center/cover no-repeat;
-            opacity: 0.3;
-            height: 150px;
+            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), 
+                        url('https://i.imgur.com/doi27ld.png') center/cover no-repeat;
+            height: 200px;
             text-align: center;
             display: flex;
             justify-content: center;
             align-items: center;
-            color: #000;
+            color: white;
         }
 
         header h1 {
-            margin: 0;
             font-size: 2.5rem;
-            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+            animation: fadeIn 1s ease-in;
         }
 
         nav {
+            position: sticky;
+            top: 0;
             display: flex;
             justify-content: center;
-            background-color: #4CAF50;
+            background-color: var(--primary-color);
             padding: 10px 0;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+            z-index: 100;
+            overflow-x: auto;
         }
 
         nav a {
@@ -43,31 +62,110 @@
             color: white;
             padding: 10px 20px;
             font-size: 1rem;
-            transition: background-color 0.3s;
+            transition: all 0.3s ease;
+            white-space: nowrap;
         }
 
         nav a:hover {
-            background-color: #45a049;
+            background-color: var(--secondary-color);
+            transform: translateY(-2px);
+        }
+
+        nav a.active {
+            background-color: var(--secondary-color);
+            border-bottom: 3px solid white;
         }
 
         .content {
             display: none;
             padding: 20px;
+            max-width: 800px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            margin-top: 20px;
+            animation: slideIn 0.5s ease-out;
         }
 
         .content.active {
             display: block;
         }
 
+        .content h2 {
+            color: var(--primary-color);
+            margin-bottom: 20px;
+            border-bottom: 2px solid var(--primary-color);
+            padding-bottom: 10px;
+        }
+
+        .content ul {
+            list-style-position: inside;
+            padding-left: 20px;
+        }
+
+        .content li {
+            margin-bottom: 10px;
+            position: relative;
+        }
+
+        .content li::before {
+            content: "•";
+            color: var(--primary-color);
+            font-weight: bold;
+            margin-right: 10px;
+        }
+
+        .exercise-timer {
+            background-color: #f0f0f0;
+            padding: 15px;
+            border-radius: 5px;
+            margin-top: 20px;
+            text-align: center;
+        }
+
         footer {
             text-align: center;
             padding: 20px;
-            background-color: #f1f1f1;
-            margin-top: 20px;
+            background-color: #333;
+            color: white;
+            margin-top: 40px;
         }
 
-        footer p {
-            margin: 0;
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        @keyframes slideIn {
+            from {
+                transform: translateY(20px);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 2rem;
+            }
+
+            nav {
+                padding: 5px;
+            }
+
+            nav a {
+                padding: 8px 12px;
+                font-size: 0.9rem;
+            }
+
+            .content {
+                margin: 10px;
+                padding: 15px;
+            }
         }
     </style>
 </head>
@@ -77,16 +175,16 @@
     </header>
 
     <nav>
-        <a href="#" onclick="showContent('monday')">Segunda-feira</a>
-        <a href="#" onclick="showContent('tuesday')">Terça-feira</a>
-        <a href="#" onclick="showContent('wednesday')">Quarta-feira</a>
-        <a href="#" onclick="showContent('thursday')">Quinta-feira</a>
-        <a href="#" onclick="showContent('friday')">Sexta-feira</a>
-        <a href="#" onclick="showContent('saturday')">Sábado</a>
-        <a href="#" onclick="showContent('sunday')">Domingo</a>
+        <a href="#" class="nav-link active" onclick="showContent('monday')">Segunda</a>
+        <a href="#" class="nav-link" onclick="showContent('tuesday')">Terça</a>
+        <a href="#" class="nav-link" onclick="showContent('wednesday')">Quarta</a>
+        <a href="#" class="nav-link" onclick="showContent('thursday')">Quinta</a>
+        <a href="#" class="nav-link" onclick="showContent('friday')">Sexta</a>
+        <a href="#" class="nav-link" onclick="showContent('saturday')">Sábado</a>
+        <a href="#" class="nav-link" onclick="showContent('sunday')">Domingo</a>
     </nav>
 
-    <div class="content" id="monday">
+    <div class="content active" id="monday">
         <h2>Segunda-feira – Força no Condomínio</h2>
         <ul>
             <li>Aquecimento: 10 minutos de caminhada rápida ou corrida leve na esteira.</li>
@@ -96,6 +194,12 @@
             <li>Prancha abdominal: 3 séries de 30 segundos.</li>
             <li>Finalizar: Alongamento leve (5 minutos).</li>
         </ul>
+        <div class="exercise-timer">
+            <h3>Cronômetro de Exercício</h3>
+            <div id="timer">00:00</div>
+            <button onclick="startTimer()" id="startBtn">Iniciar</button>
+            <button onclick="resetTimer()" id="resetBtn">Resetar</button>
+        </div>
     </div>
 
     <div class="content" id="tuesday">
@@ -168,14 +272,55 @@
     </footer>
 
     <script>
+        let timer;
+        let seconds = 0;
+        let isRunning = false;
+
         function showContent(day) {
             const contents = document.querySelectorAll('.content');
+            const navLinks = document.querySelectorAll('.nav-link');
+            
             contents.forEach(content => content.classList.remove('active'));
+            navLinks.forEach(link => link.classList.remove('active'));
+            
             document.getElementById(day).classList.add('active');
+            event.target.classList.add('active');
         }
 
-        // Mostrar o conteúdo de segunda-feira por padrão.
-        document.addEventListener('DOMContentLoaded', () => showContent('monday'));
+        function startTimer() {
+            if (!isRunning) {
+                isRunning = true;
+                document.getElementById('startBtn').textContent = 'Pausar';
+                timer = setInterval(() => {
+                    seconds++;
+                    const minutes = Math.floor(seconds / 60);
+                    const remainingSeconds = seconds % 60;
+                    document.getElementById('timer').textContent = 
+                        `${String(minutes).padStart(2, '0')}:${String(remainingSeconds).padStart(2, '0')}`;
+                }, 1000);
+            } else {
+                clearInterval(timer);
+                isRunning = false;
+                document.getElementById('startBtn').textContent = 'Continuar';
+            }
+        }
+
+        function resetTimer() {
+            clearInterval(timer);
+            isRunning = false;
+            seconds = 0;
+            document.getElementById('timer').textContent = '00:00';
+            document.getElementById('startBtn').textContent = 'Iniciar';
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            showContent('monday');
+            
+            // Detectar qual dia da semana é hoje e mostrar automaticamente
+            const days = ['sunday', 'monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday'];
+            const today = new Date().getDay();
+            showContent(days[today]);
+        });
     </script>
 </body>
 </html>
