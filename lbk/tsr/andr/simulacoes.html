@@ -1,1 +1,171 @@
-Teste
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simulação de Resultados - Proprietário</title>
+    <style>
+        :root {
+            --primary-color: #1a4789;
+            --secondary-color: #f0f4f8;
+            --accent-color: #ff6b6b;
+            --text-color: #333;
+            --shadow-color: rgba(0, 0, 0, 0.1);
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: var(--secondary-color);
+            color: var(--text-color);
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 20px;
+            text-align: center;
+            font-size: 1.5em;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 20px auto;
+            padding: 20px;
+            background: white;
+            box-shadow: 0 4px 10px var(--shadow-color);
+            border-radius: 8px;
+        }
+
+        h2 {
+            color: var(--primary-color);
+            border-bottom: 2px solid var(--primary-color);
+            padding-bottom: 10px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+
+        th, td {
+            border: 1px solid #ccc;
+            padding: 10px;
+            text-align: center;
+        }
+
+        th {
+            background-color: var(--primary-color);
+            color: white;
+        }
+
+        tr:nth-child(even) {
+            background-color: var(--secondary-color);
+        }
+
+        .highlight {
+            background-color: #f8f9fa;
+            font-weight: bold;
+            color: var(--primary-color);
+        }
+
+        .result {
+            background-color: var(--accent-color);
+            color: white;
+            font-weight: bold;
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            background: var(--primary-color);
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        Simulação de Resultados Potenciais
+    </header>
+
+    <div class="container">
+        <h2>Estimativa de Resultados - Proprietário</h2>
+        <p>Baseado em um ticket médio de R$ 210.000 por unidade habitacional (UH), com 16 UH por 1000 m² e uma permuta financeira de 8%.</p>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Fase</th>
+                    <th>Área Líquida (m²)</th>
+                    <th>Número de UH</th>
+                    <th>Valor Total Estimado</th>
+                    <th>Permuta (8%)</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Fase 01</td>
+                    <td>22,500</td>
+                    <td>360</td>
+                    <td>R$ 75,600,000.00</td>
+                    <td>R$ 6,048,000.00</td>
+                </tr>
+                <tr>
+                    <td>Fase 02</td>
+                    <td>22,500</td>
+                    <td>360</td>
+                    <td>R$ 75,600,000.00</td>
+                    <td>R$ 6,048,000.00</td>
+                </tr>
+                <tr>
+                    <td>Fase 03</td>
+                    <td>14,300</td>
+                    <td>228</td>
+                    <td>R$ 47,880,000.00</td>
+                    <td>R$ 3,830,400.00</td>
+                </tr>
+                <tr>
+                    <td>Fase 04</td>
+                    <td>14,300</td>
+                    <td>228</td>
+                    <td>R$ 47,880,000.00</td>
+                    <td>R$ 3,830,400.00</td>
+                </tr>
+                <tr>
+                    <td>Fase 05</td>
+                    <td>14,300</td>
+                    <td>228</td>
+                    <td>R$ 47,880,000.00</td>
+                    <td>R$ 3,830,400.00</td>
+                </tr>
+                <tr>
+                    <td>Fase 06</td>
+                    <td>14,300</td>
+                    <td>228</td>
+                    <td>R$ 47,880,000.00</td>
+                    <td>R$ 3,830,400.00</td>
+                </tr>
+            </tbody>
+            <tfoot>
+                <tr class="highlight">
+                    <td>Total</td>
+                    <td>114,200</td>
+                    <td>1,632</td>
+                    <td>R$ 342,720,000.00</td>
+                    <td>R$ 27,417,600.00</td>
+                </tr>
+            </tfoot>
+        </table>
+
+        <h2>Resumo</h2>
+        <p>Com base na permuta financeira de 8%, o retorno estimado ao proprietário é de <strong class="result">R$ 27.417.600,00</strong> ao longo do desenvolvimento das fases projetadas.</p>
+    </div>
+
+    <footer>
+        Simulação desenvolvida por Engesud Engenharia | Atualização: 16 de dezembro de 2024
+    </footer>
+</body>
+</html>
+
