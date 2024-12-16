@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Simulação de Resultados - Proprietário</title>
+    <link rel="shortcut icon" href="https://i.imgur.com/HjwVm8x.png" type="image/x-icon">
     <style>
         :root {
             --primary-color: #1a4789;
@@ -83,6 +84,32 @@
             background: var(--primary-color);
             color: white;
         }
+
+        @media (max-width: 768px) {
+            table, thead, tbody, th, td, tr {
+                display: block;
+            }
+            thead tr {
+                display: none;
+            }
+            tr {
+                margin-bottom: 15px;
+                border-bottom: 2px solid #ddd;
+            }
+            td {
+                text-align: right;
+                padding-left: 50%;
+                position: relative;
+            }
+            td::before {
+                content: attr(data-label);
+                position: absolute;
+                left: 10px;
+                text-align: left;
+                font-weight: bold;
+                color: var(--primary-color);
+            }
+        }
     </style>
 </head>
 <body>
@@ -147,20 +174,27 @@
                     <td>R$ 47,880,000.00</td>
                     <td>R$ 3,830,400.00</td>
                 </tr>
+                <tr>
+                    <td>Lote Comercial</td>
+                    <td>9,000</td>
+                    <td>-</td>
+                    <td>R$ 9,000,000.00</td>
+                    <td>-</td>
+                </tr>
             </tbody>
             <tfoot>
                 <tr class="highlight">
                     <td>Total</td>
-                    <td>114,200</td>
+                    <td>123,200</td>
                     <td>1,632</td>
-                    <td>R$ 342,720,000.00</td>
+                    <td>R$ 351,720,000.00</td>
                     <td>R$ 27,417,600.00</td>
                 </tr>
             </tfoot>
         </table>
 
         <h2>Resumo</h2>
-        <p>Com base na permuta financeira de 8%, o retorno estimado ao proprietário é de <strong class="result">R$ 27.417.600,00</strong> ao longo do desenvolvimento das fases projetadas.</p>
+        <p>Com base na permuta financeira de 8%, o retorno estimado ao proprietário é de <strong class="result">R$ 27.417.600,00</strong> ao longo do desenvolvimento das fases projetadas. O lote comercial com 9.000 m² pode render ao proprietário <strong class="result">R$ 9.000.000,00</strong> adicionais, negociando livremente no mercado.</p>
     </div>
 
     <footer>
@@ -168,4 +202,3 @@
     </footer>
 </body>
 </html>
-
