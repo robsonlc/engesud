@@ -184,7 +184,7 @@
         }
 
         .highlight li:before {
-            content: "✓";
+            content: "\2713";
             color: var(--primary-color);
             position: absolute;
             left: 0;
@@ -253,7 +253,7 @@
 
         footer {
             background: linear-gradient(to right, var(--primary-color), #2c5282);
-            padding: 40px 20px;
+            padding: 20px;
             text-align: center;
             color: white;
             margin-top: 80px;
@@ -261,8 +261,9 @@
 
         footer img {
             width: 150px;
-            margin-bottom: 30px;
-            filter: brightness(0) invert(1) contrast(0.8);
+            display: block;
+            margin: 0 auto 15px;
+            filter: brightness(1) contrast(1.2);
             transition: transform 0.3s ease;
         }
 
@@ -271,11 +272,13 @@
         }
 
         .contact-info {
-            margin-top: 30px;
-            padding: 20px;
-            background: rgba(255,255,255,0.1);
-            border-radius: 10px;
-            display: inline-block;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+        }
+
+        .contact-info p {
+            margin: 5px 0;
         }
 
         .stats-container {
