@@ -9,7 +9,7 @@
     <!-- Metatags Open Graph -->
     <meta property="og:title" content="Oportunidade de Desenvolvimento - Área para MCMV/Prozeis">
     <meta property="og:description" content="Área com potencial para empreendimentos habitacionais em Maringá, viabilizando blocos T+3 em programas populares.">
-    <meta property="og:image" content="https://i.imgur.com/GH1CjAT.jpeg">
+    <meta property="og:image" content="https://i.imgur.com/8wJo0Xa.jpeg">
     <meta property="og:image:width" content="800">
     <meta property="og:image:height" content="600">
     <meta property="og:url" content="https://www.engesudsmart.com.br/lbk/tsr/andr/index.html">
@@ -27,6 +27,8 @@
             --text-color: #2c3e50;
             --background-color: #f8f9fa;
             --shadow-color: rgba(0, 0, 0, 0.1);
+            --button-hover-color: #e05252; /* Cor para o hover do botão */
+            --button-active-color: #b84141; /* Cor para o estado ativo do botão */
         }
 
         body {
@@ -107,6 +109,7 @@
             }
         }
 
+        /* Estilos aprimorados para o botão Simulação */
         .cta-button {
             display: inline-block;
             padding: 15px 30px;
@@ -115,12 +118,30 @@
             text-decoration: none;
             border-radius: 25px;
             margin-top: 30px;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            transition: transform 0.2s ease, box-shadow 0.2s ease, background-color 0.3s ease;
+            border: none;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            tap-highlight-color: transparent; /* Remove o destaque no toque em dispositivos móveis */
         }
 
         .cta-button:hover {
             transform: translateY(-2px);
-            box-shadow: 0 5px 15px rgba(255,107,107,0.4);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+            background-color: var(--button-hover-color);
+        }
+
+        /* Estilo para quando o botão está sendo ativamente pressionado */
+        .cta-button:active {
+            transform: translateY(1px);
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
+            background-color: var(--button-active-color);
+        }
+
+        .cta-button:focus {
+            outline: none;
+            box-shadow: 0 0 0 3px rgba(255, 107, 107, 0.5);
         }
 
         .container {
@@ -444,7 +465,7 @@
     <footer>
         <img src="https://i.imgur.com/3YKn2xW.png" alt="Logo Engesud">
         <div class="contact-info">
-            <p><strong>Engesud Engenharia e Intermediação LTDA</strong></p>
+            <p><strong>Engesud Engenharia e Intermediação Imobiliária</strong></p>
             <p>Robson Luis da Costa</p>
             <p>Última atualização: 16 de dezembro de 2024</p>
         </div>
