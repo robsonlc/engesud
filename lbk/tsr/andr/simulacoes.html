@@ -15,11 +15,12 @@
         }
 
         body {
-            font-family: Arial, sans-serif;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             background-color: var(--secondary-color);
             color: var(--text-color);
             margin: 0;
             padding: 0;
+            line-height: 1.6;
         }
 
         header {
@@ -28,12 +29,13 @@
             padding: 20px;
             text-align: center;
             font-size: 1.5em;
+            box-shadow: 0 2px 5px var(--shadow-color);
         }
 
         .container {
             max-width: 1200px;
             margin: 20px auto;
-            padding: 20px;
+            padding: 30px;
             background: white;
             box-shadow: 0 4px 10px var(--shadow-color);
             border-radius: 8px;
@@ -41,33 +43,50 @@
 
         h2 {
             color: var(--primary-color);
-            border-bottom: 2px solid var(--primary-color);
+            border-bottom: 3px solid var(--accent-color);
             padding-bottom: 10px;
+            margin-bottom: 20px;
+            font-size: 1.4em;
+        }
+
+        p {
+            margin-bottom: 20px;
+            font-size: 1em;
+            line-height: 1.7;
+        }
+
+        .table-wrapper {
+            overflow-x: auto;
         }
 
         table {
             width: 100%;
             border-collapse: collapse;
-            margin: 20px 0;
+            margin-top: 30px;
         }
 
         th, td {
-            border: 1px solid #ccc;
-            padding: 10px;
+            padding: 15px;
             text-align: center;
+            border: 1px solid #ddd;
         }
 
         th {
             background-color: var(--primary-color);
             color: white;
+            font-weight: 600;
         }
 
-        tr:nth-child(even) {
-            background-color: var(--secondary-color);
+        tbody tr:nth-child(odd) {
+            background-color: #f8f8f8;
+        }
+
+        tbody tr:hover {
+            background-color: #f2f2f2;
         }
 
         .highlight {
-            background-color: #f8f9fa;
+            background-color: var(--secondary-color);
             font-weight: bold;
             color: var(--primary-color);
         }
@@ -75,7 +94,11 @@
         .result {
             background-color: var(--accent-color);
             color: white;
-            font-weight: bold;
+            font-weight: 600;
+            padding: 10px;
+            border-radius: 5px;
+            display: inline-block;
+            margin: 5px 0;
         }
 
         footer {
@@ -83,30 +106,61 @@
             padding: 20px;
             background: var(--primary-color);
             color: white;
+            margin-top: 40px;
+            box-shadow: 0 -2px 5px var(--shadow-color);
+        }
+
+        footer a {
+            color: #fff;
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
         }
 
         @media (max-width: 768px) {
-            table, thead, tbody, th, td, tr {
-                display: block;
+            .container {
+                padding: 20px;
             }
-            thead tr {
-                display: none;
+
+            .table-wrapper {
+                margin: 20px 0;
             }
-            tr {
-                margin-bottom: 15px;
-                border-bottom: 2px solid #ddd;
+
+            table {
+                border: none;
             }
+
+            th, td {
+                padding: 10px;
+                text-align: left;
+                border-bottom: 1px solid #ddd;
+            }
+
+            th {
+                display: none; /* Hide table headers on small screens */
+            }
+
             td {
-                text-align: right;
-                padding-left: 50%;
-                position: relative;
+                display: block;
+                width: 100%;
+                box-sizing: border-box;
             }
+
+            td:first-child {
+                padding-top: 15px;
+            }
+
+            td:last-child {
+                padding-bottom: 15px;
+            }
+
             td::before {
                 content: attr(data-label);
-                position: absolute;
-                left: 10px;
-                text-align: left;
                 font-weight: bold;
+                display: block;
+                margin-bottom: 5px;
                 color: var(--primary-color);
             }
         }
@@ -121,84 +175,86 @@
         <h2>Estimativa de Resultados - Proprietário</h2>
         <p>Baseado em um ticket médio de R$ 210.000 por unidade habitacional (UH), com 16 UH por 1000 m² e uma permuta financeira de 8%.</p>
 
-        <table>
-            <thead>
-                <tr>
-                    <th>Fase</th>
-                    <th>Área Líquida (m²)</th>
-                    <th>Número de UH</th>
-                    <th>Valor Total Estimado</th>
-                    <th>Permuta (8%)</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>Fase 01</td>
-                    <td>22,500</td>
-                    <td>360</td>
-                    <td>R$ 75,600,000.00</td>
-                    <td>R$ 6,048,000.00</td>
-                </tr>
-                <tr>
-                    <td>Fase 02</td>
-                    <td>22,500</td>
-                    <td>360</td>
-                    <td>R$ 75,600,000.00</td>
-                    <td>R$ 6,048,000.00</td>
-                </tr>
-                <tr>
-                    <td>Fase 03</td>
-                    <td>14,300</td>
-                    <td>228</td>
-                    <td>R$ 47,880,000.00</td>
-                    <td>R$ 3,830,400.00</td>
-                </tr>
-                <tr>
-                    <td>Fase 04</td>
-                    <td>14,300</td>
-                    <td>228</td>
-                    <td>R$ 47,880,000.00</td>
-                    <td>R$ 3,830,400.00</td>
-                </tr>
-                <tr>
-                    <td>Fase 05</td>
-                    <td>14,300</td>
-                    <td>228</td>
-                    <td>R$ 47,880,000.00</td>
-                    <td>R$ 3,830,400.00</td>
-                </tr>
-                <tr>
-                    <td>Fase 06</td>
-                    <td>14,300</td>
-                    <td>228</td>
-                    <td>R$ 47,880,000.00</td>
-                    <td>R$ 3,830,400.00</td>
-                </tr>
-                <tr>
-                    <td>Lote Comercial</td>
-                    <td>9,000</td>
-                    <td>-</td>
-                    <td>R$ 9,000,000.00</td>
-                    <td>-</td>
-                </tr>
-            </tbody>
-            <tfoot>
-                <tr class="highlight">
-                    <td>Total</td>
-                    <td>123,200</td>
-                    <td>1,632</td>
-                    <td>R$ 351,720,000.00</td>
-                    <td>R$ 27,417,600.00</td>
-                </tr>
-            </tfoot>
-        </table>
+        <div class="table-wrapper">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Fase</th>
+                        <th>Área Líquida (m²)</th>
+                        <th>Número de UH</th>
+                        <th>Valor Total Estimado</th>
+                        <th>Permuta (8%)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td data-label="Fase">Fase 01</td>
+                        <td data-label="Área Líquida (m²)">22,500</td>
+                        <td data-label="Número de UH">360</td>
+                        <td data-label="Valor Total Estimado">R$ 75,600,000.00</td>
+                        <td data-label="Permuta (8%)">R$ 6,048,000.00</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Fase">Fase 02</td>
+                        <td data-label="Área Líquida (m²)">22,500</td>
+                        <td data-label="Número de UH">360</td>
+                        <td data-label="Valor Total Estimado">R$ 75,600,000.00</td>
+                        <td data-label="Permuta (8%)">R$ 6,048,000.00</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Fase">Fase 03</td>
+                        <td data-label="Área Líquida (m²)">14,300</td>
+                        <td data-label="Número de UH">228</td>
+                        <td data-label="Valor Total Estimado">R$ 47,880,000.00</td>
+                        <td data-label="Permuta (8%)">R$ 3,830,400.00</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Fase">Fase 04</td>
+                        <td data-label="Área Líquida (m²)">14,300</td>
+                        <td data-label="Número de UH">228</td>
+                        <td data-label="Valor Total Estimado">R$ 47,880,000.00</td>
+                        <td data-label="Permuta (8%)">R$ 3,830,400.00</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Fase">Fase 05</td>
+                        <td data-label="Área Líquida (m²)">14,300</td>
+                        <td data-label="Número de UH">228</td>
+                        <td data-label="Valor Total Estimado">R$ 47,880,000.00</td>
+                        <td data-label="Permuta (8%)">R$ 3,830,400.00</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Fase">Fase 06</td>
+                        <td data-label="Área Líquida (m²)">14,300</td>
+                        <td data-label="Número de UH">228</td>
+                        <td data-label="Valor Total Estimado">R$ 47,880,000.00</td>
+                        <td data-label="Permuta (8%)">R$ 3,830,400.00</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Fase">Lote Comercial</td>
+                        <td data-label="Área Líquida (m²)">9,000</td>
+                        <td data-label="Número de UH">-</td>
+                        <td data-label="Valor Total Estimado">R$ 9,000,000.00</td>
+                        <td data-label="Permuta (8%)">-</td>
+                    </tr>
+                </tbody>
+                <tfoot>
+                    <tr class="highlight">
+                        <td data-label="Total">Total</td>
+                        <td data-label="Área Líquida (m²)">123,200</td>
+                        <td data-label="Número de UH">1,632</td>
+                        <td data-label="Valor Total Estimado">R$ 351,720,000.00</td>
+                        <td data-label="Permuta (8%)">R$ 27,417,600.00</td>
+                    </tr>
+                </tfoot>
+            </table>
+        </div>
 
         <h2>Resumo</h2>
         <p>Com base na permuta financeira de 8%, o retorno estimado ao proprietário é de <strong class="result">R$ 27.417.600,00</strong> ao longo do desenvolvimento das fases projetadas. O lote comercial com 9.000 m² pode render ao proprietário <strong class="result">R$ 9.000.000,00</strong> adicionais, negociando livremente no mercado.</p>
     </div>
 
     <footer>
-        Simulação desenvolvida por Engesud Engenharia | Atualização: 16 de dezembro de 2024
+        Simulação desenvolvida por <a href="https://www.engesudsmart.com.br/">Engesud Engenharia</a> | Atualização: 16 de dezembro de 2024
     </footer>
 </body>
 </html>
