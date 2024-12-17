@@ -126,6 +126,38 @@
             height: auto;
             display: block;
         }
+        
+        /* Table Styles */
+        table {
+            width: 60%;
+            margin: 20px auto;
+            border-collapse: collapse;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            background-color: #fff;
+        }
+
+        caption {
+            font-size: 1.4em;
+            margin-bottom: 10px;
+            font-weight: bold;
+            color: var(--primary-color);
+            text-align: center;
+        }
+
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: center;
+        }
+
+        th {
+            background-color: #f8f9fa;
+            font-weight: bold;
+        }
+
+        tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
 
         /* Footer */
         footer {
@@ -162,6 +194,10 @@
 
             .section {
                 padding: 30px 15px;
+            }
+
+            table {
+                width: 95%;
             }
         }
     </style>
@@ -211,6 +247,74 @@
         <div class="image-container">
             <img src="https://www.engesudsmart.com.br/lbk/tsr/arp/Zoneamento.jpg" alt="Imagem do Zoneamento Urbano">
         </div>
+    </section>
+
+    <!-- Topography Section -->
+    <section class="section">
+        <h2>Topografia do Lote</h2>
+        <div class="image-container">
+            <img src="https://i.imgur.com/om7ueiq.jpeg" alt="Imagem da Topografia do Lote">
+        </div>
+    </section>
+
+    <!-- Area Summary Section -->
+    <section class="section">
+        <h2>Resumo de Áreas</h2>
+
+        <!-- Áreas de Origem -->
+        <table>
+            <caption>Área de Origem</caption>
+            <thead>
+                <tr>
+                    <th>Área</th>
+                    <th>m²</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Lote N° 21-REM</td>
+                    <td>407.020,71</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <!-- Áreas Resultantes -->
+        <table>
+            <caption>Áreas Resultantes</caption>
+            <thead>
+                <tr>
+                    <th>Área</th>
+                    <th>m²</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Lote N° 21-REM/A</td>
+                    <td>364.570,71</td>
+                </tr>
+                <tr>
+                    <td>Lote N° 21-REM/B</td>
+                    <td>42.450,00</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <!-- Total -->
+        <table>
+            <caption>Total</caption>
+            <thead>
+                <tr>
+                    <th>Área</th>
+                    <th>m²</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Área Total</td>
+                    <td>407.020,71</td>
+                </tr>
+            </tbody>
+        </table>
     </section>
 
     <!-- Footer -->
