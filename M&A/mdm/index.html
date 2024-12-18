@@ -3,17 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Proposta Sugestiva de Aquisição: Mademax</title>
+    <title>Oportunidade de Investimento: Mademax</title>
     <!-- Meta Tags for Social Sharing -->
     <meta property="og:url" content="http://www.engesudsmart.com.br/M&A/mdm">
     <meta property="og:image" content="https://i.imgur.com/OQ1LVey.png">
-    <meta property="og:title" content="Proposta Sugestiva de Aquisição: Mademax">
+    <meta property="og:title" content="Oportunidade de Investimento: Mademax">
     <meta property="og:description" content="Proposta inovadora para a aquisição dos ativos da Mademax.">
     <!-- Marca D’água -->
     <!-- Este conteúdo é protegido por direitos autorais creditados à Engesud Engenharia e Intermediação LTDA, inscrita no CNPJ 40.601.637/0001-58 -->
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap');
-        
         * {
             box-sizing: border-box;
             margin: 0;
@@ -31,14 +30,29 @@
             padding: 20px;
         }
         header {
+            background: url('https://i.imgur.com/ELi1jwv.png') center/cover no-repeat;
+            opacity: 0.9;
             text-align: center;
-            padding: 2rem 0;
+            padding: 8rem 0;
             margin-bottom: 30px;
+            position: relative;
         }
-        h1 {
+        header::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            z-index: -1;
+        }
+        header h1 {
             font-weight: 700;
             letter-spacing: 1px;
-            color: #2c3e50;
+            color: #fff;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+            font-size: 2.5rem;
         }
         .slide {
             background-color: #fff;
@@ -100,6 +114,7 @@
         footer p {
             font-size: 14px;
             color: #777;
+            margin: 5px 0;
         }
         img {
             max-width: 100%;
@@ -120,65 +135,20 @@
         .map-link:hover {
             background-color: #2980b9;
         }
-        #timeline {
-            position: relative;
-            height: 600px;
-            margin-top: 50px;
-            background-color: #f9f9f9;
-            border-radius: 8px;
-            padding: 20px;
-            box-shadow: inset 0 0 10px rgba(0,0,0,0.05);
-        }
-        .asset {
-            position: absolute;
-            left: 0;
-            height: 40px;
-            background: #3498db;
-            border-radius: 5px;
-            transition: width 0.5s ease-in-out;
-        }
-        .asset-label {
-            position: absolute;
-            left: 10px;
-            top: 10px;
-            color: white;
-            font-size: 14px;
-            font-weight: bold;
-        }
-        #progress {
-            position: absolute;
-            top: -40px;
-            left: 0;
-            width: 100%;
-            text-align: center;
+        .button-link {
+            display: block;
+            width: max-content;
+            margin: 30px auto;
+            padding: 15px 30px;
             font-size: 18px;
-            font-weight: bold;
-            color: #2c3e50;
-        }
-        #controls {
-            text-align: center;
-            margin-top: 30px;
-        }
-        button {
-            padding: 12px 25px;
-            font-size: 16px;
-            cursor: pointer;
-            background-color: #3498db;
+            text-decoration: none;
             color: #fff;
-            border: none;
+            background-color: #3498db;
             border-radius: 5px;
-            margin: 0 10px;
+            transition: background-color 0.3s;
         }
-        button:hover {
+        .button-link:hover {
             background-color: #2980b9;
-        }
-        @media (max-width: 768px) {
-            .container {
-                padding: 15px;
-            }
-            .property-card {
-                flex-basis: 100%;
-            }
         }
         .report-links {
             text-align: center;
@@ -198,59 +168,38 @@
         .report-button:hover {
             background-color: #2980b9;
         }
+        @media (max-width: 768px) {
+            .container {
+                padding: 15px;
+            }
+            .property-card {
+                flex-basis: 100%;
+            }
+        }
     </style>
 </head>
 <body>
     <header>
-        <h1>Proposta Sugestiva de Aquisição: Mademax</h1>
+        <h1>Oportunidade de Investimento: Mademax</h1>
     </header>
-
     <div class="container">
         <div class="slide">
             <h2>Sobre a Mademax</h2>
             <ul>
-                <li>Empresa consolidada no setor madeireiro.</li>
-                <li>Reconhecida pela qualidade de seus produtos.</li>
-                <li>Ativos estratégicos em localidades privilegiadas.</li>
-                <li>Potencial significativo de crescimento e expansão.</li>
+                <li>Empresa consolidada no setor madeireiro, com forte presença e reconhecimento no mercado.</li>
+                <li>Reconhecida pela alta qualidade de seus produtos e práticas sustentáveis.</li>
+                <li>Ativos estrategicamente localizados em regiões privilegiadas, garantindo acesso a recursos de alta qualidade e logística otimizada.</li>
+                <li>Grande potencial de crescimento e expansão, tanto em mercados existentes quanto em novos.</li>
+                <li>Compromisso com a inovação e a sustentabilidade, alinhado às tendências atuais do mercado e às demandas dos consumidores.</li>
             </ul>
-        </div>
-
-        <div class="slide">
-            <h2>Estrutura de Pagamento Proposta</h2>
-            <ul>
-                <li>60 parcelas mensais de R$ 4,5 milhões.</li>
-                <li>Valor total: R$ 270 milhões (sujeito a ajustes).</li>
-                <li>Correção mensal conforme índice a ser acordado.</li>
-            </ul>
-        </div>
-
-        <div class="slide">
-            <h2>Modelo de Transição</h2>
-            <ul>
-                <li>A empresa adquirente assume gradualmente a operação da Mademax.</li>
-                <li>Resultados operacionais contribuem para o pagamento.</li>
-                <li>Transferência progressiva de propriedade dos ativos.</li>
-            </ul>
-        </div>
-
-        <div class="slide">
-            <h2>Simulação de Pagamentos e Abatimento de Ativos</h2>
-            <div id="timeline">
-                <div id="progress">Mês: <span id="month">0</span> | Pago: R$ <span id="paid">0</span> milhões</div>
-            </div>
-            <div id="controls">
-                <button id="playBtn">Iniciar</button>
-                <button id="resetBtn">Reiniciar</button>
-            </div>
         </div>
 
         <div class="slide">
             <h2>Ativos Principais</h2>
             <ul>
-                <li>Duas fazendas produtivas.</li>
-                <li>Complexo industrial Mademax.</li>
-                <li>Transferência de propriedade conforme quitação.</li>
+                <li>Duas fazendas produtivas, otimizadas para eficiência e sustentabilidade.</li>
+                <li>Complexo industrial Mademax moderno e bem equipado.</li>
+                <li>Localização estratégica que facilita a logística e distribuição.</li>
             </ul>
         </div>
 
@@ -290,20 +239,19 @@
         </div>
 
         <div class="slide highlight">
-            <h2>Benefícios da Aquisição</h2>
+            <h2>Por que Investir na Mademax?</h2>
             <ul>
-                <li>Expansão estratégica no mercado madeireiro.</li>
-                <li>Aquisição financiada pela própria operação.</li>
-                <li>Flexibilidade na integração e gestão dos novos ativos.</li>
-                <li>Aumento significativo da capacidade produtiva.</li>
-                <li>Diversificação geográfica dos ativos florestais.</li>
-                <li>Aumento da competitividade no mercado.</li>
-                <li>Potencial de otimização de custos.</li>
-                <li>Oportunidade única de crescimento com ativos de alta qualidade.</li>
+                <li>**Expansão Estratégica:** Oportunidade de entrar ou expandir no mercado madeireiro com uma empresa já estabelecida.</li>
+                <li>**Ativos de Alto Valor:** Aquisição de ativos tangíveis e de alto valor, incluindo terras, instalações e operações.</li>
+                <li>**Sustentabilidade:** Investimento em uma empresa comprometida com práticas sustentáveis e responsáveis.</li>
+                <li>**Potencial de Retorno:** Alto potencial de retorno sobre o investimento, impulsionado pelo crescimento do mercado e otimização das operações.</li>
+                <li>**Localização Estratégica:** Ativos localizados em regiões com excelente acesso a recursos naturais e rotas de distribuição.</li>
+                <li>**Inovação e Tecnologia:** Acesso a processos inovadores e tecnologia de ponta no setor madeireiro.</li>
+                <li>**Diversificação de Portfólio:** Uma excelente oportunidade para diversificar investimentos em um setor sólido e em crescimento.</li>
+                <li>**Crescimento com a Marca Mademax:** Aproveite a reputação e a força da marca Mademax para impulsionar o crescimento e a lucratividade.</li>
             </ul>
         </div>
 
-        
         <div class="slide">
             <h2>Mapa da Propriedade Mademax</h2>
             <img src="https://i.imgur.com/Kf0YlBh.jpeg" alt="Mapa da Propriedade Mademax">
@@ -312,90 +260,26 @@
                 <a href="https://wa.me/4497013489" class="report-button" target="_blank">Solicite Apresentação Executiva Mademax</a>
             </div>
         </div>
-    </div>
 
+        <div class="slide">
+            <h2>Conheça a Proposta Detalhada</h2>
+            <p>Apresentamos uma proposta de aquisição estruturada e vantajosa, com um modelo de transição que permite a integração gradual e eficiente dos ativos da Mademax.</p>
+            <p>Descubra como a proposta foi desenhada para garantir uma transição suave, maximizando o potencial de retorno e minimizando riscos.</p>
+            <a href="simulacao.html" class="button-link">Explorar Proposta de Aquisição</a>
+        </div>
+
+    </div>
     <footer>
-        <img src="https://i.imgur.com/6z1r7cp.jpeg" alt="Logotipo Engesud">
-        <p>Robson Luis da Costa: <a href="https://wa.me/5544997013489?text=Vamos%20conversar%20sobre%20este%20assunto" target="_blank">(44) 99701-3489</a></p>
+        <img src="https://i.imgur.com/3YKn2xW.png" alt="Logo Engesud">
+        <p><strong>Engesud Engenharia e Intermediação LTDA</strong></p>
+        <p>Robson Luis da Costa | <a href="https://wa.me/5544997013489?text=Vamos%20conversar%20sobre%20este%20assunto" target="_blank">+55 (44) 99701-3489</a></p>
+        <p>Última atualização: <span id="currentDate"></span></p>
     </footer>
 
     <script>
-        const assets = [
-            { name: "Fazenda Itapura - Terra Nua", value: 126.00, top: 0 },
-            { name: "Fazenda Água Amarela - Terra Nua", value: 83.78, top: 60 },
-            { name: "Fazenda Itapura - Reflorestamento", value: 8.52, top: 120 },
-            { name: "Fazenda Água Amarela - Reflorestamento", value: 23.92, top: 180 },
-            { name: "Fazenda Itapura - Imobilizado", value: 8.70, top: 240 },
-            { name: "Adrianópolis", value: 10.00, top: 300 },
-            { name: "Serraria", value: 7.76, top: 360 },
-            { name: "Indústria - Área física (4,32 HA)", value: 2.50, top: 420 },
-            { name: "Fazenda Água Amarela - Imobilizado (Casas)", value: 0.36, top: 480 }
-        ];
-
-        const totalValue = assets.reduce((sum, asset) => sum + asset.value, 0);
-        const monthlyPayment = 4.5;
-        const totalMonths = 60;
-
-        let currentMonth = 0;
-        let intervalId;
-
-        function createAssetElements() {
-            const timeline = document.getElementById('timeline');
-            assets.forEach(asset => {
-                const assetElement = document.createElement('div');
-                assetElement.className = 'asset';
-                assetElement.style.top = `${asset.top}px`;
-                assetElement.style.width = '0%';
-
-                const labelElement = document.createElement('div');
-                labelElement.className = 'asset-label';
-                labelElement.textContent = `${asset.name} (R$ ${asset.value.toFixed(2)} milhões)`;
-
-                assetElement.appendChild(labelElement);
-                timeline.appendChild(assetElement);
-            });
-        }
-
-        function updateTimeline() {
-            currentMonth++;
-            const totalPaid = currentMonth * monthlyPayment;
-            let remainingPaid = totalPaid;
-
-            document.getElementById('month').textContent = currentMonth;
-            document.getElementById('paid').textContent = totalPaid.toFixed(2);
-
-            assets.forEach((asset, index) => {
-                const assetElement = document.querySelectorAll('.asset')[index];
-                if (remainingPaid > 0) {
-                    const paidPercentage = Math.min(100, (remainingPaid / asset.value) * 100);
-                    assetElement.style.width = `${paidPercentage}%`;
-                    remainingPaid -= asset.value;
-                }
-            });
-
-            if (currentMonth >= totalMonths) {
-                clearInterval(intervalId);
-            }
-        }
-
-        document.getElementById('playBtn').addEventListener('click', () => {
-            if (!intervalId) {
-                intervalId = setInterval(updateTimeline, 1000);
-            }
-        });
-
-        document.getElementById('resetBtn').addEventListener('click', () => {
-            clearInterval(intervalId);
-            intervalId = null;
-            currentMonth = 0;
-            document.getElementById('month').textContent = '0';
-            document.getElementById('paid').textContent = '0';
-            document.querySelectorAll('.asset').forEach(asset => {
-                asset.style.width = '0%';
-            });
-        });
-
-        createAssetElements();
+        const today = new Date();
+        const formattedDate = today.toLocaleDateString('pt-BR', { day: 'numeric', month: 'long', year: 'numeric' });
+        document.getElementById('currentDate').textContent = formattedDate;
     </script>
 </body>
 </html>
