@@ -8,10 +8,12 @@
     <meta property="og:image" content="https://i.imgur.com/DHJbIhG.png" />
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
-    <meta property="og:url" content="https://www.engesudsmart.com.br/lbk/tsr/Tulipa/tip/simul/index.html" />
+    <meta property="og:url" content="https://www.engesudsmart.com.br/lbk/tsr/Tulipa/simul/index.html" />
     <meta property="og:type" content="website" />
     <meta property="og:site_name" content="Engesud Smart" />
     <title>Simulação de Proposta de Parceria - Engesud Smart</title>
+    <!-- Favicon para melhor visualização em guias -->
+    <link rel="shortcut icon" href="https://i.imgur.com/HjwVm8x.png" type="image/x-icon">
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap');
         
@@ -30,20 +32,35 @@
             line-height: 1.6;
         }
         header {
-            background-color: var(--primary-color);
+            background: url('https://i.imgur.com/i6mAXQ4.png') center/cover no-repeat;
+            opacity: 0.9;
             color: white;
-            padding: 2rem 1rem;
+            padding: 4rem 0;
             text-align: center;
+            position: relative;
+        }
+        header::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.6); /* Ajuste a opacidade aqui */
+            z-index: 1;
+        }
+        header h1, header p {
+            position: relative;
+            z-index: 2;
         }
         header h1 {
-            color: white;
-            font-size: 2rem;
+            font-size: 2.5rem;
             margin-bottom: 0.5rem;
         }
         .container {
-            max-width: 100%;
+            max-width: 1200px;
             margin: 0 auto;
-            padding: 1rem;
+            padding: 2rem;
         }
         h2 {
             color: var(--primary-color);
@@ -56,6 +73,10 @@
             padding: 1.5rem;
             border-radius: 8px;
             box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+        .section:hover {
+            transform: translateY(-5px);
         }
         .image, .map {
             width: 100%;
@@ -135,6 +156,34 @@
             border: 1px solid #ccc;
             border-radius: 4px;
         }
+        nav {
+            background-color: rgba(0, 0, 0, 0.5);
+            padding: 1rem;
+            text-align: center;
+            position: relative;
+            z-index: 3;
+        }
+
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        nav ul li {
+            display: inline;
+            margin: 0 10px;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        nav ul li a:hover {
+            text-decoration: underline;
+        }
         @media (max-width: 768px) {
             .container {
                 padding: 0.5rem;
@@ -156,6 +205,13 @@
 </head>
 <body>
     <header>
+        <nav>
+            <ul>
+                <li><a href="../index.html">Visão Geral</a></li>
+                <li><a href="../tip.html">Parceria Financeira</a></li>
+                <li><a href="index.html">Simulação</a></li>
+            </ul>
+        </nav>
         <h1>Simulação de Proposta de Parceria Financeira</h1>
         <p>Desenvolvimento Residencial na Rua Tulipa & Rotatória, Maringá</p>
     </header>
@@ -212,13 +268,18 @@
     </div>
 
     <footer>
-        <img src="https://i.imgur.com/3YKn2xW.png" alt="Logotipo Engesud">
-        <p><strong>Engesud Engenharia e Intermediação Ltda.</strong></p>
-        <p>Robson Luis da Costa</p>
-        <p>Telefone/WhatsApp: <a href="https://wa.me/4497013489" style="color: white;">+55 (44) 99701-3489</a></p>
+        <img src="https://i.imgur.com/3YKn2xW.png" alt="Logo Engesud">
+        <p><strong>Engesud Engenharia e Intermediação LTDA</strong></p>
+        <p>Robson Luis da Costa | <a href="https://wa.me/4497013489" style="color: white;">+55 (44) 99701-3489</a></p>
+        <p id="dataAtualizacao"></p>
     </footer>
 
     <script>
+        // Obter a data atual e formatá-la
+        const today = new Date();
+        const formattedDate = today.toLocaleDateString('pt-BR', { day: 'numeric', month: 'long', year: 'numeric' });
+        document.getElementById('dataAtualizacao').textContent = `Última atualização: ${formattedDate}`;
+
         // Função para formatar números como moeda
         function formatCurrency(value) {
             return parseFloat(value).toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
