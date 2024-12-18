@@ -12,6 +12,8 @@
     <meta property="og:type" content="website" />
     <meta property="og:site_name" content="Engesud Smart" />
     <title>Proposta de Parceria Financeira - Engesud Smart</title>
+    <!-- Favicon para melhor visualização em guias -->
+    <link rel="shortcut icon" href="https://i.imgur.com/HjwVm8x.png" type="image/x-icon">
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap');
         
@@ -30,13 +32,28 @@
             line-height: 1.6;
         }
         header {
-            background-color: var(--primary-color);
+            background: url('https://i.imgur.com/i6mAXQ4.png') center/cover no-repeat;
+            opacity: 0.9;
             color: white;
-            padding: 3rem 0;
+            padding: 4rem 0;
             text-align: center;
+            position: relative;
+        }
+        header::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.6); /* Ajuste a opacidade aqui */
+            z-index: 1;
+        }
+        header h1, header p {
+            position: relative;
+            z-index: 2;
         }
         header h1 {
-            color: white;
             font-size: 2.5rem;
             margin-bottom: 0.5rem;
         }
@@ -142,6 +159,34 @@
             stroke: #17a2b8;
             stroke-width: 2px;
         }
+        nav {
+            background-color: rgba(0, 0, 0, 0.5);
+            padding: 1rem;
+            text-align: center;
+            position: relative;
+            z-index: 3;
+        }
+
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        nav ul li {
+            display: inline;
+            margin: 0 10px;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        nav ul li a:hover {
+            text-decoration: underline;
+        }
         @media (max-width: 768px) {
             .container {
                 padding: 1rem;
@@ -176,6 +221,13 @@
 </head>
 <body>
     <header>
+        <nav>
+            <ul>
+                <li><a href="index.html">Visão Geral</a></li>
+                <li><a href="tip.html">Parceria Financeira</a></li>
+                <li><a href="simul/index.html">Simulação</a></li>
+            </ul>
+        </nav>
         <h1>Proposta de Parceria Financeira</h1>
         <p>Desenvolvimento Residencial na Rua Tulipa & Rotatória, Maringá</p>
     </header>
@@ -282,7 +334,7 @@
         <!-- Botão para a Página de Simulação -->
         <section class="section">
             <h2>Simule os Cálculos</h2>
-            <a href="https://www.engesudsmart.com.br/lbk/tsr/Tulipa/simul/" class="cta-button">Acessar Simulador</a>
+            <a href="simul/index.html" class="cta-button">Acessar Simulador</a>
         </section>
 
         <section class="section">
@@ -316,10 +368,17 @@
     </div>
 
     <footer>
-        <img src="https://i.imgur.com/3YKn2xW.png" alt="Logotipo Engesud">
-        <p><strong>Engesud Engenharia e Intermediação Ltda.</strong></p>
-        <p>Robson Luis da Costa</p>
-        <p>Telefone/WhatsApp: <a href="https://wa.me/4497013489" style="color: white;">+55 (44) 99701-3489</a></p>
+        <img src="https://i.imgur.com/3YKn2xW.png" alt="Logo Engesud">
+        <p><strong>Engesud Engenharia e Intermediação LTDA</strong></p>
+        <p>Robson Luis da Costa | <a href="https://wa.me/4497013489" style="color: white;">+55 (44) 99701-3489</a></p>
+        <p id="dataAtualizacao"></p>
     </footer>
+
+    <script>
+        // Obter a data atual e formatá-la
+        const today = new Date();
+        const formattedDate = today.toLocaleDateString('pt-BR', { day: 'numeric', month: 'long', year: 'numeric' });
+        document.getElementById('dataAtualizacao').textContent = `Última atualização: ${formattedDate}`;
+    </script>
 </body>
 </html>
