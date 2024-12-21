@@ -5,50 +5,126 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Drive</title>
     <style>
+        :root {
+            --primary-color: #007BFF;
+            --hover-color: #0056b3;
+            --bg-color: #f8f9fa;
+            --card-bg: #ffffff;
+            --text-color: #333333;
+            --border-color: #dee2e6;
+        }
+
         body {
-            font-family: Arial, sans-serif;
-            background-color: #f0f0f0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--bg-color);
             margin: 0;
-            padding: 0;
+            padding: 20px;
+            min-height: 100vh;
             display: flex;
             flex-direction: column;
             align-items: center;
         }
+
         .container {
-            margin-top: 50px;
-            width: 80%;
+            width: 90%;
             max-width: 1000px;
-            background-color: #fff;
-            box-shadow: 0 0 10px rgba(0,0,0,0.1);
-            padding: 20px;
-            border-radius: 8px;
+            background-color: var(--card-bg);
+            box-shadow: 0 2px 15px rgba(0,0,0,0.1);
+            padding: 30px;
+            border-radius: 12px;
+            margin: 20px auto;
         }
+
         h1 {
             text-align: center;
-            color: #333;
+            color: var(--text-color);
+            font-size: 1.8rem;
+            margin-bottom: 30px;
+            padding-bottom: 15px;
+            border-bottom: 2px solid var(--border-color);
         }
+
         .file-list {
             list-style-type: none;
             padding: 0;
+            margin: 0;
         }
+
         .file-list li {
             display: flex;
             justify-content: space-between;
-            padding: 10px;
-            border-bottom: 1px solid #ddd;
+            align-items: center;
+            padding: 15px;
+            margin-bottom: 10px;
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            transition: all 0.3s ease;
         }
-        .file-list li a {
-            color: #007BFF;
-            text-decoration: none;
+
+        .file-list li:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
         }
-        .file-list li a:hover {
-            text-decoration: underline;
+
+        .file-info {
+            display: flex;
+            align-items: center;
+            gap: 15px;
         }
-        .file-list li:last-child {
-            border-bottom: none;
-        }
+
         .file-icon {
-            margin-right: 10px;
+            width: 32px;
+            height: 32px;
+        }
+
+        .file-name {
+            font-size: 1rem;
+            color: var(--text-color);
+        }
+
+        .download-btn {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 8px 16px;
+            border-radius: 6px;
+            text-decoration: none;
+            transition: background-color 0.3s ease;
+            font-weight: 500;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .download-btn:hover {
+            background-color: var(--hover-color);
+        }
+
+        .download-btn::after {
+            content: "↓";
+            font-size: 1.2em;
+        }
+
+        @media (max-width: 600px) {
+            .container {
+                width: 95%;
+                padding: 15px;
+            }
+
+            .file-list li {
+                flex-direction: column;
+                gap: 10px;
+                text-align: center;
+            }
+
+            .file-info {
+                flex-direction: column;
+                gap: 8px;
+            }
+
+            .download-btn {
+                width: 100%;
+                justify-content: center;
+            }
         }
     </style>
 </head>
@@ -57,16 +133,36 @@
         <h1>Arquivos Disponíveis para Download</h1>
         <ul class="file-list">
             <li>
-                <span><img src="https://img.icons8.com/dusk/64/000000/file.png" class="file-icon" alt="RAR Icon" width="24"> Docs Jd Alameda Park</span>
-                <a href="https://github.com/robsonlc/engesud/blob/main/lbk/tsr/jdalam/Docs%20Jd%20Alameda%20Park.rar" download>Download</a>
+                <div class="file-info">
+                    <svg class="file-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M13 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"></path>
+                        <polyline points="13 2 13 9 20 9"></polyline>
+                    </svg>
+                    <span class="file-name">Docs Jd Alameda Park (Licensas, matrículas, etc.)</span>
+                </div>
+                <a href="https://www.engesudsmart.com.br/lbk/tsr/jdalam/Docs%20Jd%20Alameda%20Park.rar" class="download-btn" download>Download</a>
             </li>
             <li>
-                <span><img src="https://img.icons8.com/dusk/64/000000/autocad.png" class="file-icon" alt="DWG Icon" width="24"> Projeto Geométrico Jardim Park Alameda</span>
-                <a href="https://github.com/robsonlc/engesud/blob/main/lbk/tsr/jdalam/Projeto%20Geom%C3%A9trico%20Jardim%20Park%20Alameda.dwg" download>Download</a>
+                <div class="file-info">
+                    <svg class="file-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                        <polyline points="14 2 14 8 20 8"></polyline>
+                        <line x1="12" y1="18" x2="12" y2="12"></line>
+                        <line x1="9" y1="15" x2="15" y2="15"></line>
+                    </svg>
+                    <span class="file-name">Projeto Geométrico Jardim Park Alameda (DWG)</span>
+                </div>
+                <a href="https://www.engesudsmart.com.br/lbk/tsr/jdalam/Projeto%20Geom%C3%A9trico%20Jardim%20Park%20Alameda.dwg" class="download-btn" download>Download</a>
             </li>
             <li>
-                <span><img src="https://img.icons8.com/dusk/64/000000/pdf.png" class="file-icon" alt="PDF Icon" width="24"> Projeto para Parceria - Sarandi - 2019</span>
-                <a href="https://github.com/robsonlc/engesud/blob/main/lbk/tsr/jdalam/Projeto%20para%20Parceria%20-%20Sarandi%20-%202019.pdf" download>Download</a>
+                <div class="file-info">
+                    <svg class="file-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                        <polyline points="14 2 14 8 20 8"></polyline>
+                    </svg>
+                    <span class="file-name">Projeto para Parceria - Sarandi - 2019</span>
+                </div>
+                <a href="https://www.engesudsmart.com.br/lbk/tsr/jdalam/Projeto%20para%20Parceria%20-%20Sarandi%20-%202019.pdf" class="download-btn" download>Download</a>
             </li>
         </ul>
     </div>
