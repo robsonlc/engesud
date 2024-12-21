@@ -3,63 +3,72 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Em Breve</title>
+    <title>Drive</title>
     <style>
         body {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            margin: 0;
             font-family: Arial, sans-serif;
             background-color: #f0f0f0;
-            overflow: hidden;
+            margin: 0;
+            padding: 0;
+            display: flex;
             flex-direction: column;
+            align-items: center;
+        }
+        .container {
+            margin-top: 50px;
+            width: 80%;
+            max-width: 1000px;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            padding: 20px;
+            border-radius: 8px;
         }
         h1 {
             text-align: center;
             color: #333;
-            animation: fadeIn 3s ease-in-out infinite alternate;
         }
-        @keyframes fadeIn {
-            0% { opacity: 0; transform: scale(0.9); }
-            100% { opacity: 1; transform: scale(1.1); }
+        .file-list {
+            list-style-type: none;
+            padding: 0;
         }
-        .stars {
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            background: url('https://raw.githubusercontent.com/robsonlc/engesud/main/lbk/tsr/osha/stars.png') repeat;
-            z-index: -1;
-            animation: moveStars 50s linear infinite;
+        .file-list li {
+            display: flex;
+            justify-content: space-between;
+            padding: 10px;
+            border-bottom: 1px solid #ddd;
         }
-        @keyframes moveStars {
-            from { transform: translateY(0); }
-            to { transform: translateY(-1000px); }
-        }
-        .downloads {
-            margin-top: 20px;
-            text-align: center;
-        }
-        .downloads a {
-            display: block;
-            margin: 5px 0;
+        .file-list li a {
             color: #007BFF;
             text-decoration: none;
         }
-        .downloads a:hover {
+        .file-list li a:hover {
             text-decoration: underline;
+        }
+        .file-list li:last-child {
+            border-bottom: none;
+        }
+        .file-icon {
+            margin-right: 10px;
         }
     </style>
 </head>
 <body>
-    <div class="stars"></div>
-    <h1>Logo entrará no ar</h1>
-    <div class="downloads">
-        <h2>Arquivos para Download:</h2>
-        <a href="caminho/para/seu_arquivo.dwg" download>Download DWG</a>
-        <a href="caminho/para/seu_arquivo.pdf" download>Download PDF</a>
-        <a href="caminho/para/seu_arquivo.jpg" download>Download JPG</a>
+    <div class="container">
+        <h1>Arquivos Disponíveis para Download</h1>
+        <ul class="file-list">
+            <li>
+                <span><img src="https://img.icons8.com/dusk/64/000000/autocad.png" class="file-icon" alt="DWG Icon" width="24"> Arquivo DWG</span>
+                <a href="caminho/para/seu_arquivo.dwg" download>Download</a>
+            </li>
+            <li>
+                <span><img src="https://img.icons8.com/dusk/64/000000/pdf.png" class="file-icon" alt="PDF Icon" width="24"> Arquivo PDF</span>
+                <a href="caminho/para/seu_arquivo.pdf" download>Download</a>
+            </li>
+            <li>
+                <span><img src="https://img.icons8.com/dusk/64/000000/image.png" class="file-icon" alt="JPG Icon" width="24"> Arquivo JPG</span>
+                <a href="caminho/para/seu_arquivo.jpg" download>Download</a>
+            </li>
+        </ul>
     </div>
 </body>
 </html>
