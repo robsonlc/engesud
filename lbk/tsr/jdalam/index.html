@@ -83,6 +83,20 @@
             box-shadow: 0 2px 15px rgba(0,0,0,0.1);
         }
 
+        .info-section h2 {
+            color: var(--primary-color);
+            margin-bottom: 1.5rem;
+        }
+
+        .info-section ul {
+            list-style-position: inside;
+            margin-bottom: 1.5rem;
+        }
+
+        .info-section li {
+            margin-bottom: 0.5rem;
+        }
+
         .map-container {
             width: 100%;
             height: 480px;
@@ -94,6 +108,35 @@
             height: 100%;
             border: none;
             border-radius: 10px;
+        }
+
+        .plant-container {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+            align-items: center;
+        }
+
+        .plant-image {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            cursor: zoom-in;
+            transition: transform 0.3s ease;
+        }
+
+        .plant-image:hover {
+            transform: scale(1.02);
+        }
+
+        .plant-info {
+            text-align: center;
+        }
+
+        .plant-info h3 {
+            margin-bottom: 1rem;
+            color: var(--primary-color);
         }
 
         .cta-button {
@@ -109,6 +152,36 @@
 
         .cta-button:hover {
             background-color: var(--secondary-color);
+        }
+
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 999;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0,0,0,0.9);
+            overflow: auto;
+        }
+
+        .modal-content {
+            margin: auto;
+            display: block;
+            max-width: 90%;
+            max-height: 90vh;
+            margin-top: 2%;
+        }
+
+        .close-modal {
+            position: fixed;
+            right: 35px;
+            top: 15px;
+            color: #f1f1f1;
+            font-size: 40px;
+            font-weight: bold;
+            cursor: pointer;
         }
 
         footer {
@@ -144,6 +217,19 @@
             .map-container {
                 height: 300px;
             }
+
+            .plant-container {
+                gap: 1rem;
+            }
+
+            .modal-content {
+                max-width: 95%;
+            }
+
+            .close-modal {
+                right: 20px;
+                top: 10px;
+            }
         }
     </style>
 </head>
@@ -176,6 +262,17 @@
         </section>
 
         <section class="info-section">
+            <h2>Planta do Empreendimento</h2>
+            <div class="plant-container">
+                <img src="https://i.imgur.com/c6FFN9h.png" alt="Planta das 4 quadras com áreas líquidas" class="plant-image">
+                <div class="plant-info">
+                    <h3>Detalhamento das Áreas</h3>
+                    <p>Visualização das 4 quadras com suas respectivas áreas líquidas disponíveis para desenvolvimento.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="info-section">
             <h2>Documentação</h2>
             <p>Acesse todos os documentos necessários para análise do projeto:</p>
             <a href="https://www.engesudsmart.com.br/lbk/tsr/jdalam/drive.html" class="cta-button">
@@ -184,11 +281,39 @@
         </section>
     </main>
 
+    <!-- Modal para zoom da imagem -->
+    <div id="imageModal" class="modal">
+        <span class="close-modal">&times;</span>
+        <img class="modal-content" id="modalImage">
+    </div>
+
     <footer>
         <img src="https://i.imgur.com/3YKn2xW.png" alt="Logo Engesud">
         <p><strong>Engesud Engenharia e Intermediação LTDA</strong></p>
         <p>Robson Luis da Costa | <a href="https://wa.me/4497013489">+55 (44) 99701-3489</a></p>
-        <p>Última atualização: 21 de dezembro de 2023</p>
+        <p>Última atualização: 21 de dezembro de 2024</p>
     </footer>
+
+    <script>
+        // Abrir modal ao clicar na imagem
+        document.querySelector('.plant-image').onclick = function() {
+            const modal = document.getElementById('imageModal');
+            const modalImg = document.getElementById('modalImage');
+            modalImg.src = this.src;
+            modal.style.display = "block";
+        }
+
+        // Fechar o modal quando clicar no X
+        document.querySelector('.close-modal').onclick = function() {
+            document.getElementById('imageModal').style.display = "none";
+        }
+
+        // Fechar o modal quando clicar fora da imagem
+        document.getElementById('imageModal').onclick = function(e) {
+            if (e.target === this) {
+                this.style.display = "none";
+            }
+        }
+    </script>
 </body>
 </html>
