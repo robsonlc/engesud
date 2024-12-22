@@ -17,7 +17,11 @@
     <meta property="og:image" content="https://i.imgur.com/3YKn2xW.png">
     <meta property="og:url" content="https://www.engesudsmart.com.br">
     <meta property="og:type" content="website">
- <link rel="shortcut icon" href="https://i.imgur.com/HjwVm8x.png" type="image/x-icon">
+    <link rel="shortcut icon" href="https://i.imgur.com/HjwVm8x.png" type="image/x-icon">
+
+    <!-- Link para CSS Externo -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" rel="stylesheet">
+
     <style>
         body {
             display: flex;
@@ -27,6 +31,7 @@
             margin: 0;
             background-color: #f8f9fa;
             font-family: 'Roboto', sans-serif;
+            overflow: hidden;
         }
 
         .container {
@@ -37,6 +42,13 @@
             height: 150px;
             border-radius: 10px;
             box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            animation: floating 3s ease-in-out infinite;
+        }
+
+        @keyframes floating {
+            0% { transform: translateY(0); }
+            50% { transform: translateY(-20px); }
+            100% { transform: translateY(0); }
         }
 
         .description {
@@ -44,10 +56,14 @@
             color: #2c3e50;
             font-size: 18px;
             line-height: 1.6;
+            opacity: 0;
+            animation: fadeInUp 1s ease-in-out 1s forwards;
         }
 
         .contact {
             margin-top: 15px;
+            opacity: 0;
+            animation: fadeInUp 1s ease-in-out 2s forwards;
         }
 
         .contact a {
@@ -60,11 +76,22 @@
         .contact a:hover {
             color: #2980b9;
         }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
     </style>
 </head>
 <body>
     <div class="container">
-        <img src="https://i.imgur.com/3YKn2xW.png" alt="Logotipo Engesud">
+        <img src="https://i.imgur.com/3YKn2xW.png" alt="Logotipo Engesud" class="animate__animated animate__bounce">
         <div class="description">
             <p><strong>Engesud Engenharia</strong> — Excelência em projetos imobiliários e intermediação de áreas para incorporação e loteamento.</p>
         </div>
