@@ -1,105 +1,238 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Engesud Engenharia</title>
+  <meta charset="UTF-8" />
+  <title>Engesud Engenharia</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <link rel="shortcut icon" href="https://i.imgur.com/HjwVm8x.png" type="image/x-icon" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 
-    <!-- Favicon e Ícones para Navegadores -->
-    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-    <link rel="manifest" href="/site.webmanifest">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
 
-    <!-- Open Graph Meta Tags para Pré-visualização -->
-    <meta property="og:title" content="Engesud Engenharia">
-    <meta property="og:description" content="Excelência em projetos imobiliários e intermediação de áreas para incorporação e loteamento.">
-    <meta property="og:image" content="https://i.imgur.com/3YKn2xW.png">
-    <meta property="og:url" content="https://www.engesudsmart.com.br">
-    <meta property="og:type" content="website">
-    <link rel="shortcut icon" href="https://i.imgur.com/HjwVm8x.png" type="image/x-icon">
+    :root {
+      --primary-blue: #0066cc;
+      --light-blue: #e6f3ff;
+      --dark-blue: #004d99;
+      --gradient-start: rgba(0, 102, 204, 0.92);
+      --gradient-end: rgba(0, 77, 153, 0.88);
+    }
 
-    <!-- Link para CSS Externo -->
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" rel="stylesheet">
+    body {
+      background: url("https://www.engesudsmart.com.br/animlogo2.gif") no-repeat center center;
+      background-size: cover;
+      background-attachment: fixed;
+      font-family: 'Poppins', sans-serif;
+      min-height: 100vh;
+      color: #fff;
+      position: relative;
+    }
 
-    <style>
-        body {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            margin: 0;
-            background-color: #f8f9fa;
-            font-family: 'Roboto', sans-serif;
-            overflow: hidden;
-        }
+    body::before {
+      content: '';
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(
+        145deg,
+        var(--gradient-start) 0%,
+        var(--gradient-end) 100%
+      );
+      backdrop-filter: blur(3px);
+      z-index: 1;
+    }
 
-        .container {
-            text-align: center;
-        }
+    .container {
+      position: relative;
+      z-index: 2;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      padding: 20px;
+    }
 
-        .container img {
-            height: 150px;
-            border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-            animation: floating 3s ease-in-out infinite;
-        }
+    .logo-container {
+      margin-bottom: 3rem;
+      animation: fadeInDown 1.2s ease-out;
+    }
 
-        @keyframes floating {
-            0% { transform: translateY(0); }
-            50% { transform: translateY(-20px); }
-            100% { transform: translateY(0); }
-        }
+    .logo-container img {
+      max-width: 300px;
+      height: auto;
+      filter: drop-shadow(0 6px 8px rgba(0, 0, 0, 0.25));
+      transition: all 0.4s ease;
+    }
 
-        .description {
-            margin-top: 20px;
-            color: #2c3e50;
-            font-size: 18px;
-            line-height: 1.6;
-            opacity: 0;
-            animation: fadeInUp 1s ease-in-out 1s forwards;
-        }
+    .logo-container img:hover {
+      transform: translateY(-8px) scale(1.02);
+      filter: drop-shadow(0 8px 12px rgba(0, 0, 0, 0.3));
+    }
 
-        .contact {
-            margin-top: 15px;
-            opacity: 0;
-            animation: fadeInUp 1s ease-in-out 2s forwards;
-        }
+    .content-box {
+      background: rgba(255, 255, 255, 0.12);
+      padding: 3rem;
+      border-radius: 15px;
+      box-shadow: 0 10px 40px rgba(0, 77, 153, 0.25);
+      border: 1px solid rgba(255, 255, 255, 0.25);
+      max-width: 650px;
+      width: 90%;
+      backdrop-filter: blur(8px);
+      transition: transform 0.3s ease;
+    }
 
-        .contact a {
-            text-decoration: none;
-            color: #3498db;
-            font-size: 20px;
-            font-weight: bold;
-        }
+    .content-box:hover {
+      transform: translateY(-5px);
+    }
 
-        .contact a:hover {
-            color: #2980b9;
-        }
+    h1 {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      padding: 0;
+      margin: -1px;
+      overflow: hidden;
+      clip: rect(0,0,0,0);
+      border: 0;
+    }
 
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(20px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-    </style>
+    .description {
+      font-size: 1.3rem;
+      line-height: 1.9;
+      animation: fadeInUp 1.2s ease-in-out 0.5s forwards;
+      opacity: 0;
+      color: #ffffff;
+      font-weight: 300;
+      letter-spacing: 0.6px;
+      text-align: center;
+    }
+
+    .contact {
+      margin-top: 35px;
+      font-size: 1.2rem;
+      animation: fadeInUp 1.2s ease-in-out 1s forwards;
+      opacity: 0;
+      text-align: center;
+    }
+
+    .contact p {
+      margin-bottom: 15px;
+    }
+
+    .contact-button {
+      text-decoration: none;
+      color: var(--primary-blue);
+      font-weight: 600;
+      background: #ffffff;
+      padding: 14px 32px;
+      border-radius: 8px;
+      transition: all 0.4s ease;
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
+    }
+
+    .contact-button:hover {
+      background: var(--light-blue);
+      transform: translateY(-3px);
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    }
+
+    .contact-button i {
+      font-size: 1.3rem;
+    }
+
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(25px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes fadeInDown {
+      from {
+        opacity: 0;
+        transform: translateY(-25px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @media (max-width: 768px) {
+      .logo-container img {
+        max-width: 240px;
+      }
+      
+      .description {
+        font-size: 1.15rem;
+        line-height: 1.7;
+      }
+
+      .content-box {
+        padding: 2.2rem;
+      }
+
+      .contact-button {
+        padding: 12px 26px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .logo-container {
+        margin-bottom: 2rem;
+      }
+
+      .logo-container img {
+        max-width: 200px;
+      }
+
+      .content-box {
+        padding: 1.8rem;
+      }
+
+      .description {
+        font-size: 1.1rem;
+      }
+    }
+  </style>
 </head>
 <body>
-    <div class="container">
-        <img src="https://i.imgur.com/3YKn2xW.png" alt="Logotipo Engesud" class="animate__animated animate__bounce">
-        <div class="description">
-            <p><strong>Engesud Engenharia</strong> — Excelência em projetos imobiliários e intermediação de áreas para incorporação e loteamento.</p>
-        </div>
-        <div class="contact">
-            <p>Entre em contato: <a href="https://wa.me/554497013489" target="_blank">WhatsApp</a></p>
-        </div>
+  <div class="container">
+    <div class="logo-container">
+      <img src="https://i.imgur.com/3YKn2xW.png" alt="Logotipo Engesud">
     </div>
-
-    <!-- Este conteúdo é protegido por direitos autorais creditados à Engesud Engenharia e Intermediação LTDA, inscrita no CNPJ 40.601.637/0001-58 -->
+    <div class="content-box">
+      <h1>Engesud Engenharia</h1>
+      <div class="description">
+        <p>
+          Excelência em projetos imobiliários e intermediação de áreas
+          para incorporação e loteamento.
+        </p>
+      </div>
+      <div class="contact">
+        <p>Entre em contato conosco:</p>
+        <a href="https://wa.me/554497013489" target="_blank" class="contact-button">
+          <i class="fab fa-whatsapp"></i>
+          Fale pelo WhatsApp
+        </a>
+      </div>
+    </div>
+  </div>
 </body>
 </html>
