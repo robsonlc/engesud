@@ -9,6 +9,10 @@
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 
+  <!-- Meta tags para pré-visualização no WhatsApp -->
+  <meta property="og:image" content="https://i.imgur.com/3YKn2xW.png">
+  <meta property="og:url" content="https://www.engesudsmart.com.br">
+
   <style>
     * {
       margin: 0;
@@ -32,6 +36,13 @@
       min-height: 100vh;
       color: #fff;
       position: relative;
+      animation: backgroundAnimation 20s ease infinite;
+    }
+
+    @keyframes backgroundAnimation {
+      0% { background-position: center center; }
+      50% { background-position: top center; }
+      100% { background-position: center center; }
     }
 
     body::before {
