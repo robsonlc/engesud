@@ -1,47 +1,191 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <link rel="shortcut icon" href="https://i.imgur.com/HjwVm8x.png" type="image/x-icon">
+  <meta charset="UTF-8" />
+  <title>Área para Loteamento/Condomínio - Maringá</title>
+  
+  <!-- META TAGS PADRÃO -->
+  <meta name="description" content="Proposta de parceria para desenvolvimento de loteamento/condomínio fechado em área privilegiada de Maringá." />
+  <meta name="keywords" content="Loteamento, Condomínio, Maringá, Parceiros Financeiros, Investimento" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <title>Em Breve</title>
-    <style>
-        body {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            margin: 0;
-            font-family: Arial, sans-serif;
-            background-color: #f0f0f0;
-            overflow: hidden;
-        }
-        h1 {
-            text-align: center;
-            color: #333;
-            animation: fadeIn 3s ease-in-out infinite alternate;
-        }
-        @keyframes fadeIn {
-            0% { opacity: 0; transform: scale(0.9); }
-            100% { opacity: 1; transform: scale(1.1); }
-        }
-        .stars {
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            background: url('https://raw.githubusercontent.com/robsonlc/engesud/main/lbk/tsr/osha/stars.png') repeat;
-            z-index: -1;
-            animation: moveStars 50s linear infinite;
-        }
-        @keyframes moveStars {
-            from { transform: translateY(0); }
-            to { transform: translateY(-1000px); }
-        }
-    </style>
+  <!-- META TAGS PARA REDES SOCIAIS (OPEN GRAPH) -->
+  <meta property="og:title" content="Área para Loteamento/Condomínio - Maringá" />
+  <meta property="og:description" content="Proposta de parceria para loteamento/condomínio em localização nobre de Maringá." />
+  <meta property="og:url" content="https://www.engesudsmart.com.br/lbk/tsr/xx" />
+  <meta property="og:image" content="https://i.imgur.com/WkRImyF.png" />
+  <meta property="og:type" content="website" />
+
+  <!-- FAVICON -->
+  <link rel="shortcut icon" href="https://i.imgur.com/HjwVm8x.png" type="image/x-icon" />
+
+  <!-- ESTILOS -->
+  <style>
+    /* Reset básico */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #fafafa;
+      color: #333;
+      line-height: 1.6;
+    }
+
+    header {
+      background: url('https://i.imgur.com/1lD8EsJ.png') center/cover no-repeat;
+      opacity: 0.3;
+      height: 200px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    header h1 {
+      background-color: rgba(255,255,255,0.7);
+      padding: 10px 20px;
+      border-radius: 5px;
+      font-size: 1.5rem;
+      color: #000;
+    }
+
+    main {
+      max-width: 1000px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+
+    h2 {
+      margin: 20px 0 10px;
+    }
+
+    .maps-container {
+      margin: 20px 0;
+      text-align: center;
+    }
+
+    .documents-section {
+      margin: 20px 0;
+    }
+
+    .thumbnail-link img {
+      width: 200px; /* Ajuste o tamanho do thumbnail aqui */
+      border: 2px solid #ccc;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+
+    .thumbnail-link img:hover {
+      opacity: 0.8;
+    }
+
+    /* Botão de ação */
+    .action-buttons {
+      margin: 30px 0;
+      text-align: center;
+    }
+
+    .action-button {
+      display: inline-block;
+      background-color: #0055a5;
+      color: #fff;
+      text-decoration: none;
+      padding: 12px 20px;
+      border-radius: 4px;
+      font-weight: bold;
+      transition: background-color 0.2s ease-in-out;
+    }
+
+    .action-button:hover {
+      background-color: #003d7a;
+    }
+
+    footer {
+      background-color: #eee;
+      padding: 20px;
+      text-align: center;
+      margin-top: 40px;
+    }
+
+    footer img {
+      max-width: 150px;
+      margin-bottom: 10px;
+    }
+
+    footer p {
+      margin: 5px 0;
+      font-size: 0.9rem;
+    }
+  </style>
 </head>
 <body>
-    <div class="stars"></div>
-    <h1>Logo entrará no ar</h1>
+
+  <!-- CABEÇALHO -->
+  <header>
+    <h1>Proposta de Loteamento/Condomínio</h1>
+  </header>
+
+  <main>
+    <section>
+      <p>
+        Apresentamos uma excelente oportunidade de desenvolvimento de loteamento ou 
+        condomínio fechado em área privilegiada de Maringá. Buscamos parcerias financeiras 
+        para viabilizar este projeto que promete alta rentabilidade e valorização.
+      </p>
+    </section>
+
+    <!-- MAPA INCORPORADO DO GOOGLE MAPS -->
+    <div class="maps-container">
+      <iframe 
+        src="https://www.google.com/maps/d/embed?mid=1cYbswJy_JYABr2kbfnc-L4adwh97oxI&amp;ehbc=2E312F" 
+        width="640" 
+        height="480">
+      </iframe>
+    </div>
+
+    <!-- SEÇÃO PARA DOCUMENTOS E IMAGENS -->
+    <section class="documents-section">
+      <h2>Documentos e Imagens</h2>
+      <p>Clique na imagem para ampliar o croqui:</p>
+      <!-- Thumbnail que linka para o SVG -->
+      <a 
+        class="thumbnail-link" 
+        href="https://www.engesudsmart.com.br/lbk/tsr/xx/Xuxa.svg" 
+        target="_blank"
+        title="Abrir croqui em tamanho ampliado">
+        <img 
+          src="https://i.imgur.com/aF07Z3j.png" 
+          alt="Croqui Sugestivo - Thumbnail" 
+        />
+      </a>
+    </section>
+
+    <!-- BOTÃO PARA CONSULTAR NORMAS TÉCNICAS URBANÍSTICAS DE MARINGÁ (FIM DA PÁGINA) -->
+    <div class="action-buttons">
+      <a 
+        href="https://www3.maringa.pr.gov.br/site/index.php?sessao=422d107f31mg42" 
+        target="_blank" 
+        class="action-button">
+          📋 Consultar Normas Técnicas Urbanísticas de Maringá
+      </a>
+    </div>
+  </main>
+
+  <!-- RODAPÉ -->
+  <footer>
+    <img src="https://i.imgur.com/3YKn2xW.png" alt="Logo Engesud" />
+    <p><strong>Engesud Engenharia e Intermediação LTDA</strong></p>
+    <p>Robson Luis da Costa | <a href="https://wa.me/4497013489" target="_blank">+55 (44) 99701-3489</a></p>
+    <p>Última atualização: 24 de dezembro de 2024</p> <!-- Ajuste para data atual -->
+  </footer>
+
+  <!-- OPÇÃO DE JS (caso seja necessário para interatividade futura) -->
+  <script>
+    console.log('Página carregada com sucesso!');
+  </script>
+  
 </body>
 </html>
