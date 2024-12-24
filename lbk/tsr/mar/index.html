@@ -109,20 +109,43 @@
       border-radius: 10px;
     }
 
-    .cta-button {
+    .action-buttons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 15px;
+      justify-content: center;
+      margin: 20px 0;
+    }
+
+    .cta-button,
+    .action-button {
       display: inline-block;
-      background-color: #27ae60;
-      color: white;
       padding: 15px 30px;
       text-decoration: none;
       border-radius: 5px;
       font-weight: bold;
-      margin-top: 20px;
-      transition: background-color 0.3s;
+      transition: all 0.3s ease;
+      text-align: center;
+    }
+
+    .cta-button {
+      background-color: #27ae60;
+      color: white;
+    }
+
+    .action-button {
+      background-color: #3498db;
+      color: white;
     }
 
     .cta-button:hover {
       background-color: #219a52;
+      transform: translateY(-2px);
+    }
+
+    .action-button:hover {
+      background-color: #2980b9;
+      transform: translateY(-2px);
     }
 
     footer {
@@ -159,6 +182,15 @@
       .destaque {
         padding: 20px;
       }
+
+      .action-buttons {
+        flex-direction: column;
+      }
+
+      .cta-button,
+      .action-button {
+        width: 100%;
+      }
     }
   </style>
 </head>
@@ -191,13 +223,22 @@
         <li>Região com alta demanda por empreendimentos residenciais</li>
         <li>Excelente potencial de valorização</li>
       </ul>
-      
-
     </section>
 
     <div class="maps-container">
       <iframe src="https://www.google.com/maps/d/embed?mid=13emK8a8JITAF7t645zGCqUCcN5nVDEI&amp;ehbc=2E312F"></iframe>
     </div>
+
+    <section class="destaque">
+      <div class="action-buttons">
+        <a 
+          href="https://www3.maringa.pr.gov.br/site/index.php?sessao=422d107f31mg42" 
+          target="_blank" 
+          class="action-button">
+          📋 Consultar Normas Técnicas Urbanísticas
+        </a>
+      </div>
+    </section>
   </main>
 
   <footer>
