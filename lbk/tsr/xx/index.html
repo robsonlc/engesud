@@ -4,24 +4,27 @@
   <meta charset="UTF-8" />
   <title>Área para Loteamento/Condomínio - Maringá</title>
   
-  <!-- META TAGS PADRÃO -->
   <meta name="description" content="Proposta de parceria para desenvolvimento de loteamento/condomínio fechado em área privilegiada de Maringá." />
   <meta name="keywords" content="Loteamento, Condomínio, Maringá, Parceiros Financeiros, Investimento" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <!-- META TAGS PARA REDES SOCIAIS (OPEN GRAPH) -->
   <meta property="og:title" content="Área para Loteamento/Condomínio - Maringá" />
   <meta property="og:description" content="Proposta de parceria para loteamento/condomínio em localização nobre de Maringá." />
   <meta property="og:url" content="https://www.engesudsmart.com.br/lbk/tsr/xx" />
   <meta property="og:image" content="https://i.imgur.com/WkRImyF.png" />
   <meta property="og:type" content="website" />
 
-  <!-- FAVICON -->
   <link rel="shortcut icon" href="https://i.imgur.com/HjwVm8x.png" type="image/x-icon" />
 
-  <!-- ESTILOS -->
   <style>
-    /* Reset básico */
+    :root {
+      --primary-color: #0055a5;
+      --secondary-color: #003d7a;
+      --text-color: #333;
+      --bg-color: #fafafa;
+      --header-height: 400px;
+    }
+
     * {
       margin: 0;
       padding: 0;
@@ -29,163 +32,266 @@
     }
 
     body {
-      font-family: Arial, sans-serif;
-      background-color: #fafafa;
-      color: #333;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: var(--bg-color);
+      color: var(--text-color);
       line-height: 1.6;
     }
 
     header {
-      background: url('https://i.imgur.com/1lD8EsJ.png') center/cover no-repeat;
-      opacity: 0.3;
-      height: 200px;
+      background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), 
+                  url('https://i.imgur.com/1lD8EsJ.png') center/cover no-repeat;
+      height: var(--header-height);
       display: flex;
+      flex-direction: column;
       align-items: center;
       justify-content: center;
-    }
-
-    header h1 {
-      background-color: rgba(255,255,255,0.7);
-      padding: 10px 20px;
-      border-radius: 5px;
-      font-size: 1.5rem;
-      color: #000;
-    }
-
-    main {
-      max-width: 1000px;
-      margin: 0 auto;
+      position: relative;
+      color: white;
+      text-align: center;
       padding: 20px;
     }
 
-    h2 {
-      margin: 20px 0 10px;
+    header h1 {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+      text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+    }
+
+    header p {
+      font-size: 1.2rem;
+      max-width: 800px;
+      text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+    }
+
+    main {
+      max-width: 1200px;
+      margin: -50px auto 0;
+      padding: 30px;
+      background: white;
+      border-radius: 10px;
+      box-shadow: 0 0 20px rgba(0,0,0,0.1);
+      position: relative;
+    }
+
+    .overview-section {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+      margin: 30px 0;
+    }
+
+    .feature-card {
+      padding: 20px;
+      border-radius: 8px;
+      background: #f8f9fa;
+      transition: transform 0.3s ease;
+    }
+
+    .feature-card:hover {
+      transform: translateY(-5px);
     }
 
     .maps-container {
-      margin: 20px 0;
-      text-align: center;
+      margin: 30px 0;
+      position: relative;
+      padding-bottom: 56.25%;
+      height: 0;
+      overflow: hidden;
+      border-radius: 8px;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    }
+
+    .maps-container iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      border: 0;
     }
 
     .documents-section {
-      margin: 20px 0;
+      margin: 40px 0;
+    }
+
+    .thumbnail-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 20px;
+      margin-top: 20px;
     }
 
     .thumbnail-link img {
-      width: 200px; /* Ajuste o tamanho do thumbnail aqui */
-      border: 2px solid #ccc;
-      border-radius: 4px;
-      cursor: pointer;
+      width: 100%;
+      border-radius: 8px;
+      transition: all 0.3s ease;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
     }
 
     .thumbnail-link img:hover {
-      opacity: 0.8;
+      transform: scale(1.05);
+      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
     }
 
-    /* Botão de ação */
     .action-buttons {
-      margin: 30px 0;
+      margin: 40px 0;
       text-align: center;
     }
 
     .action-button {
       display: inline-block;
-      background-color: #0055a5;
-      color: #fff;
+      background-color: var(--primary-color);
+      color: white;
       text-decoration: none;
-      padding: 12px 20px;
-      border-radius: 4px;
-      font-weight: bold;
-      transition: background-color 0.2s ease-in-out;
+      padding: 15px 30px;
+      border-radius: 50px;
+      font-weight: 600;
+      transition: all 0.3s ease;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
     }
 
     .action-button:hover {
-      background-color: #003d7a;
+      background-color: var(--secondary-color);
+      transform: translateY(-2px);
+      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
     }
 
     footer {
-      background-color: #eee;
-      padding: 20px;
+      background: linear-gradient(to right, #f8f9fa, #e9ecef);
+      padding: 40px 20px;
       text-align: center;
-      margin-top: 40px;
+      margin-top: 60px;
+      border-top: 1px solid #dee2e6;
     }
 
     footer img {
-      max-width: 150px;
-      margin-bottom: 10px;
+      max-width: 180px;
+      margin-bottom: 20px;
+      transition: transform 0.3s ease;
+    }
+
+    footer img:hover {
+      transform: scale(1.05);
     }
 
     footer p {
-      margin: 5px 0;
-      font-size: 0.9rem;
+      margin: 8px 0;
+      color: #6c757d;
+    }
+
+    footer a {
+      color: var(--primary-color);
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+
+    footer a:hover {
+      color: var(--secondary-color);
+    }
+
+    @media (max-width: 768px) {
+      :root {
+        --header-height: 300px;
+      }
+
+      header h1 {
+        font-size: 2rem;
+      }
+
+      header p {
+        font-size: 1rem;
+      }
+
+      main {
+        margin-top: -30px;
+        padding: 20px;
+      }
     }
   </style>
 </head>
 <body>
-
-  <!-- CABEÇALHO -->
   <header>
-    <h1>Proposta de Loteamento/Condomínio</h1>
+    <h1>Excelente Oportunidade de Investimento</h1>
+    <p>Desenvolvimento de loteamento/condomínio fechado em área privilegiada de Maringá</p>
   </header>
 
   <main>
-    <section>
-      <p>
-        Apresentamos uma excelente oportunidade de desenvolvimento de loteamento ou 
-        condomínio fechado em área privilegiada de Maringá. Buscamos parcerias financeiras 
-        para viabilizar este projeto que promete alta rentabilidade e valorização.
-      </p>
+    <section class="overview-section">
+      <div class="feature-card">
+        <h3>📍 Localização Privilegiada</h3>
+        <p>Área estrategicamente posicionada em região nobre de Maringá, com fácil acesso e infraestrutura completa.</p>
+      </div>
+      <div class="feature-card">
+        <h3>💰 Alto Potencial</h3>
+        <p>Excelente oportunidade de investimento com perspectivas de alta rentabilidade e valorização.</p>
+      </div>
+      <div class="feature-card">
+        <h3>🤝 Parceria</h3>
+        <p>Buscamos parceiros financeiros para viabilizar este projeto promissor.</p>
+      </div>
     </section>
 
-    <!-- MAPA INCORPORADO DO GOOGLE MAPS -->
     <div class="maps-container">
       <iframe 
-        src="https://www.google.com/maps/d/embed?mid=1cYbswJy_JYABr2kbfnc-L4adwh97oxI&amp;ehbc=2E312F" 
-        width="640" 
-        height="480">
+        src="https://www.google.com/maps/d/embed?mid=1cYbswJy_JYABr2kbfnc-L4adwh97oxI&amp;ehbc=2E312F">
       </iframe>
     </div>
 
-    <!-- SEÇÃO PARA DOCUMENTOS E IMAGENS -->
     <section class="documents-section">
-      <h2>Documentos e Imagens</h2>
-      <p>Clique na imagem para ampliar o croqui:</p>
-      <!-- Thumbnail que linka para o SVG -->
-      <a 
-        class="thumbnail-link" 
-        href="https://www.engesudsmart.com.br/lbk/tsr/xx/Xuxa.svg" 
-        target="_blank"
-        title="Abrir croqui em tamanho ampliado">
-        <img 
-          src="https://i.imgur.com/aF07Z3j.png" 
-          alt="Croqui Sugestivo - Thumbnail" 
-        />
-      </a>
+      <h2>Documentação e Visualização</h2>
+      <div class="thumbnail-grid">
+        <a 
+          class="thumbnail-link" 
+          href="https://www.engesudsmart.com.br/lbk/tsr/xx/Xuxa.svg" 
+          target="_blank"
+          title="Visualizar croqui em tamanho completo">
+          <img 
+            src="https://i.imgur.com/aF07Z3j.png" 
+            alt="Croqui Sugestivo" 
+          />
+        </a>
+      </div>
     </section>
 
-    <!-- BOTÃO PARA CONSULTAR NORMAS TÉCNICAS URBANÍSTICAS DE MARINGÁ (FIM DA PÁGINA) -->
     <div class="action-buttons">
       <a 
         href="https://www3.maringa.pr.gov.br/site/index.php?sessao=422d107f31mg42" 
         target="_blank" 
         class="action-button">
-          📋 Consultar Normas Técnicas Urbanísticas de Maringá
+        📋 Consultar Normas Técnicas Urbanísticas
       </a>
     </div>
   </main>
 
-  <!-- RODAPÉ -->
   <footer>
     <img src="https://i.imgur.com/3YKn2xW.png" alt="Logo Engesud" />
     <p><strong>Engesud Engenharia e Intermediação LTDA</strong></p>
     <p>Robson Luis da Costa | <a href="https://wa.me/4497013489" target="_blank">+55 (44) 99701-3489</a></p>
-    <p>Última atualização: 24 de dezembro de 2024</p> <!-- Ajuste para data atual -->
+    <p>Última atualização: 24 de dezembro de 2024</p>
   </footer>
 
-  <!-- OPÇÃO DE JS (caso seja necessário para interatividade futura) -->
   <script>
-    console.log('Página carregada com sucesso!');
+    document.addEventListener('DOMContentLoaded', function() {
+      // Adiciona classe de animação aos cards quando visíveis
+      const cards = document.querySelectorAll('.feature-card');
+      
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.style.opacity = 1;
+            entry.target.style.transform = 'translateY(0)';
+          }
+        });
+      });
+
+      cards.forEach(card => {
+        card.style.opacity = 0;
+        card.style.transform = 'translateY(20px)';
+        card.style.transition = 'all 0.5s ease-out';
+        observer.observe(card);
+      });
+    });
   </script>
-  
 </body>
 </html>
