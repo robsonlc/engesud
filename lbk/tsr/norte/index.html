@@ -1,47 +1,243 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="shortcut icon" href="https://i.imgur.com/HjwVm8x.png" type="image/x-icon">
-
-    <title>Em Breve</title>
+    <title>Oportunidade de Investimento - Terreno em Maringá</title>
+    <meta property="og:title" content="Oportunidade de Investimento - Terreno em Maringá">
+    <meta property="og:description" content="Terreno de 120.000 m² estrategicamente localizado em Maringá, ideal para implantação de shopping center.">
+    <meta property="og:url" content="https://www.engesudsmart.com.br/lbk/tsr/norte">
+    <meta property="og:image" content="https://i.imgur.com/sdLr45p.png">
+    <meta property="og:type" content="website">
+    <link rel="shortcut icon" href="https://i.imgur.com/HjwVm8x.png" type="image/x-icon">
     <style>
         body {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             margin: 0;
-            font-family: Arial, sans-serif;
-            background-color: #f0f0f0;
-            overflow: hidden;
-        }
-        h1 {
-            text-align: center;
+            padding: 0;
+            background-color: #f8f8f8;
             color: #333;
-            animation: fadeIn 3s ease-in-out infinite alternate;
+            line-height: 1.6;
         }
-        @keyframes fadeIn {
-            0% { opacity: 0; transform: scale(0.9); }
-            100% { opacity: 1; transform: scale(1.1); }
+        header {
+            background: url('https://i.imgur.com/erInDZ9.png') center/cover no-repeat;
+            opacity: 0.85;
+            padding: 40px 20px;
+            text-align: center;
+            color: #303030;
         }
-        .stars {
+        .header-content {
+            background-color: rgba(255, 255, 255, 0.85);
+            padding: 30px;
+            border-radius: 10px;
+        }
+        header h1 {
+            font-size: 3em;
+            margin-bottom: 10px;
+            color: #0056b3;
+            text-shadow: 2px 2px 3px rgba(0, 0, 0, 0.2);
+        }
+        header p {
+            font-size: 1.2em;
+            font-weight: bold;
+            
+        }
+        main {
+            padding: 20px;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 20px;
+        }
+        section {
+            background-color: #fff;
+            padding: 25px;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        section:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+        }
+        h2 {
+            color: #0056b3;
+            margin-bottom: 20px;
+            font-size: 2em;
+            border-bottom: 3px solid #0056b3;
+            padding-bottom: 10px;
+        }
+        ul {
+            list-style: none;
+            padding: 0;
+        }
+        li {
+            margin-bottom: 15px;
+            padding-left: 25px;
+            background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="%230056b3" class="bi bi-check-circle-fill" viewBox="0 0 16 16"><path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z"/></svg>');
+            background-repeat: no-repeat;
+            background-position: left center;
+            background-size: 16px;
+            line-height: 1.8;
+        }
+        .map-container {
+            position: relative;
+            overflow: hidden;
+            width: 100%;
+            padding-top: 56.25%;
+            border-radius: 10px;
+        }
+        .map-container iframe {
             position: absolute;
+            top: 0;
+            left: 0;
             width: 100%;
             height: 100%;
-            background: url('https://raw.githubusercontent.com/robsonlc/engesud/main/lbk/tsr/osha/stars.png') repeat;
-            z-index: -1;
-            animation: moveStars 50s linear infinite;
+            border: 0;
         }
-        @keyframes moveStars {
-            from { transform: translateY(0); }
-            to { transform: translateY(-1000px); }
+        img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 10px;
+            margin-top: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        img:hover {
+            transform: scale(1.05);
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+        }
+        footer {
+            background-color: #333;
+            color: #fff;
+            padding: 30px 20px;
+            text-align: center;
+            font-size: 0.9em;
+        }
+        footer img {
+            max-width: 150px;
+            margin-bottom: 15px;
+        }
+        footer p {
+            margin: 5px 0;
+        }
+        footer a {
+            color: #fff;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        footer a:hover {
+            color: #ddd;
+            text-decoration: underline;
+        }
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 2.2em;
+            }
+            header p {
+                font-size: 1em;
+            }
+            section {
+                padding: 15px;
+            }
+            h2 {
+                font-size: 1.7em;
+            }
         }
     </style>
 </head>
 <body>
-    <div class="stars"></div>
-    <h1>Logo entrará no ar</h1>
+
+    <header>
+        <div class="header-content">
+            <h1>Oportunidade de Investimento</h1>
+            <p>Terreno Estratégico em Maringá - PR</p>
+        </div>
+    </header>
+
+    <main>
+        <section>
+            <h2>Sobre o Terreno</h2>
+            <ul>
+                <li>Área total de aproximadamente 120.000 m², ideal para desenvolvimento de um shopping center de grande porte.</li>
+                <li>Localização privilegiada no entroncamento da Avenida Morangueira com a Rodovia PR-317, a apenas 5 km do centro de Maringá.</li>
+                <li>Topografia favorável, majoritariamente plana, facilitando a construção e reduzindo custos.</li>
+                <li>Infraestrutura completa disponível: água (incluindo poço artesiano de alta vazão), luz, esgoto e vias de acesso pavimentadas.</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Maringá: Cidade em Crescimento</h2>
+            <ul>
+                <li>Reconhecida como uma das melhores cidades para se viver no Brasil, com alta qualidade de vida e segurança.</li>
+                <li>População de 420.436 habitantes (2021), com renda per capita de R$ 2.558,00 e IDH de 0,761.</li>
+                <li>Economia forte e diversificada, baseada em comércio, indústria e serviços.</li>
+                <li>Projeções apontam para um crescimento populacional de 1,5% ao ano e econômico de 2,0% ao ano.</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Potencial de Mercado para Shopping Center</h2>
+            <ul>
+                <li>Demanda atual estimada em 150.000 m² de Área Bruta Locável (ABL) na região.</li>
+                <li>Projeção de crescimento da demanda para 200.000 m² de ABL até 2025, segundo a ABRASCE.</li>
+                <li>Localização estratégica próxima a vetores de crescimento, como o Ody Park, a futura "Praia de Maringá", o condomínio Alphaville Maringá e a Universidade Uningá.</li>
+                <li>O proprietário das terras, também dono da loteadora Orcello, se dispõe a entregar o terreno pronto e totalmente legalizado para uso.</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Zoneamento e Viabilidade</h2>
+            <img src="https://i.imgur.com/hJimr8w.png" alt="Mapa de Zoneamento de Maringá">
+            <ul>
+                <li>Terreno inserido em zona com uso predominante residencial (ZR2), mas com permissividade para usos comerciais.</li>
+                <li>Sujeito à zona de influência de eixo comercial e de serviços (ECSA), permitindo maior verticalização.</li>
+                <li>Viabilidade para implantação de empreendimento comercial de grande porte, inclusive vertical.</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Planta Planialtimétrica</h2>
+            <img src="https://i.imgur.com/riiGKAY.png" alt="Planta Planialtimétrica do Terreno">
+            <ul>
+                <li>Detalhes topográficos e de infraestrutura do terreno.</li>
+                <li>Licença ambiental para aterro hidráulico de canal de drenagem, otimizando a área útil.</li>
+                <li>Facilidade de harmonização com o projeto do loteamento Jardim Portinari, em andamento.</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Localização no Google Maps</h2>
+            <div class="map-container">
+                <iframe src="https://www.google.com/maps/d/embed?mid=1k_phUG6oKF62YLz95CSqEQ9ZzvFb5y0&ehbc=2E312F" width="640" height="480"></iframe>
+            </div>
+            <ul>
+                <li>Visualização interativa da localização exata do terreno e seu entorno.</li>
+                <li>Facilidade para identificar vias de acesso, bairros vizinhos e pontos de interesse.</li>
+                <li>Posicionamento estratégico em relação ao centro da cidade e principais rodovias.</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Concorrência e Demanda</h2>
+            <ul>
+                <li>Atualmente, Maringá conta com 4 shoppings em operação, com mix variado de lojas e serviços.</li>
+                <li>Apesar da concorrência, a demanda projetada para a região é superior à oferta atual de ABL, indicando potencial para um novo empreendimento.</li>
+                <li>Um novo shopping center neste terreno atenderia a uma demanda reprimida e se beneficiaria do crescimento populacional e econômico da região.</li>
+            </ul>
+        </section>
+    </main>
+
+    <footer>
+        <img src="https://i.imgur.com/3YKn2xW.png" alt="Logo Engesud">
+        <p><strong>Engesud Engenharia e Intermediação LTDA</strong></p>
+        <p>Robson Luis da Costa | <a href="https://wa.me/4497013489">+55 (44) 99701-3489</a></p>
+        <p id="currentDate">Última atualização: </p>
+    </footer>
+
+    <script>
+        const currentDate = new Date();
+        const formattedDate = `${currentDate.getDate()} de ${currentDate.toLocaleString('default', { month: 'long' })} de ${currentDate.getFullYear()}`;
+        document.getElementById('currentDate').innerText += formattedDate;
+    </script>
 </body>
 </html>
