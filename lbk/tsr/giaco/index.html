@@ -3,45 +3,294 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="shortcut icon" href="https://i.imgur.com/HjwVm8x.png" type="image/x-icon">
+    <title>Apresentação da Área - Jardim Alvorada</title>
+    
+    <!-- Meta tags para redes sociais (Open Graph) -->
+    <meta property="og:title" content="Apresentação da Área - Jardim Alvorada">
+    <meta property="og:description" content="Oportunidade para estudo de viabilidade técnica e comercial de empreendimento residencial vertical no programa ProZEIS da Prefeitura Municipal de Maringá.">
+    <meta property="og:url" content="https://www.engesudsmart.com.br/lbk/tsr/giaco">
+    <meta property="og:image" content="https://i.imgur.com/hL0XnfP.png">
 
-    <title>Em Breve</title>
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="https://i.imgur.com/HjwVm8x.png" type="image/x-icon">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    
     <style>
-        body {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
+        :root {
+            --primary-color: #007bff;
+            --secondary-color: #6c757d;
+            --background-color: #f8f9fa;
+            --text-color: #333;
+            --spacing: 1rem;
+        }
+
+        * {
             margin: 0;
-            font-family: Arial, sans-serif;
-            background-color: #f0f0f0;
-            overflow: hidden;
+            padding: 0;
+            box-sizing: border-box;
         }
-        h1 {
-            text-align: center;
-            color: #333;
-            animation: fadeIn 3s ease-in-out infinite alternate;
+
+        body {
+            font-family: 'Roboto', sans-serif;
+            color: var(--text-color);
+            line-height: 1.6;
+            background-color: var(--background-color);
         }
-        @keyframes fadeIn {
-            0% { opacity: 0; transform: scale(0.9); }
-            100% { opacity: 1; transform: scale(1.1); }
+
+        header {
+            position: relative;
+            height: 300px;
+            background: url('https://i.imgur.com/GqW7iTV.png') center/cover no-repeat;
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
-        .stars {
+
+        header::before {
+            content: "";
             position: absolute;
-            width: 100%;
-            height: 100%;
-            background: url('https://raw.githubusercontent.com/robsonlc/engesud/main/lbk/tsr/osha/stars.png') repeat;
-            z-index: -1;
-            animation: moveStars 50s linear infinite;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: rgba(0, 0, 0, 0.5);
         }
-        @keyframes moveStars {
-            from { transform: translateY(0); }
-            to { transform: translateY(-1000px); }
+
+        .header-content {
+            position: relative;
+            z-index: 1;
+            color: white;
+            text-align: center;
+            padding: 0 var(--spacing);
+        }
+
+        .header-content h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+
+        main {
+            padding: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+            background-color: white;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            margin-top: -50px;
+            position: relative;
+        }
+
+        .section {
+            margin-bottom: 2.5rem;
+            padding: 1.5rem;
+            background-color: white;
+            border-radius: 8px;
+        }
+
+        h2 {
+            color: var(--primary-color);
+            margin-bottom: 1.5rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid var(--primary-color);
+        }
+
+        h3 {
+            color: var(--secondary-color);
+            margin: 1.5rem 0 1rem;
+        }
+
+        .info-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin: 1.5rem 0;
+        }
+
+        .info-card {
+            padding: 1.5rem;
+            background-color: var(--background-color);
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .info-card ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .info-card ul li {
+            margin-bottom: 0.8rem;
+            padding-left: 1.5rem;
+            position: relative;
+        }
+
+        .info-card ul li::before {
+            content: "•";
+            color: var(--primary-color);
+            position: absolute;
+            left: 0;
+        }
+
+        .imagem-terreno {
+            width: 100%;
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            margin: 1.5rem 0;
+        }
+
+        iframe {
+            width: 100%;
+            height: 450px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            margin: 1.5rem 0;
+        }
+
+        .contact-section {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 2rem;
+            border-radius: 8px;
+            margin: 2rem 0;
+            text-align: center;
+        }
+
+        .contact-button {
+            display: inline-block;
+            padding: 1rem 2rem;
+            background-color: white;
+            color: var(--primary-color);
+            text-decoration: none;
+            border-radius: 25px;
+            font-weight: bold;
+            margin-top: 1rem;
+            transition: transform 0.3s ease;
+        }
+
+        .contact-button:hover {
+            transform: translateY(-2px);
+        }
+
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 2rem;
+            margin-top: 3rem;
+        }
+
+        footer img {
+            max-height: 50px;
+            margin: 1rem 0;
+        }
+
+        footer a {
+            color: white;
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            color: var(--primary-color);
+        }
+
+        @media (max-width: 768px) {
+            header {
+                height: 200px;
+            }
+
+            .header-content h1 {
+                font-size: 1.8rem;
+            }
+
+            main {
+                padding: 1rem;
+                margin-top: -30px;
+            }
+
+            .info-grid {
+                grid-template-columns: 1fr;
+            }
         }
     </style>
 </head>
 <body>
-    <div class="stars"></div>
-    <h1>Logo entrará no ar</h1>
+    <header>
+        <div class="header-content">
+            <h1>Apresentação da Área - Jardim Alvorada</h1>
+        </div>
+    </header>
+
+    <main>
+        <div class="section">
+            <h2>Sobre o Projeto</h2>
+            <div class="info-grid">
+                <div class="info-card">
+                    <h3>Objetivo</h3>
+                    <p>Apresentação de área estratégica para desenvolvimento de empreendimento residencial vertical no programa ProZEIS da Prefeitura Municipal de Maringá, com oportunidade para construtoras realizarem estudos de viabilidade técnica e comercial.</p>
+                </div>
+                <div class="info-card">
+                    <h3>Dimensões</h3>
+                    <p><strong>Área total:</strong> 39.096,00 m² (Chácara nº 167-B/167-C)</p>
+                    <p><strong>Área líquida aproximada:</strong> 21.000 m²</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>Programa ProZEIS</h2>
+            <p>O <strong>ProZEIS (Programa de Parceria para Zonas Especiais de Interesse Social)</strong> da Prefeitura Municipal de Maringá tem como objetivo promover a transformação de áreas urbanas em Zonas Especiais de Interesse Social, possibilitando a verticalização e o desenvolvimento de empreendimentos residenciais em locais antes não elegíveis para esse fim.</p>
+            <p>Trata-se de uma <em>oportunidade única</em> para proprietários de terrenos e construtoras colaborarem na criação de soluções habitacionais inovadoras, contribuindo para o desenvolvimento urbano sustentável e para a oferta de moradias de qualidade em Maringá.</p>
+        </div>
+
+        <div class="section">
+            <h2>Oportunidade para Construtoras</h2>
+            <p>Esta área representa uma excelente oportunidade para construtoras interessadas em desenvolver empreendimentos residenciais verticais em uma localização privilegiada de Maringá. O terreno está elegível para o programa ProZEIS, possibilitando um melhor aproveitamento do potencial construtivo.</p>
+            <div class="info-grid">
+                <div class="info-card">
+                    <h3>Vantagens</h3>
+                    <ul>
+                        <li>✓ Localização estratégica no Jardim Alvorada</li>
+                        <li>✓ Área com grande potencial de desenvolvimento</li>
+                        <li>✓ Enquadramento no programa ProZEIS</li>
+                        <li>✓ Infraestrutura urbana consolidada</li>
+                    </ul>
+                </div>
+                <div class="info-card">
+                    <h3>Próximos Passos</h3>
+                    <ul>
+                        <li>1. Entre em contato para mais informações</li>
+                        <li>2. Agende uma visita técnica</li>
+                        <li>3. Realize estudos de viabilidade</li>
+                        <li>4. Apresente sua proposta</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>Localização</h2>
+            <iframe src="https://www.google.com/maps/d/embed?mid=1HjZl4qeS0Iv5zTrY_yS0wNrqKlvynlg&ehbc=2E312F"></iframe>
+        </div>
+
+        <div class="section">
+            <h2>Visualização da Área</h2>
+            <img class="imagem-terreno" src="https://i.imgur.com/L2AcRB4.png" alt="Imagem do terreno destacando a área líquida aproximada">
+        </div>
+
+        <div class="contact-section">
+            <h2>Interesse em Avaliar esta Oportunidade?</h2>
+            <p>Entre em contato conosco para receber mais informações e agendar uma visita técnica à área.</p>
+            <a href="https://wa.me/4497013489" class="contact-button" target="_blank">Fale Conosco pelo WhatsApp</a>
+        </div>
+    </main>
+
+   <footer>
+        <img src="https://i.imgur.com/3YKn2xW.png" alt="Logo Engesud">
+        <p><strong>Engesud Engenharia e Intermediação LTDA</strong></p>
+        <p>Robson Luis da Costa | <a href="https://wa.me/4497013489" target="_blank">+55 (44) 99701-3489</a></p>
+        <p>Última atualização: 28 de dezembro de 2024</p>
+    </footer>
 </body>
 </html>
