@@ -5,27 +5,25 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Proposta de Cenários - Área 35.701,50 m²</title>
 
-    <!-- Descrição e Configurações para Redes Sociais -->
     <meta name="description" content="Apresentação dos cenários de comercialização da área de 35.701,50 m².">
     <meta property="og:url" content="https://www.engesudsmart.com.br/lbk/tsr/jan/cenarios.html">
     <meta property="og:title" content="Proposta de Cenários - Área 35.701,50 m²">
     <meta property="og:description" content="Apresentação dos diferentes cenários para negociação da área.">
     <meta property="og:image" content="https://i.imgur.com/EoSUCqh.png">
 
-    <!-- Favicon -->
     <link rel="shortcut icon" href="https://i.imgur.com/HjwVm8x.png" type="image/x-icon">
-    
-    <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
     <style>
         :root {
-            --primary-color: #006699;
-            --secondary-color: #004466;
-            --text-color: #333;
-            --light-bg: #f5f5f5;
-            --border-color: #ddd;
-            --shadow: 0 2px 4px rgba(0,0,0,0.1);
+            --primary-color: #2c3e50;
+            --secondary-color: #34495e; 
+            --accent-color: #3498db;
+            --text-color: #2c3e50;
+            --light-bg: #ecf0f1;
+            --border-color: #bdc3c7;
+            --shadow: 0 4px 6px rgba(0,0,0,0.1);
+            --hover-shadow: 0 8px 15px rgba(0,0,0,0.15);
         }
 
         * {
@@ -35,183 +33,194 @@
         }
 
         body {
-            font-family: 'Roboto', sans-serif;
-            line-height: 1.6;
+            font-family: 'Poppins', sans-serif;
+            line-height: 1.7;
             color: var(--text-color);
-            background-color: #fff;
+            background-color: #f9f9f9;
         }
 
         header {
             position: relative;
-            height: 300px;
-            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)),
+            height: 400px;
+            background: linear-gradient(135deg, rgba(44,62,80,0.9), rgba(52,152,219,0.8)),
                         url('https://i.imgur.com/yMRDeyp.png') center/cover no-repeat;
             color: white;
             text-align: center;
             display: flex;
             align-items: center;
             justify-content: center;
+            clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
+        }
+
+        .header-content {
+            max-width: 800px;
+            padding: 2rem;
         }
 
         .header-content h1 {
-            font-size: 2.5rem;
-            margin-bottom: 1rem;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+            font-size: 3.5rem;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+            letter-spacing: 1px;
         }
 
         .header-content p {
-            font-size: 1.2rem;
-            text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+            font-size: 1.5rem;
+            font-weight: 300;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
         }
 
         main {
             max-width: 1200px;
-            margin: 0 auto;
+            margin: -50px auto 0;
             padding: 2rem;
+            position: relative;
         }
 
         section {
             background: white;
-            border-radius: 8px;
-            padding: 2rem;
-            margin-bottom: 2rem;
+            border-radius: 15px;
+            padding: 2.5rem;
+            margin-bottom: 2.5rem;
             box-shadow: var(--shadow);
-            transition: transform 0.3s ease;
+            transition: all 0.3s ease;
+            border: 1px solid var(--border-color);
         }
 
         section:hover {
             transform: translateY(-5px);
+            box-shadow: var(--hover-shadow);
         }
 
         h2 {
             color: var(--primary-color);
             margin-bottom: 1.5rem;
-            padding-bottom: 0.5rem;
-            border-bottom: 2px solid var(--primary-color);
-            font-size: 1.8rem;
+            padding-bottom: 0.8rem;
+            border-bottom: 3px solid var(--accent-color);
+            font-size: 2rem;
+            font-weight: 600;
+        }
+
+        h3 {
+            color: var(--secondary-color);
+            margin: 1.5rem 0 1rem;
+            font-size: 1.3rem;
+            font-weight: 500;
         }
 
         .image-container {
-            margin: 1.5rem 0;
+            margin: 2rem 0;
+            border-radius: 12px;
             overflow: hidden;
-            border-radius: 8px;
+            box-shadow: var(--shadow);
         }
 
         .image-container img {
             width: 100%;
-            max-width: 100%;
             height: auto;
-            border-radius: 8px;
-            box-shadow: var(--shadow);
-            transition: transform 0.3s ease;
             display: block;
+            transition: transform 0.5s ease;
         }
 
-        .image-container img:hover {
-            transform: scale(1.02);
+        .image-container:hover img {
+            transform: scale(1.03);
         }
 
         p {
-            margin-bottom: 1rem;
+            margin-bottom: 1.2rem;
             font-size: 1.1rem;
+            color: #444;
         }
 
-        ul {
-            list-style-position: inside;
-            margin: 1rem 0;
-            padding-left: 1rem;
+        ul, ol {
+            margin: 1.5rem 0;
+            padding-left: 1.5rem;
         }
 
         li {
-            margin-bottom: 0.8rem;
-            padding-left: 1rem;
+            margin-bottom: 1rem;
+            padding-left: 0.5rem;
             position: relative;
         }
 
-        li::before {
-            content: "•";
-            color: var(--primary-color);
-            position: absolute;
-            left: -1rem;
-        }
-
         strong {
-            color: var(--secondary-color);
-            font-weight: 500;
+            color: var(--primary-color);
+            font-weight: 600;
         }
 
         footer {
-            background: var(--light-bg);
-            padding: 2rem;
+            background: var(--primary-color);
+            padding: 3rem;
             text-align: center;
-            margin-top: 3rem;
-            border-top: 1px solid var(--border-color);
+            margin-top: 4rem;
+            color: white;
         }
 
         footer img {
-            max-width: 200px;
-            margin-bottom: 1rem;
-            transition: transform 0.3s ease;
+    max-width: 220px;
+    margin-bottom: 1.5rem;
+    /* Removido o filter que estava causando o problema */
+    transition: transform 0.3s ease;
+    background-color: white; /* Adiciona um fundo branco */
+    padding: 10px; /* Adiciona um pequeno espaçamento */
+    border-radius: 8px; /* Adiciona cantos arredondados */
+}
         }
 
         footer img:hover {
-            transform: scale(1.05);
+            transform: scale(1.1);
         }
 
         footer p {
-            margin: 0.5rem 0;
-            color: #666;
+            margin: 0.8rem 0;
+            color: #ecf0f1;
         }
 
         footer a {
-            color: var(--primary-color);
+            color: var(--accent-color);
             text-decoration: none;
             transition: color 0.3s ease;
         }
 
         footer a:hover {
-            color: var(--secondary-color);
+            color: #2980b9;
             text-decoration: underline;
         }
 
-        /* Responsividade */
         @media (max-width: 768px) {
             header {
-                height: 200px;
+                height: 300px;
             }
 
             .header-content h1 {
-                font-size: 1.8rem;
+                font-size: 2.5rem;
             }
 
             main {
-                padding: 1rem;
+                padding: 1.5rem;
             }
 
             section {
                 padding: 1.5rem;
             }
-
-            h2 {
-                font-size: 1.5rem;
-            }
         }
 
         @media (max-width: 480px) {
             header {
-                height: 150px;
+                height: 250px;
             }
 
             .header-content h1 {
-                font-size: 1.5rem;
+                font-size: 2rem;
             }
 
             section {
-                padding: 1rem;
+                padding: 1.2rem;
             }
 
             h2 {
-                font-size: 1.3rem;
+                font-size: 1.5rem;
             }
 
             p {
@@ -311,6 +320,47 @@
                 <img src="https://i.imgur.com/dRLNzxB.png" alt="Imagem Cenário 5">
             </div>
         </section>
+
+        <!-- Nova Seção Adicionada -->
+        <section>
+            <h2>Parceria Financeira</h2>
+            <p>A **Parceria Financeira** é uma estratégia que permite aos proprietários da área participar ativamente do desenvolvimento do empreendimento, compartilhando tanto os riscos quanto os benefícios financeiros resultantes do projeto.</p>
+            
+            <h3>Como Funciona a Parceria?</h3>
+            <p>Dentro do programa <strong>PROZEIS</strong> e <strong>Minha Casa Minha Vida</strong>, a parceria financeira envolve a contribuição dos proprietários para a viabilização do empreendimento, recebendo em troca uma parcela dos lucros gerados pela venda das unidades habitacionais.</p>
+            
+            <h3>Benefícios para os Proprietários</h3>
+            <ul>
+                <li><strong>Retorno Financeiro:</strong> Recebimento de uma quantia significativa baseada na valorização do imóvel.</li>
+                <li><strong>Baixo Risco:</strong> Compartilhamento dos riscos do empreendimento com a empresa desenvolvedora.</li>
+                <li><strong>Participação no Projeto:</strong> Possibilidade de influenciar decisões estratégicas relacionadas ao desenvolvimento da área.</li>
+            </ul>
+
+            <h3>Processo de Aprovação</h3>
+            <ol>
+                <li><strong>Protocolo:</strong> Início do processo de parceria junto à Prefeitura de Maringá.</li>
+                <li><strong>Análise:</strong> Avaliação do projeto pelos órgãos competentes para garantir conformidade com as diretrizes urbanísticas.</li>
+                <li><strong>Aprovação:</strong> Obtenção das licenças necessárias para o desenvolvimento do empreendimento.</li>
+                <li><strong>Implementação:</strong> Início das obras e desenvolvimento do projeto.</li>
+            </ol>
+
+            <h3>Prazo Estimado</h3>
+            <p>O processo de aprovação e implementação da parceria financeira está estimado em aproximadamente <strong>24 meses</strong>, considerando:</p>
+            <ul>
+                <li><strong>1 ano e meio:</strong> Para obtenção das aprovações necessárias junto à prefeitura.</li>
+                <li><strong>6 meses:</strong> Para início efetivo dos pagamentos aos proprietários.</li>
+            </ul>
+
+            <h3>Endereçando as Preocupações</h3>
+            <p>Entendemos que alguns membros da família proprietária possam ter reservas quanto à parceria financeira, especialmente em relação ao prazo para retorno financeiro. Destacamos que o processo de aprovação do programa PROZEIS, da Prefeitura de Maringá, costuma ser ágil, facilitando o início das obras e da geração de receita.</p>
+
+ <p> Além disso, no cenário que prevê a destinação de áreas para comercialização livre (como a frente comercial), há a possibilidade de antecipar a entrega dessa área, permitindo que os proprietários realizem vendas e recebam recursos com antecedência. Essa estratégia pode atender a demandas imediatas, como a necessidade de um dos proprietários de obter recursos ainda dentro de um ano.</p>
+
+ <p> Ressaltamos que relatórios sobre o andamento do projeto e projeções financeiras serão fornecidos pela construtora responsável pela negociação, enquanto nosso papel é garantir uma comunicação eficiente e facilitar o melhor acordo para todas as partes envolvidas.</p>
+
+
+        </section>
+        <!-- Fim da Nova Seção -->
 
         <section>
             <h2>Observações Importantes</h2>
