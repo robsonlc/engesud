@@ -1,215 +1,333 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8">
-  <title>Proposta de Cenários - Área 35.701,50 m²</title>
-  
-  <!-- Descrição e Configurações para Redes Sociais (Open Graph) -->
-  <meta name="description" content="Apresentação dos cenários de comercialização da área de 35.701,50 m².">
-  <meta property="og:url" content="https://www.engesudsmart.com.br/lbk/tsr/jan/cenarios.html">
-  <meta property="og:title" content="Proposta de Cenários - Área 35.701,50 m²">
-  <meta property="og:description" content="Apresentação dos diferentes cenários para negociação da área.">
-  <meta property="og:image" content="https://i.imgur.com/EoSUCqh.png">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Proposta de Cenários - Área 35.701,50 m²</title>
 
-  <!-- Favicon -->
-  <link rel="shortcut icon" href="https://i.imgur.com/HjwVm8x.png" type="image/x-icon">
+    <!-- Descrição e Configurações para Redes Sociais -->
+    <meta name="description" content="Apresentação dos cenários de comercialização da área de 35.701,50 m².">
+    <meta property="og:url" content="https://www.engesudsmart.com.br/lbk/tsr/jan/cenarios.html">
+    <meta property="og:title" content="Proposta de Cenários - Área 35.701,50 m²">
+    <meta property="og:description" content="Apresentação dos diferentes cenários para negociação da área.">
+    <meta property="og:image" content="https://i.imgur.com/EoSUCqh.png">
 
-  <!-- Estilização simples -->
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      margin: 0; 
-      padding: 0;
-      color: #333;
-    }
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="https://i.imgur.com/HjwVm8x.png" type="image/x-icon">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
 
-    header {
-      background: url('https://i.imgur.com/yMRDeyp.png') center/cover no-repeat;
-      opacity: 0.3;
-      height: 200px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
+    <style>
+        :root {
+            --primary-color: #006699;
+            --secondary-color: #004466;
+            --text-color: #333;
+            --light-bg: #f5f5f5;
+            --border-color: #ddd;
+            --shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
 
-    /* Ajuste para exibir o conteúdo que ficar sobre o header (se desejar sobrepor texto) */
-    .header-content {
-      position: relative;
-      z-index: 1;
-      text-align: center;
-    }
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-    .header-content h1 {
-      color: #222; 
-      margin-top: 0;
-    }
+        body {
+            font-family: 'Roboto', sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: #fff;
+        }
 
-    main {
-      padding: 20px;
-      max-width: 900px;
-      margin: 0 auto;
-    }
+        header {
+            position: relative;
+            height: 300px;
+            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)),
+                        url('https://i.imgur.com/yMRDeyp.png') center/cover no-repeat;
+            color: white;
+            text-align: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
 
-    section {
-      margin-bottom: 40px;
-    }
+        .header-content h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+        }
 
-    section h2 {
-      margin-top: 0;
-      color: #444;
-      font-size: 1.4rem;
-    }
+        .header-content p {
+            font-size: 1.2rem;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+        }
 
-    .image-container img {
-      max-width: 100%;
-      height: auto;
-      display: block;
-      margin: 10px 0;
-      border: 1px solid #ddd;
-      border-radius: 5px;
-    }
+        main {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
 
-    footer {
-      text-align: center;
-      padding: 10px;
-      background: #f1f1f1;
-      font-size: 0.9rem;
-      margin-top: 30px;
-    }
+        section {
+            background: white;
+            border-radius: 8px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            box-shadow: var(--shadow);
+            transition: transform 0.3s ease;
+        }
 
-    footer img {
-      max-width: 150px;
-      height: auto;
-    }
+        section:hover {
+            transform: translateY(-5px);
+        }
 
-    footer p {
-      margin: 5px 0;
-    }
+        h2 {
+            color: var(--primary-color);
+            margin-bottom: 1.5rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid var(--primary-color);
+            font-size: 1.8rem;
+        }
 
-    footer a {
-      color: #006699;
-      text-decoration: none;
-    }
-  </style>
+        .image-container {
+            margin: 1.5rem 0;
+            overflow: hidden;
+            border-radius: 8px;
+        }
+
+        .image-container img {
+            width: 100%;
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+            box-shadow: var(--shadow);
+            transition: transform 0.3s ease;
+            display: block;
+        }
+
+        .image-container img:hover {
+            transform: scale(1.02);
+        }
+
+        p {
+            margin-bottom: 1rem;
+            font-size: 1.1rem;
+        }
+
+        ul {
+            list-style-position: inside;
+            margin: 1rem 0;
+            padding-left: 1rem;
+        }
+
+        li {
+            margin-bottom: 0.8rem;
+            padding-left: 1rem;
+            position: relative;
+        }
+
+        li::before {
+            content: "•";
+            color: var(--primary-color);
+            position: absolute;
+            left: -1rem;
+        }
+
+        strong {
+            color: var(--secondary-color);
+            font-weight: 500;
+        }
+
+        footer {
+            background: var(--light-bg);
+            padding: 2rem;
+            text-align: center;
+            margin-top: 3rem;
+            border-top: 1px solid var(--border-color);
+        }
+
+        footer img {
+            max-width: 200px;
+            margin-bottom: 1rem;
+            transition: transform 0.3s ease;
+        }
+
+        footer img:hover {
+            transform: scale(1.05);
+        }
+
+        footer p {
+            margin: 0.5rem 0;
+            color: #666;
+        }
+
+        footer a {
+            color: var(--primary-color);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        footer a:hover {
+            color: var(--secondary-color);
+            text-decoration: underline;
+        }
+
+        /* Responsividade */
+        @media (max-width: 768px) {
+            header {
+                height: 200px;
+            }
+
+            .header-content h1 {
+                font-size: 1.8rem;
+            }
+
+            main {
+                padding: 1rem;
+            }
+
+            section {
+                padding: 1.5rem;
+            }
+
+            h2 {
+                font-size: 1.5rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            header {
+                height: 150px;
+            }
+
+            .header-content h1 {
+                font-size: 1.5rem;
+            }
+
+            section {
+                padding: 1rem;
+            }
+
+            h2 {
+                font-size: 1.3rem;
+            }
+
+            p {
+                font-size: 1rem;
+            }
+        }
+    </style>
 </head>
 
 <body>
-  <!-- Cabeçalho -->
-  <header>
-    <!-- Se desejar inserir texto sobre o banner, utilize a div abaixo -->
-    <div class="header-content">
-      <!-- <h1>Apresentação de Cenários</h1> -->
-    </div>
-  </header>
+    <header>
+        <div class="header-content">
+            <h1>Proposta de Cenários</h1>
+            <p>Área Total: 35.701,50 m²</p>
+        </div>
+    </header>
 
-  <!-- Conteúdo Principal -->
-  <main>
-    <!-- Introdução / Contextualização da Área -->
-    <section>
-      <h2>Contextualização da Área</h2>
-      <p>A área total possui <strong>35.701,50 m²</strong>, mas há uma diretriz viária que pode reduzir a área líquida para cerca de <strong>31.500 m²</strong>. 
-      Caso seja necessário parcelamento ou aprovação de loteamento, o processo pode se tornar mais lento, custoso e requerer doações de áreas institucionais à prefeitura.</p>
-      <p>Abaixo, uma imagem ilustrativa da área, mostrando a diretriz viária:</p>
-      <div class="image-container">
-        <img src="https://i.imgur.com/kcmkumw.png" alt="Imagem da área com diretriz viária" />
-      </div>
-    </section>
+    <main>
+        <section>
+            <h2>Contextualização da Área</h2>
+            <p>A área total possui <strong>35.701,50 m²</strong>, mas há uma diretriz viária que pode reduzir a área líquida para cerca de <strong>31.500 m²</strong>. 
+            Caso seja necessário parcelamento ou aprovação de loteamento, o processo pode se tornar mais lento, custoso e requerer doações de áreas institucionais à prefeitura.</p>
+            <p>Abaixo, uma imagem ilustrativa da área, mostrando a diretriz viária:</p>
+            <div class="image-container">
+                <img src="https://i.imgur.com/kcmkumw.png" alt="Imagem da área com diretriz viária" />
+            </div>
+        </section>
 
-    <!-- Cenário 1 -->
-    <section>
-      <h2>Cenário 1</h2>
-      <p>
-        Aproveitamento integral dos 31.500 m² líquidos para um empreendimento 
-        <em>Minha Casa Minha Vida</em> (Programa Pró-ZEIS), com prédios de térreo 
-        mais sete pavimentos. Pagamento estimado em parceria financeira de 
-        <strong>R$ 600,00/m²</strong>, resultando em cerca de 
-        <strong>R$ 19 milhões</strong>.
-      </p>
-      <div class="image-container">
-        <img src="https://i.imgur.com/GPOaQ2R.png" alt="Imagem Cenário 1">
-      </div>
-    </section>
+        <section>
+            <h2>Cenário 1</h2>
+            <p>
+                Aproveitamento integral dos 31.500 m² líquidos para um empreendimento 
+                <em>Minha Casa Minha Vida</em> (Programa Pró-ZEIS), com prédios de térreo 
+                mais sete pavimentos. Pagamento estimado em parceria financeira de 
+                <strong>R$ 600,00/m²</strong>, resultando em cerca de 
+                <strong>R$ 19 milhões</strong>.
+            </p>
+            <div class="image-container">
+                <img src="https://i.imgur.com/GPOaQ2R.png" alt="Imagem Cenário 1">
+            </div>
+        </section>
 
-    <!-- Cenário 2 -->
-    <section>
-      <h2>Cenário 2</h2>
-      <p>
-        Destacar <strong>5.000 m²</strong> na testada para uso comercial, 
-        entregues livre ao proprietário para venda avulsa (estimados 
-        <strong>R$ 2.000/m²</strong>), e usar os <strong>26.500 m²</strong> 
-        remanescentes para um empreendimento de térreo mais sete pavimentos, 
-        a <strong>R$ 600,00/m²</strong>. Potencial de chegar a 
-        <strong>R$ 26 milhões</strong>.
-      </p>
-      <div class="image-container">
-        <img src="https://i.imgur.com/RTaaOYC.png" alt="Imagem Cenário 2">
-      </div>
-    </section>
+        <section>
+            <h2>Cenário 2</h2>
+            <p>
+                Destacar <strong>5.000 m²</strong> na testada para uso comercial, 
+                entregues livre ao proprietário para venda avulsa (estimados 
+                <strong>R$ 2.000/m²</strong>), e usar os <strong>26.500 m²</strong> 
+                remanescentes para um empreendimento de térreo mais sete pavimentos, 
+                a <strong>R$ 600,00/m²</strong>. Potencial de chegar a 
+                <strong>R$ 26 milhões</strong>.
+            </p>
+            <div class="image-container">
+                <img src="https://i.imgur.com/RTaaOYC.png" alt="Imagem Cenário 2">
+            </div>
+        </section>
 
-    <!-- Cenário 3 -->
-    <section>
-      <h2>Cenário 3</h2>
-      <p>
-        Igual ao cenário 2, porém buscando aprovação para <strong>10 pavimentos</strong> 
-        em vez de 7. Assim, o valor pode chegar a <strong>R$ 800,00/m²</strong> 
-        para o empreendimento, elevando o potencial para 
-        <strong>R$ 31 milhões</strong>.
-      </p>
-      <div class="image-container">
-        <img src="https://i.imgur.com/3QAQ6EP.png" alt="Imagem Cenário 3">
-      </div>
-    </section>
+        <section>
+            <h2>Cenário 3</h2>
+            <p>
+                Igual ao cenário 2, porém buscando aprovação para <strong>10 pavimentos</strong> 
+                em vez de 7. Assim, o valor pode chegar a <strong>R$ 800,00/m²</strong> 
+                para o empreendimento, elevando o potencial para 
+                <strong>R$ 31 milhões</strong>.
+            </p>
+            <div class="image-container">
+                <img src="https://i.imgur.com/3QAQ6EP.png" alt="Imagem Cenário 3">
+            </div>
+        </section>
 
-    <!-- Cenário 4 -->
-    <section>
-      <h2>Cenário 4</h2>
-      <p>
-        Destacar <strong>10.000 m²</strong> na testada para a Avenida José Alves Nendo, 
-        subdividindo em três lotes grandes (estimados <strong>R$ 2.000/m²</strong>), 
-        e usar os <strong>21.500 m²</strong> restantes em um empreendimento 
-        de térreo mais sete pavimentos a <strong>R$ 600,00/m²</strong>. 
-        Potencial estimado em <strong>R$ 33 milhões</strong>. Depende da 
-        aprovação da prefeitura para não exigir loteamento completo.
-      </p>
-      <div class="image-container">
-        <img src="https://i.imgur.com/MSIVeUD.png" alt="Imagem Cenário 4">
-      </div>
-    </section>
+        <section>
+            <h2>Cenário 4</h2>
+            <p>
+                Destacar <strong>10.000 m²</strong> na testada para a Avenida José Alves Nendo, 
+                subdividindo em três lotes grandes (estimados <strong>R$ 2.000/m²</strong>), 
+                e usar os <strong>21.500 m²</strong> restantes em um empreendimento 
+                de térreo mais sete pavimentos a <strong>R$ 600,00/m²</strong>. 
+                Potencial estimado em <strong>R$ 33 milhões</strong>. Depende da 
+                aprovação da prefeitura para não exigir loteamento completo.
+            </p>
+            <div class="image-container">
+                <img src="https://i.imgur.com/MSIVeUD.png" alt="Imagem Cenário 4">
+            </div>
+        </section>
 
-    <!-- Cenário 5 -->
-    <section>
-      <h2>Cenário 5</h2>
-      <p>
-        Semelhante ao cenário 4, porém buscando aprovação de 
-        <strong>térreo mais 10 pavimentos</strong> na área remanescente, com 
-        <strong>R$ 700,00/m²</strong>. Dessa forma, o potencial pode chegar a 
-        <strong>R$ 35 milhões</strong>. Ressalta-se a necessidade de aprovação 
-        da altura pela prefeitura e a verificação se não haverá exigência de 
-        loteamento.
-      </p>
-      <div class="image-container">
-        <img src="https://i.imgur.com/dRLNzxB.png" alt="Imagem Cenário 5">
-      </div>
-    </section>
+        <section>
+            <h2>Cenário 5</h2>
+            <p>
+                Semelhante ao cenário 4, porém buscando aprovação de 
+                <strong>térreo mais 10 pavimentos</strong> na área remanescente, com 
+                <strong>R$ 700,00/m²</strong>. Dessa forma, o potencial pode chegar a 
+                <strong>R$ 35 milhões</strong>. Ressalta-se a necessidade de aprovação 
+                da altura pela prefeitura e a verificação se não haverá exigência de 
+                loteamento.
+            </p>
+            <div class="image-container">
+                <img src="https://i.imgur.com/dRLNzxB.png" alt="Imagem Cenário 5">
+            </div>
+        </section>
 
-    <!-- Observações Gerais -->
-    <section>
-      <h2>Observações Importantes</h2>
-      <ul>
-        <li>Todos os cenários dependem de aprovações municipais (zoneamento, via projetada, eventuais doações obrigatórias, etc.).</li>
-        <li>A prefeitura poderá exigir processo de loteamento em alguns cenários caso entenda que haja parcelamento em excesso.</li>
-        <li>As construtoras podem apresentar propostas mais conservadoras ou mais agressivas dependendo de suas análises de viabilidade.</li>
-        <li>A projeção de valores (R$ 600,00 a R$ 800,00/m² ou R$ 700,00/m²) é baseada em negociações recentes e no potencial de verticalização (térreo mais 7 ou 10 pavimentos).</li>
-      </ul>
-    </section>
-  </main>
+        <section>
+            <h2>Observações Importantes</h2>
+            <ul>
+                <li>Todos os cenários dependem de aprovações municipais (zoneamento, via projetada, eventuais doações obrigatórias, etc.).</li>
+                <li>A prefeitura poderá exigir processo de loteamento em alguns cenários caso entenda que haja parcelamento em excesso.</li>
+                <li>As construtoras podem apresentar propostas mais conservadoras ou mais agressivas dependendo de suas análises de viabilidade.</li>
+                <li>A projeção de valores (R$ 600,00 a R$ 800,00/m² ou R$ 700,00/m²) é baseada em negociações recentes e no potencial de verticalização (térreo mais 7 ou 10 pavimentos).</li>
+            </ul>
+        </section>
+    </main>
 
-  <!-- Rodapé -->
-  <footer>
-    <img src="https://i.imgur.com/3YKn2xW.png" alt="Logo Engesud">
-    <p><strong>Engesud Engenharia e Intermediação LTDA</strong></p>
-    <p>Robson Luis da Costa | <a href="https://wa.me/4497013489">+55 (44) 99701-3489</a></p>
-    <p>Última atualização: 28 de dezembro de 2024</p> <!-- Ajustar data conforme a data do dia -->
-  </footer>
+    <footer>
+        <img src="https://i.imgur.com/3YKn2xW.png" alt="Logo Engesud">
+        <p><strong>Engesud Engenharia e Intermediação LTDA</strong></p>
+        <p>Robson Luis da Costa | <a href="https://wa.me/4497013489">+55 (44) 99701-3489</a></p>
+        <p>Última atualização: 29 de dezembro de 2024</p>
+    </footer>
 </body>
 </html>
