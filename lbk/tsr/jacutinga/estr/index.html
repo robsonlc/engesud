@@ -1,47 +1,256 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
+    <meta charset="UTF-8" />
+    <title>Proposta de Aquisição e Parceria - 11 Alqueires em Londrina</title>
+    
+    <!-- Meta Tags para Preview em Redes Sociais -->
+    <meta property="og:title" content="Proposta de Aquisição e Parceria" />
+    <meta property="og:description" content="Estratégia de Investimento e Parceria para 11 Alqueires em Londrina" />
+    <meta property="og:image" content="https://i.imgur.com/ngmxIjG.png" />
+    <meta property="og:url" content="https://www.engesudsmart.com.br/lbk/tsr/jacutinga/estr" />
+    <meta property="og:type" content="website" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="shortcut icon" href="https://i.imgur.com/HjwVm8x.png" type="image/x-icon">
 
-    <title>Em Breve</title>
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="https://i.imgur.com/HjwVm8x.png" type="image/x-icon">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+
     <style>
-        body {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
+        :root {
+            --primary-color: #2c3e50;
+            --secondary-color: #34495e;
+            --accent-color: #3498db;
+            --text-color: #333;
+            --light-gray: #ecf0f1;
+            --spacing-unit: 1rem;
+        }
+
+        * {
             margin: 0;
-            font-family: Arial, sans-serif;
-            background-color: #f0f0f0;
-            overflow: hidden;
+            padding: 0;
+            box-sizing: border-box;
         }
-        h1 {
+
+        body {
+            font-family: 'Roboto', sans-serif;
+            color: var(--text-color);
+            line-height: 1.6;
+            background-color: #fff;
+        }
+
+        header {
+            height: 300px;
+            background: linear-gradient(rgba(44, 62, 80, 0.7), rgba(44, 62, 80, 0.7)),
+                        url('https://i.imgur.com/jCx792u.png') center/cover no-repeat;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
             text-align: center;
-            color: #333;
-            animation: fadeIn 3s ease-in-out infinite alternate;
+            padding: 2rem;
         }
-        @keyframes fadeIn {
-            0% { opacity: 0; transform: scale(0.9); }
-            100% { opacity: 1; transform: scale(1.1); }
+
+        .header-content h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            color: white;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
         }
-        .stars {
-            position: absolute;
+
+        main {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        section {
+            margin-bottom: 3rem;
+            background: white;
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        h2 {
+            color: var(--primary-color);
+            border-bottom: 2px solid var(--accent-color);
+            padding-bottom: 0.5rem;
+            margin-bottom: 1.5rem;
+            font-size: 1.8rem;
+        }
+
+        h3 {
+            color: var(--secondary-color);
+            margin: 1.5rem 0 1rem;
+            font-size: 1.4rem;
+        }
+
+        p {
+            margin-bottom: 1.2rem;
+            line-height: 1.8;
+        }
+
+        ul, ol {
+            margin-left: 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        li {
+            margin-bottom: 0.8rem;
+        }
+
+        .media-section {
+            display: grid;
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+
+        .media-container {
+            background: var(--light-gray);
+            padding: 1rem;
+            border-radius: 8px;
+        }
+
+        .media-container h3 {
+            margin-top: 0;
+        }
+
+        img {
             width: 100%;
-            height: 100%;
-            background: url('https://raw.githubusercontent.com/robsonlc/engesud/main/lbk/tsr/osha/stars.png') repeat;
-            z-index: -1;
-            animation: moveStars 50s linear infinite;
+            height: auto;
+            border-radius: 4px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
         }
-        @keyframes moveStars {
-            from { transform: translateY(0); }
-            to { transform: translateY(-1000px); }
+
+        img:hover {
+            transform: scale(1.02);
+        }
+
+        iframe {
+            width: 100%;
+            height: 450px;
+            border: none;
+            border-radius: 4px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        footer {
+            background: var(--primary-color);
+            color: white;
+            padding: 2rem;
+            text-align: center;
+            margin-top: 3rem;
+        }
+
+        footer img {
+            max-width: 200px;
+            margin-bottom: 1rem;
+        }
+
+        footer a {
+            color: white;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        footer a:hover {
+            color: var(--accent-color);
+        }
+
+        @media (max-width: 768px) {
+            header {
+                height: 200px;
+            }
+
+            .header-content h1 {
+                font-size: 1.8rem;
+            }
+
+            main {
+                padding: 1rem;
+            }
+
+            section {
+                padding: 1rem;
+            }
+
+            h2 {
+                font-size: 1.5rem;
+            }
+
+            h3 {
+                font-size: 1.2rem;
+            }
         }
     </style>
 </head>
 <body>
-    <div class="stars"></div>
-    <h1>Logo entrará no ar</h1>
+    <header>
+        <div class="header-content">
+            <h1>Estratégia de Aquisição e Parceria</h1>
+            <p>11 Alqueires em Londrina - Oportunidade Única de Investimento</p>
+        </div>
+    </header>
+
+    <main>
+        <section>
+            <h2>Visão Geral</h2>
+            <p>Apresentamos uma oportunidade única de adquirir 2 alqueires em <strong>dinheiro</strong> e, em conjunto, estruturar parceria financeira nos outros 9 alqueires para um empreendimento imobiliário de grande potencial.</p>
+            
+            <p>Esta proposta visa atrair um investidor que adquira os 2 alqueires (em zoneamento ZC3) garantindo segurança e valorização do investimento. Já a área remanescente (9 alqueires em zoneamento ZR2) poderá ser viabilizada em parceria financeira com potencial construtora interessada, totalizando uma negociação na faixa de R$ 18 milhões.</p>
+        </section>
+
+        <section>
+            <h2>Pontos-Chave da Estruturação</h2>
+            <ul>
+                <li><strong>2 alqueires (ZC3):</strong> Propriedade urbana em região com permissão de verticalização de empreendimentos sociais.</li>
+                <li><strong>9 alqueires (ZR2):</strong> Loteamento padrão, com ampla possibilidade de desenvolvimento residencial ou comercial complementar.</li>
+                <li>Investimento total estimado em R$ 18 milhões, combinando aporte à vista (2 alqueires) e parceria financeira na área remanescente.</li>
+                <li>Segurança jurídica e viabilidade técnica através de projeto protocolado na prefeitura.</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Localização e Zoneamento</h2>
+            <p>A área está estrategicamente posicionada em Londrina, com potencial de valorização adicional devido ao crescimento urbano e facilidades de acesso. O zoneamento ZC3 garante possibilidade de empreendimentos mais robustos na parte destacada, enquanto a ZR2 é ideal para loteamentos padrão.</p>
+
+            <div class="media-section">
+                <div class="media-container">
+                    <h3>Mapa Interativo</h3>
+                    <iframe src="https://www.google.com/maps/d/embed?mid=1WQ579rRMoAnnYh5mSiAqoq9mTh4mkxc&ehbc=2E312F"></iframe>
+                </div>
+
+                <div class="media-container">
+                    <h3>2 Alqueires em Dinheiro + 9 Alqueires em Parceria</h3>
+                    <img src="https://i.imgur.com/O0JLLWX.png" alt="Mapa destacando os 2 e 9 alqueires">
+                </div>
+
+                <div class="media-container">
+                    <h3>Zoneamento</h3>
+                    <img src="https://i.imgur.com/HNavQzj.png" alt="Mapa de Zoneamento (ZC3 e ZR2)">
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <h2>Próximos Passos</h2>
+            <p>A formalização do investimento requer a concordância de todas as partes (proprietário, construtora e investidor) em torno do projeto a ser protocolado na prefeitura, garantindo segurança e previsibilidade. Esta estruturação prevê:</p>
+            <ol>
+                <li>Elaboração de projeto urbanístico preliminar e protocolo na prefeitura.</li>
+                <li>Aquisição imediata dos 2 alqueires (ZC3) por parte do investidor.</li>
+                <li>Formalização da parceria financeira na área remanescente (9 alqueires - ZR2) com a construtora.</li>
+                <li>Garantias jurídicas para todas as partes, visando segurança patrimonial e comercial.</li>
+            </ol>
+        </section>
+    </main>
+
+    <footer>
+        <img src="https://i.imgur.com/3YKn2xW.png" alt="Logo Engesud">
+        <p><strong>Engesud Engenharia e Intermediação LTDA</strong></p>
+        <p>Robson Luis da Costa | <a href="https://wa.me/4497013489">+55 (44) 99701-3489</a></p>
+        <p>Última atualização: 25 de novembro de 2024</p>
+    </footer>
 </body>
 </html>
