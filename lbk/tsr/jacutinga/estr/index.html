@@ -4,7 +4,6 @@
     <meta charset="UTF-8" />
     <title>Proposta de Aquisição e Parceria - 11 Alqueires em Londrina</title>
     
-    <!-- Meta Tags para Preview em Redes Sociais -->
     <meta property="og:title" content="Proposta de Aquisição e Parceria" />
     <meta property="og:description" content="Estratégia de Investimento e Parceria para 11 Alqueires em Londrina" />
     <meta property="og:image" content="https://i.imgur.com/OriTGNE.png" />
@@ -12,17 +11,19 @@
     <meta property="og:type" content="website" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <!-- Favicon -->
     <link rel="shortcut icon" href="https://i.imgur.com/HjwVm8x.png" type="image/x-icon">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
-
-    <!-- Carregando Mermaid via CDN -->
-    <script src="https://cdn.jsdelivr.net/npm/mermaid@10.3.1/dist/mermaid.min.js"></script>
+    
+    <script src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script>
     <script>
-        // Inicialização do Mermaid com tema padrão
         mermaid.initialize({
             startOnLoad: true,
-            theme: 'default'
+            theme: 'default',
+            flowchart: {
+                curve: 'basis',
+                padding: 20
+            },
+            securityLevel: 'loose'
         });
     </script>
 
@@ -45,12 +46,12 @@
             font-family: 'Roboto', sans-serif;
             color: var(--text-color);
             line-height: 1.6;
-            background-color: #fff;
+            background-color: #f8f9fa;
         }
 
         header {
             height: 300px;
-            background: linear-gradient(rgba(44, 62, 80, 0.7), rgba(44, 62, 80, 0.7)),
+            background: linear-gradient(rgba(44, 62, 80, 0.8), rgba(44, 62, 80, 0.8)),
                         url('https://i.imgur.com/jCx792u.png') center/cover no-repeat;
             display: flex;
             align-items: center;
@@ -58,13 +59,19 @@
             color: white;
             text-align: center;
             padding: 2rem;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
         }
 
         .header-content h1 {
-            font-size: 2.5rem;
+            font-size: 2.8rem;
             margin-bottom: 1rem;
             color: white;
             text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+        }
+
+        .header-content p {
+            font-size: 1.2rem;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
         }
 
         main {
@@ -76,49 +83,62 @@
         section {
             margin-bottom: 3rem;
             background: white;
-            padding: 2rem;
-            border-radius: 8px;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            padding: 2.5rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            transition: transform 0.3s ease;
+        }
+
+        section:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 12px rgba(0,0,0,0.1);
         }
 
         h2 {
             color: var(--primary-color);
-            border-bottom: 2px solid var(--accent-color);
-            padding-bottom: 0.5rem;
-            margin-bottom: 1.5rem;
-            font-size: 1.8rem;
+            border-bottom: 3px solid var(--accent-color);
+            padding-bottom: 0.8rem;
+            margin-bottom: 1.8rem;
+            font-size: 2rem;
         }
 
         h3 {
             color: var(--secondary-color);
-            margin: 1.5rem 0 1rem;
-            font-size: 1.4rem;
+            margin: 1.8rem 0 1.2rem;
+            font-size: 1.5rem;
         }
 
         p {
-            margin-bottom: 1.2rem;
+            margin-bottom: 1.4rem;
             line-height: 1.8;
+            color: #444;
         }
 
         ul, ol {
-            margin-left: 1.5rem;
-            margin-bottom: 1.5rem;
+            margin-left: 1.8rem;
+            margin-bottom: 1.8rem;
         }
 
         li {
-            margin-bottom: 0.8rem;
+            margin-bottom: 1rem;
+            color: #444;
         }
 
         .media-section {
             display: grid;
-            gap: 2rem;
-            margin: 2rem 0;
+            gap: 2.5rem;
+            margin: 2.5rem 0;
         }
 
         .media-container {
             background: var(--light-gray);
-            padding: 1rem;
-            border-radius: 8px;
+            padding: 1.5rem;
+            border-radius: 12px;
+            transition: transform 0.3s ease;
+        }
+
+        .media-container:hover {
+            transform: translateY(-5px);
         }
 
         .media-container h3 {
@@ -128,8 +148,8 @@
         img {
             width: 100%;
             height: auto;
-            border-radius: 4px;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
             transition: transform 0.3s ease;
         }
 
@@ -141,41 +161,57 @@
             width: 100%;
             height: 450px;
             border: none;
-            border-radius: 4px;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+
+        .mermaid {
+            margin: 2.5rem 0;
+            background-color: white;
+            padding: 2rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+            overflow-x: auto;
         }
 
         footer {
             background: var(--primary-color);
             color: white;
-            padding: 2rem;
+            padding: 3rem 2rem;
             text-align: center;
-            margin-top: 3rem;
+            margin-top: 4rem;
+            box-shadow: 0 -4px 6px rgba(0,0,0,0.1);
         }
 
         footer img {
-            max-width: 200px;
-            margin-bottom: 1rem;
+            max-width: 220px;
+            margin-bottom: 1.5rem;
+            filter: brightness(1.1);
+        }
+
+        footer p {
+            color: white;
+            margin-bottom: 0.8rem;
         }
 
         footer a {
-            color: white;
+            color: var(--accent-color);
             text-decoration: none;
             transition: color 0.3s ease;
         }
 
         footer a:hover {
-            color: var(--accent-color);
+            color: #5dade2;
+            text-decoration: underline;
         }
 
-        /* Ajustes responsivos */
         @media (max-width: 768px) {
             header {
-                height: 200px;
+                height: 220px;
             }
 
             .header-content h1 {
-                font-size: 1.8rem;
+                font-size: 2rem;
             }
 
             main {
@@ -183,31 +219,28 @@
             }
 
             section {
-                padding: 1rem;
+                padding: 1.5rem;
             }
 
             h2 {
-                font-size: 1.5rem;
+                font-size: 1.6rem;
             }
 
             h3 {
-                font-size: 1.2rem;
+                font-size: 1.3rem;
             }
-        }
 
-        /* Mermaid Container */
-        .mermaid {
-            margin: 2rem 0;
-            background-color: var(--light-gray);
-            padding: 1rem;
-            border-radius: 8px;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-            overflow-x: auto;
+            .media-section {
+                gap: 1.5rem;
+            }
+
+            iframe {
+                height: 300px;
+            }
         }
     </style>
 </head>
 <body>
-    <!-- Cabeçalho -->
     <header>
         <div class="header-content">
             <h1>Estratégia de Aquisição e Parceria</h1>
@@ -215,23 +248,16 @@
         </div>
     </header>
 
-    <!-- Conteúdo Principal -->
     <main>
-        <!-- Visão Geral -->
         <section>
             <h2>Visão Geral</h2>
             <p>Apresentamos uma oportunidade única de adquirir 2 alqueires em <strong>dinheiro</strong> e, em conjunto, estruturar parceria financeira nos outros 9 alqueires para um empreendimento imobiliário de grande potencial.</p>
             
-            <p>
-                Esta proposta visa atrair um investidor que adquira os 2 alqueires (em zoneamento ZC3) garantindo segurança e valorização do investimento. Já a área remanescente (9 alqueires em zoneamento ZR2) poderá ser viabilizada em parceria financeira com potencial construtora interessada, totalizando uma negociação na faixa de R$ 18 milhões.
-            </p>
+            <p>Esta proposta visa atrair um investidor que adquira os 2 alqueires (em zoneamento ZC3) garantindo segurança e valorização do investimento. Já a área remanescente (9 alqueires em zoneamento ZR2) poderá ser viabilizada em parceria financeira com potencial construtora interessada, totalizando uma negociação na faixa de R$ 18 milhões.</p>
 
-            <p>
-                Importante frisar que a <strong>aquisição dos 2 alqueires</strong> está condicionada à aprovação de viabilidade do empreendimento na prefeitura, incluindo protocolos técnicos que assegurem um projeto sólido e rentável. Isso fortalece a segurança tanto para o investidor quanto para o proprietário e a construtora.
-            </p>
+            <p>Importante frisar que a <strong>aquisição dos 2 alqueires</strong> está condicionada à aprovação de viabilidade do empreendimento na prefeitura, incluindo protocolos técnicos que assegurem um projeto sólido e rentável. Isso fortalece a segurança tanto para o investidor quanto para o proprietário e a construtora.</p>
         </section>
 
-        <!-- Pontos-Chave -->
         <section>
             <h2>Pontos-Chave da Estruturação</h2>
             <ul>
@@ -248,12 +274,9 @@
             </ul>
         </section>
 
-        <!-- Localização e Zoneamento -->
         <section>
             <h2>Localização e Zoneamento</h2>
-            <p>
-                A área está estrategicamente posicionada em Londrina, com potencial de valorização adicional devido ao crescimento urbano e facilidades de acesso. O zoneamento ZC3 garante possibilidade de empreendimentos mais robustos na parte destacada, enquanto a ZR2 é ideal para loteamentos padrão (e empreendimentos MCMV, se houver interesse da construtora).
-            </p>
+            <p>A área está estrategicamente posicionada em Londrina, com potencial de valorização adicional devido ao crescimento urbano e facilidades de acesso. O zoneamento ZC3 garante possibilidade de empreendimentos mais robustos na parte destacada, enquanto a ZR2 é ideal para loteamentos padrão (e empreendimentos MCMV, se houver interesse da construtora).</p>
 
             <div class="media-section">
                 <div class="media-container">
@@ -273,40 +296,34 @@
             </div>
         </section>
 
-        <!-- Diagrama Mermaid -->
         <section>
             <h2>Estrutura do Negócio (Diagrama)</h2>
-            <!-- IMPORTANTE: Envolver o diagrama em um container mermaid -->
-            <div class="mermaid">
-                flowchart LR
-                    A(Investidor Adquire 2 Alqueires) --> B{Viabilidade Prefeitura}
-                    B --> C[Empreendimento Loteamento 9 Alqueires (ZR2)]
-                    B --> D[Futuro T+3 / Zoneamento ZC3]
-            </div>
-            <p>
-                O fluxo acima demonstra a importância da aprovação na prefeitura (viabilidade) para que a aquisição dos 2 alqueires se concretize e, consequentemente, dê suporte ao desenvolvimento futuro do empreendimento de loteamento de casas prontas ou outras soluções na área remanescente.
-            </p>
+            <pre class="mermaid">
+                graph LR
+                    A["Investidor Adquire<br/>2 Alqueires"] -->|Protocolo| B{"Viabilidade<br/>Prefeitura"}
+                    B -->|Aprovado| C["Empreendimento<br/>Loteamento 9 Alqueires<br/>(ZR2)"]
+                    B -->|Aprovado| D["Futuro T+3<br/>Zoneamento ZC3"]
+                    style A fill:#f9f,stroke:#333,stroke-width:2px
+                    style B fill:#bbf,stroke:#333,stroke-width:2px
+                    style C fill:#bfb,stroke:#333,stroke-width:2px
+                    style D fill:#bfb,stroke:#333,stroke-width:2px
+            </pre>
+            <p>O fluxo acima demonstra a importância da aprovação na prefeitura (viabilidade) para que a aquisição dos 2 alqueires se concretize e, consequentemente, dê suporte ao desenvolvimento futuro do empreendimento de loteamento de casas prontas ou outras soluções na área remanescente.</p>
         </section>
 
-        <!-- Próximos Passos -->
         <section>
             <h2>Próximos Passos</h2>
-            <p>
-                A formalização do investimento requer a concordância de todas as partes (proprietário, construtora e investidor) em torno do projeto a ser protocolado na prefeitura, garantindo segurança e previsibilidade. Esta estruturação prevê:
-            </p>
+            <p>A formalização do investimento requer a concordância de todas as partes (proprietário, construtora e investidor) em torno do projeto a ser protocolado na prefeitura, garantindo segurança e previsibilidade. Esta estruturação prevê:</p>
             <ol>
                 <li>Elaboração de projeto urbanístico preliminar e protocolo na prefeitura.</li>
                 <li>Aquisição imediata dos 2 alqueires (ZC3) pelo investidor, após confirmação de viabilidade.</li>
                 <li>Formalização da parceria financeira na área remanescente (9 alqueires - ZR2) com a construtora.</li>
                 <li>Garantias jurídicas para todas as partes, visando segurança patrimonial e comercial.</li>
             </ol>
-            <p>
-                Caso a permuta por casas prontas (MCMV) não atenda ao retorno esperado, há possibilidade de explorar melhor o Zoneamento ZC3 em um cenário futuro, seja por meio de projetos verticais (T+3) ou pela venda de lotes comerciais conforme a região se valorize.
-            </p>
+            <p>Caso a permuta por casas prontas (MCMV) não atenda ao retorno esperado, há possibilidade de explorar melhor o Zoneamento ZC3 em um cenário futuro, seja por meio de projetos verticais (T+3) ou pela venda de lotes comerciais conforme a região se valorize.</p>
         </section>
     </main>
 
-    <!-- Rodapé -->
     <footer>
         <img src="https://i.imgur.com/3YKn2xW.png" alt="Logo Engesud">
         <p><strong>Engesud Engenharia e Intermediação LTDA</strong></p>
