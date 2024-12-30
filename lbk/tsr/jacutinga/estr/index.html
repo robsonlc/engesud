@@ -260,7 +260,30 @@
                 height: 300px;
             }
         }
-    </style>
+    
+    .text-center {
+        text-align: center;
+    }
+    
+    /* Ajustes específicos para o container do SVG */
+    .media-container object {
+        background-color: white;
+        padding: 1rem;
+        border-radius: 8px;
+        box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        transition: transform 0.3s ease;
+    }
+
+    .media-container object:hover {
+        transform: scale(1.02);
+    }
+
+    @media (max-width: 768px) {
+        .media-container object {
+            min-height: 300px;
+        }
+    }
+</style>
 </head>
 <body>
     <header>
@@ -279,7 +302,22 @@
 
             <p>Importante frisar que a <strong>aquisição dos 2 alqueires</strong> está condicionada à aprovação de viabilidade do empreendimento na prefeitura, incluindo protocolos técnicos que assegurem um projeto sólido e rentável. Isso fortalece a segurança tanto para o investidor quanto para o proprietário e a construtora.</p>
         </section>
-
+<section>
+   
+    <div class="media-container">
+        <object 
+            data="https://www.engesudsmart.com.br/lbk/tsr/jacutinga/estr/napkin.svg" 
+            type="image/svg+xml"
+            style="width: 100%; height: auto; min-height: 400px;"
+            aria-label="Oportunidade de Desenvolvimento Imobiliário">
+            <!-- Fallback para navegadores que não suportam SVG -->
+            <img src="https://www.engesudsmart.com.br/lbk/tsr/jacutinga/estr/napkin.svg" 
+                 alt="Oportunidade de Desenvolvimento Imobiliário"
+                 style="width: 100%; height: auto;">
+        </object>
+    </div>
+  
+</section>
         <section>
             <h2>Pontos-Chave da Estruturação</h2>
             <ul>
@@ -324,7 +362,7 @@
                 graph LR
                     A["Investidor Adquire<br/>2 Alqueires"] -->|Protocolo| B{"Viabilidade<br/>Prefeitura"}
                     B -->|Aprovado| C["Empreendimento<br/>Loteamento 9 Alqueires<br/>(ZR2)"]
-                    B -->|Aprovado| D["Futuro T+3<br/>Zoneamento ZC3"]
+                    B -->|Aprovado| D["Potencial Futuro T+3<br/>Zoneamento ZC3"]
                     style A fill:#f9f,stroke:#333,stroke-width:2px
                     style B fill:#bbf,stroke:#333,stroke-width:2px
                     style C fill:#bfb,stroke:#333,stroke-width:2px
