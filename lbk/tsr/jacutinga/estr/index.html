@@ -1,3 +1,188 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8" />
+    <title>Proposta de Aquisição e Parceria - 11 Alqueires em Londrina</title>
+    
+    <meta property="og:title" content="Proposta de Aquisição e Parceria" />
+    <meta property="og:description" content="Estratégia de Investimento e Parceria para 11 Alqueires em Londrina" />
+    <meta property="og:image" content="https://i.imgur.com/OriTGNE.png" />
+    <meta property="og:url" content="https://www.engesudsmart.com.br/lbk/tsr/jacutinga/estr" />
+    <meta property="og:type" content="website" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="shortcut icon" href="https://i.imgur.com/HjwVm8x.png" type="image/x-icon">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    
+    <script src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script>
+    <script>
+        mermaid.initialize({
+            startOnLoad: true,
+            theme: 'default',
+            flowchart: {
+                curve: 'basis',
+                padding: 20
+            },
+            securityLevel: 'loose'
+        });
+
+        document.addEventListener('DOMContentLoaded', function() {
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    document.querySelector(this.getAttribute('href')).scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                });
+            });
+
+            // Adiciona lazy loading para imagens e iframes
+            document.querySelectorAll('img, iframe').forEach(el => {
+                el.loading = 'lazy';
+            });
+        });
+    </script>
+
+    <style>
+        :root {
+            --primary-color: #2c3e50;
+            --secondary-color: #34495e;
+            --accent-color: #3498db;
+            --text-color: #333;
+            --light-gray: #ecf0f1;
+            --gradient-start: #3498db;
+            --gradient-end: #2ecc71;
+            --container-width: min(1200px, 90vw);
+            --section-padding: clamp(1rem, 5vw, 3rem);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            font-size: clamp(14px, 2vw, 16px);
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Roboto', sans-serif;
+            color: var(--text-color);
+            line-height: 1.6;
+            background-color: #f8f9fa;
+            overflow-x: hidden;
+        }
+
+        img, iframe, object {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: 0 auto;
+        }
+
+        header {
+            min-height: 50vh;
+            background: linear-gradient(rgba(44, 62, 80, 0.7), rgba(44, 62, 80, 0.9)),
+                        url('https://i.imgur.com/jCx792u.png') center/cover no-repeat;
+            background-attachment: fixed;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-align: center;
+            padding: var(--section-padding);
+        }
+
+        @media (max-width: 768px) {
+            header {
+                background-attachment: scroll;
+                min-height: 40vh;
+            }
+        }
+
+        .header-content {
+            width: var(--container-width);
+            padding: clamp(1rem, 3vw, 2rem);
+        }
+
+        .header-content h1 {
+            font-size: clamp(1.8rem, 5vw, 3.2rem);
+            margin-bottom: 1.5rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+        }
+
+        .header-content p {
+            font-size: clamp(1rem, 3vw, 1.4rem);
+            color: #9ee5ff;
+            text-shadow: 1px 1px 3px rgba(0,0,0,0.7);
+            background-color: rgba(0, 0, 0, 0.3);
+            padding: 1rem;
+            border-radius: 8px;
+            display: inline-block;
+        }
+
+        main {
+            width: var(--container-width);
+            margin: 0 auto;
+            padding: var(--section-padding);
+        }
+
+        section {
+            margin-bottom: 4rem;
+            background: white;
+            padding: var(--section-padding);
+            border-radius: 16px;
+            box-shadow: 0 8px 16px rgba(0,0,0,0.05);
+        }
+
+        .media-section {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(min(300px, 100%), 1fr));
+            gap: 2rem;
+            margin: 3rem 0;
+        }
+
+        .media-container {
+            background: var(--light-gray);
+            padding: var(--section-padding);
+            border-radius: 12px;
+            transition: transform 0.4s ease;
+        }
+
+        .media-container:hover {
+            transform: translateY(-8px);
+        }
+
+        footer {
+            background: var(--primary-color);
+            color: white;
+            padding: var(--section-padding);
+            text-align: center;
+            margin-top: 4rem;
+        }
+
+        .footer-content {
+            width: var(--container-width);
+            margin: 0 auto;
+        }
+
+        @media (max-width: 480px) {
+            :root {
+                --section-padding: 1rem;
+            }
+            
+            .header-content h1 {
+                font-size: 1.8rem;
+            }
+
+            .header-content p {
+                font-size: 1rem;
+            }
+        }
+    </style>
+</head>
 <body>
     <header>
         <div class="header-content">
@@ -163,3 +348,4 @@
             </style>
         </footer>
     </body>
+</html>
