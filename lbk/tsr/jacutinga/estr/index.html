@@ -1,4 +1,376 @@
-footer {
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8" />
+    <title>Proposta de Aquisição e Parceria - 11 Alqueires em Londrina</title>
+    
+    <meta property="og:title" content="Proposta de Aquisição e Parceria" />
+    <meta property="og:description" content="Estratégia de Investimento e Parceria para 11 Alqueires em Londrina" />
+    <meta property="og:image" content="https://i.imgur.com/OriTGNE.png" />
+    <meta property="og:url" content="https://www.engesudsmart.com.br/lbk/tsr/jacutinga/estr" />
+    <meta property="og:type" content="website" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="shortcut icon" href="https://i.imgur.com/HjwVm8x.png" type="image/x-icon">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    
+    <script src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script>
+    <script>
+        mermaid.initialize({
+            startOnLoad: true,
+            theme: 'default',
+            flowchart: {
+                curve: 'basis',
+                padding: 20
+            },
+            securityLevel: 'loose'
+        });
+
+        // Adiciona animação de scroll suave
+        document.addEventListener('DOMContentLoaded', function() {
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    document.querySelector(this.getAttribute('href')).scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                });
+            });
+        });
+    </script>
+
+    <style>
+        :root {
+            --primary-color: #2c3e50;
+            --secondary-color: #34495e;
+            --accent-color: #3498db;
+            --text-color: #333;
+            --light-gray: #ecf0f1;
+            --gradient-start: #3498db;
+            --gradient-end: #2ecc71;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Roboto', sans-serif;
+            color: var(--text-color);
+            line-height: 1.6;
+            background-color: #f8f9fa;
+        }
+
+        header {
+            height: 400px;
+            background: linear-gradient(rgba(44, 62, 80, 0.7), rgba(44, 62, 80, 0.9)),
+                        url('https://i.imgur.com/jCx792u.png') center/cover no-repeat fixed;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .header-content {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 2rem;
+            position: relative;
+            z-index: 2;
+            animation: fadeIn 1.5s ease-out;
+        }
+
+        .header-content h1 {
+            font-size: 3.2rem;
+            margin-bottom: 1.5rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+            animation: fadeInDown 1s ease-out;
+        }
+
+        .header-content p {
+            font-size: 1.4rem;
+            color: #9ee5ff;
+            text-shadow: 1px 1px 3px rgba(0,0,0,0.7);
+            background-color: rgba(0, 0, 0, 0.3);
+            padding: 1rem 2rem;
+            border-radius: 8px;
+            display: inline-block;
+            animation: fadeInUp 1s ease-out;
+        }
+
+        main {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 3rem 2rem;
+        }
+
+        section {
+            margin-bottom: 4rem;
+            background: white;
+            padding: 3rem;
+            border-radius: 16px;
+            box-shadow: 0 8px 16px rgba(0,0,0,0.05);
+            transition: all 0.4s ease;
+            position: relative;
+            overflow: hidden;
+            animation: slideUp 0.8s ease-out;
+        }
+
+        section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: linear-gradient(90deg, var(--gradient-start), var(--gradient-end));
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        section:hover::before {
+            opacity: 1;
+        }
+
+        h2 {
+            color: var(--primary-color);
+            font-size: 2.2rem;
+            margin-bottom: 2rem;
+            position: relative;
+            padding-bottom: 1rem;
+        }
+
+        h2::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 60px;
+            height: 4px;
+            background: linear-gradient(90deg, var(--gradient-start), var(--gradient-end));
+        }
+
+        h3 {
+            color: var(--secondary-color);
+            font-size: 1.8rem;
+            margin: 2rem 0 1.5rem;
+        }
+
+        p {
+            margin-bottom: 1.6rem;
+            line-height: 1.8;
+            color: #444;
+            font-size: 1.1rem;
+        }
+
+        ul, ol {
+            margin-left: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        li {
+            margin-bottom: 1.2rem;
+            color: #444;
+            font-size: 1.1rem;
+        }
+
+        .media-section {
+            display: grid;
+            gap: 3rem;
+            margin: 3rem 0;
+        }
+
+        .media-container {
+            background: var(--light-gray);
+            padding: 2rem;
+            border-radius: 12px;
+            transition: transform 0.4s ease, box-shadow 0.4s ease;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+
+        .media-container:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 8px 24px rgba(0,0,0,0.15);
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes slideUp {
+            from {
+                opacity: 0;
+                transform: translateY(50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        @media (max-width: 768px) {
+            header {
+                height: auto;
+                min-height: 300px;
+                background-attachment: scroll;
+            }
+
+            .header-content h1 {
+                font-size: 2rem;
+            }
+
+            .header-content p {
+                font-size: 1.1rem;
+                padding: 0.8rem 1.5rem;
+            }
+
+            section {
+                padding: 2rem;
+                margin-bottom: 2.5rem;
+            }
+
+            h2 {
+                font-size: 1.8rem;
+            }
+
+            h3 {
+                font-size: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <h1>Estratégia de Aquisição e Parceria</h1>
+            <p>11 Alqueires em Londrina - Oportunidade Única de Investimento</p>
+        </div>
+    </header>
+
+    <main>
+        <section>
+            <h2>Visão Geral</h2>
+            <p>Apresentamos uma oportunidade única de adquirir 2 alqueires em <strong>dinheiro</strong> e, em conjunto, estruturar parceria financeira nos outros 9 alqueires para um empreendimento imobiliário de grande potencial.</p>
+            
+            <p>Esta proposta visa atrair um investidor que adquira os 2 alqueires (em zoneamento ZC3) garantindo segurança e valorização do investimento. Já a área remanescente (9 alqueires em zoneamento ZR2) poderá ser viabilizada em parceria financeira com potencial construtora interessada, totalizando uma negociação na faixa de R$ 18 milhões.</p>
+
+            <p>Importante frisar que a <strong>aquisição dos 2 alqueires</strong> está condicionada à aprovação de viabilidade do empreendimento na prefeitura, incluindo protocolos técnicos que assegurem um projeto sólido e rentável. Isso fortalece a segurança tanto para o investidor quanto para o proprietário e a construtora.</p>
+
+            <div class="media-container">
+                <object 
+                    data="https://www.engesudsmart.com.br/lbk/tsr/jacutinga/estr/napkin.svg" 
+                    type="image/svg+xml"
+                    style="width: 100%; height: auto; min-height: 400px;"
+                    aria-label="Oportunidade de Desenvolvimento Imobiliário">
+                    <img src="https://www.engesudsmart.com.br/lbk/tsr/jacutinga/estr/napkin.svg" 
+                         alt="Oportunidade de Desenvolvimento Imobiliário"
+                         style="width: 100%; height: auto;">
+                </object>
+            </div>
+        </section>
+
+        <section>
+            <h2>Pontos-Chave da Estruturação</h2>
+            <ul>
+                <li><strong>2 alqueires (ZC3):</strong> Propriedade urbana em região com permissão de verticalização de empreendimentos sociais.</li>
+                <li><strong>9 alqueires (ZR2):</strong> Ideal para um loteamento padrão, podendo incluir casas prontas no programa MCMV.</li>
+                <li>
+                    Investimento total estimado em R$ 18 milhões:
+                    <ul>
+                        <li>R$ 3 milhões (aprox.) para os 2 alqueires</li>
+                        <li>R$ 15 milhões em parceria financeira para os 9 alqueires</li>
+                    </ul>
+                </li>
+                <li>Segurança jurídica e viabilidade técnica através de projeto protocolado na prefeitura.</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Localização e Zoneamento</h2>
+            <p>A área está estrategicamente posicionada em Londrina, com potencial de valorização adicional devido ao crescimento urbano e facilidades de acesso. O zoneamento ZC3 garante possibilidade de empreendimentos mais robustos na parte destacada, enquanto a ZR2 é ideal para loteamentos padrão (e empreendimentos MCMV, se houver interesse da construtora).</p>
+
+            <div class="media-section">
+                <div class="media-container">
+                    <h3>Mapa Interativo</h3>
+                    <iframe src="https://www.google.com/maps/d/embed?mid=1WQ579rRMoAnnYh5mSiAqoq9mTh4mkxc&ehbc=2E312F"></iframe>
+                </div>
+
+                <div class="media-container">
+                    <h3>2 Alqueires em Dinheiro + 9 Alqueires em Parceria</h3>
+                    <img src="https://i.imgur.com/O0JLLWX.png" alt="Mapa destacando os 2 e 9 alqueires">
+                </div>
+
+                <div class="media-container">
+                    <h3>Zoneamento</h3>
+                    <img src="https://i.imgur.com/HNavQzj.png" alt="Mapa de Zoneamento (ZC3 e ZR2)">
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <h2>Estrutura do Negócio (Diagrama)</h2>
+            <pre class="mermaid">
+                graph LR
+                    A["Investidor Adquire<br/>2 Alqueires"] -->|Protocolo| B{"Viabilidade<br/>Prefeitura"}
+                    B -->|Aprovado| C["Empreendimento<br/>Loteamento 9 Alqueires<br/>(ZR2)"]
+                    B -->|Aprovado| D["Futuro T+3<br/>Zoneamento ZC3"]
+                    style A fill:#f9f,stroke:#333,stroke-width:2px
+                    style B fill:#bbf,stroke:#333,stroke-width:2px
+                    style C fill:#bfb,stroke:#333,stroke-width:2px
+                    style D fill:#bfb,stroke:#333,stroke-width:2px
+            </pre>
+            <p>O fluxo acima demonstra a importância da aprovação na prefeitura (viabilidade) para que a aquisição dos 2 alqueires se concretize e, consequentemente, dê suporte ao desenvolvimento futuro do empreendimento de loteamento de casas prontas ou outras soluções na área remanescente.</p>
+        </section>
+
+        <section>
+            <h2>Próximos Passos</h2>
+            <p>A formalização do investimento requer a concordância de todas as partes (proprietário, construtora e investidor) em torno do projeto a ser protocolado na prefeitura, garantindo segurança e previsibilidade. Esta estruturação prevê:</p>
+            <ol>
+                <li>Elaboração de projeto urbanístico preliminar e protocolo na prefeitura.</li>
+                <li>Aquisição imediata dos 2 alqueires (ZC3) pelo investidor, após confirmação de viabilidade.</li>
+                <li>Formalização da parceria financeira na área remanescente (9 alqueires - ZR2) com a construtora.</li>
+                <li>Garantias jurídicas para todas as partes, visando segurança patrimonial e comercial.</li>
+            </ol>
+            <p>Caso a permuta por casas prontas (MCMV) não atenda ao retorno esperado, há possibilidade de explorar melhor o Zoneamento ZC3 em um cenário futuro, seja por meio de projetos verticais (T+3) ou pela venda de lotes comerciais conforme a região se valorize.</p>
+            </section>
+        </main>
+
+        <footer>
+            <img src="https://i.imgur.com/3YKn2xW.png" alt="Logo Engesud" style="max-width: 220px; margin-bottom: 2rem; filter: brightness(1.1);">
+            <div class="footer-content">
+                <p><strong>Engesud Engenharia e Intermediação LTDA</strong></p>
+                <p>Robson Luis da Costa | <a href="https://wa.me/4497013489" target="_blank" rel="noopener noreferrer">+55 (44) 99701-3489</a></p>
+                <p>Última atualização: 30 de dezembro de 2024</p>
+            </div>
+            <style>
+               footer {
                     background: var(--primary-color);
                     color: white;
                     padding: 4rem 2rem;
