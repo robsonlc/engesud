@@ -1,392 +1,62 @@
-<!DOCTYPE html>
-<html lang="pt-BR">
-<head>
-    <meta charset="UTF-8" />
-    <title>Proposta de Aquisição e Parceria - 11 Alqueires em Londrina</title>
-    
-    <meta property="og:title" content="Proposta de Aquisição e Parceria" />
-    <meta property="og:description" content="Estratégia de Investimento e Parceria para 11 Alqueires em Londrina" />
-    <meta property="og:image" content="https://i.imgur.com/OriTGNE.png" />
-    <meta property="og:url" content="https://www.engesudsmart.com.br/lbk/tsr/jacutinga/estr" />
-    <meta property="og:type" content="website" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+footer {
+                    background: var(--primary-color);
+                    color: white;
+                    padding: 4rem 2rem;
+                    text-align: center;
+                    margin-top: 4rem;
+                    box-shadow: 0 -4px 6px rgba(0,0,0,0.1);
+                    position: relative;
+                }
 
-    <link rel="shortcut icon" href="https://i.imgur.com/HjwVm8x.png" type="image/x-icon">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
-    
-    <script src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script>
-    <script>
-        mermaid.initialize({
-            startOnLoad: true,
-            theme: 'default',
-            flowchart: {
-                curve: 'basis',
-                padding: 20
-            },
-            securityLevel: 'loose'
-        });
-    </script>
+                footer::before {
+                    content: '';
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    width: 100%;
+                    height: 4px;
+                    background: linear-gradient(90deg, var(--gradient-start), var(--gradient-end));
+                }
 
-    <style>
-        :root {
-            --primary-color: #2c3e50;
-            --secondary-color: #34495e;
-            --accent-color: #3498db;
-            --text-color: #333;
-            --light-gray: #ecf0f1;
-        }
+                .footer-content {
+                    max-width: 600px;
+                    margin: 0 auto;
+                }
 
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+                footer p {
+                    color: white;
+                    margin-bottom: 0.8rem;
+                    font-size: 1.1rem;
+                }
 
-        body {
-            font-family: 'Roboto', sans-serif;
-            color: var(--text-color);
-            line-height: 1.6;
-            background-color: #f8f9fa;
-        }
+                footer a {
+                    color: var(--accent-color);
+                    text-decoration: none;
+                    transition: color 0.3s ease;
+                    padding: 0.5rem 1rem;
+                    border-radius: 4px;
+                    background-color: rgba(255, 255, 255, 0.1);
+                }
 
-        header {
-            height: 300px;
-            background: linear-gradient(rgba(44, 62, 80, 0.8), rgba(44, 62, 80, 0.8)),
-                        url('https://i.imgur.com/jCx792u.png') center/cover no-repeat;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            text-align: center;
-            padding: 2rem;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-        }
+                footer a:hover {
+                    color: #5dade2;
+                    background-color: rgba(255, 255, 255, 0.2);
+                }
 
-        .header-content {
-            max-width: 100%;
-            padding: 0 1rem;
-        }
+                @media (max-width: 768px) {
+                    footer {
+                        padding: 3rem 1rem;
+                    }
 
-         .header-content p {
-            font-size: 1.2rem;
-            color: #9ee5ff; /* Cor azul clara */
-            text-shadow: 1px 1px 3px rgba(0,0,0,0.7); /* Sombra sutil */
-            margin-top: 0.5rem;
-            font-weight: 400;
-            letter-spacing: 0.5px; /* Melhor espaçamento entre letras */
-        }
+                    footer img {
+                        max-width: 180px;
+                    }
 
-         .header-content p {
-            font-size: 1.2rem;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.8); /* Sombra mais escura */
-            background-color: rgba(0, 0, 0, 0.4); /* Fundo semi-transparente */
-            padding: 0.5rem 1rem; /* Padding para criar um box ao redor do texto */
-            border-radius: 4px; /* Bordas arredondadas */
-            margin-top: 0.5rem; /* Espaçamento do título */
-            display: inline-block; /* Para o background ficar apenas no texto */
-            font-weight: 500; /* Texto um pouco mais bold */
-        }
-        main {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 2rem;
-        }
-
-        section {
-            margin-bottom: 3rem;
-            background: white;
-            padding: 2.5rem;
-            border-radius: 12px;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
-            transition: transform 0.3s ease;
-        }
-
-        section:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 6px 12px rgba(0,0,0,0.1);
-        }
-
-        h2 {
-            color: var(--primary-color);
-            border-bottom: 3px solid var(--accent-color);
-            padding-bottom: 0.8rem;
-            margin-bottom: 1.8rem;
-            font-size: 2rem;
-        }
-
-        h3 {
-            color: var(--secondary-color);
-            margin: 1.8rem 0 1.2rem;
-            font-size: 1.5rem;
-        }
-
-        p {
-            margin-bottom: 1.4rem;
-            line-height: 1.8;
-            color: #444;
-        }
-
-        ul, ol {
-            margin-left: 1.8rem;
-            margin-bottom: 1.8rem;
-        }
-
-        li {
-            margin-bottom: 1rem;
-            color: #444;
-        }
-
-        .media-section {
-            display: grid;
-            gap: 2.5rem;
-            margin: 2.5rem 0;
-        }
-
-        .media-container {
-            background: var(--light-gray);
-            padding: 1.5rem;
-            border-radius: 12px;
-            transition: transform 0.3s ease;
-        }
-
-        .media-container:hover {
-            transform: translateY(-5px);
-        }
-
-        .media-container h3 {
-            margin-top: 0;
-        }
-
-        img {
-            width: 100%;
-            height: auto;
-            border-radius: 8px;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-            transition: transform 0.3s ease;
-        }
-
-        img:hover {
-            transform: scale(1.02);
-        }
-
-        iframe {
-            width: 100%;
-            height: 450px;
-            border: none;
-            border-radius: 8px;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-        }
-
-        .mermaid {
-            margin: 2.5rem 0;
-            background-color: white;
-            padding: 2rem;
-            border-radius: 12px;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.05);
-            overflow-x: auto;
-        }
-
-        footer {
-            background: var(--primary-color);
-            color: white;
-            padding: 3rem 2rem;
-            text-align: center;
-            margin-top: 4rem;
-            box-shadow: 0 -4px 6px rgba(0,0,0,0.1);
-        }
-
-        footer img {
-            max-width: 220px;
-            margin-bottom: 1.5rem;
-            filter: brightness(1.1);
-        }
-
-        footer p {
-            color: white;
-            margin-bottom: 0.8rem;
-        }
-
-        footer a {
-            color: var(--accent-color);
-            text-decoration: none;
-            transition: color 0.3s ease;
-        }
-
-        footer a:hover {
-            color: #5dade2;
-            text-decoration: underline;
-        }
-
-        @media (max-width: 768px) {
-            header {
-                height: auto;
-                min-height: 220px;
-                padding: 2rem 1rem;
-            }
-
-            .header-content h1 {
-                font-size: 1.8rem;
-                margin-bottom: 0.8rem;
-                word-wrap: break-word;
-            }
-
-            .header-content p {
-                font-size: 1rem;
-                margin: 0.5rem auto;
-                max-width: 90%;
-            }
-
-            main {
-                padding: 1rem;
-            }
-
-            section {
-                padding: 1.5rem;
-            }
-
-            h2 {
-                font-size: 1.6rem;
-            }
-
-            h3 {
-                font-size: 1.3rem;
-            }
-
-            .media-section {
-                gap: 1.5rem;
-            }
-
-            iframe {
-                height: 300px;
-            }
-        }
-    
-    .text-center {
-        text-align: center;
-    }
-    
-    /* Ajustes específicos para o container do SVG */
-    .media-container object {
-        background-color: white;
-        padding: 1rem;
-        border-radius: 8px;
-        box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-        transition: transform 0.3s ease;
-    }
-
-    .media-container object:hover {
-        transform: scale(1.02);
-    }
-
-    @media (max-width: 768px) {
-        .media-container object {
-            min-height: 300px;
-        }
-    }
-</style>
-</head>
-<body>
-    <header>
-        <div class="header-content">
-            <h1>Estratégia de Aquisição e Parceria</h1>
-            <p>11 Alqueires em Londrina - Oportunidade Única de Investimento</p>
-        </div>
-    </header>
-
-    <main>
-        <section>
-            <h2>Visão Geral</h2>
-            <p>Apresentamos uma oportunidade única de adquirir 2 alqueires em <strong>dinheiro</strong> e, em conjunto, estruturar parceria financeira nos outros 9 alqueires para um empreendimento imobiliário de grande potencial.</p>
-            
-            <p>Esta proposta visa atrair um investidor que adquira os 2 alqueires (em zoneamento ZC3) garantindo segurança e valorização do investimento. Já a área remanescente (9 alqueires em zoneamento ZR2) poderá ser viabilizada em parceria financeira com potencial construtora interessada, totalizando uma negociação na faixa de R$ 18 milhões.</p>
-
-            <p>Importante frisar que a <strong>aquisição dos 2 alqueires</strong> está condicionada à aprovação de viabilidade do empreendimento na prefeitura, incluindo protocolos técnicos que assegurem um projeto sólido e rentável. Isso fortalece a segurança tanto para o investidor quanto para o proprietário e a construtora.</p>
- 
-    <div class="media-container">
-        <object 
-            data="https://www.engesudsmart.com.br/lbk/tsr/jacutinga/estr/napkin.svg" 
-            type="image/svg+xml"
-            style="width: 100%; height: auto; min-height: 400px;"
-            aria-label="Oportunidade de Desenvolvimento Imobiliário">
-            <!-- Fallback para navegadores que não suportam SVG -->
-            <img src="https://www.engesudsmart.com.br/lbk/tsr/jacutinga/estr/napkin.svg" 
-                 alt="Oportunidade de Desenvolvimento Imobiliário"
-                 style="width: 100%; height: auto;">
-        </object>
-    </div>
-  
-</section>
-        <section>
-            <h2>Pontos-Chave da Estruturação</h2>
-            <ul>
-                <li><strong>2 alqueires (ZC3):</strong> Propriedade urbana em região com permissão de verticalização de empreendimentos sociais.</li>
-                <li><strong>9 alqueires (ZR2):</strong> Ideal para um loteamento padrão, podendo incluir casas prontas no programa MCMV.</li>
-                <li>
-                    Investimento total estimado em R$ 18 milhões:
-                    <ul>
-                        <li>R$ 3 milhões (aprox.) para os 2 alqueires</li>
-                        <li>R$ 15 milhões em parceria financeira para os 9 alqueires</li>
-                    </ul>
-                </li>
-                <li>Segurança jurídica e viabilidade técnica através de projeto protocolado na prefeitura.</li>
-            </ul>
-        </section>
-
-        <section>
-            <h2>Localização e Zoneamento</h2>
-            <p>A área está estrategicamente posicionada em Londrina, com potencial de valorização adicional devido ao crescimento urbano e facilidades de acesso. O zoneamento ZC3 garante possibilidade de empreendimentos mais robustos na parte destacada, enquanto a ZR2 é ideal para loteamentos padrão (e empreendimentos MCMV, se houver interesse da construtora).</p>
-
-            <div class="media-section">
-                <div class="media-container">
-                    <h3>Mapa Interativo</h3>
-                    <iframe src="https://www.google.com/maps/d/embed?mid=1WQ579rRMoAnnYh5mSiAqoq9mTh4mkxc&ehbc=2E312F"></iframe>
-                </div>
-
-                <div class="media-container">
-                    <h3>2 Alqueires em Dinheiro + 9 Alqueires em Parceria</h3>
-                    <img src="https://i.imgur.com/O0JLLWX.png" alt="Mapa destacando os 2 e 9 alqueires">
-                </div>
-
-                <div class="media-container">
-                    <h3>Zoneamento</h3>
-                    <img src="https://i.imgur.com/HNavQzj.png" alt="Mapa de Zoneamento (ZC3 e ZR2)">
-                </div>
-            </div>
-        </section>
-
-        <section>
-            <h2>Estrutura do Negócio (Diagrama)</h2>
-            <pre class="mermaid">
-                graph LR
-                    A["Investidor Adquire<br/>2 Alqueires"] -->|Protocolo| B{"Viabilidade<br/>Prefeitura"}
-                    B -->|Aprovado| C["Empreendimento<br/>Loteamento 9 Alqueires<br/>(ZR2)"]
-                    B -->|Aprovado| D["Futuro T+3<br/>Zoneamento ZC3"]
-                    style A fill:#f9f,stroke:#333,stroke-width:2px
-                    style B fill:#bbf,stroke:#333,stroke-width:2px
-                    style C fill:#bfb,stroke:#333,stroke-width:2px
-                    style D fill:#bfb,stroke:#333,stroke-width:2px
-            </pre>
-            <p>O fluxo acima demonstra a importância da aprovação na prefeitura (viabilidade) para que a aquisição dos 2 alqueires se concretize e, consequentemente, dê suporte ao desenvolvimento futuro do empreendimento de loteamento de casas prontas ou outras soluções na área remanescente.</p>
-        </section>
-
-        <section>
-            <h2>Próximos Passos</h2>
-            <p>A formalização do investimento requer a concordância de todas as partes (proprietário, construtora e investidor) em torno do projeto a ser protocolado na prefeitura, garantindo segurança e previsibilidade. Esta estruturação prevê:</p>
-            <ol>
-                <li>Elaboração de projeto urbanístico preliminar e protocolo na prefeitura.</li>
-                <li>Aquisição imediata dos 2 alqueires (ZC3) pelo investidor, após confirmação de viabilidade.</li>
-                <li>Formalização da parceria financeira na área remanescente (9 alqueires - ZR2) com a construtora.</li>
-                <li>Garantias jurídicas para todas as partes, visando segurança patrimonial e comercial.</li>
-            </ol>
-            <p>Caso a permuta por casas prontas (MCMV) não atenda ao retorno esperado, há possibilidade de explorar melhor o Zoneamento ZC3 em um cenário futuro, seja por meio de projetos verticais (T+3) ou pela venda de lotes comerciais conforme a região se valorize.</p>
-        </section>
-    </main>
-
-    <footer>
-        <img src="https://i.imgur.com/3YKn2xW.png" alt="Logo Engesud">
-        <p><strong>Engesud Engenharia e Intermediação LTDA</strong></p>
-        <p>Robson Luis da Costa | <a href="https://wa.me/4497013489">+55 (44) 99701-3489</a></p>
-        <p>Última atualização: 29 de dezembro de 2024</p>
-    </footer>
-</body>
+                    footer p {
+                        font-size: 1rem;
+                    }
+                }
+            </style>
+        </footer>
+    </body>
 </html>
