@@ -74,11 +74,16 @@
             text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
         }
 
-        .header-content p {
+         .header-content p {
             font-size: 1.2rem;
-            text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.8); /* Sombra mais escura */
+            background-color: rgba(0, 0, 0, 0.4); /* Fundo semi-transparente */
+            padding: 0.5rem 1rem; /* Padding para criar um box ao redor do texto */
+            border-radius: 4px; /* Bordas arredondadas */
+            margin-top: 0.5rem; /* Espaçamento do título */
+            display: inline-block; /* Para o background ficar apenas no texto */
+            font-weight: 500; /* Texto um pouco mais bold */
         }
-
         main {
             max-width: 1200px;
             margin: 0 auto;
@@ -225,7 +230,9 @@
 
             .header-content p {
                 font-size: 1rem;
-                padding: 0 0.5rem;
+                padding: 0.4rem 0.8rem;
+                margin: 0.5rem auto;
+                max-width: 90%; /* Limita a largura em telas pequenas */
             }
 
             main {
