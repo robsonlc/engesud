@@ -25,22 +25,6 @@
             },
             securityLevel: 'loose'
         });
-
-        document.addEventListener('DOMContentLoaded', function() {
-            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-                anchor.addEventListener('click', function (e) {
-                    e.preventDefault();
-                    document.querySelector(this.getAttribute('href')).scrollIntoView({
-                        behavior: 'smooth'
-                    });
-                });
-            });
-
-            // Adiciona lazy loading para imagens e iframes
-            document.querySelectorAll('img, iframe').forEach(el => {
-                el.loading = 'lazy';
-            });
-        });
     </script>
 
     <style>
@@ -50,10 +34,6 @@
             --accent-color: #3498db;
             --text-color: #333;
             --light-gray: #ecf0f1;
-            --gradient-start: #3498db;
-            --gradient-end: #2ecc71;
-            --container-width: min(1200px, 90vw);
-            --section-padding: clamp(1rem, 5vw, 3rem);
         }
 
         * {
@@ -62,123 +42,222 @@
             box-sizing: border-box;
         }
 
-        html {
-            font-size: clamp(14px, 2vw, 16px);
-            scroll-behavior: smooth;
-        }
-
         body {
             font-family: 'Roboto', sans-serif;
             color: var(--text-color);
             line-height: 1.6;
             background-color: #f8f9fa;
-            overflow-x: hidden;
-        }
-
-        img, iframe, object {
-            max-width: 100%;
-            height: auto;
-            display: block;
-            margin: 0 auto;
         }
 
         header {
-            min-height: 50vh;
-            background: linear-gradient(rgba(44, 62, 80, 0.7), rgba(44, 62, 80, 0.9)),
+            height: 300px;
+            background: linear-gradient(rgba(44, 62, 80, 0.8), rgba(44, 62, 80, 0.8)),
                         url('https://i.imgur.com/jCx792u.png') center/cover no-repeat;
-            background-attachment: fixed;
             display: flex;
             align-items: center;
             justify-content: center;
             color: white;
             text-align: center;
-            padding: var(--section-padding);
-        }
-
-        @media (max-width: 768px) {
-            header {
-                background-attachment: scroll;
-                min-height: 40vh;
-            }
+            padding: 2rem;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
         }
 
         .header-content {
-            width: var(--container-width);
-            padding: clamp(1rem, 3vw, 2rem);
+            max-width: 100%;
+            padding: 0 1rem;
         }
 
-        .header-content h1 {
-            font-size: clamp(1.8rem, 5vw, 3.2rem);
-            margin-bottom: 1.5rem;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+         .header-content p {
+            font-size: 1.2rem;
+            color: #9ee5ff; /* Cor azul clara */
+            text-shadow: 1px 1px 3px rgba(0,0,0,0.7); /* Sombra sutil */
+            margin-top: 0.5rem;
+            font-weight: 400;
+            letter-spacing: 0.5px; /* Melhor espaçamento entre letras */
         }
 
-        .header-content p {
-            font-size: clamp(1rem, 3vw, 1.4rem);
-            color: #9ee5ff;
-            text-shadow: 1px 1px 3px rgba(0,0,0,0.7);
-            background-color: rgba(0, 0, 0, 0.3);
-            padding: 1rem;
-            border-radius: 8px;
-            display: inline-block;
+         .header-content p {
+            font-size: 1.2rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.8); /* Sombra mais escura */
+            background-color: rgba(0, 0, 0, 0.4); /* Fundo semi-transparente */
+            padding: 0.5rem 1rem; /* Padding para criar um box ao redor do texto */
+            border-radius: 4px; /* Bordas arredondadas */
+            margin-top: 0.5rem; /* Espaçamento do título */
+            display: inline-block; /* Para o background ficar apenas no texto */
+            font-weight: 500; /* Texto um pouco mais bold */
         }
-
         main {
-            width: var(--container-width);
+            max-width: 1200px;
             margin: 0 auto;
-            padding: var(--section-padding);
+            padding: 2rem;
         }
 
         section {
-            margin-bottom: 4rem;
+            margin-bottom: 3rem;
             background: white;
-            padding: var(--section-padding);
-            border-radius: 16px;
-            box-shadow: 0 8px 16px rgba(0,0,0,0.05);
+            padding: 2.5rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            transition: transform 0.3s ease;
+        }
+
+        section:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 12px rgba(0,0,0,0.1);
+        }
+
+        h2 {
+            color: var(--primary-color);
+            border-bottom: 3px solid var(--accent-color);
+            padding-bottom: 0.8rem;
+            margin-bottom: 1.8rem;
+            font-size: 2rem;
+        }
+
+        h3 {
+            color: var(--secondary-color);
+            margin: 1.8rem 0 1.2rem;
+            font-size: 1.5rem;
+        }
+
+        p {
+            margin-bottom: 1.4rem;
+            line-height: 1.8;
+            color: #444;
+        }
+
+        ul, ol {
+            margin-left: 1.8rem;
+            margin-bottom: 1.8rem;
+        }
+
+        li {
+            margin-bottom: 1rem;
+            color: #444;
         }
 
         .media-section {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(min(300px, 100%), 1fr));
-            gap: 2rem;
-            margin: 3rem 0;
+            gap: 2.5rem;
+            margin: 2.5rem 0;
         }
 
         .media-container {
             background: var(--light-gray);
-            padding: var(--section-padding);
+            padding: 1.5rem;
             border-radius: 12px;
-            transition: transform 0.4s ease;
+            transition: transform 0.3s ease;
         }
 
         .media-container:hover {
-            transform: translateY(-8px);
+            transform: translateY(-5px);
+        }
+
+        .media-container h3 {
+            margin-top: 0;
+        }
+
+        img {
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+
+        img:hover {
+            transform: scale(1.02);
+        }
+
+        iframe {
+            width: 100%;
+            height: 450px;
+            border: none;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+
+        .mermaid {
+            margin: 2.5rem 0;
+            background-color: white;
+            padding: 2rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+            overflow-x: auto;
         }
 
         footer {
             background: var(--primary-color);
             color: white;
-            padding: var(--section-padding);
+            padding: 3rem 2rem;
             text-align: center;
             margin-top: 4rem;
+            box-shadow: 0 -4px 6px rgba(0,0,0,0.1);
         }
 
-        .footer-content {
-            width: var(--container-width);
-            margin: 0 auto;
+        footer img {
+            max-width: 220px;
+            margin-bottom: 1.5rem;
+            filter: brightness(1.1);
         }
 
-        @media (max-width: 480px) {
-            :root {
-                --section-padding: 1rem;
+        footer p {
+            color: white;
+            margin-bottom: 0.8rem;
+        }
+
+        footer a {
+            color: var(--accent-color);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        footer a:hover {
+            color: #5dade2;
+            text-decoration: underline;
+        }
+
+        @media (max-width: 768px) {
+            header {
+                height: auto;
+                min-height: 220px;
+                padding: 2rem 1rem;
             }
-            
+
             .header-content h1 {
                 font-size: 1.8rem;
+                margin-bottom: 0.8rem;
+                word-wrap: break-word;
             }
 
             .header-content p {
                 font-size: 1rem;
+                margin: 0.5rem auto;
+                max-width: 90%;
+            }
+
+            main {
+                padding: 1rem;
+            }
+
+            section {
+                padding: 1.5rem;
+            }
+
+            h2 {
+                font-size: 1.6rem;
+            }
+
+            h3 {
+                font-size: 1.3rem;
+            }
+
+            .media-section {
+                gap: 1.5rem;
+            }
+
+            iframe {
+                height: 300px;
             }
         }
     </style>
@@ -199,18 +278,6 @@
             <p>Esta proposta visa atrair um investidor que adquira os 2 alqueires (em zoneamento ZC3) garantindo segurança e valorização do investimento. Já a área remanescente (9 alqueires em zoneamento ZR2) poderá ser viabilizada em parceria financeira com potencial construtora interessada, totalizando uma negociação na faixa de R$ 18 milhões.</p>
 
             <p>Importante frisar que a <strong>aquisição dos 2 alqueires</strong> está condicionada à aprovação de viabilidade do empreendimento na prefeitura, incluindo protocolos técnicos que assegurem um projeto sólido e rentável. Isso fortalece a segurança tanto para o investidor quanto para o proprietário e a construtora.</p>
-
-            <div class="media-container">
-                <object 
-                    data="https://www.engesudsmart.com.br/lbk/tsr/jacutinga/estr/napkin.svg" 
-                    type="image/svg+xml"
-                    style="width: 100%; height: auto; min-height: 400px;"
-                    aria-label="Oportunidade de Desenvolvimento Imobiliário">
-                    <img src="https://www.engesudsmart.com.br/lbk/tsr/jacutinga/estr/napkin.svg" 
-                         alt="Oportunidade de Desenvolvimento Imobiliário"
-                         style="width: 100%; height: auto;">
-                </object>
-            </div>
         </section>
 
         <section>
@@ -276,76 +343,14 @@
                 <li>Garantias jurídicas para todas as partes, visando segurança patrimonial e comercial.</li>
             </ol>
             <p>Caso a permuta por casas prontas (MCMV) não atenda ao retorno esperado, há possibilidade de explorar melhor o Zoneamento ZC3 em um cenário futuro, seja por meio de projetos verticais (T+3) ou pela venda de lotes comerciais conforme a região se valorize.</p>
-            </section>
-        </main>
+        </section>
+    </main>
 
-        <footer>
-            <img src="https://i.imgur.com/3YKn2xW.png" alt="Logo Engesud" style="max-width: 220px; margin-bottom: 2rem; filter: brightness(1.1);">
-            <div class="footer-content">
-                <p><strong>Engesud Engenharia e Intermediação LTDA</strong></p>
-                <p>Robson Luis da Costa | <a href="https://wa.me/4497013489" target="_blank" rel="noopener noreferrer">+55 (44) 99701-3489</a></p>
-                <p>Última atualização: 30 de dezembro de 2024</p>
-            </div>
-            <style>
-               footer {
-                    background: var(--primary-color);
-                    color: white;
-                    padding: 4rem 2rem;
-                    text-align: center;
-                    margin-top: 4rem;
-                    box-shadow: 0 -4px 6px rgba(0,0,0,0.1);
-                    position: relative;
-                }
-
-                footer::before {
-                    content: '';
-                    position: absolute;
-                    top: 0;
-                    left: 0;
-                    width: 100%;
-                    height: 4px;
-                    background: linear-gradient(90deg, var(--gradient-start), var(--gradient-end));
-                }
-
-                .footer-content {
-                    max-width: 600px;
-                    margin: 0 auto;
-                }
-
-                footer p {
-                    color: white;
-                    margin-bottom: 0.8rem;
-                    font-size: 1.1rem;
-                }
-
-                footer a {
-                    color: var(--accent-color);
-                    text-decoration: none;
-                    transition: color 0.3s ease;
-                    padding: 0.5rem 1rem;
-                    border-radius: 4px;
-                    background-color: rgba(255, 255, 255, 0.1);
-                }
-
-                footer a:hover {
-                    color: #5dade2;
-                    background-color: rgba(255, 255, 255, 0.2);
-                }
-
-                @media (max-width: 768px) {
-                    footer {
-                        padding: 3rem 1rem;
-                    }
-
-                    footer img {
-                        max-width: 180px;
-                    }
-
-                    footer p {
-                        font-size: 1rem;
-                    }
-                }
-            </style>
-        </footer>
-    </body>
+    <footer>
+        <img src="https://i.imgur.com/3YKn2xW.png" alt="Logo Engesud">
+        <p><strong>Engesud Engenharia e Intermediação LTDA</strong></p>
+        <p>Robson Luis da Costa | <a href="https://wa.me/4497013489">+55 (44) 99701-3489</a></p>
+        <p>Última atualização: 29 de dezembro de 2024</p>
+    </footer>
+</body>
 </html>
