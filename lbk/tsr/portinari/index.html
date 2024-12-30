@@ -3,45 +3,194 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="shortcut icon" href="https://i.imgur.com/HjwVm8x.png" type="image/x-icon">
-
-    <title>Em Breve</title>
+    <title>Oportunidade Portinari</title>
+    
+    <meta property="og:title" content="Oportunidade Portinari">
+    <meta property="og:description" content="Negociação de terreno voltada ao programa Minha Casa Minha Vida, com possibilidade de enquadramento via ProZEIS.">
+    <meta property="og:url" content="https://www.engesudsmart.com.br/lbk/tsr/portinari">
+    <meta property="og:image" content="https://i.imgur.com/neknZQw.png">
+    
+    <link rel="shortcut icon" href="https://i.imgur.com/HjwVm8x.png" type="image/x-icon">
+    
     <style>
-        body {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
+        :root {
+            --primary-color: #003366;
+            --secondary-color: #0066cc;
+            --accent-color: #f8f9fa;
+            --text-color: #333;
+        }
+
+        * {
             margin: 0;
-            font-family: Arial, sans-serif;
-            background-color: #f0f0f0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+        }
+
+        header {
+            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), 
+                        url('https://i.imgur.com/Wx5pH5o.png') center/cover no-repeat;
+            height: 300px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 2rem;
+        }
+
+        header h1 {
+            color: white;
+            font-size: 3em;
+            font-weight: 600;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+        }
+
+        .content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 3rem 2rem;
+        }
+
+        h2, h3 {
+            color: var(--primary-color);
+            margin: 2rem 0 1rem;
+        }
+
+        h2 {
+            font-size: 2.2em;
+            border-bottom: 2px solid var(--primary-color);
+            padding-bottom: 0.5rem;
+        }
+
+        h3 {
+            font-size: 1.8em;
+        }
+
+        p {
+            margin-bottom: 1.5rem;
+            font-size: 1.1em;
+        }
+
+        ul {
+            margin: 1rem 0 2rem 2rem;
+        }
+
+        li {
+            margin-bottom: 0.5rem;
+            font-size: 1.1em;
+        }
+
+        .map {
+            margin: 2rem 0;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            border-radius: 8px;
             overflow: hidden;
         }
-        h1 {
-            text-align: center;
-            color: #333;
-            animation: fadeIn 3s ease-in-out infinite alternate;
-        }
-        @keyframes fadeIn {
-            0% { opacity: 0; transform: scale(0.9); }
-            100% { opacity: 1; transform: scale(1.1); }
-        }
-        .stars {
-            position: absolute;
+
+        .map iframe,
+        .map img {
             width: 100%;
-            height: 100%;
-            background: url('https://raw.githubusercontent.com/robsonlc/engesud/main/lbk/tsr/osha/stars.png') repeat;
-            z-index: -1;
-            animation: moveStars 50s linear infinite;
+            max-width: 1000px;
+            display: block;
+            margin: 0 auto;
+            border: none;
         }
-        @keyframes moveStars {
-            from { transform: translateY(0); }
-            to { transform: translateY(-1000px); }
+
+        footer {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 3rem 2rem;
+            text-align: center;
+        }
+
+        footer img {
+            max-width: 200px;
+            margin-bottom: 1.5rem;
+        }
+
+        footer p {
+            margin: 0.5rem 0;
+            font-size: 1em;
+        }
+
+        footer a {
+            color: white;
+            text-decoration: none;
+            border-bottom: 1px solid white;
+        }
+
+        footer a:hover {
+            opacity: 0.8;
+        }
+
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 2em;
+            }
+
+            h2 {
+                font-size: 1.8em;
+            }
+
+            h3 {
+                font-size: 1.5em;
+            }
+
+            .content {
+                padding: 2rem 1rem;
+            }
         }
     </style>
 </head>
 <body>
-    <div class="stars"></div>
-    <h1>Logo entrará no ar</h1>
+    <header>
+        <h1>Oportunidade Portinari</h1>
+    </header>
+    
+    <div class="content">
+        <h2>Sobre o Projeto</h2>
+        <p>
+            Este projeto visa a negociação de um terreno para incorporação imobiliária, 
+            com potencial de enquadramento no <strong>programa ProZEIS</strong> da Prefeitura de Maringá. 
+            O objetivo é viabilizar empreendimentos de habitação social, 
+            alinhados com o <strong>Minha Casa Minha Vida</strong>.
+        </p>
+        
+        <h3>Benefícios do ProZEIS</h3>
+        <ul>
+            <li>Possibilidade de mudança de zoneamento para ZEIS</li>
+            <li>Viabilização de empreendimentos sociais</li>
+            <li>Maior facilidade de aprovação junto aos órgãos municipais</li>
+        </ul>
+        
+        <h3>Localização do Terreno</h3>
+        <div class="map">
+            <iframe src="https://www.google.com/maps/d/embed?mid=1pC3VhzeHk_t3_ebWDEJseA3q-LoiI_c&ehbc=2E312F" width="640" height="480"></iframe>
+        </div>
+        
+        <h3>Proposta de Parceria</h3>
+        <p>
+            Estamos propondo uma parceria financeira junto ao proprietário, 
+            com taxa de aproximadamente <strong>8%</strong>, 
+            contemplando um projeto de <strong>térreo + 7 pavimentos</strong>.
+        </p>
+        
+        <h3>Imagem do Mapa do Terreno</h3>
+        <div class="map">
+            <img src="https://i.imgur.com/TfiEtEF.png" alt="Mapa do Terreno">
+        </div>
+    </div>
+    
+    <footer>
+        <img src="https://i.imgur.com/3YKn2xW.png" alt="Logo Engesud">
+        <p><strong>Engesud Engenharia e Intermediação LTDA</strong></p>
+        <p>Robson Luis da Costa | <a href="https://wa.me/554497013489">+55 (44) 99701-3489</a></p>
+        <p>Última atualização: 30 de dezembro de 2024</p>
+    </footer>
 </body>
 </html>
