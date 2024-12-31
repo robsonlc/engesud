@@ -3,45 +3,374 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="shortcut icon" href="https://i.imgur.com/HjwVm8x.png" type="image/x-icon">
-
-    <title>Em Breve</title>
+    <meta property="og:image" content="https://i.imgur.com/9GV2s5M.png">
+    <title>Apresentação Ortigueira</title>
+    <link rel="shortcut icon" href="https://i.imgur.com/HjwVm8x.png" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
+        :root {
+            --primary-color: #2c5282;
+            --secondary-color: #65a879;
+            --text-color: #2d3748;
+            --light-bg: #f7fafc;
+        }
+
         body {
+            margin: 0;
+            font-family: 'Segoe UI', Arial, sans-serif;
+            color: var(--text-color);
+            line-height: 1.6;
+        }
+
+        header {
+            background: url('https://i.imgur.com/Q8VBJ8g.png') center/cover fixed no-repeat;
+            min-height: 60vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            text-align: center;
+        }
+
+        header::before {
+            content: "";
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.8));
+            z-index: 1;
+        }
+
+        .header-content {
+            position: relative;
+            z-index: 2;
+            color: #fff;
+            max-width: 800px;
+            padding: 20px;
+        }
+
+        header h1 {
+            font-size: 3rem;
+            margin: 0;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+            animation: fadeInDown 1s ease-out;
+        }
+
+        header p {
+            font-size: 1.2rem;
+            margin-top: 20px;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+            animation: fadeInUp 1s ease-out;
+        }
+
+        .content {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        section {
+            margin-bottom: 60px;
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.8s ease-out;
+        }
+
+        section.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        h2 {
+            color: var(--primary-color);
+            font-size: 2rem;
+            margin-bottom: 30px;
+            position: relative;
+            padding-bottom: 10px;
+        }
+
+        h2::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 60px;
+            height: 3px;
+            background-color: var(--secondary-color);
+        }
+
+        .highlight {
+            background: linear-gradient(135deg, #e3f7e9 0%, #f0f9f2 100%);
+            border-radius: 10px;
+            padding: 30px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin: 40px 0;
+        }
+
+        .stat-card {
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            text-align: center;
+            transition: transform 0.3s ease;
+        }
+
+        .stat-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .stat-card i {
+            font-size: 2rem;
+            color: var(--primary-color);
+            margin-bottom: 10px;
+        }
+
+        .stat-number {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: var(--primary-color);
+        }
+
+        iframe {
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+
+        .thumbnail {
+            position: relative;
+            overflow: hidden;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+
+        .thumbnail img {
+            width: 100%;
+            max-width: 600px;
+            transition: transform 0.5s ease;
+        }
+
+        .thumbnail:hover img {
+            transform: scale(1.05);
+        }
+
+        .cta-section {
+            text-align: center;
+            background: linear-gradient(135deg, var(--primary-color) 0%, #1a365d 100%);
+            color: white;
+            padding: 60px 20px;
+            border-radius: 10px;
+            margin: 40px 0;
+        }
+
+        .cta-button {
+            display: inline-block;
+            padding: 15px 30px;
+            background-color: var(--secondary-color);
+            color: white;
+            text-decoration: none;
+            border-radius: 25px;
+            font-weight: bold;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            margin-top: 20px;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+        }
+
+        footer {
+            background: var(--light-bg);
+            padding: 40px 20px;
+            text-align: center;
+        }
+
+        footer img {
+            width: 180px;
+            margin-bottom: 20px;
+        }
+
+        .contact-info {
             display: flex;
             justify-content: center;
             align-items: center;
-            height: 100vh;
-            margin: 0;
-            font-family: Arial, sans-serif;
-            background-color: #f0f0f0;
-            overflow: hidden;
+            gap: 20px;
+            flex-wrap: wrap;
+            margin: 20px 0;
         }
-        h1 {
-            text-align: center;
-            color: #333;
-            animation: fadeIn 3s ease-in-out infinite alternate;
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
         }
-        @keyframes fadeIn {
-            0% { opacity: 0; transform: scale(0.9); }
-            100% { opacity: 1; transform: scale(1.1); }
+
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
-        .stars {
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            background: url('https://raw.githubusercontent.com/robsonlc/engesud/main/lbk/tsr/osha/stars.png') repeat;
-            z-index: -1;
-            animation: moveStars 50s linear infinite;
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
-        @keyframes moveStars {
-            from { transform: translateY(0); }
-            to { transform: translateY(-1000px); }
+
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 2rem;
+            }
+            
+            .stats-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .contact-info {
+                flex-direction: column;
+            }
         }
     </style>
 </head>
 <body>
-    <div class="stars"></div>
-    <h1>Logo entrará no ar</h1>
+
+<header>
+    <div class="header-content">
+        <h1>Projeto de Loteamento em Ortigueira - PR</h1>
+        <p>Uma oportunidade única de investimento no coração do Paraná</p>
+    </div>
+</header>
+
+<div class="content">
+    <section>
+        <h2>Visão Geral</h2>
+        <p>O projeto de loteamento em Ortigueira (PR) representa uma oportunidade excepcional de investimento, oferecendo terrenos de <strong>140 m²</strong> cada, com testada de <strong>7 metros</strong>. Com infraestrutura em andamento, os lotes serão entregues prontos para construção.</p>
+    </section>
+
+    <section class="highlight">
+        <h2>Por que Ortigueira?</h2>
+        <p>Ortigueira está em pleno desenvolvimento, impulsionada por:</p>
+        <div class="stats-grid">
+            <div class="stat-card">
+                <i class="fas fa-industry"></i>
+                <h3>Agronegócio</h3>
+                <p>Forte presença do setor agroindustrial</p>
+            </div>
+            <div class="stat-card">
+                <i class="fas fa-tree"></i>
+                <h3>Reflorestamento</h3>
+                <p>Setor em expansão</p>
+            </div>
+            <div class="stat-card">
+                <i class="fas fa-users"></i>
+                <h3>População</h3>
+                <p>34 mil habitantes</p>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <h2>Resumo do Projeto</h2>
+        <div class="stats-grid">
+            <div class="stat-card">
+                <i class="fas fa-chart-area"></i>
+                <div class="stat-number">150.802 m²</div>
+                <p>Área total</p>
+            </div>
+            <div class="stat-card">
+                <i class="fas fa-home"></i>
+                <div class="stat-number">634</div>
+                <p>Lotes disponíveis</p>
+            </div>
+            <div class="stat-card">
+                <i class="fas fa-tree"></i>
+                <div class="stat-number">3.319 m²</div>
+                <p>Área verde</p>
+            </div>
+            <div class="stat-card">
+                <i class="fas fa-road"></i>
+                <div class="stat-number">38.234 m²</div>
+                <p>Área de ruas e calçadas</p>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <h2>Localização</h2>
+        <iframe 
+            src="https://www.google.com/maps/d/embed?mid=16UnTpcFqdj9Twwse25qmixl9aG-OkVc&ehbc=2E312F"
+            width="100%" height="480" allowfullscreen>
+        </iframe>
+    </section>
+
+    <section>
+        <h2>Projeto Geométrico</h2>
+        <div class="thumbnail">
+            <a href="https://www.engesudsmart.com.br/lbk/tsr/ortig/ORTIGUEIRA.pdf" target="_blank">
+                <img src="https://i.imgur.com/ppin49z.png" alt="Projeto Geométrico do Loteamento">
+            </a>
+        </div>
+    </section>
+
+    <section class="cta-section">
+        <h2>Oportunidade de Parceria</h2>
+        <p>Procuramos construtoras interessadas em parcerias para a produção de casas. O loteamento já conta com obras de infraestrutura em andamento.</p>
+        <a href="https://wa.me/4497013489" class="cta-button" target="_blank">
+            <i class="fab fa-whatsapp"></i> Entre em Contato
+        </a>
+    </section>
+</div>
+
+<footer>
+    <img src="https://i.imgur.com/3YKn2xW.png" alt="Logo Engesud">
+    <h3>Engesud Engenharia e Intermediação LTDA</h3>
+    <div class="contact-info">
+        <div class="contact-item">
+            <i class="fas fa-user"></i>
+            <span>Robson Luis da Costa</span>
+        </div>
+        <div class="contact-item">
+            <i class="fas fa-phone"></i>
+            <a href="https://wa.me/4497013489" target="_blank">+55 (44) 99701-3489</a>
+        </div>
+    </div>
+    <p>Última atualização: Dezembro 2024</p>
+</footer>
+
+<script>
+    // Intersection Observer para animações de scroll
+    const sections = document.querySelectorAll('section');
+    
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
+            }
+        });
+    }, {
+        threshold: 0.1
+    });
+
+    sections.forEach(section => {
+        observer.observe(section);
+    });
+</script>
+
 </body>
 </html>
