@@ -51,6 +51,16 @@
         border-bottom: 3px solid var(--primary-color);
     }
 
+    /* Ajuste de cor do título no header para branco */
+    header h1 {
+        color: #fff;
+        font-size: 2.2rem;
+        border-bottom: 3px solid #fff;
+        padding-bottom: 0.8rem;
+        font-weight: 600;
+        letter-spacing: -0.5px;
+    }
+
     main {
         background: var(--bg-color);
         padding: 2.5rem;
@@ -60,24 +70,11 @@
         max-width: 1200px;
     }
 
-    h1, h2, h3 {
-        color: var(--secondary-color);
-        margin-bottom: 1.5rem;
-        font-weight: 600;
-        letter-spacing: -0.5px;
-    }
-
-    h1 {
-        font-size: 2.2rem;
-        border-bottom: 3px solid var(--primary-color);
-        padding-bottom: 0.8rem;
-        color: var(--primary-color);
-    }
-
     h2 {
         font-size: 1.8rem;
         margin-top: 2.5rem;
         color: var(--primary-color);
+        font-weight: 600;
     }
 
     section {
@@ -87,12 +84,12 @@
         border-radius: 10px;
         box-shadow: 0 2px 4px rgba(0,0,0,0.08);
         border: 1px solid var(--border-color);
+        transition: all 0.3s ease;
     }
 
     section:hover {
         box-shadow: 0 4px 8px rgba(0,0,0,0.12);
         transform: translateY(-2px);
-        transition: all 0.3s ease;
     }
 
     .mapa {
@@ -215,7 +212,7 @@
             border-radius: 8px;
         }
 
-        h1 {
+        header h1 {
             font-size: 1.6rem;
             padding: 0.8rem 0;
         }
@@ -260,7 +257,7 @@
     }
 
     @media (max-width: 480px) {
-        h1 {
+        header h1 {
             font-size: 1.4rem;
         }
 
