@@ -241,16 +241,20 @@
             }
         }
     </style>
-    <script>
-        document.addEventListener("DOMContentLoaded", function() {
-            var footerDate = document.getElementById('footer-date');
-            var today = new Date();
-            var dia = String(today.getDate()).padStart(2, '0');
-            var mes = String(today.getMonth()+1).padStart(2, '0');
-            var ano = today.getFullYear();
-            footerDate.textContent = "Atualizado em " + dia + '/' + mes + '/' + ano;
-        });
-    </script>
+    <!-- 
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        var footerDate = document.getElementById('footer-date');
+        var today = new Date();
+        var dia = String(today.getDate()).padStart(2, '0');
+        var mes = String(today.getMonth()+1).padStart(2, '0');
+        var ano = today.getFullYear();
+        footerDate.textContent = "Atualizado em " + dia + '/' + mes + '/' + ano;
+    });
+</script>
+-->
+
+
 </head>
 <body>
     <header>
@@ -335,12 +339,17 @@
     </div>
 
     <footer>
+    <a href="http://www.engesudsmart.com.br" target="_blank">
         <img src="https://i.imgur.com/3YKn2xW.png" alt="Logo Engesud">
-        <div class="footer-contact">
-            <p><strong>Engesud Engenharia e Intermediação LTDA</strong></p>
-            <p>Robson Luis da Costa | <a href="https://wa.me/4497013489">+55 (44) 99701-3489</a></p>
-            <p id="footer-date"></p>
-        </div>
-    </footer>
+    </a>
+    <div class="footer-contact">
+        <p><strong>Engesud Engenharia e Intermediação LTDA</strong></p>
+        <p>Robson Luis da Costa | <a href="https://wa.me/4497013489">+55 (44) 99701-3489</a></p>
+        <p>www.engesudsmart.com.br</p>
+        <!-- Aqui você insere a data fixa: -->
+        <p id="footer-date">Atualizado em 02 de novembro de 2024</p>
+    </div>
+</footer>
+
 </body>
 </html>
