@@ -127,7 +127,26 @@
         footer a:hover {
             opacity: 0.8;
         }
+.cta-button {
+    display: inline-block;
+    background-color: var(--primary-color);
+    color: white;
+    padding: 1rem 2rem;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 1.2em;
+    margin: 2rem 0;
+    transition: background-color 0.3s ease;
+}
 
+.cta-button:hover {
+    background-color: var(--secondary-color);
+}
+
+.button-container {
+    text-align: center;
+    margin: 3rem 0;
+}
         @media (max-width: 768px) {
             header h1 {
                 font-size: 2em;
@@ -194,7 +213,11 @@
     <img src="https://i.imgur.com/TqWdZkg.png" alt="Levantamento Planialtimétrico do Terreno">
 </div>
     </div>
-    
+    <div class="button-container">
+    <a href="https://www.engesudsmart.com.br/lbk/tsr/portinari/sim" class="cta-button">
+        Ver Sugestão de Proposta
+    </a>
+</div>
    <footer>
         <a href="http://www.engesudsmart.com.br" target="_blank">
             <img src="https://i.imgur.com/3YKn2xW.png" alt="Logo Engesud">
