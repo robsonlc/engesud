@@ -24,8 +24,8 @@
       --primary-blue: #0066cc;
       --light-blue: #e6f3ff;
       --dark-blue: #004d99;
-      --gradient-start: rgba(0, 102, 204, 0.75); /* Reduzido de 0.92 para 0.75 */
-      --gradient-end: rgba(0, 77, 153, 0.70); /* Reduzido de 0.88 para 0.70 */
+      --gradient-start: rgba(0, 102, 204, 0.75);
+      --gradient-end: rgba(0, 77, 153, 0.70);
     }
 
     body {
@@ -57,7 +57,7 @@
         var(--gradient-start) 0%,
         var(--gradient-end) 100%
       );
-      backdrop-filter: blur(2px); /* Reduzido de 3px para 2px */
+      backdrop-filter: blur(2px);
       z-index: 1;
     }
 
@@ -82,6 +82,7 @@
       height: auto;
       filter: drop-shadow(0 6px 8px rgba(0, 0, 0, 0.25));
       transition: all 0.4s ease;
+      border-radius: 15px;
     }
 
     .logo-container img:hover {
@@ -90,11 +91,11 @@
     }
 
     .content-box {
-      background: rgba(255, 255, 255, 0.08); /* Reduzido de 0.12 para 0.08 */
+      background: rgba(255, 255, 255, 0.15);
       padding: 3rem;
       border-radius: 15px;
       box-shadow: 0 10px 40px rgba(0, 77, 153, 0.25);
-      border: 1px solid rgba(255, 255, 255, 0.25);
+      border: 2px solid rgba(255, 255, 255, 0.5);
       max-width: 650px;
       width: 90%;
       backdrop-filter: blur(8px);
@@ -103,6 +104,7 @@
 
     .content-box:hover {
       transform: translateY(-5px);
+      border-color: rgba(255, 255, 255, 0.7);
     }
 
     h1 {
@@ -125,7 +127,7 @@
       font-weight: 300;
       letter-spacing: 0.6px;
       text-align: center;
-      text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2); /* Adicionado para melhorar legibilidade */
+      text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
     }
 
     .contact {
@@ -138,7 +140,8 @@
 
     .contact p {
       margin-bottom: 15px;
-      text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2); /* Adicionado para melhorar legibilidade */
+      color: #ffffff;
+      text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
     }
 
     .contact-button {
@@ -147,7 +150,7 @@
       font-weight: 600;
       background: #ffffff;
       padding: 14px 32px;
-      border-radius: 8px;
+      border-radius: 12px;
       transition: all 0.4s ease;
       display: inline-flex;
       align-items: center;
@@ -156,9 +159,10 @@
     }
 
     .contact-button:hover {
-      background: var(--light-blue);
+      background: #ffffff;
       transform: translateY(-3px);
       box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+      filter: brightness(1.1);
     }
 
     .contact-button i {
