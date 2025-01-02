@@ -19,6 +19,7 @@
         --border-color: #ccc;
         --bg-color: #fff;
         --text-color: #333;
+        --accent-color: #e6f0ff;
         scroll-behavior: smooth;
     }
 
@@ -43,59 +44,76 @@
     }
 
     header {
-        background: linear-gradient(rgba(255,255,255,0.9), rgba(255,255,255,0.9)), 
+        background: linear-gradient(rgba(0,102,204,0.05), rgba(0,102,204,0.1)), 
                     url('https://i.imgur.com/Wx5pH5o.png') center/cover no-repeat;
-        padding: 2rem 0;
-        box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        padding: 3rem 0;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        border-bottom: 3px solid var(--primary-color);
     }
 
     main {
         background: var(--bg-color);
-        padding: 2rem;
+        padding: 2.5rem;
         margin: 2rem auto;
-        border-radius: 8px;
-        box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        border-radius: 12px;
+        box-shadow: 0 4px 6px rgba(0,0,0,0.1);
         max-width: 1200px;
     }
 
     h1, h2, h3 {
         color: var(--secondary-color);
-        margin-bottom: 1rem;
+        margin-bottom: 1.5rem;
         font-weight: 600;
+        letter-spacing: -0.5px;
     }
 
     h1 {
-        font-size: 2rem;
-        border-bottom: 2px solid var(--primary-color);
-        padding-bottom: 0.5rem;
+        font-size: 2.2rem;
+        border-bottom: 3px solid var(--primary-color);
+        padding-bottom: 0.8rem;
+        color: var(--primary-color);
     }
 
     h2 {
-        font-size: 1.5rem;
-        margin-top: 2rem;
+        font-size: 1.8rem;
+        margin-top: 2.5rem;
+        color: var(--primary-color);
     }
 
     section {
-        margin-bottom: 3rem;
-        padding: 1rem;
+        margin-bottom: 3.5rem;
+        padding: 1.5rem;
         background: #fff;
-        border-radius: 6px;
-        box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+        border-radius: 10px;
+        box-shadow: 0 2px 4px rgba(0,0,0,0.08);
+        border: 1px solid var(--border-color);
+    }
+
+    section:hover {
+        box-shadow: 0 4px 8px rgba(0,0,0,0.12);
+        transform: translateY(-2px);
+        transition: all 0.3s ease;
     }
 
     .mapa {
         width: 100%;
         max-width: 100%;
         height: auto;
-        margin: 1.5rem 0;
-        border-radius: 8px;
-        box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        margin: 2rem 0;
+        border-radius: 12px;
+        box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+        transition: transform 0.3s ease;
+    }
+
+    .mapa:hover {
+        transform: scale(1.01);
     }
 
     .tabela-container {
         overflow-x: auto;
-        margin: 1.5rem -1rem;
+        margin: 2rem -1rem;
         padding: 0 1rem;
+        border-radius: 8px;
     }
 
     .tabela-viabilidade {
@@ -104,73 +122,81 @@
         border-collapse: collapse;
         margin: 0;
         background: white;
-        box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+        box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        border-radius: 8px;
+        overflow: hidden;
     }
 
     .tabela-viabilidade th,
     .tabela-viabilidade td {
-        padding: 1rem;
+        padding: 1.2rem;
         text-align: center;
         border: 1px solid var(--border-color);
     }
 
     .tabela-viabilidade th {
-        background: #f0f0f0;
-        color: var(--secondary-color);
+        background: var(--primary-color);
+        color: white;
         font-weight: 600;
     }
 
     .tabela-viabilidade tr:nth-child(even) {
-        background-color: #f8f9fa;
+        background-color: var(--accent-color);
     }
 
     .tabela-viabilidade tr:hover {
-        background-color: #f5f5f5;
+        background-color: #f0f7ff;
     }
 
     .tabela-viabilidade tfoot {
         font-weight: bold;
-        background: #f0f0f0;
+        background: var(--primary-color);
+        color: white;
     }
 
     p {
-        margin-bottom: 1rem;
+        margin-bottom: 1.2rem;
         text-align: justify;
+        font-size: 1.1rem;
+        line-height: 1.8;
     }
 
     strong {
         color: var(--primary-color);
+        font-weight: 600;
     }
 
     footer {
         background: white;
         text-align: center;
-        padding: 2rem 0;
-        margin-top: 3rem;
-        border-top: 1px solid var(--border-color);
-        box-shadow: 0 -2px 4px rgba(0,0,0,0.1);
+        padding: 3rem 0;
+        margin-top: 4rem;
+        border-top: 3px solid var(--primary-color);
+        box-shadow: 0 -2px 8px rgba(0,0,0,0.1);
     }
 
     footer img {
-        max-width: 180px;
+        max-width: 200px;
         height: auto;
-        margin-bottom: 1rem;
+        margin-bottom: 1.5rem;
         transition: transform 0.3s ease;
     }
 
     footer img:hover {
-        transform: scale(1.05);
+        transform: scale(1.08);
     }
 
     footer p {
-        margin: 0.5rem 0;
+        margin: 0.8rem 0;
         text-align: center;
+        color: var(--secondary-color);
     }
 
     a {
         color: var(--primary-color);
         text-decoration: none;
-        transition: color 0.3s ease;
+        transition: all 0.3s ease;
+        font-weight: 500;
     }
 
     a:hover {
@@ -180,57 +206,62 @@
 
     @media (max-width: 768px) {
         .container {
-            padding: 0 10px;
+            padding: 0 15px;
         }
 
         main {
-            padding: 1rem;
-            margin: 1rem 0;
-            border-radius: 4px;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+            border-radius: 8px;
         }
 
         h1 {
-            font-size: 1.4rem;
-            padding: 0.5rem 0;
+            font-size: 1.6rem;
+            padding: 0.8rem 0;
         }
 
         h2 {
-            font-size: 1.2rem;
-            margin-top: 1.5rem;
+            font-size: 1.4rem;
+            margin-top: 2rem;
         }
 
         section {
-            padding: 0.8rem;
-            margin-bottom: 2rem;
+            padding: 1.2rem;
+            margin-bottom: 2.5rem;
         }
 
         .tabela-viabilidade {
-            font-size: 0.85rem;
+            font-size: 0.9rem;
         }
 
         .tabela-viabilidade th,
         .tabela-viabilidade td {
-            padding: 0.5rem 0.3rem;
+            padding: 0.8rem 0.5rem;
         }
 
         .mapa {
-            margin: 1rem -1rem;
-            width: calc(100% + 2rem);
+            margin: 1.5rem -1.5rem;
+            width: calc(100% + 3rem);
             border-radius: 0;
         }
 
         footer {
-            padding: 1.5rem 1rem;
+            padding: 2rem 1.5rem;
         }
 
         footer img {
-            max-width: 150px;
+            max-width: 160px;
+        }
+
+        p {
+            font-size: 1rem;
+            line-height: 1.6;
         }
     }
 
     @media (max-width: 480px) {
         h1 {
-            font-size: 1.2rem;
+            font-size: 1.4rem;
         }
 
         p {
@@ -238,14 +269,14 @@
         }
 
         .tabela-viabilidade {
-            font-size: 0.8rem;
+            font-size: 0.85rem;
         }
 
         footer p {
             font-size: 0.9rem;
         }
     }
-</style>
+    </style>
 </head>
 <body>
     <header>
