@@ -119,17 +119,16 @@
             margin: 2rem 0;
         }
 
-        /* Rodapé revisado */
         footer {
-            background-color: #f8f8f8; /* tom claro para harmonizar */
-            padding: 1.5rem 1rem;      /* redução de espaçamento vertical */
+            background-color: #f8f8f8;
+            padding: 2rem 1rem;
             text-align: center;
         }
 
         .footer-logo {
             max-width: 180px;
             height: auto;
-            margin-bottom: 0.8rem; /* reduzido para compactar */
+            margin-bottom: 1rem;
             transition: transform 0.3s ease;
         }
 
@@ -138,8 +137,8 @@
         }
 
         .contact-info {
-            margin: 0.8rem 0; /* menos espaço entre linhas */
-            line-height: 1.4; /* reduzindo um pouco a altura das linhas */
+            margin: 1rem 0;
+            line-height: 1.4;
         }
 
         .contact-link {
@@ -195,7 +194,7 @@
                 <h2>Sobre o Projeto</h2>
                 <p>Área com protocolo para transformação em ZEIS, conforme o programa ProZEIS da prefeitura municipal de Maringá, com previsão de aprovação no início de 2025.</p>
                 <p>O estudo protocolado prevê a construção de aproximadamente <strong>1.500 apartamentos</strong>, viabilizando edifícios T+6 no padrão do programa Minha Casa Minha Vida (MCMV).</p>
-                <p>As infraestruturas externas <em>não incidentes</em> no empreendimento (como vias públicas, drenagem, etc.) serão custeadas pelo proprietário, que é dono de uma loteadora. Assim, as áreas serão entregues “líquidas” para construção.</p>
+                <p>As infraestruturas externas <em>não incidentes</em> no empreendimento (como vias públicas, drenagem, etc.) serão custeadas pelo proprietário, que é dono de uma loteadora. Assim, as áreas serão entregues "líquidas" para construção.</p>
             </div>
         </section>
 
@@ -211,22 +210,13 @@
     </div>
 
     <footer>
-        <img class="footer-logo" src="https://i.imgur.com/3YKn2xW.png" alt="Logo Engesud">
-        <div class="contact-info">
-            <p><strong>Engesud Engenharia e Intermediação LTDA</strong></p>
-            <p>Robson Luis da Costa</p>
-            <p><a class="contact-link" href="https://wa.me/4497013489" target="_blank" rel="noopener noreferrer">+55 (44) 99701-3489</a></p>
-        </div>
-        <p>Última atualização: <span id="dataAtual"></span></p>
+        <a href="https://www.engesudsmart.com.br" target="_blank">
+            <img class="footer-logo" src="https://i.imgur.com/3YKn2xW.png" alt="Logo Engesud">
+        </a>
+        <p><strong>Engesud Engenharia e Intermediação LTDA</strong></p>
+        <p>Robson Luis da Costa | <a class="contact-link" href="https://wa.me/4497013489" target="_blank">+55 (44) 99701-3489</a></p>
+        <p><a class="contact-link" href="https://www.engesudsmart.com.br" target="_blank">www.engesudsmart.com.br</a></p>
+        <p>Última atualização: 28 de dezembro de 2024</p>
     </footer>
-
-    <script>
-        (function() {
-            const data = new Date();
-            const opcoes = { day: '2-digit', month: 'long', year: 'numeric' };
-            const dataFormatada = data.toLocaleDateString('pt-BR', opcoes);
-            document.getElementById('dataAtual').textContent = dataFormatada;
-        })();
-    </script>
 </body>
 </html>
