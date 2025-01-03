@@ -9,8 +9,8 @@
     <meta property="og:image" content="https://i.imgur.com/OQ1LVey.png">
     <meta property="og:title" content="Proposta de Aquisição: Mademax">
     <meta property="og:description" content="Detalhes da proposta de aquisição simulada para os ativos da Mademax.">
-<!-- Favicon -->
-<link rel="shortcut icon" href="https://i.imgur.com/HjwVm8x.png" type="image/x-icon">
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="https://i.imgur.com/HjwVm8x.png" type="image/x-icon">
     <!-- Marca D’água -->
     <!-- Este conteúdo é protegido por direitos autorais creditados à Engesud Engenharia e Intermediação LTDA, inscrita no CNPJ 40.601.637/0001-58 -->
     <style>
@@ -33,7 +33,7 @@
         }
         header {
             background: url('https://i.imgur.com/ELi1jwv.png') center/cover no-repeat;
-            opacity: 0.9;
+            /* Removido: opacity: 0.9; */
             text-align: center;
             padding: 8rem 0;
             margin-bottom: 30px;
@@ -214,13 +214,13 @@
         <div class="slide highlight">
             <h2>Benefícios da Proposta</h2>
             <ul>
-                <li>**Aquisição Estratégica:** Uma oportunidade única para adquirir ativos valiosos no setor madeireiro, com uma estrutura de pagamento facilitada.</li>
-                <li>**Integração Gradual:** O modelo de transição proposto permite uma integração gradual e eficiente das operações, minimizando riscos e maximizando sinergias.</li>
-                <li>**Financiamento Facilitado:** A estrutura de pagamento em 60 meses torna a aquisição mais acessível e menos onerosa.</li>
-                <li>**Potencial de Valorização:** Investimento em ativos com alto potencial de valorização e retorno no longo prazo.</li>
-                <li>**Transparência e Segurança:** Um processo de aquisição transparente e seguro, com a transferência de propriedade dos ativos alinhada ao progresso dos pagamentos.</li>
-                <li>**Crescimento Sustentável:** Alinhamento com uma empresa que valoriza práticas sustentáveis e responsáveis.</li>
-                <li>**Parceria Estratégica:** Oportunidade de formar uma parceria estratégica com a Engesud, que possui expertise em engenharia e intermediação de negócios.</li>
+                <li><strong>Aquisição Estratégica:</strong> Uma oportunidade única para adquirir ativos valiosos no setor madeireiro, com uma estrutura de pagamento facilitada.</li>
+                <li><strong>Integração Gradual:</strong> O modelo de transição proposto permite uma integração gradual e eficiente das operações, minimizando riscos e maximizando sinergias.</li>
+                <li><strong>Financiamento Facilitado:</strong> A estrutura de pagamento em 60 meses torna a aquisição mais acessível e menos onerosa.</li>
+                <li><strong>Potencial de Valorização:</strong> Investimento em ativos com alto potencial de valorização e retorno no longo prazo.</li>
+                <li><strong>Transparência e Segurança:</strong> Um processo de aquisição transparente e seguro, com a transferência de propriedade dos ativos alinhada ao progresso dos pagamentos.</li>
+                <li><strong>Crescimento Sustentável:</strong> Alinhamento com uma empresa que valoriza práticas sustentáveis e responsáveis.</li>
+                <li><strong>Parceria Estratégica:</strong> Oportunidade de formar uma parceria estratégica com a Engesud, que possui expertise em engenharia e intermediação de negócios.</li>
             </ul>
         </div>
 
@@ -230,13 +230,16 @@
             <a href="index.html" class="button-link">Voltar à Página Inicial</a>
         </div>
     </div>
-       <footer>
-     <a href="http://www.engesudsmart.com.br" target="_blank" title="www.engesudsmart.com.br">    <img src="https://i.imgur.com/3YKn2xW.png" alt="Logo Engesud"> </a> 
+    <footer>
+        <a href="http://www.engesudsmart.com.br" target="_blank" title="www.engesudsmart.com.br">
+            <img src="https://i.imgur.com/3YKn2xW.png" alt="Logo Engesud">
+        </a> 
         <p><strong>Engesud Engenharia e Intermediação LTDA</strong></p>
-        <p>Robson Luis da Costa | <a href="https://wa.me/4497013489" title="Acesse o Whatsapp">+55 (44) 99701-3489</a></p>
-  <p><a href="https://www.engesudsmart.com.br">www.engesudsmart.com.br</a></p> 
- <p>Última atualização: 02 de setembro de 2024 </p>  
-  <!-- Este conteúdo é protegido por direitos autorais creditados à Engesud Engenharia e Intermediação LTDA, inscrita no CNPJ 40.601.637/0001-58 --> </footer>
+        <p>Robson Luis da Costa | <a href="https://wa.me/554499013489" title="Acesse o Whatsapp">+55 (44) 99701-3489</a></p>
+        <p><a href="https://www.engesudsmart.com.br">www.engesudsmart.com.br</a></p> 
+        <p>Última atualização: 02 de setembro de 2024 </p>  
+        <!-- Este conteúdo é protegido por direitos autorais creditados à Engesud Engenharia e Intermediação LTDA, inscrita no CNPJ 40.601.637/0001-58 -->
+    </footer>
 
     <script>
         const assets = [
@@ -248,8 +251,16 @@
             { name: "Adrianópolis", value: 10.00, top: 300 },
             { name: "Serraria", value: 7.76, top: 360 },
             { name: "Indústria - Área física (4,32 HA)", value: 2.50, top: 420 },
-            { name: "Fazenda Água Amarela - Imobilizado (Casas)", value: 0.36, top: 480 }
+            { name: "Fazenda Água Amarela - Imobilizado (Casas)", value: 0.36, top: 480 } // Valor ajustado
         ];
+
+        // Calcular a diferença para ajustar o total para 270 milhões
+        const desiredTotal = 270.00;
+        const currentTotal = assets.reduce((sum, asset) => sum + asset.value, 0);
+        const difference = desiredTotal - currentTotal;
+
+        // Ajustar o último ativo
+        assets[assets.length - 1].value = parseFloat((assets[assets.length - 1].value + difference).toFixed(2));
 
         const totalValue = assets.reduce((sum, asset) => sum + asset.value, 0);
         const monthlyPayment = 4.5;
@@ -294,6 +305,7 @@
 
             if (currentMonth >= totalMonths) {
                 clearInterval(intervalId);
+                intervalId = null; // Permitir reiniciar após completar
             }
         }
 
