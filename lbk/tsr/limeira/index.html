@@ -45,7 +45,18 @@
             color: white;
             text-align: center;
             position: relative;
-            opacity: 0.9;
+            /* Removido opacity para evitar afetar os filhos */
+        }
+
+        header::after {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.5);
+            z-index: 1;
         }
 
         header h1 {
@@ -53,6 +64,8 @@
             font-weight: 700;
             text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
             padding: 0 20px;
+            position: relative;
+            z-index: 2;
         }
 
         .content {
@@ -63,6 +76,7 @@
             box-shadow: var(--box-shadow);
             border-radius: var(--border-radius);
             position: relative;
+            z-index: 1;
         }
 
         h2 {
@@ -92,8 +106,20 @@
             text-align: center;
         }
 
-        iframe, img {
+        .map iframe {
+            width: 100%;
             max-width: 100%;
+            height: 480px;
+            border: none;
+            border-radius: var(--border-radius);
+            box-shadow: var(--box-shadow);
+            margin: 20px 0;
+        }
+
+        .map img {
+            width: 100%;
+            max-width: 600px;
+            height: auto;
             border-radius: var(--border-radius);
             box-shadow: var(--box-shadow);
             margin: 20px 0;
@@ -199,6 +225,11 @@
             color: white;
         }
 
+        footer .contact a {
+            color: white;
+            text-decoration: underline;
+        }
+
         footer .update {
             margin-top: 20px;
             font-size: 0.9rem;
@@ -272,8 +303,8 @@
 
         <div class="map">
             <h2>Localização</h2>
-            <iframe src="https://www.google.com/maps/d/embed?mid=1sIuyZotY2qvFSZdrCQMIfleDlnnx5QU&ehbc=2E312F" width="640" height="480"></iframe>
-            <p><img src="https://i.imgur.com/uS2cxbd.png" alt="Imagem com sugestão de layout da área"></p>
+            <iframe src="https://www.google.com/maps/d/embed?mid=1sIuyZotY2qvFSZdrCQMIfleDlnnx5QU&ehbc=2E312F" allowfullscreen></iframe>
+            <img src="https://i.imgur.com/uS2cxbd.png" alt="Imagem com sugestão de layout da área">
         </div>
 
         <div class="next-steps">
@@ -282,7 +313,7 @@
         </div>
 
         <div class="action-buttons">
-            <a href="https://www3.maringa.pr.gov.br/site/index.php?sessao=422d107f31mg42" target="_blank" class="action-button">
+            <a href="https://www3.maringa.pr.gov.br/site/index.php?sessao=422d107f31mg42" target="_blank" class="action-button" rel="noopener noreferrer">
                 📋 Consultar Normas Técnicas Urbanísticas de Maringá
             </a>
             <a href="https://wa.me/44997013489?text=Vamos%20conversar%20sobre%20este%20assunto" class="action-button">
@@ -292,10 +323,12 @@
     </div>
 
     <footer>
-        <img src="https://i.imgur.com/6z1r7cp.jpeg" alt="Logotipo da Engesud">
+        <a href="http://www.engesudsmart.com.br" target="_blank" rel="noopener noreferrer">
+            <img src="https://i.imgur.com/3YKn2xW.png" alt="Logotipo da Engesud">
+        </a>
         <div class="contact">
-            <p>Robson Luis da Costa - Engenheiro Civil e Corretor de Imóveis - CRECI-PR nº 41.250</p>
-            <p>Contato: +55 (44) 99701-3489</p>
+            <p>Robson Luis da Costa | <a href="https://wa.me/4497013489">+55 (44) 99701-3489</a></p>
+            <p><a href="https://www.engesudsmart.com.br">www.engesudsmart.com.br</a></p> 
         </div>
         <div class="update">Última Atualização: 02/09/2024</div>
     </footer>
