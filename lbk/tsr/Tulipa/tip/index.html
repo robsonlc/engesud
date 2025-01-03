@@ -22,6 +22,10 @@
             --secondary-color: #f8f9fa;
             --text-color: #333;
             --accent-color: #17a2b8;
+            --footer-bg-color: #003d80; /* Cor de fundo mais escura para o rodapé */
+            --footer-text-color: #ffffff; /* Texto branco para melhor contraste */
+            --footer-link-color: #a8d1ff; /* Cor clara para os links */
+            --footer-link-hover-color: #ffffff; /* Cor no hover */
         }
         body {
             font-family: 'Roboto', sans-serif;
@@ -89,8 +93,8 @@
             height: 450px;
         }
         footer {
-            background-color: var(--primary-color);
-            color: white;
+            background-color: var(--footer-bg-color);
+            color: var(--footer-text-color);
             text-align: center;
             padding: 2rem;
             margin-top: 2rem;
@@ -98,6 +102,18 @@
         footer img {
             width: 150px;
             margin: 1rem 0;
+        }
+        footer p {
+            margin: 0.5rem 0;
+        }
+        footer a {
+            color: var(--footer-link-color);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        footer a:hover {
+            color: var(--footer-link-hover-color);
+            text-decoration: underline;
         }
         .cta-button {
             display: inline-block;
@@ -196,6 +212,9 @@
             }
             .section {
                 padding: 1.5rem;
+            }
+            .map {
+                height: 300px;
             }
             table {
                 font-size: 0.8rem;
@@ -310,26 +329,26 @@
 
         <!-- Fluxograma Interativo -->
         <section class="section">
-        <h2>Estrutura da Parceria</h2>
-        <div class="mermaid">
-            graph TD
-                A[Início da Parceria] --> B{Definição de Fases}
-                B --> C[Fase 1]
-                B --> D[Fase 2]
-                B --> E[Fase 3]
-                C --> F[Pagamentos Iniciais]
-                C --> G[Pagamentos ao Longo das Vendas]
-                D --> H[Pagamentos Iniciais]
-                D --> I[Pagamentos ao Longo das Vendas]
-                E --> J[Pagamentos Iniciais]
-                E --> K[Pagamentos ao Longo das Vendas]
-                F --> L[Total de Pagamentos Iniciais]
-                G --> M[Total de Pagamentos ao Longo das Vendas]
-                L --> N[Permuta Total]
-                M --> N
-                N --> O[Projeção do Preço do Terreno]
-        </div>
-    </section>
+            <h2>Estrutura da Parceria</h2>
+            <div class="mermaid">
+                graph TD
+                    A[Início da Parceria] --> B{Definição de Fases}
+                    B --> C[Fase 1]
+                    B --> D[Fase 2]
+                    B --> E[Fase 3]
+                    C --> F[Pagamentos Iniciais]
+                    C --> G[Pagamentos ao Longo das Vendas]
+                    D --> H[Pagamentos Iniciais]
+                    D --> I[Pagamentos ao Longo das Vendas]
+                    E --> J[Pagamentos Iniciais]
+                    E --> K[Pagamentos ao Longo das Vendas]
+                    F --> L[Total de Pagamentos Iniciais]
+                    G --> M[Total de Pagamentos ao Longo das Vendas]
+                    L --> N[Permuta Total]
+                    M --> N
+                    N --> O[Projeção do Preço do Terreno]
+            </div>
+        </section>
 
         <!-- Botão para a Página de Simulação -->
         <section class="section">
@@ -367,13 +386,15 @@
         </section>
     </div>
 
-  <footer>
-     <a href="http://www.engesudsmart.com.br" target="_blank" title="www.engesudsmart.com.br">    <img src="https://i.imgur.com/3YKn2xW.png" alt="Logo Engesud"> </a> 
+    <footer>
+        <a href="http://www.engesudsmart.com.br" target="_blank" title="www.engesudsmart.com.br">
+            <img src="https://i.imgur.com/3YKn2xW.png" alt="Logo Engesud">
+        </a> 
         <p><strong>Engesud Engenharia e Intermediação LTDA</strong></p>
-        <p>Robson Luis da Costa | <a href="https://wa.me/4497013489" title="Whatsapp">+55 (44) 99701-3489</a></p>
-  <p><a href="https://www.engesudsmart.com.br">www.engesudsmart.com.br</a></p> 
- <p>Última atualização: 02 de dezembro de 2024 </p>  
- </footer>
-  <!-- Este conteúdo é protegido por direitos autorais creditados à Engesud Engenharia e Intermediação LTDA, inscrita no CNPJ 40.601.637/0001-58 --> 
+        <p>Robson Luis da Costa | <a href="tel:+5544997013489" title="Ligue para Robson">+55 (44) 99701-3489</a></p>
+        <p><a href="https://www.engesudsmart.com.br" title="Visite nosso site">www.engesudsmart.com.br</a></p> 
+        <p>Última atualização: 02 de dezembro de 2024</p>  
+    </footer>
+    <!-- Este conteúdo é protegido por direitos autorais creditados à Engesud Engenharia e Intermediação LTDA, inscrita no CNPJ 40.601.637/0001-58 --> 
 </body>
 </html>
