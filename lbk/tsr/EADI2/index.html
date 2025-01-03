@@ -1,328 +1,79 @@
-<!DOCTYPE html>
-<html lang="pt-BR">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Proposta de Aproveitamento - Antiga EADI</title>
-    
-    <meta property="og:title" content="Proposta - Antiga EADI">
-    <meta property="og:description" content="Proposta de aproveitamento da área da antiga EADI de Maringá">
-    <meta property="og:image" content="https://i.imgur.com/alSaScf.png">
-    <meta property="og:image:width" content="800">
-    <meta property="og:image:height" content="800">
-    <meta property="og:url" content="https://www.engesudsmart.com.br/lbk/tsr/EADI2">
-    <meta property="og:type" content="website">
-    <meta property="og:site_name" content="Engesud Smart">
-    
-    <link rel="shortcut icon" href="https://i.imgur.com/ZQ2U8eO.png" type="image/x-icon">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
-
-    <style>
-        :root {
-            --primary-color: #1a73e8;
-            --secondary-color: #202124;
-            --accent-color: #fbbc04;
-            --background-color: #f8f9fa;
-            --text-color: #202124;
-            --shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-            --transition: all 0.3s ease;
-        }
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: 'Montserrat', sans-serif;
-            color: var(--text-color);
-            background-color: var(--background-color);
-            line-height: 1.8;
-        }
-
-        header {
-            background: linear-gradient(rgba(26, 115, 232, 0.8), rgba(26, 115, 232, 0.8)), 
-                        url('https://i.imgur.com/RCzrEuR.png') center/cover no-repeat;
-            height: 400px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-            position: relative;
-        }
-
-        header h1 {
-            color: #ffffff;
-            font-size: 3.5rem;
-            font-weight: 700;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
-            max-width: 800px;
-            padding: 2rem;
-            background: rgba(0, 0, 0, 0.2);
-            border-radius: 15px;
-            backdrop-filter: blur(5px);
-        }
-
-        .container {
-            max-width: 1200px;
-            width: 90%;
-            margin: -60px auto 2rem;
-            padding: 2rem;
-            background-color: #fff;
-            box-shadow: var(--shadow);
-            border-radius: 20px;
-            position: relative;
-        }
-
-        h2 {
-            color: var(--primary-color);
-            font-size: 2rem;
-            margin: 2rem 0 1rem;
-            padding-bottom: 0.5rem;
-            border-bottom: 3px solid var(--accent-color);
-        }
-
-        h3 {
-            color: var(--secondary-color);
-            font-size: 1.5rem;
-            margin: 2rem 0 1rem;
-        }
-
-        p, li {
-            font-size: 1.1rem;
-            margin-bottom: 1rem;
-            color: #5f6368;
-        }
-
-        .table-container {
-            overflow-x: auto;
-            margin: 2rem 0;
-        }
-
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            background: white;
-            box-shadow: var(--shadow);
-            border-radius: 10px;
-            overflow: hidden;
-        }
-
-        th {
-            background-color: var(--primary-color);
-            color: white;
-            font-weight: 600;
-            padding: 1rem;
-            text-align: left;
-        }
-
-        td {
-            padding: 1rem;
-            border-bottom: 1px solid #e0e0e0;
-        }
-
-        tr:last-child td {
-            border-bottom: none;
-        }
-
-        tr:hover {
-            background-color: #f5f5f5;
-            transition: var(--transition);
-        }
-
-        .map-container {
-            margin: 2rem 0;
-            border-radius: 15px;
-            overflow: hidden;
-            box-shadow: var(--shadow);
-        }
-
-        iframe {
-            width: 100%;
-            height: 500px;
-            border: none;
-        }
-
-        .croqui-img {
-            width: 100%;
-            height: auto;
-            border-radius: 15px;
-            box-shadow: var(--shadow);
-            margin: 2rem 0;
-            transition: var(--transition);
-        }
-
-        .croqui-img:hover {
-            transform: scale(1.01);
-        }
-
-        footer {
-            background-color: var(--secondary-color);
-            color: white;
-            padding: 3rem 0;
-            text-align: center;
-            margin-top: 4rem;
-        }
-
-        footer img {
-            width: 180px;
-            margin-bottom: 1.5rem;
-            transition: var(--transition);
-        }
-
-        footer img:hover {
-            transform: scale(1.05);
-        }
-
-        footer p {
-            color: #ffffff;
-            margin: 0.5rem 0;
-            font-size: 1rem;
-        }
-
-        footer a {
-            color: var(--accent-color);
-            text-decoration: none;
-            transition: var(--transition);
-        }
-
-        footer a:hover {
-            color: #ffffff;
-        }
-
-        .highlight {
-            background-color: #fff3e0;
-            padding: 2px 5px;
-            border-radius: 4px;
-            font-weight: 500;
-        }
-
-        @media (max-width: 768px) {
-            header h1 {
-                font-size: 2rem;
-                padding: 1rem;
-            }
-
-            .container {
-                width: 95%;
-                padding: 1rem;
-                margin-top: -40px;
-            }
-
-            h2 {
-                font-size: 1.5rem;
-            }
-
-            h3 {
-                font-size: 1.2rem;
-            }
-
-            p, li {
-                font-size: 1rem;
-            }
-
-            table {
-                font-size: 0.9rem;
-            }
-
-            td, th {
-                padding: 0.75rem;
-            }
-        }
-    </style>
-</head>
 <body>
     <header>
         <h1>Proposta de Aproveitamento - Antiga EADI</h1>
     </header>
-
     <div class="container">
-        <h2>Detalhes da Proposta</h2>
-        <p>Esta apresentação visa oferecer uma proposta de aproveitamento da área comercial e residencial da antiga EADI de Maringá. O objetivo é atrair desenvolvedores interessados em projetos de maior valor agregado do que o programa Minha Casa Minha Vida, mas sem pretensões de alto padrão, considerando o contexto da região.</p>
-        
-        <p>A área está localizada em uma região estratégica, próxima a importantes estruturas públicas de serviços, como o <strong>CMEI</strong>, o <strong>CEEP</strong> e a <strong>UBS Olímpico</strong>, o que agrega valor ao empreendimento e atende às demandas da comunidade local.</p>
-        
-        <p>O conceito proposto oferece flexibilidade para o desenvolvedor explorar diferentes possibilidades de aproveitamento do terreno, seja para empreendimentos residenciais, comerciais ou uma combinação de ambos. O croqui sugerido abaixo é uma referência que pode ser adaptada conforme a criatividade e os estudos de viabilidade do desenvolvedor.</p>
-
-        <h3>Proposta Financeira</h3>
-        <p>Considerando o potencial da região e visando atender às expectativas do proprietário, são sugeridos os seguintes valores:</p>
-        
-        <!-- Tabela de Valores Atualizada -->
-        <table>
-            <tr>
-                <th>Descrição</th>
-                <th>Lotes Comerciais</th>
-                <th>Área Residencial</th>
-                <th>Área Total</th>
-            </tr>
-            <tr>
-                <td>Área (m²)</td>
-                <td>6.500</td>
-                <td>15.800</td>
-                <td>22.300</td>
-            </tr>
-            <tr>
-                <td>Valor por m²</td>
-                <td>R$ 1.500,00</td>
-                <td>R$ 1.000,00</td>
-                <td>R$ 1.134,08 (média)</td>
-            </tr>
-            <tr>
-                <td>Valor Total</td>
-                <td>R$ 9.750.000,00</td>
-                <td>R$ 15.800.000,00</td>
-                <td>R$ 25.550.000,00</td>
-            </tr>
-        </table>
-        <p>Os valores de <strong>R$ 1.500,00/m²</strong> na área comercial e <strong>R$ 1.000,00/m²</strong> na área residencial buscam tornar a proposta atrativa para ambas as partes.</p>
-
-        <p>A proposta é flexível quanto à distribuição das áreas comerciais e residenciais, permitindo ao desenvolvedor ajustar o projeto conforme estudos de mercado e demandas específicas. A possibilidade de desenvolver empreendimentos residenciais com unidades de maior valor agregado, como as enquadradas na <strong>Faixa 3</strong> do programa habitacional (com valor de até R$ 350.000,00 por unidade), pode viabilizar um retorno financeiro atrativo.</p>
-
-        <h3>Vantagens da Localização</h3>
-        <ul>
-            <li><strong>Infraestrutura Pública:</strong> Proximidade com o CMEI, CEEP e UBS Olímpico, oferecendo serviços essenciais à comunidade.</li>
-            <li><strong>Acessibilidade:</strong> Fácil acesso a vias principais e transporte público.</li>
-            <li><strong>Potencial de Desenvolvimento:</strong> Região com perspectiva de crescimento e valorização imobiliária.</li>
-        </ul>
-
-        <h3>Oportunidades de Desenvolvimento</h3>
-        <p>O terreno oferece diversas possibilidades de empreendimentos que podem ser explorados pelo desenvolvedor:</p>
-        <ul>
-            <li><strong>Empreendimentos Residenciais:</strong> Projetos com unidades voltadas para a classe média, atendendo à demanda por habitações de qualidade a preços acessíveis.</li>
-            <li><strong>Empreendimentos Comerciais:</strong> Desenvolvimento de áreas comerciais para atender às necessidades locais, como lojas, serviços e escritórios.</li>
-            <li><strong>Empreendimentos Mistos:</strong> Combinação de áreas residenciais e comerciais, potencializando o uso do terreno e diversificando as fontes de renda.</li>
-        </ul>
-
-        <h3>Flexibilidade e Criatividade</h3>
-        <p>A proposta permite diferentes abordagens para o aproveitamento do terreno. O desenvolvedor pode redefinir as proporções entre áreas residenciais e comerciais, bem como propor novos conceitos que se adequem ao perfil da região e às tendências de mercado.</p>
-
-        <h3>Próximos Passos</h3>
-        <p>Interessados estão convidados a entrar em contato para discutir em detalhe as possibilidades e alinhar as expectativas. Informações adicionais podem ser fornecidas para colaborar na busca pela melhor solução para o aproveitamento deste importante terreno.</p>
-
-        <!-- Mapa do Google -->
-        <h2>Localização da Área</h2>
-        <div class="map-container">
-            <iframe src="https://www.google.com/maps/d/embed?mid=1jS4u9qA3f4oloWpxJxEwERFtV-iN2x4&ehbc=2E312F" allowfullscreen></iframe>
+        <div class="info-card">
+            <h2>Detalhes da Proposta</h2>
+            <p>Esta apresentação visa oferecer uma proposta de aproveitamento da área comercial e residencial da antiga EADI de Maringá. O objetivo é atrair desenvolvedores interessados em projetos de maior valor agregado do que o programa Minha Casa Minha Vida, mas sem pretensões de alto padrão, considerando o contexto da região.</p>
+            
+            <p>A área está localizada em uma região estratégica, próxima a importantes estruturas públicas de serviços, como o <strong>CMEI</strong>, o <strong>CEEP</strong> e a <strong>UBS Olímpico</strong>, o que agrega valor ao empreendimento e atende às demandas da comunidade local.</p>
         </div>
 
-        <!-- Croqui da Área -->
-        <h2>Croqui Conceitual</h2>
-        <img src="https://i.imgur.com/m5Y7izd.png" alt="Croqui da Antiga EADI" class="croqui-img">
+        <div class="grid-container">
+            <div class="info-card">
+                <h3>Proposta Financeira</h3>
+                <div class="table-container">
+                    <table>
+                        <tr>
+                            <th>Descrição</th>
+                            <th>Lotes Comerciais</th>
+                            <th>Área Residencial</th>
+                            <th>Área Total</th>
+                        </tr>
+                        <tr>
+                            <td>Área (m²)</td>
+                            <td>6.500</td>
+                            <td>15.800</td>
+                            <td>22.300</td>
+                        </tr>
+                        <tr>
+                            <td>Valor por m²</td>
+                            <td>R$ 1.500,00</td>
+                            <td>R$ 1.000,00</td>
+                            <td>R$ 1.134,08 (média)</td>
+                        </tr>
+                        <tr>
+                            <td>Valor Total</td>
+                            <td>R$ 9.750.000,00</td>
+                            <td>R$ 15.800.000,00</td>
+                            <td>R$ 25.550.000,00</td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
 
+            <div class="info-card">
+                <h3>Vantagens da Localização</h3>
+                <ul>
+                    <li><strong>Infraestrutura Pública:</strong> Proximidade com o CMEI, CEEP e UBS Olímpico</li>
+                    <li><strong>Acessibilidade:</strong> Fácil acesso a vias principais</li>
+                    <li><strong>Potencial de Desenvolvimento:</strong> Região em crescimento</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="info-card">
+            <h2>Localização da Área</h2>
+            <div class="map-container">
+                <iframe src="https://www.google.com/maps/d/embed?mid=1jS4u9qA3f4oloWpxJxEwERFtV-iN2x4&ehbc=2E312F" allowfullscreen></iframe>
+            </div>
+        </div>
+
+        <div class="info-card">
+            <h2>Croqui Conceitual</h2>
+            <img src="https://i.imgur.com/m5Y7izd.png" alt="Croqui da Antiga EADI" class="croqui-img">
+        </div>
     </div>
 
     <footer>
-     <a href="http://www.engesudsmart.com.br" target="_blank" title="www.engesudsmart.com.br">    <img src="https://i.imgur.com/3YKn2xW.png" alt="Logo Engesud"> </a> 
-
+        <a href="http://www.engesudsmart.com.br" target="_blank" title="www.engesudsmart.com.br">
+            <img src="https://i.imgur.com/3YKn2xW.png" alt="Logo Engesud">
+        </a>
         <p><strong>Engesud Engenharia e Intermediação LTDA</strong></p>
         <p>Robson Luis da Costa | <a href="https://wa.me/4497013489" title="Acesse o Whatsapp">+55 (44) 99701-3489</a></p>
-  <p><a href="https://www.engesudsmart.com.br">www.engesudsmart.com.br</a></p> 
- <p>Última atualização: 06 de junho de 2024 </p> 
- 
-  <!-- Este conteúdo é protegido por direitos autorais creditados à Engesud Engenharia e Intermediação LTDA, inscrita no CNPJ 40.601.637/0001-58 --> </footer>
-
+        <p><a href="https://www.engesudsmart.com.br">www.engesudsmart.com.br</a></p>
+        <p>Última atualização: 06 de junho de 2024</p>
+        <!-- Este conteúdo é protegido por direitos autorais creditados à Engesud Engenharia e Intermediação LTDA, inscrita no CNPJ 40.601.637/0001-58 -->
+    </footer>
 </body>
-</html>
