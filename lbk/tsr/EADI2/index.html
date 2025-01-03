@@ -1,3 +1,288 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Proposta de Aproveitamento - Antiga EADI</title>
+    
+    <meta property="og:title" content="Proposta - Antiga EADI">
+    <meta property="og:description" content="Proposta de aproveitamento da área da antiga EADI de Maringá">
+    <meta property="og:image" content="https://i.imgur.com/alSaScf.png">
+    <meta property="og:image:width" content="800">
+    <meta property="og:image:height" content="800">
+    <meta property="og:url" content="https://www.engesudsmart.com.br/lbk/tsr/EADI2">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Engesud Smart">
+    
+    <link rel="shortcut icon" href="https://i.imgur.com/ZQ2U8eO.png" type="image/x-icon">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --primary-color: #2563eb;
+            --primary-light: #3b82f6;
+            --primary-dark: #1d4ed8;
+            --secondary-color: #1e293b;
+            --accent-color: #f59e0b;
+            --background-color: #f8fafc;
+            --card-background: #ffffff;
+            --text-color: #334155;
+            --text-light: #64748b;
+            --shadow-sm: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+            --shadow-md: 0 4px 6px -1px rgba(0,0,0,0.1), 0 2px 4px -2px rgba(0,0,0,0.1);
+            --shadow-lg: 0 10px 15px -3px rgba(0,0,0,0.1), 0 4px 6px -4px rgba(0,0,0,0.1);
+            --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            --container-padding: clamp(1.5rem, 5vw, 2.5rem);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            color: var(--text-color);
+            background-color: var(--background-color);
+            line-height: 1.7;
+        }
+
+        header {
+            background: linear-gradient(rgba(37, 99, 235, 0.9), rgba(29, 78, 216, 0.9)),
+                        url('https://i.imgur.com/RCzrEuR.png') center/cover no-repeat fixed;
+            min-height: 60vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: var(--container-padding);
+        }
+
+        header h1 {
+            font-family: 'Montserrat', sans-serif;
+            color: #ffffff;
+            font-size: clamp(2rem, 5vw, 3.5rem);
+            font-weight: 700;
+            max-width: 900px;
+            padding: 2rem;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 20px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: -80px auto 3rem;
+            padding: 0 var(--container-padding);
+            position: relative;
+        }
+
+        .info-card {
+            background: var(--card-background);
+            border-radius: 20px;
+            padding: clamp(1.5rem, 4vw, 2.5rem);
+            margin-bottom: 2rem;
+            box-shadow: var(--shadow-md);
+            border: 1px solid rgba(0,0,0,0.1);
+            transition: var(--transition);
+        }
+
+        .info-card:hover {
+            box-shadow: var(--shadow-lg);
+            transform: translateY(-5px);
+        }
+
+        h2 {
+            font-family: 'Montserrat', sans-serif;
+            color: var(--primary-color);
+            font-size: clamp(1.5rem, 3vw, 2.25rem);
+            margin-bottom: 1.5rem;
+            position: relative;
+            padding-bottom: 0.5rem;
+        }
+
+        h2::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 60px;
+            height: 4px;
+            background: var(--accent-color);
+            border-radius: 2px;
+        }
+
+        h3 {
+            font-family: 'Montserrat', sans-serif;
+            color: var(--secondary-color);
+            font-size: clamp(1.25rem, 2.5vw, 1.75rem);
+            margin-bottom: 1rem;
+        }
+
+        p, li {
+            color: var(--text-light);
+            font-size: clamp(1rem, 1.5vw, 1.125rem);
+            margin-bottom: 1rem;
+        }
+
+        .grid-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+
+        .table-container {
+            overflow-x: auto;
+            margin: 1.5rem 0;
+            border-radius: 15px;
+            box-shadow: var(--shadow-sm);
+        }
+
+        table {
+            width: 100%;
+            min-width: 600px;
+            border-collapse: collapse;
+            background: white;
+        }
+
+        th {
+            background-color: var(--primary-color);
+            color: white;
+            font-weight: 600;
+            padding: 1rem 1.5rem;
+            text-align: left;
+            font-size: 0.95rem;
+        }
+
+        td {
+            padding: 1rem 1.5rem;
+            border-bottom: 1px solid #e2e8f0;
+            color: var(--text-light);
+        }
+
+        tr:last-child td {
+            border-bottom: none;
+        }
+
+        tr:hover td {
+            background-color: #f8fafc;
+        }
+
+        .map-container {
+            border-radius: 15px;
+            overflow: hidden;
+            position: relative;
+            padding-top: 56.25%;
+            box-shadow: var(--shadow-md);
+        }
+
+        iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+
+        .croqui-img {
+            width: 100%;
+            height: auto;
+            border-radius: 15px;
+            box-shadow: var(--shadow-md);
+            transition: var(--transition);
+        }
+
+        .croqui-img:hover {
+            transform: scale(1.02);
+        }
+
+        ul {
+            list-style-type: none;
+            padding-left: 0;
+        }
+
+        ul li {
+            padding-left: 1.5rem;
+            position: relative;
+            margin-bottom: 0.75rem;
+        }
+
+        ul li::before {
+            content: '•';
+            color: var(--primary-color);
+            font-weight: bold;
+            position: absolute;
+            left: 0;
+        }
+
+        footer {
+            background-color: var(--secondary-color);
+            color: white;
+            padding: 3rem var(--container-padding);
+            text-align: center;
+            margin-top: 4rem;
+        }
+
+        footer img {
+            width: clamp(140px, 20vw, 200px);
+            margin-bottom: 2rem;
+            transition: var(--transition);
+        }
+
+        footer p {
+            color: #e2e8f0;
+            margin: 0.5rem 0;
+            font-size: 0.95rem;
+        }
+
+        footer a {
+            color: var(--accent-color);
+            text-decoration: none;
+            transition: var(--transition);
+            padding: 0.25rem 0.5rem;
+        }
+
+        footer a:hover {
+            color: white;
+            text-decoration: underline;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                margin-top: -40px;
+            }
+
+            .info-card {
+                padding: 1.5rem;
+            }
+
+            .grid-container {
+                gap: 1rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            header {
+                min-height: 50vh;
+            }
+
+            header h1 {
+                font-size: 1.75rem;
+                padding: 1.5rem;
+            }
+
+            .container {
+                padding: 0 1rem;
+            }
+        }
+    </style>
+</head>
 <body>
     <header>
         <h1>Proposta de Aproveitamento - Antiga EADI</h1>
@@ -77,3 +362,4 @@
         <!-- Este conteúdo é protegido por direitos autorais creditados à Engesud Engenharia e Intermediação LTDA, inscrita no CNPJ 40.601.637/0001-58 -->
     </footer>
 </body>
+</html>
