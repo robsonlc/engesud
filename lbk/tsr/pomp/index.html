@@ -1,47 +1,297 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="shortcut icon" href="https://i.imgur.com/HjwVm8x.png" type="image/x-icon">
-
-    <title>Em Breve</title>
+    <title>Projeto de Loteamento Jardim Pompeu</title>
+    <link rel="shortcut icon" href="https://i.imgur.com/HjwVm8x.png" type="image/x-icon">
     <style>
-        body {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
+        * {
             margin: 0;
-            font-family: Arial, sans-serif;
-            background-color: #f0f0f0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            background-color: #f5f5f5;
+        }
+
+        header {
+            position: relative;
+            height: 400px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
             overflow: hidden;
         }
-        h1 {
-            text-align: center;
-            color: #333;
-            animation: fadeIn 3s ease-in-out infinite alternate;
-        }
-        @keyframes fadeIn {
-            0% { opacity: 0; transform: scale(0.9); }
-            100% { opacity: 1; transform: scale(1.1); }
-        }
-        .stars {
+
+        .header-bg {
             position: absolute;
+            top: 0;
+            left: 0;
             width: 100%;
             height: 100%;
-            background: url('https://raw.githubusercontent.com/robsonlc/engesud/main/lbk/tsr/osha/stars.png') repeat;
-            z-index: -1;
-            animation: moveStars 50s linear infinite;
+            background: url('https://i.imgur.com/ShmJ3MC.png') center/cover no-repeat;
+            filter: brightness(0.7);
+            z-index: 1;
         }
-        @keyframes moveStars {
-            from { transform: translateY(0); }
-            to { transform: translateY(-1000px); }
+
+        header h1 {
+            position: relative;
+            color: #fff;
+            font-size: 3rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+            z-index: 2;
+            padding: 0 20px;
+        }
+
+        main {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: -50px;
+            position: relative;
+            z-index: 3;
+        }
+
+        .feature-card {
+            background: #fff;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+        }
+
+        .feature-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+
+        .feature-card:hover img {
+            transform: scale(1.05);
+        }
+
+        .card-content {
+            padding: 1.5rem;
+        }
+
+        .card-content h2 {
+            color: #333;
+            margin-bottom: 1rem;
+            font-size: 1.5rem;
+        }
+
+        .card-content p {
+            color: #666;
+            margin-bottom: 1.5rem;
+        }
+
+        .card-content a {
+            display: inline-block;
+            padding: 0.8rem 1.5rem;
+            background: #2c3e50;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 25px;
+            transition: background 0.3s ease;
+        }
+
+        .card-content a:hover {
+            background: #34495e;
+        }
+
+        .map {
+            margin-top: 4rem;
+            background: #fff;
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+
+        .map h2 {
+            text-align: center;
+            color: #333;
+            margin-bottom: 2rem;
+            font-size: 2rem;
+        }
+
+        .map iframe {
+            width: 100%;
+            height: 480px;
+            border-radius: 10px;
+        }
+
+        footer {
+            background: #2c3e50;
+            color: #fff;
+            padding: 3rem 0;
+            margin-top: 4rem;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            text-align: center;
+            padding: 0 2rem;
+        }
+
+        footer img {
+            width: 200px;
+            margin-bottom: 1.5rem;
+            border-radius: 10px;
+            transition: transform 0.3s ease;
+        }
+
+        footer img:hover {
+            transform: scale(1.05);
+        }
+
+        footer a {
+            color: #fff;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        footer a:hover {
+            color: #3498db;
+        }
+
+        footer p {
+            margin: 0.5rem 0;
+        }
+
+        @media (max-width: 768px) {
+            header {
+                height: 300px;
+            }
+
+            header h1 {
+                font-size: 2rem;
+            }
+
+            .features {
+                margin-top: -30px;
+            }
+
+            .map iframe {
+                height: 300px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            header {
+                height: 200px;
+            }
+
+            header h1 {
+                font-size: 1.5rem;
+            }
+
+            .card-content {
+                padding: 1rem;
+            }
+
+            .map iframe {
+                height: 250px;
+            }
+        }
+
+        .animate-fade-up {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+        }
+
+        .animate-fade-up.visible {
+            opacity: 1;
+            transform: translateY(0);
         }
     </style>
 </head>
 <body>
-    <div class="stars"></div>
-    <h1>Logo entrará no ar</h1>
+    <header>
+        <div class="header-bg"></div>
+        <h1>Projeto de Loteamento Jardim Pompeu</h1>
+    </header>
+    <main>
+        <section class="features">
+            <div class="feature-card animate-fade-up">
+                <img src="https://i.imgur.com/IgcQDf1.png" alt="Projeto Geométrico">
+                <div class="card-content">
+                    <h2>Projeto Geométrico Aprovado</h2>
+                    <p>Visualize o projeto aprovado para o loteamento Jardim Pompeu.</p>
+                    <a href="https://www.engesudsmart.com.br/lbk/tsr/pomp/projeto.pdf" target="_blank">Baixar PDF</a>
+                </div>
+            </div>
+            <div class="feature-card animate-fade-up">
+                <img src="https://i.imgur.com/dtlogtZ.png" alt="Relatório EIV">
+                <div class="card-content">
+                    <h2>Relatório EIV</h2>
+                    <p>Consulte o Estudo de Impacto de Vizinhança para mais detalhes.</p>
+                    <a href="https://www.engesudsmart.com.br/lbk/tsr/pomp/EIV.pdf" target="_blank">Baixar PDF</a>
+                </div>
+            </div>
+            <div class="feature-card animate-fade-up">
+                <img src="https://i.imgur.com/3jMknXT.png" alt="Sugestão de Quadra">
+                <div class="card-content">
+                    <h2>Sugestão de Quadra</h2>
+                    <p>Veja a sugestão de quadra potencial para negociação e desenvolvimento.</p>
+                    <a href="https://i.imgur.com/3jMknXT.png" target="_blank">Visualizar Imagem</a>
+                </div>
+            </div>
+        </section>
+        <section class="map animate-fade-up">
+            <h2>Localização</h2>
+            <iframe src="https://www.google.com/maps/d/embed?mid=17_fTE-HDZCI9dF51KJ2dlk0NutkNK9A&ehbc=2E312F"></iframe>
+        </section>
+    </main>
+    <footer>
+        <div class="footer-content">
+            <a href="http://www.engesudsmart.com.br" target="_blank">
+                <img src="https://i.imgur.com/3YKn2xW.png" alt="Logo Engesud">
+            </a>
+            <p><strong>Engesud Engenharia e Intermediação LTDA</strong></p>
+            <p>Robson Luis da Costa | <a href="https://wa.me/4497013489">+55 (44) 99701-3489</a></p>
+            <p><a href="https://www.engesudsmart.com.br">www.engesudsmart.com.br</a></p>
+            <p>Última atualização: 16 de setembro de 2024</p>
+           
+            <! --Este conteúdo é protegido por direitos autorais creditados à Engesud Engenharia e Intermediação LTDA, inscrita no CNPJ 40.601.637/0001-58--->
+        </div>
+    </footer>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const animatedElements = document.querySelectorAll('.animate-fade-up');
+            
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                    }
+                });
+            }, {
+                threshold: 0.1
+            });
+
+            animatedElements.forEach(element => {
+                observer.observe(element);
+            });
+        });
+    </script>
 </body>
 </html>
