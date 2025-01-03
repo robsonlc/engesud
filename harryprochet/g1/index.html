@@ -18,7 +18,7 @@
         :root {
             --primary-color: #2563eb;
             --secondary-color: #1e40af;
-            --text-color: #1f2937;
+            --text-color: #ffffff; /* Alterado para branco para melhor contraste */
             --light-bg: #f3f4f6;
             --border-radius: 16px;
             --box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
@@ -148,7 +148,7 @@
 
         footer {
             background: linear-gradient(to right, var(--secondary-color), #1e3a8a);
-            color: white;
+            color: var(--text-color); /* Mantém a cor do texto como branco */
             padding: 40px 20px;
             text-align: center;
         }
@@ -157,11 +157,22 @@
             width: 150px;
             height: auto;
             margin-bottom: 15px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
         }
 
         footer p {
             margin: 10px 0;
-            color: #e5e7eb;
+            color: var(--text-color); /* Alterado para branco */
+        }
+
+        footer a {
+            color: var(--text-color); /* Garantir que os links também sejam brancos */
+            text-decoration: underline; /* Adiciona sublinhado para melhor distinção */
+        }
+
+        footer a:hover {
+            color: #d1d5db; /* Uma tonalidade um pouco mais clara ao passar o mouse */
         }
 
         .scroll-top {
@@ -230,7 +241,7 @@
 
     <h2>Localização no Google Maps</h2>
     <div class="map-container">
-        <iframe src="https://www.google.com/maps/d/embed?mid=1Nmy50VO-faXndM7kYNww3EllQwh3jsM&ehbc=2E312F" allowfullscreen></iframe>
+        <iframe src="https://www.google.com/maps/d/embed?mid=1Nmy50VO-faXndM7kYNww3EllQwh3jsM&ehbc=2E312F" allowfullscreen title="Mapa da Propriedade no Google Maps"></iframe>
     </div>
 
     <h2>Vantagens e Potenciais do Terreno</h2>
@@ -250,22 +261,22 @@
     </ul>
 
     <div class="action-buttons">
-        <a href="https://wa.me/4497013489?text=Vamos%20conversar%20sobre%20este%20assunto" class="action-button">💬 Negociar Agora</a>
+        <a href="https://wa.me/554499013489?text=Vamos%20conversar%20sobre%20este%20assunto" class="action-button" target="_blank" rel="noopener noreferrer">💬 Negociar Agora</a>
     </div>
 </div>
 
 <footer>
-    <a href="http://www.engesudsmart.com.br" target="_blank" title="www.engesudsmart.com.br">
-        <img src="https://i.imgur.com/3YKn2xW.png" alt="Logo Engesud" style="border-radius: 10px; box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);">
+    <a href="http://www.engesudsmart.com.br" target="_blank" rel="noopener noreferrer" title="www.engesudsmart.com.br">
+        <img src="https://i.imgur.com/3YKn2xW.png" alt="Logo Engesud">
     </a>
     <p><strong>Engesud Engenharia e Intermediação LTDA</strong></p>
-    <p>Robson Luis da Costa | <a href="https://wa.me/4497013489" title="Acesse o Whatsapp">+55 (44) 99701-3489</a></p>
-    <p><a href="https://www.engesudsmart.com.br">www.engesudsmart.com.br</a></p>
+    <p>Robson Luis da Costa | <a href="https://wa.me/554499013489" title="Acesse o Whatsapp" target="_blank" rel="noopener noreferrer">+55 (44) 99701-3489</a></p>
+    <p><a href="https://www.engesudsmart.com.br" target="_blank" rel="noopener noreferrer">www.engesudsmart.com.br</a></p>
     <p>Última atualização: 02 de setembro de 2024</p>
     <!-- Este conteúdo é protegido por direitos autorais creditados à Engesud Engenharia e Intermediação LTDA, inscrita no CNPJ 40.601.637/0001-58 -->
 </footer>
 
-<a href="#" class="scroll-top" id="scrollTop">↑</a>
+<a href="#" class="scroll-top" id="scrollTop" aria-label="Voltar ao Topo">↑</a>
 
 <script>
     document.addEventListener('DOMContentLoaded', function () {
