@@ -20,10 +20,11 @@
 
     <style>
         :root {
-            --primary-color: #0066cc;
-            --secondary-color: #e7f0fa;
-            --text-color: #333;
-            --background-color: #f9f9f9;
+            --primary-color: #1a365d;
+            --secondary-color: #e2e8f0;
+            --accent-color: #2b6cb0;
+            --text-color: #2d3748;
+            --background-color: #f7fafc;
             --shadow-color: rgba(0, 0, 0, 0.1);
         }
 
@@ -34,26 +35,25 @@
         }
 
         body {
-            font-family: 'Segoe UI', Arial, sans-serif;
-            margin: 0;
-            padding: 0;
+            font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
             background-color: var(--background-color);
             color: var(--text-color);
-            line-height: 1.6;
+            line-height: 1.8;
+            font-size: 16px;
         }
 
         header {
             position: relative;
-            height: 300px;
+            height: 400px;
             overflow: hidden;
         }
 
         .header-bg {
-            background: url('https://i.imgur.com/GFEPrA3.png') center/cover no-repeat;
+            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)),
+                        url('https://i.imgur.com/GFEPrA3.png') center/cover no-repeat;
             height: 100%;
             width: 100%;
             position: absolute;
-            filter: brightness(0.7);
         }
 
         .header-content {
@@ -63,61 +63,75 @@
             transform: translate(-50%, -50%);
             text-align: center;
             color: white;
-            width: 100%;
-            padding: 0 20px;
-            z-index: 1;
+            width: 90%;
+            max-width: 800px;
         }
 
         .header-content h1 {
-            font-size: 2.5em;
-            margin-bottom: 15px;
-            color: white;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+            font-size: 3em;
+            font-weight: 700;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+            line-height: 1.2;
         }
 
         .container {
-            max-width: 1000px;
-            margin: -50px auto 20px;
-            padding: 30px;
+            max-width: 1200px;
+            margin: -60px auto 40px;
+            padding: 40px;
             background-color: #fff;
-            box-shadow: 0 0 20px var(--shadow-color);
-            border-radius: 12px;
+            box-shadow: 0 4px 6px var(--shadow-color);
+            border-radius: 16px;
             position: relative;
         }
 
         h2 {
             color: var(--primary-color);
-            font-size: 1.8em;
-            margin: 30px 0 20px;
-            border-bottom: 2px solid var(--secondary-color);
+            font-size: 2em;
+            margin: 40px 0 20px;
+            border-bottom: 3px solid var(--secondary-color);
             padding-bottom: 10px;
+        }
+
+        p {
+            margin: 20px 0;
+            color: var(--text-color);
         }
 
         .highlight {
             background-color: var(--secondary-color);
-            border-left: 4px solid var(--primary-color);
-            padding: 20px;
-            margin: 25px 0;
-            border-radius: 0 8px 8px 0;
+            border-left: 6px solid var(--accent-color);
+            padding: 25px;
+            margin: 30px 0;
+            border-radius: 0 12px 12px 0;
         }
 
         .highlight ul {
-            list-style-position: inside;
-            margin-top: 10px;
+            list-style-type: none;
+            margin-top: 15px;
         }
 
         .highlight li {
-            margin: 8px 0;
+            margin: 12px 0;
+            padding-left: 25px;
+            position: relative;
+        }
+
+        .highlight li:before {
+            content: "•";
+            color: var(--accent-color);
+            font-weight: bold;
+            position: absolute;
+            left: 0;
         }
 
         .map-container {
             position: relative;
             padding-bottom: 56.25%;
-            height: 0;
+            margin: 30px 0;
+            border-radius: 16px;
             overflow: hidden;
-            margin: 25px 0;
-            border-radius: 12px;
-            box-shadow: 0 4px 8px var(--shadow-color);
+            box-shadow: 0 4px 12px var(--shadow-color);
         }
 
         .map-container iframe {
@@ -131,14 +145,14 @@
 
         .image-container {
             text-align: center;
-            margin: 30px 0;
+            margin: 40px 0;
         }
 
         .image-container img {
             max-width: 100%;
             height: auto;
-            border-radius: 12px;
-            box-shadow: 0 4px 8px var(--shadow-color);
+            border-radius: 16px;
+            box-shadow: 0 4px 12px var(--shadow-color);
             transition: transform 0.3s ease;
         }
 
@@ -149,49 +163,78 @@
         .image-container p {
             margin-top: 15px;
             font-style: italic;
-            color: #666;
+            color: #718096;
         }
 
         footer {
             background-color: #fff;
-            padding: 40px 20px;
+            padding: 60px 20px;
             text-align: center;
-            border-top: 1px solid #eee;
-            margin-top: 50px;
+            border-top: 1px solid var(--secondary-color);
+            margin-top: 60px;
         }
 
         footer img {
-            width: 120px;
-            margin-bottom: 20px;
+            width: 140px;
+            margin-bottom: 25px;
             transition: transform 0.3s ease;
         }
 
         footer img:hover {
-            transform: scale(1.1);
+            transform: scale(1.05);
         }
 
         footer p {
-            margin: 8px 0;
-            color: #666;
+            margin: 10px 0;
+            color: #718096;
+        }
+
+        footer a {
+            color: var(--accent-color);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        footer a:hover {
+            color: var(--primary-color);
         }
 
         @media (max-width: 768px) {
+            header {
+                height: 300px;
+            }
+
+            .header-content h1 {
+                font-size: 2em;
+            }
+
+            .container {
+                margin: -40px 15px 20px;
+                padding: 25px;
+            }
+
+            h2 {
+                font-size: 1.6em;
+            }
+
+            .highlight {
+                padding: 20px;
+            }
+        }
+
+        @media (max-width: 480px) {
             .header-content h1 {
                 font-size: 1.8em;
             }
 
             .container {
-                margin: -30px 15px 20px;
                 padding: 20px;
-            }
-
-            h2 {
-                font-size: 1.5em;
             }
         }
     </style>
 </head>
 <body>
+    <!-- Resto do conteúdo HTML permanece o mesmo -->
     <header>
         <div class="header-bg"></div>
         <div class="header-content">
@@ -232,15 +275,14 @@
         <p>Permanecemos à disposição para esclarecer quaisquer dúvidas adicionais e avaliar cenários de parceria e negociação, respeitando sempre a privacidade e os interesses envolvidos. Este é um momento singular para capitalizar sobre o novo potencial desta área e, assim, usufruir de um retorno diferenciado no mercado imobiliário local.</p>
     </div>
 
-   <footer>
-     <a href="http://www.engesudsmart.com.br" target="_blank" title="www.engesudsmart.com.br">    <img src="https://i.imgur.com/3YKn2xW.png" alt="Logo Engesud"> </a> 
+    <footer>
+        <a href="http://www.engesudsmart.com.br" target="_blank" title="www.engesudsmart.com.br">
+            <img src="https://i.imgur.com/3YKn2xW.png" alt="Logo Engesud">
+        </a>
         <p><strong>Engesud Engenharia e Intermediação LTDA</strong></p>
         <p>Robson Luis da Costa | <a href="https://wa.me/4497013489" title="Whatsapp">+55 (44) 99701-3489</a></p>
-  <p><a href="https://www.engesudsmart.com.br"  target="_blank" >www.engesudsmart.com.br</a></p> 
-     <p>Última atualização: 08 de dezembro de 2024</p>
+        <p><a href="https://www.engesudsmart.com.br" target="_blank">www.engesudsmart.com.br</a></p>
+        <p>Última atualização: 08 de dezembro de 2024</p>
     </footer>
-  <!-- Este conteúdo é protegido por direitos autorais creditados à Engesud Engenharia e Intermediação LTDA, inscrita no CNPJ 40.601.637/0001-58 --> 
-
-   
 </body>
 </html>
