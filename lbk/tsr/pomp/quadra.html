@@ -21,28 +21,34 @@
       padding: 0;
       box-sizing: border-box;
     }
+
     body {
       font-family: Arial, sans-serif;
       background: #f5f5f5;
       color: #333;
       line-height: 1.5;
     }
+
     header, main, footer {
       max-width: 1200px;
       margin: 0 auto;
       padding: 1rem;
     }
+
     header h1 {
       text-align: center;
       margin-bottom: 1rem;
     }
+
     .quadra-image {
       display: block;
+      width: 100%;
       max-width: 600px;
       margin: 0.5rem auto 2rem auto;
       border-radius: 8px;
       box-shadow: 0 3px 12px rgba(0, 0, 0, 0.1);
     }
+
     .info-section {
       background: #fff;
       border-radius: 8px;
@@ -50,31 +56,55 @@
       box-shadow: 0 2px 10px rgba(0,0,0,0.1);
       margin-bottom: 1.5rem;
     }
+
     .info-section h2 {
       margin-bottom: 1rem;
       font-size: 1.3rem;
     }
+
     .info-section ul {
       list-style-type: disc;
       margin-left: 1.4rem;
       line-height: 1.6;
     }
+
     .info-section li {
       margin-bottom: 0.5rem;
     }
+
     .highlight {
       font-weight: bold;
       color: #c0392b; /* cor de destaque, ajuste se quiser */
     }
+
     footer {
       text-align: center;
       color: #777;
       font-size: 0.9rem;
       margin-top: 2rem;
     }
+
     footer a {
       color: #777;
       text-decoration: none;
+    }
+
+    /* Responsividade para telas muito pequenas */
+    @media (max-width: 480px) {
+      header, main, footer {
+        padding: 0.75rem;
+      }
+      .info-section {
+        padding: 1rem;
+        margin-bottom: 1rem;
+      }
+      .info-section h2 {
+        font-size: 1.1rem;
+      }
+      .quadra-image {
+        max-width: 100%;
+        margin: 1rem auto;
+      }
     }
   </style>
 </head>
@@ -97,7 +127,11 @@
       <h2>Contas Rápidas de Viabilidade</h2>
       <ul>
         <li><strong>Área estimada da quadra:</strong> 51.400 m²</li>
-        <li><strong>Densidade:</strong> 25 UH (unidades habitacionais) a cada 1.000 m²</li>
+        <li>
+          <strong>Densidade (T+8):</strong> 25 UH 
+          (unidades habitacionais) a cada 1.000 m² 
+          <em>(considerando edifícios térreo + 8 pavimentos)</em>
+        </li>
         <li><strong>Ticket médio estimado:</strong> R$ 230.000,00</li>
         <li><strong>Divisão da área:</strong> 3 fases de 17.100 m² cada</li>
         <li><strong>Taxa de permuta financeira:</strong> 8% sobre o VGV</li>
@@ -117,7 +151,8 @@
     <section class="info-section">
       <h2>Estimativa de Pagamento ao Proprietário</h2>
       <p>
-        Considerando a área aproximada de 51.400 m², a densidade prevista de 25 UH por 1.000 m² e 
+        Considerando a área aproximada de 51.400 m², a densidade prevista de 25 UH por 1.000 m² 
+        para edifícios T+8 (térreo + 8 pavimentos) e 
         o valor de venda (ticket médio) de R$ 230.000,00 por UH, pode-se estimar um 
         <em>Valor Geral de Vendas (VGV)</em> na faixa de:
       </p>
@@ -136,7 +171,7 @@
       <p>
         <em>Observação:</em> este cálculo é apenas uma referência preliminar. 
         Valores podem variar em função de ajustes de projeto, custos, 
-        mercado local e negociações específicas.
+        demanda e negociações específicas.
       </p>
     </section>
 
