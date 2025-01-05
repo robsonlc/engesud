@@ -1,1 +1,382 @@
-teste
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#0066cc">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <title>Proposta de Viabilidade - T+3 no ProZEIS</title>
+    <meta property="og:title" content="Proposta de Viabilidade - T+3 no ProZEIS">
+    <meta property="og:description" content="Estudo de viabilidade para empreendimentos T+3 em área de 31.200 m².">
+    <meta property="og:url" content="https://www.engesudsmart.com.br/lbk/tsr/portinari/sim">
+    <meta property="og:image" content="https://i.imgur.com/kI0o4IM.png">
+    <link rel="shortcut icon" href="https://i.imgur.com/HjwVm8x.png" type="image/x-icon">
+    <style>
+    :root {
+        --primary-color: #0066cc;
+        --secondary-color: #444;
+        --border-color: #ccc;
+        --bg-color: #fff;
+        --text-color: #333;
+        --accent-color: #e6f0ff;
+        scroll-behavior: smooth;
+    }
+
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        -webkit-tap-highlight-color: transparent;
+    }
+
+    body {
+        font-family: 'Segoe UI', Arial, sans-serif;
+        line-height: 1.6;
+        color: var(--text-color);
+        background-color: #f5f5f5;
+    }
+
+    .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 20px;
+    }
+
+    header {
+        background: linear-gradient(rgba(0,102,204,0.05), rgba(0,102,204,0.1)), 
+                    url('https://i.imgur.com/Wx5pH5o.png') center/cover no-repeat;
+        padding: 3rem 0;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        border-bottom: 3px solid var(--primary-color);
+    }
+
+    /* Ajuste de cor do título no header para branco */
+    header h1 {
+        color: #fff;
+        font-size: 2.2rem;
+        border-bottom: 3px solid #fff;
+        padding-bottom: 0.8rem;
+        font-weight: 600;
+        letter-spacing: -0.5px;
+    }
+
+    main {
+        background: var(--bg-color);
+        padding: 2.5rem;
+        margin: 2rem auto;
+        border-radius: 12px;
+        box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        max-width: 1200px;
+    }
+
+    h2 {
+        font-size: 1.8rem;
+        margin-top: 2.5rem;
+        color: var(--primary-color);
+        font-weight: 600;
+    }
+
+    section {
+        margin-bottom: 3.5rem;
+        padding: 1.5rem;
+        background: #fff;
+        border-radius: 10px;
+        box-shadow: 0 2px 4px rgba(0,0,0,0.08);
+        border: 1px solid var(--border-color);
+        transition: all 0.3s ease;
+    }
+
+    section:hover {
+        box-shadow: 0 4px 8px rgba(0,0,0,0.12);
+        transform: translateY(-2px);
+    }
+
+    .mapa {
+        width: 100%;
+        max-width: 100%;
+        height: auto;
+        margin: 2rem 0;
+        border-radius: 12px;
+        box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+        transition: transform 0.3s ease;
+    }
+
+    .mapa:hover {
+        transform: scale(1.01);
+    }
+
+    .tabela-container {
+        overflow-x: auto;
+        margin: 2rem -1rem;
+        padding: 0 1rem;
+        border-radius: 8px;
+    }
+
+    .tabela-viabilidade {
+        min-width: 800px;
+        width: 100%;
+        border-collapse: collapse;
+        margin: 0;
+        background: white;
+        box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        border-radius: 8px;
+        overflow: hidden;
+    }
+
+    .tabela-viabilidade th,
+    .tabela-viabilidade td {
+        padding: 1.2rem;
+        text-align: center;
+        border: 1px solid var(--border-color);
+    }
+
+    .tabela-viabilidade th {
+        background: var(--primary-color);
+        color: white;
+        font-weight: 600;
+    }
+
+    .tabela-viabilidade tr:nth-child(even) {
+        background-color: var(--accent-color);
+    }
+
+    .tabela-viabilidade tr:hover {
+        background-color: #f0f7ff;
+    }
+
+    .tabela-viabilidade tfoot {
+        font-weight: bold;
+        background: var(--primary-color);
+        color: white;
+    }
+
+    p {
+        margin-bottom: 1.2rem;
+        text-align: justify;
+        font-size: 1.1rem;
+        line-height: 1.8;
+    }
+
+    strong {
+        color: var(--primary-color);
+        font-weight: 600;
+    }
+
+    footer {
+        background: white;
+        text-align: center;
+        padding: 3rem 0;
+        margin-top: 4rem;
+        border-top: 3px solid var(--primary-color);
+        box-shadow: 0 -2px 8px rgba(0,0,0,0.1);
+    }
+
+    footer img {
+        max-width: 200px;
+        height: auto;
+        margin-bottom: 1.5rem;
+        transition: transform 0.3s ease;
+    }
+
+    footer img:hover {
+        transform: scale(1.08);
+    }
+
+    footer p {
+        margin: 0.8rem 0;
+        text-align: center;
+        color: var(--secondary-color);
+    }
+
+    a {
+        color: var(--primary-color);
+        text-decoration: none;
+        transition: all 0.3s ease;
+        font-weight: 500;
+    }
+
+    a:hover {
+        color: #004c99;
+        text-decoration: underline;
+    }
+
+    @media (max-width: 768px) {
+        .container {
+            padding: 0 15px;
+        }
+
+        main {
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+            border-radius: 8px;
+        }
+
+        header h1 {
+            font-size: 1.6rem;
+            padding: 0.8rem 0;
+        }
+
+        h2 {
+            font-size: 1.4rem;
+            margin-top: 2rem;
+        }
+
+        section {
+            padding: 1.2rem;
+            margin-bottom: 2.5rem;
+        }
+
+        .tabela-viabilidade {
+            font-size: 0.9rem;
+        }
+
+        .tabela-viabilidade th,
+        .tabela-viabilidade td {
+            padding: 0.8rem 0.5rem;
+        }
+
+        .mapa {
+            margin: 1.5rem -1.5rem;
+            width: calc(100% + 3rem);
+            border-radius: 0;
+        }
+
+        footer {
+            padding: 2rem 1.5rem;
+        }
+
+        footer img {
+            max-width: 160px;
+        }
+
+        p {
+            font-size: 1rem;
+            line-height: 1.6;
+        }
+    }
+
+    @media (max-width: 480px) {
+        header h1 {
+            font-size: 1.4rem;
+        }
+
+        p {
+            font-size: 0.95rem;
+        }
+
+        .tabela-viabilidade {
+            font-size: 0.85rem;
+        }
+
+        footer p {
+            font-size: 0.9rem;
+        }
+    }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Estudo de Viabilidade - Empreendimentos T+3 no ProZEIS</h1>
+        </div>
+    </header>
+
+    <main>
+        <p>Apresentamos um estudo preliminar de viabilidade para os imóveis localizados próximos à Rua Ruy Ferreira e Avenida Abelardo José da Cruz, em Maringá – PR, visando empreendimentos enquadrados no programa ProZEIS do município.</p>
+
+        <img src="https://i.imgur.com/dYBebMp.png" alt="Mapa do Lote com Divisão de Fases" class="mapa">
+
+        <section>
+            <h2>Contas Rápidas de Viabilidade</h2>
+            <p>
+                Área total estimada do lote: <strong>31.200 m²</strong><br>
+                Divisão do lote em duas fases: <strong>15.600 m²</strong> cada fase
+            </p>
+            <p>
+                Estimativa de 1 torre T+3 a cada 1.000 m², com arredondamento para cima.<br>
+                Cada torre T+3 contém <strong>16 unidades</strong> (apartamentos).
+            </p>
+            <p>
+                <strong>Ticket Médio:</strong> R$ 210.000,00 por unidade.
+            </p>
+
+            <div class="tabela-container">
+                <table class="tabela-viabilidade">
+                    <thead>
+                        <tr>
+                            <th>Fase</th>
+                            <th>Área (m²)</th>
+                            <th>Nº de Torres</th>
+                            <th>Total de Unidades</th>
+                            <th>VGV Estimado<br>(R$)</th>
+                            <th>Permuta<br>9% (R$)</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Fase 1</td>
+                            <td>15.600</td>
+                            <td>16</td>
+                            <td>256</td>
+                            <td>53.760.000</td>
+                            <td>4.838.400</td>
+                        </tr>
+                        <tr>
+                            <td>Fase 2</td>
+                            <td>15.600</td>
+                            <td>16</td>
+                            <td>256</td>
+                            <td>53.760.000</td>
+                            <td>4.838.400</td>
+                        </tr>
+                    </tbody>
+                    <tfoot>
+                        <tr>
+                            <th colspan="4">Totais</th>
+                            <th>107.520.000</th>
+                            <th>9.676.800</th>
+                        </tr>
+                    </tfoot>
+                </table>
+            </div>
+
+            <p>
+                Considerando a área total de <strong>31.200 m²</strong>, a permuta financeira ao proprietário (9% do VGV) atinge cerca de <strong>R$ 9.676.800</strong>, o que representa aproximadamente <strong>R$ 310 por m²</strong>.
+            </p>
+
+            <p>
+                Se compararmos esse valor à medida de alqueire paulista (24.200 m²), temos cerca de <strong>1,29 alqueires</strong> (31.200 ÷ 24.200) e, portanto, a permuta equivaleria a cerca de <strong>R$ 7,5 milhões por alqueire</strong>, em valores aproximados.
+            </p>
+        </section>
+
+        <section>
+            <h2>Detalhes de Infraestrutura</h2>
+            <p>A responsabilidade pela implantação de infraestrutura, incluindo pavimentação, redes de água, esgoto, energia elétrica e demais adequações, ficaria a cargo da construtora parceira.</p>
+        </section>
+
+        <img src="https://i.imgur.com/TqWdZkg.png" alt="Levantamento Planialtimétrico" class="mapa">
+
+        <section>
+            <h2>Prazos Estimados</h2>
+            <p>
+                O processo ProZEIS é mais ágil em comparação ao processo de loteamento padrão e o empreendimento possui elevada velocidade de vendas. Estimamos cerca de <strong>18 meses</strong> para aprovação e lançamento da primeira fase, seguidos de mais <strong>6 meses</strong> para a segunda fase.
+            </p>
+            <p>
+                Cada fase pode ser vendida em aproximadamente <strong>12 meses</strong>, dando ao proprietário uma projeção de quando os recebíveis totais poderão entrar em sua conta referente à negociação.
+            </p>
+        </section>
+    </main>
+
+    <footer>
+        <a href="http://www.engesudsmart.com.br" target="_blank">
+            <img src="https://i.imgur.com/3YKn2xW.png" alt="Logo Engesud">
+        </a>
+        <p><strong>Engesud Engenharia e Intermediação LTDA</strong></p>
+        <p>Robson Luis da Costa | <a href="https://wa.me/4497013489">+55 (44) 99701-3489</a></p>
+        <p>www.engesudsmart.com.br</p>
+        <p>Última atualização: 02 de janeiro de 2025</p>
+    </footer>
+
+</body>
+</html>
