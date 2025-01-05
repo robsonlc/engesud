@@ -1,1 +1,373 @@
-teste
+<!DOCTYPE html>
+<html lang="pt-br" prefix="og: http://ogp.me/ns#">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Proposta de Parceria - Sítio 7 Alqueires</title>
+
+    <!-- Metatags Open Graph -->
+    <meta property="og:title" content="Proposta de Parceria - Sítio 7 Alqueires">
+    <meta property="og:description" content="Apresentação de parceria para desenvolvimento de empreendimento em terreno de 7 alqueires.">
+    <meta property="og:image" content="https://i.imgur.com/IUO7y1L.png">
+    <meta property="og:image:width" content="800">
+    <meta property="og:image:height" content="800">
+    <meta property="og:url" content="https://www.engesudsmart.com.br/lbk/tsr/kakogawa/jan">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Engesud Smart">
+
+    <link rel="shortcut icon" href="https://i.imgur.com/HjwVm8x.png" type="image/x-icon">
+
+    <style>
+        :root {
+            --primary-color: #003366;
+            --secondary-color: #007bff;
+            --background-color: #f9f9f9;
+            --card-background: #e6f2ff;
+            --text-color: #555;
+            --heading-color: #003366;
+            --border-radius: 8px;
+            --box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+            background-color: var(--background-color);
+            color: var(--text-color);
+            line-height: 1.6;
+        }
+
+        .hero {
+            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), 
+                        url('https://i.imgur.com/83DupdS.png') center/cover no-repeat;
+            height: 400px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-align: center;
+            padding: 20px;
+        }
+
+        .hero h1 {
+            font-size: 2.5em;
+            margin: 0;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: -100px auto 0;
+            padding: 40px;
+            background: white;
+            border-radius: var(--border-radius);
+            box-shadow: var(--box-shadow);
+            position: relative;
+        }
+
+        h2 {
+            color: var(--heading-color);
+            margin: 40px 0 20px;
+            font-size: 1.8em;
+            border-bottom: 2px solid var(--primary-color);
+            padding-bottom: 10px;
+        }
+
+        .card {
+            background: var(--card-background);
+            padding: 25px;
+            border-radius: var(--border-radius);
+            margin: 20px 0;
+            border-left: 5px solid var(--secondary-color);
+            box-shadow: var(--box-shadow);
+            transition: transform 0.3s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            box-shadow: var(--box-shadow);
+        }
+
+        th {
+            background: var(--primary-color);
+            color: white;
+            padding: 15px;
+            text-align: left;
+        }
+
+        td {
+            padding: 12px 15px;
+            border: 1px solid #ddd;
+        }
+
+        tr:nth-child(even) {
+            background: #f8f9fa;
+        }
+
+        .map-container {
+            position: relative;
+            padding-bottom: 56.25%;
+            height: 0;
+            overflow: hidden;
+            margin: 20px 0;
+            border-radius: var(--border-radius);
+            box-shadow: var(--box-shadow);
+        }
+
+        .map-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: 0;
+        }
+
+        footer {
+            background: #003366;
+            color: white;
+            padding: 40px 20px;
+            text-align: center;
+            margin-top: 50px;
+        }
+
+        footer a {
+            color: white;
+            text-decoration: none;
+        }
+
+        footer img {
+            max-width: 120px;
+            margin-bottom: 20px;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 20px;
+                margin-top: -50px;
+            }
+
+            .hero {
+                height: 300px;
+            }
+
+            .hero h1 {
+                font-size: 1.8em;
+            }
+
+            h2 {
+                font-size: 1.5em;
+            }
+
+            table {
+                display: block;
+                overflow-x: auto;
+                white-space: nowrap;
+            }
+
+            .card {
+                padding: 15px;
+            }
+        }
+
+        .fade-in {
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeIn 0.8s ease forwards;
+        }
+
+        @keyframes fadeIn {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="hero">
+        <h1>Sítio de 7 Alqueires<br>Proposta de Parceria</h1>
+    </div>
+
+    <div class="container">
+        <body>
+ 
+ 
+    <!-- Resumo Geral -->
+    <div class="feature-card">
+      <h2>Resumo Geral</h2>
+      <ul>
+        <li><b>Localização:</b> Maringá - PR</li>
+        <li><b>Área Total do Sítio:</b> ~7 alqueires (aprox. 169.400 m²)</li>
+        <li><b>Divisão das Quadras:</b> 
+          <ul>
+            <li>Quadra 1: ~19.930 m² (Fase 1)</li>
+            <li>Quadra 2: ~60.250 m² (Fases 2, 3 e 4)</li>
+            <li>Quadra 3: ~56.400 m² (remanescente ao proprietário, sem uso neste empreendimento)</li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+
+    <p>Esta apresentação tem por objetivo demonstrar o potencial de desenvolvimento de um empreendimento habitacional (torres T+7 pavimentos) em **4 fases**, distribuídas nas duas primeiras quadras, deixando a terceira quadra livre para o proprietário.</p>
+
+    <h2>Croqui da Área</h2>
+    <p>O esquema abaixo ilustra as três quadras, indicando as duas primeiras (Quadra 1 e 2) que serão utilizadas e a Quadra 3 (56.400 m²) remanescente:</p>
+    <img src="https://i.imgur.com/15dXHm3.png" alt="Croqui da Área: 3 Quadras">
+
+    <!-- Fases de Desenvolvimento -->
+    <h2>Fases de Desenvolvimento</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>Fase</th>
+          <th>Quadra</th>
+          <th>Área (m²)</th>
+          <th>UH Estimadas</th>
+          <th>Prazo (mês*)</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>F1</td>
+          <td>Quadra 1</td>
+          <td>19.930</td>
+          <td>448</td>
+          <td>~18</td>
+        </tr>
+        <tr>
+          <td>F2</td>
+          <td>Quadra 2</td>
+          <td>~20.080</td>
+          <td>448</td>
+          <td>~18</td>
+        </tr>
+        <tr>
+          <td>F3</td>
+          <td>Quadra 2</td>
+          <td>~20.080</td>
+          <td>448</td>
+          <td>~18</td>
+        </tr>
+        <tr>
+          <td>F4</td>
+          <td>Quadra 2</td>
+          <td>~20.080</td>
+          <td>448</td>
+          <td>~18</td>
+        </tr>
+      </tbody>
+    </table>
+    <p>*Cada fase pode variar de 18 a 24 meses, dependendo de aprovações e ritmo de vendas.</p>
+    <p><em>Total de 4 fases, consumindo a Quadra 1 e a Quadra 2 (~80.180 m²).</em></p>
+
+    <!-- Modelo de Negócio -->
+    <h2>Possível Modelo de Negócio</h2>
+    <ul>
+      <li><b>Valor por m²:</b> R$ 500,00 para as quadras 1 e 2 (negociável).</li>
+      <li><b>Área Total Negociada:</b> ~80.180 m² (19.930 + 60.250).</li>
+      <li><b>Pagamento Estimado ao Proprietário:</b> R$ 40.090.000,00  
+        <ul>
+          <li>Cálculo: 80.180 m² x R$ 500,00 = R$ 40,09 milhões</li>
+        </ul>
+      </li>
+      <li><b>Forma de Pagamento:</b> Pode incluir parcelas, percentual de unidades, ou combinação de permuta financeira + produto (a combinar).</li>
+      <li><b>Prazo Total Estimado:</b> 72 meses (cerca de 6 anos) para as 4 fases. Caso cada fase seja lançada de forma sequenciada.</li>
+    </ul>
+
+    <h2>Mapa da Localização</h2>
+    <iframe
+      src="https://www.google.com/maps/d/embed?mid=1INbyyqXUo0po303z45iwAX9by5qYLFM&ehbc=2E312F"
+      width="640"
+      height="480"
+      style="border: 0; border-radius: 10px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);">
+    </iframe>
+
+    <!-- Card de motivação -->
+    <div class="feature-card">
+      <h2>Por que Investir?</h2>
+      <ul>
+        <li><b>Localização com Potencial:</b> A região de Maringá tem se expandido, atraindo investimentos do setor imobiliário.</li>
+        <li><b>Segurança Negocial:</b> Parceria com construtoras reconhecidas que buscam aproveitar o potencial habitacional de torres T+7.</li>
+        <li><b>Valorização:</b> Com o avanço das fases, a área tende a valorizar, melhorando o retorno financeiro do proprietário.</li>
+        <li><b>Flexibilidade Futuras Quadras:</b> A Quadra 3 (56.400 m²) fica à disposição do proprietário, abrindo margem para venda ou desenvolvimento posterior.</li>
+      </ul>
+    </div>
+
+    <h3>Próximos Passos</h3>
+    <p>
+      Estando de acordo com a proposta geral, poderemos agendar uma reunião para formalizar as condições de pagamento, prazos exatos e detalhar as garantias contratuais,
+      assegurando que o proprietário seja beneficiado de maneira transparente e lucrativa.
+    </p>
+  </div>
+
+  <!-- Rodapé -->
+  <footer>
+    <a href="http://www.engesudsmart.com.br" target="_blank" title="www.engesudsmart.com.br">
+      <img src="https://i.imgur.com/3YKn2xW.png" alt="Logo Engesud">
+    </a>
+    <p><strong>Engesud Engenharia e Intermediação LTDA</strong></p>
+    <p>Robson Luis da Costa | <a href="https://wa.me/4497013489" title="Whatsapp">+55 (44) 99701-3489</a></p>
+    <p><a href="https://www.engesudsmart.com.br" target="_blank">www.engesudsmart.com.br</a></p>
+    <p>Última atualização: 05 de janeiro de 2025</p>
+  </footer>
+
+  <!-- Este conteúdo é protegido por direitos autorais creditados à Engesud Engenharia e Intermediação LTDA, inscrita no CNPJ 40.601.637/0001-58 -->
+
+  <!-- Animação JavaScript dos cards -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      // Seleciona os elementos que terão animação
+      const cards = document.querySelectorAll('.feature-card');
+
+      // Cria o observer que detecta quando o elemento está visível
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.style.opacity = 1;
+            entry.target.style.transform = 'translateY(0)';
+          }
+        });
+      });
+
+      // Aplica o observer em cada card
+      cards.forEach(card => {
+        observer.observe(card);
+      });
+    });
+  </script>
+</body>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const cards = document.querySelectorAll('.card');
+            
+            const observer = new IntersectionObserver(
+                (entries) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            entry.target.classList.add('fade-in');
+                        }
+                    });
+                },
+                { threshold: 0.1 }
+            );
+
+            cards.forEach(card => observer.observe(card));
+        });
+    </script>
+</body>
+</html>
