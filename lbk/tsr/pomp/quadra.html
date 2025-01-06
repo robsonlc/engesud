@@ -77,16 +77,68 @@
       color: #c0392b; /* cor de destaque, ajuste se quiser */
     }
 
-    footer {
-      text-align: center;
-      color: #777;
-      font-size: 0.9rem;
-      margin-top: 2rem;
+     /* Melhorias no rodapé */
+    .footer-content {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 0.5rem;
+        padding: 2rem 0;
+        border-top: 1px solid #ddd;
+        margin-top: 2rem;
     }
 
-    footer a {
-      color: #777;
-      text-decoration: none;
+    .footer-content img {
+        max-width: 200px;
+        height: auto;
+        margin-bottom: 1rem;
+    }
+
+    .footer-content p {
+        margin: 0.2rem 0;
+    }
+
+    .footer-content a {
+        color: #0366d6;
+        text-decoration: none;
+        transition: color 0.3s ease;
+    }
+
+    .footer-content a:hover {
+        color: #044289;
+        text-decoration: underline;
+    }
+
+    /* Melhorias gerais de apresentação */
+    .info-section {
+        margin-bottom: 2rem;
+    }
+
+    .info-section p {
+        margin-bottom: 1rem;
+    }
+
+    .info-section ul li {
+        margin-bottom: 0.8rem;
+    }
+
+    .info-section ul ul {
+        margin-top: 0.5rem;
+    }
+
+    /* Melhorias de responsividade */
+    @media (max-width: 480px) {
+        .footer-content {
+            padding: 1rem 0;
+        }
+
+        .footer-content img {
+            max-width: 150px;
+        }
+
+        .info-section {
+            margin-bottom: 1.5rem;
+        }
     }
 
     /* Responsividade para telas muito pequenas */
@@ -128,7 +180,7 @@
       <ul>
         <li><strong>Área estimada da quadra:</strong> 51.400 m²</li>
         <li>
-          <strong>Densidade (T+8):</strong> 25 UH 
+          <strong>Densidade (T+8):</strong> 22 UH 
           (unidades habitacionais) a cada 1.000 m² 
           <em>(considerando edifícios térreo + 8 pavimentos)</em>
         </li>
@@ -151,21 +203,21 @@
     <section class="info-section">
       <h2>Estimativa de Pagamento ao Proprietário</h2>
       <p>
-        Considerando a área aproximada de 51.400 m², a densidade prevista de 25 UH por 1.000 m² 
+        Considerando a área aproximada de 51.400 m², a densidade prevista de 22 UH por 1.000 m² 
         para edifícios T+8 (térreo + 8 pavimentos) e 
         o valor de venda (ticket médio) de R$ 230.000,00 por UH, pode-se estimar um 
         <em>Valor Geral de Vendas (VGV)</em> na faixa de:
       </p>
       <ul>
-        <li><strong>VGV Estimado:</strong> cerca de R$ 295.550.000,00</li>
+        <li><strong>VGV Estimado:</strong> cerca de R$ 260.084.000,00</li>
         <li><strong>Percentual de Permuta (8% do VGV):</strong> 
-          <span class="highlight">R$ 23.644.000,00</span> (aproximado)
+          <span class="highlight">R$ 20.806.720,00</span> (aproximado)
         </li>
       </ul>
       <p>
         Portanto, o montante a ser pago ao proprietário, sob condição de permuta financeira, 
         pode alcançar aproximadamente 
-        <span class="highlight">R$ 23.644.000,00</span>, dependendo das condições de 
+        <span class="highlight">R$ 20.806.720,00</span>, dependendo das condições de 
         mercado e eventuais ajustes no projeto.
       </p>
       <p>
@@ -189,11 +241,17 @@
   </main>
 
   <footer>
-    <p>© 2025 Engesud Engenharia e Intermediação LTDA | CNPJ 40.601.637/0001-58</p>
-    <p>
-      <a href="https://www.engesudsmart.com.br" target="_blank">www.engesudsmart.com.br</a>
-    </p>
-  </footer>
+        <div class="footer-content">
+            <a href="http://www.engesudsmart.com.br" target="_blank">
+                <img src="https://i.imgur.com/3YKn2xW.png" alt="Logo Engesud">
+            </a>
+            <p><strong>Engesud Engenharia e Intermediação LTDA</strong></p>
+            <p>Robson Luis da Costa | <a href="https://wa.me/4497013489">+55 (44) 99701-3489</a></p>
+            <p><a href="https://www.engesudsmart.com.br"  target="_blank" >www.engesudsmart.com.br</a></p>
+            <p>Última atualização: 03 de janeiro de 2025</p>
+            <!--Este conteúdo é protegido por direitos autorais creditados à Engesud Engenharia e Intermediação LTDA, inscrita no CNPJ 40.601.637/0001-58-->
+        </div>
+    </footer>
 
 </body>
 </html>
