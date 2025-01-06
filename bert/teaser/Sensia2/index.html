@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Proposta de Parceria - Sensia Incorporadora</title>
+
+  <!-- OpenGraph tags para pré-visualização no WhatsApp -->
+  <meta property="og:title" content="Proposta de Parceria - Sensia Incorporadora">
+  <meta property="og:description" content="Proposta de parceria para desenvolvimento de empreendimento residencial.">
+  <meta property="og:image" content="https://i.imgur.com/OHMFpSx.png">
+  <meta property="og:image:width" content="800">
+  <meta property="og:image:height" content="800">
+  <meta property="og:url" content="https://www.engesudsmart.com.br/bert/teaser/Sensia2">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Engesud Smart">
+
+  <!-- Favicon -->
+  <link rel="shortcut icon" href="https://i.imgur.com/HjwVm8x.png" type="image/x-icon">
+
+  <!-- Fonte Roboto -->
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --primary-color: #007bff; /* More standard blue */
+      --secondary-color: #343a40; /* Darker, professional gray */
+      --accent-color: #dc3545; /* Standard red for emphasis */
+      --background-color: #f8f9fa;
+      --text-color: #495057; /* Slightly softer text color */
+      --light-gray: #e9ecef;
+      --border-color: #dee2e6;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      font-size: 16px;
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Roboto', sans-serif;
+      background-color: var(--background-color);
+      color: var(--text-color);
+      line-height: 1.7; /* Slightly increased line height for better readability */
+      overflow-x: hidden;
+      -webkit-font-smoothing: antialiased; /* Better font rendering for webkit browsers */
+      -moz-osx-font-smoothing: grayscale; /* Better font rendering for Firefox */
+    }
+
+    header {
+      position: relative;
+      width: 100%;
+      height: 30vh; /* Adjusted height */
+      min-height: 150px; /* Adjusted min-height */
+      background: url('https://i.imgur.com/ezbCDLM.png') center/cover fixed no-repeat;
+      opacity: 0.2; /* Slightly adjusted opacity */
+      margin-bottom: 3rem; /* Increased margin */
+    }
+
+    .container {
+      width: 90%;
+      max-width: 960px; /* More standard max-width */
+      margin: 0 auto;
+      padding: 2.5rem; /* Increased padding */
+      background-color: #fff;
+      box-shadow: 0 0 15px rgba(0,0,0,0.08); /* Softened shadow */
+      border-radius: 8px; /* Slightly less rounded */
+      position: relative;
+      top: -4rem; /* Adjusted position to match header change */
+      margin-bottom: 2rem; /* Adjusted margin */
+    }
+
+    h1 {
+      font-size: clamp(2rem, 5vw, 3rem); /* Increased base size */
+      color: var(--secondary-color);
+      border-bottom: 2px solid var(--primary-color);
+      padding-bottom: 0.75rem;
+      text-align: center;
+      margin-bottom: 2.5rem;
+      font-weight: 700; /* Make the title bolder */
+    }
+
+    h2 {
+      font-size: clamp(1.5rem, 3.5vw, 2.25rem); /* Increased base size */
+      color: var(--primary-color);
+      margin: 2.5rem 0 1.25rem; /* Adjusted margins */
+      font-weight: 700;
+    }
+
+    h3 {
+      font-size: clamp(1.1rem, 2.75vw, 1.6rem); /* Adjusted base size */
+      color: var(--accent-color);
+      margin: 2rem 0 1.25rem; /* Adjusted margins */
+      font-weight: 600;
+    }
+
+    p {
+      margin-bottom: 1.25rem; /* Adjusted margin */
+      text-align: justify;
+      font-size: clamp(1rem, 2vw, 1.1rem); /* Slightly increased base size */
+      color: var(--text-color);
+    }
+
+    .content-image {
+      width: 100%;
+      max-width: 800px;
+      height: auto;
+      display: block;
+      margin: 2.5rem auto; /* Adjusted margin */
+      border-radius: 6px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.08); /* Softened shadow */
+      transition: transform 0.3s ease;
+      border: 1px solid var(--light-gray); /* Added a subtle border */
+    }
+
+    .feature-card {
+      background-color: #fff;
+      border-radius: 6px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.06); /* Softened shadow */
+      padding: 1.75rem; /* Adjusted padding */
+      margin: 1.75rem 0; /* Adjusted margin */
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      border: 1px solid var(--light-gray); /* Added a subtle border */
+    }
+
+    .table-container {
+      width: 100%;
+      overflow-x: auto;
+      margin: 1.75rem 0; /* Adjusted margin */
+      border-radius: 6px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.06); /* Softened shadow */
+      border: 1px solid var(--light-gray); /* Added a border */
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      white-space: normal; /* Allow text to wrap in table cells */
+    }
+
+    th, td {
+      padding: 1.25rem; /* Adjusted padding */
+      text-align: left;
+      border-bottom: 1px solid var(--border-color); /* Removed side borders, added bottom */
+    }
+
+    th {
+      background-color: var(--primary-color);
+      color: white;
+      font-weight: 700;
+    }
+
+    /* Style for the last row to remove bottom border */
+    tbody tr:last-child td {
+      border-bottom: none;
+    }
+
+    iframe {
+      width: 100%;
+      height: 400px; /* Adjusted height */
+      min-height: 250px;
+      border: none;
+      border-radius: 6px;
+      margin: 1.75rem 0; /* Adjusted margin */
+      box-shadow: 0 4px 10px rgba(0,0,0,0.08); /* Softened shadow */
+    }
+
+    ul {
+      padding-left: 1.75rem;
+      margin: 1.25rem 0;
+    }
+
+    li {
+      margin-bottom: 0.6rem;
+      font-size: clamp(1rem, 2vw, 1.1rem); /* Slightly increased base size */
+      list-style-type: disc; /* Ensures consistent bullet style */
+    }
+
+    footer {
+      background-color: var(--secondary-color);
+      color: #fff;
+      padding: 2.5rem 1rem;
+      text-align: center; /* Keep the overall footer content centered */
+      margin-top: 4rem; /* Increased margin */
+      display: flex; /* Enable flexbox for centering */
+      flex-direction: column; /* Arrange items vertically */
+      align-items: center; /* Center items horizontally */
+    }
+
+    .footer-content {
+      /* No specific styling needed anymore for centering */
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    footer img {
+      max-width: 180px; /* Slightly larger logo */
+      margin-bottom: 1.25rem;
+      border-radius: 8px;
+    }
+
+    footer p, footer a {
+      color: #fff;
+      text-decoration: none;
+      margin: 0.3rem 0; /* Reduced margin for better spacing when centered */
+      font-size: clamp(0.9rem, 1.6vw, 1rem);
+      /* Removed display: block; - let flexbox handle the layout */
+    }
+
+    footer a:hover {
+      text-decoration: underline;
+    }
+
+    /* Specific adjustments for links within tables */
+    .table-container a {
+        color: var(--primary-color);
+        text-decoration: none;
+        font-weight: 500;
+    }
+
+    .table-container a:hover {
+        text-decoration: underline;
+    }
+
+    @media screen and (max-width: 768px) {
+      .container {
+        width: 95%;
+        padding: 2rem;
+        top: -3rem;
+      }
+
+      header {
+        height: 25vh;
+      }
+
+      .table-container {
+        margin-left: -1rem;
+        margin-right: -1rem;
+        width: calc(100% + 2rem);
+        border-radius: 0;
+        border-left: none;
+        border-right: none;
+      }
+
+      iframe {
+        height: 350px;
+      }
+    }
+
+    @media screen and (max-width: 480px) {
+      html {
+        font-size: 15px;
+      }
+
+      .container {
+        width: 100%;
+        padding: 1.5rem;
+        border-radius: 0;
+        top: -2rem;
+        margin-bottom: 1rem;
+      }
+
+      header {
+        height: 20vh;
+        margin-bottom: 2rem;
+      }
+
+      h1 {
+        font-size: 2.2rem;
+      }
+
+      h2 {
+        font-size: 1.7rem;
+      }
+
+      h3 {
+        font-size: 1.3rem;
+      }
+
+      .content-image {
+        margin: 1.5rem auto;
+      }
+
+      footer {
+        padding: 2rem 1rem;
+      }
+    }
+
+    @media (hover: hover) {
+      .content-image:hover {
+        transform: scale(1.01);
+      }
+
+      .feature-card:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 5px 12px rgba(0,0,0,0.15);
+      }
+    }
+  </style>
+</head>
+<body>
+  <header></header>
+
+  <div class="container">
+
+    <h1>Proposta de Parceria - Sensia Incorporadora</h1>
+
+    <h2>Introdução</h2>
+    <p>
+      Esta proposta refere-se à negociação de uma área de <strong>33.643,07 m²</strong> pertencente ao proprietário
+      <strong>Domingos Bertoncelo</strong> para o desenvolvimento de um empreendimento residencial em parceria com a
+      <strong>Sensia Incorporadora</strong>, do grupo <strong>MRV Engenharia</strong>.
+      O objetivo desta parceria é viabilizar um projeto imobiliário alinhado ao portfólio da construtora,
+      possibilitando a construção de torres com até 20 pavimentos, ou conforme os estudos de viabilidade a serem conduzidos.
+    </p>
+
+    <figure>
+        <img class="content-image" src="https://i.imgur.com/QWUHzGr.png" alt="Levantamento Topográfico - Quadras">
+        <figcaption style="text-align: center; font-size: 0.9rem; color: var(--text-color);">Levantamento Topográfico - Quadras</figcaption>
+    </figure>
+
+    <h2>Localização e Contexto</h2>
+    <p>
+      O local encontra-se em uma região com potencial de crescimento, oferecendo oportunidades
+      para produtos residenciais de médio padrão. A Sensia fará estudos de mercado,
+      buscando entender a demanda local e adequar o produto imobiliário ao perfil dos clientes da região.
+    </p>
+
+    <figure>
+        <img class="content-image" src="https://i.imgur.com/dQd83cy.png" alt="Mapa com demarcação da área e diretrizes">
+        <figcaption style="text-align: center; font-size: 0.9rem; color: var(--text-color);">Mapa com demarcação da área e diretrizes</figcaption>
+    </figure>
+
+    <h2>Apresentando a Sensia Incorporadora</h2>
+    <div class="feature-card">
+      <h3>Sensia - Grupo MRV</h3>
+      <p>
+        A <strong>Sensia Incorporadora</strong> é parte do grupo <strong>MRV Engenharia</strong> e
+        destaca-se na criação de empreendimentos voltados à média renda.
+        Seus projetos prezam pela tecnologia, sustentabilidade e flexibilidade
+        nas plantas dos apartamentos, garantindo a atratividade e a valorização imobiliária.
+      </p>
+    </div>
+
+    <h2>Documentos para Análise</h2>
+    <p>
+      A área disponível é subdividida em duas matrículas, cujos documentos podem ser acessados nos links abaixo:
+    </p>
+    <div class="table-container">
+      <table>
+        <thead>
+          <tr>
+            <th>Matrícula</th>
+            <th>Link para Download</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>95.927</td>
+            <td><a href="https://www.engesudsmart.com.br/bert/teaser/Sensia/Matrícula 95.927.pdf" target="_blank" rel="noopener noreferrer">Acessar Matrícula 95.927</a></td>
+          </tr>
+          <tr>
+            <td>95.928</td>
+            <td><a href="https://www.engesudsmart.com.br/bert/teaser/Sensia/Matrícula 95.928.pdf" target="_blank" rel="noopener noreferrer">Acessar Matrícula 95.928</a></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h2>Modelo de Negócio</h2>
+    <p>
+      A estrutura da proposta prevê que a Sensia conduza estudos de viabilidade para definir
+      a tipologia dos empreendimentos, o número de torres e pavimentos, e a melhor forma de comercialização.
+      A negociação é baseada em permuta financeira, com valor a ser definido mediante a conclusão dos estudos.
+    </p>
+
+    <h2>Mapa da Área</h2>
+    <div style="border-radius: 6px; overflow: hidden; box-shadow: 0 4px 10px rgba(0,0,0,0.08);">
+        <iframe
+          src="https://www.google.com/maps/d/embed?mid=1su7tJFdvH9HxcycJMU7ruo_am1fpttc&ehbc=2E312F"
+          style="border: none;">
+        </iframe>
+    </div>
+
+    <h2>Próximos Passos</h2>
+    <ul>
+      <li>Discussão dos termos de parceria entre proprietário e Sensia Incorporadora.</li>
+      <li>Estudos técnicos e de viabilidade a serem realizados pela Sensia.</li>
+      <li>Definição da estrutura de permuta financeira com base em cenários de vendas.</li>
+      <li>Formalização do contrato e apresentação de prazos para desenvolvimento.</li>
+    </ul>
+
+    <p>
+      Para mais informações, entre em contato através dos canais de comunicação disponibilizados
+      no rodapé ou solicite uma reunião para esclarecimentos adicionais.
+    </p>
+
+  </div>
+
+  <footer>
+    <div class="footer-content">
+      <a href="http://www.engesudsmart.com.br" target="_blank" title="www.engesudsmart.com.br" rel="noopener noreferrer">
+        <img src="https://i.imgur.com/3YKn2xW.png" alt="Logo Engesud">
+      </a>
+      <p><strong>Engesud Engenharia e Intermediação LTDA</strong></p>
+      <p>Robson Luis da Costa | <a href="https://wa.me/4497013489" title="Whatsapp" rel="noopener noreferrer">+55 (44) 99701-3489</a></p>
+      <p><a href="https://www.engesudsmart.com.br" target="_blank" rel="noopener noreferrer">www.engesudsmart.com.br</a></p>
+      <p>Última atualização: 06 de janeiro de 2025</p>
+    </div>
+  </footer>
+
+  <!-- Este conteúdo é protegido por direitos autorais creditados à Engesud Engenharia e Intermediação LTDA, inscrita no CNPJ 40.601.637/0001-58 -->
+
+  <!-- Animação JavaScript -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      // Adiciona classe de animação aos cards quando visíveis
+      const cards = document.querySelectorAll('.feature-card');
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.style.opacity = 1;
+            entry.target.style.transform = 'translateY(0)';
+          }
+        });
+      });
+      cards.forEach(card => {
+        card.style.opacity = 0;
+        card.style.transform = 'translateY(20px)';
+        card.style.transition = 'all 0.5s ease-out';
+        observer.observe(card);
+      });
+    });
+  </script>
+
+</body>
+</html>
