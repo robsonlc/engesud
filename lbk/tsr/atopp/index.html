@@ -3,45 +3,278 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="shortcut icon" href="https://i.imgur.com/HjwVm8x.png" type="image/x-icon">
-
-    <title>Em Breve</title>
+    
+    <meta property="og:url" content="https://www.engesudsmart.com.br/lbk/tsr/atopp">
+    <meta property="og:title" content="Terreno ZC-2 - 5.600m²">
+    <meta property="og:image" content="https://i.imgur.com/YJhYmGt.png">
+    <meta property="og:description" content="Disponível para negociação - Zoneamento ZC-2, coeficiente básico 3.0 (até 5.0 com outorga onerosa). Parceria financeira possível.">
+    
+    <title>Disponibilidade de Terreno ZC-2 | Engesud Engenharia</title>
+    
+    <link rel="shortcut icon" href="https://i.imgur.com/HjwVm8x.png" type="image/x-icon">
+    
     <style>
-        body {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
+        :root {
+            --primary-color: #2c3e50;
+            --secondary-color: #3498db;
+            --accent-color: #e74c3c;
+            --text-color: #333;
+            --light-bg: #f8f9fa;
+            --card-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+
+        * {
             margin: 0;
-            font-family: Arial, sans-serif;
-            background-color: #f0f0f0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            color: var(--text-color);
+            line-height: 1.6;
+            background-color: var(--light-bg);
+        }
+
+        .header-wrapper {
+            position: relative;
+            height: 300px;
             overflow: hidden;
         }
-        h1 {
-            text-align: center;
-            color: #333;
-            animation: fadeIn 3s ease-in-out infinite alternate;
-        }
-        @keyframes fadeIn {
-            0% { opacity: 0; transform: scale(0.9); }
-            100% { opacity: 1; transform: scale(1.1); }
-        }
-        .stars {
+
+        header {
             position: absolute;
             width: 100%;
             height: 100%;
-            background: url('https://raw.githubusercontent.com/robsonlc/engesud/main/lbk/tsr/osha/stars.png') repeat;
-            z-index: -1;
-            animation: moveStars 50s linear infinite;
+            background: linear-gradient(rgba(44, 62, 80, 0.7), rgba(44, 62, 80, 0.9)),
+                        url('https://i.imgur.com/l3RSphT.png') center/cover no-repeat;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
         }
-        @keyframes moveStars {
-            from { transform: translateY(0); }
-            to { transform: translateY(-1000px); }
+
+        .header-content {
+            text-align: center;
+            padding: 20px;
+            max-width: 800px;
+        }
+
+        .header-content h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        main {
+            max-width: 1200px;
+            margin: -50px auto 0;
+            padding: 30px;
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: var(--card-shadow);
+            position: relative;
+        }
+
+        .highlight-box {
+            background-color: var(--light-bg);
+            padding: 20px;
+            border-radius: 8px;
+            margin: 20px 0;
+            border-left: 4px solid var(--secondary-color);
+        }
+
+        .feature-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+            margin: 30px 0;
+        }
+
+        .feature-card {
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: var(--card-shadow);
+            transition: transform 0.3s ease;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .map-container {
+            border-radius: 10px;
+            overflow: hidden;
+            margin: 30px 0;
+        }
+
+        iframe {
+            width: 100%;
+            height: 450px;
+            border: none;
+        }
+
+        .documents-section {
+            background-color: var(--light-bg);
+            padding: 25px;
+            border-radius: 10px;
+            margin: 30px 0;
+        }
+
+        .documents-links {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin-top: 15px;
+        }
+
+        .documents-links a {
+            background-color: var(--secondary-color);
+            color: white;
+            padding: 10px 20px;
+            border-radius: 5px;
+            text-decoration: none;
+            transition: background-color 0.3s ease;
+        }
+
+        .documents-links a:hover {
+            background-color: #2980b9;
+        }
+
+        footer {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 40px 20px;
+            margin-top: 50px;
+            text-align: center;
+        }
+
+        footer img {
+            width: 150px;
+            margin-bottom: 20px;
+            border-radius: 8px;
+        }
+
+        footer a {
+            color: white;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        footer a:hover {
+            color: var(--secondary-color);
+        }
+
+        @media (max-width: 768px) {
+            .header-content h1 {
+                font-size: 1.8rem;
+            }
+
+            main {
+                margin-top: -30px;
+                padding: 20px;
+            }
+
+            .feature-container {
+                grid-template-columns: 1fr;
+            }
         }
     </style>
 </head>
 <body>
-    <div class="stars"></div>
-    <h1>Logo entrará no ar</h1>
+    <div class="header-wrapper">
+        <header>
+            <div class="header-content">
+                <h1>Terreno Disponível para Negociação</h1>
+                <p>Excelente Localização | Alto Potencial Construtivo</p>
+            </div>
+        </header>
+    </div>
+
+    <main>
+        <div class="highlight-box">
+            <h2>Detalhes do Terreno</h2>
+            <p>
+                Área total de <strong>5.600 m²</strong><br>
+                Zoneamento <strong>ZC-2</strong><br>
+                Coeficiente básico: <strong>3,00</strong><br>
+                Expansível até: <strong>5,00</strong> (com outorga onerosa)<br>
+                <strong>Parceria financeira disponível</strong>
+            </p>
+        </div>
+
+        <section class="map-container">
+            <h2>Localização Estratégica</h2>
+            <iframe src="https://www.google.com/maps/d/embed?mid=1pAMQu-lkoqT0uuF9Xj1RZzitAYFsC80&ehbc=2E312F"></iframe>
+        </section>
+
+        <div class="feature-container">
+            <div class="feature-card">
+                <h3>Visão do Imóvel</h3>
+                <img src="https://www.engesudsmart.com.br/lbk/tsr/atopp/Img.jpeg" alt="Imagem do imóvel" style="width:100%; border-radius:8px; margin-top:10px;">
+            </div>
+        </div>
+
+        <section class="documents-section">
+            <h2>Documentação Completa</h2>
+            <div class="documents-links">
+                <a href="https://www.engesudsmart.com.br/lbk/tsr/atopp/Matricula_7059.pdf" target="_blank">
+                    Matrícula 7.059 (4.000 m²)
+                </a>
+                <a href="https://www.engesudsmart.com.br/lbk/tsr/atopp/Matricula_51686.pdf" target="_blank">
+                    Matrícula 51.686 (1.600 m²)
+                </a>
+            </div>
+        </section>
+
+        <div class="highlight-box">
+            <p>
+                Oportunidade única para investimento ou desenvolvimento. 
+                Entre em contato para mais informações e agendamento de visitas.
+                Flexibilidade para estudos de partnership e parcerias.
+            </p>
+        </div>
+    </main>
+
+    <footer>
+        <a href="http://www.engesudsmart.com.br" target="_blank">
+            <img src="https://i.imgur.com/3YKn2xW.png" alt="Logo Engesud">
+        </a>
+        <p><strong>Engesud Engenharia e Intermediação LTDA</strong></p>
+        <p>Robson Luis da Costa | 
+            <a href="https://wa.me/4497013489">+55 (44) 99701-3489</a>
+        </p>
+        <p>
+            <a href="https://www.engesudsmart.com.br" target="_blank">
+                www.engesudsmart.com.br
+            </a>
+        </p>
+        <p>Última atualização: 07 de janeiro de 2025</p>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const cards = document.querySelectorAll('.feature-card');
+            
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.opacity = 1;
+                        entry.target.style.transform = 'translateY(0)';
+                    }
+                });
+            }, {
+                threshold: 0.1
+            });
+
+            cards.forEach(card => {
+                card.style.opacity = 0;
+                card.style.transform = 'translateY(20px)';
+                card.style.transition = 'all 0.6s ease-out';
+                observer.observe(card);
+            });
+        });
+    </script>
 </body>
 </html>
