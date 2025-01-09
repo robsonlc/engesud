@@ -203,6 +203,7 @@
         nav ul li a:hover {
             text-decoration: underline;
         }
+        /* Media Queries para Responsividade */
         @media (max-width: 768px) {
             .container {
                 padding: 1rem;
@@ -216,11 +217,19 @@
             .map {
                 height: 300px;
             }
+            /* Tornar tabela responsiva */
+            .table-responsive {
+                overflow-x: auto;
+                -webkit-overflow-scrolling: touch;
+            }
             table {
-                font-size: 0.8rem;
+                font-size: 1rem; /* Aumentado para melhorar a legibilidade */
+                width: auto;  /* Ajusta a largura da tabela */
+                min-width: 100%; /* Garante que a tabela ocupe a largura total disponível */
             }
             th, td {
                 padding: 0.5rem;
+                white-space: nowrap; /* Evita que o texto quebre em várias linhas */
             }
         }
     </style>
@@ -270,48 +279,50 @@
 
         <section class="section">
             <h2>Estrutura das Fases do Empreendimento</h2>
-            <table>
-                <thead>
-                    <tr>
-                        <th>Fase</th>
-                        <th>Número de Torres</th>
-                        <th>Número de Apartamentos</th>
-                        <th>Receita Estimada (VGV)</th>
-                        <th>Permuta (8% do VGV)</th>
-                        <th>20% da Permuta (Pagamento Inicial)</th>
-                        <th>80% da Permuta (Pagamento ao Longo das Vendas)</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>Fase 1</td>
-                        <td>2</td>
-                        <td>192</td>
-                        <td>R$ 48.000.000</td>
-                        <td>R$ 3.840.000</td>
-                        <td>R$ 768.000</td>
-                        <td>R$ 3.072.000</td>
-                    </tr>
-                    <tr>
-                        <td>Fase 2</td>
-                        <td>3</td>
-                        <td>288</td>
-                        <td>R$ 72.000.000</td>
-                        <td>R$ 5.760.000</td>
-                        <td>R$ 1.152.000</td>
-                        <td>R$ 4.608.000</td>
-                    </tr>
-                    <tr>
-                        <td>Fase 3</td>
-                        <td>3</td>
-                        <td>288</td>
-                        <td>R$ 72.000.000</td>
-                        <td>R$ 5.760.000</td>
-                        <td>R$ 1.152.000</td>
-                        <td>R$ 4.608.000</td>
-                    </tr>
-                </tbody>
-            </table>
+            <div class="table-responsive">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Fase</th>
+                            <th>Número de Torres</th>
+                            <th>Número de Apartamentos</th>
+                            <th>Receita Estimada (VGV)</th>
+                            <th>Permuta (8% do VGV)</th>
+                            <th>20% da Permuta (Pagamento Inicial)</th>
+                            <th>80% da Permuta (Pagamento ao Longo das Vendas)</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Fase 1</td>
+                            <td>2</td>
+                            <td>192</td>
+                            <td>R$ 48.000.000</td>
+                            <td>R$ 3.840.000</td>
+                            <td>R$ 768.000</td>
+                            <td>R$ 3.072.000</td>
+                        </tr>
+                        <tr>
+                            <td>Fase 2</td>
+                            <td>3</td>
+                            <td>288</td>
+                            <td>R$ 72.000.000</td>
+                            <td>R$ 5.760.000</td>
+                            <td>R$ 1.152.000</td>
+                            <td>R$ 4.608.000</td>
+                        </tr>
+                        <tr>
+                            <td>Fase 3</td>
+                            <td>3</td>
+                            <td>288</td>
+                            <td>R$ 72.000.000</td>
+                            <td>R$ 5.760.000</td>
+                            <td>R$ 1.152.000</td>
+                            <td>R$ 4.608.000</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
             <p><strong>Total Permuta (8% do VGV):</strong> R$ 15.360.000</p>
             <p><strong>Total Pagamentos Iniciais (20% de cada fase):</strong> R$ 3.072.000</p>
             <p><strong>Total Pagamentos ao Longo das Vendas (80% de cada fase):</strong> R$ 12.288.000</p>
