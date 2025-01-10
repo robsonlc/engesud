@@ -3,22 +3,27 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Metas OG -->
     <meta property="og:url" content="https://www.engesudsmart.com.br/lbk/tsr/reb" />
     <meta property="og:image" content="https://i.imgur.com/XMxjRW9.png" />
     <meta property="og:title" content="Potencial de Parceria Imobiliária Rebouças" />
     <meta property="og:description" content="Apresentação da área em protocolo de ZEIS no programa ProZEIS da prefeitura de Maringá." />
 
     <title>Potencial de Parceria Imobiliária - Engesud</title>
+
+    <!-- Favicon -->
     <link rel="shortcut icon" href="https://i.imgur.com/HjwVm8x.png" type="image/x-icon">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
 
     <style>
+
         :root {
-            --primary-color: #2c5282;
-            --secondary-color: #4a5568;
-            --accent-color: #3182ce;
-            --background-color: #f7fafc;
-            --text-color: #2d3748;
+            --primary-color: #006eff;
+            --secondary-color: #333;
+            --background-color: #f5f5f5;
+            --text-color: #555;
             --spacing-unit: 1rem;
         }
 
@@ -26,162 +31,105 @@
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Poppins', sans-serif;
+            font-family: 'Roboto', sans-serif;
         }
 
         body {
-            line-height: 1.8;
+            line-height: 1.6;
             color: var(--text-color);
             background-color: var(--background-color);
         }
 
+        /* Header */
         .hero {
             position: relative;
-            height: 500px;
-            background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+            height: 400px;
+            background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)),
                         url('https://i.imgur.com/Xev2JU9.png') center/cover no-repeat;
             display: flex;
             align-items: center;
             justify-content: center;
             text-align: center;
             color: white;
+            padding: 2rem;
         }
 
         .hero-content {
-            max-width: 900px;
-            padding: 0 2rem;
+            max-width: 800px;
         }
 
         .hero h1 {
-            font-size: 3.5rem;
-            font-weight: 700;
-            margin-bottom: 1.5rem;
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
             color: white;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
         }
 
-        .hero p {
-            font-size: 1.5rem;
-            font-weight: 300;
-            text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
-        }
-
+        /* Container */
         .container {
             width: 90%;
             max-width: 1200px;
-            margin: -80px auto 0;
-            padding: 3rem;
+            margin: 0 auto;
+            padding: 3rem 1rem;
             background-color: #fff;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-            border-radius: 12px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            margin-top: -50px;
             position: relative;
         }
 
+        /* Sections */
         .section {
-            margin-bottom: 4rem;
+            margin-bottom: 3rem;
             padding: 2rem;
             background-color: white;
-            border-radius: 12px;
-            transition: transform 0.3s ease;
-        }
-
-        .section:hover {
-            transform: translateY(-5px);
+            border-radius: 8px;
         }
 
         h2 {
             color: var(--primary-color);
-            margin-bottom: 2rem;
-            font-size: 2.2rem;
-            font-weight: 600;
-            position: relative;
-            padding-bottom: 1rem;
-        }
-
-        h2::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 60px;
-            height: 4px;
-            background-color: var(--accent-color);
-            border-radius: 2px;
+            margin-bottom: 1.5rem;
+            font-size: 1.8rem;
+            border-bottom: 2px solid var(--primary-color);
+            padding-bottom: 0.5rem;
         }
 
         p {
             margin-bottom: 1.5rem;
             font-size: 1.1rem;
-            line-height: 1.8;
         }
 
         .highlight {
-            background-color: #ebf8ff;
-            padding: 2rem;
-            border-left: 6px solid var(--accent-color);
+            background-color: #f0f7ff;
+            padding: 1.5rem;
+            border-left: 4px solid var(--primary-color);
             margin: 2rem 0;
-            border-radius: 0 12px 12px 0;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+            border-radius: 0 8px 8px 0;
         }
 
-        .stats-container {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 2rem;
-            margin: 3rem 0;
-        }
-
-        .stat-card {
-            background: white;
-            padding: 2rem;
-            border-radius: 12px;
-            text-align: center;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
-            transition: transform 0.3s ease;
-        }
-
-        .stat-card:hover {
-            transform: translateY(-5px);
-        }
-
-        .stat-number {
-            font-size: 2.5rem;
-            font-weight: 700;
-            color: var(--primary-color);
-            margin-bottom: 1rem;
-        }
-
-        .stat-label {
-            color: var(--secondary-color);
-            font-size: 1.1rem;
-        }
-
+        /* Google Maps Iframe */
         iframe {
             width: 100%;
-            height: 600px;
+            height: 500px;
             border: none;
-            border-radius: 12px;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
         }
 
+        /* Area Image */
         .area-img {
             width: 100%;
             max-width: 100%;
             height: auto;
-            border-radius: 12px;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
             margin: 2rem 0;
-            transition: transform 0.3s ease;
         }
 
-        .area-img:hover {
-            transform: scale(1.02);
-        }
-
+        /* Footer */
         footer {
-            background: linear-gradient(to right, #2c5282, #2b6cb0);
+            background: #2c3e50;
             color: #fff;
-            padding: 4rem 0;
+            padding: 3rem 0;
             margin-top: 4rem;
         }
 
@@ -193,9 +141,9 @@
         }
 
         .footer-logo {
-            width: 220px;
-            margin-bottom: 2rem;
-            border-radius: 12px;
+            width: 200px;
+            margin-bottom: 1.5rem;
+            border-radius: 10px;
             transition: transform 0.3s ease;
         }
 
@@ -207,84 +155,69 @@
             color: #fff;
             text-decoration: none;
             transition: color 0.3s ease;
-            font-weight: 500;
         }
 
         .contact-link:hover {
-            color: #90cdf4;
+            color: #3498db;
         }
 
+        footer p {
+            margin: 0.5rem 0;
+        }
+
+         /* WhatsApp Button */
         .whatsapp-button {
             position: fixed;
-            bottom: 30px;
-            right: 30px;
+            bottom: 20px;
+            right: 20px;
             z-index: 100;
         }
 
         .whatsapp-button a {
             background-color: #25d366;
             color: white;
-            padding: 15px 25px;
+            padding: 10px 20px;
             text-decoration: none;
-            border-radius: 30px;
+            border-radius: 25px;
             font-weight: 500;
             display: flex;
             align-items: center;
-            box-shadow: 0 4px 10px rgba(37, 211, 102, 0.3);
-            transition: transform 0.3s ease;
-        }
-
-        .whatsapp-button a:hover {
-            transform: translateY(-3px);
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
         }
 
         .whatsapp-button img {
-            width: 35px;
-            margin-right: 12px;
+            width: 30px;
+            margin-right: 10px;
         }
 
+        /* Responsiveness */
         @media (max-width: 768px) {
             .hero {
-                height: 400px;
+                height: 300px;
             }
 
             .hero h1 {
-                font-size: 2.5rem;
+                font-size: 2rem;
             }
 
             .container {
                 width: 95%;
-                padding: 2rem;
+                padding: 1.5rem;
             }
 
             .section {
-                padding: 1.5rem;
+                padding: 1rem;
             }
 
             h2 {
-                font-size: 1.8rem;
+                font-size: 1.5rem;
             }
 
             iframe {
-                height: 400px;
-            }
-
-            .stat-card {
-                padding: 1.5rem;
+                height: 350px;
             }
         }
-
-        .fade-in {
-            opacity: 0;
-            transform: translateY(20px);
-            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
-        }
-
-        .fade-in.visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
-
+        /* Este conteúdo é protegido por direitos autorais creditados à Engesud Engenharia e Intermediação LTDA, inscrita no CNPJ 40.601.637/0001-58 */
     </style>
 </head>
 <body>
@@ -296,47 +229,28 @@
     </header>
 
     <div class="container">
-        <section class="section fade-in">
+        <section class="section feature-card">
             <div class="highlight">
-                <h2>Visão Geral do Projeto</h2>
-                <p>Oportunidade única de desenvolvimento imobiliário através do programa ProZEIS da prefeitura de Maringá, com área elegível para transformação em ZEIS.</p>
-                
-                <div class="stats-container">
-                    <div class="stat-card">
-                        <div class="stat-number">2000+</div>
-                        <div class="stat-label">Unidades Habitacionais</div>
-                    </div>
-                    <div class="stat-card">
-                        <div class="stat-number">T+7</div>
-                        <div class="stat-label">Tipologia Máxima</div>
-                    </div>
-                    <div class="stat-card">
-                        <div class="stat-number">100%</div>
-                        <div class="stat-label">Infraestrutura Completa</div>
-                    </div>
-                </div>
-
-                <p>As áreas serão entregues com infraestrutura completa e prontas para construção, incluindo:</p>
-                <ul>
-                    <li>Vias de acesso pavimentadas</li>
-                    <li>Redes de drenagem</li>
-                    <li>Infraestrutura básica completa</li>
-                </ul>
+                <h2>Sobre o Projeto</h2>
+<p>Área com <strong>elegibilidade</strong> para transformação em ZEIS, conforme o programa <strong>ProZEIS</strong> da prefeitura municipal de Maringá. </p>
+<p>Potencial para viabilizar <strong>mais de 2.000 unidades habitacionais</strong>, considerando edifícios com tipologias <strong>T+7 e/ou T+3</strong>, a depender da deliberação do conselho gestor do programa ProZEIS.</p>
+<p>As infraestruturas externas <em>não incidentes</em> ao empreendimento (tais como vias de acesso, redes de drenagem, entre outras) poderão ser custeadas pelo proprietário, que também é um experiente loteador na região. Desta forma, <strong>as áreas poderão ser entregues com infraestrutura completa e prontas para construção</strong>, a depender dos termos e condições negociados na transação imobiliária.</p>
             </div>
         </section>
 
-        <section class="section fade-in">
+        <section class="section feature-card">
             <h2>Localização Estratégica</h2>
-            <iframe src="https://www.google.com/maps/d/embed?mid=1Eekhx12VnUY6pw0WKfdhTa-sOG6eFlM&ehbc=2E312F"></iframe>
+            <iframe src="https://www.google.com/maps/d/embed?mid=1Eekhx12VnUY6pw0WKfdhTa-sOG6eFlM&ehbc=2E312F" width="640" height="480"></iframe>
         </section>
 
-        <section class="section fade-in">
+        <section class="section feature-card">
             <h2>Área do Empreendimento</h2>
             <img class="area-img" src="https://i.imgur.com/eJJg9mU.png" alt="Imagem da área com polígono e diretrizes viárias">
         </section>
 
+        <!-- Botão WhatsApp com Imagem -->
         <div class="whatsapp-button">
-            <a href="https://wa.me/4497013489?text=Olá,%20gostaria%20de%20saber%20mais%20sobre%20a%20parceria%20imobiliária." target="_blank">
+            <a href="https://wa.me/4497013489?text=Ol%C3%A1%2C%20gostaria%20de%20saber%20mais%20sobre%20a%20parceria%20imobili%C3%A1ria." target="_blank">
                 <img src="https://i.imgur.com/4uW9fVK.png" alt="Ícone WhatsApp">
                 <span>Fale Conosco</span>
             </a>
@@ -362,21 +276,22 @@
     </div>
     <script>
         document.addEventListener('DOMContentLoaded', function() {
-            const fadeElements = document.querySelectorAll('.fade-in');
-            
-            const observer = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        entry.target.classList.add('visible');
-                    }
-                });
-            }, {
-                threshold: 0.1
+          // Adiciona classe de animação aos cards quando visíveis
+          const cards = document.querySelectorAll('.feature-card');
+          const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+              if (entry.isIntersecting) {
+                entry.target.style.opacity = 1;
+                entry.target.style.transform = 'translateY(0)';
+              }
             });
-
-            fadeElements.forEach(element => {
-                observer.observe(element);
-            });
+          });
+          cards.forEach(card => {
+            card.style.opacity = 0;
+            card.style.transform = 'translateY(20px)';
+            card.style.transition = 'all 0.5s ease-out';
+            observer.observe(card);
+          });
         });
     </script>
 </body>
