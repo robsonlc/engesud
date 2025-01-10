@@ -194,39 +194,43 @@
             margin: 10px 0;
             font-size: 1.1rem;
         }
+@media (max-width: 768px) {
+    header {
+        height: 300px;
+    }
 
-        @media (max-width: 768px) {
-            header {
-                height: 400px;
-            }
+    header h1 {
+        font-size: 2.5rem;
+    }
 
-            header h1 {
-                font-size: 2.5rem;
-            }
+    .content {
+        max-width: 100%;
+        padding: 20px;
+    }
 
-            header p {
-                font-size: 1.3rem;
-            }
+    .image-grid {
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    }
 
-            .content {
-                padding: 20px;
-            }
+    .action-buttons {
+        margin: 30px 0 20px;
+    }
 
-            .action-buttons {
-                flex-direction: column;
-                align-items: stretch;
-            }
+    .action-button {
+        padding: 15px 30px;
+        font-size: 1rem;
+    }
 
-            .action-button {
-                text-align: center;
-                justify-content: center;
-            }
-        }
+    footer {
+        padding: 40px 10px;
+    }
+}
+
     </style>
 </head>
 <body>
     <header>
-        <h1>Área Premium de 15 Alqueires</h1>
+        <h1>Área Disponível de 15 Alqueires</h1>
         <p>Oportunidade única em Maringá para desenvolvimento urbano</p>
     </header>
 
@@ -265,12 +269,13 @@
         </div>
     </div>
 
-    <footer>
-        <img src="https://i.imgur.com/6z1r7cp.jpeg" alt="Logotipo da Engesud">
-        <p>Robson Luis da Costa</p>
-        <p>Engenheiro Civil e Corretor de Imóveis</p>
-        <p>CREA-PR 19.449/D | CRECI-PR 32.093</p>
-        <p>Contato: +55 (44) 99701-3489</p>
-    </footer>
+     <footer>
+     <a href="http://www.engesudsmart.com.br" target="_blank" title="www.engesudsmart.com.br">    <img src="https://i.imgur.com/3YKn2xW.png" alt="Logo Engesud"> </a> 
+        <p><strong>Engesud Engenharia e Intermediação LTDA</strong></p>
+        <p>Robson Luis da Costa | <a href="https://wa.me/4497013489" title="Whatsapp">+55 (44) 99701-3489</a></p>
+  <p><a href="https://www.engesudsmart.com.br"  target="_blank" >www.engesudsmart.com.br</a></p> 
+ <p>Última atualização: 20 de novembro de 2024 </p>  
+</footer>
+
 </body>
 </html>
