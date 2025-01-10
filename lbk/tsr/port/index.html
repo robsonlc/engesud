@@ -30,7 +30,7 @@
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Roboto', sans-serif;
+            font-family: 'Roboto', sans-serif; /* Mudando a fonte para Roboto, como no primeiro exemplo */
         }
 
         body {
@@ -119,16 +119,49 @@
             margin: 2rem 0;
         }
 
-        footer {
-            background-color: #f8f8f8;
-            padding: 2rem 1rem;
+        .download-section {
             text-align: center;
+            padding: 2rem;
+            background-color: white;
+            border-radius: 8px;
+            margin-bottom: 3rem;
+        }
+
+        .download-button {
+            display: inline-block;
+            background-color: #2c3e50; /* Cor de fundo do botão de download do segundo exemplo */
+            color: white;
+            padding: 1rem 2rem;
+            text-decoration: none;
+            border-radius: 25px; /* Borda arredondada como no segundo exemplo */
+            font-weight: 500;
+            transition: background-color 0.3s ease;
+            border: none;
+            cursor: pointer;
+        }
+
+        .download-button:hover {
+            background-color: #34495e; /* Cor de hover do botão de download do segundo exemplo */
+        }
+
+        footer {
+            background: #2c3e50; /* Cor de fundo do rodapé do segundo exemplo */
+            color: #fff;
+            padding: 3rem 0;
+            margin-top: 4rem;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            text-align: center;
+            padding: 0 2rem;
         }
 
         .footer-logo {
-            max-width: 180px;
-            height: auto;
-            margin-bottom: 1rem;
+            width: 200px;
+            margin-bottom: 1.5rem;
+            border-radius: 10px;
             transition: transform 0.3s ease;
         }
 
@@ -136,20 +169,18 @@
             transform: scale(1.05);
         }
 
-        .contact-info {
-            margin: 1rem 0;
-            line-height: 1.4;
-        }
-
         .contact-link {
-            color: var(--primary-color);
+            color: #fff;
             text-decoration: none;
-            font-weight: 500;
             transition: color 0.3s ease;
         }
 
         .contact-link:hover {
-            color: #0056b3;
+            color: #3498db; /* Cor de hover do link do segundo exemplo */
+        }
+
+        footer p {
+            margin: 0.5rem 0;
         }
 
         @media (max-width: 768px) {
@@ -207,16 +238,27 @@
             <h2>Área do Empreendimento</h2>
             <img class="area-img" src="https://i.imgur.com/nEuSw2Z.png" alt="Imagem da área com polígono e diretrizes viárias">
         </section>
+
+        <!-- Seção de Download -->
+        <section class="download-section">
+            <h2>Planta Planialtimétrica</h2>
+            <p>Faça o download da planta planialtimétrica em formato DWG.</p>
+            <a href="https://www.engesudsmart.com.br/lbk/tsr/port/planialtimetrico.dwg" class="download-button" download>
+                Baixar Planta Planialtimétrica (DWG)
+            </a>
+        </section>
     </div>
 
     <footer>
-        <a href="https://www.engesudsmart.com.br" target="_blank">
-            <img class="footer-logo" src="https://i.imgur.com/3YKn2xW.png" alt="Logo Engesud">
-        </a>
-        <p><strong>Engesud Engenharia e Intermediação LTDA</strong></p>
-        <p>Robson Luis da Costa | <a class="contact-link" href="https://wa.me/4497013489" target="_blank">+55 (44) 99701-3489</a></p>
-        <p><a class="contact-link" href="https://www.engesudsmart.com.br" target="_blank">www.engesudsmart.com.br</a></p>
-        <p>Última atualização: 28 de dezembro de 2024</p>
+        <div class="footer-content">
+            <a href="https://www.engesudsmart.com.br" target="_blank">
+                <img class="footer-logo" src="https://i.imgur.com/3YKn2xW.png" alt="Logo Engesud">
+            </a>
+            <p><strong>Engesud Engenharia e Intermediação LTDA</strong></p>
+            <p>Robson Luis da Costa | <a class="contact-link" href="https://wa.me/4497013489" target="_blank">+55 (44) 99701-3489</a></p>
+            <p><a class="contact-link" href="https://www.engesudsmart.com.br" target="_blank">www.engesudsmart.com.br</a></p>
+            <p>Última atualização: 03 de janeiro de 2025</p>
+        </div>
     </footer>
 </body>
 </html>
