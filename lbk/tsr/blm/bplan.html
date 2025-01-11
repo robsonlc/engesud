@@ -1,1 +1,225 @@
-Teste
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Plano de Negócios - Total Life Club Home</title>
+    <meta property="og:title" content="Plano de Negócios - Total Life Club Home">
+    <meta property="og:description" content="Proposta de estruturação para aquisição da área remanescente do empreendimento Total Life Club Home - Belém/PA.">
+    <meta property="og:image" content="https://i.imgur.com/a2WsXkf.png">
+    <meta property="og:url" content="https://www.engesudsmart.com.br/lbk/tsr/blm/bplan.html">
+    <meta property="og:type" content="website">
+    <link rel="shortcut icon" href="https://i.imgur.com/HjwVm8x.png" type="image/x-icon">
+    <style>
+        :root {
+            --primary-color: #4CAF50;
+            --primary-dark: #367c39;
+            --text-color: #333;
+            --bg-color: #f4f4f4;
+            --card-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            background: var(--bg-color);
+            color: var(--text-color);
+        }
+
+        header {
+            background: var(--primary-dark);
+            color: #fff;
+            padding: 2rem 0;
+            text-align: center;
+        }
+
+        header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        header p {
+            font-size: 1.2rem;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        .section {
+            background: #fff;
+            border-radius: 12px;
+            padding: 2rem;
+            margin: 2rem 0;
+            box-shadow: var(--card-shadow);
+        }
+
+        .section h2 {
+            color: var(--primary-color);
+            margin-bottom: 1.5rem;
+            font-size: 1.8rem;
+            border-bottom: 2px solid var(--primary-color);
+            padding-bottom: 0.5rem;
+        }
+
+        .section p, .section ul {
+            margin-bottom: 1rem;
+        }
+
+        .section ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .section li {
+            margin-bottom: 1rem;
+        }
+        .mermaid {
+          display: flex;
+          justify-content: center;
+          margin: 2rem 0;
+        }
+
+        .button {
+            display: inline-block;
+            background: var(--primary-color);
+            color: #fff;
+            padding: 10px 20px;
+            margin: 15px 0;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+
+        .button:hover {
+            background: var(--primary-dark);
+        }
+
+        footer {
+            background: #333;
+            color: #fff;
+            padding: 2rem 1rem;
+            text-align: center;
+            margin-top: 2rem;
+        }
+
+        footer img {
+            height: 60px;
+            margin-bottom: 1rem;
+            border-radius: 8px;
+            transition: transform 0.3s ease;
+        }
+
+        footer img:hover {
+            transform: scale(1.1);
+        }
+
+        footer a {
+            color: #fff;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        footer a:hover {
+            color: var(--primary-color);
+        }
+
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 2rem;
+            }
+
+            .container {
+                padding: 1rem;
+            }
+
+            .section {
+                padding: 1.5rem;
+            }
+        }
+    </style>
+    <script src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script>
+    <script>mermaid.initialize({startOnLoad: true});</script>
+</head>
+<body>
+    <header>
+        <h1>Plano de Negócios</h1>
+        <p>Total Life Club Home - Belém/PA</p>
+    </header>
+
+    <div class="container">
+        <section class="section">
+            <h2>Proposta de Estruturação Financeira</h2>
+            <p>Considerando o cenário atual de taxa de juros SELIC alta e com tendência de elevação, propomos a seguinte estrutura para a aquisição da área remanescente do empreendimento Total Life Club Home, visando conciliar os interesses do comprador e do vendedor (INPAR PROJETO 46 SPE LTDA).</p>
+            <p><strong>Valor de Referência:</strong> R$ 18.000.000,00 (Dezoito Milhões de Reais).</p>
+            <p><strong>Condições:</strong></p>
+            <ul>
+                <li>Pagamento em dinheiro, com gatilho na aprovação da viabilidade de um novo projeto.</li>
+                <li>Possibilidade de parcelamento, a depender da proposta.</li>
+                <li>Valor à vista será avaliado mediante proposta formal.</li>
+            </ul>
+        </section>
+        
+        <section class="section">
+            <h2>Fluxo de Pagamento Sugerido</h2>
+            <p>A seguir, apresentamos um esquema de pagamento possível, atrelado a etapas de aprovação e desenvolvimento do novo projeto:</p>
+            <div class="mermaid">
+              graph TD
+                  A[Início: Negociação] --> B(Assinatura do Compromisso de Compra e Venda);
+                  B --> C{Viabilidade do Novo Projeto Aprovada?};
+                  C -- Sim --> D(Pagamento da 1ª Parcela - Gatilho);
+                  C -- Não --> E[Renegociação];
+                  D --> F(Desenvolvimento do Projeto);
+                  F --> G(Pagamento de Parcelas Subsequentes - Conforme Cronograma);
+                  G --> H(Aprovação do Projeto Final);
+                  H --> I(Pagamento da Parcela Final);
+                  I --> J[Conclusão da Compra];
+                  E --> B;
+            </div>
+            <p><strong>Considerações:</strong></p>
+            <ul>
+              <li>Este é um modelo base e está sujeito a alterações conforme a negociação.</li>
+              <li>Parcelas e prazos serão definidos em comum acordo entre as partes.</li>
+              <li>O objetivo é mitigar riscos e garantir previsibilidade para ambas as partes.</li>
+            </ul>
+          </section>
+
+        <section class="section">
+            <h2>Desafios e Mitigações</h2>
+            <p>Reconhecemos que o cenário atual apresenta desafios, como a taxa de juros SELIC em alta e a expectativa de elevação. No entanto, acreditamos que uma estrutura bem elaborada, com pagamentos atrelados a marcos concretos de aprovação e desenvolvimento, pode viabilizar a negociação.</p>
+            <p><strong>Mitigações:</strong></p>
+            <ul>
+                <li><strong>Gatilhos de Pagamento:</strong> Vinculam os pagamentos à superação de etapas críticas do projeto, reduzindo o risco para o comprador.</li>
+                <li><strong>Flexibilidade:</strong> A proposta está aberta a negociações, permitindo ajustes conforme as necessidades de ambas as partes.</li>
+                <li><strong>Comprometimento:</strong> A formalização de um compromisso de compra e venda demonstra o interesse e a seriedade do comprador.</li>
+            </ul>
+        </section>
+
+        <section class="section">
+            <h2>Próximos Passos</h2>
+            <p>Convidamos a INPAR PROJETO 46 SPE LTDA a avaliar esta proposta e iniciar as negociações para a aquisição da área remanescente do Total Life Club Home. Acreditamos que, com diálogo e flexibilidade, podemos chegar a um acordo vantajoso para ambas as partes.</p>
+        </section>
+            <a href="https://www.engesudsmart.com.br/lbk/tsr/blm/index.html" class="button">Voltar à Página Principal</a>
+        </section>
+    </div>
+
+    <footer>
+        <a href="http://www.engesudsmart.com.br" target="_blank" title="www.engesudsmart.com.br">
+            <img src="https://i.imgur.com/3YKn2xW.png" alt="Logo Engesud">
+        </a>
+        <p><strong>Engesud Engenharia e Intermediação LTDA</strong></p>
+        <p>Robson Luis da Costa | <a href="https://wa.me/4497013489" title="Whatsapp">+55 (44) 99701-3489</a></p>
+        <p><a href="https://www.engesudsmart.com.br" target="_blank">www.engesudsmart.com.br</a></p>
+        <p>Última atualização: 11 de janeiro de 2024</p>
+    </footer>
+    <!-- Este conteúdo é protegido por direitos autorais creditados à Engesud Engenharia e Intermediação LTDA, inscrita no CNPJ 40.601.637/0001-58 -->
+</body>
+</html>
