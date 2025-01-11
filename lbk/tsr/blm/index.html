@@ -114,29 +114,6 @@
             transform: scale(1.05);
         }
 
-        .download-section ul {
-            list-style: none;
-        }
-
-        .download-section ul li {
-            margin: 1rem 0;
-        }
-
-        .download-section ul li a {
-            display: block;
-            padding: 1rem;
-            background-color: var(--primary-color);
-            color: white;
-            text-decoration: none;
-            border-radius: 8px;
-            transition: background-color 0.3s ease;
-            text-align: center;
-        }
-
-        .download-section ul li a:hover {
-            background-color: var(--primary-dark);
-        }
-
         .google-maps-section {
             margin: 2rem 0;
         }
@@ -174,6 +151,22 @@
 
         footer a:hover {
             color: var(--primary-color);
+        }
+
+        .button {
+            display: inline-block;
+            background: var(--primary-color);
+            color: #fff;
+            padding: 10px 20px;
+            margin: 15px 0;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+            animation: fadeInUp 1s ease-out;
+        }
+
+        .button:hover {
+            background: var(--primary-dark);
         }
 
         @keyframes fadeInDown {
@@ -264,14 +257,8 @@
             </div>
         </section>
 
-        <section class="feature-card">
-            <h2>Documentos para Download</h2>
-            <div class="download-section">
-                <ul>
-                    <li><a href="https://www.engesudsmart.com.br/lbk/tsr/blm/projetos.rar" download>Jogo de plantas arquitetônicas aprovadas para o terreno</a></li>
-                    <li><a href="https://www.engesudsmart.com.br/lbk/tsr/blm/matrícula n15.730.pdf" download>Matrícula do imóvel incluindo registro de incorporação dos projetos antigos</a></li>
-                </ul>
-            </div>
+       <section class="feature-card">
+            <a href="https://www.engesudsmart.com.br/lbk/tsr/blm/briefing.html" class="button">Conheça o Projeto</a>
         </section>
     </div>
 
