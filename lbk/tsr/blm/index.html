@@ -3,45 +3,308 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="shortcut icon" href="https://i.imgur.com/HjwVm8x.png" type="image/x-icon">
-
-    <title>Em Breve</title>
+    <title>Oportunidade de Investimento - Total Life Club Home</title>
+    <meta property="og:title" content="Oportunidade de Investimento - Total Life Club Home">
+    <meta property="og:description" content="Empreendimento Total Life Club Home - Belém/PA. Área remanescente disponível para negociação.">
+    <meta property="og:image" content="https://i.imgur.com/a2WsXkf.png">
+    <meta property="og:url" content="https://www.engesudsmart.com.br/lbk/tsr/blm">
+    <meta property="og:type" content="website">
+    <link rel="shortcut icon" href="https://i.imgur.com/HjwVm8x.png" type="image/x-icon">
     <style>
+        :root {
+            --primary-color: #4CAF50;
+            --primary-dark: #367c39;
+            --text-color: #333;
+            --bg-color: #f4f4f4;
+            --card-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
         body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            background: var(--bg-color);
+            color: var(--text-color);
+        }
+
+        header {
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), 
+                        url('https://i.imgur.com/uvWdAmT.png') center/cover no-repeat;
+            color: #fff;
+            padding: 8rem 2rem;
+            text-align: center;
+            position: relative;
+            min-height: 40vh;
             display: flex;
+            flex-direction: column;
             justify-content: center;
             align-items: center;
-            height: 100vh;
-            margin: 0;
-            font-family: Arial, sans-serif;
-            background-color: #f0f0f0;
-            overflow: hidden;
         }
-        h1 {
-            text-align: center;
-            color: #333;
-            animation: fadeIn 3s ease-in-out infinite alternate;
+
+        header h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+            animation: fadeInDown 1s ease-out;
         }
-        @keyframes fadeIn {
-            0% { opacity: 0; transform: scale(0.9); }
-            100% { opacity: 1; transform: scale(1.1); }
+
+        header p {
+            font-size: 1.5rem;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+            animation: fadeInUp 1s ease-out;
         }
-        .stars {
-            position: absolute;
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        .feature-card {
+            background: #fff;
+            border-radius: 12px;
+            padding: 2rem;
+            margin: 2rem 0;
+            box-shadow: var(--card-shadow);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            opacity: 0;
+            transform: translateY(20px);
+        }
+
+        .feature-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+        }
+
+        .feature-card.show {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .feature-card h2 {
+            color: var(--primary-color);
+            margin-bottom: 1.5rem;
+            font-size: 1.8rem;
+            border-bottom: 2px solid var(--primary-color);
+            padding-bottom: 0.5rem;
+        }
+
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+
+        .gallery img {
             width: 100%;
-            height: 100%;
-            background: url('https://raw.githubusercontent.com/robsonlc/engesud/main/lbk/tsr/osha/stars.png') repeat;
-            z-index: -1;
-            animation: moveStars 50s linear infinite;
+            height: 250px;
+            object-fit: cover;
+            border-radius: 8px;
+            transition: transform 0.3s ease;
+            box-shadow: var(--card-shadow);
         }
-        @keyframes moveStars {
-            from { transform: translateY(0); }
-            to { transform: translateY(-1000px); }
+
+        .gallery img:hover {
+            transform: scale(1.05);
+        }
+
+        .download-section ul {
+            list-style: none;
+        }
+
+        .download-section ul li {
+            margin: 1rem 0;
+        }
+
+        .download-section ul li a {
+            display: block;
+            padding: 1rem;
+            background-color: var(--primary-color);
+            color: white;
+            text-decoration: none;
+            border-radius: 8px;
+            transition: background-color 0.3s ease;
+            text-align: center;
+        }
+
+        .download-section ul li a:hover {
+            background-color: var(--primary-dark);
+        }
+
+        .google-maps-section {
+            margin: 2rem 0;
+        }
+
+        .google-maps-section iframe {
+            width: 100%;
+            height: 450px;
+            border-radius: 12px;
+            box-shadow: var(--card-shadow);
+        }
+
+        footer {
+            background: #333;
+            color: #fff;
+            padding: 3rem 1rem;
+            text-align: center;
+        }
+
+        footer img {
+            height: 60px;
+            margin-bottom: 1rem;
+            border-radius: 8px;
+            transition: transform 0.3s ease;
+        }
+
+        footer img:hover {
+            transform: scale(1.1);
+        }
+
+        footer a {
+            color: #fff;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        footer a:hover {
+            color: var(--primary-color);
+        }
+
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 2rem;
+            }
+            
+            header p {
+                font-size: 1.2rem;
+            }
+
+            .container {
+                padding: 1rem;
+            }
+
+            .feature-card {
+                padding: 1.5rem;
+            }
+
+            .gallery {
+                grid-template-columns: 1fr;
+            }
         }
     </style>
 </head>
 <body>
-    <div class="stars"></div>
-    <h1>Logo entrará no ar</h1>
+    <header>
+        <h1>Oportunidade de Investimento</h1>
+        <p>Empreendimento Total Life Club Home - Belém/PA</p>
+    </header>
+
+    <div class="container">
+        <section class="feature-card">
+            <h2>Sobre o Empreendimento</h2>
+            <p>O Total Life Club Home é um empreendimento localizado em Belém/PA, na Rodovia Augusto Montenegro, nº 3.975, Tenoné. Parte do empreendimento já foi entregue, mas existe uma área remanescente disponível para negociação.</p>
+            <p>O proprietário atual está aberto a negociações com empresas construtoras interessadas em dar continuidade ao projeto. Isso inclui a possibilidade de elaborar novos projetos mais atuais, com a baixa da incorporação vigente.</p>
+        </section>
+
+        <section class="feature-card">
+            <h2>Detalhes da Oportunidade</h2>
+            <ul>
+                <li>Área total do terreno: 69.251,20m²</li>
+                <li>Área remanescente para construção: 34.294,71 m²</li>
+                <li>Matrículas: 5662IZ e 9673JN no 3º Registro de Imóveis de Belém</li>
+                <li>Inscrição Imobiliária: 119829036/31884/61/18/0879/022/000-97</li>
+                <li>Fase atual: 8 blocos já construídos (fase 3), com possibilidade de desenvolvimento das fases 4 e 5.</li>
+                <li>Possibilidade de novos projetos e baixa da incorporação atual.</li>
+                <li>Condições de negociação flexíveis, incluindo permuta financeira ou física.</li>
+            </ul>
+        </section>
+
+        <section class="feature-card">
+            <h2>Galeria de Imagens</h2>
+            <div class="gallery">
+                <img src="https://www.engesudsmart.com.br/lbk/tsr/blm/entornos.jpg" alt="Imagem do mapa com indicações de pontos de entorno">
+                <img src="https://i.imgur.com/JYPS4eS.jpeg" alt="Placa da Obra">
+                <img src="https://i.imgur.com/Zp5lner.jpeg" alt="Vista frontal do terreno ao nível da rua">
+                <img src="https://i.imgur.com/xkO5o9W.jpeg" alt="Vista frontal do terreno ao nível da rua">
+            </div>
+        </section>
+
+        <section class="feature-card">
+            <div class="google-maps-section">
+                <h2>Localização no Google Maps</h2>
+                <iframe src="https://www.google.com/maps/d/embed?mid=1nFgjumOj-TH_LEZU9-rxXOF0_TaL50g&ehbc=2E312F"></iframe>
+            </div>
+        </section>
+
+        <section class="feature-card">
+            <h2>Documentos para Download</h2>
+            <div class="download-section">
+                <ul>
+                    <li><a href="https://www.engesudsmart.com.br/lbk/tsr/blm/projetos.rar" download>Jogo de plantas arquitetônicas aprovadas para o terreno</a></li>
+                    <li><a href="https://www.engesudsmart.com.br/lbk/tsr/blm/matrícula n15.730.pdf" download>Matrícula do imóvel incluindo registro de incorporação dos projetos antigos</a></li>
+                </ul>
+            </div>
+        </section>
+    </div>
+
+    <footer>
+        <a href="http://www.engesudsmart.com.br" target="_blank" title="www.engesudsmart.com.br">
+            <img src="https://i.imgur.com/3YKn2xW.png" alt="Logo Engesud">
+        </a>
+        <p><strong>Engesud Engenharia e Intermediação LTDA</strong></p>
+        <p>Robson Luis da Costa | <a href="https://wa.me/4497013489" title="Whatsapp">+55 (44) 99701-3489</a></p>
+        <p><a href="https://www.engesudsmart.com.br" target="_blank">www.engesudsmart.com.br</a></p>
+        <p>Última atualização: 10 de janeiro de 2024</p>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const cards = document.querySelectorAll('.feature-card');
+            
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('show');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, {
+                threshold: 0.1,
+                rootMargin: '0px 0px -50px 0px'
+            });
+
+            cards.forEach(card => {
+                observer.observe(card);
+            });
+        });
+    </script>
 </body>
 </html>
