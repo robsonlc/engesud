@@ -1,1 +1,397 @@
-inglês
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smart City Tijucas</title>
+    <meta property="og:url" content="https://www.engesudsmart.com.br/lbk/tsr/mastertjcs/eng.html">
+    <meta property="og:image" content="https://i.imgur.com/OWqaXD1.png">
+    <link rel="shortcut icon" href="https://i.imgur.com/HjwVm8x.png" type="image/x-icon">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        /* Global Styles */
+        body {
+            font-family: 'Roboto', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f8;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        a {
+            color: #007bff;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        a:hover {
+            color: #0056b3;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin-bottom: 15px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+        }
+
+        h1,
+        h2,
+        h3 {
+            color: #2c3e50;
+            margin-top: 25px;
+            margin-bottom: 15px;
+            line-height: 1.3;
+        }
+
+        h1 {
+            font-size: 2.5em;
+        }
+
+        h2 {
+            font-size: 1.8em;
+        }
+
+        h3 {
+            font-size: 1.4em;
+        }
+
+        p {
+            margin-bottom: 20px;
+            color: #555;
+        }
+
+        /* Header */
+        header {
+            background: url('https://i.imgur.com/kfsH6bC.jpeg') center/cover no-repeat;
+            height: 250px;
+            width: 100%;
+            position: relative;
+            margin-bottom: 30px;
+        }
+
+        header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(52, 73, 94, 0.7);
+        }
+
+        /* Main Container */
+        .container {
+            width: 95%;
+            max-width: 960px;
+            margin: 0 auto;
+            padding: 30px;
+            background-color: #fff;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            border-radius: 12px;
+        }
+
+        /* Navigation Buttons */
+        .nav-buttons {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .nav-button {
+            display: inline-block;
+            padding: 12px 24px;
+            background-color: #3498db;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 8px;
+            margin: 0 10px;
+            border: none;
+            cursor: pointer;
+            font-size: 1em;
+            transition: background-color 0.3s ease;
+        }
+
+        .nav-button:hover {
+            background-color: #2980b9;
+        }
+
+        /* Investor Information Section */
+        .section#informacoes-negociais {
+            background-color: #f9f9f9;
+            padding: 25px;
+            border-radius: 8px;
+            margin-top: 30px;
+            margin-bottom: 30px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.06);
+        }
+
+        .section#informacoes-negociais h2 {
+            color: #3498db;
+            margin-bottom: 20px;
+        }
+
+        .section#informacoes-negociais ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .section#informacoes-negociais li {
+            margin-bottom: 10px;
+            padding-left: 20px;
+            position: relative;
+        }
+
+        .section#informacoes-negociais li::before {
+            content: '\2022';
+            /* Bullet point */
+            position: absolute;
+            left: 0;
+            top: 5px;
+            color: #3498db;
+        }
+
+        .section#informacoes-negociais b {
+            font-weight: bold;
+            color: #333;
+        }
+
+        /* Google Maps */
+        #google-maps-container {
+            text-align: center;
+            margin-top: 30px;
+            margin-bottom: 30px;
+        }
+
+        #google-maps-container iframe {
+            width: 95%;
+            max-width: 960px;
+            height: 480px;
+            border: none;
+            border-radius: 12px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            font-size: 0.9em;
+            margin-top: 40px;
+            padding: 30px;
+            background-color: #ecf0f1;
+            color: #777;
+        }
+
+        footer img {
+            max-width: 180px;
+            border-radius: 12px;
+            margin-bottom: 15px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.08);
+        }
+
+        footer p {
+            margin-bottom: 10px;
+        }
+
+        /* Responsive Styles */
+        @media (max-width: 768px) {
+            .container {
+                width: 98%;
+                padding: 20px;
+            }
+
+            h1 {
+                font-size: 2em;
+            }
+
+            h2 {
+                font-size: 1.5em;
+            }
+
+            .nav-buttons {
+                margin-bottom: 20px;
+            }
+
+            .nav-button {
+                padding: 10px 18px;
+                margin: 0 5px;
+                font-size: 0.9em;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header></header>
+
+    <div class="nav-buttons">
+        <a href="index.html" class="nav-button">Português</a>
+        <a href="eng.html" class="nav-button">English</a>
+        <a href="arab.html" class="nav-button">العربية</a>
+    </div>
+
+    <div class="container" id="english">
+        <div class="section" id="informacoes-negociais">
+            <h2>Investment Information</h2>
+            <p style="line-height: 1.6;">This unique investment opportunity presents:</p>
+            <ul style="line-height: 1.6;">
+                <li>Total area of <b>200 hectares</b>.</li>
+                <li>Enhanced GSV due to zoning that allows <b>vertical buildings</b> throughout the entire area.</li>
+                <li>Direct negotiation with <b>three groups of owners</b>, enabling partnership or acquisition.</li>
+                <li>Essential infrastructure for viability (responsibility of the investor/developer):</li>
+                <ul style="line-height: 1.6;">
+                    <li>Maritime pier to divert waste from the Tijucas River.</li>
+                    <li>Beach mud drainage.</li>
+                    <li>Landfill of approximately 2 meters on the terrain plateau.</li>
+                </ul>
+                <li>Estimated infrastructure cost: <b>R$ 30 million</b> (approximately <b>US$ 4,838,709.68</b> *).</li>
+            </ul>
+            <p style="line-height: 1.6; font-size: 12px;">*Based on an exchange rate of R$ 6.20 per US$ (subject to
+                change).</p>
+        </div>
+
+        <h1>Smart City Tijucas</h1>
+
+        <h2>Wealth Corridor</h2>
+        <img src="https://i.imgur.com/kfsH6bC.jpg" alt="Wealth Corridor Map">
+        <p>Tijucas is strategically located in the heart of the Wealth Corridor, a region that concentrates 37% of the
+            country's GDP and is experiencing accelerated growth.</p>
+
+        <h2>Tijucas: A New Development Hub</h2>
+        <img src="https://i.imgur.com/U4VMMn7.jpg" alt="Map of Tijucas">
+        <p>With a privileged location on the coast of Santa Catarina, Tijucas attracts new investments and offers an
+            excellent quality of life.</p>
+
+        <h3>Economic and Population Growth</h3>
+        <img src="https://i.imgur.com/uhPaRfX.jpg" alt="Tijucas Demographic Data">
+        <p>Tijucas is experiencing significant population and economic growth, driven by the arrival of new businesses
+            and the migration of people seeking a better life.</p>
+
+        <h2>Challenges of the Future and Urban Solutions</h2>
+        <img src="https://i.imgur.com/R95GScr.jpg" alt="Oil Production Graph">
+        <p>The world faces challenges such as the scarcity of natural resources, the need for renewable energy sources,
+            and the importance of sustainability. Smart Cities offer solutions to these challenges.</p>
+
+        <h3>Sustainable Mobility</h3>
+        <img src="https://i.imgur.com/MshQcKe.jpg" alt="Mobility Graph">
+        <p>Prioritizing public transportation, bike paths, and green spaces, Tijucas encourages sustainable mobility,
+            reducing environmental impact and promoting the health of the population.</p>
+
+        <h3>Smart Resource Management</h3>
+        <img src="https://i.imgur.com/FcKHABf.jpg" alt="Energy Graph">
+        <img src="https://i.imgur.com/e0uy53l.jpg" alt="Recycling Graph">
+        <img src="https://i.imgur.com/g93WRAQ.jpg" alt="Water Graph">
+        <p>Smart management of energy, water, and waste is fundamental to sustainable development. Tijucas invests in
+            innovative technologies and practices to ensure the efficient use of natural resources.</p>
+
+        <h2>A New Urban Concept</h2>
+        <img src="https://i.imgur.com/3lvJ6ls.jpg" alt="Tijucas Masterplan">
+        <p>Smart City Tijucas is designed based on a new urban concept, integrating different systems harmoniously and
+            promoting quality of life.</p>
+
+        <h3>Centrality and Vitality</h3>
+        <img src="https://i.imgur.com/KCNJquT.jpg" alt="Tijucas Urban Concept">
+        <p>Tijucas values centrality, creating vibrant and inviting public spaces that encourage social interaction and
+            cultural life.</p>
+
+        <h3>Compact Urban Centers</h3>
+        <img src="https://i.imgur.com/KAkn82Z.jpg" alt="Compact Urban Centers">
+        <p>The creation of compact and mixed-use urban centers reduces the need for travel, promotes vitality, and
+            contributes to urban sustainability.</p>
+
+        <h3>Successful Strategies</h3>
+        <img src="https://i.imgur.com/1FYa1uc.jpg" alt="Strategies for Cities">
+        <p>Tijucas implements strategies that have proven effective in other Smart Cities, such as prioritizing
+            pedestrians, creating green spaces, and promoting public safety.</p>
+
+        <h2>Proposal Structure</h2>
+        <img src="https://i.imgur.com/ImsQge0.jpg" alt="Tijucas Urban Systems">
+        <p>The Smart City Tijucas proposal is structured in different systems that complement each other, ensuring the
+            integrated development of the city.</p>
+
+        <h3>Structural Guidelines</h3>
+        <img src="https://i.imgur.com/35p9ZqN.jpg" alt="Structural Guidelines">
+        <p>The structural guidelines guide the development of Smart City Tijucas, prioritizing sustainability,
+            mobility, quality of life, and the integration of different systems.</p>
+
+        <h3>Volumetric Essay</h3>
+        <img src="https://i.imgur.com/13gCP9n.jpg" alt="Volumetric Essay">
+        <p>The volumetric essay demonstrates the feasibility of the proposal and the integration of different land
+            uses, ensuring the creation of a harmonious and functional urban environment.</p>
+
+        <h3>Intelligent Road System</h3>
+        <img src="https://i.imgur.com/oCeQth1.jpg" alt="Road System">
+        <p>The Tijucas road system is designed to ensure traffic flow, prioritize pedestrians and cyclists, and
+            integrate different modes of transportation.</p>
+
+        <h3>The Waterfront and Linear Park</h3>
+        <img src="https://i.imgur.com/hr9A8KW.jpg" alt="Waterfront and Linear Park">
+        <p>The waterfront and linear park are key elements of Smart City Tijucas, providing spaces for leisure,
+            recreation, and contact with nature, as well as contributing to the improvement of the urban microclimate.
+        </p>
+
+        <h3>Green Areas and Public Facilities</h3>
+        <img src="https://i.imgur.com/NH2uWtc.jpg" alt="Green Areas and Public Facilities">
+        <p>Tijucas invests in high-quality green areas and public facilities, providing spaces for leisure, recreation,
+            and social interaction, as well as contributing to the health and well-being of the population.</p>
+
+        <h3>Sectors and Land Uses</h3>
+        <img src="https://i.imgur.com/XLSbOn0.jpg" alt="Sectors and Land Uses">
+        <p>Smart City Tijucas is divided into sectors with different land uses, ensuring harmony between residential,
+            commercial, and service areas, as well as preserving green and recreational areas.</p>
+
+        <h2>Reference of Success</h2>
+        <img src="https://i.imgur.com/yb1RZNB.jpg" alt="Reference 1">
+        <img src="https://i.imgur.com/oxdS89C.jpg" alt="Reference 2">
+        <img src="https://i.imgur.com/2m6iqWk.jpg" alt="Reference 3">
+        <p>Tijucas draws inspiration from successful examples of other Smart Cities around the world, adapting best
+            practices to its local needs and characteristics.</p>
+
+        <h2>Invest in Tijucas</h2>
+        <img src="https://i.imgur.com/qjdhNMt.jpg" alt="Smart City Tijucas Perspective">
+        <p>Tijucas offers a favorable environment for investments, with a growing economy, a privileged location, and a
+            new urban concept that prioritizes quality of life and sustainability.</p>
+    </div>
+
+    <div id="google-maps-container">
+        <iframe
+            src="https://www.google.com/maps/d/embed?mid=1QL8Wm-y4uoefKqX7VAN6K_-ZumLPpC8&ehbc=2E312F"
+            width="100%" height="480"></iframe>
+    </div>
+
+    <footer>
+        <a href="http://www.engesudsmart.com.br" target="_blank" title="www.engesudsmart.com.br"> <img
+                src="https://i.imgur.com/3YKn2xW.png" alt="Logo Engesud"> </a>
+        <p><strong>Engesud Engenharia e Intermediação LTDA</strong></p>
+        <p>Robson Luis da Costa | <a href="https://wa.me/4497013489" title="Whatsapp">+55 (44) 99701-3489</a></p>
+        <p><a href="https://www.engesudsmart.com.br" target="_blank">www.engesudsmart.com.br</a></p>
+        <p>Última atualização: 12 de janeiro de 2024</p>
+    </footer>
+    <!-- Este conteúdo é protegido por direitos autorais creditados à Engesud Engenharia e Intermediação LTDA, inscrita no CNPJ 40.601.637/0001-58 -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            // Adiciona classe de animação aos cards quando visíveis
+            const cards = document.querySelectorAll('.container');
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('show'); // Adiciona a classe 'show' para iniciar a animação
+                    }
+                });
+            }, {
+                threshold: 0.1 // Define um limite de visibilidade para disparar a animação
+            });
+            cards.forEach(card => {
+                observer.observe(card);
+            });
+        });
+    </script>
+</body>
+
+</html>
