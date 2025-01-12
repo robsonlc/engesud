@@ -3,11 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Briefing - Total Life Club Home</title>
-    <meta property="og:title" content="Briefing - Oportunidade de Investimento">
-    <meta property="og:description" content="Detalhes e informações sobre o empreendimento Total Life Club Home - Belém/PA.">
+    <title>Oportunidade de Investimento - Total Life Club Home</title>
+    <meta property="og:title" content="Oportunidade de Investimento - Total Life Club Home">
+    <meta property="og:description" content="Empreendimento Total Life Club Home - Belém/PA. Área remanescente disponível para negociação.">
     <meta property="og:image" content="https://i.imgur.com/a2WsXkf.png">
-    <meta property="og:url" content="https://www.engesudsmart.com.br/lbk/tsr/blm/briefing.html">
+    <meta property="og:url" content="https://www.engesudsmart.com.br/lbk/tsr/blm">
     <meta property="og:type" content="website">
     <link rel="shortcut icon" href="https://i.imgur.com/HjwVm8x.png" type="image/x-icon">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
@@ -34,19 +34,30 @@
         }
 
         header {
-            background: var(--primary-dark);
+            background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), 
+                        url('https://i.imgur.com/uvWdAmT.png') center/cover no-repeat;
             color: #fff;
-            padding: 2rem 0;
+            padding: 8rem 2rem;
             text-align: center;
+            position: relative;
+            min-height: 40vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
         }
 
         header h1 {
-            font-size: 2.5rem;
-            margin-bottom: 0.5rem;
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+            animation: fadeInDown 1s ease-out;
         }
 
         header p {
-            font-size: 1.2rem;
+            font-size: 1.5rem;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+            animation: fadeInUp 1s ease-out;
         }
 
         .container {
@@ -55,7 +66,7 @@
             padding: 2rem;
         }
 
-        .section {
+        .feature-card {
             background: #fff;
             border-radius: 12px;
             padding: 2rem;
@@ -66,17 +77,17 @@
             transform: translateY(20px);
         }
 
-        .section:hover {
+        .feature-card:hover {
             transform: translateY(-5px);
             box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
         }
 
-        .section.show {
+        .feature-card.show {
             opacity: 1;
             transform: translateY(0);
         }
 
-        .section h2 {
+        .feature-card h2 {
             color: var(--primary-color);
             margin-bottom: 1.5rem;
             font-size: 1.8rem;
@@ -84,69 +95,42 @@
             padding-bottom: 0.5rem;
         }
 
-        .section ul {
-            list-style: none;
-            padding: 0;
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin: 2rem 0;
         }
 
-        .section li {
-            margin-bottom: 1rem;
-        }
-
-        .full-width-img {
+        .gallery img {
             width: 100%;
-            max-width: 800px;
-            height: auto;
-            display: block;
-            margin: 2rem auto;
+            height: 250px;
+            object-fit: cover;
             border-radius: 8px;
+            transition: transform 0.3s ease;
             box-shadow: var(--card-shadow);
         }
 
-        .download-section ul {
-            list-style: none;
-            padding: 0;
+        .gallery img:hover {
+            transform: scale(1.05);
         }
 
-        .download-section ul li {
-            margin-bottom: 10px;
+        .google-maps-section {
+            margin: 2rem 0;
         }
 
-        .download-section ul li a {
-            display: block;
-            padding: 10px 15px;
-            background-color: var(--primary-color);
-            color: white;
-            text-decoration: none;
-            border-radius: 5px;
-            transition: background-color 0.3s ease;
-        }
-
-        .download-section ul li a:hover {
-            background-color: var(--primary-dark);
-        }
-
-        .button {
-            display: inline-block;
-            background: var(--primary-color);
-            color: #fff;
-            padding: 10px 20px;
-            margin: 15px 0;
-            text-decoration: none;
-            border-radius: 5px;
-            transition: background-color 0.3s ease;
-        }
-
-        .button:hover {
-            background: var(--primary-dark);
+        .google-maps-section iframe {
+            width: 100%;
+            height: 450px;
+            border-radius: 12px;
+            box-shadow: var(--card-shadow);
         }
 
         footer {
             background: #2c3e50;
             color: #fff;
-            padding: 2rem 1rem;
+            padding: 3rem 1rem;
             text-align: center;
-            margin-top: 2rem;
         }
 
         footer img {
@@ -170,119 +154,124 @@
             color: var(--primary-color);
         }
 
+        .button {
+            display: inline-block;
+            background: var(--primary-color);
+            color: #fff;
+            padding: 10px 20px;
+            margin: 15px 0;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+            animation: fadeInUp 1s ease-out;
+        }
+
+        .button:hover {
+            background: var(--primary-dark);
+        }
+
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
         @media (max-width: 768px) {
             header h1 {
                 font-size: 2rem;
+            }
+            
+            header p {
+                font-size: 1.2rem;
             }
 
             .container {
                 padding: 1rem;
             }
 
-            .section {
+            .feature-card {
                 padding: 1.5rem;
+            }
+
+            .gallery {
+                grid-template-columns: 1fr;
             }
         }
     </style>
 </head>
 <body>
-
     <header>
-        <h1>Briefing do Empreendimento</h1>
-        <p>Total Life Club Home - Belém/PA</p>
+        <h1>Oportunidade de Investimento</h1>
+        <p>Empreendimento Total Life Club Home - Belém/PA</p>
     </header>
 
     <div class="container">
-        <section class="section">
-            <h2>Visão Geral do Projeto</h2>
-            <p>O Total Life Club Home é um projeto de grande porte que contempla a construção de 20 torres residenciais, divididas em 5 fases. Atualmente, 8 blocos (fase 3) já foram construídos e estão prontos para uso.</p>
-            <img src="https://i.imgur.com/FlpMvLo.png" alt="Visão geral do terreno com área remanescente" class="full-width-img">
+        <section class="feature-card">
+            <h2>Sobre o Empreendimento</h2>
+            <p>O Total Life Club Home é um empreendimento localizado em Belém/PA, na Rodovia Augusto Montenegro, nº 3.975, Tenoné. Parte do empreendimento já foi entregue, mas existe uma área remanescente disponível para negociação.</p>
+            <p>O proprietário atual está aberto a negociações com empresas construtoras interessadas em dar continuidade ao projeto. Isso inclui a possibilidade de elaborar novos projetos mais atualizados.</p>
         </section>
 
-        <section class="section">
-            <h2>Características do Empreendimento</h2>
+        <section class="feature-card">
+            <h2>Detalhes da Oportunidade</h2>
             <ul>
-                <li><strong>Localização:</strong> Rodovia Augusto Montenegro, nº 3.975, Tenoné - Belém/PA.</li>
-                <li><strong>Área Total do Terreno:</strong> 69.251,20 m².</li>
-                <li><strong>Área Remanescente (Fases 4 e 5):</strong> 34.294,71 m².</li>
-                <li><strong>Torres (Blocos):</strong> 20 torres no total, sendo 8 já construídas.</li>
-                <li><strong>Pavimentos por Torre:</strong> Térreo + 14 pavimentos + Cobertura (barrilete).</li>
-                <li><strong>Apartamentos por Andar:</strong> 6 apartamentos por andar (exceto pavimentos com áreas comuns).</li>
-                <li><strong>Total de Apartamentos:</strong> 1.680 (considerando todas as torres).</li>
+                <li>Área total do terreno: 69.251,20m²</li>
+                <li>Área remanescente para construção: 34.294,71 m²</li>
+                <li>Matrículas: 5662IZ e 9673JN no 3º Registro de Imóveis de Belém</li>
+                <li>Inscrição Imobiliária: 119829036/31884/61/18/0879/022/000-97</li>
+                <li>Fase atual: 8 blocos já construídos (fase 3), com possibilidade de desenvolvimento das fases 4 e 5.</li>
+                <li>Possibilidade de novos projetos e baixa da incorporação atual.</li>
+                <li>Expectativa básica: R$ 18 milhões.</li>
+                <li>Condições de negociação flexíveis.</li>
             </ul>
         </section>
 
-        <section class="section">
-            <h2>Tipologia dos Apartamentos (Projeto Aprovado)</h2>
-            <p>Os apartamentos variam em metragem e número de vagas de garagem, conforme o bloco e o "final" (posição no andar). Abaixo, um resumo das tipologias:</p>
-            <ul>
-                <li><strong>Finais 01, 02, 04 e 05 (maiores):</strong>
-                    <ul>
-                        <li>Blocos 1A, 1B, 1C, 1D (do 1º ao 8º pavimento): 73,57m² de área privativa + área comum, com 1 vaga.</li>
-                        <li>Blocos 1A, 1B, 1C, 1D (do 9º ao 14º pavimento): 73,57m² de área privativa + área comum, com 2 vagas.</li>
-                        <li>Blocos 2A a 5D: 49,86m² de área privativa + área comum, com 1 vaga. Alguns blocos possuem unidades com 57,77m².</li>
-                    </ul>
-                </li>
-                <li><strong>Final 03 (menores):</strong>
-                    <ul>
-                        <li>Blocos 1A, 1B, 1C e 1D: 60,57m² de área privativa + área comum, com 1 vaga.</li>
-                        <li>Blocos 2A a 5D: 46,96m² ou 49,96m² de área privativa + área comum, com 1 vaga.</li>
-                    </ul>
-                </li>
-                <li><strong>Final 06 (menores):</strong>
-                    <ul>
-                        <li>Blocos 2A a 5D: 47,53m² de área privativa + área comum, com 1 vaga.</li>
-                    </ul>
-                </li>
-            </ul>
-        </section>
-
-        <section class="section">
-            <h2>Áreas Comuns e Infraestrutura</h2>
-            <p>O empreendimento conta com uma infraestrutura completa de lazer e conveniência, incluindo:</p>
-            <ul>
-                <li>Acessos de pedestres e veículos</li>
-                <li>Guarita com WC</li>
-                <li>Local para lixo</li>
-                <li>Áreas de circulação</li>
-                <li>Piscina adulto e infantil</li>
-                <li>Raia</li>
-                <li>Deck e deck molhado</li>
-                <li>4 churrasqueiras com lavabos</li>
-                <li>2 quadras poliesportivas</li>
-                <li>Praça</li>
-                <li>Garagem coletiva</li>
-                <li>Salão de festas</li>
-                <li>Brinquedoteca</li>
-                <li>Espaço gourmet</li>
-                <li>E muito mais (conforme descrito na matrícula)</li>
-            </ul>
-        </section>
-
-        <section class="section">
-            <h2>Vagas de Garagem</h2>
-            <ul>
-                <li>120 vagas autônomas (numeradas e com matrículas próprias).</li>
-                <li>2076 vagas de uso comum (em lugares individuais e indeterminados, dentro da garagem coletiva).</li>
-            </ul>
-        </section>
-
-        <section class="section">
-            <h2>Documentos para Download</h2>
-            <p>Disponibilizamos os seguintes documentos para download:</p>
-            <div class="download-section">
-                <ul>
-                    <li><a href="https://www.engesudsmart.com.br/lbk/tsr/blm/projetos.rar" download>Jogo de plantas arquitetônicas aprovadas para o terreno</a></li>
-                    <li><a href="https://www.engesudsmart.com.br/lbk/tsr/blm/matrícula n15.730.pdf" download>Matrícula do imóvel incluindo registro de incorporação dos projetos antigos</a></li>
-                </ul>
+        <section class="feature-card">
+            <h2>Galeria de Imagens</h2>
+            <div class="gallery">
+                <img src="https://www.engesudsmart.com.br/lbk/tsr/blm/entornos.jpg" alt="Imagem do mapa com indicações de pontos de entorno">
+                <img src="https://i.imgur.com/JYPS4eS.jpeg" alt="Placa da Obra">
+                <img src="https://i.imgur.com/Zp5lner.jpeg" alt="Vista frontal do terreno ao nível da rua">
+                <img src="https://i.imgur.com/xkO5o9W.jpeg" alt="Vista frontal do terreno ao nível da rua">
             </div>
         </section>
-        
+
         <section class="feature-card">
-            <a href="https://www.engesudsmart.com.br/lbk/tsr/blm/index.html" class="button">Voltar à Página Principal</a>
+            <div class="google-maps-section">
+                <h2>Localização no Google Maps</h2>
+                <iframe src="https://www.google.com/maps/d/embed?mid=1nFgjumOj-TH_LEZU9-rxXOF0_TaL50g&ehbc=2E312F"></iframe>
+            </div>
         </section>
 
+        <section class="feature-card">
+            <h2>Detalhes do Projeto</h2>
+            <p>Acesse a página de briefing para obter informações detalhadas sobre o projeto, incluindo tipologias, áreas comuns e infraestrutura.</p>
+            <a href="https://www.engesudsmart.com.br/lbk/tsr/blm/briefing.html" class="button">Ver Briefing do Projeto</a>
+        </section>
+
+        <section class="feature-card">
+            <h2>Plano de Negócios Sugerido</h2>
+            <p>Acesse a página com a proposta de estruturação para a aquisição da área remanescente e os detalhes do plano de negócios.</p>
+            <a href="https://www.engesudsmart.com.br/lbk/tsr/blm/bplan.html" class="button">Plano de Negócios</a>
+        </section>
     </div>
+
     <footer>
         <a href="http://www.engesudsmart.com.br" target="_blank" title="www.engesudsmart.com.br">
             <img src="https://i.imgur.com/3YKn2xW.png" alt="Logo Engesud">
@@ -290,12 +279,12 @@
         <p><strong>Engesud Engenharia e Intermediação LTDA</strong></p>
         <p>Robson Luis da Costa | <a href="https://wa.me/4497013489" title="Whatsapp">+55 (44) 99701-3489</a></p>
         <p><a href="https://www.engesudsmart.com.br" target="_blank">www.engesudsmart.com.br</a></p>
-        <p>Última atualização: 10 de janeiro de 2024</p>
+        <p>Última atualização: 11 de janeiro de 2024</p>
     </footer>
 
     <script>
         document.addEventListener('DOMContentLoaded', function() {
-            const sections = document.querySelectorAll('.section');
+            const cards = document.querySelectorAll('.feature-card');
             
             const observer = new IntersectionObserver((entries) => {
                 entries.forEach(entry => {
@@ -309,13 +298,10 @@
                 rootMargin: '0px 0px -50px 0px'
             });
 
-            sections.forEach(section => {
-                observer.observe(section);
+            cards.forEach(card => {
+                observer.observe(card);
             });
         });
     </script>
 </body>
 </html>
-```
-
-Se precisar de mais ajustes ou tiver alguma preferência específica, por favor, me avise.
