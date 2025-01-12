@@ -1,1 +1,323 @@
-Árabe
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>المدينة الذكية تيجوكاس</title>
+    <meta property="og:url" content="https://www.engesudsmart.com.br/lbk/tsr/mastertjcs/arab.html">
+    <meta property="og:image" content="https://i.imgur.com/OWqaXD1.png">
+    <link rel="shortcut icon" href="https://i.imgur.com/HjwVm8x.png" type="image/x-icon">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Arabic:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        /* Global Styles */
+        body {
+            font-family: 'Noto Sans Arabic', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f8;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        a {
+            color: #007bff;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        a:hover {
+            color: #0056b3;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin-bottom: 15px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+        }
+
+        h1,
+        h2,
+        h3 {
+            color: #2c3e50;
+            margin-top: 25px;
+            margin-bottom: 15px;
+            line-height: 1.3;
+        }
+
+        h1 {
+            font-size: 2.5em;
+        }
+
+        h2 {
+            font-size: 1.8em;
+        }
+
+        h3 {
+            font-size: 1.4em;
+        }
+
+        p {
+            margin-bottom: 20px;
+            color: #555;
+        }
+
+        /* Header */
+        header {
+            background: url('https://i.imgur.com/kfsH6bC.jpeg') center/cover no-repeat;
+            height: 250px;
+            width: 100%;
+            position: relative;
+            margin-bottom: 30px;
+        }
+
+        header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(52, 73, 94, 0.7);
+        }
+
+        /* Main Container */
+        .container {
+            width: 95%;
+            max-width: 960px;
+            margin: 0 auto;
+            padding: 30px;
+            background-color: #fff;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            border-radius: 12px;
+        }
+
+        /* Navigation Buttons */
+        .nav-buttons {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .nav-button {
+            display: inline-block;
+            padding: 12px 24px;
+            background-color: #3498db;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 8px;
+            margin: 0 10px;
+            border: none;
+            cursor: pointer;
+            font-size: 1em;
+            transition: background-color 0.3s ease;
+        }
+
+        .nav-button:hover {
+            background-color: #2980b9;
+        }
+
+        /* Investor Information Section */
+        .section#informacoes-negociais {
+            background-color: #f9f9f9;
+            padding: 25px;
+            border-radius: 8px;
+            margin-top: 30px;
+            margin-bottom: 30px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.06);
+        }
+
+        .section#informacoes-negociais h2 {
+            color: #3498db;
+            margin-bottom: 20px;
+        }
+
+        .section#informacoes-negociais ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .section#informacoes-negociais li {
+            margin-bottom: 10px;
+            padding-right: 20px;
+            /* Ajustado para RTL */
+            position: relative;
+        }
+
+        .section#informacoes-negociais li::before {
+            content: '\2022';
+            /* Bullet point */
+            position: absolute;
+            right: 0;
+            /* Ajustado para RTL */
+            top: 5px;
+            color: #3498db;
+        }
+
+        .section#informacoes-negociais b {
+            font-weight: bold;
+            color: #333;
+        }
+
+        /* Google Maps */
+        #google-maps-container {
+            text-align: center;
+            margin-top: 30px;
+            margin-bottom: 30px;
+        }
+
+        #google-maps-container iframe {
+            width: 95%;
+            max-width: 960px;
+            height: 480px;
+            border: none;
+            border-radius: 12px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            font-size: 0.9em;
+            margin-top: 40px;
+            padding: 30px;
+            background-color: #ecf0f1;
+            color: #777;
+        }
+
+        footer img {
+            max-width: 180px;
+            border-radius: 12px;
+            margin-bottom: 15px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.08);
+        }
+
+        footer p {
+            margin-bottom: 10px;
+        }
+
+        /* Responsive Styles */
+        @media (max-width: 768px) {
+            .container {
+                width: 98%;
+                padding: 20px;
+            }
+
+            h1 {
+                font-size: 2em;
+            }
+
+            h2 {
+                font-size: 1.5em;
+            }
+
+            .nav-buttons {
+                margin-bottom: 20px;
+            }
+
+            .nav-button {
+                padding: 10px 18px;
+                margin: 0 5px;
+                font-size: 0.9em;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header></header>
+
+    <div class="nav-buttons">
+        <a href="index.html" class="nav-button">Português</a>
+        <a href="eng.html" class="nav-button">English</a>
+        <a href="arab.html" class="nav-button">العربية</a>
+    </div>
+
+    <div class="container" id="العربية">
+        <div class="section" id="informacoes-negociais">
+            <h2>معلومات للمستثمرين</h2>
+            <p style="line-height: 1.6;">تقدم فرصة الاستثمار الفريدة هذه ما يلي:</p>
+            <ul style="line-height: 1.6;">
+                <li>مساحة إجمالية قدرها <b>200 هكتار</b>.</li>
+                <li>زيادة قيمة البيع الإجمالية (GSV) بسبب تقسيم المناطق الذي يسمح <b>بالمباني العمودية</b> في جميع أنحاء
+                    المنطقة.</li>
+                <li>التفاوض المباشر مع <b>ثلاث مجموعات من الملاك</b>، مما يتيح إمكانية الشراكة أو الاستحواذ.</li>
+                <li>البنية التحتية الأساسية للجدوى (مسؤولية المستثمر/المطور):</li>
+                <ul style="line-height: 1.6;">
+                    <li>رصيف بحري لتحويل النفايات من نهر تيجوكاس.</li>
+                    <li>تصريف طين الشاطئ.</li>
+                    <li>ردم حوالي 2 متر على هضبة الأرض.</li>
+                </ul>
+                <li>التكلفة التقديرية للبنية التحتية: <b>30 مليون ريال برازيلي</b> (حوالي <b>4,838,709.68 دولار
+                        أمريكي</b> *).</li>
+            </ul>
+            <p style="line-height: 1.6; font-size: 12px; direction: ltr;">*بناءً على سعر صرف 6.20 ريال برازيلي لكل دولار
+                أمريكي (قابل للتغيير).</p>
+        </div>
+
+        <h1>المدينة الذكية تيجوكاس</h1>
+
+        <h2>ممر الثروة</h2>
+        <img src="https://i.imgur.com/kfsH6bC.jpg" alt="خريطة ممر الثروة">
+        <p>تقع تيجوكاس في موقع استراتيجي في قلب ممر الثروة، وهي منطقة تركز 37٪ من الناتج المحلي الإجمالي للبلاد وتشهد
+            نموًا متسارعًا.</p>
+
+        <h2>تيجوكاس: مركز تطوير جديد</h2>
+        <img src="https://i.imgur.com/U4VMMn7.jpg" alt="خريطة تيجوكاس">
+        <p>بموقعها المتميز على ساحل سانتا كاتارينا، تجذب تيجوكاس استثمارات جديدة وتوفر نوعية حياة ممتازة.</p>
+
+        <h3>النمو الاقتصادي والسكاني</h3>
+        <img src="https://i.imgur.com/uhPaRfX.jpg" alt="البيانات الديموغرافية لتيجوكاس">
+        <p>تشهد تيجوكاس نموًا سكانيًا واقتصاديًا كبيرًا، مدفوعًا بوصول مشاريع جديدة وهجرة الأشخاص الباحثين عن حياة أفضل.
+        </p>
+
+        <h2>تحديات المستقبل والحلول الحضرية</h2>
+        <img src="https://i.imgur.com/R95GScr.jpg" alt="رسم بياني لإنتاج النفط">
+        <p>يواجه العالم تحديات مثل ندرة الموارد الطبيعية والحاجة إلى مصادر الطاقة المتجددة وأهمية الاستدامة. تقدم المدن
+            الذكية حلولًا لهذه التحديات.</p>
+
+        <h3>التنقل المستدام</h3>
+        <img src="https://i.imgur.com/MshQcKe.jpg" alt="رسم بياني للتنقل">
+        <p>من خلال إعطاء الأولوية للنقل العام ومسارات الدراجات والمناطق الخضراء، تشجع تيجوكاس على التنقل المستدام، مما
+            يقلل من التأثير البيئي ويعزز صحة السكان.</p>
+
+        <h3>إدارة ذكية للموارد</h3>
+        <img src="https://i.imgur.com/FcKHABf.jpg" alt="رسم بياني للطاقة">
+        <img src="https://i.imgur.com/e0uy53l.jpg" alt="رسم بياني لإعادة التدوير">
+        <img src="https://i.imgur.com/g93WRAQ.jpg" alt="رسم بياني للمياه">
+        <p>تُعد الإدارة الذكية للطاقة والمياه والنفايات أمرًا أساسيًا للتنمية المستدامة. تستثمر تيجوكاس في التقنيات
+            والممارسات المبتكرة لضمان الاستخدام الفعال للموارد الطبيعية.</p>
+
+        <h2>مفهوم حضري جديد</h2>
+        <img src="https://i.imgur.com/3lvJ6ls.jpg" alt="الخطة الرئيسية لتيجوكاس">
+        <p>تم تصميم المدينة الذكية تيجوكاس على أساس مفهوم حضري جديد، يدمج أنظمة مختلفة بطريقة متناغمة ويعزز جودة الحياة.
+        </p>
+
+        <h3>المركزية والحيوية</h3>
+        <img src="https://i.imgur.com/KCNJquT.jpg" alt="المفهوم الحضري لتيجوكاس">
+        <p>تُقدر تيجوكاس المركزية، مما يخلق مساحات عامة نابضة بالحياة وجذابة تشجع على التفاعل الاجتماعي والحياة الثقافية.
+        </p>
+
+        <h3>مراكز حضرية مدمجة</h3>
+        <img src="https://i.imgur.com/KAkn82Z.jpg" alt="مراكز حضرية مدمجة">
+        <p>يقلل إنشاء مراكز حضرية مدمجة ومتعددة الاستخدامات من الحاجة إلى التنقل، ويعزز الحيوية ويساهم في الاستدامة
+            الحضرية.</p>
+
+        <h3>استراتيجيات النجاح</h3>
+        <img src="https://i.imgur.com/1FYa1uc.jpg" alt="استراتيجيات للمدن">
+        <p>تنفذ تيجوكاس استراتيجيات أثبتت فعاليتها في مدن ذكية أخرى، مثل إعطاء الأولوية للمشاة وإنشاء مساحات خضراء وتعزيز
+            السلامة العامة.</p>
+
+        <h2>هيكلة الاقتراح</h2>
+        <img src="https://i.imgur.com/ImsQge0.jpg" alt="الأنظمة الحضرية في تيجوكاس">
+        <p>تم هيكلة اقتراح المدينة الذكية تيجوكاس في أنظمة مختلفة تكمل بعضها البعض، مما يضمن التنمية المتكاملة للمدينة.
+        </p>
+
+        <h3>المبادئ التوجيهية الهيكلية</h3>
+        <img src="https://i.imgur.com/35p9ZqN.jpg" alt="المبادئ التوجيهية الهيكلية">
+        <p>توجه المبادئ التوجيهية الهيكلية تطوير المدينة الذكية تيجوكاس، مع إعطاء الأولوية للاستدامة والتنقل وجو
