@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,93 +8,224 @@
     <meta property="og:url" content="https://www.engesudsmart.com.br/lbk/tsr/mastertjcs">
     <meta property="og:image" content="https://i.imgur.com/OWqaXD1.png">
     <link rel="shortcut icon" href="https://i.imgur.com/HjwVm8x.png" type="image/x-icon">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
     <style>
+        /* Estilos Globais */
         body {
-            font-family: 'Arial', sans-serif;
+            font-family: 'Roboto', sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #f8f8f8;
+            background-color: #f4f4f8;
             color: #333;
+            line-height: 1.6;
         }
 
-        header {
-            background: url('https://i.imgur.com/kfsH6bC.jpeg') center/cover no-repeat;
-            opacity: 0.3;
-            height: 200px; /* Ajuste a altura conforme necessário */
-            width: 100%;
+        a {
+            color: #007bff;
+            text-decoration: none;
+            transition: color 0.3s ease;
         }
 
-        .container {
-            width: 90%;
-            max-width: 500px;
-            margin: 20px auto;
-            background-color: #fff;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            padding: 20px;
-            display: none;
+        a:hover {
+            color: #0056b3;
         }
 
-        #portugues {
+        img {
+            max-width: 100%;
+            height: auto;
             display: block;
+            margin-bottom: 15px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
         }
 
         h1,
         h2,
         h3 {
-            color: #333;
+            color: #2c3e50;
+            margin-top: 25px;
+            margin-bottom: 15px;
+            line-height: 1.3;
         }
 
-        img {
-            width: 100%;
-            height: auto;
-            display: block;
-            margin: 20px 0;
+        h1 {
+            font-size: 2.5em;
         }
 
-        .lang-buttons {
-            text-align: center;
+        h2 {
+            font-size: 1.8em;
+        }
+
+        h3 {
+            font-size: 1.4em;
+        }
+
+        p {
             margin-bottom: 20px;
+            color: #555;
         }
 
-        .lang-button {
+        /* Cabeçalho */
+        header {
+            background: url('https://i.imgur.com/kfsH6bC.jpeg') center/cover no-repeat;
+            height: 250px;
+            width: 100%;
+            position: relative;
+            margin-bottom: 30px;
+        }
+
+        header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(52, 73, 94, 0.7);
+        }
+
+        /* Contêiner Principal */
+        .container {
+            width: 95%;
+            max-width: 960px;
+            margin: 0 auto;
+            padding: 30px;
+            background-color: #fff;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            border-radius: 12px;
+        }
+
+        /* Botões de Navegação */
+        .nav-buttons {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .nav-button {
             display: inline-block;
-            padding: 10px 20px;
+            padding: 12px 24px;
             background-color: #3498db;
             color: #fff;
             text-decoration: none;
-            border-radius: 5px;
-            margin: 0 5px;
-            border: 1px solid #2980b9;
+            border-radius: 8px;
+            margin: 0 10px;
+            border: none;
             cursor: pointer;
+            font-size: 1em;
+            transition: background-color 0.3s ease;
         }
 
-        .kmz-link {
-            display: block;
-            text-align: center;
-            margin-top: 10px;
+        .nav-button:hover {
+            background-color: #2980b9;
+        }
+
+        /* Seção de Informações para Investidores */
+        .section#informacoes-negociais {
+            background-color: #f9f9f9;
+            padding: 25px;
+            border-radius: 8px;
+            margin-top: 30px;
+            margin-bottom: 30px;
+            /* Adicionado para dar destaque */
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.06);
+        }
+
+        .section#informacoes-negociais h2 {
             color: #3498db;
-            text-decoration: none;
+            margin-bottom: 20px;
         }
 
+        .section#informacoes-negociais ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .section#informacoes-negociais li {
+            margin-bottom: 10px;
+            padding-left: 20px;
+            position: relative;
+        }
+
+        .section#informacoes-negociais li::before {
+            content: '\2022';
+            /* Bullet point */
+            position: absolute;
+            left: 0;
+            top: 5px;
+            color: #3498db;
+        }
+
+        .section#informacoes-negociais b {
+            font-weight: bold;
+            color: #333;
+        }
+
+        /* Google Maps */
+        #google-maps-container {
+            text-align: center;
+            /* Centraliza o iframe */
+            margin-top: 30px;
+            margin-bottom: 30px;
+        }
+
+        #google-maps-container iframe {
+            width: 95%;
+            /* Define a largura como 100% do contêiner pai */
+            max-width: 960px;
+            /* Define uma largura máxima, se necessário */
+            height: 480px;
+            border: none;
+            border-radius: 12px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Rodapé */
         footer {
             text-align: center;
-            font-size: 12px;
-            margin-top: 20px;
-            color: #666;
-            padding: 20px;
+            font-size: 0.9em;
+            margin-top: 40px;
+            padding: 30px;
+            background-color: #ecf0f1;
+            color: #777;
         }
 
         footer img {
-            max-width: 150px;
-            height: auto;
-            border-radius: 10px; /* Cantos arredondados */
+            max-width: 180px;
+            border-radius: 12px;
+            margin-bottom: 15px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.08);
+        }
+
+        footer p {
             margin-bottom: 10px;
         }
 
-        .feature-card {
-            opacity: 0;
-            transform: translateY(20px);
-            transition: all 0.5s ease-out;
+        /* Estilos Responsivos */
+        @media (max-width: 768px) {
+            .container {
+                width: 98%;
+                padding: 20px;
+            }
+
+            h1 {
+                font-size: 2em;
+            }
+
+            h2 {
+                font-size: 1.5em;
+            }
+
+            .nav-buttons {
+                margin-bottom: 20px;
+            }
+
+            .nav-button {
+                padding: 10px 18px;
+                margin: 0 5px;
+                font-size: 0.9em;
+            }
         }
     </style>
 </head>
@@ -102,95 +234,14 @@
 
     <header></header>
 
-    <div class="lang-buttons">
-        <a href="#" class="lang-button" onclick="showLanguage('portugues')">Português</a>
-        <a href="#" class="lang-button" onclick="showLanguage('english')">English</a>
-        <a href="#" class="lang-button" onclick="showLanguage('العربية')">العربية</a>
+    <div class="nav-buttons">
+        <a href="index.html" class="nav-button">Português</a>
+        <a href="eng.html" class="nav-button">English</a>
+        <a href="arab.html" class="nav-button">العربية</a>
     </div>
 
-    <div class="container feature-card" id="portugues">
-        <h1>Smart City Tijucas</h1>
-
-        <h2>Corredor de Riqueza</h2>
-        <img src="https://i.imgur.com/kfsH6bC.jpg" alt="Mapa do Corredor de Riqueza">
-        <p>Tijucas está estrategicamente localizada no coração do Corredor de Riqueza, uma região que concentra 37% do PIB do país e que experimenta um crescimento acelerado.</p>
-
-        <h2>Tijucas: Um Novo Polo de Desenvolvimento</h2>
-        <img src="https://i.imgur.com/U4VMMn7.jpg" alt="Mapa de Tijucas">
-        <p>Com uma localização privilegiada no litoral catarinense, Tijucas atrai novos investimentos e oferece uma excelente qualidade de vida.</p>
-
-        <h3>Crescimento Econômico e Populacional</h3>
-        <img src="https://i.imgur.com/uhPaRfX.jpg" alt="Dados demográficos de Tijucas">
-        <p>Tijucas experimenta um crescimento populacional e econômico significativo, impulsionado pela chegada de novos empreendimentos e pela migração de pessoas em busca de uma vida melhor.</p>
-
-        <h2>Desafios do Futuro e Soluções Urbanas</h2>
-        <img src="https://i.imgur.com/R95GScr.jpg" alt="Gráfico da produção de petróleo">
-        <p>O mundo enfrenta desafios como a escassez de recursos naturais, a necessidade de energias renováveis e a importância da sustentabilidade. As Smart Cities oferecem soluções para esses desafios.</p>
-
-        <h3>Mobilidade Sustentável</h3>
-        <img src="https://i.imgur.com/MshQcKe.jpg" alt="Gráfico da Mobilidade">
-        <p>Priorizando o transporte público, ciclovias e áreas verdes, Tijucas incentiva a mobilidade sustentável, reduzindo o impacto ambiental e promovendo a saúde da população.</p>
-
-        <h3>Gestão Inteligente de Recursos</h3>
-        <img src="https://i.imgur.com/FcKHABf.jpg" alt="Gráfico da energia">
-        <img src="https://i.imgur.com/e0uy53l.jpg" alt="Gráfico da reciclagem">
-        <img src="https://i.imgur.com/g93WRAQ.jpg" alt="Gráfico da água">
-        <p>A gestão inteligente de energia, água e resíduos é fundamental para o desenvolvimento sustentável. Tijucas investe em tecnologias e práticas inovadoras para garantir o uso eficiente dos recursos naturais.</p>
-
-        <h2>Um Novo Conceito Urbano</h2>
-        <img src="https://i.imgur.com/3lvJ6ls.jpg" alt="Masterplan de Tijucas">
-        <p>A Smart City Tijucas é projetada com base em um novo conceito urbano, integrando diferentes sistemas de forma harmoniosa e promovendo a qualidade de vida.</p>
-
-        <h3>Centralidade e Vitalidade</h3>
-        <img src="https://i.imgur.com/KCNJquT.jpg" alt="Conceito urbano de Tijucas">
-        <p>Tijucas valoriza a centralidade, criando espaços públicos vibrantes e convidativos que incentivam a interação social e a vida cultural.</p>
-
-        <h3>Núcleos Urbanos Compactos</h3>
-        <img src="https://i.imgur.com/KAkn82Z.jpg" alt="Núcleos urbanos compactos">
-        <p>A criação de núcleos urbanos compactos e de uso misto reduz a necessidade de deslocamentos, promove a vitalidade e contribui para a sustentabilidade urbana.</p>
-
-        <h3>Estratégias de Sucesso</h3>
-        <img src="https://i.imgur.com/1FYa1uc.jpg" alt="Estratégias para cidades">
-        <p>Tijucas implementa estratégias que já provaram ser eficazes em outras Smart Cities, como a priorização de pedestres, a criação de espaços verdes e a promoção da segurança pública.</p>
-
-        <h2>A Estruturação da Proposta</h2>
-        <img src="https://i.imgur.com/ImsQge0.jpg" alt="Sistemas urbanos de Tijucas">
-        <p>A proposta para a Smart City Tijucas está estruturada em diferentes sistemas que se complementam, garantindo o desenvolvimento integrado da cidade.</p>
-
-        <h3>Diretrizes Estruturantes</h3>
-        <img src="https://i.imgur.com/35p9ZqN.jpg" alt="Diretrizes estruturantes">
-        <p>As diretrizes estruturantes norteiam o desenvolvimento da Smart City Tijucas, priorizando a sustentabilidade, a mobilidade, a qualidade de vida e a integração dos diferentes sistemas.</p>
-
-        <h3>Ensaio Volumétrico</h3>
-        <img src="https://i.imgur.com/13gCP9n.jpg" alt="Ensaio volumétrico">
-        <p>O ensaio volumétrico demonstra a viabilidade da proposta e a integração dos diferentes usos do solo, garantindo a criação de um ambiente urbano harmonioso e funcional.</p>
-
-        <h3>Sistema Viário Inteligente</h3>
-        <img src="https://i.imgur.com/oCeQth1.jpg" alt="Sistema viário">
-        <p>O sistema viário de Tijucas é projetado para garantir a fluidez do tráfego, priorizar pedestres e ciclistas e integrar os diferentes modais de transporte.</p>
-
-        <h3>A Orla e o Parque Linear</h3>
-        <img src="https://i.imgur.com/hr9A8KW.jpg" alt="Orla e parque linear">
-        <p>A orla e o parque linear são elementos chave da Smart City Tijucas, proporcionando espaços de lazer, recreação e contato com a natureza, além de contribuir para a melhoria do microclima urbano.</p>
-
-        <h3>Áreas Verdes e Equipamentos Públicos</h3>
-        <img src="https://i.imgur.com/NH2uWtc.jpg" alt="Áreas verdes e equipamentos públicos">
-        <p>Tijucas investe em áreas verdes e equipamentos públicos de qualidade, proporcionando espaços de lazer, recreação e convívio social, além de contribuir para a saúde e bem-estar da população.</p>
-
-        <h3>Setores e Usos do Solo</h3>
-        <img src="https://i.imgur.com/XLSbOn0.jpg" alt="Setores e usos do solo">
-        <p>A Smart City Tijucas é dividida em setores com diferentes usos do solo, garantindo a harmonia entre as áreas residenciais, comerciais e de serviços, além de preservar as áreas verdes e de lazer.</p>
-
-        <h2>Referencial de Sucesso</h2>
-        <img src="https://i.imgur.com/yb1RZNB.jpg" alt="Referencial 1">
-        <img src="https://i.imgur.com/oxdS89C.jpg" alt="Referencial 2">
-        <img src="https://i.imgur.com/2m6iqWk.jpg" alt="Referencial 3">
-        <p>Tijucas se inspira em exemplos de sucesso de outras Smart Cities ao redor do mundo, adaptando as melhores práticas às suas necessidades e características locais.</p>
-
-        <h2>Invista em Tijucas</h2>
-        <img src="https://i.imgur.com/qjdhNMt.jpg" alt="Perspectiva da Smart City Tijucas">
-        <p>Tijucas oferece um ambiente propício para investimentos, com uma economia em crescimento, uma localização privilegiada e um novo conceito urbano que prioriza a qualidade de vida e a sustentabilidade.</p>
-        <div class="section" data-aos="fade-up" id="informacoes-negociais">
+    <div class="container" id="portugues">
+        <div class="section" id="informacoes-negociais">
             <h2>Informação para Investidores</h2>
             <p style="line-height: 1.6;">Esta oportunidade única de investimento apresenta:</p>
             <ul style="line-height: 1.6;">
@@ -203,251 +254,148 @@
                     <li>Drenagem de lodo da praia.</li>
                     <li>Aterro de aproximadamente 2 metros no platô do terreno.</li>
                 </ul>
-                <li>Custo estimado da infraestrutura: <b>R$ 30 milhões</b> (aproximadamente <b>US$ 5.454.545</b> *).</li>
+                <li>Custo estimado da infraestrutura: <b>R$ 30 milhões</b> (aproximadamente <b>US$
+                            4.838.709,68</b> *).</li>
             </ul>
-            <p style="line-height: 1.6; font-size: 12px;">*Baseado na cotação de R$ 5,50 por US$ (sujeito a alterações).</p>
+            <p style="line-height: 1.6; font-size: 12px;">*Baseado na cotação de R$ 6,20 por US$ (sujeito a alterações).
+            </p>
         </div>
-    </div>
 
-    <div class="container feature-card" id="english">
         <h1>Smart City Tijucas</h1>
 
-        <h2>Wealth Corridor</h2>
-        <img src="https://i.imgur.com/kfsH6bC.jpg" alt="Wealth Corridor Map">
-        <p>Tijucas is strategically located in the heart of the Wealth Corridor, a region that concentrates 37% of the country's GDP and is experiencing accelerated growth.</p>
+        <h2>Corredor de Riqueza</h2>
+        <img src="https://i.imgur.com/kfsH6bC.jpg" alt="Mapa do Corredor de Riqueza">
+        <p>Tijucas está estrategicamente localizada no coração do Corredor de Riqueza, uma região que concentra 37% do
+            PIB do país e que experimenta um crescimento acelerado.</p>
 
-        <h2>Tijucas: A New Development Hub</h2>
-        <img src="https://i.imgur.com/U4VMMn7.jpg" alt="Map of Tijucas">
-        <p>With a privileged location on the coast of Santa Catarina, Tijucas attracts new investments and offers an excellent quality of life.</p>
+        <h2>Tijucas: Um Novo Polo de Desenvolvimento</h2>
+        <img src="https://i.imgur.com/U4VMMn7.jpg" alt="Mapa de Tijucas">
+        <p>Com uma localização privilegiada no litoral catarinense, Tijucas atrai novos investimentos e oferece uma
+            excelente qualidade de vida.</p>
 
-        <h3>Economic and Population Growth</h3>
-        <img src="https://i.imgur.com/uhPaRfX.jpg" alt="Tijucas Demographic Data">
-        <p>Tijucas is experiencing significant population and economic growth, driven by the arrival of new businesses and the migration of people seeking a better life.</p>
+        <h3>Crescimento Econômico e Populacional</h3>
+        <img src="https://i.imgur.com/uhPaRfX.jpg" alt="Dados demográficos de Tijucas">
+        <p>Tijucas experimenta um crescimento populacional e econômico significativo, impulsionado pela chegada de novos
+            empreendimentos e pela migração de pessoas em busca de uma vida melhor.</p>
 
-        <h2>Challenges of the Future and Urban Solutions</h2>
-        <img src="https://i.imgur.com/R95GScr.jpg" alt="Oil Production Graph">
-        <p>The world faces challenges such as the scarcity of natural resources, the need for renewable energy sources, and the importance of sustainability. Smart Cities offer solutions to these challenges.</p>
+        <h2>Desafios do Futuro e Soluções Urbanas</h2>
+        <img src="https://i.imgur.com/R95GScr.jpg" alt="Gráfico da produção de petróleo">
+        <p>O mundo enfrenta desafios como a escassez de recursos naturais, a necessidade de energias renováveis e a
+            importância da sustentabilidade. As Smart Cities oferecem soluções para esses desafios.</p>
 
-        <h3>Sustainable Mobility</h3>
-        <img src="https://i.imgur.com/MshQcKe.jpg" alt="Mobility Graph">
-        <p>Prioritizing public transportation, bike paths, and green spaces, Tijucas encourages sustainable mobility, reducing environmental impact and promoting the health of the population.</p>
+        <h3>Mobilidade Sustentável</h3>
+        <img src="https://i.imgur.com/MshQcKe.jpg" alt="Gráfico da Mobilidade">
+        <p>Priorizando o transporte público, ciclovias e áreas verdes, Tijucas incentiva a mobilidade sustentável,
+            reduzindo o impacto ambiental e promovendo a saúde da população.</p>
 
-        <h3>Smart Resource Management</h3>
-        <img src="https://i.imgur.com/FcKHABf.jpg" alt="Energy Graph">
-        <img src="https://i.imgur.com/e0uy53l.jpg" alt="Recycling Graph">
-        <img src="https://i.imgur.com/g93WRAQ.jpg" alt="Water Graph">
-        <p>Smart management of energy, water, and waste is fundamental to sustainable development. Tijucas invests in innovative technologies and practices to ensure the efficient use of natural resources.</p>
+        <h3>Gestão Inteligente de Recursos</h3>
+        <img src="https://i.imgur.com/FcKHABf.jpg" alt="Gráfico da energia">
+        <img src="https://i.imgur.com/e0uy53l.jpg" alt="Gráfico da reciclagem">
+        <img src="https://i.imgur.com/g93WRAQ.jpg" alt="Gráfico da água">
+        <p>A gestão inteligente de energia, água e resíduos é fundamental para o desenvolvimento sustentável. Tijucas
+            investe em tecnologias e práticas inovadoras para garantir o uso eficiente dos recursos naturais.</p>
 
-        <h2>A New Urban Concept</h2>
-        <img src="https://i.imgur.com/3lvJ6ls.jpg" alt="Tijucas Masterplan">
-        <p>Smart City Tijucas is designed based on a new urban concept, integrating different systems harmoniously and promoting quality of life.</p>
+        <h2>Um Novo Conceito Urbano</h2>
+        <img src="https://i.imgur.com/3lvJ6ls.jpg" alt="Masterplan de Tijucas">
+        <p>A Smart City Tijucas é projetada com base em um novo conceito urbano, integrando diferentes sistemas de forma
+            harmoniosa e promovendo a qualidade de vida.</p>
 
-        <h3>Centrality and Vitality</h3>
-        <img src="https://i.imgur.com/KCNJquT.jpg" alt="Tijucas Urban Concept">
-        <p>Tijucas values centrality, creating vibrant and inviting public spaces that encourage social interaction and cultural life.</p>
+        <h3>Centralidade e Vitalidade</h3>
+        <img src="https://i.imgur.com/KCNJquT.jpg" alt="Conceito urbano de Tijucas">
+        <p>Tijucas valoriza a centralidade, criando espaços públicos vibrantes e convidativos que incentivam a interação
+            social e a vida cultural.</p>
 
-        <h3>Compact Urban Centers</h3>
-        <img src="https://i.imgur.com/KAkn82Z.jpg" alt="Compact Urban Centers">
-        <p>The creation of compact and mixed-use urban centers reduces the need for travel, promotes vitality, and contributes to urban sustainability.</p>
+        <h3>Núcleos Urbanos Compactos</h3>
+        <img src="https://i.imgur.com/KAkn82Z.jpg" alt="Núcleos urbanos compactos">
+        <p>A criação de núcleos urbanos compactos e de uso misto reduz a necessidade de deslocamentos, promove a
+            vitalidade e contribui para a sustentabilidade urbana.</p>
 
-        <h3>Successful Strategies</h3>
-        <img src="https://i.imgur.com/1FYa1uc.jpg" alt="Strategies for Cities">
-        <p>Tijucas implements strategies that have proven effective in other Smart Cities, such as prioritizing pedestrians, creating green spaces, and promoting public safety.</p>
+        <h3>Estratégias de Sucesso</h3>
+        <img src="https://i.imgur.com/1FYa1uc.jpg" alt="Estratégias para cidades">
+        <p>Tijucas implementa estratégias que já provaram ser eficazes em outras Smart Cities, como a priorização de
+            pedestres, a criação de espaços verdes e a promoção da segurança pública.</p>
 
-        <h2>Proposal Structure</h2>
-        <img src="https://i.imgur.com/ImsQge0.jpg" alt="Tijucas Urban Systems">
-        <p>The Smart City Tijucas proposal is structured in different systems that complement each other, ensuring the integrated development of the city.</p>
+        <h2>A Estruturação da Proposta</h2>
+        <img src="https://i.imgur.com/ImsQge0.jpg" alt="Sistemas urbanos de Tijucas">
+        <p>A proposta para a Smart City Tijucas está estruturada em diferentes sistemas que se complementam, garantindo
+            o desenvolvimento integrado da cidade.</p>
 
-        <h3>Structural Guidelines</h3>
-        <img src="https://i.imgur.com/35p9ZqN.jpg" alt="Structural Guidelines">
-        <p>The structural guidelines guide the development of Smart City Tijucas, prioritizing sustainability, mobility, quality of life, and the integration of different systems.</p>
+        <h3>Diretrizes Estruturantes</h3>
+        <img src="https://i.imgur.com/35p9ZqN.jpg" alt="Diretrizes estruturantes">
+        <p>As diretrizes estruturantes norteiam o desenvolvimento da Smart City Tijucas, priorizando a sustentabilidade,
+            a mobilidade, a qualidade de vida e a integração dos diferentes sistemas.</p>
 
-        <h3>Volumetric Essay</h3>
-        <img src="https://i.imgur.com/13gCP9n.jpg" alt="Volumetric Essay">
-        <p>The volumetric essay demonstrates the feasibility of the proposal and the integration of different land uses, ensuring the creation of a harmonious and functional urban environment.</p>
+        <h3>Ensaio Volumétrico</h3>
+        <img src="https://i.imgur.com/13gCP9n.jpg" alt="Ensaio volumétrico">
+        <p>O ensaio volumétrico demonstra a viabilidade da proposta e a integração dos diferentes usos do solo,
+            garantindo a criação de um ambiente urbano harmonioso e funcional.</p>
 
-        <h3>Intelligent Road System</h3>
-        <img src="https://i.imgur.com/oCeQth1.jpg" alt="Road System">
-        <p>The Tijucas road system is designed to ensure traffic flow, prioritize pedestrians and cyclists, and integrate different modes of transportation.</p>
+        <h3>Sistema Viário Inteligente</h3>
+        <img src="https://i.imgur.com/oCeQth1.jpg" alt="Sistema viário">
+        <p>O sistema viário de Tijucas é projetado para garantir a fluidez do tráfego, priorizar pedestres e ciclistas
+            e integrar os diferentes modais de transporte.</p>
 
-        <h3>The Waterfront and Linear Park</h3>
-        <img src="https://i.imgur.com/hr9A8KW.jpg" alt="Waterfront and Linear Park">
-        <p>The waterfront and linear park are key elements of Smart City Tijucas, providing spaces for leisure, recreation, and contact with nature, as well as contributing to the improvement of the urban microclimate.</p>
+        <h3>A Orla e o Parque Linear</h3>
+        <img src="https://i.imgur.com/hr9A8KW.jpg" alt="Orla e parque linear">
+        <p>A orla e o parque linear são elementos chave da Smart City Tijucas, proporcionando espaços de lazer,
+            recreação e contato com a natureza, além de contribuir para a melhoria do microclima urbano.</p>
 
-        <h3>Green Areas and Public Facilities</h3>
-        <img src="https://i.imgur.com/NH2uWtc.jpg" alt="Green Areas and Public Facilities">
-        <p>Tijucas invests in high-quality green areas and public facilities, providing spaces for leisure, recreation, and social interaction, as well as contributing to the health and well-being of the population.</p>
+        <h3>Áreas Verdes e Equipamentos Públicos</h3>
+        <img src="https://i.imgur.com/NH2uWtc.jpg" alt="Áreas verdes e equipamentos públicos">
+        <p>Tijucas investe em áreas verdes e equipamentos públicos de qualidade, proporcionando espaços de lazer,
+            recreação e convívio social, além de contribuir para a saúde e bem-estar da população.</p>
 
-        <h3>Sectors and Land Uses</h3>
-        <img src="https://i.imgur.com/XLSbOn0.jpg" alt="Sectors and Land Uses">
-        <p>Smart City Tijucas is divided into sectors with different land uses, ensuring harmony between residential, commercial, and service areas, as well as preserving green and recreational areas.</p>
+        <h3>Setores e Usos do Solo</h3>
+        <img src="https://i.imgur.com/XLSbOn0.jpg" alt="Setores e usos do solo">
+        <p>A Smart City Tijucas é dividida em setores com diferentes usos do solo, garantindo a harmonia entre as áreas
+            residenciais, comerciais e de serviços, além de preservar as áreas verdes e de lazer.</p>
 
-        <h2>Reference of Success</h2>
-        <img src="https://i.imgur.com/yb1RZNB.jpg" alt="Reference 1">
-        <img src="https://i.imgur.com/oxdS89C.jpg" alt="Reference 2">
-        <img src="https://i.imgur.com/2m6iqWk.jpg" alt="Reference 3">
-        <p>Tijucas draws inspiration from successful examples of other Smart Cities around the world, adapting best practices to its local needs and characteristics.</p>
+        <h2>Referencial de Sucesso</h2>
+        <img src="https://i.imgur.com/yb1RZNB.jpg" alt="Referencial 1">
+        <img src="https://i.imgur.com/oxdS89C.jpg" alt="Referencial 2">
+        <img src="https://i.imgur.com/2m6iqWk.jpg" alt="Referencial 3">
+        <p>Tijucas se inspira em exemplos de sucesso de outras Smart Cities ao redor do mundo, adaptando as melhores
+            práticas às suas necessidades e características locais.</p>
 
-        <h2>Invest in Tijucas</h2>
-        <img src="https://i.imgur.com/qjdhNMt.jpg" alt="Smart City Tijucas Perspective">
-        <p>Tijucas offers a favorable environment for investments, with a growing economy, a privileged location, and a new urban concept that prioritizes quality of life and sustainability.</p>
-        <div class="section" data-aos="fade-up" id="informacoes-negociais">
-            <h2>Investment Information</h2>
-            <p style="line-height: 1.6;">This unique investment opportunity presents:</p>
-            <ul style="line-height: 1.6;">
-                <li>Total area of <b>200 hectares</b>.</li>
-                <li>Enhanced GSV due to zoning that allows <b>vertical buildings</b> throughout the entire area.</li>
-                <li>Direct negotiation with <b>three groups of owners</b>, enabling partnership or acquisition.</li>
-                <li>Essential infrastructure for viability (responsibility of the investor/developer):</li>
-                <ul style="line-height: 1.6;">
-                    <li>Maritime pier to divert waste from the Tijucas River.</li>
-                    <li>Beach mud drainage.</li>
-                    <li>Landfill of approximately 2 meters on the terrain plateau.</li>
-                </ul>
-                <li>Estimated infrastructure cost: <b>R$ 30 million</b> (approximately <b>US$ 5,454,545</b> *).</li>
-            </ul>
-            <p style="line-height: 1.6; font-size: 12px;">*Based on an exchange rate of R$ 5.50 per US$ (subject to change).</p>
-        </div>
+        <h2>Invista em Tijucas</h2>
+        <img src="https://i.imgur.com/qjdhNMt.jpg" alt="Perspectiva da Smart City Tijucas">
+        <p>Tijucas oferece um ambiente propício para investimentos, com uma economia em crescimento, uma localização
+            privilegiada e um novo conceito urbano que prioriza a qualidade de vida e a sustentabilidade.</p>
     </div>
 
-    <div class="container feature-card" id="العربية">
-        <h1>المدينة الذكية تيجوكاس</h1>
-
-        <h2>ممر الثروة</h2>
-        <img src="https://i.imgur.com/kfsH6bC.jpg" alt="خريطة ممر الثروة">
-        <p>تقع تيجوكاس في موقع استراتيجي في قلب ممر الثروة، وهي منطقة تركز 37٪ من الناتج المحلي الإجمالي للبلاد وتشهد نموًا متسارعًا.</p>
-
-        <h2>تيجوكاس: مركز تطوير جديد</h2>
-        <img src="https://i.imgur.com/U4VMMn7.jpg" alt="خريطة تيجوكاس">
-        <p>بموقعها المتميز على ساحل سانتا كاتارينا، تجذب تيجوكاس استثمارات جديدة وتوفر نوعية حياة ممتازة.</p>
-
-        <h3>النمو الاقتصادي والسكاني</h3>
-        <img src="https://i.imgur.com/uhPaRfX.jpg" alt="البيانات الديموغرافية لتيجوكاس">
-        <p>تشهد تيجوكاس نموًا سكانيًا واقتصاديًا كبيرًا، مدفوعًا بوصول مشاريع جديدة وهجرة الأشخاص الباحثين عن حياة أفضل.</p>
-
-        <h2>تحديات المستقبل والحلول الحضرية</h2>
-        <img src="https://i.imgur.com/R95GScr.jpg" alt="رسم بياني لإنتاج النفط">
-        <p>يواجه العالم تحديات مثل ندرة الموارد الطبيعية والحاجة إلى مصادر الطاقة المتجددة وأهمية الاستدامة. تقدم المدن الذكية حلولًا لهذه التحديات.</p>
-
-        <h3>التنقل المستدام</h3>
-        <img src="https://i.imgur.com/MshQcKe.jpg" alt="رسم بياني للتنقل">
-        <p>من خلال إعطاء الأولوية للنقل العام ومسارات الدراجات والمناطق الخضراء، تشجع تيجوكاس على التنقل المستدام، مما يقلل من التأثير البيئي ويعزز صحة السكان.</p>
-
-        <h3>إدارة ذكية للموارد</h3>
-        <img src="https://i.imgur.com/FcKHABf.jpg" alt="رسم بياني للطاقة">
-        <img src="https://i.imgur.com/e0uy53l.jpg" alt="رسم بياني لإعادة التدوير">
-        <img src="https://i.imgur.com/g93WRAQ.jpg" alt="رسم بياني للمياه">
-        <p>تُعد الإدارة الذكية للطاقة والمياه والنفايات أمرًا أساسيًا للتنمية المستدامة. تستثمر تيجوكاس في التقنيات والممارسات المبتكرة لضمان الاستخدام الفعال للموارد الطبيعية.</p>
-
-        <h2>مفهوم حضري جديد</h2>
-        <img src="https://i.imgur.com/3lvJ6ls.jpg" alt="الخطة الرئيسية لتيجوكاس">
-        <p>تم تصميم المدينة الذكية تيجوكاس على أساس مفهوم حضري جديد، يدمج أنظمة مختلفة بطريقة متناغمة ويعزز جودة الحياة.</p>
-
-        <h3>المركزية والحيوية</h3>
-        <img src="https://i.imgur.com/KCNJquT.jpg" alt="المفهوم الحضري لتيجوكاس">
-        <p>تُقدر تيجوكاس المركزية، مما يخلق مساحات عامة نابضة بالحياة وجذابة تشجع على التفاعل الاجتماعي والحياة الثقافية.</p>
-
-        <h3>مراكز حضرية مدمجة</h3>
-        <img src="https://i.imgur.com/KAkn82Z.jpg" alt="مراكز حضرية مدمجة">
-        <p>يقلل إنشاء مراكز حضرية مدمجة ومتعددة الاستخدامات من الحاجة إلى التنقل، ويعزز الحيوية ويساهم في الاستدامة الحضرية.</p>
-
-        <h3>استراتيجيات النجاح</h3>
-        <img src="https://i.imgur.com/1FYa1uc.jpg" alt="استراتيجيات للمدن">
-        <p>تنفذ تيجوكاس استراتيجيات أثبتت فعاليتها في مدن ذكية أخرى، مثل إعطاء الأولوية للمشاة وإنشاء مساحات خضراء وتعزيز السلامة العامة.</p>
-
-        <h2>هيكلة الاقتراح</h2>
-        <img src="https://i.imgur.com/ImsQge0.jpg" alt="الأنظمة الحضرية في تيجوكاس">
-        <p>تم هيكلة اقتراح المدينة الذكية تيجوكاس في أنظمة مختلفة تكمل بعضها البعض، مما يضمن التنمية المتكاملة للمدينة.</p>
-
-        <h3>المبادئ التوجيهية الهيكلية</h3>
-        <img src="https://i.imgur.com/35p9ZqN.jpg" alt="المبادئ التوجيهية الهيكلية">
-        <p>توجه المبادئ التوجيهية الهيكلية تطوير المدينة الذكية تيجوكاس، مع إعطاء الأولوية للاستدامة والتنقل وجودة الحياة وتكامل الأنظمة المختلفة.</p>
-
-        <h3>التجربة الحجمية</h3>
-        <img src="https://i.imgur.com/13gCP9n.jpg" alt="التجربة الحجمية">
-        <p>تُظهر التجربة الحجمية جدوى الاقتراح وتكامل استخدامات الأراضي المختلفة، مما يضمن إنشاء بيئة حضرية متناغمة وعملية.</p>
-
-        <h3>نظام الطرق الذكي</h3>
-        <img src="https://i.imgur.com/oCeQth1.jpg" alt="نظام الطرق">
-        <p>تم تصميم نظام الطرق في تيجوكاس لضمان انسيابية حركة المرور وإعطاء الأولوية للمشاة وراكبي الدراجات ودمج وسائل النقل المختلفة.</p>
-
-        <h3>الكورنيش والحديقة الخطية</h3>
-        <img src="https://i.imgur.com/hr9A8KW.jpg" alt="الكورنيش والحديقة الخطية">
-        <p>يُعد الكورنيش والحديقة الخطية عنصرين رئيسيين في المدينة الذكية تيجوكاس، حيث يوفران مساحات للترفيه والاستجمام والتواصل مع الطبيعة، بالإضافة إلى المساهمة في تحسين المناخ المحلي الحضري.</p>
-
-        <h3>المساحات الخضراء والمرافق العامة</h3>
-        <img src="https://i.imgur.com/NH2uWtc.jpg" alt="المساحات الخضراء والمرافق العامة">
-        <p>تستثمر تيجوكاس في المساحات الخضراء والمرافق العامة عالية الجودة، مما يوفر مساحات للترفيه والاستجمام والتواصل الاجتماعي، بالإضافة إلى المساهمة في صحة السكان ورفاههم.</p>
-
-        <h3>القطاعات واستخدامات الأراضي</h3>
-        <img src="https://i.imgur.com/XLSbOn0.jpg" alt="القطاعات واستخدامات الأراضي">
-        <p>تنقسم المدينة الذكية تيجوكاس إلى قطاعات ذات استخدامات مختلفة للأراضي، مما يضمن الانسجام بين المناطق السكنية والتجارية والخدمية، بالإضافة إلى الحفاظ على المساحات الخضراء والترفيهية.</p>
-
-        <h2>مرجع النجاح</h2>
-        <img src="https://i.imgur.com/yb1RZNB.jpg" alt="مرجع 1">
-        <img src="https://i.imgur.com/oxdS89C.jpg" alt="مرجع 2">
-        <img src="https://i.imgur.com/2m6iqWk.jpg" alt="مرجع 3">
-        <p>تستلهم تيجوكاس من أمثلة ناجحة لمدن ذكية أخرى حول العالم، وتكيف أفضل الممارسات مع احتياجاتها وخصائصها المحلية.</p>
-
-        <h2>استثمر في تيجوكاس</h2>
-        <img src="https://i.imgur.com/qjdhNMt.jpg" alt="منظور المدينة الذكية تيجوكاس">
-        <p>توفر تيجوكاس بيئة مواتية للاستثمار، مع اقتصاد مزدهر وموقع متميز ومفهوم حضري جديد يعطي الأولوية لجودة الحياة والاستدامة.</p>
-        <div class="section" data-aos="fade-up" id="informacoes-negociais">
-            <h2>معلومات للمستثمرين</h2>
-            <p style="line-height: 1.6;">تقدم فرصة الاستثمار الفريدة هذه ما يلي:</p>
-            <ul style="line-height: 1.6;">
-                <li>مساحة إجمالية قدرها <b>200 هكتار</b>.</li>
-                <li>زيادة قيمة البيع الإجمالية (GSV) بسبب تقسيم المناطق الذي يسمح <b>بالمباني العمودية</b> في جميع أنحاء المنطقة.</li>
-                <li>التفاوض المباشر مع <b>ثلاث مجموعات من الملاك</b>، مما يتيح إمكانية الشراكة أو الاستحواذ.</li>
-                <li>البنية التحتية الأساسية للجدوى (مسؤولية المستثمر/المطور):</li>
-                <ul style="line-height: 1.6;">
-                    <li>رصيف بحري لتحويل النفايات من نهر تيجوكاس.</li>
-                    <li>تصريف طين الشاطئ.</li>
-                    <li>ردم حوالي 2 متر على هضبة الأرض.</li>
-                </ul>
-                <li>التكلفة التقديرية للبنية التحتية: <b>30 مليون ريال برازيلي</b> (حوالي <b>5,454,545 دولار أمريكي</b> *).</li>
-            </ul>
-            <p style="line-height: 1.6; font-size: 12px; direction: ltr;">*بناءً على سعر صرف 5.50 ريال برازيلي لكل دولار أمريكي (قابل للتغيير).</p>
-        </div>
+    <div id="google-maps-container">
+        <iframe
+            src="https://www.google.com/maps/d/embed?mid=1QL8Wm-y4uoefKqX7VAN6K_-ZumLPpC8&ehbc=2E312F"
+            width="100%" height="480"></iframe>
     </div>
-
-    <iframe src="https://www.google.com/maps/d/embed?mid=1QL8Wm-y4uoefKqX7VAN6K_-ZumLPpC8&ehbc=2E312F" width="100%" height="480"></iframe>
 
     <footer>
-        <a href="http://www.engesudsmart.com.br" target="_blank" title="www.engesudsmart.com.br"> <img src="https://i.imgur.com/3YKn2xW.png" alt="Logo Engesud"> </a>
+        <a href="http://www.engesudsmart.com.br" target="_blank" title="www.engesudsmart.com.br"> <img
+                src="https://i.imgur.com/3YKn2xW.png" alt="Logo Engesud"> </a>
         <p><strong>Engesud Engenharia e Intermediação LTDA</strong></p>
         <p>Robson Luis da Costa | <a href="https://wa.me/4497013489" title="Whatsapp">+55 (44) 99701-3489</a></p>
         <p><a href="https://www.engesudsmart.com.br" target="_blank">www.engesudsmart.com.br</a></p>
         <p>Última atualização: 12 de janeiro de 2024</p>
     </footer>
     <!-- Este conteúdo é protegido por direitos autorais creditados à Engesud Engenharia e Intermediação LTDA, inscrita no CNPJ 40.601.637/0001-58 -->
-
     <script>
-        function showLanguage(lang) {
-            document.getElementById('portugues').style.display = 'none';
-            document.getElementById('english').style.display = 'none';
-            document.getElementById('العربية').style.display = 'none';
-
-            document.getElementById(lang).style.display = 'block';
-        }
-
         document.addEventListener('DOMContentLoaded', function () {
             // Adiciona classe de animação aos cards quando visíveis
-            const cards = document.querySelectorAll('.feature-card');
+            const cards = document.querySelectorAll('.container');
             const observer = new IntersectionObserver((entries) => {
                 entries.forEach(entry => {
                     if (entry.isIntersecting) {
-                        entry.target.style.opacity = 1;
-                        entry.target.style.transform = 'translateY(0)';
+                        entry.target.classList.add('show'); // Adiciona a classe 'show' para iniciar a animação
                     }
                 });
+            }, {
+                threshold: 0.1 // Define um limite de visibilidade para disparar a animação
             });
             cards.forEach(card => {
                 observer.observe(card);
             });
         });
     </script>
-
 </body>
 
 </html>
