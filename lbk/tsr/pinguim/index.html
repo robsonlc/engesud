@@ -1,3 +1,230 @@
+<!DOCTYPE html>
+<html lang="pt-br" prefix="og: http://ogp.me/ns#">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Apresentação de Área - Estrada Pinguim</title>
+
+    <!-- Metatags Open Graph -->
+    <meta property="og:title" content="Apresentação de Área - Estrada Pinguim">
+    <meta property="og:description" content="Área de 20 alqueires para desenvolvimento de condomínio fechado em Maringá - PR">
+    <meta property="og:image" content="https://i.imgur.com/SVeld2V.png">
+    <meta property="og:image:width" content="800">
+    <meta property="og:image:height" content="800">
+    <meta property="og:url" content="https://www.engesudsmart.com.br/lbk/tsr/pinguim">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Engesud Smart">
+
+    <link rel="shortcut icon" href="https://i.imgur.com/ZQ2U8eO.png" type="image/x-icon">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --primary-color: #003366;
+            --secondary-color: #007bff;
+            --accent-color: #ffd700;
+            --text-color: #333;
+            --background-color: #f5f7fa;
+            --container-background: #fff;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--background-color);
+            line-height: 1.6;
+            color: var(--text-color);
+        }
+
+        .container {
+            width: min(95%, 1200px);
+            margin: 2rem auto;
+            padding: clamp(1rem, 5vw, 3rem);
+            background-color: var(--container-background);
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
+            border-radius: 20px;
+        }
+
+        h1 {
+            font-size: clamp(1.8rem, 4vw, 2.5rem);
+            font-weight: 700;
+            text-align: center;
+            margin-bottom: 2.5rem;
+            color: var(--primary-color);
+            position: relative;
+            padding-bottom: 1rem;
+        }
+
+        h1::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background-color: var(--accent-color);
+            border-radius: 2px;
+        }
+
+        h2 {
+            font-size: clamp(1.4rem, 3vw, 1.8rem);
+            color: var(--primary-color);
+            margin: 2rem 0 1rem;
+            padding-left: 1rem;
+            border-left: 4px solid var(--accent-color);
+        }
+
+        .property-card {
+            background: #fff;
+            padding: clamp(1rem, 4vw, 2rem);
+            border-radius: 15px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.04);
+            margin-bottom: 1.5rem;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .property-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.08);
+        }
+
+        .map-container {
+            position: relative;
+            padding-bottom: 56.25%;
+            height: 0;
+            overflow: hidden;
+            margin: 2rem 0;
+            border-radius: 15px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.06);
+        }
+
+        .map-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: none;
+            border-radius: 15px;
+        }
+
+        .image-gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+
+        .image-gallery img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            border-radius: 12px;
+            transition: transform 0.3s ease;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+        }
+
+        .image-gallery img:hover {
+            transform: scale(1.02);
+        }
+
+        .button-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1rem;
+            margin: 2rem 0;
+        }
+
+        .button-container a {
+            background: var(--secondary-color);
+            color: #fff;
+            padding: 1rem 1.5rem;
+            border-radius: 10px;
+            text-decoration: none;
+            text-align: center;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .button-container a:hover {
+            background: var(--primary-color);
+            transform: translateY(-2px);
+        }
+
+        .price-section {
+            background: #f8f9fa;
+            padding: 1.5rem;
+            border-radius: 12px;
+            margin: 2rem 0;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.03);
+        }
+
+        .footer {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: #fff;
+            padding: clamp(2rem, 5vw, 3rem);
+            text-align: center;
+            margin-top: 3rem;
+            border-radius: 15px;
+        }
+
+        .footer img {
+            max-width: 150px;
+            margin-bottom: 1.5rem;
+        }
+
+        .footer a {
+            color: #fff;
+            text-decoration: none;
+            transition: opacity 0.3s ease;
+        }
+
+        .footer a:hover {
+            opacity: 0.8;
+        }
+
+        .footer p {
+            margin: 0.5rem 0;
+            font-size: clamp(0.9rem, 2vw, 1rem);
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                width: 100%;
+                margin: 0;
+                border-radius: 0;
+            }
+
+            .property-card {
+                padding: 1rem;
+            }
+
+            .button-container {
+                grid-template-columns: 1fr;
+            }
+
+            .footer {
+                border-radius: 0;
+            }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            * {
+                animation: none !important;
+                transition: none !important;
+            }
+        }
+    </style>
+</head>
 <body>
     <div class="container">
         <h1>Apresentação de Área - Estrada Pinguim</h1>
@@ -60,3 +287,4 @@
 
     </div>
 </body>
+</html>
