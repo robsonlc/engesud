@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Propriedade Agrícola</title>
+    <meta property="og:url" content="https://www.engesudsmart.com.br/farm/ptga">
+    <meta property="og:image" content="https://i.imgur.com/32dnBsz.png">
+    <link rel="shortcut icon" href="https://i.imgur.com/HjwVm8x.png" type="image/x-icon">
+    <style>
+        :root {
+            --primary-color: #2c5282;
+            --secondary-color: #4299e1;
+            --text-color: #2d3748;
+            --bg-color: #f7fafc;
+            --card-bg: #ffffff;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            line-height: 1.8;
+        }
+
+        header {
+            height: 300px;
+            position: relative;
+            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)),
+                        url('https://i.imgur.com/wOuNZZE.png') center/cover no-repeat;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        .header-content {
+            z-index: 1;
+        }
+
+        main {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+            background-color: var(--card-bg);
+            border-radius: 12px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+
+        section {
+            margin-bottom: 3rem;
+        }
+
+        h1, h2, h3 {
+            color: var(--primary-color);
+            margin-bottom: 1.5rem;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            font-weight: 700;
+        }
+
+        h2 {
+            font-size: 2rem;
+            text-align: center;
+            position: relative;
+            padding-bottom: 0.5rem;
+        }
+
+        h2::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 3px;
+            background-color: var(--secondary-color);
+        }
+
+        .area {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+
+        .feature-card {
+            background-color: var(--card-bg);
+            padding: 2rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .image-container {
+            position: relative;
+            overflow: hidden;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            margin-bottom: 1.5rem;
+            cursor: pointer;
+        }
+
+        .image-container img {
+            width: 100%;
+            height: auto;
+            transition: transform 0.5s ease;
+        }
+
+        .image-container:hover img {
+            transform: scale(1.05);
+        }
+
+        .image-container p {
+            background-color: rgba(0,0,0,0.7);
+            color: white;
+            padding: 1rem;
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+            margin: 0;
+            font-size: 0.9rem;
+        }
+
+        .map-section iframe {
+            border-radius: 12px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            width: 100%;
+            height: 480px;
+        }
+
+        .contact {
+            text-align: center;
+            padding: 2rem;
+            background-color: var(--primary-color);
+            color: white;
+            border-radius: 12px;
+            margin-top: 3rem;
+        }
+
+        .contact h2 {
+            color: white;
+        }
+
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0,0,0,0.9);
+            padding: 20px;
+            box-sizing: border-box;
+            overflow: auto;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+        }
+
+        .modal-content {
+            margin: auto;
+            display: block;
+            max-width: 90%;
+            max-height: 90vh;
+            object-fit: contain;
+        }
+
+        .modal-caption {
+            margin: auto;
+            display: block;
+            width: 80%;
+            text-align: center;
+            color: white;
+            padding: 10px 0;
+        }
+
+        .close {
+            position: fixed;
+            right: 20px;
+            top: 20px;
+            color: #fff;
+            font-size: 30px;
+            font-weight: bold;
+            cursor: pointer;
+            z-index: 1001;
+        }
+
+        footer {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 2rem;
+            text-align: center;
+            margin-top: 3rem;
+        }
+
+        footer img {
+            width: 80px;
+            height: auto;
+            margin-bottom: 1rem;
+        }
+
+        footer a {
+            color: white;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        footer a:hover {
+            color: var(--secondary-color);
+        }
+
+        @media (max-width: 768px) {
+            header {
+                height: 200px;
+            }
+
+            h1 {
+                font-size: 2rem;
+            }
+
+            h2 {
+                font-size: 1.5rem;
+            }
+
+            main {
+                padding: 1rem;
+                margin: 1rem;
+            }
+
+            .area {
+                grid-template-columns: 1fr;
+            }
+
+            .feature-card {
+                padding: 1rem;
+            }
+
+            .modal-content {
+                 width: 90%;
+                  max-height: 80vh;
+                margin: auto;
+            }
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .animate {
+            animation: fadeIn 0.8s ease-out forwards;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <h1>Propriedade Agrícola Premium</h1>
+        </div>
+    </header>
+
+    <!-- Modal para exibição de imagens -->
+    <div id="imageModal" class="modal">
+        <span class="close">×</span>
+        <img class="modal-content" id="modalImage" alt="Imagem Ampliada">
+        <div id="caption" class="modal-caption"></div>
+    </div>
+
+    <main>
+        <section class="intro animate">
+            <p class="text-lg text-center">Uma oportunidade única de investimento em agricultura, combinando excelente localização estratégica com infraestrutura completa para produção de soja e pecuária.</p>
+        </section>
+
+        <section class="map-section animate">
+            <h2>Localização Estratégica</h2>
+            <iframe src="https://www.google.com/maps/d/embed?mid=1XXpOqYMPsbJe9Y-CvSReYYIU9I6kGuQ&ehbc=2E312F" width="100%" height="480" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </section>
+
+        <section class="area animate">
+            <h2>Detalhes da Propriedade</h2>
+            <div class="feature-card">
+                <h3>Área Total</h3>
+                <p>3.150 hectares de terra fértil com alto potencial produtivo</p>
+            </div>
+            <div class="feature-card">
+                <h3>Área Disponível</h3>
+                <p>1.730 hectares de área preparada para cultivo</p>
+            </div>
+            <div class="feature-card">
+                <h3>Área Arrendada</h3>
+                <p>1.170 hectares com contrato de arrendamento até 2035</p>
+            </div>
+        </section>
+
+       <section class="gallery animate">
+            <h2>Imagens da Propriedade</h2>
+              <div class="image-container" onclick="openModal(this)">
+                  <img src="https://i.imgur.com/CuF7Vc2.png" alt="Vista aérea completa">
+                  <p>Vista aérea das três fazendas</p>
+              </div>
+             <div class="image-container" onclick="openModal(this)">
+                 <img src="https://i.imgur.com/YS8fw5z.png" alt="Criação de gado">
+                  <p>Pecuária de alta qualidade</p>
+             </div>
+             <div class="image-container" onclick="openModal(this)">
+                 <img src="https://i.imgur.com/PK3mNGq.png" alt="Infraestrutura hídrica">
+                 <p>Poço artesiano com capacidade de 6.500 L/h</p>
+            </div>
+        </section>
+
+        <section class="contact animate">
+            <h2>Investimento</h2>
+            <p class="text-xl">Valor por hectare: R$ 35.000,00</p>
+            <div class="mt-4">
+                <h3>Entre em Contato</h3>
+                <p>Robson Luis da Costa</p>
+                <p><a href="https://wa.me/4497013489">+55 (44) 99701-3489</a></p>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <img src="https://i.imgur.com/3YKn2xW.png" alt="Logo Engesud">
+        <p><strong>Engesud Engenharia e Intermediação LTDA</strong></p>
+        <p><a href="https://www.engesudsmart.com.br" target="_blank">www.engesudsmart.com.br</a></p>
+        <p>Última atualização: 14 de janeiro de 2025</p>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('animate');
+                    }
+                });
+            }, {
+                threshold: 0.1
+            });
+
+            document.querySelectorAll('section').forEach(section => {
+                observer.observe(section);
+            });
+        });
+
+    // Modal para imagens
+        const modal = document.getElementById('imageModal');
+        const modalImg = document.getElementById('modalImage');
+        const captionText = document.getElementById('caption');
+        const closeBtn = document.getElementsByClassName('close')[0];
+
+        function openModal(element) {
+                modal.style.display = 'flex';
+                modalImg.src = element.querySelector('img').src;
+                captionText.innerHTML = element.querySelector('p').innerHTML;
+
+        }
+
+        closeBtn.onclick = function() {
+            modal.style.display = 'none';
+        }
+
+        modal.onclick = function(event) {
+            if (event.target === modal) {
+                modal.style.display = 'none';
+            }
+        }
+
+        // Fecha o modal com tecla ESC
+        document.addEventListener('keydown', function(event) {
+            if (event.key === 'Escape') {
+                modal.style.display = 'none';
+            }
+        });
+    </script>
+</body>
+</html>
