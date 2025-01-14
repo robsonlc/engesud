@@ -114,7 +114,6 @@
             border-radius: 12px;
             box-shadow: 0 4px 6px rgba(0,0,0,0.1);
             margin-bottom: 1.5rem;
-            cursor: pointer;
         }
 
         .image-container img {
@@ -136,48 +135,6 @@
             width: 100%;
             margin: 0;
             font-size: 0.9rem;
-        }
-
-        .lightbox {
-            display: none;
-            position: fixed;
-            z-index: 1000;
-            left: 0;
-            top: 0;
-            width: 100%;
-            height: 100%;
-            overflow: auto;
-            background-color: rgba(0,0,0,0.9);
-        }
-
-        .lightbox-content {
-            position: relative;
-            margin: auto;
-            padding: 0;
-            width: 80%;
-            max-width: 700px;
-        }
-
-        .lightbox-content img {
-            width: 100%;
-            height: auto;
-        }
-
-        .close {
-            position: absolute;
-            top: 20px;
-            right: 35px;
-            color: #f1f1f1;
-            font-size: 40px;
-            font-weight: bold;
-            transition: 0.3s;
-        }
-
-        .close:hover,
-        .close:focus {
-            color: #bbb;
-            text-decoration: none;
-            cursor: pointer;
         }
 
         .map-section iframe {
@@ -269,12 +226,12 @@
 
     <main>
         <section class="intro animate">
-            <p class="text-lg text-center">Uma oportunidade única de investimento em agricultura, combinando excelente localização estratégica com infraestrutura completa para produção de soja e[...]
+            <p class="text-lg text-center">Uma oportunidade única de investimento em agricultura, combinando excelente localização estratégica com infraestrutura completa para produção de soja e pecuária.</p>
         </section>
 
         <section class="map-section animate">
             <h2>Localização Estratégica</h2>
-            <iframe src="https://www.google.com/maps/d/embed?mid=1XXpOqYMPsbJe9Y-CvSReYYIU9I6kGuQ&ehbc=2E312F" width="100%" height="480" style="border:0;" allowfullscreen="" loading="lazy" referrerpol[...]
+            <iframe src="https://www.google.com/maps/d/embed?mid=1XXpOqYMPsbJe9Y-CvSReYYIU9I6kGuQ&ehbc=2E312F" width="100%" height="480" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
         </section>
 
         <section class="area animate">
@@ -309,13 +266,6 @@
             </div>
         </section>
 
-        <div id="lightbox" class="lightbox">
-            <span class="close">&times;</span>
-            <div class="lightbox-content">
-                <img id="lightbox-img" src="">
-            </div>
-        </div>
-
         <section class="contact animate">
             <h2>Investimento</h2>
             <p class="text-xl">Valor por hectare: R$ 35.000,00</p>
@@ -348,27 +298,6 @@
 
             document.querySelectorAll('section').forEach(section => {
                 observer.observe(section);
-            });
-
-            const lightbox = document.getElementById('lightbox');
-            const lightboxImg = document.getElementById('lightbox-img');
-            const close = document.querySelector('.close');
-
-            document.querySelectorAll('.image-container img').forEach(img => {
-                img.addEventListener('click', function() {
-                    lightbox.style.display = 'block';
-                    lightboxImg.src = this.src;
-                });
-            });
-
-            close.addEventListener('click', function() {
-                lightbox.style.display = 'none';
-            });
-
-            lightbox.addEventListener('click', function(e) {
-                if (e.target === lightbox) {
-                    lightbox.style.display = 'none';
-                }
             });
         });
     </script>
