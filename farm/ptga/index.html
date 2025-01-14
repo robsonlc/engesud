@@ -1,12 +1,18 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
+    <!-- Adicione essas meta tags no head para melhor SEO e compatibilidade -->
+<meta name="description" content="Propriedade Agrícola Premium - Investimento em agricultura com localização estratégica">
+<meta name="theme-color" content="#2c5282">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Propriedade Agrícola</title>
     <meta property="og:url" content="https://www.engesudsmart.com.br/farm/ptga">
     <meta property="og:image" content="https://i.imgur.com/32dnBsz.png">
     <link rel="shortcut icon" href="https://i.imgur.com/HjwVm8x.png" type="image/x-icon">
+    
     <style>
         :root {
             --primary-color: #2c5282;
@@ -114,6 +120,7 @@
             border-radius: 12px;
             box-shadow: 0 4px 6px rgba(0,0,0,0.1);
             margin-bottom: 1.5rem;
+            cursor: pointer;
         }
 
         .image-container img {
@@ -140,6 +147,8 @@
         .map-section iframe {
             border-radius: 12px;
             box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            width: 100%;
+            height: 480px;
         }
 
         .contact {
@@ -155,6 +164,93 @@
             color: white;
         }
 
+        /* Atualize estas regras CSS no seu arquivo */
+
+/* Modal melhorado */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.9);
+    padding: 20px;
+    box-sizing: border-box;
+    overflow: hidden;
+}
+
+.modal.show {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content {
+    max-width: 90vw;
+    max-height: 85vh;
+    object-fit: contain;
+    margin: auto;
+    display: block;
+    transition: transform 0.3s ease;
+}
+
+/* Galeria de imagens melhorada */
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+    padding: 1rem;
+}
+
+.image-container {
+    aspect-ratio: 16/9;
+    position: relative;
+    overflow: hidden;
+    border-radius: 8px;
+    cursor: zoom-in;
+}
+
+.image-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+/* Melhorias para dispositivos móveis */
+@media (max-width: 768px) {
+    header {
+        height: auto;
+        min-height: 200px;
+        padding: 2rem 1rem;
+    }
+
+    .header-content h1 {
+        font-size: 1.8rem;
+        padding: 0 1rem;
+    }
+
+    main {
+        margin: 1rem;
+        padding: 1rem;
+    }
+
+    .feature-card {
+        margin: 0.5rem 0;
+    }
+
+    .modal-content {
+        width: 95vw;
+        max-height: 80vh;
+    }
+
+    .close {
+        padding: 1rem;
+        font-size: 2rem;
+    }
+}
         footer {
             background-color: var(--primary-color);
             color: white;
@@ -204,16 +300,21 @@
             .feature-card {
                 padding: 1rem;
             }
+
+            .modal-content {
+                 width: 90%;
+                  max-height: 80vh;
+                margin: auto;
+            }
         }
 
-        /* Animações */
         @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(20px); }
+            from { opacity: 0; transform: translateY(10px); }
             to { opacity: 1; transform: translateY(0); }
         }
 
         .animate {
-            animation: fadeIn 1s ease-out forwards;
+            animation: fadeIn 0.8s ease-out forwards;
         }
     </style>
 </head>
@@ -223,6 +324,13 @@
             <h1>Propriedade Agrícola Premium</h1>
         </div>
     </header>
+
+    <!-- Modal para exibição de imagens -->
+    <div id="imageModal" class="modal">
+        <span class="close">×</span>
+        <img class="modal-content" id="modalImage" alt="Imagem Ampliada">
+        <div id="caption" class="modal-caption"></div>
+    </div>
 
     <main>
         <section class="intro animate">
@@ -250,19 +358,19 @@
             </div>
         </section>
 
-        <section class="gallery animate">
+       <section class="gallery animate">
             <h2>Imagens da Propriedade</h2>
-            <div class="image-container">
-                <img src="https://i.imgur.com/CuF7Vc2.png" alt="Vista aérea completa">
-                <p>Vista aérea das três fazendas</p>
-            </div>
-            <div class="image-container">
-                <img src="https://i.imgur.com/YS8fw5z.png" alt="Criação de gado">
-                <p>Pecuária de alta qualidade</p>
-            </div>
-            <div class="image-container">
-                <img src="https://i.imgur.com/PK3mNGq.png" alt="Infraestrutura hídrica">
-                <p>Poço artesiano com capacidade de 6.500 L/h</p>
+              <div class="image-container" onclick="openModal(this)">
+                  <img src="https://i.imgur.com/CuF7Vc2.png" alt="Vista aérea completa">
+                  <p>Vista aérea das três fazendas</p>
+              </div>
+             <div class="image-container" onclick="openModal(this)">
+                 <img src="https://i.imgur.com/YS8fw5z.png" alt="Criação de gado">
+                  <p>Pecuária de alta qualidade</p>
+             </div>
+             <div class="image-container" onclick="openModal(this)">
+                 <img src="https://i.imgur.com/PK3mNGq.png" alt="Infraestrutura hídrica">
+                 <p>Poço artesiano com capacidade de 6.500 L/h</p>
             </div>
         </section>
 
@@ -285,21 +393,81 @@
     </footer>
 
     <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            const observer = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        entry.target.classList.add('animate');
-                    }
-                });
-            }, {
-                threshold: 0.1
-            });
+       document.addEventListener('DOMContentLoaded', function() {
+    // Modal
+    const modal = document.getElementById('imageModal');
+    const modalImg = document.getElementById('modalImage');
+    const captionText = document.getElementById('caption');
+    const closeBtn = document.getElementsByClassName('close')[0];
 
-            document.querySelectorAll('section').forEach(section => {
-                observer.observe(section);
+    // Função para abrir o modal
+    function openModal(element) {
+        const img = element.querySelector('img');
+        const caption = element.querySelector('p');
+        
+        modal.classList.add('show');
+        modalImg.src = img.src;
+        captionText.innerHTML = caption.innerHTML;
+        
+        // Previne rolagem do body
+        document.body.style.overflow = 'hidden';
+    }
+
+    // Função para fechar o modal
+    function closeModal() {
+        modal.classList.remove('show');
+        document.body.style.overflow = 'auto';
+    }
+
+    // Event Listeners
+    document.querySelectorAll('.image-container').forEach(container => {
+        container.addEventListener('click', () => openModal(container));
+    });
+
+    closeBtn.addEventListener('click', closeModal);
+    modal.addEventListener('click', (e) => {
+        if (e.target === modal) closeModal();
+    });
+
+    // Fechar com ESC
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape') closeModal();
+    });
+
+    // Suporte para gestos de pinça em dispositivos móveis
+    let touchStartY = 0;
+    modal.addEventListener('touchstart', (e) => {
+        touchStartY = e.touches[0].clientY;
+    });
+
+    modal.addEventListener('touchmove', (e) => {
+        const touchEndY = e.touches[0].clientY;
+        const diff = touchStartY - touchEndY;
+        
+        if (Math.abs(diff) > 50) {
+            closeModal();
+        }
+    });
+
+    // Animação de entrada para seções
+    const observer = new IntersectionObserver(
+        (entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('animate');
+                }
             });
-        });
+        },
+        {
+            threshold: 0.1,
+            rootMargin: '0px'
+        }
+    );
+
+    document.querySelectorAll('section').forEach(section => {
+        observer.observe(section);
+    });
+});
     </script>
 </body>
 </html>
