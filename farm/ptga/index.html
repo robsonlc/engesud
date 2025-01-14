@@ -114,7 +114,6 @@
             border-radius: 12px;
             box-shadow: 0 4px 6px rgba(0,0,0,0.1);
             margin-bottom: 1.5rem;
-            cursor: pointer;
         }
 
         .image-container img {
@@ -141,8 +140,6 @@
         .map-section iframe {
             border-radius: 12px;
             box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-            width: 100%;
-            height: 480px;
         }
 
         .contact {
@@ -156,52 +153,6 @@
 
         .contact h2 {
             color: white;
-        }
-
-        .modal {
-            display: none;
-            position: fixed;
-            z-index: 1000;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(0,0,0,0.9);
-            padding: 20px;
-            box-sizing: border-box;
-            overflow: auto;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-
-        }
-
-        .modal-content {
-            margin: auto;
-            display: block;
-            max-width: 90%;
-            max-height: 90vh;
-            object-fit: contain;
-        }
-
-        .modal-caption {
-            margin: auto;
-            display: block;
-            width: 80%;
-            text-align: center;
-            color: white;
-            padding: 10px 0;
-        }
-
-        .close {
-            position: fixed;
-            right: 20px;
-            top: 20px;
-            color: #fff;
-            font-size: 30px;
-            font-weight: bold;
-            cursor: pointer;
-            z-index: 1001;
         }
 
         footer {
@@ -253,21 +204,16 @@
             .feature-card {
                 padding: 1rem;
             }
-
-            .modal-content {
-                 width: 90%;
-                  max-height: 80vh;
-                margin: auto;
-            }
         }
 
+        /* Animações */
         @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(10px); }
+            from { opacity: 0; transform: translateY(20px); }
             to { opacity: 1; transform: translateY(0); }
         }
 
         .animate {
-            animation: fadeIn 0.8s ease-out forwards;
+            animation: fadeIn 1s ease-out forwards;
         }
     </style>
 </head>
@@ -277,13 +223,6 @@
             <h1>Propriedade Agrícola Premium</h1>
         </div>
     </header>
-
-    <!-- Modal para exibição de imagens -->
-    <div id="imageModal" class="modal">
-        <span class="close">×</span>
-        <img class="modal-content" id="modalImage" alt="Imagem Ampliada">
-        <div id="caption" class="modal-caption"></div>
-    </div>
 
     <main>
         <section class="intro animate">
@@ -311,19 +250,19 @@
             </div>
         </section>
 
-       <section class="gallery animate">
+        <section class="gallery animate">
             <h2>Imagens da Propriedade</h2>
-              <div class="image-container" onclick="openModal(this)">
-                  <img src="https://i.imgur.com/CuF7Vc2.png" alt="Vista aérea completa">
-                  <p>Vista aérea das três fazendas</p>
-              </div>
-             <div class="image-container" onclick="openModal(this)">
-                 <img src="https://i.imgur.com/YS8fw5z.png" alt="Criação de gado">
-                  <p>Pecuária de alta qualidade</p>
-             </div>
-             <div class="image-container" onclick="openModal(this)">
-                 <img src="https://i.imgur.com/PK3mNGq.png" alt="Infraestrutura hídrica">
-                 <p>Poço artesiano com capacidade de 6.500 L/h</p>
+            <div class="image-container">
+                <img src="https://i.imgur.com/CuF7Vc2.png" alt="Vista aérea completa">
+                <p>Vista aérea das três fazendas</p>
+            </div>
+            <div class="image-container">
+                <img src="https://i.imgur.com/YS8fw5z.png" alt="Criação de gado">
+                <p>Pecuária de alta qualidade</p>
+            </div>
+            <div class="image-container">
+                <img src="https://i.imgur.com/PK3mNGq.png" alt="Infraestrutura hídrica">
+                <p>Poço artesiano com capacidade de 6.500 L/h</p>
             </div>
         </section>
 
@@ -360,36 +299,6 @@
             document.querySelectorAll('section').forEach(section => {
                 observer.observe(section);
             });
-        });
-
-    // Modal para imagens
-        const modal = document.getElementById('imageModal');
-        const modalImg = document.getElementById('modalImage');
-        const captionText = document.getElementById('caption');
-        const closeBtn = document.getElementsByClassName('close')[0];
-
-        function openModal(element) {
-                modal.style.display = 'flex';
-                modalImg.src = element.querySelector('img').src;
-                captionText.innerHTML = element.querySelector('p').innerHTML;
-
-        }
-
-        closeBtn.onclick = function() {
-            modal.style.display = 'none';
-        }
-
-        modal.onclick = function(event) {
-            if (event.target === modal) {
-                modal.style.display = 'none';
-            }
-        }
-
-        // Fecha o modal com tecla ESC
-        document.addEventListener('keydown', function(event) {
-            if (event.key === 'Escape') {
-                modal.style.display = 'none';
-            }
         });
     </script>
 </body>
