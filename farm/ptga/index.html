@@ -1,11 +1,10 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-    <!-- Adicione essas meta tags no head para melhor SEO e compatibilidade -->
-<meta name="description" content="Propriedade Agrícola Premium - Investimento em agricultura com localização estratégica">
-<meta name="theme-color" content="#2c5282">
-<meta name="apple-mobile-web-app-capable" content="yes">
-<meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="description" content="Propriedade Agrícola Premium - Investimento em agricultura com localização estratégica">
+    <meta name="theme-color" content="#1a4971">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Propriedade Agrícola</title>
@@ -15,11 +14,14 @@
     
     <style>
         :root {
-            --primary-color: #2c5282;
-            --secondary-color: #4299e1;
-            --text-color: #2d3748;
-            --bg-color: #f7fafc;
-            --card-bg: #ffffff;
+            --primary-color: #1a4971;         /* Azul mais escuro para melhor contraste */
+            --secondary-color: #2d7dc0;       /* Azul secundário ajustado */
+            --text-color: #333333;            /* Texto mais escuro para melhor legibilidade */
+            --text-light: #ffffff;            /* Texto claro para fundos escuros */
+            --bg-color: #f0f4f8;             /* Fundo principal suave */
+            --card-bg: #ffffff;               /* Fundo dos cards */
+            --card-shadow: rgba(0,0,0,0.1);   /* Sombra suave para cards */
+            --hover-color: #153d5e;           /* Cor para hover states */
         }
 
         * {
@@ -30,8 +32,6 @@
 
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            margin: 0;
-            padding: 0;
             background-color: var(--bg-color);
             color: var(--text-color);
             line-height: 1.8;
@@ -40,16 +40,15 @@
         header {
             height: 300px;
             position: relative;
-            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)),
+            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)),
                         url('https://i.imgur.com/wOuNZZE.png') center/cover no-repeat;
             display: flex;
             align-items: center;
             justify-content: center;
-            color: white;
+            color: var(--text-light);
             text-align: center;
             margin-bottom: 2rem;
         }
-
         .header-content {
             z-index: 1;
         }
@@ -60,7 +59,7 @@
             padding: 2rem;
             background-color: var(--card-bg);
             border-radius: 12px;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            box-shadow: 0 4px 12px var(--card-shadow);
         }
 
         section {
@@ -70,11 +69,12 @@
         h1, h2, h3 {
             color: var(--primary-color);
             margin-bottom: 1.5rem;
+            font-weight: 700;
         }
 
         h1 {
             font-size: 2.5rem;
-            font-weight: 700;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3); /* Melhor legibilidade no header */
         }
 
         h2 {
@@ -106,27 +106,42 @@
             background-color: var(--card-bg);
             padding: 2rem;
             border-radius: 12px;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-            transition: transform 0.3s ease;
+            box-shadow: 0 4px 8px var(--card-shadow);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border: 1px solid rgba(0,0,0,0.1);
         }
 
         .feature-card:hover {
             transform: translateY(-5px);
+            box-shadow: 0 6px 12px var(--card-shadow);
         }
 
+        .feature-card h3 {
+            color: var(--primary-color);
+            font-size: 1.4rem;
+            margin-bottom: 1rem;
+        }
+
+        .feature-card p {
+            color: var(--text-color);
+            line-height: 1.6;
+        }
         .image-container {
             position: relative;
             overflow: hidden;
             border-radius: 12px;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            box-shadow: 0 4px 12px var(--card-shadow);
             margin-bottom: 1.5rem;
-            cursor: pointer;
+            border: 2px solid var(--card-bg);
+            /* Remover cursor: zoom-in para evitar o efeito padrão de cursor */
         }
 
         .image-container img {
             width: 100%;
             height: auto;
             transition: transform 0.5s ease;
+            display: block; /* Elimina espaço extra abaixo da imagem */
+            
         }
 
         .image-container:hover img {
@@ -134,189 +149,276 @@
         }
 
         .image-container p {
-            background-color: rgba(0,0,0,0.7);
-            color: white;
+            background-color: rgba(0,0,0,0.8); /* Fundo mais escuro para melhor legibilidade */
+            color: var(--text-light);
             padding: 1rem;
             position: absolute;
             bottom: 0;
             width: 100%;
             margin: 0;
-            font-size: 0.9rem;
+            font-size: 0.95rem;
+            font-weight: 500;
+            backdrop-filter: blur(4px); /* Efeito de blur para melhor legibilidade */
         }
 
         .map-section iframe {
             border-radius: 12px;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            box-shadow: 0 4px 12px var(--card-shadow);
             width: 100%;
             height: 480px;
+            border: 2px solid var(--card-bg);
         }
 
         .contact {
             text-align: center;
-            padding: 2rem;
-            background-color: var(--primary-color);
-            color: white;
+            padding: 2.5rem;
+             background: linear-gradient(145deg, var(--primary-color), var(--hover-color));
+            color: var(--text-light);
             border-radius: 12px;
             margin-top: 3rem;
+            box-shadow: 0 4px 12px var(--card-shadow);
         }
 
         .contact h2 {
-            color: white;
+            color: var(--text-light);
         }
 
-        /* Atualize estas regras CSS no seu arquivo */
+        .contact a {
+            color: var(--text-light);
+            text-decoration: none;
+            padding: 0.5rem 1rem;
+            border-radius: 6px;
+            background-color: rgba(255,255,255,0.1);
+            transition: background-color 0.3s ease;
+            display: inline-block;
+            margin-top: 1rem;
+        }
 
-/* Modal melhorado */
-.modal {
-    display: none;
-    position: fixed;
-    z-index: 1000;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0,0,0,0.9);
-    padding: 20px;
-    box-sizing: border-box;
-    overflow: hidden;
-}
+        .contact a:hover {
+            background-color: rgba(255,255,255,0.2);
+        }
 
-.modal.show {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.modal-content {
-    max-width: 90vw;
-    max-height: 85vh;
-    object-fit: contain;
-    margin: auto;
-    display: block;
-    transition: transform 0.3s ease;
-}
-
-/* Galeria de imagens melhorada */
-.gallery {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 1.5rem;
-    padding: 1rem;
-}
-
-.image-container {
-    aspect-ratio: 16/9;
-    position: relative;
-    overflow: hidden;
-    border-radius: 8px;
-    cursor: zoom-in;
-}
-
-.image-container img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    transition: transform 0.3s ease;
-}
-
-/* Melhorias para dispositivos móveis */
-@media (max-width: 768px) {
-    header {
-        height: auto;
-        min-height: 200px;
-        padding: 2rem 1rem;
+        /* Modal melhorado */
+       .modal {
+        display: none;
+        position: fixed;
+        z-index: 1000;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.9);
+        padding: 20px;
+        box-sizing: border-box;
+        overflow: hidden;
+        backdrop-filter: blur(5px);
     }
 
-    .header-content h1 {
-        font-size: 1.8rem;
-        padding: 0 1rem;
+    .modal.show {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        animation: modalFadeIn 0.3s ease;
     }
 
-    main {
-        margin: 1rem;
-        padding: 1rem;
+    @keyframes modalFadeIn {
+        from {
+            opacity: 0;
+        }
+        to {
+            opacity: 1;
+        }
     }
-
-    .feature-card {
-        margin: 0.5rem 0;
-    }
-
     .modal-content {
-        width: 95vw;
-        max-height: 80vh;
+        max-width: 90vw;
+        max-height: 85vh;
+        object-fit: contain;
+        margin: auto;
+        display: block;
+        transition: transform 0.3s ease;
+        border: 3px solid var(--text-light);
+        border-radius: 8px;
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
     }
-
     .close {
-        padding: 1rem;
-        font-size: 2rem;
-    }
-}
+            position: fixed;
+            top: 20px;
+            right: 25px;
+            color: var(--text-light);
+            font-size: 40px;
+            font-weight: bold;
+            cursor: pointer;
+            z-index: 1001;
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: rgba(0,0,0,0.5);
+            border-radius: 50%;
+            transition: background-color 0.3s ease;
+        }
+        .close:hover {
+            background-color: rgba(0,0,0,0.8);
+        }
+        .modal-caption {
+            margin: auto;
+            display: block;
+            width: 80%;
+            text-align: center;
+            color: var(--text-light);
+            padding: 10px 0;
+            font-size: 0.9rem;
+        }
+
+        /* Galeria de imagens melhorada */
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+            padding: 1rem;
+        }
+
+        .gallery .image-container {
+            aspect-ratio: 16/9;
+            position: relative;
+            overflow: hidden;
+            border-radius: 8px;
+             transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .gallery .image-container:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 16px var(--card-shadow);
+        }
+
+        .gallery img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+
         footer {
-            background-color: var(--primary-color);
-            color: white;
-            padding: 2rem;
+           background: linear-gradient(145deg, var(--primary-color), var(--hover-color));
+            color: var(--text-light);
+            padding: 3rem 2rem;
             text-align: center;
             margin-top: 3rem;
         }
-
         footer img {
-            width: 80px;
+            width: 100px;
             height: auto;
-            margin-bottom: 1rem;
+            margin-bottom: 1.5rem;
+            filter: drop-shadow(0 2px 4px rgba(0,0,0,0.2));
         }
 
         footer a {
-            color: white;
+            color: var(--text-light);
             text-decoration: none;
-            transition: color 0.3s ease;
+            transition: all 0.3s ease;
+            padding: 0.5rem 1rem;
+            border-radius: 6px;
+            background-color: rgba(255,255,255,0.1);
         }
 
         footer a:hover {
-            color: var(--secondary-color);
+            background-color: rgba(255,255,255,0.2);
+             transform: translateY(-2px);
         }
-
-        @media (max-width: 768px) {
+        /* Media Queries melhoradas */
+          @media (max-width: 768px) {
             header {
-                height: 200px;
+                height: 250px;
+                padding: 2rem 1rem;
             }
 
-            h1 {
-                font-size: 2rem;
+            .header-content h1 {
+                font-size: 1.8rem;
+                 padding: 0 1rem;
+                text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
             }
-
-            h2 {
-                font-size: 1.5rem;
-            }
-
             main {
-                padding: 1rem;
                 margin: 1rem;
+                padding: 1.5rem;
+                border-radius: 8px;
             }
-
-            .area {
-                grid-template-columns: 1fr;
-            }
-
             .feature-card {
-                padding: 1rem;
+                margin: 0.5rem 0;
+                padding: 1.5rem;
             }
 
             .modal-content {
-                 width: 90%;
-                  max-height: 80vh;
-                margin: auto;
+                width: 95vw;
+                 max-height: 80vh;
+            }
+            .close {
+                top: 15px;
+                right: 15px;
+                font-size: 32px;
+            }
+
+             .contact {
+               padding: 2rem 1rem;
+              }
+
+            footer {
+                padding: 2rem 1rem;
+            }
+           
+        }
+
+        /* Media Query para telas muito pequenas */
+        @media (max-width: 480px) {
+            h1 {
+                font-size: 1.6rem;
+            }
+              h2 {
+                font-size: 1.4rem;
+                
+            }
+            .feature-card h3 {
+                font-size: 1.2rem;
+            }
+            .image-container p {
+                 font-size: 0.85rem;
+                padding: 0.75rem;
+            }
+              .contact {
+               margin: 1rem;
+            }
+        }
+           /* Animações suaves */
+       @keyframes fadeIn {
+            from { 
+                opacity: 0; 
+                transform: translateY(20px); 
+            }
+            to { 
+                opacity: 1; 
+                transform: translateY(0); 
             }
         }
 
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(10px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-
         .animate {
+           opacity: 0;
             animation: fadeIn 0.8s ease-out forwards;
+          }
+
+        /* Melhorias de acessibilidade */
+        :focus {
+            outline: 3px solid var(--secondary-color);
+             outline-offset: 2px;
         }
-    </style>
+         @media (prefers-reduced-motion: reduce) {
+            * {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+                scroll-behavior: auto !important;
+            }
+        }
+         </style>
 </head>
 <body>
     <header>
@@ -327,7 +429,7 @@
 
     <!-- Modal para exibição de imagens -->
     <div id="imageModal" class="modal">
-        <span class="close">×</span>
+        <span class="close" aria-label="Fechar Modal">×</span>
         <img class="modal-content" id="modalImage" alt="Imagem Ampliada">
         <div id="caption" class="modal-caption"></div>
     </div>
@@ -346,41 +448,40 @@
             <h2>Detalhes da Propriedade</h2>
             <div class="feature-card">
                 <h3>Área Total</h3>
-                <p>3.150 hectares de terra fértil com alto potencial produtivo</p>
-            </div>
+                 <p>3.150 hectares de terra fértil com alto potencial produtivo</p>
+           </div>
             <div class="feature-card">
                 <h3>Área Disponível</h3>
-                <p>1.730 hectares de área preparada para cultivo</p>
-            </div>
-            <div class="feature-card">
+                 <p>1.730 hectares de área preparada para cultivo</p>
+           </div>
+           <div class="feature-card">
                 <h3>Área Arrendada</h3>
-                <p>1.170 hectares com contrato de arrendamento até 2035</p>
-            </div>
+                 <p>1.170 hectares com contrato de arrendamento até 2035</p>
+           </div>
         </section>
 
        <section class="gallery animate">
-            <h2>Imagens da Propriedade</h2>
-              <div class="image-container" onclick="openModal(this)">
-                  <img src="https://i.imgur.com/CuF7Vc2.png" alt="Vista aérea completa">
-                  <p>Vista aérea das três fazendas</p>
-              </div>
-             <div class="image-container" onclick="openModal(this)">
-                 <img src="https://i.imgur.com/YS8fw5z.png" alt="Criação de gado">
-                  <p>Pecuária de alta qualidade</p>
-             </div>
-             <div class="image-container" onclick="openModal(this)">
-                 <img src="https://i.imgur.com/PK3mNGq.png" alt="Infraestrutura hídrica">
-                 <p>Poço artesiano com capacidade de 6.500 L/h</p>
+           <h2>Imagens da Propriedade</h2>
+           <div class="image-container" onclick="openModal(this)">
+               <img src="https://i.imgur.com/CuF7Vc2.png" alt="Vista aérea completa">
+               <p>Vista aérea das três fazendas</p>
+           </div>
+            <div class="image-container" onclick="openModal(this)">
+               <img src="https://i.imgur.com/YS8fw5z.png" alt="Criação de gado">
+                <p>Pecuária de alta qualidade</p>
             </div>
-        </section>
-
+            <div class="image-container" onclick="openModal(this)">
+               <img src="https://i.imgur.com/PK3mNGq.png" alt="Infraestrutura hídrica">
+                <p>Poço artesiano com capacidade de 6.500 L/h</p>
+           </div>
+       </section>
         <section class="contact animate">
             <h2>Investimento</h2>
             <p class="text-xl">Valor por hectare: R$ 35.000,00</p>
             <div class="mt-4">
                 <h3>Entre em Contato</h3>
                 <p>Robson Luis da Costa</p>
-                <p><a href="https://wa.me/4497013489">+55 (44) 99701-3489</a></p>
+                <p><a href="https://wa.me/4497013489" role="button" aria-label="Entre em contato via WhatsApp">+55 (44) 99701-3489</a></p>
             </div>
         </section>
     </main>
@@ -388,12 +489,11 @@
     <footer>
         <img src="https://i.imgur.com/3YKn2xW.png" alt="Logo Engesud">
         <p><strong>Engesud Engenharia e Intermediação LTDA</strong></p>
-        <p><a href="https://www.engesudsmart.com.br" target="_blank">www.engesudsmart.com.br</a></p>
+        <p><a href="https://www.engesudsmart.com.br"  target="_blank" role="button" aria-label="Acesse o site da Engesud">www.engesudsmart.com.br</a></p>
         <p>Última atualização: 14 de janeiro de 2025</p>
     </footer>
-
-    <script>
-       document.addEventListener('DOMContentLoaded', function() {
+<script>
+     document.addEventListener('DOMContentLoaded', function() {
     // Modal
     const modal = document.getElementById('imageModal');
     const modalImg = document.getElementById('modalImage');
@@ -450,7 +550,7 @@
     });
 
     // Animação de entrada para seções
-    const observer = new IntersectionObserver(
+     const observer = new IntersectionObserver(
         (entries) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
@@ -460,14 +560,13 @@
         },
         {
             threshold: 0.1,
-            rootMargin: '0px'
+            rootMargin: '0px',
         }
     );
-
-    document.querySelectorAll('section').forEach(section => {
-        observer.observe(section);
+      document.querySelectorAll('section').forEach(section => {
+         observer.observe(section);
     });
 });
-    </script>
+  </script>
 </body>
 </html>
