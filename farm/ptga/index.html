@@ -36,6 +36,7 @@
             background-color: var(--bg-color);
             color: var(--text-color);
             line-height: 1.8;
+            overflow-x: hidden; /* Impede rolagem horizontal indesejada */
         }
 
         header {
@@ -166,7 +167,7 @@
             font-weight: 500;
         }
 
-        .map-section iframe {
+         .map-section iframe {
             border-radius: 16px;
             box-shadow: var(--card-shadow);
             width: 100%;
@@ -247,6 +248,27 @@
             transform: rotate(90deg);
         }
 
+          .modal-caption {
+            color: white;
+            text-align: center;
+            padding: 1rem;
+            font-size: 1.2rem;
+            position: absolute;
+            bottom: 1rem;
+            left: 0;
+            width: 100%;
+            background-color: rgba(0,0,0,0.6);
+            box-sizing: border-box;
+            transition: all 0.3s ease;
+             opacity: 0;
+            transform: translateY(10px);
+          }
+        
+        .modal.show .modal-caption {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
         footer {
             background: linear-gradient(135deg, var(--primary-color), #153e61);
             color: white;
@@ -259,7 +281,7 @@
             width: 100px;
             height: auto;
             margin-bottom: 1.5rem;
-            /* Removido o filtro que deixava o logo invisível */
+           
         }
 
         footer a {
@@ -271,26 +293,50 @@
         footer a:hover {
             opacity: 0.8;
         }
-
+        
+        /* Adaptação para telas menores */
         @media (max-width: 768px) {
-            header {
-                height: 300px;
+             header {
+                height: 250px;
             }
-
-            h1 {
-                font-size: 2.2rem;
+           h1 {
+                font-size: 2rem; /* Reduz o tamanho do título */
             }
 
             main {
-                padding: 1.5rem;
+                padding: 1rem;
                 margin: 1rem;
+            }
+
+            section {
+                 margin-bottom: 3rem;
+            }
+            
+            .area {
+                 gap: 1.5rem;
             }
 
             .feature-card {
                 padding: 1.5rem;
             }
 
-            .modal-content {
+            .gallery {
+                gap: 1rem;
+            }
+            
+              .image-container {
+                 aspect-ratio: 16/10;
+            }
+
+            .map-section iframe {
+                height: 350px;
+            }
+            
+            .contact {
+                padding: 2rem;
+            }
+
+             .modal-content {
                 width: 95vw;
                 max-height: 80vh;
             }
@@ -299,6 +345,14 @@
                 padding: 1rem;
                 font-size: 2rem;
             }
+              footer {
+                 padding: 2rem;
+            }
+            
+             footer img {
+                width: 80px;
+            }
+            
         }
 
         .animate {
@@ -370,7 +424,7 @@
 
         <section class="contact animate">
             <h2>Investimento</h2>
-            <p style="font-size: 1.5rem; margin-bottom: 2rem;">Valor por hectare: R$ 35.000,00</p>
+             <p style="font-size: 1.5rem; margin-bottom: 2rem;">Valor por hectare: R$ 35.000,00</p>
             <h3 style="color: white; margin-bottom: 1rem;">Entre em Contato</h3>
             <p>Robson Luis da Costa</p>
             <p><a href="https://wa.me/4497013489">+55 (44) 99701-3489</a></p>
