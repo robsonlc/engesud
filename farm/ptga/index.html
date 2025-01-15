@@ -40,10 +40,11 @@
         }
 
         header {
-            height: 400px;
+             height: 400px;
             position: relative;
-            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.7)),
-                        url('https://i.imgur.com/wOuNZZE.png') center/cover no-repeat;
+            background: 
+                linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.8)), /* Camada de sobreposição mais escura */
+                url('https://i.imgur.com/wOuNZZE.png') center/cover no-repeat;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -54,7 +55,7 @@
 
         .header-content {
             z-index: 1;
-            padding: 0 2rem;
+            padding: 0 2rem; /* Espaçamento interno aumentado */
         }
 
         main {
