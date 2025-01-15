@@ -39,12 +39,11 @@
             overflow-x: hidden; /* Impede rolagem horizontal indesejada */
         }
 
-        header {
-             height: 400px;
+       header {
+            height: 400px;
             position: relative;
-            background: 
-                linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.8)), /* Camada de sobreposição mais escura */
-                url('https://i.imgur.com/wOuNZZE.png') center/cover no-repeat;
+            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.7)),
+                        url('https://i.imgur.com/wOuNZZE.png') center/cover no-repeat;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -55,8 +54,17 @@
 
         .header-content {
             z-index: 1;
-            padding: 0 2rem; /* Espaçamento interno aumentado */
+            padding: 0 2rem;
         }
+        
+        header h1 {
+            background-color: rgba(0, 0, 0, 0.6); /* Fundo semi-transparente */
+            padding: 10px 20px;
+            border-radius: 8px;
+            display: inline-block; /* Para o fundo se ajustar ao texto */
+            text-shadow: none; /* Removendo a sombra */
+        }
+
 
         main {
             max-width: 1200px;
@@ -79,7 +87,6 @@
 
         h1 {
             font-size: 3rem;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
             letter-spacing: -0.5px;
         }
 
