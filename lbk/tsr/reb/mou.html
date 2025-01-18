@@ -1,1 +1,277 @@
-Teste
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Estratégia de Negociação - Engesud</title>
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="https://i.imgur.com/HjwVm8x.png" type="image/x-icon">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <!-- Mermaid.js -->
+    <script src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script>
+    <script>mermaid.initialize({startOnLoad: true});</script>
+    <style>
+        :root {
+            --primary-color: #006eff;
+            --secondary-color: #333;
+            --background-color: #f5f5f5;
+            --text-color: #555;
+            --spacing-unit: 1rem;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Roboto', sans-serif;
+        }
+
+        body {
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: var(--background-color);
+        }
+
+        /* Header */
+        .header {
+            background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)),
+                        url('https://i.imgur.com/aGrhokd.png') center/cover no-repeat; /* Same as hero image */
+            color: white;
+            padding: 2rem;
+            text-align: center;
+        }
+
+        .header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            color: white;
+        }
+
+        /* Container */
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 3rem 1rem;
+            background-color: #fff;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            margin-top: -50px;
+            position: relative;
+        }
+
+        /* Sections */
+        .section {
+            margin-bottom: 3rem;
+            padding: 2rem;
+            background-color: white;
+            border-radius: 8px;
+        }
+
+        h2 {
+            color: var(--primary-color);
+            margin-bottom: 1.5rem;
+            font-size: 1.8rem;
+            border-bottom: 2px solid var(--primary-color);
+            padding-bottom: 0.5rem;
+        }
+
+        p {
+            margin-bottom: 1.5rem;
+            font-size: 1.1rem;
+        }
+
+        .highlight {
+            background-color: #f0f7ff;
+            padding: 1.5rem;
+            border-left: 4px solid var(--primary-color);
+            margin: 2rem 0;
+            border-radius: 0 8px 8px 0;
+        }
+
+        /* Button Style */
+        .btn {
+            display: inline-block;
+            background-color: var(--primary-color);
+            color: white;
+            padding: 1rem 2rem;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+            margin-top: 1rem;
+        }
+
+        .btn:hover {
+            background-color: #0056b3;
+        }
+
+        /* Mermaid Diagram */
+        .mermaid {
+            margin: 2rem auto;
+        }
+
+        /* Footer */
+        footer {
+            background: #2c3e50;
+            color: #fff;
+            padding: 3rem 0;
+            margin-top: 4rem;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            text-align: center;
+            padding: 0 2rem;
+        }
+
+        .footer-logo {
+            width: 200px;
+            margin-bottom: 1.5rem;
+            border-radius: 10px;
+            transition: transform 0.3s ease;
+        }
+
+        .footer-logo:hover {
+            transform: scale(1.05);
+        }
+
+        .contact-link {
+            color: #fff;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .contact-link:hover {
+            color: #3498db;
+        }
+
+        footer p {
+            margin: 0.5rem 0;
+        }
+
+        /* Navigation Link */
+        .nav-link {
+            display: inline-block;
+            margin-bottom: 2rem;
+            color: var(--primary-color);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        .nav-link:hover {
+            color: #0056b3;
+            text-decoration: underline;
+        }
+
+        /* Responsiveness */
+        @media (max-width: 768px) {
+            .header {
+                padding: 1.5rem;
+            }
+
+            .header h1 {
+                font-size: 2rem;
+            }
+
+            .container {
+                width: 95%;
+                padding: 1.5rem;
+                margin-top: -30px;
+            }
+
+            .section {
+                padding: 1rem;
+            }
+
+            h2 {
+                font-size: 1.5rem;
+            }
+
+            .mermaid {
+                font-size: 0.8rem;
+            }
+        }
+        /* Este conteúdo é protegido por direitos autorais creditados à Engesud Engenharia e Intermediação LTDA, inscrita no CNPJ 40.601.637/0001-58 */
+    </style>
+</head>
+<body>
+    <header class="header">
+        <h1>Estratégia de Negociação</h1>
+        <p>Transparência e Eficiência na Aquisição de Áreas para Incorporação</p>
+    </header>
+
+    <div class="container">
+        <a href="https://www.engesudsmart.com.br/lbk/tsr/reb/" class="nav-link">← Voltar à Apresentação da Área</a>
+
+        <section class="section">
+            <h2>Entendendo o Processo</h2>
+            <p>
+                Nesta página, detalhamos o processo de negociação para a aquisição da área destinada ao desenvolvimento do projeto habitacional em parceria com o programa ProZEIS da Prefeitura de Maringá. A transparência é fundamental em todas as etapas, garantindo que todas as partes – <strong>PRIDE (construtora), PROPRIETÁRIOS, LOTEADORA (anuente) e ENGESUD (intermediadora)</strong> – estejam alinhadas e informadas.
+            </p>
+
+            <div class="mermaid">
+                graph LR
+                    A[Início da Negociação] --> B{Assinatura do MOU};
+                    B --> C{Due Diligence Técnica, Jurídica, Ambiental e Financeira};
+                    C --> D{Análise dos Resultados da Due Diligence};
+                    D -- Satisfatório --> E{Elaboração do Projeto Arquitetônico};
+                    D -- Insatisfatório --> Z[Revisão/Desistência];
+                    E --> F{Protocolo ProZEIS - Solicitação de ZEIS};
+                    F --> G{Aprovação da Transformação em ZEIS};
+                    G -- Aprovado --> H{Definição do Modelo de Negócio: Permuta, Compra e Venda, etc.};
+                    G -- Não Aprovado --> Z;
+                    H --> I{Assinatura do Contrato Definitivo};
+                    I --> J[Fim da Negociação];
+            </div>
+        </section>
+
+        <section class="section">
+            <h2>O Papel do MOU (Memorando de Entendimentos)</h2>
+            <div class="highlight">
+                <p>
+                    O <strong>MOU</strong> é um documento fundamental que formaliza a intenção das partes em prosseguir com a negociação. Ele estabelece as bases, prazos, responsabilidades e condições para a aquisição da área. <strong>Não se trata de um contrato definitivo</strong>, mas sim de um acordo preliminar que direciona os esforços e garante o comprometimento das partes durante a fase de estudos e negociações.
+                </p>
+            </div>
+            <p>
+                <strong>Principais pontos do MOU:</strong>
+                <ul>
+                    <li>Identificação das Partes: PRIDE, PROPRIETÁRIOS, LOTEADORA (anuente) e ENGESUD (intermediadora).</li>
+                    <li>Objeto: Aquisição da área para desenvolvimento habitacional.</li>
+                    <li>Due Diligence: Prazos e responsabilidades para a realização de estudos técnicos, jurídicos, ambientais e financeiros.</li>
+                    <li>Condições Suspensivas: Aprovação do ProZEIS, resultados satisfatórios da Due Diligence, etc.</li>
+                    <li>Modelo de Negócio: Definição posterior (permuta física, financeira, compra e venda ou parceria).</li>
+                    <li>Exclusividade: Os PROPRIETÁRIOS se comprometem a não negociar a área com terceiros durante a vigência do MOU.</li>
+                    <li>Prazos: Validade do MOU e prazos para as etapas da negociação.</li>
+                    <li>Confidencialidade: Proteção das informações estratégicas das partes.</li>
+                </ul>
+            </p>
+            <a href="https://www.engesudsmart.com.br/lbk/tsr/reb/MOU.pdf" class="btn" target="_blank">Baixar o MOU (PDF)</a>
+        </section>
+
+        <section class="section">
+            <h2>Próximos Passos</h2>
+            <p>
+                Com a assinatura do MOU, a PRIDE dará início à Due Diligence completa. Paralelamente, a ENGESUD acompanhará o processo de solicitação de transformação da área em ZEIS junto à Prefeitura de Maringá, conforme as diretrizes do programa ProZEIS.
+            </p>
+            <p>
+                A comunicação entre as partes será constante, garantindo que todos estejam cientes do andamento do processo e alinhados quanto às próximas etapas.
+            </p>
+        </section>
+    </div>
+
+    <footer>
+        <div class="footer-content">
+            <a href="https://www.engesudsmart.com.br" target="_blank">
+                <img class="footer-logo" src="https://i.imgur.com/3YKn2xW.png" alt="Logo Engesud">
+            </a>
+            <p><strong>Engesud Engenharia e Intermediação LTDA</strong></p>
+            <p>Robson Luis da Costa | <a class="contact-link" href="https://wa.me/4497013489" target="_blank">+55 (44) 99701-3489</a></p>
+            <p><a class="contact-link" href="https://www.engesudsmart.com.br" target="_blank">www.engesudsmart.com.br</a></p>
+            <p>Última atualização: 09 de janeiro de 2024</p>
+        </div>
+    </footer>
+</body>
+</html>
