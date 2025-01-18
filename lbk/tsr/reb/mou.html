@@ -10,7 +10,15 @@
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
     <!-- Mermaid.js -->
     <script src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script>
-    <script>mermaid.initialize({startOnLoad: true});</script>
+    <script>
+        mermaid.initialize({
+            startOnLoad: true,
+            theme: 'default', // ou 'forest', 'dark', 'neutral'
+            flowchart: {
+              htmlLabels: true, // Permite o uso de HTML nas labels (para quebras de linha)
+            }
+        });
+    </script>
     <style>
         :root {
             --primary-color: #006eff;
@@ -109,6 +117,32 @@
         /* Mermaid Diagram */
         .mermaid {
             margin: 2rem auto;
+            overflow: hidden; /* Esconde o diagrama inicialmente */
+            max-height: 50px; /* Altura inicial do diagrama (ajuste conforme necessário) */
+            transition: max-height 0.5s ease-in-out; /* Transição suave */
+        }
+
+        .mermaid.expanded {
+            max-height: 1000px; /* Altura máxima do diagrama (ajuste conforme necessário) */
+        }
+
+        .mermaid svg {
+          max-width: 100%;
+          height: auto;
+        }
+
+        /* Botão para Expandir/Recolher */
+        .expand-btn {
+            display: block;
+            width: 100%;
+            background-color: #eee;
+            color: #333;
+            border: none;
+            padding: 0.5rem;
+            cursor: pointer;
+            border-radius: 5px;
+            margin-top: 0.5rem;
+            text-align: center;
         }
 
         /* Footer */
@@ -189,12 +223,7 @@
             h2 {
                 font-size: 1.5rem;
             }
-
-            .mermaid {
-                font-size: 0.8rem;
-            }
         }
-        /* Este conteúdo é protegido por direitos autorais creditados à Engesud Engenharia e Intermediação LTDA, inscrita no CNPJ 40.601.637/0001-58 */
     </style>
 </head>
 <body>
@@ -215,17 +244,18 @@
             <div class="mermaid">
                 graph LR
                     A[Início da Negociação] --> B{Assinatura do MOU};
-                    B --> C{Due Diligence Técnica, Jurídica, Ambiental e Financeira};
-                    C --> D{Análise dos Resultados da Due Diligence};
-                    D -- Satisfatório --> E{Elaboração do Projeto Arquitetônico};
+                    B --> C{Due Diligence<br>Técnica, Jurídica,<br>Ambiental e Financeira};
+                    C --> D{Análise dos<br>Resultados da<br>Due Diligence};
+                    D -- Satisfatório --> E{Elaboração do<br>Projeto Arquitetônico};
                     D -- Insatisfatório --> Z[Revisão/Desistência];
-                    E --> F{Protocolo ProZEIS - Solicitação de ZEIS};
-                    F --> G{Aprovação da Transformação em ZEIS};
-                    G -- Aprovado --> H{Definição do Modelo de Negócio: Permuta, Compra e Venda, etc.};
+                    E --> F{Protocolo ProZEIS<br>Solicitação de ZEIS};
+                    F --> G{Aprovação da<br>Transformação em ZEIS};
+                    G -- Aprovado --> H{Definição do Modelo de Negócio:<br>Permuta, Compra e Venda, etc.};
                     G -- Não Aprovado --> Z;
-                    H --> I{Assinatura do Contrato Definitivo};
+                    H --> I{Assinatura do<br>Contrato Definitivo};
                     I --> J[Fim da Negociação];
             </div>
+            <button class="expand-btn" onclick="toggleDiagram()">Expandir/Recolher Diagrama</button>
         </section>
 
         <section class="section">
@@ -273,5 +303,11 @@
             <p>Última atualização: 09 de janeiro de 2024</p>
         </div>
     </footer>
+    <script>
+      function toggleDiagram() {
+        const diagram = document.querySelector('.mermaid');
+        diagram.classList.toggle('expanded');
+      }
+    </script>
 </body>
 </html>
