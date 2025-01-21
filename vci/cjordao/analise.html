@@ -1,10 +1,269 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta property="og:title" content="CCB RCH1 LP - Análise Detalhada">
+    <meta property="og:description" content="Resumo executivo do investimento em Campos do Jordão">
+    <meta property="og:image" content="https://i.imgur.com/1lEWN63.png">
+    <meta property="og:url" content="https://www.engesudsmart.com.br/vci/cjordao/analise.html">
+    <link rel="shortcut icon" href="https://i.imgur.com/HjwVm8x.png" type="image/x-icon">
+    <title>Análise do Investimento - CCB RCH1 LP</title>
+    <style>
+        :root {
+            --gold: #D4AF37;
+            --dark: #080808;
+            --light: #f8f8f8;
+            --accent-gold: #B5942D;
+            --mobile: 480px;
+            --tablet: 768px;
+            --desktop: 1024px;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Cormorant Garamond', 'Georgia', serif;
+        }
+
+        html {
+            font-size: 16px;
+        }
+
+        @media (max-width: 768px) {
+            html {
+                font-size: 14px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            html {
+                font-size: 12px;
+            }
+        }
+
+        body {
+            background-color: var(--dark);
+            color: var(--light);
+            line-height: 2;
+            overflow-x: hidden;
+            width: 100%;
+            min-height: 100vh;
+            background-image: 
+                linear-gradient(to right, rgba(8,8,8,0.97), rgba(8,8,8,0.97)),
+                url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23d4af37' fill-opacity='0.05'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+        }
+
+        .header {
+            height: 60vh;
+            min-height: 400px;
+            position: relative;
+            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.7)), 
+                        url('https://i.imgur.com/hy3dGbE.png') center/cover fixed;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-bottom: 2px solid var(--gold);
+            padding: 1rem;
+        }
+
+        .header::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 100px;
+            background: linear-gradient(transparent, var(--dark));
+        }
+
+        .logo-container {
+            text-align: center;
+            position: relative;
+            z-index: 2;
+            animation: fadeInUp 1.5s ease;
+            width: 100%;
+            padding: 1rem;
+        }
+
+        .logo {
+            width: min(200px, 90%);
+            height: auto;
+            border-radius: 20px;
+            box-shadow: 0 20px 50px rgba(212,175,55,0.3);
+            margin-bottom: 2rem;
+            border: 3px solid var(--gold);
+            transition: transform 0.5s ease;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 1rem;
+            width: 100%;
+        }
+
+        .feature-card {
+            background: linear-gradient(145deg, rgba(26,26,26,0.9), rgba(10,10,10,0.95));
+            padding: clamp(1.5rem, 5vw, 3rem);
+            border-radius: 20px;
+            margin: 2rem 0;
+            box-shadow: 0 25px 50px rgba(0,0,0,0.5);
+            border: 1px solid rgba(212,175,55,0.2);
+            position: relative;
+            backdrop-filter: blur(10px);
+        }
+
+        .feature-card::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: linear-gradient(45deg, 
+                transparent 20%, 
+                rgba(212,175,55,0.15) 50%, 
+                transparent 80%);
+            animation: shine 10s infinite;
+        }
+
+        h2 {
+            color: var(--gold);
+            font-size: clamp(1.8rem, 4vw, 2.2rem);
+            margin-bottom: 2rem;
+            font-weight: 400;
+            text-align: center;
+        }
+
+        .detail-list {
+            list-style: none;
+            padding: 0;
+            margin: 2rem 0;
+        }
+
+        .detail-list li {
+            padding: 1.5rem;
+            margin: 1rem 0;
+            background: rgba(212,175,55,0.05);
+            border-radius: 12px;
+            border-left: 4px solid var(--gold);
+        }
+
+        .flow-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+
+        .flow-step {
+            padding: 1.5rem;
+            text-align: center;
+            border: 1px solid rgba(212,175,55,0.2);
+            border-radius: 15px;
+            transition: transform 0.3s ease;
+        }
+
+        .flow-step:hover {
+            transform: translateY(-5px);
+        }
+
+        .highlight-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+
+        .highlight-card {
+            padding: 1.5rem;
+            text-align: center;
+            border: 1px solid rgba(212,175,55,0.2);
+            border-radius: 15px;
+            transition: transform 0.3s ease;
+        }
+
+        .highlight-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .btn-voltar {
+            background: linear-gradient(145deg, var(--gold), var(--accent-gold));
+            color: var(--dark);
+            padding: clamp(0.75rem, 1.5vw, 1.5rem) clamp(1.5rem, 3vw, 3rem);
+            border: none;
+            border-radius: 30px;
+            font-size: clamp(1rem, 2vw, 1.1rem);
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-block;
+            margin: 2rem 0;
+            text-transform: uppercase;
+            font-weight: bold;
+            box-shadow: 0 10px 30px rgba(212,175,55,0.3);
+        }
+
+        footer {
+            background: linear-gradient(to top, #000, var (--dark));
+            padding: clamp(2rem, 5vw, 5rem) 1rem;
+            text-align: center;
+            margin-top: 4rem;
+            border-top: 2px solid var(--gold);
+        }
+
+        @keyframes shine {
+            0% { transform: translate(-50%, -50%) rotate(45deg); }
+            100% { transform: translate(50%, 50%) rotate(45deg); }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .header {
+                height: 50vh;
+                min-height: 300px;
+                background-attachment: scroll;
+            }
+
+            .feature-card {
+                padding: 1rem;
+            }
+
+            .logo {
+                width: 85%;
+            }
+
+            .flow-step,
+            .highlight-card {
+                padding: 1rem;
+            }
+
+            h2 {
+                font-size: 1.5rem;
+            }
+        }
+    </style>
+</head>
 <body>
     <header class="header">
         <div class="logo-container">
             <img src="https://i.imgur.com/ErMXWSx.png" alt="Logo" class="logo">
             <h1 style="color: var(--light); font-size: clamp(1.5rem, 3vw, 2rem);">ANÁLISE COMPLETA</h1>
         </div>
-    </header><div class="container">
+    </header>
+
+    <div class="container">
         <div class="feature-card">
             <h2>Resumo Executivo do Investimento</h2>
 
@@ -141,3 +400,4 @@
         });
     </script>
 </body>
+</html>
