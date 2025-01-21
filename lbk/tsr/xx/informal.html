@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Oportunidade TOP em Maringá - Vem dar um pulo!</title>
+    
+    <style>
+        :root {
+            --cor-principal: #FF6B35;
+            --cor-destaque: #FFD166;
+            --fundo: #FDFCDC;
+        }
+
+        body {
+            font-family: 'Comic Neue', cursive;
+            background: var(--fundo);
+            line-height: 1.6;
+        }
+
+        .cabecalho {
+            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), 
+                        url('https://i.imgur.com/1lD8EsJ.png');
+            padding: 4rem 1rem;
+            text-align: center;
+            color: white;
+            border-bottom: 10px solid var(--cor-destaque);
+        }
+
+        .cabecalho h1 {
+            font-size: 2.8rem;
+            text-shadow: 3px 3px 0 var(--cor-principal);
+            margin-bottom: 1rem;
+        }
+
+        .emoji-grande {
+            font-size: 4rem;
+            margin: 1rem;
+        }
+
+        .card {
+            background: white;
+            padding: 2rem;
+            margin: 2rem;
+            border-radius: 20px;
+            box-shadow: 8px 8px 0 var(--cor-principal);
+            border: 3px solid black;
+        }
+
+        .card h2 {
+            color: var(--cor-principal);
+            margin-bottom: 1rem;
+        }
+
+        .botao-zao {
+            display: inline-block;
+            background: var(--cor-principal);
+            color: white;
+            padding: 1rem 2rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1.2rem;
+            transition: transform 0.3s;
+            margin: 1rem;
+        }
+
+        .botao-zao:hover {
+            transform: scale(1.1) rotate(-3deg);
+        }
+
+        .destaques {
+            display: grid;
+            gap: 2rem;
+            padding: 2rem;
+        }
+
+        .icone-legal {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .mapa {
+            width: 90%;
+            height: 400px;
+            margin: 2rem auto;
+            border: 5px solid var(--cor-destaque);
+            border-radius: 20px;
+            overflow: hidden;
+        }
+
+        .whatsapp-flutuante {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background: #25D366;
+            padding: 1rem;
+            border-radius: 50px;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+            100% { transform: scale(1); }
+        }
+
+        .adesivo {
+            background: var(--cor-destaque);
+            padding: 1rem;
+            transform: rotate(3deg);
+            display: inline-block;
+            margin: 1rem;
+            border-radius: 10px;
+        }
+    </style>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Comic+Neue:wght@700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header class="cabecalho">
+        <div class="emoji-grande">🚀</div>
+        <h1>PEGA ESSA OPORTUNIDADE!</h1>
+        <p>Área perfeita pra fazer aquele condomínio que todo mundo vai querer!</p>
+    </header>
+
+    <main>
+        <div class="destaques">
+            <div class="card">
+                <div class="icone-legal">📍</div>
+                <h2>Localização TOP</h2>
+                <p>No coração de Maringá, do lado de tudo que é bom! 🏙️</p>
+            </div>
+
+            <div class="card">
+                <div class="icone-legal">💰</div>
+                <h2>Grana na Certa</h2>
+                <p>Retorno que vai fazer seu bolso sorrir! 😎</p>
+            </div>
+
+            <div class="adesivo">
+                <h3>📈 Valorização Garantida!</h3>
+                <p>Essa área vai bombar nos próximos anos!</p>
+            </div>
+
+            <iframe class="mapa" 
+                src="https://www.google.com/maps/d/embed?mid=1cYbswJy_JYABr2kbfnc-L4adwh97oxI&ehbc=2E312F">
+            </iframe>
+
+            <a href="#" class="botao-zao">📥 Quero Saber Mais!</a>
+            <a href="#" class="botao-zao">📋 Ver Documentos</a>
+        </div>
+    </main>
+
+    <div class="whatsapp-flutuante">
+        <a href="https://wa.me/5544997013489" style="color: white; text-decoration: none;">
+            📱 Chama no ZAP!
+        </a>
+    </div>
+
+    <script>
+        // Efeito de flutuação nos cards
+        document.querySelectorAll('.card').forEach(card => {
+            card.addEventListener('mousemove', (e) => {
+                const x = e.pageX - card.offsetLeft;
+                const y = e.pageY - card.offsetTop;
+
+                card.style.transform = `
+                    perspective(1000px)
+                    rotateX(${(y - card.offsetHeight/2) / 10}deg)
+                    rotateY(${-(x - card.offsetWidth/2) / 10}deg)
+                `;
+            });
+
+            card.addEventListener('mouseleave', () => {
+                card.style.transform = 'none';
+            });
+        });
+    </script>
+</body>
+</html>
