@@ -3,171 +3,218 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta property="og:title" content="CCB RCH1 LP Campos do Jordão - Investimento de Alto Retorno">
+    <meta property="og:description" content="Oportunidade exclusiva em renda fixa lastreada em empreendimento de luxo da Wyndham">
+    <meta property="og:image" content="https://i.imgur.com/AqBE5oB.png">
+    <meta property="og:url" content="https://www.engesudsmart.com.br/vci/cjordao">
     <link rel="shortcut icon" href="https://i.imgur.com/HjwVm8x.png" type="image/x-icon">
-    <title>Em Breve</title>
+    <title>CCB RCH1 LP Campos do Jordão</title>
     <style>
-        body {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
+        :root {
+            --gold: #D4AF37;
+            --dark: #1a1a1a;
+            --light: #f5f5f5;
+        }
+
+        * {
             margin: 0;
-            font-family: Arial, sans-serif;
-            background-color: #000;
-            overflow: hidden;
-            color: white;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Arial', sans-serif;
         }
-        h1 {
-            text-align: center;
-            font-size: 3em;
-            animation: fadeIn 3s ease-in-out infinite alternate;
+
+        body {
+            background-color: var(--dark);
+            color: var(--light);
+            line-height: 1.6;
         }
-        @keyframes fadeIn {
-            0% { opacity: 0; transform: scale(0.9); }
-            100% { opacity: 1; transform: scale(1.1); }
+
+        .header {
+            height: 400px;
+            position: relative;
+            margin-bottom: 80px;
         }
-        .stars {
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            background: url('https://raw.githubusercontent.com/robsonlc/engesud/main/lbk/tsr/osha/stars.png') repeat;
-            z-index: -1;
-            animation: moveStars 50s linear infinite;
-        }
-        @keyframes moveStars {
-            from { transform: translateY(0); }
-            to { transform: translateY(-1000px); }
-        }
-        .shooting-star {
-            position: absolute;
-            width: 2px;
-            height: 150px;
-            background: linear-gradient(white, rgba(255, 255, 255, 0));
-            animation: shootingStar 2s ease-out infinite;
-        }
-        @keyframes shootingStar {
-            from {
-                top: -10%;
-                left: 100%;
-            }
-            to {
-                top: 100%;
-                left: -10%;
-            }
-        }
-        .glowing-text {
-            color: #fff;
-            text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 20px #ff00ff, 0 0 30px #ff00ff, 0 0 40px #ff00ff, 0 0 50px #ff00ff, 0 0 60px #ff00ff;
-            animation: glow 1s ease-in-out infinite alternate;
-        }
-        @keyframes glow {
-            from {
-                text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 20px #ff00ff, 0 0 30px #ff00ff, 0 0 40px #ff00ff, 0 0 50px #ff00ff, 0 0 60px #ff00ff;
-            }
-            to {
-                text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #ff00ff, 0 0 40px #ff00ff, 0 0 50px #ff00ff, 0 0 60px #ff00ff, 0 0 70px #ff00ff;
-            }
-        }
-        .floating-objects {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            width: 10px;
-            height: 10px;
-            background: red;
-            border-radius: 50%;
-            animation: float 5s ease-in-out infinite;
-        }
-        @keyframes float {
-            0%, 100% {
-                transform: translateY(0) translateX(0);
-            }
-            50% {
-                transform: translateY(-20px) translateX(20px);
-            }
-        }
-        .twinkling-stars {
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            background: transparent;
-            overflow: hidden;
-            z-index: 1;
-        }
-        .twinkling-stars::before, .twinkling-stars::after {
+
+        .header::before {
             content: '';
             position: absolute;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
-            background: transparent;
-            opacity: 0.5;
-            animation: twinkling 1.5s infinite ease-in-out alternate;
+            background: url('https://i.imgur.com/hy3dGbE.png') center/cover no-repeat;
+            opacity: 0.3;
         }
-        .twinkling-stars::after {
-            animation-delay: 0.75s;
-        }
-        @keyframes twinkling {
-            0% { background: rgba(255, 255, 255, 0.1); }
-            100% { background: rgba(255, 255, 255, 0.3); }
-        }
-        .nebula {
+
+        .logo {
             position: absolute;
-            width: 100%;
-            height: 100%;
-            background: radial-gradient(circle at center, rgba(255, 0, 255, 0.2), transparent);
-            z-index: 0;
-            animation: pulse 3s infinite;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 200px;
+            border-radius: 15px;
         }
-        @keyframes pulse {
-            0%, 100% { transform: scale(1); }
-            50% { transform: scale(1.1); }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
         }
-        .comet {
-            position: absolute;
-            width: 2px;
-            height: 250px;
-            background: linear-gradient(white, rgba(255, 255, 255, 0));
-            animation: comet 3s ease-out infinite;
+
+        .hero {
+            text-align: center;
+            margin-bottom: 60px;
         }
-        @keyframes comet {
-            from {
-                top: -20%;
-                left: 120%;
+
+        .hero h1 {
+            font-size: 2.5rem;
+            color: var(--gold);
+            margin-bottom: 20px;
+            text-transform: uppercase;
+        }
+
+        .feature-card {
+            background: linear-gradient(145deg, #2a2a2a, #1a1a1a);
+            padding: 30px;
+            border-radius: 15px;
+            margin-bottom: 30px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+            border: 1px solid var(--gold);
+        }
+
+        .cta-section {
+            text-align: center;
+            padding: 50px 20px;
+            background: rgba(212, 175, 55, 0.1);
+            margin: 40px 0;
+            border-radius: 15px;
+        }
+
+        .btn-investir {
+            background: var(--gold);
+            color: var(--dark);
+            padding: 15px 40px;
+            border: none;
+            border-radius: 30px;
+            font-size: 1.2rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-block;
+            margin: 20px 0;
+        }
+
+        .btn-investir:hover {
+            transform: scale(1.05);
+            box-shadow: 0 0 20px rgba(212, 175, 55, 0.5);
+        }
+
+        footer {
+            background: #000;
+            padding: 40px 20px;
+            text-align: center;
+            margin-top: 80px;
+        }
+
+        footer img {
+            width: 120px;
+            border-radius: 15px;
+            margin-bottom: 20px;
+        }
+
+        footer a {
+            color: var(--gold);
+            text-decoration: none;
+        }
+
+        .hidden {
+            display: none;
+        }
+
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2rem;
             }
-            to {
-                top: 120%;
-                left: -20%;
-            }
-        }
-        .meteor {
-            position: absolute;
-            width: 3px;
-            height: 200px;
-            background: linear-gradient(white, rgba(255, 255, 255, 0));
-            animation: meteor 4s ease-out infinite;
-        }
-        @keyframes meteor {
-            from {
-                top: -30%;
-                left: 110%;
-            }
-            to {
-                top: 110%;
-                left: -30%;
+            
+            .feature-card {
+                padding: 20px;
             }
         }
     </style>
 </head>
 <body>
-    <div class="stars"></div>
-    <div class="twinkling-stars"></div>
-    <div class="shooting-star"></div>
-    <div class="nebula"></div>
-    <div class="comet"></div>
-    <div class="meteor"></div>
-    <h1 class="glowing-text">Logo entrará no ar</h1>
-    <div class="floating-objects"></div>
+    <header class="header">
+        <img src="https://i.imgur.com/AqBE5oB.png" alt="Logo do Empreendimento" class="logo">
+    </header>
+
+    <div class="container">
+        <section class="hero">
+            <h1>Oportunidade de Investimento Exclusivo</h1>
+            <p>Renda Fixa com Retorno Superior a 200% do CDI</p>
+        </section>
+
+        <div class="feature-card">
+            <h2>📈 Alto Potencial de Retorno</h2>
+            <p>Investimento em CCB com remuneração de 204% a 220% do CDI, garantias reais e parceria com a maior rede hoteleira do mundo.</p>
+        </div>
+
+        <div class="feature-card">
+            <h2>🏨 Empreendimento de Luxo</h2>
+            <p>Complexo hoteleiro Registry Collection em Campos do Jordão com 90 quartos, 30 chalés e infraestrutura premium.</p>
+        </div>
+
+        <div class="feature-card">
+            <h2>🛡️ Garantias Reais</h2>
+            <p>Alienação fiduciária de 100% das cotas da SPE e imóvel avaliado em R$ 42 milhões.</p>
+        </div>
+
+        <div class="cta-section">
+            <h2>Invista a partir de R$ 100.000</h2>
+            <p>Prazo de 12 a 36 meses | Retorno pré-fixado</p>
+            <a href="https://wa.me/5544997013489" class="btn-investir">Falar com Especialista</a>
+            <p><a href="https://www.engesudsmart.com.br/vci/cjordao/teaser.pdf" download>Baixar Teaser do Empreendimento (PDF)</a></p>
+        </div>
+    </div>
+
+    <footer>
+        <a href="http://www.engesudsmart.com.br" target="_blank">
+            <img src="https://i.imgur.com/3YKn2xW.png" alt="Logo Engesud">
+        </a>
+        <p><strong>Engesud Engenharia e Intermediação LTDA</strong></p>
+        <p>Robson Luis da Costa | <a href="https://wa.me/5544997013489">+55 (44) 99701-3489</a></p>
+        <p><a href="https://www.engesudsmart.com.br" target="_blank">www.engesudsmart.com.br</a></p>
+        <p id="data-atualização"></p>
+    </footer>
+
+    <div class="hidden">
+        <!-- Este conteúdo é protegido por direitos autorais creditados à Engesud Engenharia e Intermediação LTDA, inscrita no CNPJ 40.601.637/0001-58 -->
+    </div>
+
+    <script>
+        // Animação dos Cards
+        document.addEventListener('DOMContentLoaded', function() {
+            const cards = document.querySelectorAll('.feature-card');
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.opacity = 1;
+                        entry.target.style.transform = 'translateY(0)';
+                    }
+                });
+            });
+
+            cards.forEach(card => {
+                card.style.opacity = 0;
+                card.style.transform = 'translateY(20px)';
+                card.style.transition = 'all 0.5s ease-out';
+                observer.observe(card);
+            });
+
+            // Data de Atualização
+            const data = new Date();
+            const options = { day: 'numeric', month: 'long', year: 'numeric' };
+            document.getElementById('data-atualização').textContent = `Última atualização: ${data.toLocaleDateString('pt-BR', options)}`;
+        });
+    </script>
 </body>
 </html>
