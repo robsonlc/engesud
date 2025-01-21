@@ -10,11 +10,14 @@
     <link rel="shortcut icon" href="https://i.imgur.com/HjwVm8x.png" type="image/x-icon">
     <title>CCB RCH1 LP Campos do Jordão</title>
     <style>
-        :root {
+    :root {
             --gold: #D4AF37;
             --dark: #080808;
             --light: #f8f8f8;
             --accent-gold: #B5942D;
+            --mobile: 480px;
+            --tablet: 768px;
+            --desktop: 1024px;
         }
 
         * {
@@ -24,19 +27,36 @@
             font-family: 'Cormorant Garamond', 'Georgia', serif;
         }
 
+        html {
+            font-size: 16px;
+        }
+
+        @media (max-width: 768px) {
+            html {
+                font-size: 14px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            html {
+                font-size: 12px;
+            }
+        }
+
         body {
             background-color: var(--dark);
             color: var(--light);
             line-height: 2;
             overflow-x: hidden;
+            width: 100%;
+            min-height: 100vh;
             background-image: 
                 linear-gradient(to right, rgba(8,8,8,0.97), rgba(8,8,8,0.97)),
                 url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23d4af37' fill-opacity='0.05'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
         }
-
         .header {
             height: 85vh;
-            min-height: 600px;
+            min-height: 400px;
             position: relative;
             background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.7)), 
                         url('https://i.imgur.com/hy3dGbE.png') center/cover fixed;
@@ -44,6 +64,7 @@
             align-items: center;
             justify-content: center;
             border-bottom: 2px solid var(--gold);
+            padding: 1rem;
         }
 
         .header::after {
@@ -61,13 +82,16 @@
             position: relative;
             z-index: 2;
             animation: fadeInUp 1.5s ease;
+            width: 100%;
+            padding: 1rem;
         }
 
         .logo {
-            width: 280px;
+            width: min(280px, 90%);
+            height: auto;
             border-radius: 25px;
             box-shadow: 0 20px 50px rgba(212,175,55,0.3);
-            margin-bottom: 40px;
+            margin-bottom: 2rem;
             border: 4px solid var(--gold);
             transition: transform 0.5s ease;
         }
@@ -79,19 +103,20 @@
         .container {
             max-width: 1400px;
             margin: 0 auto;
-            padding: 40px;
+            padding: 1rem;
+            width: 100%;
         }
-
         .hero {
             text-align: center;
-            margin: 100px 0;
+            margin: 3rem 0;
             position: relative;
+            padding: 1rem;
         }
 
         .hero h1 {
-            font-size: 3.2rem;
+            font-size: clamp(2rem, 5vw, 3.2rem);
             color: var(--gold);
-            margin-bottom: 40px;
+            margin-bottom: 2rem;
             text-transform: uppercase;
             letter-spacing: 3px;
             text-shadow: 0 5px 20px rgba(212,175,55,0.4);
@@ -100,9 +125,9 @@
 
         .feature-card {
             background: linear-gradient(145deg, rgba(26,26,26,0.9), rgba(10,10,10,0.95));
-            padding: 50px;
-            border-radius: 30px;
-            margin-bottom: 60px;
+            padding: clamp(1.5rem, 5vw, 3rem);
+            border-radius: 20px;
+            margin-bottom: 2rem;
             box-shadow: 0 25px 50px rgba(0,0,0,0.5);
             border: 1px solid rgba(212,175,55,0.2);
             position: relative;
@@ -122,13 +147,12 @@
                 transparent 80%);
             animation: shine 10s infinite;
         }
-
         .cta-section {
             text-align: center;
-            padding: 80px 40px;
+            padding: clamp(2rem, 5vw, 5rem);
             background: linear-gradient(145deg, rgba(212,175,55,0.1), rgba(212,175,55,0.05));
-            margin: 80px 0;
-            border-radius: 30px;
+            margin: 3rem 1rem;
+            border-radius: 20px;
             border: 1px solid rgba(212,175,55,0.3);
             position: relative;
         }
@@ -136,31 +160,31 @@
         .btn-investir {
             background: linear-gradient(145deg, var(--gold), var(--accent-gold));
             color: var(--dark);
-            padding: 25px 60px;
+            padding: clamp(1rem, 3vw, 1.5rem) clamp(2rem, 5vw, 3.75rem);
             border: none;
             border-radius: 50px;
-            font-size: 1.4rem;
+            font-size: clamp(1rem, 2vw, 1.4rem);
             cursor: pointer;
             transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
             text-decoration: none;
             display: inline-block;
-            margin: 40px 0;
+            margin: 2rem 0;
             text-transform: uppercase;
             letter-spacing: 2px;
             font-weight: bold;
             box-shadow: 0 15px 40px rgba(212,175,55,0.4);
+            white-space: nowrap;
         }
 
         .btn-investir:hover {
             transform: scale(1.05) translateY(-5px);
             box-shadow: 0 20px 50px rgba(212,175,55,0.6);
         }
-
         footer {
             background: linear-gradient(to top, #000, var(--dark));
-            padding: 80px 40px;
+            padding: clamp(2rem, 5vw, 5rem) 1rem;
             text-align: center;
-            margin-top: 120px;
+            margin-top: 4rem;
             border-top: 2px solid var(--gold);
         }
 
@@ -170,8 +194,9 @@
             border-bottom: 2px solid var(--gold);
             padding-bottom: 3px;
             transition: all 0.3s ease;
-            font-size: 1.1rem;
-            margin: 0 15px;
+            font-size: clamp(0.9rem, 2vw, 1.1rem);
+            margin: 0.5rem;
+            display: inline-block;
         }
 
         @keyframes shine {
@@ -191,42 +216,74 @@
         }
 
         @media (max-width: 768px) {
-            .hero h1 {
-                font-size: 2.2rem;
+            .header {
+                background-attachment: scroll;
+            }
+            
+            .logo-container h1 {
+                font-size: 2rem !important;
             }
             
             .feature-card {
-                padding: 30px;
+                margin: 1rem;
             }
             
-            .btn-investir {
-                padding: 20px 40px;
-                font-size: 1.2rem;
+            .cta-section {
+                margin: 2rem 1rem;
+            }
+            
+            footer img {
+                width: min(180px, 50%);
+            }
+            
+            .documento-link {
+                display: block;
+                margin: 1rem auto;
+                width: fit-content;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .logo {
+                width: 85%;
+            }
+            
+            .logo-container h1 {
+                font-size: 1.5rem !important;
             }
         }
     </style>
-</head>
+    </head>
 <body>
     <header class="header">
         <div class="logo-container">
             <img src="https://i.imgur.com/ErMXWSx.png" alt="Logo do Empreendimento" class="logo">
-            <h1 style="color: var(--light); margin-top: 20px; font-size: 2.5rem; font-weight: 300;">INVESTIMENTO PREMIUM</h1>
+            <h1 style="color: var(--light); margin-top: 20px; font-size: clamp(1.5rem, 4vw, 2.5rem); font-weight: 300;">
+                INVESTIMENTO PREMIUM
+            </h1>
         </div>
     </header>
 
     <div class="container">
         <section class="hero">
-            <h2 style="color: var(--gold); font-size: 2.2rem; margin-bottom: 30px; font-weight: 400;">Uma Experiência Única em Investimentos de Alto Padrão</h2>
-            <p style="max-width: 900px; margin: 0 auto; font-size: 1.2rem; color: #bbb;">Associe-se ao mais sofisticado empreendimento hoteleiro de Campos do Jordão em parceria com a renomada Wyndham Hotels & Resorts</p>
+            <h2 style="color: var(--gold); font-size: clamp(1.8rem, 4vw, 2.2rem); margin-bottom: 30px; font-weight: 400;">
+                Uma Experiência Única em Investimentos de Alto Padrão
+            </h2>
+            <p style="max-width: 900px; margin: 0 auto; font-size: clamp(1rem, 3vw, 1.2rem); color: #bbb;">
+                Associe-se ao mais sofisticado empreendimento hoteleiro de Campos do Jordão em parceria com a renomada Wyndham
+            </p>
         </section>
 
-        <!-- Seções de recursos mantidas conforme versão anterior -->
-
         <div class="cta-section">
-            <h2 style="color: var(--gold); margin-bottom: 30px; font-size: 2.2rem; font-weight: 400;">Seja Parte Desta Oportunidade Única</h2>
-            <p style="margin-bottom: 30px; font-size: 1.2rem;">Investimento inicial a partir de R$100.000<br>Flexibilidade de 12 a 36 meses</p>
+            <h2 style="color: var(--gold); margin-bottom: 30px; font-size: clamp(1.8rem, 4vw, 2.2rem); font-weight: 400;">
+                Seja Parte Desta Oportunidade Única
+            </h2>
+            <p style="margin-bottom: 30px; font-size: clamp(1rem, 3vw, 1.2rem);">
+                Investimento inicial a partir de R$100.000<br>
+                Flexibilidade de 12 a 36 meses
+            </p>
             <a href="https://wa.me/5544997013489" class="btn-investir">Agende sua Consultoria</a>
-            <div style="margin-top: 40px;">
+            <div class="documento-links-container" style="display: flex; flex-wrap: wrap; justify-content: center; gap: 1rem; margin-top: 40px;">
                 <a href="https://www.engesudsmart.com.br/vci/cjordao/teaser.pdf" class="documento-link" download>
                     📥 Análise Completa do Investimento
                 </a>
@@ -239,9 +296,9 @@
 
     <footer>
         <a href="http://www.engesudsmart.com.br" target="_blank">
-            <img src="https://i.imgur.com/3YKn2xW.png" alt="Logo Engesud" style="width: 180px; border-radius: 20px;">
+            <img src="https://i.imgur.com/3YKn2xW.png" alt="Logo Engesud" style="width: min(180px, 50%); border-radius: 20px;">
         </a>
-        <p style="font-size: 1.2rem;"><strong>Engesud Engenharia e Intermediação LTDA</strong></p>
+        <p style="font-size: clamp(1rem, 3vw, 1.2rem);"><strong>Engesud Engenharia e Intermediação LTDA</strong></p>
         <p style="margin: 20px 0;">Robson Luis da Costa | <a href="https://wa.me/5544997013489" style="color: var(--gold);">+55 (44) 99701-3489</a></p>
         <p><a href="https://www.engesudsmart.com.br" target="_blank" style="color: var(--gold);">www.engesudsmart.com.br</a></p>
         <p id="data-atualização" style="margin-top: 40px; color: #666;"></p>
@@ -268,7 +325,8 @@
 
             const data = new Date();
             const options = { day: 'numeric', month: 'long', year: 'numeric' };
-            document.getElementById('data-atualização').textContent = `Última atualização: ${data.toLocaleDateString('pt-BR', options)}`;
+            document.getElementById('data-atualização').textContent = 
+                `Última atualização: ${data.toLocaleDateString('pt-BR', options)}`;
         });
     </script>
 </body>
