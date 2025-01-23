@@ -232,6 +232,18 @@
             border: none;
         }
 
+        /* Estilo específico para a imagem das fases do projeto para garantir responsividade */
+        .section img {
+            max-width: 100%;
+            height: auto;
+            display: block; /* Para evitar espaços extras abaixo da imagem */
+            border-radius: 12px; /* Manter o border-radius */
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1); /* Manter o box-shadow */
+            margin-top: 20px; /* Manter a margem superior */
+            object-fit: contain; /* Adicionado para garantir que a imagem inteira seja visível */
+        }
+
+
         @media (max-width: 768px) {
             .header {
                 padding: 80px 20px;
@@ -276,7 +288,7 @@
         </section>
 
         <section class="section">
-            <h2>Sugestão de Parcelamento do Terreno</h2>
+            <h2>Fases do Projeto</h2>
             <div class="phases-grid">
                 <div class="phase-card">
                     <h3>Fase 1</h3>
@@ -299,7 +311,7 @@
                     <p>Parceria imobiliária com permuta financeira.</p>
                 </div>
             </div>
-             <img src="https://i.imgur.com/fqEMw05.jpeg" alt="Imagem das 4 fases do terreno" style="margin-top: 20px; border-radius: 12px; box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);">
+             <img src="https://i.imgur.com/fqEMw05.jpeg" alt="Imagem das 4 fases do terreno">
         </section>
 
         <section class="section">
