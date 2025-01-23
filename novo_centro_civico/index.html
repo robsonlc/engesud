@@ -9,203 +9,380 @@
     <meta property="og:url" content="https://www.engesudsmart.com.br/novo_centro_civico">
     <meta property="og:type" content="website">
     <title>Proposta de Parceria - Centro Cívico Maringá</title>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
-     <link rel="shortcut icon" href="https://i.imgur.com/HjwVm8x.png" type="image/x-icon">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="shortcut icon" href="https://i.imgur.com/HjwVm8x.png" type="image/x-icon">
     <style>
         :root {
-            --primary-color: #3498db;
-            --secondary-color: #2c3e50;
-            --accent-color: #e74c3c;
-            --background-color: #f8f9fa;
-            --text-color: #333;
+            --primary-color: #2563eb;
+            --secondary-color: #1e40af;
+            --accent-color: #dc2626;
+            --background-color: #f8fafc;
+            --text-color: #1f2937;
         }
-        body {
-            font-family: 'Roboto', sans-serif;
+
+        * {
             margin: 0;
             padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
             background-color: var(--background-color);
             color: var(--text-color);
-            line-height: 1.6;
+            line-height: 1.7;
         }
+
+        .header {
+            position: relative;
+            background-color: var(--primary-color);
+            color: white;
+            padding: 120px 20px;
+            text-align: center;
+            clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
+        }
+
+        .header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('https://i.imgur.com/xNlxyjj.png') center/cover no-repeat;
+            opacity: 0.1;
+            z-index: 0;
+        }
+
+        .header-content {
+            position: relative;
+            z-index: 1;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
         .container {
             max-width: 1200px;
             margin: 0 auto;
             padding: 40px 20px;
         }
-        h1, h2, h3 {
-            color: var(--secondary-color);
-            margin-top: 30px;
+
+        .section {
+            margin: 60px 0;
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.6s ease-out;
         }
+
+        .section.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
         h1 {
-            font-size: 36px;
-            text-align: center;
-            border-bottom: 3px solid var(--primary-color);
-            padding-bottom: 15px;
-            margin-bottom: 30px;
-        }
-        h2 {
-            font-size: 28px;
-            color: var(--primary-color);
-        }
-        h3 {
-            font-size: 22px;
-            color: var(--accent-color);
-        }
-        p {
-            line-height: 1.8;
+            font-size: clamp(2rem, 5vw, 3.5rem);
+            font-weight: 700;
             margin-bottom: 20px;
-        }
-        img {
-            max-width: 100%;
-            border-radius: 10px;
-            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
-            margin: 30px 0;
-        }
-        ul {
-            padding-left: 25px;
-            margin-bottom: 20px;
-        }
-        li {
-            margin-bottom: 10px;
-        }
-        .highlight {
-            background-color: #ffeaa7;
-            padding: 4px 8px;
-            border-radius: 3px;
-            font-weight: bold;
-        }
-        .footer {
-            background-color: var(--secondary-color);
             color: white;
-            text-align: center;
-            padding: 30px;
-            margin-top: 60px;
         }
-        .footer img {
-            height: 100px;
+
+        h2 {
+            font-size: clamp(1.5rem, 4vw, 2rem);
+            color: var(--primary-color);
+            margin-bottom: 25px;
+            position: relative;
+            padding-bottom: 10px;
+        }
+
+        h2::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 60px;
+            height: 4px;
+            background-color: var(--primary-color);
+            border-radius: 2px;
+        }
+
+        h3 {
+            font-size: clamp(1.2rem, 3vw, 1.5rem);
+            color: var(--secondary-color);
             margin-bottom: 20px;
         }
-        .footer p {
-            margin: 10px 0;
+
+        p {
+            margin-bottom: 20px;
+            font-size: clamp(1rem, 2vw, 1.1rem);
         }
+
+        .card {
+            background: white;
+            border-radius: 12px;
+            padding: 30px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            margin-bottom: 30px;
+            transition: transform 0.3s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+        }
+
+        .phases-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin: 40px 0;
+        }
+
+        .phase-card {
+            background: white;
+            padding: 25px;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+        }
+
+        .highlight {
+            background: linear-gradient(120deg, #fef08a 0%, #fef9c3 100%);
+            padding: 3px 8px;
+            border-radius: 4px;
+            font-weight: 600;
+        }
+
         .cta-button {
             display: inline-block;
-            background-color: var(--primary-color);
+            background: var(--primary-color);
             color: white;
-            padding: 12px 24px;
+            padding: 15px 30px;
+            border-radius: 8px;
             text-decoration: none;
-            border-radius: 5px;
-            margin-top: 30px;
-            font-weight: bold;
-            transition: background-color 0.3s ease;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            text-align: center;
         }
+
         .cta-button:hover {
-            background-color: #2980b9;
+            background: var(--secondary-color);
+            transform: translateY(-2px);
         }
-        .section-call {
-            background-color: #ecf0f1;
-            padding: 30px;
-            border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            margin-top: 40px;
+
+        .footer {
+            background: var(--secondary-color);
+            color: white;
+            padding: 60px 20px;
+            text-align: center;
+            clip-path: polygon(0 15%, 100% 0, 100% 100%, 0 100%);
         }
-        .whatsapp {
-            color: #25D366;
-            font-weight: bold;
+
+        .footer img {
+            height: 80px;
+            margin-bottom: 20px;
+            border-radius: 8px;
+        }
+
+        .footer a {
+            color: white;
             text-decoration: none;
-            display: inline-flex;
-            align-items: center;
             transition: opacity 0.3s ease;
         }
-        .whatsapp:hover {
+
+        .footer a:hover {
             opacity: 0.8;
         }
-        .whatsapp span {
-            margin-left: 8px;
+
+        .whatsapp-button {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background: #25D366;
+            color: white;
+            padding: 15px 25px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 600;
+            box-shadow: 0 4px 12px rgba(37, 211, 102, 0.3);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            z-index: 100;
+            transition: all 0.3s ease;
         }
+
+        .whatsapp-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 16px rgba(37, 211, 102, 0.4);
+        }
+
         .iframe-container {
-            margin-top: 40px;
             position: relative;
             overflow: hidden;
-            padding-top: 56.25%; /* 16:9 Aspect Ratio */
+            padding-top: 56.25%;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            margin: 40px 0;
         }
+
         .iframe-container iframe {
             position: absolute;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
-            border: 0;
+            border: none;
         }
+
         @media (max-width: 768px) {
-            h1 {
-                font-size: 28px;
+            .header {
+                padding: 80px 20px;
             }
-            h2 {
-                font-size: 24px;
-            }
-            h3 {
-                font-size: 20px;
-            }
+
             .container {
+                padding: 20px;
+            }
+
+            .section {
+                margin: 40px 0;
+            }
+
+            .whatsapp-button {
+                bottom: 20px;
+                right: 20px;
+                padding: 12px 20px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .phase-card {
                 padding: 20px;
             }
         }
     </style>
 </head>
 <body>
-    <div class="container">
-        <h1>Oportunidade de Parceria - Projeto Centro Cívico</h1>
-
-        <h2>Introdução</h2>
-        <p>Esta proposta refere-se ao desenvolvimento de um terreno nobre de <strong>19.169,86 m²</strong> no Centro Cívico de Maringá, próximo ao <strong>Hospital da Criança</strong> e ao bairro planejado <strong>Eurogarden</strong>, um dos projetos mais sustentáveis do mundo. O terreno está situado em uma área estratégica com alto potencial de valorização, perfeito para investidores interessados em empreendimentos imobiliários de alto padrão.</p>
-
-        <h2>Fases do Projeto</h2>
-        <p>A Engesud sugere uma <strong>subdivisão estratégica</strong> do terreno em 4 fases, com o objetivo de facilitar a comercialização e atrair investidores com diferentes perfis. Essa subdivisão é flexível, ajustando-se conforme a evolução do projeto e a demanda do mercado local.</p>
-
-        <img src="https://i.imgur.com/fqEMw05.jpeg" alt="Imagem das 4 fases do terreno">
-
-        <ul>
-            <li><strong>Fase 1:</strong> 3.800 m² - Valor estimado: <span class="highlight">R$ 4.000/m²</span> (Venda à vista ou parcelada).</li>
-            <li><strong>Fase 2:</strong> 3.800 m² - Parceria imobiliária com permuta financeira.</li>
-            <li><strong>Fase 3:</strong> 3.500 m² - Parceria imobiliária com permuta financeira.</li>
-            <li><strong>Fase 4:</strong> 7.800 m² - Parceria imobiliária com permuta financeira.</li>
-        </ul>
-
-        <h2>Potencial do Terreno</h2>
-        <p>O terreno está localizado em uma área de grande valorização imobiliária, próximo a marcos importantes de Maringá, como o <strong>Hospital da Criança</strong> e o <strong>Eurogarden</strong>, um bairro sustentável que combina áreas comerciais e residenciais de alto padrão, ciclovias e infraestrutura moderna. Além disso, a região abriga o <strong>Novo Centro Cívico</strong>, que já conta com o Fórum Eleitoral e a Justiça do Trabalho, gerando grande atratividade e dinamismo econômico.</p>
-
-        <div class="iframe-container">
-            <iframe src="https://www.google.com/maps/d/embed?mid=18xqaZXGpSCU1AlbkT6pOTzNhlKzbaao&ehbc=2E312F" width="100%" height="480"></iframe>
-        </div>
-
-        <h2>Benefícios da Parceria</h2>
-        <ul>
-            <li><strong>Flexibilidade:</strong> A subdivisão proposta permite negociações personalizadas, com condições ajustáveis conforme o perfil do investidor e a fase de aquisição.</li>
-            <li><strong>Localização Privilegiada:</strong> Situado ao lado do Eurogarden e de importantes infraestruturas públicas, como o Hospital da Criança, o terreno oferece uma localização estratégica para empreendimentos de alto valor agregado.</li>
-            <li><strong>Valorização Contínua:</strong> Com a expansão do Centro Cívico e a evolução do Eurogarden, a área se beneficia de uma valorização constante, gerando retornos significativos aos investidores.</li>
-        </ul>
-
-        <h2>Manifestação de Interesse</h2>
-        <p>Para avançar na negociação e garantir exclusividade nos estudos de viabilidade, sugerimos que os investidores interessados enviem uma <strong>Manifestação de Interesse</strong>. Esse documento formaliza o compromisso em realizar os estudos necessários e facilita a obtenção de um <strong>Memorando de Entendimento (MOU)</strong> com exclusividade, permitindo a análise detalhada do potencial do terreno.</p>
-        
-        <div class="section-call">
-            <h3>Próximos Passos</h3>
-            <ul>
-                <li>Reunião inicial com os investidores para discutir as condições gerais da parceria.</li>
-                <li>Envio da Manifestação de Interesse para formalizar o compromisso com os estudos de viabilidade.</li>
-                <li>Assinatura do MOU de exclusividade por 60 dias, permitindo a realização dos estudos técnicos e econômicos necessários.</li>
-                <li>Formalização do contrato de parceria ou compra após a conclusão dos estudos de viabilidade.</li>
-            </ul>
-        </div>
-
-        <a href="#contact" class="cta-button">Entre em Contato</a>
-
-        <div class="footer" id="contact">
-            <img src="https://i.imgur.com/3YKn2xW.png" alt="Logotipo Engesud">
-            <p>Engesud Engenharia e Intermediação LTDA - CNPJ 40.601.637/0001-58</p>
-            <p>Robson Luis da Costa - <a href="https://wa.me/4497013489?text=Gostaria%20de%20conversar%20sobre%20a%20proposta" class="whatsapp">📲 WhatsApp<span>(44) 99701-3489</span></a></p>
+    <div class="header">
+        <div class="header-content">
+            <h1>Oportunidade de Parceria</h1>
+            <p style="color: white; font-size: 1.2rem;">Projeto Centro Cívico - Maringá</p>
         </div>
     </div>
+
+    <div class="container">
+        <section class="section">
+            <h2>Introdução</h2>
+            <div class="card">
+                <p>Esta proposta refere-se ao desenvolvimento de um terreno nobre de <strong>19.169,86 m²</strong> no Centro Cívico de Maringá, próximo ao <strong>Hospital da Criança</strong> e ao bairro planejado <strong>Eurogarden</strong>, um dos projetos mais sustentáveis do mundo. O terreno está situado em uma área estratégica com alto potencial de valorização, perfeito para investidores interessados em empreendimentos imobiliários de alto padrão.</p>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2>Sugestão de Parcelamento do Terreno</h2>
+            <div class="phases-grid">
+                <div class="phase-card">
+                    <h3>Fase 1</h3>
+                    <p>3.800 m² - Valor estimado: <span class="highlight">R$ 4.000/m²</span></p>
+                    <p>Venda à vista ou parcelada</p>
+                </div>
+                <div class="phase-card">
+                    <h3>Fase 2</h3>
+                    <p>3.800 m²</p>
+                    <p>Parceria imobiliária com permuta financeira.</p>
+                </div>
+                <div class="phase-card">
+                    <h3>Fase 3</h3>
+                    <p>3.500 m²</p>
+                    <p>Parceria imobiliária com permuta financeira.</p>
+                </div>
+                <div class="phase-card">
+                    <h3>Fase 4</h3>
+                    <p>7.800 m²</p>
+                    <p>Parceria imobiliária com permuta financeira.</p>
+                </div>
+            </div>
+             <img src="https://i.imgur.com/fqEMw05.jpeg" alt="Imagem das 4 fases do terreno" style="margin-top: 20px; border-radius: 12px; box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);">
+        </section>
+
+        <section class="section">
+            <h2>Potencial do Terreno</h2>
+            <div class="card">
+                <p>O terreno está localizado em uma área de grande valorização imobiliária, próximo a marcos importantes de Maringá, como o <strong>Hospital da Criança</strong> e o <strong>Eurogarden</strong>, um bairro sustentável que combina áreas comerciais e residenciais de alto padrão, ciclovias e infraestrutura moderna. Além disso, a região abriga o <strong>Novo Centro Cívico</strong>, que já conta com o Fórum Eleitoral e a Justiça do Trabalho, gerando grande atratividade e dinamismo econômico.</p>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2>Localização Estratégica</h2>
+            <div class="iframe-container">
+                <iframe src="https://www.google.com/maps/d/embed?mid=18xqaZXGpSCU1AlbkT6pOTzNhlKzbaao&ehbc=2E312F"></iframe>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2>Benefícios da Parceria</h2>
+            <div class="card">
+                <ul>
+                    <li><strong>Flexibilidade:</strong> A subdivisão proposta permite negociações personalizadas, com condições ajustáveis conforme o perfil do investidor e a fase de aquisição.</li>
+                    <li><strong>Localização Privilegiada:</strong> Situado ao lado do Eurogarden e de importantes infraestruturas públicas, como o Hospital da Criança, o terreno oferece uma localização estratégica para empreendimentos de alto valor agregado.</li>
+                    <li><strong>Valorização Contínua:</strong> Com a expansão do Centro Cívico e a evolução do Eurogarden, a área se beneficia de uma valorização constante, gerando retornos significativos aos investidores.</li>
+                </ul>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2>Manifestação de Interesse</h2>
+            <div class="card">
+                <p>Para avançar na negociação e garantir exclusividade nos estudos de viabilidade, sugerimos que os investidores interessados enviem uma <strong>Manifestação de Interesse</strong>. Esse documento formaliza o compromisso em realizar os estudos necessários e facilita a obtenção de um <strong>Memorando de Entendimento (MOU)</strong> com exclusividade, permitindo a análise detalhada do potencial do terreno.</p>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2>Próximos Passos</h2>
+            <div class="card">
+                <ol>
+                    <li>Reunião inicial com os investidores para discutir as condições gerais da parceria.</li>
+                    <li>Envio da Manifestação de Interesse para formalizar o compromisso com os estudos de viabilidade.</li>
+                    <li>Assinatura do MOU de exclusividade por 60 dias, permitindo a realização dos estudos técnicos e econômicos necessários.</li>
+                    <li>Formalização do contrato de parceria ou compra após a conclusão dos estudos de viabilidade.</li>
+                </ol>
+                <a href="#contact" class="cta-button">Entre em Contato</a>
+            </div>
+        </section>
+    </div>
+
+    <footer class="footer">
+        <a href="http://www.engesudsmart.com.br" target="_blank">
+            <img src="https://i.imgur.com/3YKn2xW.png" alt="Logo Engesud">
+        </a>
+        <p><strong>Engesud Engenharia e Intermediação LTDA</strong></p>
+        <p>Robson Luis da Costa</p>
+        <p><a href="https://www.engesudsmart.com.br" target="_blank">www.engesudsmart.com.br</a></p>
+        <p>Última atualização: 08 de fevereiro de 2024</p>
+    </footer>
+
+    <a href="https://wa.me/4497013489?text=Gostaria%20de%20conversar%20sobre%20a%20proposta" class="whatsapp-button" target="_blank">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M3 21L5 17L3 13C3 7.477 7.477 3 13 3C18.523 3 23 7.477 23 13C23 18.523 18.523 23 13 23C11.322 23 9.742 22.594 8.345 21.876L3 21Z" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        Falar no WhatsApp
+    </a>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const sections = document.querySelectorAll('.section');
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                    }
+                });
+            }, {
+                threshold: 0.1
+            });
+
+            sections.forEach(section => {
+                observer.observe(section);
+            });
+        });
+    </script>
 </body>
 </html>
