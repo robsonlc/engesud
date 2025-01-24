@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" href="https://i.imgur.com/HjwVm8x.png" type="image/x-icon">
-    <title>Em Breve</title>
+    <title>Em Breve - Jogo Espacial Interativo</title>
     <style>
         body {
             display: flex;
@@ -12,88 +12,36 @@
             align-items: center;
             height: 100vh;
             margin: 0;
-            font-family: Arial, sans-serif;
+            font-family: 'Orbitron', sans-serif;
             background-color: #000;
             overflow: hidden;
             color: white;
+            cursor: crosshair;
         }
-        h1 {
-            text-align: center;
-            font-size: 3em;
-            animation: fadeIn 3s ease-in-out infinite alternate;
-        }
-        @keyframes fadeIn {
-            0% { opacity: 0; transform: scale(0.9); }
-            100% { opacity: 1; transform: scale(1.1); }
-        }
+
         .stars {
             position: absolute;
             width: 100%;
             height: 100%;
             background: url('https://raw.githubusercontent.com/robsonlc/engesud/main/lbk/tsr/osha/stars.png') repeat;
-            z-index: -1;
-            animation: moveStars 50s linear infinite;
+            z-index: -2;
+            animation: moveStars 100s linear infinite;
         }
+
         @keyframes moveStars {
             from { transform: translateY(0); }
-            to { transform: translateY(-1000px); }
+            to { transform: translateY(-2000px); }
         }
-        .shooting-star {
-            position: absolute;
-            width: 2px;
-            height: 150px;
-            background: linear-gradient(white, rgba(255, 255, 255, 0));
-            animation: shootingStar 2s ease-out infinite;
-        }
-        @keyframes shootingStar {
-            from {
-                top: -10%;
-                left: 100%;
-            }
-            to {
-                top: 100%;
-                left: -10%;
-            }
-        }
-        .glowing-text {
-            color: #fff;
-            text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 20px #ff00ff, 0 0 30px #ff00ff, 0 0 40px #ff00ff, 0 0 50px #ff00ff, 0 0 60px #ff00ff;
-            animation: glow 1s ease-in-out infinite alternate;
-        }
-        @keyframes glow {
-            from {
-                text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 20px #ff00ff, 0 0 30px #ff00ff, 0 0 40px #ff00ff, 0 0 50px #ff00ff, 0 0 60px #ff00ff;
-            }
-            to {
-                text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #ff00ff, 0 0 40px #ff00ff, 0 0 50px #ff00ff, 0 0 60px #ff00ff, 0 0 70px #ff00ff;
-            }
-        }
-        .floating-objects {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            width: 10px;
-            height: 10px;
-            background: red;
-            border-radius: 50%;
-            animation: float 5s ease-in-out infinite;
-        }
-        @keyframes float {
-            0%, 100% {
-                transform: translateY(0) translateX(0);
-            }
-            50% {
-                transform: translateY(-20px) translateX(20px);
-            }
-        }
+
         .twinkling-stars {
             position: absolute;
             width: 100%;
             height: 100%;
             background: transparent;
             overflow: hidden;
-            z-index: 1;
+            z-index: -1;
         }
+
         .twinkling-stars::before, .twinkling-stars::after {
             content: '';
             position: absolute;
@@ -105,69 +53,390 @@
             opacity: 0.5;
             animation: twinkling 1.5s infinite ease-in-out alternate;
         }
+
         .twinkling-stars::after {
             animation-delay: 0.75s;
         }
+
         @keyframes twinkling {
             0% { background: rgba(255, 255, 255, 0.1); }
             100% { background: rgba(255, 255, 255, 0.3); }
         }
+
         .nebula {
             position: absolute;
             width: 100%;
             height: 100%;
             background: radial-gradient(circle at center, rgba(255, 0, 255, 0.2), transparent);
-            z-index: 0;
+            z-index: -3;
             animation: pulse 3s infinite;
         }
+
         @keyframes pulse {
             0%, 100% { transform: scale(1); }
             50% { transform: scale(1.1); }
         }
-        .comet {
+
+        .comet, .meteor, .shooting-star {
             position: absolute;
+            background: linear-gradient(white, rgba(255, 255, 255, 0));
+            z-index: -1;
+        }
+
+        .comet {
             width: 2px;
             height: 250px;
-            background: linear-gradient(white, rgba(255, 255, 255, 0));
             animation: comet 3s ease-out infinite;
         }
-        @keyframes comet {
-            from {
-                top: -20%;
-                left: 120%;
-            }
-            to {
-                top: 120%;
-                left: -20%;
-            }
-        }
+
         .meteor {
-            position: absolute;
             width: 3px;
             height: 200px;
-            background: linear-gradient(white, rgba(255, 255, 255, 0));
             animation: meteor 4s ease-out infinite;
         }
+
+        .shooting-star {
+            width: 2px;
+            height: 150px;
+            animation: shootingStar 2s ease-out infinite;
+        }
+
+        @keyframes comet {
+            from { top: -20%; left: 120%; }
+            to { top: 120%; left: -20%; }
+        }
+
         @keyframes meteor {
-            from {
-                top: -30%;
-                left: 110%;
-            }
-            to {
-                top: 110%;
-                left: -30%;
-            }
+            from { top: -30%; left: 110%; }
+            to { top: 110%; left: -30%; }
+        }
+
+        @keyframes shootingStar {
+            from { top: -10%; left: 100%; }
+            to { top: 100%; left: -10%; }
+        }
+
+        .glowing-text {
+            position: absolute;
+            top: 30px;
+            left: 50%;
+            transform: translateX(-50%);
+            text-align: center;
+            font-size: 2em;
+            color: #fff;
+            text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 20px #ff00ff, 0 0 30px #ff00ff, 0 0 40px #ff00ff, 0 0 50px #ff00ff, 0 0 60px #ff00ff;
+            animation: glow 1s ease-in-out infinite alternate, fadeInText 3s ease-in-out infinite alternate;
+            z-index: 3;
+        }
+
+        @keyframes glow {
+            from { text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 20px #ff00ff, 0 0 30px #ff00ff, 0 0 40px #ff00ff, 0 0 50px #ff00ff, 0 0 60px #ff00ff; }
+            to { text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #ff00ff, 0 0 40px #ff00ff, 0 0 50px #ff00ff, 0 0 60px #ff00ff, 0 0 70px #ff00ff; }
+        }
+
+        @keyframes fadeInText {
+            0% { opacity: 0.5; transform: translateX(-50%) scale(0.95); }
+            100% { opacity: 1; transform: translateX(-50%) scale(1.05); }
+        }
+
+
+        .object {
+            position: absolute;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            cursor: pointer;
+            transition: all 0.2s;
+            z-index: 2;
+            animation: float 3s ease-in-out infinite;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 1.5em;
+            user-select: none;
+        }
+
+        /* Estilos específicos para cada tipo de objeto */
+        .asteroid { background: radial-gradient(circle, #888 0%, #444 100%); box-shadow: 0 0 15px rgba(100, 100, 255, 0.3); }
+        .gold-asteroid { background: radial-gradient(circle, #ffd700 0%, #daa520 100%); box-shadow: 0 0 25px rgba(255, 215, 0, 0.5); }
+        .red-asteroid { background: radial-gradient(circle, #ff4444 0%, #cc0000 100%); box-shadow: 0 0 25px rgba(255, 0, 0, 0.5); }
+        .power-up { background: radial-gradient(circle, #9370db 0%, #663399 100%); box-shadow: 0 0 25px rgba(147, 112, 219, 0.5); }
+        .health-pack { background: radial-gradient(circle, #00ff00 0%, #008000 100%); box-shadow: 0 0 25px rgba(0, 255, 0, 0.5); }
+        .bomb { background: radial-gradient(circle, #4b0082 0%, #000000 100%); box-shadow: 0 0 25px rgba(75, 0, 130, 0.5); }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+
+        .stats-container {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background: rgba(0, 0, 0, 0.7);
+            padding: 15px;
+            border-radius: 10px;
+            border: 2px solid #00ffff;
+            box-shadow: 0 0 15px rgba(0, 255, 255, 0.3);
+            z-index: 4;
+        }
+
+        .stat-item {
+            font-size: 18px;
+            color: #fff;
+            text-shadow: 0 0 10px #00ffff;
+            margin: 5px 0;
+        }
+
+        .health-bar {
+            width: 200px;
+            height: 15px;
+            background: #222;
+            border-radius: 10px;
+            overflow: hidden;
+            margin: 10px 0;
+        }
+
+        .health-fill {
+            height: 100%;
+            background: linear-gradient(90deg, #00ff00, #7cfc00);
+            transition: width 0.3s ease;
+        }
+
+        .explosion {
+            position: fixed;
+            width: 80px;
+            height: 80px;
+            background: radial-gradient(circle,
+                rgba(255,200,0,0.8) 0%,
+                rgba(255,100,0,0.6) 50%,
+                rgba(255,0,0,0) 100%);
+            animation: explode 0.8s ease-out forwards;
+            pointer-events: none;
+            z-index: 3;
+            border-radius: 50%;
+        }
+
+        @keyframes explode {
+            0% { transform: scale(0); opacity: 1; }
+            100% { transform: scale(2); opacity: 0; }
+        }
+
+        .message {
+            position: fixed;
+            top: 90px;
+            right: 20px;
+            color: #ff4444;
+            font-size: 18px;
+            animation: messageFade 1s ease-out;
+            display: none;
+            text-shadow: 0 0 10px rgba(255,0,0,0.5);
+            z-index: 4;
+        }
+
+        @keyframes messageFade {
+            0% { opacity: 1; transform: translateY(0); }
+            100% { opacity: 0; transform: translateY(-20px); }
         }
     </style>
 </head>
 <body>
     <div class="stars"></div>
     <div class="twinkling-stars"></div>
-    <div class="shooting-star"></div>
     <div class="nebula"></div>
     <div class="comet"></div>
     <div class="meteor"></div>
+    <div class="shooting-star"></div>
+
     <h1 class="glowing-text">Logo entrará no ar</h1>
-    <div class="floating-objects"></div>
+
+    <div class="stats-container">
+        <div class="stat-item" id="score">Pontuação: 0</div>
+        <div class="stat-item" id="combo">Combo: 1x</div>
+        <div class="stat-item" id="high-score">Recorde: 0</div>
+        <div class="health-bar">
+            <div class="health-fill"></div>
+        </div>
+    </div>
+    <div class="message" id="message"></div>
+
+    <script>
+        let score = 0;
+        let health = 100;
+        let highScore = localStorage.getItem('highScore') || 0;
+        let combo = 1;
+        let lastClickTime = 0;
+        let scoreMultiplier = 1;
+
+        const elements = {
+            score: document.getElementById('score'),
+            combo: document.getElementById('combo'),
+            highScore: document.getElementById('high-score'),
+            healthFill: document.querySelector('.health-fill'),
+            message: document.getElementById('message')
+        };
+
+        const objectTypes = [
+            { name: 'asteroid', class: 'asteroid', score: 10, probability: 0.5, harmful: false },
+            { name: 'gold-asteroid', class: 'gold-asteroid', score: 50, probability: 0.2, harmful: false },
+            { name: 'red-asteroid', class: 'red-asteroid', score: -30, probability: 0.15, harmful: true },
+            { name: 'power-up', class: 'power-up', score: 0, probability: 0.05, harmful: false, effect: 'doubleScore' },
+            { name: 'health-pack', class: 'health-pack', score: 0, probability: 0.05, harmful: false, effect: 'heal' },
+            { name: 'bomb', class: 'bomb', score: -100, probability: 0.05, harmful: true, effect: 'explosion' }
+        ];
+
+        function getRandomObject() {
+            const totalProbability = objectTypes.reduce((sum, type) => sum + type.probability, 0);
+            let random = Math.random();
+
+            let cumulativeProbability = 0;
+            for (const type of objectTypes) {
+                cumulativeProbability += type.probability / totalProbability;
+                if (random < cumulativeProbability) {
+                    return type;
+                }
+            }
+            return objectTypes[0];
+        }
+
+        function createObject() {
+            const type = getRandomObject();
+            const object = document.createElement('div');
+            object.className = `object ${type.class}`;
+
+            const emojis = {
+                'asteroid': '🌑', 'gold-asteroid': '💰', 'red-asteroid': '☠️', 'power-up': '✨', 'health-pack': '❤️', 'bomb': '💣'
+            };
+
+            if (emojis[type.name]) {
+                object.textContent = emojis[type.name];
+            }
+
+            const startX = Math.random() * (window.innerWidth - 50);
+            object.style.left = startX + 'px';
+            object.style.top = '-50px';
+
+            const speed = 1 + (Math.random() * 1.5);
+            let rotation = 0;
+
+            function animate() {
+                const currentTop = parseFloat(object.style.top);
+                const newTop = currentTop + speed;
+
+                rotation += speed;
+                object.style.transform = `translateY(${newTop}px) rotate(${rotation}deg)`;
+
+                if (newTop < window.innerHeight + 100) {
+                    requestAnimationFrame(animate);
+                } else {
+                    object.remove();
+                    if (type.harmful) {
+                        health = Math.max(0, health - 5);
+                        updateStats();
+                    }
+                }
+            }
+
+            object.addEventListener('click', (e) => {
+                e.stopPropagation();
+                handleClick(object, type);
+            });
+
+            document.body.appendChild(object);
+            requestAnimationFrame(animate);
+        }
+
+        function handleClick(object, type) {
+            const currentTime = Date.now();
+
+            if (currentTime - lastClickTime < 1000) {
+                combo = Math.min(5, combo + 0.2);
+            } else {
+                combo = 1;
+            }
+            lastClickTime = currentTime;
+
+            let scoreChange = type.score;
+            if (type.effect === 'doubleScore') {
+                scoreMultiplier = 2;
+                setTimeout(() => {
+                    scoreMultiplier = 1;
+                    showMessage('Double Score Ended!', '#9370db');
+                }, 5000);
+                showMessage('Double Score Activated!', '#9370db');
+            } else if (type.effect === 'heal') {
+                health = Math.min(100, health + 20);
+                showMessage('Health +20', '#00ff00');
+            } else if (type.effect === 'explosion') {
+                health = Math.max(0, health - 20);
+                showMessage('Big Explosion!', '#ff4444');
+            }
+
+            score += Math.floor(scoreChange * combo * scoreMultiplier);
+            health = type.harmful ? Math.max(0, health - 5) : Math.min(100, health + 2);
+
+            updateStats();
+            createExplosion(object, type);
+            object.remove();
+        }
+
+        function showMessage(text, color) {
+            elements.message.textContent = text;
+            elements.message.style.color = color;
+            elements.message.style.display = 'block';
+            setTimeout(() => elements.message.style.display = 'none', 1000);
+        }
+
+        function createExplosion(element, type) {
+            const rect = element.getBoundingClientRect();
+            const explosion = document.createElement('div');
+            explosion.className = 'explosion';
+
+            if (type.harmful) {
+                explosion.style.background = `radial-gradient(circle, rgba(255,50,50,0.8) 0%, rgba(255,0,0,0.6) 50%, rgba(255,0,0,0) 100%)`;
+            } else if (type.name === 'gold-asteroid') {
+                explosion.style.background = `radial-gradient(circle, rgba(255,215,0,0.8) 0%, rgba(218,165,32,0.6) 50%, rgba(255,215,0,0) 100%)`;
+            }
+
+            explosion.style.left = `${rect.left - 40}px`;
+            explosion.style.top = `${rect.top - 40}px`;
+            document.body.appendChild(explosion);
+            setTimeout(() => explosion.remove(), 800);
+        }
+
+        function updateStats() {
+            elements.score.textContent = `Pontuação: ${score}`;
+            elements.combo.textContent = `Combo: ${combo.toFixed(1)}x`;
+            elements.highScore.textContent = `Recorde: ${highScore}`;
+            elements.healthFill.style.width = `${health}%`;
+
+            if (score > highScore) {
+                highScore = score;
+                localStorage.setItem('highScore', highScore);
+            }
+
+            if (health <= 0) {
+                gameOver();
+            }
+        }
+
+        function gameOver() {
+            alert(`Game Over! Pontuação: ${score}`);
+            score = 0;
+            health = 100;
+            combo = 1;
+            scoreMultiplier = 1;
+            updateStats();
+        }
+
+        function spawnObject() {
+            createObject();
+            setTimeout(spawnObject, 750 + Math.random() * 500); // Objetos surgem mais rápido agora!
+        }
+
+        // Iniciar jogo
+        updateStats();
+        spawnObject();
+    </script>
 </body>
 </html>
