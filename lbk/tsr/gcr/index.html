@@ -50,13 +50,17 @@
             left: 0;
             right: 0;
             bottom: 0;
-            background-color: rgba(0, 0, 0, 0.6); /* Overlay mais escuro para maior contraste */
+            background-color: rgba(0, 0, 0, 0.7); /* Overlay ainda mais escuro para máximo contraste */
             z-index: 0;
         }
 
         .header-content {
             position: relative;
             z-index: 1;
+            background-color: rgba(0, 0, 0, 0.2); /* Fundo semi-transparente atrás do texto */
+            padding: 20px; /* Adiciona padding ao fundo semi-transparente */
+            border-radius: 10px; /* Opcional: Arredonda os cantos do fundo do texto */
+            display: inline-block; /* Faz o fundo se ajustar ao tamanho do texto */
         }
 
         header h1 {
@@ -483,52 +487,51 @@
         }
 
         @media (max-width: 768px) {
+            .container {
+                padding: 15px; /* Reduce container padding for smaller screens */
+            }
             header {
-                padding: 40px 15px;
+                padding: 60px 15px; /* Adjust header padding for smaller screens */
             }
             header h1 {
-                font-size: 1.8rem;
-            }
-            header .subheadline {
-                font-size: 1rem;
+                font-size: 2em; /* Slightly smaller header font size */
             }
             .section {
-                padding: 30px 0;
+                padding: 30px 0; /* Reduce section padding */
             }
             .section-title {
-                font-size: 1.6rem;
-                margin-bottom: 20px;
+                font-size: 1.6em; /* Smaller section title font size */
+                margin-bottom: 20px; /* Less margin below section title */
             }
             .feature-card {
-                padding: 20px;
+                padding: 15px; /* Reduce padding in feature cards */
             }
             .business-option, .project-type, .location-highlights > div {
-                padding: 20px;
+                padding: 15px; /* Reduce padding in business options */
             }
             .virtual-tour-embed iframe {
-                height: 300px;
+                height: 300px; /* Adjust virtual tour iframe height */
             }
         }
 
         @media (max-width: 576px) {
-            header h1 {
-                font-size: 1.6rem;
+            header {
+                padding: 40px 10px; /* Further reduce header padding for very small screens */
             }
-            header .subheadline {
-                font-size: 0.9rem;
+            header h1 {
+                font-size: 1.6em; /* Even smaller header font size for mobile */
             }
             .section-title {
-                font-size: 1.4rem;
-                margin-bottom: 15px;
+                font-size: 1.4em; /* Even smaller section title font size for mobile */
             }
             .feature-card {
-                padding: 15px;
+                padding: 10px; /* Further reduce padding in feature cards for mobile */
             }
             .business-option, .project-type, .location-highlights > div {
-                padding: 15px;
+                padding: 10px; /* Further reduce padding in business options for mobile */
             }
             .virtual-tour-embed iframe {
-                height: 250px;
+                height: 200px; /* Adjust virtual tour iframe height for mobile */
             }
         }
     </style>
