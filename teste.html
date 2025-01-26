@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>Engesud Engenharia</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="shortcut icon" href="https://i.imgur.com/HjwVm8x.png" type="image/x-icon">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.0/p5.js"></script>
+
+  <meta property="og:image" content="https://i.imgur.com/3YKn2xW.png">
+  <meta property="og:url" content="https://www.engesudsmart.com.br">
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    :root {
+      --primary-blue: #0066cc;
+      --light-blue: #e6f3ff;
+      --dark-blue: #004d99;
+      --gradient-start: rgba(0, 102, 204, 0.75);
+      --gradient-end: rgba(0, 77, 153, 0.70);
+    }
+
+    canvas {
+      position: fixed;
+      top: 0;
+      left: 0;
+      z-index: 0;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      color: #fff;
+      overflow-x: hidden;
+    }
+
+    .container {
+      position: relative;
+      z-index: 2;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      padding: 20px;
+    }
+
+    .logo-container {
+      margin-bottom: 3rem;
+      animation: fadeInDown 1.2s ease-out;
+    }
+
+    .logo-container img {
+      max-width: 300px;
+      height: auto;
+      filter: drop-shadow(0 6px 8px rgba(0, 0, 0, 0.25));
+      transition: all 0.4s ease;
+      border-radius: 15px;
+    }
+
+    .logo-container img:hover {
+      transform: translateY(-8px) scale(1.02);
+      filter: drop-shadow(0 8px 12px rgba(0, 0, 0, 0.3));
+    }
+
+    .content-box {
+      background: rgba(255, 255, 255, 0.15);
+      padding: 3rem;
+      border-radius: 15px;
+      box-shadow: 0 10px 40px rgba(0, 77, 153, 0.25);
+      border: 2px solid rgba(255, 255, 255, 0.5);
+      max-width: 650px;
+      width: 90%;
+      backdrop-filter: blur(8px);
+      transition: transform 0.3s ease;
+    }
+
+    .content-box:hover {
+      transform: translateY(-5px);
+      border-color: rgba(255, 255, 255, 0.7);
+    }
+
+    h1 {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      padding: 0;
+      margin: -1px;
+      overflow: hidden;
+      clip: rect(0,0,0,0);
+      border: 0;
+    }
+
+    .description {
+      font-size: 1.3rem;
+      line-height: 1.9;
+      animation: fadeInUp 1.2s ease-in-out 0.5s forwards;
+      opacity: 0;
+      color: #ffffff;
+      font-weight: 300;
+      letter-spacing: 0.6px;
+      text-align: center;
+      text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+    }
+
+    .contact {
+      margin-top: 35px;
+      font-size: 1.2rem;
+      animation: fadeInUp 1.2s ease-in-out 1s forwards;
+      opacity: 0;
+      text-align: center;
+    }
+
+    .contact p {
+      margin-bottom: 15px;
+      color: #ffffff;
+      text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+    }
+
+    .contact-button {
+      text-decoration: none;
+      color: var(--primary-blue);
+      font-weight: 600;
+      background: #ffffff;
+      padding: 14px 32px;
+      border-radius: 12px;
+      transition: all 0.4s ease;
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
+    }
+
+    .contact-button:hover {
+      background: #ffffff;
+      transform: translateY(-3px);
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+      filter: brightness(1.1);
+    }
+
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(25px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes fadeInDown {
+      from {
+        opacity: 0;
+        transform: translateY(-25px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @media (max-width: 768px) {
+      .logo-container img {
+        max-width: 240px;
+      }
+      
+      .description {
+        font-size: 1.15rem;
+        line-height: 1.7;
+      }
+
+      .content-box {
+        padding: 2.2rem;
+      }
+
+      .contact-button {
+        padding: 12px 26px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .logo-container {
+        margin-bottom: 2rem;
+      }
+
+      .logo-container img {
+        max-width: 200px;
+      }
+
+      .content-box {
+        padding: 1.8rem;
+      }
+
+      .description {
+        font-size: 1.1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="logo-container">
+      <img src="https://i.imgur.com/3YKn2xW.png" alt="Logotipo Engesud">
+    </div>
+    <div class="content-box">
+      <h1>Engesud Engenharia</h1>
+      <div class="description">
+        <p>
+          Excelência em projetos imobiliários e intermediação de áreas
+          para incorporação e loteamento.
+        </p>
+      </div>
+      <div class="contact">
+        <p>Entre em contato conosco:</p>
+        <a href="https://wa.me/554497013489" target="_blank" class="contact-button">
+          <i class="fab fa-whatsapp"></i>
+          Fale pelo WhatsApp
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <script>
+ 
+    let ball, angle, containerSize;
+    let isDragging = false;
+    let dragForce;
+
+    function setup() {
+      const canvas = createCanvas(windowWidth, windowHeight, WEBGL);
+      canvas.style('display', 'block');
+      angle = 0;
+      containerSize = 300;
+      dragForce = createVector(0, 0);
+      
+      ball = {
+        pos: createVector(0, 0, 0),
+        vel: createVector(random(-3, 3), random(-3, 3), random(-3, 3)),
+        radius: 20
+      };
+    }
+
+    function draw() {
+      clear();
+      background(0);
+      lights();
+      ambientLight(60);
+      directionalLight(255, 255, 255, 0, -1, -1);
+
+      // Ajuste da velocidade de rotação aqui ▼
+      angle += 0.005; // Valor reduzido para giro mais lento
+      rotateX(angle);
+      rotateY(angle * 0.6); // Reduzi também este multiplicador
+    
+
+      // Container wireframe
+      push();
+      stroke(150, 150, 255);
+      noFill();
+      sphere(containerSize, 24, 24);
+      pop();
+
+      // Física da bola
+      if (isDragging) {
+        ball.vel.add(dragForce);
+        dragForce.mult(0.95);
+      }
+
+      ball.pos.add(ball.vel);
+      ball.vel.mult(0.995);
+      
+      let d = ball.pos.mag();
+      if (d + ball.radius > containerSize) {
+        let normal = p5.Vector.normalize(ball.pos);
+        ball.vel.reflect(normal);
+        ball.pos = normal.mult(containerSize - ball.radius);
+      }
+
+      // Desenho da bola
+      push();
+      translate(ball.pos.x, ball.pos.y, ball.pos.z);
+      noStroke();
+      fill(255, 215, 0);
+      ambientMaterial(255);
+      sphere(ball.radius);
+      pop();
+
+      // Overlay gradiente
+      push();
+      noStroke();
+      fill(0, 102, 204, 50);
+      rectMode(CENTER);
+      rect(0, 0, width*2, height*2);
+      pop();
+    }
+
+    function mousePressed() {
+      isDragging = true;
+      dragForce.set(0, 0, 0);
+      return false;
+    }
+
+    function mouseDragged() {
+      let sensitivity = 0.03;
+      dragForce.x = (pmouseX - mouseX) * sensitivity;
+      dragForce.y = (mouseY - pmouseY) * sensitivity;
+      return false;
+    }
+
+    function mouseReleased() {
+      isDragging = false;
+      return false;
+    }
+
+    function touchMoved() {
+      if (touches.length > 0) {
+        let sensitivity = 0.06;
+        dragForce.x = (touches[0].px - touches[0].x) * sensitivity;
+        dragForce.y = (touches[0].y - touches[0].py) * sensitivity;
+      }
+      return false;
+    }
+
+    function windowResized() {
+      resizeCanvas(windowWidth, windowHeight);
+    }
+  </script>
+</body>
+</html>
