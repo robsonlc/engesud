@@ -1,50 +1,71 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 <head>
   <meta charset="UTF-8" />
-  <title>Engesud Engenharia</title>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  
-  <link rel="shortcut icon" href="https://i.imgur.com/HjwVm8x.png" type="image/x-icon" />
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <meta name="description" content="Engesud Engenharia - Excelência em projetos imobiliários e intermediação de áreas para incorporação e loteamento.">
 
-  <!-- Meta tags para pré-visualização no WhatsApp -->
+  <!-- Open Graph Meta Tags -->
+  <meta property="og:title" content="Engesud Engenharia">
+  <meta property="og:description" content="Excelência em projetos imobiliários e intermediação de áreas para incorporação e loteamento.">
   <meta property="og:image" content="https://i.imgur.com/3YKn2xW.png">
   <meta property="og:url" content="https://www.engesudsmart.com.br">
+  <meta property="og:locale" content="pt_BR">
+
+  <title>Engesud Engenharia</title>
+  
+  <!-- Favicon -->
+  <link rel="shortcut icon" href="https://i.imgur.com/HjwVm8x.png" type="image/x-icon" />
+
+  <!-- Preconnect para otimização de performance -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+  
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 
   <style>
-    * {
+    /* Reset e estilos básicos */
+    *, *::before, *::after {
       margin: 0;
       padding: 0;
       box-sizing: border-box;
     }
-
+    
+    /* Variáveis CSS */
     :root {
       --primary-blue: #0066cc;
       --light-blue: #e6f3ff;
       --dark-blue: #004d99;
       --gradient-start: rgba(0, 102, 204, 0.75);
       --gradient-end: rgba(0, 77, 153, 0.70);
+      --transition-duration: 0.4s;
     }
-
+    
+    /* Estilização do body e background */
     body {
-      background: url("https://www.engesudsmart.com.br/animlogo2.gif") no-repeat center center;
-      background-size: cover;
-      background-attachment: fixed;
       font-family: 'Poppins', sans-serif;
       min-height: 100vh;
       color: #fff;
       position: relative;
+      background: url("https://www.engesudsmart.com.br/animlogo2.gif") no-repeat center center;
+      background-size: cover;
+      background-attachment: fixed;
       animation: backgroundAnimation 20s ease infinite;
+      overflow-x: hidden;
     }
-
+    
     @keyframes backgroundAnimation {
       0% { background-position: center center; }
       50% { background-position: top center; }
       100% { background-position: center center; }
     }
-
+    
+    /* Sobreposição com gradiente e efeito blur */
     body::before {
       content: '';
       position: fixed;
@@ -52,15 +73,12 @@
       left: 0;
       width: 100%;
       height: 100%;
-      background: linear-gradient(
-        145deg,
-        var(--gradient-start) 0%,
-        var(--gradient-end) 100%
-      );
+      background: linear-gradient(145deg, var(--gradient-start) 0%, var(--gradient-end) 100%);
       backdrop-filter: blur(2px);
       z-index: 1;
     }
-
+    
+    /* Container principal */
     .container {
       position: relative;
       z-index: 2;
@@ -71,25 +89,28 @@
       min-height: 100vh;
       padding: 20px;
     }
-
+    
+    /* Logo */
     .logo-container {
       margin-bottom: 3rem;
       animation: fadeInDown 1.2s ease-out;
     }
-
+    
     .logo-container img {
       max-width: 300px;
       height: auto;
       filter: drop-shadow(0 6px 8px rgba(0, 0, 0, 0.25));
-      transition: all 0.4s ease;
+      transition: transform var(--transition-duration) ease, filter var(--transition-duration) ease;
       border-radius: 15px;
+      will-change: transform;
     }
-
+    
     .logo-container img:hover {
       transform: translateY(-8px) scale(1.02);
       filter: drop-shadow(0 8px 12px rgba(0, 0, 0, 0.3));
     }
-
+    
+    /* Caixa de conteúdo */
     .content-box {
       background: rgba(255, 255, 255, 0.15);
       padding: 3rem;
@@ -99,14 +120,15 @@
       max-width: 650px;
       width: 90%;
       backdrop-filter: blur(8px);
-      transition: transform 0.3s ease;
+      transition: transform 0.3s ease, border-color 0.3s ease;
     }
-
+    
     .content-box:hover {
       transform: translateY(-5px);
       border-color: rgba(255, 255, 255, 0.7);
     }
-
+    
+    /* H1 oculto para SEO e acessibilidade */
     h1 {
       position: absolute;
       width: 1px;
@@ -114,22 +136,23 @@
       padding: 0;
       margin: -1px;
       overflow: hidden;
-      clip: rect(0,0,0,0);
+      clip: rect(0, 0, 0, 0);
       border: 0;
     }
-
+    
+    /* Descrição */
     .description {
       font-size: 1.3rem;
       line-height: 1.9;
       animation: fadeInUp 1.2s ease-in-out 0.5s forwards;
       opacity: 0;
-      color: #ffffff;
       font-weight: 300;
       letter-spacing: 0.6px;
       text-align: center;
       text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
     }
-
+    
+    /* Seção de contato */
     .contact {
       margin-top: 35px;
       font-size: 1.2rem;
@@ -137,13 +160,12 @@
       opacity: 0;
       text-align: center;
     }
-
+    
     .contact p {
       margin-bottom: 15px;
-      color: #ffffff;
       text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
     }
-
+    
     .contact-button {
       text-decoration: none;
       color: var(--primary-blue);
@@ -151,24 +173,24 @@
       background: #ffffff;
       padding: 14px 32px;
       border-radius: 12px;
-      transition: all 0.4s ease;
+      transition: transform var(--transition-duration) ease, box-shadow var(--transition-duration) ease;
       display: inline-flex;
       align-items: center;
       gap: 10px;
       box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
     }
-
+    
     .contact-button:hover {
-      background: #ffffff;
       transform: translateY(-3px);
       box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
       filter: brightness(1.1);
     }
-
+    
     .contact-button i {
       font-size: 1.3rem;
     }
-
+    
+    /* Animações keyframe */
     @keyframes fadeInUp {
       from {
         opacity: 0;
@@ -179,7 +201,7 @@
         transform: translateY(0);
       }
     }
-
+    
     @keyframes fadeInDown {
       from {
         opacity: 0;
@@ -190,7 +212,8 @@
         transform: translateY(0);
       }
     }
-
+    
+    /* Media queries para responsividade */
     @media (max-width: 768px) {
       .logo-container img {
         max-width: 240px;
@@ -200,56 +223,66 @@
         font-size: 1.15rem;
         line-height: 1.7;
       }
-
+    
       .content-box {
         padding: 2.2rem;
       }
-
+    
       .contact-button {
         padding: 12px 26px;
       }
     }
-
+    
     @media (max-width: 480px) {
       .logo-container {
         margin-bottom: 2rem;
       }
-
+    
       .logo-container img {
         max-width: 200px;
       }
-
+    
       .content-box {
         padding: 1.8rem;
       }
-
+    
       .description {
         font-size: 1.1rem;
+      }
+    }
+    
+    /* Redução de movimento para usuários que preferem menos animações */
+    @media (prefers-reduced-motion: reduce) {
+      * {
+        animation-duration: 0.001ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.001ms !important;
       }
     }
   </style>
 </head>
 <body>
-  <div class="container">
+  <main class="container">
+    <!-- Logo da Engesud -->
     <div class="logo-container">
       <img src="https://i.imgur.com/3YKn2xW.png" alt="Logotipo Engesud">
     </div>
-    <div class="content-box">
+    <!-- Conteúdo principal -->
+    <article class="content-box">
       <h1>Engesud Engenharia</h1>
-      <div class="description">
+      <section class="description">
         <p>
-          Excelência em projetos imobiliários e intermediação de áreas
-          para incorporação e loteamento.
+          Excelência em projetos imobiliários e intermediação de áreas para incorporação e loteamento.
         </p>
-      </div>
-      <div class="contact">
+      </section>
+      <section class="contact">
         <p>Entre em contato conosco:</p>
-        <a href="https://wa.me/554497013489" target="_blank" class="contact-button">
-          <i class="fab fa-whatsapp"></i>
-          Fale pelo WhatsApp
+        <a href="https://wa.me/554497013489" target="_blank" class="contact-button" rel="noopener">
+          <i class="fab fa-whatsapp" aria-hidden="true"></i>
+          <span>Fale pelo WhatsApp</span>
         </a>
-      </div>
-    </div>
-  </div>
+      </section>
+    </article>
+  </main>
 </body>
 </html>
