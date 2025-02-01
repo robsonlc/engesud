@@ -3,15 +3,19 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta property="og:title" content="Proposta de Parceria - Empreendimento Imobiliário">
-  <meta property="og:description" content="Viabilidade de empreendimento social com permuta em Marialva-PR">
-  <meta property="og:image" content="https://i.imgur.com/fF9YlL7.png">
+  
+  <!-- Meta Open Graph -->
+  <meta property="og:title" content="Oportunidade de Investimento - Terreno em Marialva-PR">
+  <meta property="og:description" content="Terreno estratégico disponível para investidores. Alto potencial de valorização e desenvolvimento.">
+  <meta property="og:image" content="https://i.imgur.com/TU1z6LC.png">
   <meta property="og:image:width" content="800">
   <meta property="og:image:height" content="800">
-  <meta property="og:url" content="https://www.engesudsmart.com.br/lbk/tsr/ngb">
+  <meta property="og:url" content="https://www.engesudsmart.com.br/lbk/tsr/clc">
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="Engesud Smart">
-  <title>Proposta de Parceria - Empreendimento Imobiliário</title>
+  
+  <title>Oportunidade de Investimento - Terreno em Marialva-PR</title>
+  
   <style>
     :root {
       --primary-color: #4CAF50;
@@ -38,7 +42,7 @@
     header {
       background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)),
         url('https://i.imgur.com/X5ipykj.png') center/cover no-repeat;
-      height: 300px;
+      height: 250px;
       display: flex;
       align-items: center;
       justify-content: center;
@@ -48,98 +52,59 @@
     }
 
     header h1 {
-      font-size: 3rem;
+      font-size: 2.5rem;
       font-weight: 700;
       text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
-      padding: 0 20px;
     }
 
     .content {
       max-width: 1100px;
-      margin: -50px auto 0;
-      padding: 40px;
+      margin: -30px auto 0;
+      padding: 30px;
       background-color: white;
       box-shadow: var(--box-shadow);
       border-radius: var(--border-radius);
-      position: relative;
     }
 
     h2 {
-      font-size: 2.2rem;
-      margin-bottom: 20px;
+      font-size: 2rem;
       color: var(--secondary-color);
       border-bottom: 3px solid var(--primary-color);
       padding-bottom: 10px;
+      margin-bottom: 20px;
     }
 
     p {
-      margin: 15px 0;
       font-size: 1.1rem;
       color: #555;
     }
 
-    .details {
-      margin: 30px 0;
-      padding: 25px;
-      background-color: #f8f9fa;
-      border-radius: var(--border-radius);
-      border-left: 5px solid var(--primary-color);
-    }
-
-    .svg-container {
-      margin: 30px auto;
-      padding: 20px;
-      background: white;
-      border-radius: var(--border-radius);
-      box-shadow: var(--box-shadow);
-      max-width: 900px;
-      overflow: hidden;
-    }
-
-    .svg-container object {
-      width: 100%;
-      height: auto;
-      min-height: 500px;
-      display: block;
-      margin: 0 auto;
-      transition: transform 0.3s ease;
-    }
-
-    .svg-container:hover object {
-      transform: scale(1.02);
-    }
-
-    .map {
-      margin: 40px 0;
+    .illustration, .map {
       text-align: center;
+      margin: 30px 0;
     }
 
-    iframe, img {
+    img, iframe {
       max-width: 100%;
       border-radius: var(--border-radius);
       box-shadow: var(--box-shadow);
-      margin: 20px 0;
     }
 
     .action-buttons {
-      margin: 40px 0;
-      text-align: center;
       display: flex;
       gap: 20px;
       flex-wrap: wrap;
       justify-content: center;
+      margin: 30px 0;
     }
 
     .action-button {
       background-color: var(--primary-color);
       color: white;
-      padding: 15px 30px;
+      padding: 15px 25px;
       border-radius: 25px;
       text-decoration: none;
       font-weight: bold;
-      display: inline-flex;
-      align-items: center;
-      gap: 10px;
       transition: all 0.3s ease;
       box-shadow: 0 4px 6px rgba(0,0,0,0.1);
     }
@@ -147,31 +112,10 @@
     .action-button:hover {
       background-color: var(--secondary-color);
       transform: translateY(-2px);
-      box-shadow: 0 6px 12px rgba(0,0,0,0.15);
-    }
-
-    /* Seção de Feature Cards com animação */
-    .feature-cards {
-      display: flex;
-      gap: 20px;
-      flex-wrap: wrap;
-      margin: 40px 0;
-    }
-
-    .feature-card {
-      background-color: white;
-      border-radius: var(--border-radius);
-      box-shadow: var(--box-shadow);
-      padding: 20px;
-      flex: 1 1 30%;
-      min-width: 250px;
-      opacity: 0;
-      transform: translateY(20px);
-      transition: all 0.5s ease-out;
     }
 
     footer {
-      margin-top: 60px;
+      margin-top: 50px;
       padding: 40px 20px;
       background: linear-gradient(to right, #2c3e50, #3498db);
       color: white;
@@ -193,103 +137,31 @@
       margin: 10px 0;
       font-size: 1.1rem;
     }
-
-    @media (max-width: 768px) {
-      header h1 {
-        font-size: 2rem;
-      }
-      .content {
-        padding: 20px;
-        margin-top: -30px;
-      }
-      h2 {
-        font-size: 1.8rem;
-      }
-      p {
-        font-size: 1rem;
-      }
-      .svg-container {
-        padding: 10px;
-        margin: 20px auto;
-      }
-      .svg-container object {
-        min-height: 300px;
-      }
-      .action-buttons {
-        flex-direction: column;
-        align-items: stretch;
-        padding: 0 20px;
-      }
-      .action-button {
-        text-align: center;
-        justify-content: center;
-      }
-      .feature-cards {
-        flex-direction: column;
-      }
-    }
   </style>
 </head>
 <body>
   <header>
-    <h1>Proposta de Parceria - Empreendimento Imobiliário</h1>
+    <h1>Oportunidade de Investimento</h1>
   </header>
+  
   <div class="content">
-    <div class="details">
-      <h2>Informações do Terreno</h2>
-      <p>O terreno disponível para negociação é composto por dois lotes, subdivididos em fases. A Fase 1 conta com uma área de 12.142,73 m² e a Fase 2 com 11.744,06 m², conforme a imagem já apresentada abaixo. O proprietário será responsável por entregar a área com infraestrutura de água, esgoto e energia elétrica, além de realizar a pavimentação da diretriz viária longitudinal.</p>
+    <h2>Sobre a Área</h2>
+    <p>Terreno localizado em Marialva-PR, com <strong>65.696,40 m²</strong>. Localização estratégica, ideal para empreendimentos imobiliários e comerciais.</p>
+    
+    <div class="illustration">
+      <img src="https://i.imgur.com/TU1z6LC.png" alt="Imagem da área disponível para investimento">
     </div>
-
-    <div class="details">
-      <h2>Viabilidade do Empreendimento</h2>
-      <p>De acordo com análise prévia, o terreno permite a implantação de dois empreendimentos imobiliários, cada um composto por até 6 torres residenciais multifamiliares verticais (T+3), com 8 apartamentos por pavimento. Cada empreendimento totaliza 192 unidades habitacionais de 44 m², com 2 quartos, banheiro, sala de jantar/tv, cozinha, lavanderia e sacada gourmet com churrasqueira. A permuta física envolverá a entrega de 38 apartamentos, correspondendo a 10% do total, ao proprietário.</p>
-      <div class="svg-container">
-        <object data="https://www.engesudsmart.com.br/lbk/tsr/ngb/napkin-ngb.svg" type="image/svg+xml">
-          Seu navegador não suporta SVG
-        </object>
-      </div>
-    </div>
-
-    <div class="details">
-      <h2>Área e Infraestrutura</h2>
-      <p>Além da área do projeto, destaca-se que o Supermercado Nova Era de Marialva construirá uma nova loja em área vizinha de 6.000 m². Isso valoriza o empreendimento e oferece conveniência aos futuros moradores. A área restante poderá ser utilizada para futuras fases de expansão do projeto.</p>
-      <img src="https://i.imgur.com/SpTnb05.png" alt="Esquema Google Earth com marcações">
-    </div>
-
+    
     <div class="map">
       <h2>Localização</h2>
       <iframe src="https://www.google.com/maps/d/embed?mid=1rRhhyU79CdJVl1wO5W6bar6obExoV8c&ehbc=2E312F" width="100%" height="450"></iframe>
     </div>
-
+    
     <div class="action-buttons">
-      <a href="https://www.engesudsmart.com.br/lbk/tsr/ngb/docs/Matr%C3%ADcula%2043.866.pdf" class="action-button">
-        📄 Matrícula 43.866 - Fase 1
-      </a>
-      <a href="https://www.engesudsmart.com.br/lbk/tsr/ngb/docs/Subdivis%C3%A3o%20lote%2083-F%20-%20Matricula.pdf" class="action-button">
-        📑 Planta de Subdivisão dos Lotes
-      </a>
-      <a href="https://wa.me/4497013489" class="action-button">
-        💬 Iniciar Conversa no WhatsApp
-      </a>
-    </div>
-
-    <!-- Seção de Feature Cards para demonstrar a animação -->
-    <div class="feature-cards">
-      <div class="feature-card">
-        <h3>Inovação</h3>
-        <p>Projetos modernos e inovadores para transformar espaços.</p>
-      </div>
-      <div class="feature-card">
-        <h3>Qualidade</h3>
-        <p>Padrões elevados que garantem durabilidade e conforto.</p>
-      </div>
-      <div class="feature-card">
-        <h3>Valor Agregado</h3>
-        <p>Investimento seguro com potencial de valorização garantida.</p>
-      </div>
+      <a href="https://wa.me/4497013489" class="action-button">💬 Fale Agora</a>
     </div>
   </div>
-
+  
   <footer>
     <a href="http://www.engesudsmart.com.br" target="_blank" title="www.engesudsmart.com.br">
       <img src="https://i.imgur.com/3YKn2xW.png" alt="Logo Engesud">
@@ -299,27 +171,5 @@
     <p><a href="https://www.engesudsmart.com.br" target="_blank">www.engesudsmart.com.br</a></p>
     <p>Última atualização: 10 de julho de 2024</p>
   </footer>
-  <!-- Este conteúdo é protegido por direitos autorais creditados à Engesud Engenharia e Intermediação LTDA, inscrita no CNPJ 40.601.637/0001-58 -->
-
-  <script>
-    document.addEventListener('DOMContentLoaded', function() {
-      // Adiciona animação aos cards quando estes se tornam visíveis
-      const cards = document.querySelectorAll('.feature-card');
-      const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-          if (entry.isIntersecting) {
-            entry.target.style.opacity = 1;
-            entry.target.style.transform = 'translateY(0)';
-          }
-        });
-      });
-      cards.forEach(card => {
-        card.style.opacity = 0;
-        card.style.transform = 'translateY(20px)';
-        card.style.transition = 'all 0.5s ease-out';
-        observer.observe(card);
-      });
-    });
-  </script>
 </body>
 </html>
