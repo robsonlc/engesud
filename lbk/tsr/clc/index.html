@@ -1,173 +1,173 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="shortcut icon" href="https://i.imgur.com/HjwVm8x.png" type="image/x-icon">
-    <title>Em Breve</title>
-    <style>
-        body {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            margin: 0;
-            font-family: Arial, sans-serif;
-            background-color: #000;
-            overflow: hidden;
-            color: white;
-        }
-        h1 {
-            text-align: center;
-            font-size: 3em;
-            animation: fadeIn 3s ease-in-out infinite alternate;
-        }
-        @keyframes fadeIn {
-            0% { opacity: 0; transform: scale(0.9); }
-            100% { opacity: 1; transform: scale(1.1); }
-        }
-        .stars {
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            background: url('https://raw.githubusercontent.com/robsonlc/engesud/main/lbk/tsr/osha/stars.png') repeat;
-            z-index: -1;
-            animation: moveStars 50s linear infinite;
-        }
-        @keyframes moveStars {
-            from { transform: translateY(0); }
-            to { transform: translateY(-1000px); }
-        }
-        .shooting-star {
-            position: absolute;
-            width: 2px;
-            height: 150px;
-            background: linear-gradient(white, rgba(255, 255, 255, 0));
-            animation: shootingStar 2s ease-out infinite;
-        }
-        @keyframes shootingStar {
-            from {
-                top: -10%;
-                left: 100%;
-            }
-            to {
-                top: 100%;
-                left: -10%;
-            }
-        }
-        .glowing-text {
-            color: #fff;
-            text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 20px #ff00ff, 0 0 30px #ff00ff, 0 0 40px #ff00ff, 0 0 50px #ff00ff, 0 0 60px #ff00ff;
-            animation: glow 1s ease-in-out infinite alternate;
-        }
-        @keyframes glow {
-            from {
-                text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 20px #ff00ff, 0 0 30px #ff00ff, 0 0 40px #ff00ff, 0 0 50px #ff00ff, 0 0 60px #ff00ff;
-            }
-            to {
-                text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #ff00ff, 0 0 40px #ff00ff, 0 0 50px #ff00ff, 0 0 60px #ff00ff, 0 0 70px #ff00ff;
-            }
-        }
-        .floating-objects {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            width: 10px;
-            height: 10px;
-            background: red;
-            border-radius: 50%;
-            animation: float 5s ease-in-out infinite;
-        }
-        @keyframes float {
-            0%, 100% {
-                transform: translateY(0) translateX(0);
-            }
-            50% {
-                transform: translateY(-20px) translateX(20px);
-            }
-        }
-        .twinkling-stars {
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            background: transparent;
-            overflow: hidden;
-            z-index: 1;
-        }
-        .twinkling-stars::before, .twinkling-stars::after {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: transparent;
-            opacity: 0.5;
-            animation: twinkling 1.5s infinite ease-in-out alternate;
-        }
-        .twinkling-stars::after {
-            animation-delay: 0.75s;
-        }
-        @keyframes twinkling {
-            0% { background: rgba(255, 255, 255, 0.1); }
-            100% { background: rgba(255, 255, 255, 0.3); }
-        }
-        .nebula {
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            background: radial-gradient(circle at center, rgba(255, 0, 255, 0.2), transparent);
-            z-index: 0;
-            animation: pulse 3s infinite;
-        }
-        @keyframes pulse {
-            0%, 100% { transform: scale(1); }
-            50% { transform: scale(1.1); }
-        }
-        .comet {
-            position: absolute;
-            width: 2px;
-            height: 250px;
-            background: linear-gradient(white, rgba(255, 255, 255, 0));
-            animation: comet 3s ease-out infinite;
-        }
-        @keyframes comet {
-            from {
-                top: -20%;
-                left: 120%;
-            }
-            to {
-                top: 120%;
-                left: -20%;
-            }
-        }
-        .meteor {
-            position: absolute;
-            width: 3px;
-            height: 200px;
-            background: linear-gradient(white, rgba(255, 255, 255, 0));
-            animation: meteor 4s ease-out infinite;
-        }
-        @keyframes meteor {
-            from {
-                top: -30%;
-                left: 110%;
-            }
-            to {
-                top: 110%;
-                left: -30%;
-            }
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Apresentação - Engesud Engenharia</title>
+  
+  <!-- Open Graph Meta Tags -->
+  <meta property="og:url" content="https://www.engesudsmart.com.br/lbk/tsr/clc">
+  <meta property="og:image" content="https://i.imgur.com/y1pV549.png">
+  
+  <!-- Favicon -->
+  <link rel="shortcut icon" href="https://i.imgur.com/HjwVm8x.png" type="image/x-icon">
+  
+  <style>
+    /* Reset e configurações básicas */
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    
+    body {
+      font-family: Arial, sans-serif;
+      line-height: 1.6;
+      color: #333;
+    }
+    
+    header {
+      background: url('https://i.imgur.com/WUqKaCB.png') center/cover no-repeat;
+      opacity: 0.3;
+      height: 200px;
+      position: relative;
+    }
+    
+    .container {
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+    
+    h1, h2 {
+      margin-bottom: 10px;
+    }
+    
+    p {
+      margin-bottom: 10px;
+    }
+    
+    ul {
+      margin-left: 20px;
+      margin-bottom: 10px;
+    }
+    
+    iframe {
+      width: 100%;
+      max-width: 640px;
+      height: 480px;
+      border: none;
+    }
+    
+    .feature-card {
+      background: #f4f4f4;
+      margin: 20px 0;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+      opacity: 0;
+      transform: translateY(20px);
+      transition: all 0.5s ease-out;
+    }
+    
+    footer {
+      background: #222;
+      color: #fff;
+      text-align: center;
+      padding: 20px;
+      font-size: 0.9em;
+    }
+    
+    footer a {
+      color: #fff;
+      text-decoration: none;
+    }
+    
+    footer img {
+      max-width: 100px;
+      border-radius: 10px; /* Logotipo com cantos harmonicamente arredondados */
+      margin-bottom: 10px;
+    }
+    
+    @media (max-width: 768px) {
+      header {
+        height: 150px;
+      }
+      .container {
+        padding: 10px;
+      }
+    }
+  </style>
 </head>
 <body>
-    <div class="stars"></div>
-    <div class="twinkling-stars"></div>
-    <div class="shooting-star"></div>
-    <div class="nebula"></div>
-    <div class="comet"></div>
-    <div class="meteor"></div>
-    <h1 class="glowing-text">Logo entrará no ar</h1>
-    <div class="floating-objects"></div>
+  <!-- Cabeçalho -->
+  <header></header>
+  
+  <div class="container">
+    <!-- Seção com informações do imóvel -->
+    <section>
+      <h1>Apresentação do Imóvel</h1>
+      <div class="feature-card">
+        <h2>Matrícula N.º 22.300 - Identificação do Imóvel</h2>
+        <p><strong>LOTE</strong> de terras sob número 83-83-A-83-B-1 (oitenta e três - oitenta e três - A - oitenta e três - B - um) - REMANESCENTE, com área de 65.696,40 m², ou 6,56964 ha, situado na Gleba do PATRIMÔNIO MARIALVA, deste Município e Comarca, com as seguintes divisas e metragens:</p>
+        <ul>
+          <li>Iniciando em um marco de madeira de Lei, cravado na margem direita do Ribeirão Aquidaban;</li>
+          <li>Confrontando com o lote nº 83-83-A-83-B, nos rumos:
+            <ul>
+              <li>SO 1º 10': 65 metros;</li>
+              <li>SO 6º 30': 63,00 metros;</li>
+              <li>SO 12º 10': 61,00 metros;</li>
+              <li>NE 14º 50' SO: 547,40 metros.</li>
+            </ul>
+          </li>
+          <li>No rumo SE 72º 29' com o lote nº 83-83-A-83-B-1, numa extensão de 105,48 metros;</li>
+          <li>Finalmente, SO 17º 00' com o lote nº 83/83-A/83-B-2, numa extensão de 709,80 metros.</li>
+        </ul>
+        <p><strong>Origem:</strong> R. 3-11.635, livro 02, deste Registro Imobiliário.</p>
+        <p><strong>INCRA:</strong> 715.093.372 582-0, área total de 6,7 ha.</p>
+        <p><strong>Proprietário:</strong> PEDRO JORGE GARCIA, brasileiro, casado sob o regime de comunhão universal de bens, com Ellia Brun Garcia, agricultor, residente nesta cidade, CPF nº 107.878.019-68 e C.I. RG n.º 36.850 PR.</p>
+        <p><strong>Data:</strong> Maringá, 03 de agosto de 1998.</p>
+      </div>
+    </section>
+    
+    <!-- Seção de localização com Google Maps -->
+    <section>
+      <h2>Localização</h2>
+      <iframe src="https://www.google.com/maps/d/embed?mid=1zRjPMGUyxS75D1TMHRg4DnT37JdZKro&ehbc=2E312F"></iframe>
+    </section>
+  </div>
+  
+  <!-- Rodapé -->
+  <footer>
+    <a href="http://www.engesudsmart.com.br" target="_blank" title="www.engesudsmart.com.br">
+      <img src="https://i.imgur.com/3YKn2xW.png" alt="Logo Engesud">
+    </a>
+    <p><strong>Engesud Engenharia e Intermediação LTDA</strong></p>
+    <p>Robson Luis da Costa | <a href="https://wa.me/4497013489" title="Whatsapp">+55 (44) 99701-3489</a></p>
+    <p><a href="https://www.engesudsmart.com.br" target="_blank">www.engesudsmart.com.br</a></p>
+    <p>Última atualização: 01 de fevereiro de 2025</p>
+    <!-- Conteúdo protegido por direitos autorais (oculto no código) -->
+    <!--
+      Este conteúdo é protegido por direitos autorais creditados à Engesud Engenharia e Intermediação LTDA, inscrita no CNPJ 40.601.637/0001-58
+    -->
+  </footer>
+  
+  <!-- Animação JavaScript para os cards -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const cards = document.querySelectorAll('.feature-card');
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.style.opacity = 1;
+            entry.target.style.transform = 'translateY(0)';
+          }
+        });
+      });
+      cards.forEach(card => {
+        observer.observe(card);
+      });
+    });
+  </script>
 </body>
 </html>
