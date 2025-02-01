@@ -3,141 +3,170 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Apresentação - Engesud Engenharia</title>
   
-  <!-- Open Graph Meta Tags -->
+  <!-- Meta Open Graph -->
+  <meta property="og:title" content="Oportunidade de Investimento - Terreno em Marialva-PR">
+  <meta property="og:description" content="Terreno estratégico disponível para investidores. Alto potencial de valorização e desenvolvimento.">
+  <meta property="og:image" content="https://i.imgur.com/TU1z6LC.png">
+  <meta property="og:image:width" content="800">
+  <meta property="og:image:height" content="800">
   <meta property="og:url" content="https://www.engesudsmart.com.br/lbk/tsr/clc">
-  <meta property="og:image" content="https://i.imgur.com/y1pV549.png">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Engesud Smart">
   
-  <!-- Favicon -->
-  <link rel="shortcut icon" href="https://i.imgur.com/HjwVm8x.png" type="image/x-icon">
+  <title>Oportunidade de Investimento - Terreno em Marialva-PR</title>
   
   <style>
-    /* Reset e configurações básicas */
+    :root {
+      --primary-color: #4CAF50;
+      --secondary-color: #388e3c;
+      --text-color: #333;
+      --light-bg: #f9f9f9;
+      --border-radius: 12px;
+      --box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+    }
+
     * {
-      box-sizing: border-box;
       margin: 0;
       padding: 0;
+      box-sizing: border-box;
     }
-    
+
     body {
-      font-family: Arial, sans-serif;
-      line-height: 1.6;
-      color: #333;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      line-height: 1.8;
+      color: var(--text-color);
+      background-color: var(--light-bg);
     }
-    
+
     header {
-      background: url('https://i.imgur.com/WUqKaCB.png') center/cover no-repeat;
-      opacity: 0.3;
-      height: 200px;
+      background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)),
+        url('https://i.imgur.com/X5ipykj.png') center/cover no-repeat;
+      height: 250px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      text-align: center;
       position: relative;
     }
-    
-    .container {
-      max-width: 960px;
-      margin: 0 auto;
-      padding: 20px;
+
+    header h1 {
+      font-size: 2.5rem;
+      font-weight: 700;
+      text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
     }
-    
-    h1, h2 {
-      margin-bottom: 10px;
+
+    .content {
+      max-width: 1100px;
+      margin: -30px auto 0;
+      padding: 30px;
+      background-color: white;
+      box-shadow: var(--box-shadow);
+      border-radius: var(--border-radius);
     }
-    
+
+    h2 {
+      font-size: 2rem;
+      color: var(--secondary-color);
+      border-bottom: 3px solid var(--primary-color);
+      padding-bottom: 10px;
+      margin-bottom: 20px;
+    }
+
     p {
-      margin-bottom: 10px;
+      font-size: 1.1rem;
+      color: #555;
     }
-    
-    ul {
-      margin-left: 20px;
-      margin-bottom: 10px;
-    }
-    
-    iframe {
-      width: 100%;
-      max-width: 640px;
-      height: 480px;
-      border: none;
-    }
-    
-    .feature-card {
-      background: #f4f4f4;
-      margin: 20px 0;
-      padding: 20px;
-      border-radius: 8px;
-      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-      opacity: 0;
-      transform: translateY(20px);
-      transition: all 0.5s ease-out;
-    }
-    
-    footer {
-      background: #222;
-      color: #fff;
+
+    .illustration, .map, .zoneamento {
       text-align: center;
-      padding: 20px;
-      font-size: 0.9em;
+      margin: 30px 0;
     }
-    
+
+    img, iframe {
+      max-width: 100%;
+      border-radius: var(--border-radius);
+      box-shadow: var(--box-shadow);
+    }
+
+    .action-buttons {
+      display: flex;
+      gap: 20px;
+      flex-wrap: wrap;
+      justify-content: center;
+      margin: 30px 0;
+    }
+
+    .action-button {
+      background-color: var(--primary-color);
+      color: white;
+      padding: 15px 25px;
+      border-radius: 25px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    }
+
+    .action-button:hover {
+      background-color: var(--secondary-color);
+      transform: translateY(-2px);
+    }
+
+    footer {
+      margin-top: 50px;
+      padding: 40px 20px;
+      background: linear-gradient(to right, #2c3e50, #3498db);
+      color: white;
+      text-align: center;
+    }
+
     footer a {
-      color: #fff;
+      color: white;
       text-decoration: none;
     }
-    
+
     footer img {
-      max-width: 100px;
-      border-radius: 10px; /* Logotipo com cantos harmonicamente arredondados */
-      margin-bottom: 10px;
+      max-width: 150px;
+      margin-bottom: 20px;
+      border-radius: var(--border-radius);
     }
-    
-    @media (max-width: 768px) {
-      header {
-        height: 150px;
-      }
-      .container {
-        padding: 10px;
-      }
+
+    footer p {
+      margin: 10px 0;
+      font-size: 1.1rem;
     }
   </style>
 </head>
 <body>
-  <!-- Cabeçalho -->
-  <header></header>
+  <header>
+    <h1>Oportunidade de Investimento</h1>
+  </header>
   
-  <div class="container">
-    <!-- Seção com informações do imóvel -->
-    <section>
-      <h1>Apresentação do Imóvel</h1>
-      <div class="feature-card">
-        <h2>Matrícula N.º 22.300 - Identificação do Imóvel</h2>
-        <p><strong>LOTE</strong> de terras sob número 83-83-A-83-B-1 (oitenta e três - oitenta e três - A - oitenta e três - B - um) - REMANESCENTE, com área de 65.696,40 m², ou 6,56964 ha, situado na Gleba do PATRIMÔNIO MARIALVA, deste Município e Comarca, com as seguintes divisas e metragens:</p>
-        <ul>
-          <li>Iniciando em um marco de madeira de Lei, cravado na margem direita do Ribeirão Aquidaban;</li>
-          <li>Confrontando com o lote nº 83-83-A-83-B, nos rumos:
-            <ul>
-              <li>SO 1º 10': 65 metros;</li>
-              <li>SO 6º 30': 63,00 metros;</li>
-              <li>SO 12º 10': 61,00 metros;</li>
-              <li>NE 14º 50' SO: 547,40 metros.</li>
-            </ul>
-          </li>
-          <li>No rumo SE 72º 29' com o lote nº 83-83-A-83-B-1, numa extensão de 105,48 metros;</li>
-          <li>Finalmente, SO 17º 00' com o lote nº 83/83-A/83-B-2, numa extensão de 709,80 metros.</li>
-        </ul>
-        <p><strong>Origem:</strong> R. 3-11.635, livro 02, deste Registro Imobiliário.</p>
-        <p><strong>INCRA:</strong> 715.093.372 582-0, área total de 6,7 ha.</p>
-        <p><strong>Proprietário:</strong> PEDRO JORGE GARCIA, brasileiro, casado sob o regime de comunhão universal de bens, com Ellia Brun Garcia, agricultor, residente nesta cidade, CPF nº 107.878.019-68 e C.I. RG n.º 36.850 PR.</p>
-        <p><strong>Data:</strong> Maringá, 03 de agosto de 1998.</p>
-      </div>
-    </section>
+  <div class="content">
+    <h2>Sobre a Área</h2>
+    <p>Terreno localizado em Marialva-PR, com <strong>65.696,40 m²</strong>. Localização estratégica, ideal para empreendimentos imobiliários e comerciais.</p>
     
-    <!-- Seção de localização com Google Maps -->
-    <section>
+    <div class="illustration">
+      <img src="https://i.imgur.com/TU1z6LC.png" alt="Imagem da área disponível para investimento">
+    </div>
+    
+    <div class="map">
       <h2>Localização</h2>
-      <iframe src="https://www.google.com/maps/d/embed?mid=1zRjPMGUyxS75D1TMHRg4DnT37JdZKro&ehbc=2E312F"></iframe>
-    </section>
+      <iframe src="https://www.google.com/maps/d/embed?mid=1zRjPMGUyxS75D1TMHRg4DnT37JdZKro&ehbc=2E312F" width="640" height="480"></iframe>
+    </div>
+
+    <div class="zoneamento">
+      <h2>Zona Especial de Interesse Social</h2>
+      <img src="https://i.imgur.com/XwAtEWa.png" alt="Mapa de zoneamento apontando a área para uma ZONA ESPECIAL DE INTERESSE SOCIAL">
+    </div>
+    
+    <div class="action-buttons">
+      <a href="https://wa.me/4497013489" class="action-button">💬 Fale Agora</a>
+    </div>
   </div>
   
-  <!-- Rodapé -->
   <footer>
     <a href="http://www.engesudsmart.com.br" target="_blank" title="www.engesudsmart.com.br">
       <img src="https://i.imgur.com/3YKn2xW.png" alt="Logo Engesud">
@@ -145,29 +174,7 @@
     <p><strong>Engesud Engenharia e Intermediação LTDA</strong></p>
     <p>Robson Luis da Costa | <a href="https://wa.me/4497013489" title="Whatsapp">+55 (44) 99701-3489</a></p>
     <p><a href="https://www.engesudsmart.com.br" target="_blank">www.engesudsmart.com.br</a></p>
-    <p>Última atualização: 01 de fevereiro de 2025</p>
-    <!-- Conteúdo protegido por direitos autorais (oculto no código) -->
-    <!--
-      Este conteúdo é protegido por direitos autorais creditados à Engesud Engenharia e Intermediação LTDA, inscrita no CNPJ 40.601.637/0001-58
-    -->
+    <p>Última atualização: 10 de julho de 2024</p>
   </footer>
-  
-  <!-- Animação JavaScript para os cards -->
-  <script>
-    document.addEventListener('DOMContentLoaded', function() {
-      const cards = document.querySelectorAll('.feature-card');
-      const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-          if (entry.isIntersecting) {
-            entry.target.style.opacity = 1;
-            entry.target.style.transform = 'translateY(0)';
-          }
-        });
-      });
-      cards.forEach(card => {
-        observer.observe(card);
-      });
-    });
-  </script>
 </body>
 </html>
