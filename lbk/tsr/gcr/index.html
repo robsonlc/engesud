@@ -35,7 +35,7 @@
 
         header {
             background: url('https://i.imgur.com/FPCY0cb.png') center/cover no-repeat;
-            opacity: 0.8;
+            /* Removida a opacidade para não afetar o conteúdo */
             text-align: center;
             padding: 100px 20px;
             color: #fff;
@@ -50,7 +50,7 @@
             left: 0;
             right: 0;
             bottom: 0;
-            background-color: rgba(0, 0, 0, 0.7); /* Overlay ainda mais escuro para máximo contraste */
+            background-color: rgba(0, 0, 0, 0.7); /* Overlay para máximo contraste */
             z-index: 0;
         }
 
@@ -58,9 +58,9 @@
             position: relative;
             z-index: 1;
             background-color: rgba(0, 0, 0, 0.2); /* Fundo semi-transparente atrás do texto */
-            padding: 20px; /* Adiciona padding ao fundo semi-transparente */
-            border-radius: 10px; /* Opcional: Arredonda os cantos do fundo do texto */
-            display: inline-block; /* Faz o fundo se ajustar ao tamanho do texto */
+            padding: 20px;
+            border-radius: 10px;
+            display: inline-block;
         }
 
         header h1 {
@@ -102,7 +102,6 @@
             background-color: #007bff;
         }
 
-
         .confidential {
             text-align: center;
             font-size: 1.2rem;
@@ -120,7 +119,6 @@
         .exclamations {
             display: none;
         }
-
 
         .feature-card {
             background-color: #fff;
@@ -219,7 +217,6 @@
             height: 400px;
         }
 
-
         .implantation-images {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
@@ -239,7 +236,6 @@
         .implantation-images img:hover {
             transform: scale(1.02);
         }
-
 
         /* Galeria Lightbox */
         #gallery .section-title {
@@ -273,7 +269,6 @@
             object-fit: cover;
             display: block;
         }
-
 
         .lightbox {
             position: fixed;
@@ -387,7 +382,6 @@
             opacity: 0.9;
         }
 
-
         .virtual-tour-embed {
             margin-top: 25px;
             border-radius: 8px;
@@ -454,7 +448,6 @@
             margin-top: 10px;
         }
 
-
         /* Estilos Responsivos */
         @media (max-width: 992px) {
             .container {
@@ -488,50 +481,50 @@
 
         @media (max-width: 768px) {
             .container {
-                padding: 15px; /* Reduce container padding for smaller screens */
+                padding: 15px;
             }
             header {
-                padding: 60px 15px; /* Adjust header padding for smaller screens */
+                padding: 60px 15px;
             }
             header h1 {
-                font-size: 2em; /* Slightly smaller header font size */
+                font-size: 2em;
             }
             .section {
-                padding: 30px 0; /* Reduce section padding */
+                padding: 30px 0;
             }
             .section-title {
-                font-size: 1.6em; /* Smaller section title font size */
-                margin-bottom: 20px; /* Less margin below section title */
+                font-size: 1.6em;
+                margin-bottom: 20px;
             }
             .feature-card {
-                padding: 15px; /* Reduce padding in feature cards */
+                padding: 15px;
             }
             .business-option, .project-type, .location-highlights > div {
-                padding: 15px; /* Reduce padding in business options */
+                padding: 15px;
             }
             .virtual-tour-embed iframe {
-                height: 300px; /* Adjust virtual tour iframe height */
+                height: 300px;
             }
         }
 
         @media (max-width: 576px) {
             header {
-                padding: 40px 10px; /* Further reduce header padding for very small screens */
+                padding: 40px 10px;
             }
             header h1 {
-                font-size: 1.6em; /* Even smaller header font size for mobile */
+                font-size: 1.6em;
             }
             .section-title {
-                font-size: 1.4em; /* Even smaller section title font size for mobile */
+                font-size: 1.4em;
             }
             .feature-card {
-                padding: 10px; /* Further reduce padding in feature cards for mobile */
+                padding: 10px;
             }
             .business-option, .project-type, .location-highlights > div {
-                padding: 10px; /* Further reduce padding in business options for mobile */
+                padding: 10px;
             }
             .virtual-tour-embed iframe {
-                height: 200px; /* Adjust virtual tour iframe height for mobile */
+                height: 200px;
             }
         }
     </style>
@@ -710,7 +703,7 @@
             <p>Robson Luis da Costa | <a href="https://wa.me/4497013489" title="Whatsapp">+55 (44) 99701-3489</a></p>
             <p><a href="https://www.engesudsmart.com.br"  target="_blank" >www.engesudsmart.com.br</a></p>
             <p>Última atualização: 24 de janeiro de 2025</p>
-            <p class="copyright-notice">Este conteúdo é protegido por direitos autorais creditados à Engesud Engenharia e Intermediação LTDA, inscrita no CNPJ 40.601.637/0001/58</p>
+            <p class="copyright-notice">Este conteúdo é protegido por direitos autorais creditados à Engesud Engenharia e Intermediação LTDA, inscrita no CNPJ 40.601.637/0001-5</p>
         </div>
     </footer>
 
@@ -744,13 +737,13 @@
 
             // Função para gerar miniaturas e imagens da galeria
             function setupGallery() {
-                const jpgImages = Array.from({ length: 71 }, (_, i) => ({ // Corrected range to 71 - removed images 72-82
+                const jpgImages = Array.from({ length: 71 }, (_, i) => ({ // Range corrigido para 71
                     src: `https://www.engesudsmart.com.br/lbk/tsr/gcr/midia/IMG%20(${i + 1}).JPG`,
                     type: 'jpg'
                 }));
 
                 const excludedPngs = [1, 2, 5, 9, 10, 11, 18];
-                const pngImages = Array.from({ length: 18 }, (_, i) => { // Corrected range to 18
+                const pngImages = Array.from({ length: 18 }, (_, i) => { // Range corrigido para 18
                     if (!excludedPngs.includes(i + 1)) {
                         return {
                             src: `https://www.engesudsmart.com.br/lbk/tsr/gcr/midia/IMG%20(${i + 1}).PNG`,
@@ -811,6 +804,13 @@
                 }
             });
 
+            // Fechar a lightbox com a tecla "Escape"
+            document.addEventListener('keydown', function(event) {
+                if (event.key === "Escape" && lightbox.classList.contains('active')) {
+                    lightbox.classList.remove('active');
+                }
+            });
+
             window.zoomIn = () => {
                 zoomLevel = Math.min(zoomLevel + 0.25, 3);
                 lightboxImg.style.transform = `scale(${zoomLevel})`;
@@ -820,8 +820,6 @@
                 zoomLevel = Math.max(zoomLevel - 0.25, 1);
                 lightboxImg.style.transform = `scale(${zoomLevel})`;
             };
-
-
         });
     </script>
 
