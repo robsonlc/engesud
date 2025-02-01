@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Bolas Saltitantes na Esfera Giratória</title>
+  <title>Bolas Saltitantes na Esfera Giratória - Otimizado</title>
   <!-- Incluindo a biblioteca p5.js -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.0/p5.js"></script>
 </head>
@@ -14,16 +14,19 @@
     const containerRadius = 300; // Raio da esfera container
 
     let rotationAngle = 0;
-
+    
     function setup() {
       createCanvas(windowWidth, windowHeight, WEBGL);
-      smooth();
+      // Comentar smooth() pode ajudar na performance
+      // smooth();
+      // Limitar a taxa de quadros, se necessário
+      frameRate(60);
       // Cria 100 bolas com posições e velocidades aleatórias
       for (let i = 0; i < numBalls; i++) {
         balls.push(new Ball());
       }
     }
-
+    
     function draw() {
       background(0);
       
@@ -32,11 +35,11 @@
       rotateY(rotationAngle);
       rotateX(rotationAngle * 0.5);
       
-      // Desenha a esfera container como um wireframe
+      // Desenha a esfera container com menor detalhamento para melhorar a performance
       noFill();
       stroke(255);
       strokeWeight(2);
-      sphere(containerRadius);
+      sphere(containerRadius, 12, 12);
       
       // Atualiza e exibe cada bola
       for (let ball of balls) {
@@ -44,12 +47,12 @@
         ball.show();
       }
     }
-
+    
     // Ajusta o tamanho da tela se a janela mudar de tamanho
     function windowResized() {
       resizeCanvas(windowWidth, windowHeight);
     }
-
+    
     // Classe Bola
     class Ball {
       constructor() {
@@ -66,9 +69,9 @@
         // Cor brilhante aleatória para a bola
         this.col = color(random(50, 255), random(50, 255), random(50, 255));
         
-        // Array para armazenar as posições recentes (trilha), limitado a 50 pontos
+        // Array para armazenar as posições recentes (trilha), reduzido para 30 pontos
         this.trail = [];
-        this.trailMaxLength = 50;
+        this.trailMaxLength = 30;
       }
       
       update() {
@@ -107,12 +110,12 @@
           line(p1.x, p1.y, p1.z, p2.x, p2.y, p2.z);
         }
         
-        // Desenha a própria bola
+        // Desenha a própria bola com menor detalhamento para otimizar a renderização
         noStroke();
         fill(this.col);
         push();
         translate(this.pos.x, this.pos.y, this.pos.z);
-        sphere(this.r);
+        sphere(this.r, 6, 6);
         pop();
       }
     }
