@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Engesud Engenharia - Excelência em projetos imobiliários e intermediação de áreas para incorporação e loteamento.">
+
+  <!-- Open Graph Meta Tags -->
+  <meta property="og:title" content="Engesud Engenharia">
+  <meta property="og:description" content="Excelência em projetos imobiliários e intermediação de áreas para incorporação e loteamento.">
+  <meta property="og:image" content="https://i.imgur.com/3YKn2xW.png">
+  <meta property="og:url" content="https://www.engesudsmart.com.br">
+  <meta property="og:locale" content="pt_BR">
+
+  <title>Engesud Engenharia</title>
+  
+  <!-- Favicon -->
+  <link rel="shortcut icon" href="https://i.imgur.com/HjwVm8x.png" type="image/x-icon" />
+
+  <!-- Preconnect para otimização de performance -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+  
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+  <!-- p5.js Library -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.0/p5.js"></script>
+
+  <style>
+    /* Reset e estilos básicos */
+    *, *::before, *::after {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
+    /* Variáveis CSS */
+    :root {
+      --primary-blue: #0066cc;
+      --light-blue: #e6f3ff;
+      --dark-blue: #004d99;
+      --transition-duration: 0.4s;
+    }
+    
+    /* Estilização do body sem background fixo – o fundo será o canvas p5.js */
+    body {
+      font-family: 'Poppins', sans-serif;
+      min-height: 100vh;
+      color: #fff;
+      position: relative;
+      background: transparent;
+      overflow-x: hidden;
+    }
+    
+    /* O canvas do p5.js ficará abaixo do conteúdo */
+    canvas {
+      position: fixed;
+      top: 0;
+      left: 0;
+      z-index: -1;
+    }
+    
+    /* Container principal */
+    .container {
+      position: relative;
+      z-index: 2;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      padding: 20px;
+    }
+    
+    /* Logo */
+    .logo-container {
+      margin-bottom: 3rem;
+      animation: fadeInDown 1.2s ease-out;
+    }
+    
+    .logo-container img {
+      max-width: 300px;
+      height: auto;
+      filter: drop-shadow(0 6px 8px rgba(0, 0, 0, 0.25));
+      transition: transform var(--transition-duration) ease, filter var(--transition-duration) ease;
+      border-radius: 15px;
+      will-change: transform;
+    }
+    
+    .logo-container img:hover {
+      transform: translateY(-8px) scale(1.02);
+      filter: drop-shadow(0 8px 12px rgba(0, 0, 0, 0.3));
+    }
+    
+    /* Caixa de conteúdo */
+    .content-box {
+      background: rgba(255, 255, 255, 0.15);
+      padding: 3rem;
+      border-radius: 15px;
+      box-shadow: 0 10px 40px rgba(0, 77, 153, 0.25);
+      border: 2px solid rgba(255, 255, 255, 0.5);
+      max-width: 650px;
+      width: 90%;
+      backdrop-filter: blur(8px);
+      transition: transform 0.3s ease, border-color 0.3s ease;
+    }
+    
+    .content-box:hover {
+      transform: translateY(-5px);
+      border-color: rgba(255, 255, 255, 0.7);
+    }
+    
+    /* H1 oculto para SEO e acessibilidade */
+    h1 {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      padding: 0;
+      margin: -1px;
+      overflow: hidden;
+      clip: rect(0, 0, 0, 0);
+      border: 0;
+    }
+    
+    /* Descrição */
+    .description {
+      font-size: 1.3rem;
+      line-height: 1.9;
+      animation: fadeInUp 1.2s ease-in-out 0.5s forwards;
+      opacity: 0;
+      font-weight: 300;
+      letter-spacing: 0.6px;
+      text-align: center;
+      text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+    }
+    
+    /* Seção de contato */
+    .contact {
+      margin-top: 35px;
+      font-size: 1.2rem;
+      animation: fadeInUp 1.2s ease-in-out 1s forwards;
+      opacity: 0;
+      text-align: center;
+    }
+    
+    .contact p {
+      margin-bottom: 15px;
+      text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+    }
+    
+    .contact-button {
+      text-decoration: none;
+      color: var(--primary-blue);
+      font-weight: 600;
+      background: #ffffff;
+      padding: 14px 32px;
+      border-radius: 12px;
+      transition: transform var(--transition-duration) ease, box-shadow var(--transition-duration) ease;
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
+    }
+    
+    .contact-button:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+      filter: brightness(1.1);
+    }
+    
+    .contact-button i {
+      font-size: 1.3rem;
+    }
+    
+    /* Animações keyframe */
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(25px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    
+    @keyframes fadeInDown {
+      from {
+        opacity: 0;
+        transform: translateY(-25px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    
+    /* Media queries para responsividade */
+    @media (max-width: 768px) {
+      .logo-container img {
+        max-width: 240px;
+      }
+      
+      .description {
+        font-size: 1.15rem;
+        line-height: 1.7;
+      }
+    
+      .content-box {
+        padding: 2.2rem;
+      }
+    
+      .contact-button {
+        padding: 12px 26px;
+      }
+    }
+    
+    @media (max-width: 480px) {
+      .logo-container {
+        margin-bottom: 2rem;
+      }
+    
+      .logo-container img {
+        max-width: 200px;
+      }
+    
+      .content-box {
+        padding: 1.8rem;
+      }
+    
+      .description {
+        font-size: 1.1rem;
+      }
+    }
+    
+    /* Redução de movimento para usuários que preferem menos animações */
+    @media (prefers-reduced-motion: reduce) {
+      * {
+        animation-duration: 0.001ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.001ms !important;
+      }
+    }
+  </style>
+</head>
+<body>
+  <main class="container">
+    <!-- Logo da Engesud -->
+    <div class="logo-container">
+      <img src="https://i.imgur.com/3YKn2xW.png" alt="Logotipo Engesud">
+    </div>
+    <!-- Conteúdo principal -->
+    <article class="content-box">
+      <h1>Engesud Engenharia</h1>
+      <section class="description">
+        <p>
+          Excelência em projetos imobiliários e intermediação de áreas para incorporação e loteamento.
+        </p>
+      </section>
+      <section class="contact">
+        <p>Entre em contato conosco:</p>
+        <a href="https://wa.me/554497013489" target="_blank" class="contact-button" rel="noopener">
+          <i class="fab fa-whatsapp" aria-hidden="true"></i>
+          <span>Fale pelo WhatsApp</span>
+        </a>
+      </section>
+    </article>
+  </main>
+
+  <!-- p5.js Sketch como fundo animado -->
+  <script>
+    let balls = [];
+    const numBalls = 5;
+    const containerRadius = 300;
+    let rotationAngle = 0;
+    
+    function setup() {
+      const canvas = createCanvas(windowWidth, windowHeight, WEBGL);
+      // O canvas já foi posicionado via CSS, mas reforçamos:
+      canvas.position(0, 0);
+      canvas.style('z-index', '-1');
+      frameRate(60);
+      
+      // Cria 5 bolas com posições e velocidades aleatórias
+      for (let i = 0; i < numBalls; i++) {
+        balls.push(new Ball());
+      }
+    }
+    
+    function draw() {
+      // Fundo com tema azulado: cor azul escuro (#004d99)
+      background(0, 77, 153);
+      
+      // Rotaciona lentamente a cena
+      rotationAngle += 0.005;
+      rotateY(rotationAngle);
+      rotateX(rotationAngle * 0.5);
+      
+      // Desenha a esfera container com traço em azul claro
+      noFill();
+      stroke(230, 243, 255); // cor light-blue
+      strokeWeight(2);
+      sphere(containerRadius, 12, 12);
+      
+      // Atualiza e exibe cada bola
+      for (let ball of balls) {
+        ball.update();
+        ball.show();
+      }
+    }
+    
+    function windowResized() {
+      resizeCanvas(windowWidth, windowHeight);
+    }
+    
+    class Ball {
+      constructor() {
+        this.r = 5;
+        // Posição inicial: ponto aleatório dentro da esfera container
+        this.pos = p5.Vector.random3D();
+        this.pos.mult(random(0, containerRadius - this.r));
+        // Velocidade inicial: direção aleatória
+        this.vel = p5.Vector.random3D();
+        this.vel.mult(random(1, 3));
+        // Cor no tema azulado: tons de azul
+        this.col = color(random(0, 50), random(50, 150), random(150, 255));
+        this.trail = [];
+        this.trailMaxLength = 30;
+      }
+      
+      update() {
+        this.trail.push(this.pos.copy());
+        if (this.trail.length > this.trailMaxLength) {
+          this.trail.shift();
+        }
+        this.pos.add(this.vel);
+        let d = this.pos.mag();
+        if (d > containerRadius - this.r) {
+          let n = this.pos.copy().normalize();
+          let dot = this.vel.dot(n);
+          let reflection = p5.Vector.mult(n, 2 * dot);
+          this.vel.sub(reflection);
+          this.pos = n.mult(containerRadius - this.r);
+        }
+      }
+      
+      show() {
+        // Desenha a trilha com transparência progressiva
+        for (let i = 0; i < this.trail.length - 1; i++) {
+          let alphaVal = map(i, 0, this.trail.length - 1, 50, 255);
+          stroke(red(this.col), green(this.col), blue(this.col), alphaVal);
+          strokeWeight(2);
+          let p1 = this.trail[i];
+          let p2 = this.trail[i + 1];
+          line(p1.x, p1.y, p1.z, p2.x, p2.y, p2.z);
+        }
+        // Desenha a bola
+        noStroke();
+        fill(this.col);
+        push();
+        translate(this.pos.x, this.pos.y, this.pos.z);
+        sphere(this.r, 6, 6);
+        pop();
+      }
+    }
+  </script>
+</body>
+</html>
