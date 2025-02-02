@@ -18,7 +18,7 @@
   <!-- Favicon -->
   <link rel="shortcut icon" href="https://i.imgur.com/HjwVm8x.png" type="image/x-icon" />
 
-  <!-- Preconnect para otimização de performance -->
+  <!-- Preconnect -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
@@ -47,7 +47,7 @@
       --transition-duration: 0.4s;
     }
     
-    /* Estilização do body sem background fixo – o fundo será o canvas p5.js */
+    /* Body sem background fixo – o fundo será o canvas do p5.js */
     body {
       font-family: 'Poppins', sans-serif;
       min-height: 100vh;
@@ -57,7 +57,7 @@
       overflow-x: hidden;
     }
     
-    /* O canvas do p5.js ficará abaixo do conteúdo */
+    /* O canvas do p5.js ficará fixo atrás do conteúdo */
     canvas {
       position: fixed;
       top: 0;
@@ -177,7 +177,7 @@
       font-size: 1.3rem;
     }
     
-    /* Animações keyframe */
+    /* Animações */
     @keyframes fadeInUp {
       from {
         opacity: 0;
@@ -200,7 +200,7 @@
       }
     }
     
-    /* Media queries para responsividade */
+    /* Responsividade */
     @media (max-width: 768px) {
       .logo-container img {
         max-width: 240px;
@@ -238,7 +238,7 @@
       }
     }
     
-    /* Redução de movimento para usuários que preferem menos animações */
+    /* Preferência por menos movimento */
     @media (prefers-reduced-motion: reduce) {
       * {
         animation-duration: 0.001ms !important;
@@ -275,65 +275,72 @@
   <!-- p5.js Sketch como fundo animado -->
   <script>
     let balls = [];
-    const numBalls = 5;
+    const numBalls = 2;
     const containerRadius = 300;
     let rotationAngle = 0;
-    
+    let ballColors = []; // Será definido dentro do setup()
+
     function setup() {
       const canvas = createCanvas(windowWidth, windowHeight, WEBGL);
-      // O canvas já foi posicionado via CSS, mas reforçamos:
       canvas.position(0, 0);
       canvas.style('z-index', '-1');
       frameRate(60);
-      
-      // Cria 5 bolas com posições e velocidades aleatórias
+
+      // Define as cores para as 2 bolas
+      ballColors = [
+        color(255, 150, 50),  // Laranja
+        color(50, 255, 150)   // Verde
+      ];
+
+      // Cria as 2 bolas com as cores definidas e com raio duplicado (10)
       for (let i = 0; i < numBalls; i++) {
-        balls.push(new Ball());
+        balls.push(new Ball(ballColors[i]));
       }
     }
-    
+
     function draw() {
-      // Fundo com tema azulado: cor azul escuro (#004d99)
+      // Fundo com tema azulado: azul escuro (RGB 0, 77, 153)
       background(0, 77, 153);
-      
+
       // Rotaciona lentamente a cena
       rotationAngle += 0.005;
       rotateY(rotationAngle);
       rotateX(rotationAngle * 0.5);
-      
-      // Desenha a esfera container com traço em azul claro
+
+      // Desenha a esfera container com contorno light-blue (RGB 230, 243, 255)
       noFill();
-      stroke(230, 243, 255); // cor light-blue
+      stroke(230, 243, 255);
       strokeWeight(2);
       sphere(containerRadius, 12, 12);
-      
+
       // Atualiza e exibe cada bola
       for (let ball of balls) {
         ball.update();
         ball.show();
       }
     }
-    
+
     function windowResized() {
       resizeCanvas(windowWidth, windowHeight);
     }
-    
+
     class Ball {
-      constructor() {
-        this.r = 5;
+      constructor(col) {
+        this.r = 10; // Raio duplicado (10)
         // Posição inicial: ponto aleatório dentro da esfera container
         this.pos = p5.Vector.random3D();
         this.pos.mult(random(0, containerRadius - this.r));
         // Velocidade inicial: direção aleatória
         this.vel = p5.Vector.random3D();
         this.vel.mult(random(1, 3));
-        // Cor no tema azulado: tons de azul
-        this.col = color(random(0, 50), random(50, 150), random(150, 255));
+        // Define a cor da bola
+        this.col = col;
         this.trail = [];
         this.trailMaxLength = 30;
       }
-      
+
       update() {
+        // Armazena a posição atual para a trilha
         this.trail.push(this.pos.copy());
         if (this.trail.length > this.trailMaxLength) {
           this.trail.shift();
@@ -345,10 +352,11 @@
           let dot = this.vel.dot(n);
           let reflection = p5.Vector.mult(n, 2 * dot);
           this.vel.sub(reflection);
-          this.pos = n.mult(containerRadius - this.r);
+          // Garante que a bola permaneça dentro do container
+          this.pos = n.copy().mult(containerRadius - this.r);
         }
       }
-      
+
       show() {
         // Desenha a trilha com transparência progressiva
         for (let i = 0; i < this.trail.length - 1; i++) {
