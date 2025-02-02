@@ -18,7 +18,7 @@
   <!-- Favicon -->
   <link rel="shortcut icon" href="https://i.imgur.com/HjwVm8x.png" type="image/x-icon" />
 
-  <!-- Preconnect para otimização de performance -->
+  <!-- Preconnect -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
@@ -27,6 +27,9 @@
   
   <!-- Font Awesome -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+  <!-- p5.js Library -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.0/p5.js"></script>
 
   <style>
     /* Reset e estilos básicos */
@@ -41,41 +44,25 @@
       --primary-blue: #0066cc;
       --light-blue: #e6f3ff;
       --dark-blue: #004d99;
-      --gradient-start: rgba(0, 102, 204, 0.75);
-      --gradient-end: rgba(0, 77, 153, 0.70);
       --transition-duration: 0.4s;
     }
     
-    /* Estilização do body e background */
+    /* Body sem background fixo – o fundo será o canvas do p5.js */
     body {
       font-family: 'Poppins', sans-serif;
       min-height: 100vh;
       color: #fff;
       position: relative;
-      background: url("https://www.engesudsmart.com.br/animlogo2.gif") no-repeat center center;
-      background-size: cover;
-      background-attachment: fixed;
-      animation: backgroundAnimation 20s ease infinite;
+      background: transparent;
       overflow-x: hidden;
     }
     
-    @keyframes backgroundAnimation {
-      0% { background-position: center center; }
-      50% { background-position: top center; }
-      100% { background-position: center center; }
-    }
-    
-    /* Sobreposição com gradiente e efeito blur */
-    body::before {
-      content: '';
+    /* O canvas do p5.js ficará fixo atrás do conteúdo */
+    canvas {
       position: fixed;
       top: 0;
       left: 0;
-      width: 100%;
-      height: 100%;
-      background: linear-gradient(145deg, var(--gradient-start) 0%, var(--gradient-end) 100%);
-      backdrop-filter: blur(2px);
-      z-index: 1;
+      z-index: -1;
     }
     
     /* Container principal */
@@ -190,7 +177,7 @@
       font-size: 1.3rem;
     }
     
-    /* Animações keyframe */
+    /* Animações */
     @keyframes fadeInUp {
       from {
         opacity: 0;
@@ -213,7 +200,7 @@
       }
     }
     
-    /* Media queries para responsividade */
+    /* Responsividade */
     @media (max-width: 768px) {
       .logo-container img {
         max-width: 240px;
@@ -251,7 +238,7 @@
       }
     }
     
-    /* Redução de movimento para usuários que preferem menos animações */
+    /* Preferência por menos movimento */
     @media (prefers-reduced-motion: reduce) {
       * {
         animation-duration: 0.001ms !important;
@@ -284,5 +271,111 @@
       </section>
     </article>
   </main>
+
+  <!-- p5.js Sketch como fundo animado -->
+  <script>
+    let balls = [];
+    const numBalls = 2;
+    const containerRadius = 300;
+    let rotationAngle = 0;
+    let ballColors = []; // Será definido dentro do setup()
+
+    function setup() {
+      const canvas = createCanvas(windowWidth, windowHeight, WEBGL);
+      canvas.position(0, 0);
+      canvas.style('z-index', '-1');
+      frameRate(60);
+
+      // Define as cores para as 2 bolas
+      ballColors = [
+        color(255, 150, 50),  // Laranja
+        color(50, 255, 150)   // Verde
+      ];
+
+      // Cria as 2 bolas com as cores definidas e com raio duplicado (10)
+      for (let i = 0; i < numBalls; i++) {
+        balls.push(new Ball(ballColors[i]));
+      }
+    }
+
+    function draw() {
+      // Fundo com tema azulado: azul escuro (RGB 0, 77, 153)
+      background(0, 77, 153);
+
+      // Rotaciona lentamente a cena
+      rotationAngle += 0.005;
+      rotateY(rotationAngle);
+      rotateX(rotationAngle * 0.5);
+
+      // Desenha a esfera container com contorno light-blue (RGB 230, 243, 255)
+      noFill();
+      stroke(230, 243, 255);
+      strokeWeight(2);
+      sphere(containerRadius, 12, 12);
+
+      // Atualiza e exibe cada bola
+      for (let ball of balls) {
+        ball.update();
+        ball.show();
+      }
+    }
+
+    function windowResized() {
+      resizeCanvas(windowWidth, windowHeight);
+    }
+
+    class Ball {
+      constructor(col) {
+        this.r = 10; // Raio duplicado (10)
+        // Posição inicial: ponto aleatório dentro da esfera container
+        this.pos = p5.Vector.random3D();
+        this.pos.mult(random(0, containerRadius - this.r));
+        // Velocidade inicial: direção aleatória
+        this.vel = p5.Vector.random3D();
+        this.vel.mult(random(1, 3));
+        // Define a cor da bola
+        this.col = col;
+        this.trail = [];
+        this.trailMaxLength = 30;
+      }
+
+      update() {
+        // Armazena a posição atual para a trilha
+        this.trail.push(this.pos.copy());
+        if (this.trail.length > this.trailMaxLength) {
+          this.trail.shift();
+        }
+        this.pos.add(this.vel);
+        let d = this.pos.mag();
+        if (d > containerRadius - this.r) {
+          let n = this.pos.copy().normalize();
+          let dot = this.vel.dot(n);
+          let reflection = p5.Vector.mult(n, 2 * dot);
+          this.vel.sub(reflection);
+          // Garante que a bola permaneça dentro do container
+          this.pos = n.copy().mult(containerRadius - this.r);
+        }
+      }
+
+      show() {
+        // Desenha a trilha com transparência progressiva
+        for (let i = 0; i < this.trail.length - 1; i++) {
+          let alphaVal = map(i, 0, this.trail.length - 1, 50, 255);
+          stroke(red(this.col), green(this.col), blue(this.col), alphaVal);
+          strokeWeight(2);
+          let p1 = this.trail[i];
+          let p2 = this.trail[i + 1];
+          line(p1.x, p1.y, p1.z, p2.x, p2.y, p2.z);
+        }
+        // Desenha a bola
+        noStroke();
+        fill(this.col);
+        push();
+        translate(this.pos.x, this.pos.y, this.pos.z);
+        sphere(this.r, 6, 6);
+        pop();
+      }
+    }
+  </script>
 </body>
 </html>
