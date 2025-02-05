@@ -3,78 +3,79 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta property="og:url" content="https://www.engesudsmart.com.br/lbk/tsr/yld" />
-    <meta property="og:image" content="https://i.imgur.com/WKoEZHJ.png" />
-    <meta property="og:title" content="Oportunidade de Investimento - Área 15 Alqueires em Maringá" />
-    <meta property="og:description" content="Área com 15 alqueires disponível para desenvolvimento urbano. Localização estratégica e negociações flexíveis." />
+    <meta property="og:url" content="https://www.engesudsmart.com.br/lbk/tsr/yld">
+    <meta property="og:image" content="https://i.imgur.com/WKoEZHJ.png">
+    <meta property="og:title" content="Oportunidade de Investimento - Área 15 Alqueires em Maringá">
+    <meta property="og:description" content="Área com 15 alqueires disponível para desenvolvimento urbano. Localização estratégica e negociações flexíveis.">
     <title>Oportunidade - Área de 15 Alqueires em Maringá</title>
+    <link rel="shortcut icon" href="https://i.imgur.com/ZQ2U8eO.png" type="image/x-icon">
 
-    <!-- Favicon para melhor visualização em guias -->
-<link rel="shortcut icon" href="https://i.imgur.com/ZQ2U8eO.png" type="image/x-icon">
-    
     <style>
         :root {
-            --primary-color: #00796B;
-            --secondary-color: #004D40;
-            --text-color: #37474F;
-            --light-bg: #F5F5F5;
+            --primary-color: #00796B;  /* Verde escuro principal */
+            --secondary-color: #004D40; /* Verde mais escuro (hover, detalhes) */
+            --accent-color: #FFC107;   /* Amarelo/Âmbar para destaque (opcional) */
+            --text-color: #37474F;   /* Cinza escuro para texto principal */
+            --light-bg: #F5F5F5;      /* Fundo cinza claro */
             --border-radius: 12px;
             --box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+            --transition: all 0.3s ease; /* Transição suave para interações */
         }
 
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
+        /* Reset e Estilos Gerais */
+        * { margin: 0; padding: 0; box-sizing: border-box; }
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-family: 'Roboto', sans-serif; /* Fonte moderna e legível */
             background-color: var(--light-bg);
             color: var(--text-color);
-            line-height: 1.8;
+            line-height: 1.6; /* Espaçamento entre linhas */
         }
 
+        /* Cabeçalho */
         header {
             background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)),
                         url('https://www.engesudsmart.com.br/lbk/tsr/yld/fundo.png') center/cover no-repeat;
-            height: 500px;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
+            padding: 4rem 2rem; /* Espaçamento interno responsivo */
             text-align: center;
             color: white;
             position: relative;
+            overflow: hidden; /* Para o efeito do triângulo */
         }
 
         header::after {
             content: '';
             position: absolute;
-            bottom: -50px;
+            bottom: -50px; /* Ajuste para o triângulo */
             left: 0;
-            right: 0;
+            width: 100%;
             height: 100px;
-            background: linear-gradient(to bottom right, transparent 49%, white 51%);
+            background: linear-gradient(to bottom right, transparent 49%, white 50%); /* Triângulo mais suave */
+            z-index: 0; /* Abaixo do conteúdo */
         }
 
-        header h1 {
-            font-size: 3.5rem;
-            margin-bottom: 20px;
+
+         header h1 {
+            font-size: clamp(2.5rem, 7vw, 4rem);  /* Tamanho responsivo */
+            margin-bottom: 1rem;
             text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+            z-index:1;
+            position: relative;
         }
-
         header p {
-            font-size: 1.8rem;
+            font-size: clamp(1.2rem, 3vw, 1.8rem); /* Tamanho responsivo */
             max-width: 800px;
             margin: 0 auto;
             text-shadow: 1px 1px 3px rgba(0,0,0,0.3);
+            z-index: 1;
+            position: relative;
+
         }
 
+        /* Conteúdo Principal */
         .content {
             max-width: 1200px;
-            margin: -60px auto 0;
-            padding: 40px;
+            margin: -60px auto 0; /* Posiciona o conteúdo sobre o header */
+            padding: 2rem;
             background: white;
             border-radius: var(--border-radius);
             box-shadow: var(--box-shadow);
@@ -82,84 +83,102 @@
             z-index: 1;
         }
 
-        .feature-box {
+        /* Seções e Títulos */
+        .feature-box, .highlight {
             background: var(--light-bg);
-            padding: 30px;
+            padding: 2rem;
             border-radius: var(--border-radius);
-            margin: 30px 0;
+            margin: 2rem 0;
             border-left: 5px solid var(--primary-color);
         }
 
         h2 {
             color: var(--secondary-color);
-            margin-bottom: 30px;
-            font-size: 2rem;
+            margin-bottom: 1.5rem;
+            font-size: clamp(1.8rem, 4vw, 2.2rem); /* Tamanho responsivo */
             border-bottom: 3px solid var(--primary-color);
-            padding-bottom: 15px;
+            padding-bottom: 0.75rem;
+            position: relative; /* Para elementos decorativos (opcional) */
+
         }
 
+        /* Parágrafos */
         p {
-            font-size: 1.2rem;
+            font-size: 1.1rem;
             color: #555;
-            margin: 20px 0;
+            margin-bottom: 1rem;
+        }
+        p strong{
+             font-size: 1.2rem;
         }
 
+
+        /* Mapa */
         .map {
-            margin: 40px 0;
+            margin: 2rem 0;
             position: relative;
-            padding-top: 56.25%;
+            padding-top: 56.25%; /* Proporção 16:9 */
+            border-radius: var(--border-radius); /* Bordas no container */
+            overflow: hidden; /* Garante que o iframe respeite as bordas */
+            box-shadow: var(--box-shadow); /* Sombra no container */
         }
 
-        iframe {
+        .map iframe {
             position: absolute;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
-            border: none;
-            border-radius: var(--border-radius);
-            box-shadow: var(--box-shadow);
+            border: none; /* Remove borda padrão do iframe */
+
         }
 
+        /* Grid de Imagens */
         .image-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
-            margin: 40px 0;
+            gap: 1.5rem;
+            margin: 2rem 0;
         }
 
         .image-grid img {
             width: 100%;
             height: auto;
-            object-fit: contain;
+            object-fit: contain;  /* Ajusta a imagem mantendo proporção */
             border-radius: var(--border-radius);
             box-shadow: var(--box-shadow);
-            transition: transform 0.3s ease;
+            transition: var(--transition);
+             /* Melhora performance da transição */
+             will-change: transform;
+
         }
 
         .image-grid img:hover {
             transform: scale(1.05);
         }
 
+        /* Botões de Ação */
         .action-buttons {
-            margin: 60px 0 40px;
+            margin: 3rem 0 2rem;
             display: flex;
-            gap: 30px;
+            flex-wrap: wrap; /* Quebra para nova linha em telas menores */
+            gap: 1.5rem;
             justify-content: center;
         }
 
         .action-button {
             background-color: var(--primary-color);
             color: white;
-            padding: 20px 40px;
-            border-radius: 50px;
+            padding: 1rem 2rem;
+            border-radius: 50px; /* Bordas arredondadas */
             text-decoration: none;
             font-weight: bold;
-            font-size: 1.2rem;
-            transition: all 0.3s ease;
-            display: flex;
+            font-size: 1.1rem;
+            transition: var(--transition);
+            display: inline-flex; /* Para alinhar ícones */
             align-items: center;
-            gap: 10px;
+            gap: 0.5rem; /* Espaço entre ícone e texto */
+            white-space: nowrap; /* Evita quebra de texto */
         }
 
         .action-button:hover {
@@ -168,63 +187,75 @@
             box-shadow: 0 6px 20px rgba(0,0,0,0.2);
         }
 
-        .highlight {
-            background-color: #E8F5E9;
-            padding: 20px;
-            border-radius: var(--border-radius);
-            margin: 30px 0;
+        /* Link com Estilo */
+        .highlight a {
+            color: var(--primary-color);
+            text-decoration: none;
+            font-weight: bold;
+            transition: var(--transition);
         }
 
+        .highlight a:hover {
+            text-decoration: underline;
+            color: var(--secondary-color);
+        }
+
+        /* Rodapé */
         footer {
             text-align: center;
-            padding: 60px 20px;
+            padding: 3rem 1rem;
             background: linear-gradient(to bottom, var(--secondary-color), #003330);
             color: white;
-            margin-top: 60px;
+            margin-top: 3rem;
         }
 
         footer img {
             max-width: 180px;
-            margin-bottom: 30px;
+            margin-bottom: 1.5rem;
             border-radius: 10px;
         }
 
         footer p {
             color: white;
-            margin: 10px 0;
-            font-size: 1.1rem;
+            margin-bottom: 0.5rem;
+            font-size: 1rem;
         }
-@media (max-width: 768px) {
-    header {
-        height: 300px;
-    }
+         footer p a{
+            color: white;
+            text-decoration: none;
 
-    header h1 {
-        font-size: 2.5rem;
-    }
+        }
 
-    .content {
-        max-width: 100%;
-        padding: 20px;
-    }
+        /* Media Queries (Responsividade) */
+        @media (max-width: 768px) {
+            .content {
+                padding: 1rem; /* Reduz padding em telas menores */
+                margin-top: -30px;
+            }
 
-    .image-grid {
-        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    }
+            .image-grid {
+                grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Ajuste do grid */
+            }
+            .feature-box, .highlight{
+                padding: 1.5rem;
+            }
+            footer {
+                padding: 2rem 1rem;
+             }
 
-    .action-buttons {
-        margin: 30px 0 20px;
-    }
+        }
+           /* Otimização para telas menores */
+            @media (max-width: 480px) {
 
-    .action-button {
-        padding: 15px 30px;
-        font-size: 1rem;
-    }
+                .action-button {
+                    width: 100%; /* Ocupa toda a largura */
+                    justify-content: center; /* Centraliza o texto/ícone */
+                }
 
-    footer {
-        padding: 40px 10px;
-    }
-}
+                header::after{
+                    bottom:-25px;
+                }
+            }
 
     </style>
 </head>
@@ -269,13 +300,14 @@
         </div>
     </div>
 
-     <footer>
-     <a href="http://www.engesudsmart.com.br" target="_blank" title="www.engesudsmart.com.br">    <img src="https://i.imgur.com/3YKn2xW.png" alt="Logo Engesud"> </a> 
+    <footer>
+        <a href="http://www.engesudsmart.com.br" target="_blank" title="www.engesudsmart.com.br">
+            <img src="https://i.imgur.com/3YKn2xW.png" alt="Logo Engesud">
+        </a>
         <p><strong>Engesud Engenharia e Intermediação LTDA</strong></p>
         <p>Robson Luis da Costa | <a href="https://wa.me/4497013489" title="Whatsapp">+55 (44) 99701-3489</a></p>
-  <p><a href="https://www.engesudsmart.com.br"  target="_blank" >www.engesudsmart.com.br</a></p> 
- <p>Última atualização: 20 de novembro de 2024 </p>  
-</footer>
-
+        <p><a href="https://www.engesudsmart.com.br" target="_blank">www.engesudsmart.com.br</a></p>
+        <p>Última atualização: 20 de novembro de 2024</p>
+    </footer>
 </body>
 </html>
