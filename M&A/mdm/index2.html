@@ -1,1 +1,361 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Investment Opportunity: Mademax</title>
+    <!-- Meta Tags for Social Sharing -->
+    <meta property="og:url" content="http://www.engesudsmart.com.br/M&A/mdm/index2.html">
+    <meta property="og:image" content="https://i.imgur.com/QZbc0tW.png">
+    <meta property="og:title" content="Investment Opportunity: Mademax">
+    <meta property="og:description" content="Innovative proposal for the acquisition of Mademax assets.">
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="https://i.imgur.com/HjwVm8x.png" type="image/x-icon">
+    <!-- Watermark -->
+    <!-- This content is protected by copyright credited to Engesud Engenharia e Intermediação LTDA, registered under CNPJ 40.601.637/0001-58 -->
+    <style>
+          @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap');
 
+/* Estilos Gerais (aplicam-se a ambas as páginas) */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background-color: #f5f5f5;
+}
+
+.container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+h2 {
+    color: #2c3e50;
+    margin-bottom: 1.5rem;
+    font-weight: 700;
+    border-bottom: 2px solid #3498db;
+    padding-bottom: 10px;
+}
+
+ul {
+    list-style-type: none;
+    padding-left: 20px;
+}
+
+li {
+    margin-bottom: 15px;
+    position: relative;
+    padding-left: 25px;
+}
+
+li:before {
+    content: "➤";
+    color: #3498db;
+    position: absolute;
+    left: 0;
+}
+
+.highlight {
+    background-color: #e8f6ff;
+    border-left: 4px solid #3498db;
+    padding: 20px;
+}
+
+.button-link {
+    display: block;
+    width: max-content;
+    margin: 30px auto;
+    padding: 15px 30px;
+    font-size: 18px;
+    text-decoration: none;
+    color: #fff;
+    background-color: #3498db;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.button-link:hover {
+    background-color: #2980b9;
+}
+
+/* Header (estilos específicos do header) */
+header {
+    background: url('https://i.imgur.com/ELi1jwv.png') center/cover no-repeat;
+    text-align: center;
+    padding: 8rem 0;
+    margin-bottom: 30px;
+    position: relative;
+}
+
+header::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Mesmo overlay escuro */
+    z-index: -1;
+}
+
+header h1 {
+    font-weight: 700;
+    letter-spacing: 1px;
+    color: #fff;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    font-size: 2.5rem;
+    z-index: 1; /* Garante que o título fique acima do overlay */
+}
+
+/* Slides (estilos para os slides) */
+.slide {
+    background-color: #fff;
+    margin-bottom: 30px;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Estilos específicos para index.html */
+.property-details {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+}
+
+.property-card {
+    flex: 1 1 calc(50% - 15px);
+    min-width: 250px;
+    background-color: #f9f9f9;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 20px auto;
+    border-radius: 8px;
+}
+
+.map-link {
+    display: inline-block;
+    margin-top: 15px;
+    color: #fff;
+    text-decoration: none;
+    background-color: #3498db;
+    padding: 10px 20px;
+    border-radius: 5px;
+}
+
+.map-link:hover {
+    background-color: #2980b9;
+}
+
+.report-links {
+    text-align: center;
+    margin-top: 30px;
+}
+
+.report-button {
+    display: inline-block;
+    margin: 10px;
+    padding: 12px 25px;
+    font-size: 16px;
+    text-decoration: none;
+    color: #fff;
+    background-color: #3498db;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.report-button:hover {
+    background-color: #2980b9;
+}
+
+/* Footer (estilos consistentes para ambas as páginas) */
+footer {
+    background-color: #2c3e50;
+    color: #fff;
+    text-align: center;
+    padding: 2rem 0;
+    margin-top: 30px;
+    position: relative;  /* Para o gradiente */
+    overflow: hidden;   /* Para o gradiente */
+}
+
+footer::before { /* Gradiente opcional */
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom, rgba(44, 62, 80, 0.9), rgba(44, 62, 80, 1));
+    z-index: 1;
+}
+
+.footer-container {
+    max-width: 1100px;
+    margin: 0 auto;
+    position: relative; /* Para o z-index */
+    z-index: 2;        /* Conteúdo do footer acima do gradiente */
+}
+
+.footer-info {
+    margin-top: 1rem;
+}
+
+footer img.logo-rounded {
+    width: 100px;
+    border-radius: 10px;
+    display: block;
+    margin: 0 auto;
+}
+
+footer p {
+    font-size: 14px;
+    color: #eee;
+    margin: 5px 0;
+    line-height: 1.4;
+}
+
+footer a {
+    color: #3498db;
+    text-decoration: none;
+    transition: color 0.2s;
+}
+
+footer a:hover {
+    color: #2980b9;
+}
+
+/* Media Queries (responsividade) */
+@media (max-width: 768px) {
+    .container {
+        padding: 15px;
+    }
+
+    .property-card {
+        flex-basis: 100%; /* Ocupa toda a largura em telas menores */
+    }
+}
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Investment Opportunity: Mademax</h1>
+    </header>
+    <div class="container">
+        <div class="slide">
+            <h2>About Mademax</h2>
+            <ul>
+                <li>Established company in the timber sector, with a strong presence and recognition in the market.</li>
+                <li>Recognized for the high quality of its products and sustainable practices.</li>
+                <li>Assets strategically located in privileged regions, ensuring access to high-quality resources and optimized logistics.</li>
+                <li>Great potential for growth and expansion, both in existing and new markets.</li>
+                <li>Commitment to innovation and sustainability, aligned with current market trends and consumer demands.</li>
+            </ul>
+        </div>
+
+        <div class="slide">
+            <h2>Key Assets</h2>
+            <ul>
+                <li>Two productive farms, optimized for efficiency and sustainability.</li>
+                <li>Modern and well-equipped Mademax industrial complex.</li>
+                <li>Strategic location that facilitates logistics and distribution.</li>
+            </ul>
+        </div>
+
+        <div class="slide">
+            <h2>Property Details</h2>
+            <div class="property-details">
+                <div class="property-card">
+                    <h3>Itapura Farm</h3>
+                    <ul>
+                        <li>Bare Land: US$ 21,000,000.00</li>
+                        <li>Reforestation: US$ 1,421,000.00</li>
+                        <li>Fixed Assets: US$ 1,450,000.00</li>
+                    </ul>
+                </div>
+                <div class="property-card">
+                    <h3>Água Amarela Farm</h3>
+                    <ul>
+                        <li>Bare Land: US$ 13,963,000.00</li>
+                        <li>Reforestation: US$ 3,987,000.00</li>
+                        <li>Fixed Assets (Houses): US$ 60,000.00</li>
+                    </ul>
+                </div>
+                <div class="property-card">
+                    <h3>Industry</h3>
+                    <ul>
+                        <li>Sawmill: US$ 1,294,000.00</li>
+                    </ul>
+                </div>
+                <div class="property-card">
+                    <h3>Adrianópolis</h3>
+                    <ul>
+                        <li>Value: US$ 1,667,000.00</li>
+                        <li>Physical Area (4.32 HA): US$ 417,000.00</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="slide highlight">
+            <h2>Why Invest in Mademax?</h2>
+            <ul>
+                <li><strong>Strategic Expansion:</strong> Opportunity to enter or expand in the timber market with an already established company.</li>
+                <li><strong>High-Value Assets:</strong> Acquisition of tangible, high-value assets, including land, facilities, and operations.</li>
+                <li><strong>Sustainability:</strong> Investment in a company committed to sustainable and responsible practices.</li>
+                <li><strong>Return Potential:</strong> High potential for return on investment, driven by market growth and operational optimization.</li>
+                <li><strong>Strategic Location:</strong> Assets located in regions with excellent access to natural resources and distribution routes.</li>
+                <li><strong>Innovation and Technology:</strong> Access to innovative processes and cutting-edge technology in the timber sector.</li>
+                <li><strong>Portfolio Diversification:</strong> An excellent opportunity to diversify investments in a solid and growing sector.</li>
+                <li><strong>Growth with the Mademax Brand:</strong> Leverage the reputation and strength of the Mademax brand to drive growth and profitability.</li>
+            </ul>
+        </div>
+
+        <div class="slide">
+            <h2>Mademax Property Map</h2>
+            <img src="https://i.imgur.com/Kf0YlBh.jpeg" alt="Mademax Property Map">
+            <div class="report-links">
+                <a href="https://www.google.com/maps/d/viewer?mid=1QeHLhKfDj7Wkyn3fHtDoAGuSrCGSMhc&hl=pt-BR" class="report-button" target="_blank">View property map</a>
+                <a href="https://wa.me/554499013489" class="report-button" target="_blank">Request Mademax Executive Presentation</a>
+            </div>
+        </div>
+
+        <div class="slide">
+            <h2>Detailed Proposal</h2>
+            <p>We present a structured and advantageous acquisition proposal, with a transition model that allows for the gradual and efficient integration of Mademax assets.</p>
+            <p>Discover how the proposal was designed to ensure a smooth transition, maximizing return potential and minimizing risks.</p>
+            <a href="simulacao2.html" class="button-link">Explore Acquisition Proposal</a> 
+        </div>
+
+    </div>
+    <footer>
+        <div class="footer-container">
+            <a href="http://www.engesudsmart.com.br" target="_blank" title="www.engesudsmart.com.br">
+                <img src="https://i.imgur.com/3YKn2xW.png" alt="Engesud Logo" class="logo-rounded">
+            </a>
+            <div class="footer-info">
+                <p><strong>Engesud Engenharia e Intermediação LTDA</strong></p>
+                <p>Robson Luis da Costa | <a href="https://wa.me/5544997013489" title="Access Whatsapp">+55 (44) 99701-3489</a></p>
+                <p><a href="https://www.engesudsmart.com.br">www.engesudsmart.com.br</a></p>
+                <p>Last updated: December 9, 2024</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- No script needed here -->
+</body>
+</html>
