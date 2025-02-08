@@ -1,1 +1,379 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Acquisition Proposal: Mademax</title>
+    <!-- Meta Tags for Social Sharing -->
+    <meta property="og:url" content="http://www.engesudsmart.com.br/M&A/mdm/simulacao2.html">
+    <meta property="og:image" content="https://i.imgur.com/OQ1LVey.png">
+    <meta property="og:title" content="Acquisition Proposal: Mademax">
+    <meta property="og:description" content="Details of the simulated acquisition proposal for Mademax assets.">
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="https://i.imgur.com/HjwVm8x.png" type="image/x-icon">
+    <!-- Watermark -->
+    <!-- This content is protected by copyright credited to Engesud Engenharia e Intermediação LTDA, registered under CNPJ 40.601.637/0001-58 -->
+   <style>
+        @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap');
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            font-family: 'Roboto', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f5f5f5;
+        }
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        header {
+            background: url('https://i.imgur.com/ELi1jwv.png') center/cover no-repeat;
+            /* Removido: opacity: 0.9; */
+            text-align: center;
+            padding: 8rem 0;
+            margin-bottom: 30px;
+            position: relative;
+        }
+        header::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            z-index: -1;
+        }
+        header h1 {
+            font-weight: 700;
+            letter-spacing: 1px;
+            color: #fff;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+            font-size: 2.5rem;
+        }
+        .slide {
+            background-color: #fff;
+            margin-bottom: 30px;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+        h2 {
+            color: #2c3e50;
+            margin-bottom: 1.5rem;
+            font-weight: 700;
+            border-bottom: 2px solid #3498db;
+            padding-bottom: 10px;
+        }
+        ul {
+            list-style-type: none;
+            padding-left: 20px;
+        }
+        li {
+            margin-bottom: 15px;
+            position: relative;
+            padding-left: 25px;
+        }
+        li:before {
+            content: "➤";
+            color: #3498db;
+            position: absolute;
+            left: 0;
+        }
+        .highlight {
+            background-color: #e8f6ff;
+            border-left: 4px solid #3498db;
+            padding: 20px;
+        }
+    footer {
+            background-color: #2c3e50; /* Cor de fundo escura (mesma do header::before) */
+            color: #fff;            /* Texto branco para contraste */
+            text-align: center;      /* Centraliza todo o conteúdo */
+            padding: 2rem 0;       /* Espaçamento interno superior e inferior */
+            margin-top: 30px;       /* Espaçamento acima do footer */
+            position: relative;      /* Permite posicionar o pseudo-elemento ::before */
+            overflow: hidden;      /* Importante para o gradiente */
+        }
 
+        /* Gradiente sutil para o fundo do footer (opcional) */
+        footer::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(to bottom, rgba(44, 62, 80, 0.9), rgba(44, 62, 80, 1)); /* Gradiente */
+            z-index: 1;            /* Coloca o gradiente atrás do conteúdo */
+        }
+
+
+        .footer-container {
+            max-width: 1100px;     /* Largura máxima igual ao container principal */
+            margin: 0 auto;        /* Centraliza o container */
+            position: relative;     /* Garante que o z-index do footer funcione em relação a este container */
+            z-index: 2;           /* Coloca o conteúdo do footer na frente do gradiente */
+        }
+
+        .footer-info {
+            margin-top: 1rem;      /* Espaço entre o logo e o texto */
+        }
+
+        footer img.logo-rounded {
+            width: 100px;         /* Largura do logo */
+            border-radius: 10px;   /* Cantos arredondados */
+            display: block;       /* Faz a imagem se comportar como bloco */
+            margin: 0 auto;        /* Centraliza a imagem horizontalmente (método mais limpo) */
+        }
+
+        footer p {
+            font-size: 14px;      /* Tamanho da fonte */
+            color: #eee;          /* Cor do texto (um pouco mais claro que branco puro) */
+            margin: 5px 0;        /* Margens superior e inferior */
+            line-height: 1.4;     /* Espaçamento entre linhas */
+        }
+
+        footer a {
+            color: #3498db;       /* Cor dos links (azul) */
+            text-decoration: none;/* Remove o sublinhado */
+            transition: color 0.2s;/* Transição suave na cor */
+        }
+
+        footer a:hover {
+            color: #2980b9;       /* Cor mais escura no hover */
+        }
+
+/* Media query NÃO é mais necessária, o layout é simples e responsivo por padrão */
+
+/* Media query para layout em telas maiores (opcional, ajuste conforme necessário) */
+@media (min-width: 768px) {
+
+}
+        .button-link {
+            display: block;
+            width: max-content;
+            margin: 30px auto;
+            padding: 15px 30px;
+            font-size: 18px;
+            text-decoration: none;
+            color: #fff;
+            background-color: #3498db;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+        .button-link:hover {
+            background-color: #2980b9;
+        }
+        #timeline {
+            position: relative;
+            height: 600px; /* Altura original */
+            margin-top: 50px; /* Margem superior original */
+            background-color: #f9f9f9;
+            border-radius: 8px;
+            padding: 20px;
+            box-shadow: inset 0 0 10px rgba(0,0,0,0.05);
+        }
+        .asset {
+            position: absolute;
+            left: 0;
+            height: 40px;
+            background: #3498db;
+            border-radius: 5px;
+            transition: width 0.5s ease-in-out;
+        }
+        .asset-label {
+            position: absolute;
+            left: 10px;
+            top: 10px;
+            color: white;
+            font-size: 14px;
+            font-weight: bold;
+        }
+        #progress {
+            position: absolute;
+            top: -40px;
+            left: 0;
+            width: 100%;
+            text-align: center;
+            font-size: 18px;
+            font-weight: bold;
+            color: #2c3e50;
+        }
+        #controls {
+            text-align: center;
+            margin-top: 30px;
+        }
+        button {
+            padding: 12px 25px;
+            font-size: 16px;
+            cursor: pointer;
+            background-color: #3498db;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            margin: 0 10px;
+        }
+        button:hover {
+            background-color: #2980b9;
+        }
+        @media (max-width: 768px) {
+            .container {
+                padding: 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Acquisition Proposal: Mademax</h1>
+    </header>
+    <div class="container">
+        <div class="slide">
+            <h2>Proposed Payment Structure</h2>
+            <ul>
+                <li><strong>60 monthly installments of US$ 750,000</strong>, providing a manageable and predictable payment structure.</li>
+                <li><strong>Total value of US$ 45,000,000 (subject to adjustments)</strong>, reflecting the fair value and potential of Mademax assets.</li>
+                <li><strong>Monthly adjustment according to an agreed-upon index</strong>, ensuring fairness and value adjustment over time.</li>
+            </ul>
+        </div>
+        <div class="slide">
+            <h2>Transition Model</h2>
+            <ul>
+                <li>The acquiring company gradually takes over the operation of Mademax, allowing for a smooth and efficient integration.</li>
+                <li>The operational results obtained during the transition period contribute to the payment of installments, aligning the interests of both parties.</li>
+                <li>Progressive transfer of asset ownership, ensuring a safe and transparent transition.</li>
+            </ul>
+        </div>
+        <div class="slide">
+            <h2>Simulation of Payments and Asset Transfer</h2>
+            <p>Follow the simulation of the payment progression and the consequent transfer of asset ownership.</p>
+            <div id="timeline">
+                <div id="progress">Month: <span id="month">0</span> | Paid: US$ <span id="paid">0</span> million</div>
+            </div>
+            <div id="controls">
+                <button id="playBtn">Start</button>
+                <button id="resetBtn">Reset</button>
+            </div>
+        </div>
+        <div class="slide highlight">
+            <h2>Benefits of the Proposal</h2>
+            <ul>
+                <li><strong>Strategic Acquisition:</strong> A unique opportunity to acquire valuable assets in the timber sector, with a facilitated payment structure.</li>
+                <li><strong>Gradual Integration:</strong> The proposed transition model allows for a gradual and efficient integration of operations, minimizing risks and maximizing synergies.</li>
+                <li><strong>Facilitated Financing:</strong> The 60-month payment structure makes the acquisition more accessible and less burdensome.</li>
+                <li><strong>Value Appreciation Potential:</strong> Investment in assets with high potential for appreciation and long-term return.</li>
+                <li><strong>Transparency and Security:</strong> A transparent and secure acquisition process, with the transfer of asset ownership aligned with the progress of payments.</li>
+                <li><strong>Sustainable Growth:</strong> Alignment with a company that values sustainable and responsible practices.</li>
+                <li><strong>Strategic Partnership:</strong> Opportunity to form a strategic partnership with Engesud, which has expertise in engineering and business intermediation.</li>
+            </ul>
+        </div>
+
+        <div class="slide">
+            <h2>Interested? Get in Touch!</h2>
+            <p>If you want to know more about this proposal and how it can benefit your investment strategy, please contact us. We are ready to provide additional information and discuss the next steps.</p>
+            <a href="index2.html" class="button-link">Back to Homepage</a>
+        </div>
+    </div>
+    <footer>
+       <div class="footer-container">
+            <a href="http://www.engesudsmart.com.br" target="_blank" title="www.engesudsmart.com.br">
+                <img src="https://i.imgur.com/3YKn2xW.png" alt="Engesud Logo" class="logo-rounded">
+            </a>
+            <div class="footer-info">
+                <p><strong>Engesud Engenharia e Intermediação LTDA</strong></p>
+                <p>Robson Luis da Costa | <a href="https://wa.me/5544997013489" title="Access Whatsapp">+55 (44) 99701-3489</a></p>
+                <p><a href="https://www.engesudsmart.com.br">www.engesudsmart.com.br</a></p>
+                <p>Last updated: December 9, 2024</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+    const assets = [
+        { name: "Itapura Farm - Bare Land", value: 21.00, top: 0 },
+        { name: "Água Amarela Farm - Bare Land", value: 13.97, top: 60 },
+        { name: "Itapura Farm - Reforestation", value: 1.42, top: 120 },
+        { name: "Água Amarela Farm - Reforestation", value: 3.99, top: 180 },
+        { name: "Itapura Farm - Fixed Assets", value: 1.45, top: 240 },
+        { name: "Adrianópolis", value: 1.67, top: 300 },
+        { name: "Sawmill", value: 1.29, top: 360 },
+        { name: "Industry - Physical Area (4.32 HA)", value: 0.42, top: 420 },
+        { name: "Água Amarela Farm - Fixed Assets (Houses)", value: 0.06, top: 480 }
+    ];
+
+    // No need to adjust values here, already in USD
+
+    const totalValue = assets.reduce((sum, asset) => sum + asset.value, 0);
+    const monthlyPayment = 0.75; // 4.5 million BRL / 6 = 0.75 million USD
+    const totalMonths = 60;
+
+    let currentMonth = 0;
+    let intervalId;
+
+    function createAssetElements() {
+        const timeline = document.getElementById('timeline');
+        assets.forEach(asset => {
+            const assetElement = document.createElement('div');
+            assetElement.className = 'asset';
+            assetElement.style.top = `${asset.top}px`;
+            assetElement.style.width = '0%';
+
+            const labelElement = document.createElement('div');
+            labelElement.className = 'asset-label';
+            labelElement.textContent = `${asset.name} (US$ ${asset.value.toFixed(2)} million)`;
+
+            assetElement.appendChild(labelElement);
+            timeline.appendChild(assetElement);
+        });
+    }
+
+    function updateTimeline() {
+        currentMonth++;
+        const totalPaid = currentMonth * monthlyPayment;
+        let remainingPaid = totalPaid;
+
+        document.getElementById('month').textContent = currentMonth;
+        document.getElementById('paid').textContent = totalPaid.toFixed(2);
+
+        assets.forEach((asset, index) => {
+            const assetElement = document.querySelectorAll('.asset')[index];
+            if (remainingPaid > 0) {
+                const paidPercentage = Math.min(100, (remainingPaid / asset.value) * 100);
+                assetElement.style.width = `${paidPercentage}%`;
+                remainingPaid -= asset.value;
+            }
+        });
+
+        if (currentMonth >= totalMonths) {
+            clearInterval(intervalId);
+            intervalId = null; // Allow reset after completion
+        }
+    }
+
+    document.getElementById('playBtn').addEventListener('click', () => {
+        if (!intervalId) {
+            intervalId = setInterval(updateTimeline, 500);
+        }
+    });
+
+    document.getElementById('resetBtn').addEventListener('click', () => {
+        clearInterval(intervalId);
+        intervalId = null;
+        currentMonth = 0;
+        document.getElementById('month').textContent = '0';
+        document.getElementById('paid').textContent = '0.00'; // Reset to 0.00
+        document.querySelectorAll('.asset').forEach(asset => {
+            asset.style.width = '0%';
+        });
+    });
+
+    createAssetElements();
+
+    </script>
+</body>
+</html>
