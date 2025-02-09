@@ -1,173 +1,270 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="shortcut icon" href="https://i.imgur.com/HjwVm8x.png" type="image/x-icon">
-    <title>Em Breve</title>
-    <style>
-        body {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            margin: 0;
-            font-family: Arial, sans-serif;
-            background-color: #000;
-            overflow: hidden;
-            color: white;
-        }
-        h1 {
-            text-align: center;
-            font-size: 3em;
-            animation: fadeIn 3s ease-in-out infinite alternate;
-        }
-        @keyframes fadeIn {
-            0% { opacity: 0; transform: scale(0.9); }
-            100% { opacity: 1; transform: scale(1.1); }
-        }
-        .stars {
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            background: url('https://raw.githubusercontent.com/robsonlc/engesud/main/lbk/tsr/osha/stars.png') repeat;
-            z-index: -1;
-            animation: moveStars 50s linear infinite;
-        }
-        @keyframes moveStars {
-            from { transform: translateY(0); }
-            to { transform: translateY(-1000px); }
-        }
-        .shooting-star {
-            position: absolute;
-            width: 2px;
-            height: 150px;
-            background: linear-gradient(white, rgba(255, 255, 255, 0));
-            animation: shootingStar 2s ease-out infinite;
-        }
-        @keyframes shootingStar {
-            from {
-                top: -10%;
-                left: 100%;
-            }
-            to {
-                top: 100%;
-                left: -10%;
-            }
-        }
-        .glowing-text {
-            color: #fff;
-            text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 20px #ff00ff, 0 0 30px #ff00ff, 0 0 40px #ff00ff, 0 0 50px #ff00ff, 0 0 60px #ff00ff;
-            animation: glow 1s ease-in-out infinite alternate;
-        }
-        @keyframes glow {
-            from {
-                text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 20px #ff00ff, 0 0 30px #ff00ff, 0 0 40px #ff00ff, 0 0 50px #ff00ff, 0 0 60px #ff00ff;
-            }
-            to {
-                text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #ff00ff, 0 0 40px #ff00ff, 0 0 50px #ff00ff, 0 0 60px #ff00ff, 0 0 70px #ff00ff;
-            }
-        }
-        .floating-objects {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            width: 10px;
-            height: 10px;
-            background: red;
-            border-radius: 50%;
-            animation: float 5s ease-in-out infinite;
-        }
-        @keyframes float {
-            0%, 100% {
-                transform: translateY(0) translateX(0);
-            }
-            50% {
-                transform: translateY(-20px) translateX(20px);
-            }
-        }
-        .twinkling-stars {
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            background: transparent;
-            overflow: hidden;
-            z-index: 1;
-        }
-        .twinkling-stars::before, .twinkling-stars::after {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: transparent;
-            opacity: 0.5;
-            animation: twinkling 1.5s infinite ease-in-out alternate;
-        }
-        .twinkling-stars::after {
-            animation-delay: 0.75s;
-        }
-        @keyframes twinkling {
-            0% { background: rgba(255, 255, 255, 0.1); }
-            100% { background: rgba(255, 255, 255, 0.3); }
-        }
-        .nebula {
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            background: radial-gradient(circle at center, rgba(255, 0, 255, 0.2), transparent);
-            z-index: 0;
-            animation: pulse 3s infinite;
-        }
-        @keyframes pulse {
-            0%, 100% { transform: scale(1); }
-            50% { transform: scale(1.1); }
-        }
-        .comet {
-            position: absolute;
-            width: 2px;
-            height: 250px;
-            background: linear-gradient(white, rgba(255, 255, 255, 0));
-            animation: comet 3s ease-out infinite;
-        }
-        @keyframes comet {
-            from {
-                top: -20%;
-                left: 120%;
-            }
-            to {
-                top: 120%;
-                left: -20%;
-            }
-        }
-        .meteor {
-            position: absolute;
-            width: 3px;
-            height: 200px;
-            background: linear-gradient(white, rgba(255, 255, 255, 0));
-            animation: meteor 4s ease-out infinite;
-        }
-        @keyframes meteor {
-            from {
-                top: -30%;
-                left: 110%;
-            }
-            to {
-                top: 110%;
-                left: -30%;
-            }
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta property="og:url" content="https://www.engesudsmart.com.br/lbk/tsr/dhr">
+  <meta property="og:image" content="https://i.imgur.com/yrmBNV9.png">
+  <title>Potencial de Desenvolvimento da Área</title>
+  <link rel="shortcut icon" href="https://i.imgur.com/HjwVm8x.png" type="image/x-icon">
+  <style>
+    :root {
+      --primary: #2563eb;
+      --secondary: #1e40af;
+      --text: #1f2937;
+      --background: #f9fafb;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: system-ui, -apple-system, sans-serif;
+      line-height: 1.6;
+      color: var(--text);
+      background: var(--background);
+    }
+
+    .container {
+      width: 100%;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 1rem;
+    }
+
+    header {
+      position: relative;
+      height: 60vh;
+      min-height: 300px;
+      background: url('https://i.imgur.com/4nFJFG5.png') center/cover no-repeat;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    header::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: rgba(255, 255, 255, 0.85);
+      backdrop-filter: blur(2px);
+    }
+
+    .header-content {
+      position: relative;
+      z-index: 1;
+      text-align: center;
+      padding: 2rem;
+    }
+
+    .header-content h1 {
+      font-size: clamp(2rem, 5vw, 3.5rem);
+      color: var(--primary);
+      margin-bottom: 1rem;
+    }
+
+    .content {
+      padding: 4rem 0;
+    }
+
+    section {
+      margin-bottom: 4rem;
+    }
+
+    h2 {
+      font-size: clamp(1.5rem, 3vw, 2rem);
+      color: var(--primary);
+      margin-bottom: 1.5rem;
+    }
+
+    .map-container {
+      position: relative;
+      width: 100%;
+      height: 0;
+      padding-bottom: 56.25%;
+      overflow: hidden;
+      border-radius: 1rem;
+      box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+    }
+
+    .map-container iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      border: 0;
+    }
+
+    .cards-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 2rem;
+      margin-top: 2rem;
+    }
+
+    .feature-card {
+      background: white;
+      padding: 2rem;
+      border-radius: 1rem;
+      box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .feature-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+    }
+
+    .zoneamento-img {
+      width: 100%;
+      border-radius: 1rem;
+      box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+    }
+
+    footer {
+      background: linear-gradient(to right, var(--primary), var(--secondary));
+      color: white;
+      padding: 3rem 0;
+      text-align: center;
+    }
+
+    footer .logo {
+      width: 120px;
+      height: auto;
+      border-radius: 1rem;
+      margin-bottom: 1rem;
+    }
+
+    footer a {
+      color: white;
+      text-decoration: none;
+      transition: opacity 0.2s;
+    }
+
+    footer a:hover {
+      opacity: 0.8;
+    }
+
+    .contact-button {
+      display: inline-block;
+      background: white;
+      color: var(--primary);
+      padding: 0.75rem 1.5rem;
+      border-radius: 0.5rem;
+      font-weight: bold;
+      margin-top: 1rem;
+      transition: transform 0.2s;
+    }
+
+    .contact-button:hover {
+      transform: scale(1.05);
+    }
+
+    @media (max-width: 768px) {
+      .header-content {
+        padding: 1rem;
+      }
+
+      .content {
+        padding: 2rem 0;
+      }
+
+      section {
+        margin-bottom: 2rem;
+      }
+    }
+  </style>
 </head>
 <body>
-    <div class="stars"></div>
-    <div class="twinkling-stars"></div>
-    <div class="shooting-star"></div>
-    <div class="nebula"></div>
-    <div class="comet"></div>
-    <div class="meteor"></div>
-    <h1 class="glowing-text">Logo entrará no ar</h1>
-    <div class="floating-objects"></div>
+  <header>
+    <div class="header-content container">
+      <h1>Área com Alto Potencial de Desenvolvimento</h1>
+      <p>86 alqueires com excelente localização e possibilidade de verticalização</p>
+    </div>
+  </header>
+
+  <main class="container content">
+    <section>
+      <h2>Sobre o Terreno</h2>
+      <p>
+        Área total de 86 alqueires com alto potencial de verticalização. Com base no novo desordenamento e na
+        lei de ocupação de solo que entrará em vigor a partir de abril de 2025, este terreno apresenta
+        excelentes condições para empreendimentos modernos e projetos de alto padrão.
+      </p>
+    </section>
+
+    <section>
+      <h2>Localização Estratégica</h2>
+      <div class="map-container">
+        <iframe src="https://www.google.com/maps/d/embed?mid=1ChZGbDzhg-b1H0DByQe_ENue1ssWO0w&ehbc=2E312F" allowfullscreen loading="lazy"></iframe>
+      </div>
+    </section>
+
+    <section>
+      <h2>Zoneamento</h2>
+      <img src="https://i.imgur.com/c0B1i0i.png" alt="Mapa de Zoneamento de Londrina" class="zoneamento-img">
+    </section>
+
+    <section>
+      <h2>Características do Projeto</h2>
+      <div class="cards-grid">
+        <div class="feature-card">
+          <h3>Potencial de Verticalização</h3>
+          <p>O novo desordenamento e a lei de ocupação de solo indicam condições favoráveis para projetos verticais de alto padrão.</p>
+        </div>
+        <div class="feature-card">
+          <h3>Condomínio Horizontal</h3>
+          <p>Uma parte do terreno está destinada ao desenvolvimento de um condomínio horizontal fechado, agregando exclusividade ao projeto.</p>
+        </div>
+        <div class="feature-card">
+          <h3>Legislação Urbanística</h3>
+          <p>Projeto em conformidade com as novas diretrizes do Plano Diretor de Londrina. <a href="https://ippul.londrina.pr.gov.br/index.php/plano-diretor-2018-2028/lei-geral-do-plano-diretor.html" target="_blank">Consulte aqui</a>.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <img src="https://i.imgur.com/3YKn2xW.png" alt="Logo Engesud" class="logo">
+      <h3>Engesud Engenharia e Intermediação LTDA</h3>
+      <p>Robson Luis da Costa</p>
+      <a href="https://wa.me/4497013489" class="contact-button">
+        Contatar via WhatsApp
+      </a>
+      <p style="margin-top: 2rem">
+        <a href="https://www.engesudsmart.com.br" target="_blank">www.engesudsmart.com.br</a>
+      </p>
+      <p style="margin-top: 1rem; opacity: 0.8">Última atualização: 10 de janeiro de 2025</p>
+    </div>
+  </footer>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const cards = document.querySelectorAll('.feature-card');
+      
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.style.opacity = 1;
+            entry.target.style.transform = 'translateY(0)';
+          }
+        });
+      }, {
+        threshold: 0.1
+      });
+
+      cards.forEach(card => {
+        card.style.opacity = 0;
+        card.style.transform = 'translateY(20px)';
+        card.style.transition = 'all 0.6s ease-out';
+        observer.observe(card);
+      });
+    });
+  </script>
 </body>
 </html>
