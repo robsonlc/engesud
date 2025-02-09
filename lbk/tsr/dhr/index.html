@@ -5,14 +5,19 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta property="og:url" content="https://www.engesudsmart.com.br/lbk/tsr/dhr">
   <meta property="og:image" content="https://i.imgur.com/yrmBNV9.png">
-  <title>Potencial de Desenvolvimento da Área</title>
+  <title>Potencial de Desenvolvimento Imobiliário</title>
   <link rel="shortcut icon" href="https://i.imgur.com/HjwVm8x.png" type="image/x-icon">
   <style>
     :root {
-      --primary: #2563eb;
-      --secondary: #1e40af;
-      --text: #1f2937;
-      --background: #f9fafb;
+      --primary: #164e85; /* Azul escuro, mais profissional */
+      --secondary: #1f75c8; /* Azul médio, para detalhes */
+      --text: #333; /* Cinza escuro para texto, melhor legibilidade */
+      --background: #f5f5f5; /* Fundo cinza claro, mais suave */
+      --card-bg: #fff; /* Fundo branco para os cards */
+      --shadow: rgba(0, 0, 0, 0.1); /* Sombra sutil */
+      --link: #0a58ca; /*Azul para links, padrão e acessível*/
+      --link-hover: #073b8e; /*Azul mais escuro no hover, para feedback*/
+      --border-radius: 8px; /* Bordas arredondadas mais suaves */
     }
 
     * {
@@ -22,23 +27,23 @@
     }
 
     body {
-      font-family: system-ui, -apple-system, sans-serif;
-      line-height: 1.6;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Fonte mais moderna e profissional */
+      line-height: 1.7; /* Espaçamento entre linhas aumentado para legibilidade */
       color: var(--text);
       background: var(--background);
     }
 
     .container {
       width: 100%;
-      max-width: 1200px;
+      max-width: 1280px; /* Largura máxima maior para telas grandes */
       margin: 0 auto;
-      padding: 0 1rem;
+      padding: 0 2rem; /* Aumento do padding lateral */
     }
 
     header {
       position: relative;
-      height: 60vh;
-      min-height: 300px;
+      height: 50vh;  /* Ajustado para 50vh, um pouco menos alto */
+      min-height: 250px; /* Altura mínima menor */
       background: url('https://i.imgur.com/4nFJFG5.png') center/cover no-repeat;
       display: flex;
       align-items: center;
@@ -49,8 +54,8 @@
       content: "";
       position: absolute;
       inset: 0;
-      background: rgba(255, 255, 255, 0.85);
-      backdrop-filter: blur(2px);
+      background: rgba(255, 255, 255, 0.75); /* Redução da opacidade do overlay */
+      backdrop-filter: blur(3px); /* Aumento do blur */
     }
 
     .header-content {
@@ -61,33 +66,43 @@
     }
 
     .header-content h1 {
-      font-size: clamp(2rem, 5vw, 3.5rem);
+      font-size: clamp(2.5rem, 6vw, 4rem); /* Tamanho da fonte principal maior */
       color: var(--primary);
-      margin-bottom: 1rem;
+      margin-bottom: 1.5rem; /* Aumento do espaçamento */
+      font-weight: 700; /* Fonte mais bold */
+    }
+    .header-content p {
+        font-size: 1.25rem; /*Tamanho maior*/
+        color: var(--secondary);
+        font-weight: 500;
     }
 
     .content {
-      padding: 4rem 0;
+      padding: 5rem 0; /* Aumento do padding vertical */
     }
 
     section {
-      margin-bottom: 4rem;
+      margin-bottom: 5rem; /* Aumento do espaçamento */
     }
 
     h2 {
-      font-size: clamp(1.5rem, 3vw, 2rem);
+      font-size: clamp(1.75rem, 4vw, 2.5rem); /* Tamanho da fonte maior */
       color: var(--primary);
-      margin-bottom: 1.5rem;
+      margin-bottom: 2rem; /* Aumento do espaçamento */
+      font-weight: 600; /* Fonte mais bold */
+    }
+    section > p {
+        font-size: 1.1rem;
     }
 
     .map-container {
       position: relative;
       width: 100%;
       height: 0;
-      padding-bottom: 56.25%;
+      padding-bottom: 56.25%; /* Mantém a proporção 16:9 */
       overflow: hidden;
-      border-radius: 1rem;
-      box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+      border-radius: var(--border-radius);
+      box-shadow: 0 2px 8px var(--shadow); /* Sombra mais sutil */
     }
 
     .map-container iframe {
@@ -101,42 +116,78 @@
 
     .cards-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 2rem;
-      margin-top: 2rem;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Cards maiores */
+      gap: 2.5rem; /* Aumento do gap */
+      margin-top: 2.5rem; /* Aumento do espaçamento */
     }
 
     .feature-card {
-      background: white;
-      padding: 2rem;
-      border-radius: 1rem;
-      box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      background: var(--card-bg);
+      padding: 2.5rem; /* Aumento do padding */
+      border-radius: var(--border-radius);
+      box-shadow: 0 2px 6px var(--shadow); /* Sombra mais sutil */
+      transition: transform 0.2s ease, box-shadow 0.2s ease; /* Transição mais suave */
+      display: flex; /* Flexbox para alinhar ícone e texto */
+      flex-direction: column; /* Empilha os elementos verticalmente */
     }
 
     .feature-card:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+      transform: translateY(-3px); /* Efeito hover mais sutil */
+      box-shadow: 0 4px 10px var(--shadow); /* Sombra um pouco mais intensa no hover */
+    }
+
+    .feature-card h3 {
+      font-size: 1.5rem;
+      color: var(--secondary);
+      margin-bottom: 1rem;
+      font-weight: 600;
+    }
+
+    .feature-card p {
+        font-size: 1rem;
+        flex-grow: 1; /* Ocupa o espaço restante */
+        margin-bottom: 1rem;
+    }
+    .feature-card a {
+        font-size: 1rem;
+        color: var(--link);
+        text-decoration: none;
+        font-weight: 500;
+        transition: color 0.2s;
+        margin-top: auto; /* Empurra o link para baixo*/
+        display: inline-block;
+    }
+     .feature-card a:hover {
+        color: var(--link-hover);
     }
 
     .zoneamento-img {
       width: 100%;
-      border-radius: 1rem;
-      box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+      border-radius: var(--border-radius);
+      box-shadow: 0 2px 8px var(--shadow); /* Sombra mais sutil */
     }
 
     footer {
       background: linear-gradient(to right, var(--primary), var(--secondary));
       color: white;
-      padding: 3rem 0;
+      padding: 4rem 0; /* Aumento do padding vertical */
       text-align: center;
     }
 
     footer .logo {
-      width: 120px;
+      width: 140px; /* Logo um pouco maior */
       height: auto;
-      border-radius: 1rem;
-      margin-bottom: 1rem;
+      border-radius: var(--border-radius);
+      margin-bottom: 1.5rem; /* Aumento do espaçamento */
+    }
+
+    footer h3{
+      font-size: 1.2rem;
+      margin-bottom: 0.8rem;
+      font-weight: 600;
+    }
+    footer p, footer a {
+        font-size: 1.05rem;
     }
 
     footer a {
@@ -146,44 +197,76 @@
     }
 
     footer a:hover {
-      opacity: 0.8;
+      opacity: 0.9; /* Redução da opacidade no hover */
     }
 
     .contact-button {
       display: inline-block;
       background: white;
       color: var(--primary);
-      padding: 0.75rem 1.5rem;
-      border-radius: 0.5rem;
+      padding: 1rem 2rem; /* Aumento do padding */
+      border-radius: var(--border-radius);
       font-weight: bold;
-      margin-top: 1rem;
-      transition: transform 0.2s;
+      margin-top: 1.5rem; /* Aumento do espaçamento */
+      transition: background-color 0.2s, color 0.2s; /* Transição de cor */
+      text-decoration: none; /*Remover sublinhado*/
     }
 
     .contact-button:hover {
-      transform: scale(1.05);
+       background-color: var(--primary); /* Inverte as cores no hover */
+       color: white;
     }
 
+    .updated-date {
+      margin-top: 2rem;
+      opacity: 0.7; /* Opacidade um pouco menor */
+      font-size: 0.9rem; /* Tamanho da fonte menor */
+    }
+
+    /* Responsividade */
     @media (max-width: 768px) {
-      .header-content {
-        padding: 1rem;
+      .container {
+        padding: 0 1.5rem; /* Redução do padding lateral */
       }
 
+      header {
+        height: auto; /* Altura automática em telas menores */
+        padding: 3rem 0; /* Padding vertical */
+      }
+       .header-content p {
+        font-size: 1.1rem; /*Tamanho um pouco menor em mobile*/
+    }
+
       .content {
-        padding: 2rem 0;
+        padding: 3rem 0; /* Redução do padding vertical */
       }
 
       section {
-        margin-bottom: 2rem;
+        margin-bottom: 3rem; /* Redução do espaçamento */
+      }
+
+      .cards-grid {
+        grid-template-columns: 1fr; /* Uma coluna em telas menores */
+        gap: 2rem; /* Redução do gap */
+      }
+      footer {
+        padding: 3rem 0;
       }
     }
+      /*Melhora na responsividade do mapa*/
+     @media (max-width: 576px) {
+        .map-container {
+            padding-bottom: 75%; /*Proporção maior para telas muito pequenas*/
+        }
+    }
+
   </style>
 </head>
 <body>
   <header>
     <div class="header-content container">
-      <h1>Área com Alto Potencial de Desenvolvimento</h1>
-      <p>86 alqueires com excelente localização e possibilidade de verticalização</p>
+      <h1>Potencial de Desenvolvimento Imobiliário</h1>
+      <p>Área de 86 alqueires com localização privilegiada e potencial para verticalização.</p>
     </div>
   </header>
 
@@ -191,9 +274,8 @@
     <section>
       <h2>Sobre o Terreno</h2>
       <p>
-        Área total de 86 alqueires com alto potencial de verticalização. Com base no novo desordenamento e na
-        lei de ocupação de solo que entrará em vigor a partir de abril de 2025, este terreno apresenta
-        excelentes condições para empreendimentos modernos e projetos de alto padrão.
+        Área total de 86 alqueires com alto potencial para empreendimentos verticais.  Em conformidade com o novo plano diretor e a legislação urbanística
+        vigente a partir de abril de 2025, o terreno oferece condições ideais para projetos modernos e de alto padrão em Londrina.
       </p>
     </section>
 
@@ -214,15 +296,16 @@
       <div class="cards-grid">
         <div class="feature-card">
           <h3>Potencial de Verticalização</h3>
-          <p>O novo desordenamento e a lei de ocupação de solo indicam condições favoráveis para projetos verticais de alto padrão.</p>
+          <p>O novo ordenamento territorial e a legislação urbanística favorecem o desenvolvimento de projetos verticais de alto padrão.</p>
         </div>
         <div class="feature-card">
           <h3>Condomínio Horizontal</h3>
-          <p>Uma parte do terreno está destinada ao desenvolvimento de um condomínio horizontal fechado, agregando exclusividade ao projeto.</p>
+          <p>Parte do terreno está reservada para a implantação de um condomínio horizontal fechado, agregando exclusividade ao projeto.</p>
         </div>
         <div class="feature-card">
-          <h3>Legislação Urbanística</h3>
-          <p>Projeto em conformidade com as novas diretrizes do Plano Diretor de Londrina. <a href="https://ippul.londrina.pr.gov.br/index.php/plano-diretor-2018-2028/lei-geral-do-plano-diretor.html" target="_blank">Consulte aqui</a>.</p>
+          <h3>Conformidade Legal</h3>
+          <p>Projeto alinhado às novas diretrizes do Plano Diretor de Londrina.</p>
+           <a href="https://ippul.londrina.pr.gov.br/index.php/plano-diretor-2018-2028/lei-geral-do-plano-diretor.html" target="_blank">Consultar legislação</a>
         </div>
       </div>
     </section>
@@ -234,36 +317,35 @@
       <h3>Engesud Engenharia e Intermediação LTDA</h3>
       <p>Robson Luis da Costa</p>
       <a href="https://wa.me/4497013489" class="contact-button">
-        Contatar via WhatsApp
+        Contato via WhatsApp
       </a>
       <p style="margin-top: 2rem">
         <a href="https://www.engesudsmart.com.br" target="_blank">www.engesudsmart.com.br</a>
       </p>
-      <p style="margin-top: 1rem; opacity: 0.8">Última atualização: 10 de janeiro de 2025</p>
+      <p class="updated-date">Última atualização: 10 de janeiro de 2025</p>
     </div>
   </footer>
 
-  <script>
+    <script>
     document.addEventListener('DOMContentLoaded', function() {
       const cards = document.querySelectorAll('.feature-card');
-      
-      const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-          if (entry.isIntersecting) {
-            entry.target.style.opacity = 1;
-            entry.target.style.transform = 'translateY(0)';
-          }
-        });
-      }, {
-        threshold: 0.1
-      });
 
-      cards.forEach(card => {
-        card.style.opacity = 0;
-        card.style.transform = 'translateY(20px)';
-        card.style.transition = 'all 0.6s ease-out';
-        observer.observe(card);
-      });
+       // Intersection Observer para animação mais suave
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('is-visible'); // Adiciona classe quando visível
+                    observer.unobserve(entry.target);  // Para de observar após a animação
+                }
+            });
+        }, {
+            threshold: 0.1  // 10% do elemento visível
+        });
+
+        cards.forEach(card => {
+            card.classList.add('feature-card-animation'); // Adiciona classe para a animação
+            observer.observe(card);
+        });
     });
   </script>
 </body>
