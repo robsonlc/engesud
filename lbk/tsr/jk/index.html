@@ -20,12 +20,22 @@
 
     <style>
         :root {
+            /* Cores originais, podem ser ajustadas */
             --primary-color: #1a365d;
             --secondary-color: #e2e8f0;
             --accent-color: #2b6cb0;
             --text-color: #2d3748;
             --background-color: #f7fafc;
             --shadow-color: rgba(0, 0, 0, 0.1);
+
+             /* Cores do outro rodapé (se quiser usar as mesmas) */
+            --footer-bg-start: #004D40; /* Verde mais escuro */
+            --footer-bg-end: #003330;   /* Verde ainda mais escuro */
+            --footer-text-color: white;
+
+            /* Outras variáveis */
+            --border-radius: 16px;
+            --transition: all 0.3s ease;
         }
 
         * {
@@ -81,7 +91,7 @@
             padding: 40px;
             background-color: #fff;
             box-shadow: 0 4px 6px var(--shadow-color);
-            border-radius: 16px;
+            border-radius: var(--border-radius); /* Usando a variável */
             position: relative;
         }
 
@@ -103,7 +113,7 @@
             border-left: 6px solid var(--accent-color);
             padding: 25px;
             margin: 30px 0;
-            border-radius: 0 12px 12px 0;
+            border-radius: 0 var(--border-radius) var(--border-radius) 0; /* Ajuste no border-radius */
         }
 
         .highlight ul {
@@ -129,7 +139,7 @@
             position: relative;
             padding-bottom: 56.25%;
             margin: 30px 0;
-            border-radius: 16px;
+            border-radius: var(--border-radius); /* Usando a variável */
             overflow: hidden;
             box-shadow: 0 4px 12px var(--shadow-color);
         }
@@ -151,9 +161,11 @@
         .image-container img {
             max-width: 100%;
             height: auto;
-            border-radius: 16px;
+            border-radius: var(--border-radius); /* Usando a variável */
             box-shadow: 0 4px 12px var(--shadow-color);
             transition: transform 0.3s ease;
+             /* Melhora performance da transição */
+             will-change: transform;
         }
 
         .image-container img:hover {
@@ -166,38 +178,32 @@
             color: #718096;
         }
 
+       /* Estilos do Rodapé (copiado do outro exemplo) */
         footer {
-            background-color: #fff;
-            padding: 60px 20px;
             text-align: center;
-            border-top: 1px solid var(--secondary-color);
-            margin-top: 60px;
+            padding: 3rem 1rem;
+            background: linear-gradient(to bottom, var(--footer-bg-start), var(--footer-bg-end));
+            color: var(--footer-text-color);
+            margin-top: 3rem;
         }
 
         footer img {
-            width: 140px;
-            margin-bottom: 25px;
-            transition: transform 0.3s ease;
-        }
-
-        footer img:hover {
-            transform: scale(1.05);
+            max-width: 180px;
+            margin-bottom: 1.5rem;
+            border-radius: 10px;
         }
 
         footer p {
-            margin: 10px 0;
-            color: #718096;
+            color: var(--footer-text-color);
+            margin-bottom: 0.5rem;
+            font-size: 1rem;
         }
-
-        footer a {
-            color: var(--accent-color);
+         footer p a{
+            color: var(--footer-text-color);
             text-decoration: none;
-            transition: color 0.3s ease;
+
         }
 
-        footer a:hover {
-            color: var(--primary-color);
-        }
 
         @media (max-width: 768px) {
             header {
@@ -234,7 +240,6 @@
     </style>
 </head>
 <body>
-    <!-- Resto do conteúdo HTML permanece o mesmo -->
     <header>
         <div class="header-bg"></div>
         <div class="header-content">
@@ -275,7 +280,7 @@
         <p>Permanecemos à disposição para esclarecer quaisquer dúvidas adicionais e avaliar cenários de parceria e negociação, respeitando sempre a privacidade e os interesses envolvidos. Este é um momento singular para capitalizar sobre o novo potencial desta área e, assim, usufruir de um retorno diferenciado no mercado imobiliário local.</p>
     </div>
 
-    <footer>
+     <footer>
         <a href="http://www.engesudsmart.com.br" target="_blank" title="www.engesudsmart.com.br">
             <img src="https://i.imgur.com/3YKn2xW.png" alt="Logo Engesud">
         </a>
