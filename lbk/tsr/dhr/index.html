@@ -167,6 +167,28 @@
       box-shadow: 0 2px 8px var(--shadow); /* Sombra mais sutil */
     }
 
+.image-gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Responsivo */
+  gap: 2rem;
+  margin-top: 1rem;
+}
+
+.gallery-item {
+  display: flex;
+  flex-direction: column;
+}
+
+.image-caption {
+  margin-top: 0.5rem;
+  font-size: 0.9rem;
+  color: var(--text);
+  text-align: center;
+}
+ .image-caption a {
+    font-size: 0.9rem; /*Mesmo tamanho para consistência*/
+ }
+
     footer {
       background: linear-gradient(to right, var(--primary), var(--secondary));
       color: white;
@@ -287,9 +309,22 @@
     </section>
 
     <section>
-      <h2>Zoneamento</h2>
-      <img src="https://i.imgur.com/F3cVRb6.png" alt="Mapa de Zoneamento de Londrina" class="zoneamento-img">
-    </section>
+  <h2>Zoneamento e Perspectivas de Desenvolvimento</h2>
+  <div class="image-gallery">
+    <div class="gallery-item">
+      <img src="https://i.imgur.com/F3cVRb6.png" alt="Mapa de Zoneamento de Londrina com Área Destacada" class="zoneamento-img">
+      <p class="image-caption">Mapa de Zoneamento de Londrina, com a área do terreno destacada.  <a href="https://ippul.londrina.pr.gov.br/index.php/plano-diretor-2018-2028/lei-geral-do-plano-diretor.html" target="_blank">Consulte a legislação urbanística completa</a>.</p>
+    </div>
+    <div class="gallery-item">
+      <img src="https://i.imgur.com/4nFJFG5.png" alt="Perspectiva de Desenvolvimento - Condomínios Verticais e Horizontais" class="zoneamento-img">
+      <p class="image-caption">Perspectiva de desenvolvimento: Condomínios verticais e horizontais integrados.</p>
+    </div>
+    <div class="gallery-item">
+      <img src="https://i.imgur.com/QPbKdMM.png" alt="Perspectiva Aérea de Desenvolvimento" class="zoneamento-img">
+      <p class="image-caption">Perspectiva aérea do desenvolvimento, mostrando a integração com a paisagem.</p>
+    </div>
+  </div>
+</section>
 
     <section>
       <h2>Características do Projeto</h2>
