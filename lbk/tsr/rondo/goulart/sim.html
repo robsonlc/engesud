@@ -1,1 +1,313 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Estudo de Adensamento - Rondonópolis</title>
+    <meta property="og:url" content="https://www.engesudsmart.com.br/lbk/tsr/rondo/goulart/sim.html">
+    <meta property="og:image" content="https://i.postimg.cc/qRS91vD7/croqui.png">
+    <link rel="shortcut icon" href="https://i.imgur.com/HjwVm8x.png" type="image/x-icon">
+    <style>
+        :root {
+            --primary-color: #2c3e50;
+            --secondary-color: #34495e;
+            --background-color: #f4f4f4;
+            --card-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            --transition-speed: 0.3s;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background-color: var(--background-color);
+            color: #333;
+            line-height: 1.6;
+        }
+
+        header {
+            background: url('https://i.imgur.com/zaSQABG.png') center/cover no-repeat;
+            background-color: rgba(255, 255, 255, 0.3);
+            background-blend-mode: overlay;
+            min-height: 200px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+        }
+
+        header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(rgba(255,255,255,0.7), rgba(255,255,255,0.3));
+            pointer-events: none;
+        }
+
+        header .header-content {
+            z-index: 1;
+            text-align: center;
+        }
+
+        header .header-content h1 {
+            color: var(--primary-color);
+            font-size: clamp(1.5rem, 4vw, 2.5rem);
+            margin-bottom: 1rem;
+        }
+
+        header .header-content a {
+            display: inline-block;
+            margin-top: 0.5rem;
+            padding: 0.6rem 1.2rem;
+            background-color: var(--primary-color);
+            color: #fff;
+            text-decoration: none;
+            border-radius: 8px;
+            transition: background-color var(--transition-speed);
+        }
+
+        header .header-content a:hover {
+            background-color: var(--secondary-color);
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 2rem auto;
+            padding: 1rem;
+        }
+
+        h2 {
+            color: var(--primary-color);
+            text-align: center;
+            margin-bottom: 1.5rem;
+            font-size: clamp(1.2rem, 3vw, 2rem);
+        }
+
+        p {
+            margin-bottom: 1rem;
+        }
+
+        .content-section {
+            background: #fff;
+            border-radius: 12px;
+            box-shadow: var(--card-shadow);
+            padding: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .content-section img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+            cursor: zoom-in;
+            transition: transform var(--transition-speed);
+        }
+
+        .content-section img:hover {
+            transform: scale(1.02);
+        }
+
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0,0,0,0.9);
+            z-index: 1000;
+            opacity: 0;
+            transition: opacity var(--transition-speed);
+        }
+
+        .modal.show {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            opacity: 1;
+        }
+
+        .modal-content {
+            position: relative;
+            max-width: 90%;
+            max-height: 90vh;
+        }
+
+        .modal-content img {
+            max-width: 100%;
+            max-height: 90vh;
+            object-fit: contain;
+        }
+
+        .close-button {
+            position: absolute;
+            top: -40px;
+            right: 0;
+            color: #fff;
+            font-size: 2.5rem;
+            cursor: pointer;
+            transition: transform var(--transition-speed);
+        }
+
+        .close-button:hover {
+            transform: rotate(90deg);
+        }
+
+        footer {
+            background-color: var(--primary-color);
+            color: #fff;
+            padding: 2rem 0;
+            margin-top: 3rem;
+        }
+
+        footer .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        footer a {
+            color: #fff;
+            text-decoration: none;
+            transition: color var(--transition-speed);
+        }
+
+        footer a:hover {
+            color: #3498db;
+        }
+
+        footer img {
+            max-width: 120px;
+            border-radius: 10px;
+            transition: transform var(--transition-speed);
+        }
+
+        footer img:hover {
+            transform: scale(1.05);
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                width: 95%;
+                padding: 0.5rem;
+            }
+
+            .content-section {
+                padding: 1.5rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            header .header-content h1 {
+                font-size: 1.5rem;
+            }
+
+            .content-section {
+                padding: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <h1>Simulação de Estudo de Adensamento</h1>
+            <!-- Link para voltar à página principal -->
+            <a href="https://www.engesudsmart.com.br/lbk/tsr/rondo/goulart/" title="Voltar à Página Principal">
+                &larr; Voltar
+            </a>
+        </div>
+    </header>
+
+    <div class="container">
+        <div class="content-section">
+            <h2>Proposta de Transformação em ZEIS</h2>
+            <p>
+                Nesta simulação, apresentamos uma concepção de ocupação voltada a um adensamento maior do que o permitido pela zona de médio adensamento. 
+                Para viabilizar este cenário, é necessária a transformação da área em ZEIS (Zona Especial de Interesse Social), 
+                permitindo a construção de blocos Térreo + 3 pavimentos (ou outro padrão a ser negociado). 
+            </p>
+            <p>
+                Ressaltamos que todo o projeto estará sujeito às análises e aprovações da Prefeitura de Rondonópolis, 
+                inclusive quanto a possíveis contrapartidas, infraestruturas complementares e ajustes no estudo de viabilidade.
+            </p>
+            <img 
+                src="https://i.postimg.cc/qRS91vD7/croqui.png" 
+                alt="Estudo de Adensamento" 
+                id="estudo-img"
+            >
+            <p style="margin-top:1rem;">
+                Esta imagem ilustra um possível layout para a ocupação habitacional, distribuída em até 6 fases de desenvolvimento, com estimativa de 1.790 unidades habitacionais. 
+                Vale reforçar que este estudo é apenas uma referência para negociações e não substitui um projeto executivo detalhado.
+            </p>
+        </div>
+    </div>
+
+    <!-- Modal para zoom da imagem -->
+    <div class="modal" id="image-modal">
+        <div class="modal-content">
+            <span class="close-button" id="close-modal">&times;</span>
+            <img src="" alt="Imagem ampliada" id="modal-image">
+        </div>
+    </div>
+
+    <footer>
+        <div class="container">
+            <a href="http://www.engesudsmart.com.br" target="_blank" title="www.engesudsmart.com.br">
+                <img src="https://i.imgur.com/3YKn2xW.png" alt="Logo Engesud">
+            </a>
+            <p><strong>Engesud Engenharia e Intermediação LTDA</strong></p>
+            <p>Robson Luis da Costa | 
+                <a href="https://wa.me/4497013489" title="Whatsapp">+55 (44) 99701-3489</a>
+            </p>
+            <p><a href="https://www.engesudsmart.com.br" target="_blank">www.engesudsmart.com.br</a></p>
+            <p>Última atualização: 23 de janeiro de 2024</p>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Modal para zoom da imagem
+            const estudoImg = document.getElementById('estudo-img');
+            const modal = document.getElementById('image-modal');
+            const modalImage = document.getElementById('modal-image');
+            const closeModal = document.getElementById('close-modal');
+
+            function openModal() {
+                modal.classList.add('show');
+                modalImage.src = estudoImg.src;
+                document.body.style.overflow = 'hidden';
+            }
+
+            function closeModalHandler() {
+                modal.classList.remove('show');
+                document.body.style.overflow = 'auto';
+            }
+
+            estudoImg.addEventListener('click', openModal);
+            closeModal.addEventListener('click', closeModalHandler);
+            modal.addEventListener('click', (e) => {
+                if (e.target === modal) {
+                    closeModalHandler();
+                }
+            });
+
+            document.addEventListener('keydown', (e) => {
+                if (e.key === 'Escape') {
+                    closeModalHandler();
+                }
+            });
+        });
+    </script>
+</body>
+</html>
 
