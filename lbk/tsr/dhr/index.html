@@ -31,7 +31,7 @@
     }
 
     body {
-      font-family: 'Roboto', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Oxygen, Ubuntu, Cantarell, sans-serif; /* Using Roboto and system-ui fallback */
+      font-family: 'Roboto', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Oxygen, Ubuntu, Cantarell, sans-serif;
       line-height: 1.7;
       color: var(--text);
       background: var(--background);
@@ -73,7 +73,7 @@
       margin-bottom: 1.5rem;
       font-weight: 800;
       line-height: 1.2;
-      text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2); /* Subtle text shadow for header */
+      text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
     }
 
     .header-content p {
@@ -82,7 +82,7 @@
       font-weight: 500;
       max-width: 45ch;
       margin: 0 auto;
-      text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1); /* Subtle text shadow for header paragraph */
+      text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
     }
 
     .content {
@@ -148,7 +148,6 @@
       opacity: 1;
       transform: translateY(0);
     }
-
 
     .feature-card:hover {
       transform: translateY(-5px);
@@ -273,6 +272,36 @@
       font-size: 1rem;
     }
 
+    /* Estilos para o modal de ampliação de imagem */
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 100;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      overflow: auto;
+      background-color: rgba(0, 0, 0, 0.8);
+    }
+    
+    .modal-content {
+      margin: 10% auto;
+      display: block;
+      max-width: 90%;
+      position: relative;
+    }
+    
+    .close-button {
+      position: absolute;
+      top: 10px;
+      right: 25px;
+      color: #fff;
+      font-size: 35px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
     @media (max-width: 768px) {
       .content {
         padding: 4rem 0;
@@ -316,7 +345,6 @@
         justify-content: center;
       }
     }
-
   </style>
 </head>
 <body>
@@ -331,7 +359,7 @@
     <section>
       <h2>Sobre o Terreno</h2>
       <p>
-        Área total de 86 alqueires com alto potencial para empreendimentos verticais.  Em conformidade com o novo plano diretor e a legislação urbanística
+        Área total de 86 alqueires com alto potencial para empreendimentos verticais e horizontais. Em conformidade com o novo plano diretor e a legislação urbanística
         vigente a partir de abril de 2025, o terreno oferece condições ideais para projetos modernos e de alto padrão em Londrina.
       </p>
     </section>
@@ -344,22 +372,22 @@
     </section>
 
     <section>
-  <h2>Zoneamento e Perspectivas de Desenvolvimento</h2>
-  <div class="image-gallery">
-    <div class="gallery-item">
-      <img src="https://i.postimg.cc/KzKQgm5r/F3cVRb6.png" alt="Mapa de Zoneamento de Londrina com Área Destacada" class="zoneamento-img">
-      <p class="image-caption">Mapa de Zoneamento de Londrina, com a área do terreno destacada.  <a href="https://ippul.londrina.pr.gov.br/index.php/plano-diretor-2018-2028/lei-geral-do-plano-diretor.html" target="_blank">Consulte a legislação urbanística completa</a>.</p>
-    </div>
-    <div class="gallery-item">
-      <img src="https://i.imgur.com/4nFJFG5.png" alt="Perspectiva de Desenvolvimento - Condomínios Verticais e Horizontais" class="zoneamento-img">
-      <p class="image-caption">Perspectiva de desenvolvimento: Condomínios verticais e horizontais integrados.</p>
-    </div>
-    <div class="gallery-item">
-      <img src="https://i.imgur.com/QPbKdMM.png" alt="Perspectiva Aérea de Desenvolvimento" class="zoneamento-img">
-      <p class="image-caption">Perspectiva aérea do desenvolvimento, mostrando a integração com a paisagem.</p>
-    </div>
-  </div>
-</section>
+      <h2>Zoneamento e Perspectivas de Desenvolvimento</h2>
+      <div class="image-gallery">
+        <div class="gallery-item">
+          <img id="zoneamento-img" src="https://i.postimg.cc/KzKQgm5r/F3cVRb6.png" alt="Mapa de Zoneamento de Londrina com Área Destacada" class="zoneamento-img">
+          <p class="image-caption">Mapa de Zoneamento de Londrina, com a área do terreno destacada. <a href="https://ippul.londrina.pr.gov.br/index.php/plano-diretor-2018-2028/lei-geral-do-plano-diretor.html" target="_blank">Consulte a legislação urbanística completa</a>.</p>
+        </div>
+        <div class="gallery-item">
+          <img src="https://i.imgur.com/4nFJFG5.png" alt="Perspectiva de Desenvolvimento - Condomínios Verticais e Horizontais" class="zoneamento-img">
+          <p class="image-caption">Perspectiva de desenvolvimento: Condomínios verticais e horizontais integrados.</p>
+        </div>
+        <div class="gallery-item">
+          <img src="https://i.imgur.com/QPbKdMM.png" alt="Perspectiva Aérea de Desenvolvimento" class="zoneamento-img">
+          <p class="image-caption">Perspectiva aérea do desenvolvimento, mostrando a integração com a paisagem.</p>
+        </div>
+      </div>
+    </section>
 
     <section>
       <h2>Características do Projeto</h2>
@@ -370,12 +398,12 @@
         </div>
         <div class="feature-card">
           <h3>Condomínio Horizontal</h3>
-          <p>Parte do terreno está reservada para a implantação de um condomínio horizontal fechado, agregando exclusividade ao projeto.</p>
+          <p>Área com região destinada ao desenvolvimento de um condomínio horizontal fechado de elevado padrão, agregando exclusividade e sofisticação ao projeto.</p>
         </div>
         <div class="feature-card">
           <h3>Conformidade Legal</h3>
           <p>Projeto alinhado às novas diretrizes do Plano Diretor de Londrina.</p>
-           <a href="https://ippul.londrina.pr.gov.br/index.php/plano-diretor-2018-2028/lei-geral-do-plano-diretor.html" target="_blank">Consultar legislação</a>
+          <a href="https://ippul.londrina.pr.gov.br/index.php/plano-diretor-2018-2028/lei-geral-do-plano-diretor.html" target="_blank">Consultar legislação</a>
         </div>
       </div>
     </section>
@@ -396,25 +424,51 @@
     </div>
   </footer>
 
-    <script>
+  <!-- Modal para ampliação da imagem -->
+  <div class="modal" id="image-modal">
+    <div class="modal-content">
+      <span class="close-button" id="close-modal">&times;</span>
+      <img src="" alt="Imagem ampliada" id="modal-image">
+    </div>
+  </div>
+
+  <script>
     document.addEventListener('DOMContentLoaded', function() {
+      // Animação dos cards
       const cards = document.querySelectorAll('.feature-card');
-
-       // Intersection Observer para animação mais suave
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('is-visible'); // Adiciona classe quando visível
-                    observer.unobserve(entry.target);  // Para de observar após a animação
-                }
-            });
-        }, {
-            threshold: 0.1  // 10% do elemento visível
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('is-visible');
+            observer.unobserve(entry.target);
+          }
         });
+      }, { threshold: 0.1 });
+      cards.forEach(card => observer.observe(card));
 
-        cards.forEach(card => {
-            observer.observe(card);
+      // Modal de ampliação da imagem do zoneamento
+      const zoneamentoImg = document.getElementById('zoneamento-img');
+      const modal = document.getElementById('image-modal');
+      const modalImage = document.getElementById('modal-image');
+      const closeButton = document.getElementById('close-modal');
+
+      if(zoneamentoImg) {
+        zoneamentoImg.style.cursor = 'pointer';
+        zoneamentoImg.addEventListener('click', function() {
+          modal.style.display = 'block';
+          modalImage.src = this.src;
         });
+      }
+
+      closeButton.addEventListener('click', function() {
+        modal.style.display = 'none';
+      });
+
+      window.addEventListener('click', function(event) {
+        if (event.target == modal) {
+          modal.style.display = 'none';
+        }
+      });
     });
   </script>
 </body>
