@@ -168,6 +168,23 @@
             transform: rotate(90deg);
         }
 
+        /* Estilo do botão para navegação */
+        .cta-button {
+            display: inline-block;
+            margin-top: 1rem;
+            padding: 0.6rem 1.2rem;
+            background-color: var(--primary-color);
+            color: #fff;
+            text-decoration: none;
+            border-radius: 8px;
+            transition: background-color var(--transition-speed);
+            font-weight: 500;
+        }
+
+        .cta-button:hover {
+            background-color: var(--secondary-color);
+        }
+
         footer {
             background-color: var(--primary-color);
             color: #fff;
@@ -269,6 +286,14 @@
             <img src="https://i.postimg.cc/3JKZPTMr/image.png" alt="Mapa de Zoneamento da Área" id="zoneamento-img">
             <p>Veja o Legislação de Planejamento Urbano de Rondonópolis <a href="https://www.rondonopolis.mt.gov.br/plano-diretor/materiais" target="_blank">aqui</a></p>
         </div>
+        
+        <!-- Botão estilizado para ir à simulação -->
+        <div style="text-align: center;">
+            <a class="cta-button" href="https://www.engesudsmart.com.br/lbk/tsr/rondo/goulart/sim.html">
+                Ver Simulação de Adensamento
+            </a>
+        </div>
+
     </div>
 
     <div class="modal" id="image-modal">
