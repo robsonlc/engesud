@@ -43,7 +43,7 @@
       align-items: center;
       justify-content: center;
       position: relative;
-      opacity: 0.9; /* Ajuste se desejar */
+      opacity: 0.9;
     }
 
     header::before {
@@ -100,6 +100,31 @@
     p {
       margin-bottom: 1rem;
     }
+
+    .feature-cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.5rem;
+      margin-bottom: 2rem;
+    }
+
+    .feature-card {
+      background-color: #fff;
+      border-radius: 12px;
+      padding: 2rem;
+      box-shadow: var(--card-shadow);
+      /* Animação de entrada */
+      opacity: 0;
+      transform: translateY(20px);
+      transition: all 0.5s ease-out;
+    }
+
+    /* Se desejar um hover:
+    .feature-card:hover {
+      box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+      transform: translateY(-5px);
+    }
+    */
 
     .content-section {
       background: #fff;
@@ -229,7 +254,7 @@
 <body>
   <header>
     <div class="header-content">
-      <h1>Simulação de Estudo de Adensamento</h1>
+      <h1>Estudo de Adensamento</h1>
       <!-- Link para voltar à página principal -->
       <a href="https://www.engesudsmart.com.br/lbk/tsr/rondo/campo/" title="Voltar à Página Principal">
         &larr; Voltar
@@ -238,25 +263,47 @@
   </header>
 
   <div class="container">
+    <!-- Cards com os números do estudo -->
+    <h2>Estruturação Sugerida</h2>
+    <div class="feature-cards">
+      <div class="feature-card">
+        <h3>Empreendimento T + 7 Pavimentos</h3>
+        <p>4 fases de desenvolvimento, totalizando 1.280 unidades.</p>
+      </div>
+
+      <div class="feature-card">
+        <h3>Valores e VGV</h3>
+        <p>Ticket Médio: R$ 210.000<br>VGV Estimado: R$ 268,80 MM</p>
+      </div>
+
+      <div class="feature-card">
+        <h3>Permuta e Terreno</h3>
+        <p>Taxa de Permuta: 9,0% sobre o VGV<br>Terreno: R$ 24,10 MM (R$ 403,20/m²)</p>
+      </div>
+
+      <div class="feature-card">
+        <h3>Prazo de Implantação</h3>
+        <p>6 anos (18 meses para aprovação + 12 meses/fase)</p>
+      </div>
+    </div>
+
     <div class="content-section">
-      <h2>Proposta de Transformação em ZEIS</h2>
+      <h2>Possível Mudança de Zoneamento (ZEIS)</h2>
       <p>
-        Nesta simulação, apresentamos um cenário em que a área pode ser transformada em ZEIS (Zona Especial de Interesse Social),
-        permitindo um adensamento maior do que o previsto na classificação de Médio Adensamento. A proposta envolve blocos
-        T + 7 pavimentos, sujeita à análise e aprovação pela Prefeitura de Rondonópolis.
+        Para viabilizar o maior adensamento (blocos T + 7 pavimentos), pode ser necessária a transformação da área em 
+        ZEIS (Zona Especial de Interesse Social), permitindo a verticalização acima do limite da Zona de Médio Adensamento.
+        Todo o projeto estará sujeito à análise e aprovação pela Prefeitura de Rondonópolis.
       </p>
       <p>
-        Destacamos que este estudo é apenas uma referência para negociação, não substituindo o projeto executivo.
-        A aprovação dependerá de análises de impacto, infraestrutura e possíveis contrapartidas exigidas pelo município.
+        A imagem abaixo ilustra um possível layout (croqui) para o empreendimento:
       </p>
       <img 
         src="https://i.postimg.cc/6p9TSDrK/image.png" 
-        alt="Estudo de Adensamento" 
+        alt="Croqui do Empreendimento" 
         id="estudo-img"
       >
       <p>
-        A ilustração acima exemplifica como os blocos poderiam ser distribuídos em fases, aumentando significativamente o número de
-        unidades habitacionais em relação ao zoneamento atual.
+        Ressaltamos que este estudo é apenas uma referência para negociações, não substituindo um projeto executivo detalhado.
       </p>
     </div>
   </div>
@@ -290,6 +337,20 @@
 
   <script>
     document.addEventListener('DOMContentLoaded', function() {
+      // Animação dos cards quando entram na tela
+      const cards = document.querySelectorAll('.feature-card');
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.style.opacity = 1;
+            entry.target.style.transform = 'translateY(0)';
+          }
+        });
+      });
+      cards.forEach(card => {
+        observer.observe(card);
+      });
+
       // Modal para zoom da imagem
       const estudoImg = document.getElementById('estudo-img');
       const modal = document.getElementById('image-modal');
@@ -323,4 +384,3 @@
   </script>
 </body>
 </html>
-
