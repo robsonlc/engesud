@@ -52,17 +52,18 @@
       justify-content: center;
     }
 
+    /* Overlay mais transparente para evidenciar a imagem de fundo */
     header::after {
       content: "";
       position: absolute;
       inset: 0;
-      background: linear-gradient(rgba(255,255,255,0.85), rgba(255,255,255,0.95));
-      backdrop-filter: blur(4px);
+      background: linear-gradient(rgba(255,255,255,0.3), rgba(255,255,255,0.3));
     }
 
+    /* Conteúdo do header sem fundo para preservar a imagem */
     .header-content {
       position: relative;
-      z-index: 1;
+      z-index: 2;
       text-align: center;
       padding: 2rem;
     }
@@ -73,7 +74,7 @@
       margin-bottom: 1.5rem;
       font-weight: 800;
       line-height: 1.2;
-      text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+      text-shadow: 2px 2px 4px rgba(255,255,255,0.7);
     }
 
     .header-content p {
@@ -82,7 +83,7 @@
       font-weight: 500;
       max-width: 45ch;
       margin: 0 auto;
-      text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+      text-shadow: 1px 1px 2px rgba(255,255,255,0.7);
     }
 
     .content {
