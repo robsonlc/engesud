@@ -37,7 +37,7 @@
     }
 
     header {
-      /* Imagem de fundo e leve sobreposição */
+      /* Imagem de fundo suave */
       background: url('https://i.postimg.cc/vBCn93xK/image.png') center/cover no-repeat;
       background-color: rgba(255, 255, 255, 0.3);
       background-blend-mode: overlay;
@@ -46,7 +46,7 @@
       align-items: center;
       justify-content: center;
       position: relative;
-      opacity: 0.9; /* Ajuste de transparência se desejar */
+      opacity: 0.9; /* Ajuste de transparência */
     }
 
     header::before {
@@ -79,26 +79,8 @@
       margin-bottom: 2rem;
     }
 
-    h2 {
-      font-size: clamp(1.2rem, 3vw, 2rem);
-    }
-
-    .feature-cards {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 1.5rem;
-      margin-bottom: 2rem;
-    }
-
-    .feature-card {
-      background-color: #fff;
-      border-radius: 12px;
-      padding: 2rem;
-      box-shadow: var(--card-shadow);
-      /* Transição e início de opacidade para animação */
-      opacity: 0;
-      transform: translateY(20px);
-      transition: all 0.5s ease-out;
+    p {
+      margin-bottom: 1rem;
     }
 
     .map-container,
@@ -175,7 +157,7 @@
       transform: rotate(90deg);
     }
 
-    /* Botão estilizado para navegação */
+    /* Botão de CTA */
     .cta-button {
       display: inline-block;
       margin-top: 1rem;
@@ -186,6 +168,7 @@
       border-radius: 8px;
       transition: background-color var(--transition-speed);
       font-weight: 500;
+      text-align: center;
     }
 
     .cta-button:hover {
@@ -218,9 +201,8 @@
     }
 
     footer img {
-      /* Cantos harmonicamente arredondados */
       max-width: 120px;
-      border-radius: 10px;
+      border-radius: 10px; /* cantos arredondados */
       transition: transform var(--transition-speed);
     }
 
@@ -234,15 +216,6 @@
         padding: 0.5rem;
       }
 
-      .feature-card {
-        padding: 1.5rem;
-      }
-
-      .map-container,
-      .zoneamento-container {
-        padding: 1rem;
-      }
-
       .map-container iframe {
         height: 350px;
       }
@@ -251,10 +224,6 @@
     @media (max-width: 480px) {
       h1 {
         font-size: 1.5rem;
-      }
-
-      h2 {
-        font-size: 1.2rem;
       }
 
       .map-container iframe {
@@ -267,37 +236,14 @@
   <header></header>
 
   <div class="container">
-    <h1>Oportunidade de Investimento em Rondonópolis - MT</h1>
+    <h1>Área Disponível em Rondonópolis - MT</h1>
+    <p style="text-align: center;">
+      Apresentamos uma área bem localizada em Rondonópolis, com grande potencial de desenvolvimento imobiliário.
+      Ideal para empreendimentos verticais, horizontais ou de habitação social, 
+      conforme estudo a ser apresentado na página seguinte.
+    </p>
 
-    <!-- Cards de destaque (Empreendimento T+7) -->
-    <div class="feature-cards">
-      <div class="feature-card">
-        <h2>Empreendimento de Blocos T + 7 Pavimentos</h2>
-        <p>
-          Estruturação Sugerida em 4 fases, totalizando 1.280 unidades. 
-          Ticket Médio de R$ 210.000, gerando um VGV estimado em R$ 268,80 MM. 
-          Taxa de Permuta: 9,0% sobre o VGV.
-        </p>
-      </div>
-
-      <div class="feature-card">
-        <h2>Valor do Terreno</h2>
-        <p>
-          Avaliado em R$ 24,10 MM (R$ 403,20/m²), com possibilidade de negociação. 
-          Excelente oportunidade para construtoras e incorporadoras.
-        </p>
-      </div>
-
-      <div class="feature-card">
-        <h2>Prazo de Implantação</h2>
-        <p>
-          Estimativa de 6 anos para conclusão, sendo 18 meses (aprovação) + 12 meses/fase. 
-          Desenvolvimento em etapas viabiliza melhor fluxo de caixa.
-        </p>
-      </div>
-    </div>
-
-    <!-- Localização no mapa -->
+    <!-- Mapa -->
     <div class="map-container">
       <h2>Localização no Mapa</h2>
       <iframe 
@@ -315,17 +261,23 @@
         alt="Mapa de Zoneamento da Área" 
         id="zoneamento-img">
       <p>
-        Veja o Legislação de Planejamento Urbano de Rondonópolis 
-        <a href="https://leismunicipais.com.br/a1/plano-diretor-rondonopolis-mt" target="_blank">
-          aqui
+        Consulte a legislação de planejamento urbano de Rondonópolis em:
+        <a 
+          href="https://leismunicipais.com.br/a1/plano-diretor-rondonopolis-mt" 
+          target="_blank"
+        >
+          Plano Diretor
         </a>.
       </p>
     </div>
 
-    <!-- Botão para a página de simulação -->
+    <!-- Botão para a página de simulação/detalhes -->
     <div style="text-align: center;">
-      <a class="cta-button" href="https://www.engesudsmart.com.br/lbk/tsr/rondo/campo/sim.html">
-        Ver Simulação de Adensamento
+      <a 
+        class="cta-button" 
+        href="https://www.engesudsmart.com.br/lbk/tsr/rondo/campo/sim.html"
+      >
+        Ver Estudo e Simulação
       </a>
     </div>
   </div>
@@ -359,20 +311,6 @@
 
   <script>
     document.addEventListener('DOMContentLoaded', function() {
-      // Adiciona classe de animação aos cards quando visíveis
-      const cards = document.querySelectorAll('.feature-card');
-      const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-          if (entry.isIntersecting) {
-            entry.target.style.opacity = 1;
-            entry.target.style.transform = 'translateY(0)';
-          }
-        });
-      });
-      cards.forEach(card => {
-        observer.observe(card);
-      });
-
       // Modal para zoom na imagem do zoneamento
       const zoneamentoImg = document.getElementById('zoneamento-img');
       const modal = document.getElementById('image-modal');
