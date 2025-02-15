@@ -47,6 +47,24 @@
       --transition-duration: 0.4s;
     }
     
+    /* Esconde o cursor padrão para utilizar o customizado */
+    body, html {
+      cursor: none;
+    }
+    
+    /* Estilo do cursor customizado */
+    .custom-cursor {
+      width: 20px;
+      height: 20px;
+      position: fixed;
+      border: 2px solid #fff;
+      border-radius: 50%;
+      pointer-events: none;
+      transform: translate(-50%, -50%);
+      transition: transform 0.1s ease, background-color 0.2s ease;
+      z-index: 10000;
+    }
+    
     /* Body sem background fixo – o fundo será o canvas do p5.js */
     body {
       font-family: 'Poppins', sans-serif;
@@ -272,6 +290,9 @@
     </article>
   </main>
 
+  <!-- Elemento do cursor customizado -->
+  <div class="custom-cursor" id="customCursor"></div>
+
   <!-- p5.js Sketch como fundo animado -->
   <script>
     let balls = [];
@@ -376,6 +397,28 @@
         pop();
       }
     }
+  </script>
+
+  <!-- Script para o cursor customizado -->
+  <script>
+    const cursor = document.getElementById('customCursor');
+
+    // Atualiza a posição do cursor customizado conforme o mouse se move
+    document.addEventListener('mousemove', (e) => {
+      cursor.style.left = e.clientX + 'px';
+      cursor.style.top = e.clientY + 'px';
+    });
+
+    // Exemplo: aumenta o cursor ao clicar
+    document.addEventListener('mousedown', () => {
+      cursor.style.transform = 'translate(-50%, -50%) scale(1.5)';
+      cursor.style.backgroundColor = 'rgba(255, 255, 255, 0.2)';
+    });
+
+    document.addEventListener('mouseup', () => {
+      cursor.style.transform = 'translate(-50%, -50%) scale(1)';
+      cursor.style.backgroundColor = 'transparent';
+    });
   </script>
 </body>
 </html>
