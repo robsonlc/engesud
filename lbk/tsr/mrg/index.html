@@ -1,174 +1,371 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="shortcut icon" href="https://i.imgur.com/HjwVm8x.png" type="image/x-icon">
-    <title>Em Breve</title>
-    <style>
-        body {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            margin: 0;
-            font-family: Arial, sans-serif;
-            background-color: #000;
-            overflow: hidden;
-            color: white;
-        }
-        h1 {
-            text-align: center;
-            font-size: 3em;
-            animation: fadeIn 3s ease-in-out infinite alternate;
-        }
-        @keyframes fadeIn {
-            0% { opacity: 0; transform: scale(0.9); }
-            100% { opacity: 1; transform: scale(1.1); }
-        }
-        .stars {
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            background: url('https://raw.githubusercontent.com/robsonlc/engesud/main/lbk/tsr/osha/stars.png') repeat;
-            z-index: -1;
-            animation: moveStars 50s linear infinite;
-        }
-        @keyframes moveStars {
-            from { transform: translateY(0); }
-            to { transform: translateY(-1000px); }
-        }
-        .shooting-star {
-            position: absolute;
-            width: 2px;
-            height: 150px;
-            background: linear-gradient(white, rgba(255, 255, 255, 0));
-            animation: shootingStar 2s ease-out infinite;
-        }
-        @keyframes shootingStar {
-            from {
-                top: -10%;
-                left: 100%;
-            }
-            to {
-                top: 100%;
-                left: -10%;
-            }
-        }
-        .glowing-text {
-            color: #fff;
-            text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 20px #ff00ff, 0 0 30px #ff00ff, 0 0 40px #ff00ff, 0 0 50px #ff00ff, 0 0 60px #ff00ff;
-            animation: glow 1s ease-in-out infinite alternate;
-        }
-        @keyframes glow {
-            from {
-                text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 20px #ff00ff, 0 0 30px #ff00ff, 0 0 40px #ff00ff, 0 0 50px #ff00ff, 0 0 60px #ff00ff;
-            }
-            to {
-                text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #ff00ff, 0 0 40px #ff00ff, 0 0 50px #ff00ff, 0 0 60px #ff00ff, 0 0 70px #ff00ff;
-            }
-        }
-        .floating-objects {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            width: 10px;
-            height: 10px;
-            background: red;
-            border-radius: 50%;
-            animation: float 5s ease-in-out infinite;
-        }
-        @keyframes float {
-            0%, 100% {
-                transform: translateY(0) translateX(0);
-            }
-            50% {
-                transform: translateY(-20px) translateX(20px);
-            }
-        }
-        .twinkling-stars {
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            background: transparent;
-            overflow: hidden;
-            z-index: 1;
-        }
-        .twinkling-stars::before, .twinkling-stars::after {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: transparent;
-            opacity: 0.5;
-            animation: twinkling 1.5s infinite ease-in-out alternate;
-        }
-        .twinkling-stars::after {
-            animation-delay: 0.75s;
-        }
-        @keyframes twinkling {
-            0% { background: rgba(255, 255, 255, 0.1); }
-            100% { background: rgba(255, 255, 255, 0.3); }
-        }
-        .nebula {
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            background: radial-gradient(circle at center, rgba(255, 0, 255, 0.2), transparent);
-            z-index: 0;
-            animation: pulse 3s infinite;
-        }
-        @keyframes pulse {
-            0%, 100% { transform: scale(1); }
-            50% { transform: scale(1.1); }
-        }
-        .comet {
-            position: absolute;
-            width: 2px;
-            height: 250px;
-            background: linear-gradient(white, rgba(255, 255, 255, 0));
-            animation: comet 3s ease-out infinite;
-        }
-        @keyframes comet {
-            from {
-                top: -20%;
-                left: 120%;
-            }
-            to {
-                top: 120%;
-                left: -20%;
-            }
-        }
-        .meteor {
-            position: absolute;
-            width: 3px;
-            height: 200px;
-            background: linear-gradient(white, rgba(255, 255, 255, 0));
-            animation: meteor 4s ease-out infinite;
-        }
-        @keyframes meteor {
-            from {
-                top: -30%;
-                left: 110%;
-            }
-            to {
-                top: 110%;
-                left: -30%;
-            }
-        }
-    </style>
+  <meta charset="UTF-8">
+  <title>Apresentação Miringuava - SJP</title>
+  <!-- Meta Tags OG -->
+  <meta property="og:url" content="https://www.engesudsmart.com.br/lbk/tsr/mrg">
+  <meta property="og:image" content="https://i.postimg.cc/vZrVCWrK/image.png">
+  <meta property="og:title" content="Miringuava - SJP">
+  <meta property="og:description" content="Prospecção de empreendimento habitacional vertical (MCMV).">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Favicon -->
+  <link rel="shortcut icon" href="https://i.postimg.cc/dQ6DTGL6/ZQ2U8eO.png" type="image/x-icon">
+
+  <style>
+    :root {
+      --primary: #2c3e50;
+      --secondary: #0066cc;
+      --accent: #25D366;
+      --text: #333;
+      --bg: #f9f9f9;
+      --card-bg: #fff;
+      --shadow: rgba(0,0,0,0.1);
+      --transition: all 0.3s ease;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+      color: var(--text);
+      line-height: 1.6;
+      background-color: var(--bg);
+    }
+
+    header {
+      position: relative;
+      width: 100%;
+      height: 40vh;
+      min-height: 250px;
+      background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)),
+                  url('https://i.postimg.cc/0QFG99bX/image.png') center/cover no-repeat;
+    }
+
+    .header-content {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 1rem;
+    }
+
+    .header-content h1 {
+      color: var(--card-bg);
+      font-size: clamp(1.5rem, 4vw, 2.5rem);
+      font-weight: 600;
+      text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+    }
+
+    main {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 2rem 1rem;
+    }
+
+    h2, h3 {
+      color: var(--primary);
+      margin: 2rem 0 1rem;
+    }
+
+    p {
+      margin-bottom: 1rem;
+    }
+
+    .feature-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 2rem;
+      margin: 2rem 0;
+    }
+
+    .feature-card {
+      background-color: var(--card-bg);
+      border-radius: 12px;
+      box-shadow: 0 4px 12px var(--shadow);
+      padding: 1.5rem;
+      text-align: center;
+      transition: var(--transition);
+    }
+
+    .feature-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 24px var(--shadow);
+    }
+
+    .feature-card img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      border-radius: 8px;
+      margin-bottom: 1rem;
+    }
+
+    .feature-card h4 {
+      color: var(--primary);
+      margin-bottom: 0.5rem;
+    }
+
+    .feature-card a {
+      color: var(--secondary);
+      text-decoration: none;
+      font-weight: 500;
+      transition: var(--transition);
+    }
+
+    .feature-card a:hover {
+      color: var(--primary);
+    }
+
+    /* Container para manter o iframe em 16:9 */
+    .map-container {
+      position: relative;
+      width: 100%;
+      padding-top: 56.25%; /* 16:9 Aspect Ratio */
+      margin: 2rem 0;
+    }
+    .map-container iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      border: none;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px var(--shadow);
+    }
+
+    footer {
+      background: linear-gradient(135deg, var(--primary), #34495e);
+      color: var(--card-bg);
+      text-align: center;
+      padding: 3rem 1rem;
+      margin-top: 4rem;
+    }
+
+    footer img {
+      max-width: 180px;
+      border-radius: 8px;
+      margin-bottom: 1rem;
+    }
+
+    footer p {
+      margin: 0.5rem 0;
+      opacity: 0.9;
+    }
+
+    footer a {
+      color: var(--card-bg);
+      text-decoration: none;
+      transition: var(--transition);
+    }
+
+    footer a:hover {
+      opacity: 0.8;
+    }
+
+    /* Botão flutuante do WhatsApp */
+    .whatsapp-button {
+      position: fixed;
+      bottom: 2rem;
+      right: 2rem;
+      background-color: var(--accent);
+      color: var(--card-bg);
+      padding: 0.8rem 1.5rem;
+      border-radius: 50px;
+      text-decoration: none;
+      font-weight: 500;
+      box-shadow: 0 4px 12px rgba(37, 211, 102, 0.3);
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      transition: var(--transition);
+      z-index: 1000;
+    }
+
+    .whatsapp-button:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 16px rgba(37, 211, 102, 0.4);
+    }
+
+    .whatsapp-button svg {
+      width: 24px;
+      height: 24px;
+      fill: currentColor;
+    }
+
+    @media (max-width: 768px) {
+      main {
+        padding: 1rem;
+      }
+
+      .feature-container {
+        gap: 1rem;
+      }
+
+      .whatsapp-button {
+        bottom: 1rem;
+        right: 1rem;
+        padding: 0.6rem 1rem;
+      }
+
+      .whatsapp-button span {
+        display: none;
+      }
+    }
+
+    /* Animação fadeInUp para os elementos que receberem .animate */
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .animate {
+      animation: fadeInUp 0.6s ease-out forwards;
+    }
+  </style>
 </head>
 <body>
-    <div class="stars"></div>
-    <div class="twinkling-stars"></div>
-    <div class="shooting-star"></div>
-    <div class="nebula"></div>
-    <div class="comet"></div>
-    <div class="meteor"></div>
-    <h1 class="glowing-text">Logo entrará no ar</h1>
-    <div class="floating-objects"></div>
+
+  <header>
+    <div class="header-content">
+      <h1>Terreno em Miringuava - SJP</h1>
+    </div>
+  </header>
+
+  <main>
+    <h2>Apresentação Geral</h2>
+    <p>
+      Segue a apresentação do terreno no Miringuava - SJP, com uma sugestão de região 
+      para desenvolvimento de empreendimento habitacional vertical (MCMV). 
+      O estudo geométrico fornecido é antigo, mas serve como base para possíveis 
+      negociações com construtoras interessadas em torres de até 7 pavimentos.
+    </p>
+    <p>
+      Parte da área ainda não está urbanizada, mas o proprietário já vem tentando 
+      inserir a propriedade no perímetro urbano há algum tempo. O croqui abaixo 
+      sugere a área que possivelmente está dentro do perímetro urbano.
+    </p>
+
+    <!-- Mapa incorporado do Google Maps -->
+    <h3>Localização no Google Maps</h3>
+    <div class="map-container">
+      <iframe
+        src="https://www.google.com/maps/d/embed?mid=1ExnPsN_RqHlJf4KVItuz9GPNU8Qi5Gc&ehbc=2E312F"
+        allowfullscreen
+      ></iframe>
+    </div>
+
+    <!-- Seção de cartões (Documentos e Imagens) -->
+    <div class="feature-container">
+      <!-- Card 1: Croqui -->
+      <div class="feature-card">
+        <img src="https://i.postimg.cc/ry1SbJzX/image.png" alt="Croqui do Terreno">
+        <h4>Croqui do Terreno</h4>
+        <p>
+          <a href="https://i.postimg.cc/ry1SbJzX/image.png" target="_blank">
+            Visualizar
+          </a>
+        </p>
+      </div>
+
+      <!-- Card 2: Planta Planialtimétrica DWG -->
+      <div class="feature-card">
+        <img src="https://i.postimg.cc/W4ZFQGTJ/image.png" alt="Thumbnail DWG">
+        <h4>Planta Planialtimétrica (DWG)</h4>
+        <p>
+          <a href="https://www.engesudsmart.com.br/lbk/tsr/mrg/planialtimetrico.dwg" target="_blank">
+            Baixar DWG
+          </a>
+        </p>
+      </div>
+
+      <!-- Card 3: Estudo Geométrico (PDF) -->
+      <div class="feature-card">
+        <img src="https://i.postimg.cc/qRfnRmjL/image.png" alt="Thumbnail PDF">
+        <h4>Estudo Geométrico (PDF)</h4>
+        <p>
+          <a href="https://www.engesudsmart.com.br/lbk/tsr/mrg/geometrico.pdf" target="_blank">
+            Visualizar PDF
+          </a>
+        </p>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <img src="https://i.postimg.cc/FsKzb1S4/3YKn2xW.png" alt="Logo Engesud">
+    <p>Engesud Engenharia e Intermediação LTDA</p>
+    <p>Robson Luis da Costa | <a href="https://wa.me/4497013489" title="Whatsapp">+55 (44) 99701-3489</a></p>
+    <p><a href="https://www.engesudsmart.com.br" target="_blank">www.engesudsmart.com.br</a></p>
+    <p>Última atualização: 09 de janeiro de 2025</p>
+  </footer>
+
+  <!-- Botão flutuante do WhatsApp -->
+  <a class="whatsapp-button" 
+     href="https://wa.me/4497013489" 
+     target="_blank" 
+     title="Fale Conosco pelo WhatsApp">
+    <!-- Ícone WhatsApp em SVG -->
+    <svg viewBox="0 0 512 512">
+      <path d="M256.064 0c-70.692 0-138.5 27.549-189.05 77.55-50.465 49.92-78.253 116.256-77 186.922 
+               1.185 54.123 17.021 106.41 46.012 150.79l-30.258 111.13 114.074-29.894c42.286 26.131 90.88 
+               39.932 141.264 39.932h.064c71.37 0 138.676-27.903 189.142-78.63 50.496-50.76 78.32-118.06 
+               78.258-189.38-.062-70.63-27.735-137.79-78.357-188.3C394.76 27.77 327.434 0 256.064 0zm-0.21 
+               472.77c-45.457-.03-89.87-13.4-127.734-38.7l-8.957-5.7-67.72 17.75 18.08-66.13-5.83-9.06c-27.01
+               -41.98-41.39-90.8-42.52-141.06-.96-57.55 21.43-111.69 61.83-151.58C127.32 60.71 188.92 38.5 
+               256.47 38.5c63.48 0 123.32 24.75 168.27 69.73 45.08 45.06 69.8 104.99 69.83 168.41.06 
+               63.72-24.61 123.65-69.56 168.82-45.18 45.36-105.18 70.09-168.18 70.09h-.03zM365.14 
+               307.07c-5.48-2.73-32.42-15.98-37.45-17.8-5.03-1.84-8.7-2.73-12.4 2.73-3.66 
+               5.46-14.23 17.8-17.46 21.46-3.2 3.66-6.4 4.12-11.88 1.37-32.8-16.4-54.31-29.2-76.42-66.04-5.78-9.96 
+               5.78-9.2 16.4-30.53 1.82-3.66.92-6.83-.46-9.56-1.37-2.73-12.4-29.96-17.02-41.13-4.5-10.81-9.07-9.35
+               -12.4-9.51-3.2-.16-6.84-.2-10.48-.2-3.66 0-9.56 1.37-14.59 6.83-5.03 5.46-19.08 18.65-19.08 
+               45.58 0 26.93 19.53 53.13 22.26 56.79 2.73 3.66 38.43 58.65 93.26 82.27 13.02 5.6 23.18 
+               8.95 31.12 11.47 13.08 4.16 25.02 3.58 34.42 2.17 10.5-1.56 32.42-13.23 36.96-25.99 
+               4.55-12.76 4.55-23.7 3.2-25.99-1.35-2.26-5.04-3.66-10.52-6.4z"/>
+    </svg>
+    <span>Fale Conosco</span>
+  </a>
+
+  <!-- Este conteúdo é protegido por direitos autorais creditados à Engesud Engenharia e Intermediação LTDA, inscrita no CNPJ 40.601.637/0001-58 -->
+
+  <!-- Script de animação -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      // Seleciona todos os elementos que deseja animar ao entrar na tela
+      const elements = document.querySelectorAll('main > *, .feature-card');
+
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('animate');
+            observer.unobserve(entry.target);
+          }
+        });
+      }, {
+        threshold: 0.1,
+        rootMargin: '50px'
+      });
+
+      // Define a opacidade inicial e observa
+      elements.forEach(el => {
+        el.style.opacity = '0';
+        observer.observe(el);
+      });
+    });
+  </script>
 </body>
 </html>
-
