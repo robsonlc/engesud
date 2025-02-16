@@ -47,6 +47,12 @@
       --transition-duration: 0.4s;
     }
     
+    /* Efeito fade-in para a foto */
+    @keyframes fadeInPhoto {
+      from { opacity: 0; }
+      to { opacity: 0.9; }
+    }
+    
     /* Esconde o cursor padrão para utilizar o customizado */
     body, html {
       cursor: none;
@@ -341,7 +347,7 @@
   <!-- Elemento do cursor customizado -->
   <div class="custom-cursor" id="customCursor"></div>
 
-  <!-- p5.js Sketch com fundo animado e explosões alternadas -->
+  <!-- p5.js Sketch com fundo animado, explosões alternadas e transições especiais -->
   <script>
     let balls = [];
     const numBalls = 2;
@@ -349,7 +355,8 @@
     let rotationAngle = 0;
     let ballColors = [];
     let particles = [];
-    let explosionIndex = 0; // Índice para alternar entre as bolas
+    let explosionIndex = 0; // Para alternar entre as bolas
+    let clickCount = 0;     // Contador de cliques
 
     function setup() {
       const canvas = createCanvas(windowWidth, windowHeight, WEBGL);
@@ -357,13 +364,13 @@
       canvas.style('z-index', '-1');
       frameRate(60);
 
-      // Define as cores para as 2 bolas
+      // Cores para as 2 bolas iniciais
       ballColors = [
         color(255, 150, 50),  // Laranja
         color(50, 255, 150)   // Verde
       ];
 
-      // Cria as 2 bolas
+      // Cria as 2 bolas iniciais
       for (let i = 0; i < numBalls; i++) {
         balls.push(new Ball(ballColors[i]));
       }
@@ -388,7 +395,7 @@
         ball.show();
       }
 
-      // Atualiza e desenha as partículas da explosão
+      // Atualiza e desenha as partículas das explosões
       for (let i = particles.length - 1; i >= 0; i--) {
         particles[i].update();
         particles[i].show();
@@ -402,18 +409,130 @@
       resizeCanvas(windowWidth, windowHeight);
     }
 
-    // Ao clicar, o efeito de explosão ocorre na posição da bola selecionada, alternando entre elas
+    // Função de clique que controla os diferentes comportamentos
     function mousePressed() {
-      let ballPos = balls[explosionIndex].pos;
-      let ballCol = balls[explosionIndex].col;
-      // Cria 20 partículas a partir da posição da bola (no espaço WEBGL)
-      for (let i = 0; i < 20; i++) {
-        particles.push(new Particle(ballPos.x, ballPos.y, ballCol));
+      clickCount++;
+      if (clickCount < 10) {
+        // Explosão normal: posição da bola alternada
+        let ballPos = balls[explosionIndex].pos;
+        let ballCol = balls[explosionIndex].col;
+        for (let i = 0; i < 20; i++) {
+          particles.push(new Particle(ballPos.x, ballPos.y, ballCol));
+        }
+        explosionIndex = (explosionIndex + 1) % balls.length;
+      } else if (clickCount === 10) {
+        // 10º clique:
+        // 1. Substitui o parágrafo por uma foto pequena com efeito suave e descrição profissional
+        document.querySelector('.description').innerHTML =
+          '<div style="text-align:center; opacity:0; animation: fadeInPhoto 1s forwards;">' +
+            '<img src="https://i.postimg.cc/C53P2J7Q/image.png" alt="Retrato Profissional" style="max-width:100px; border-radius:50%;">' +
+            '<p style="margin-top:8px; font-size:1rem; color:#fff;">Robson Luis da Costa<br>Engenheiro Civil e Corretor Imobiliário</p>' +
+          '</div>';
+        // 2. Explosão especial: ambas as bolas geram partículas vermelhas
+        for (let ball of balls) {
+          for (let i = 0; i < 20; i++) {
+            particles.push(new Particle(ball.pos.x, ball.pos.y, color(255, 0, 0)));
+          }
+        }
+        // 3. Calcula a posição média das bolas
+        let avgX = 0, avgY = 0, avgZ = 0;
+        for (let ball of balls) {
+          avgX += ball.pos.x;
+          avgY += ball.pos.y;
+          avgZ += ball.pos.z;
+        }
+        avgX /= balls.length;
+        avgY /= balls.length;
+        avgZ /= balls.length;
+        // 4. Cria nova bola vermelha: 2x maior e 2x mais rápida
+        let newRedBall = new Ball(color(255, 0, 0));
+        newRedBall.r = 20;
+        newRedBall.pos = createVector(avgX, avgY, avgZ);
+        newRedBall.vel = p5.Vector.random3D();
+        newRedBall.vel.mult(random(1, 3) * 2);
+        balls = [newRedBall];
+        explosionIndex = 0;
+      } else if (clickCount < 20) {
+        // Cliques 11 a 19: explosões na posição da bola vermelha
+        let ballPos = balls[0].pos;
+        let ballCol = balls[0].col;
+        for (let i = 0; i < 20; i++) {
+          particles.push(new Particle(ballPos.x, ballPos.y, ballCol));
+        }
+      } else if (clickCount === 20) {
+        // 20º clique: explosão especial com partículas pretas na posição da bola vermelha,
+        // seguida da substituição da bola vermelha por uma bola CINZA (mais discreta): 2x maior e 2x mais rápida.
+        let ballPos = balls[0].pos;
+        for (let i = 0; i < 20; i++) {
+          particles.push(new Particle(ballPos.x, ballPos.y, color(0, 0, 0)));
+        }
+        let newGrayBall = new Ball(color(128, 128, 128)); // cinza
+        newGrayBall.r = balls[0].r * 2; // Se a vermelha tinha r = 20, agora 40.
+        newGrayBall.pos = balls[0].pos.copy();
+        newGrayBall.vel = p5.Vector.random3D();
+        newGrayBall.vel.mult(random(1, 3) * 2);
+        balls = [newGrayBall];
+        explosionIndex = 0;
+      } else if (clickCount < 30) {
+        // Cliques 21 a 29: explosões na posição da bola cinza
+        let ballPos = balls[0].pos;
+        let ballCol = balls[0].col;
+        for (let i = 0; i < 20; i++) {
+          particles.push(new Particle(ballPos.x, ballPos.y, ballCol));
+        }
+      } else if (clickCount === 30) {
+        // 30º clique: explosão especial com partículas azuis substituídas por partículas amareladas,
+        // seguida da substituição da bola cinza por uma bola AMARELADA: 2x maior e 2x mais rápida, com rastro aumentado.
+        let ballPos = balls[0].pos;
+        // Usar tom amarelado para partículas
+        for (let i = 0; i < 20; i++) {
+          particles.push(new Particle(ballPos.x, ballPos.y, color(255, 204, 0)));
+        }
+        let newYellowBall = new Ball(color(255, 204, 0)); // bola amarelada
+        newYellowBall.r = balls[0].r * 2; // se a cinza tinha r = 40, agora 80.
+        newYellowBall.pos = balls[0].pos.copy();
+        newYellowBall.vel = p5.Vector.random3D();
+        newYellowBall.vel.mult(random(1, 3) * 2);
+        newYellowBall.trailMaxLength = 60; // rastro aumentado
+        balls = [newYellowBall];
+        explosionIndex = 0;
+      } else if (clickCount < 40) {
+        // Cliques 31 a 39: explosões na posição da bola amarelada
+        let ballPos = balls[0].pos;
+        let ballCol = balls[0].col;
+        for (let i = 0; i < 20; i++) {
+          particles.push(new Particle(ballPos.x, ballPos.y, ballCol));
+        }
+      } else if (clickCount === 40) {
+        // 40º clique: explosão especial com partículas brancas na posição da bola amarelada,
+        // seguida do desaparecimento da bola amarelada e do retorno das duas bolas originais, com o texto original.
+        let ballPos = balls[0].pos;
+        for (let i = 0; i < 20; i++) {
+          particles.push(new Particle(ballPos.x, ballPos.y, color(255, 255, 255)));
+        }
+        // Restaura o texto original
+        document.querySelector('.description').innerHTML =
+          '<p>Excelência em projetos imobiliários e intermediação de áreas para incorporação e loteamento.</p>';
+        // Recria as duas bolas originais
+        let originalColors = [color(255, 150, 50), color(50, 255, 150)];
+        balls = [];
+        for (let i = 0; i < 2; i++) {
+          balls.push(new Ball(originalColors[i]));
+        }
+        explosionIndex = 0;
+        // Reinicia o ciclo
+        clickCount = 0;
+      } else {
+        // Após o 40º clique (caso nunca atinja exatamente 40, repete explosões alternadas)
+        let ballPos = balls[explosionIndex].pos;
+        let ballCol = balls[explosionIndex].col;
+        for (let i = 0; i < 20; i++) {
+          particles.push(new Particle(ballPos.x, ballPos.y, ballCol));
+        }
+        explosionIndex = (explosionIndex + 1) % balls.length;
       }
-      // Alterna o índice entre 0 e 1
-      explosionIndex = (explosionIndex + 1) % numBalls;
     }
-
+    
     class Ball {
       constructor(col) {
         this.r = 10;
@@ -425,7 +544,7 @@
         this.trail = [];
         this.trailMaxLength = 30;
       }
-
+    
       update() {
         this.trail.push(this.pos.copy());
         if (this.trail.length > this.trailMaxLength) {
@@ -441,7 +560,7 @@
           this.pos = n.copy().mult(containerRadius - this.r);
         }
       }
-
+    
       show() {
         // Desenha o rastro com transparência progressiva
         for (let i = 0; i < this.trail.length - 1; i++) {
@@ -460,7 +579,7 @@
         pop();
       }
     }
-
+    
     class Particle {
       constructor(x, y, col) {
         this.pos = createVector(x, y, 0);
@@ -486,27 +605,27 @@
       }
     }
   </script>
-
-  <!-- Script para cursor customizado, efeito ripple, parallax no logotipo e partículas no botão -->
+  
+  <!-- Scripts para o cursor customizado, ripple, parallax e partículas no botão de contato -->
   <script>
     const cursor = document.getElementById('customCursor');
-
+    
     document.addEventListener('mousemove', (e) => {
       cursor.style.left = e.clientX + 'px';
       cursor.style.top = e.clientY + 'px';
     });
-
+    
     document.addEventListener('mousedown', () => {
       cursor.style.transform = 'translate(-50%, -50%) scale(1.5)';
       cursor.style.backgroundColor = 'rgba(255, 255, 255, 0.2)';
     });
-
+    
     document.addEventListener('mouseup', () => {
       cursor.style.transform = 'translate(-50%, -50%) scale(1)';
       cursor.style.backgroundColor = 'transparent';
     });
-
-    // Efeito Ripple ao clicar na página
+    
+    // Efeito Ripple
     document.addEventListener('click', (e) => {
       const ripple = document.createElement('div');
       ripple.classList.add('ripple');
@@ -517,7 +636,7 @@
         ripple.remove();
       }, 600);
     });
-
+    
     // Efeito Parallax no logotipo
     document.addEventListener('mousemove', (e) => {
       const logo = document.querySelector('.logo-container img');
@@ -527,32 +646,29 @@
       const moveY = (e.clientY - centerY) * 0.005;
       logo.style.transform = `translate(${moveX}px, ${moveY}px)`;
     });
-
+    
     // Efeito de partículas no botão de contato
     const contactButton = document.querySelector('.contact-button');
-
+    
     contactButton.addEventListener('mousemove', (e) => {
       const particle = document.createElement('div');
       particle.classList.add('particle');
-
-      // Calcula a posição relativa do mouse dentro do botão
+    
       const rect = contactButton.getBoundingClientRect();
       const x = e.clientX - rect.left;
       const y = e.clientY - rect.top;
       particle.style.left = x + 'px';
       particle.style.top = y + 'px';
-
-      // Gera um deslocamento aleatório para a animação
+    
       const angle = Math.random() * 2 * Math.PI;
-      const distance = Math.random() * 30 + 10; // entre 10 e 40px
+      const distance = Math.random() * 30 + 10;
       const tx = Math.cos(angle) * distance;
       const ty = Math.sin(angle) * distance;
       particle.style.setProperty('--tx', tx + 'px');
       particle.style.setProperty('--ty', ty + 'px');
-
+    
       contactButton.appendChild(particle);
-
-      // Remove o elemento ao final da animação
+    
       particle.addEventListener('animationend', () => {
         particle.remove();
       });
