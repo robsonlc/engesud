@@ -2,7 +2,7 @@
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="description" content="Engesud Engenharia - Excelência em projetos imobiliários e intermediação de áreas para incorporação e loteamento.">
 
@@ -183,6 +183,9 @@
       align-items: center;
       gap: 10px;
       box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
+      /* Para o efeito de partículas, o botão precisa ser relativo */
+      position: relative;
+      overflow: hidden;
     }
     
     .contact-button:hover {
@@ -215,6 +218,52 @@
       to {
         opacity: 1;
         transform: translateY(0);
+      }
+    }
+    
+    /* Efeito Ripple */
+    .ripple {
+      position: absolute;
+      width: 20px;
+      height: 20px;
+      background: rgba(255, 255, 255, 0.5);
+      border-radius: 50%;
+      transform: translate(-50%, -50%);
+      pointer-events: none;
+      animation: ripple-animation 0.6s ease-out;
+      z-index: 9999;
+    }
+    
+    @keyframes ripple-animation {
+      from {
+        transform: translate(-50%, -50%) scale(1);
+        opacity: 0.8;
+      }
+      to {
+        transform: translate(-50%, -50%) scale(20);
+        opacity: 0;
+      }
+    }
+    
+    /* Efeito Partículas no botão (Item 1) */
+    .particle {
+      position: absolute;
+      width: 6px;
+      height: 6px;
+      background: rgba(255, 255, 255, 0.7);
+      border-radius: 50%;
+      pointer-events: none;
+      animation: particle-animation 0.8s ease-out forwards;
+    }
+    
+    @keyframes particle-animation {
+      from {
+        opacity: 1;
+        transform: translate(0, 0) scale(1);
+      }
+      to {
+        opacity: 0;
+        transform: translate(var(--tx), var(--ty)) scale(0);
       }
     }
     
@@ -299,7 +348,7 @@
     const numBalls = 2;
     const containerRadius = 300;
     let rotationAngle = 0;
-    let ballColors = []; // Será definido dentro do setup()
+    let ballColors = [];
 
     function setup() {
       const canvas = createCanvas(windowWidth, windowHeight, WEBGL);
@@ -313,22 +362,20 @@
         color(50, 255, 150)   // Verde
       ];
 
-      // Cria as 2 bolas com as cores definidas e com raio duplicado (10)
+      // Cria as 2 bolas
       for (let i = 0; i < numBalls; i++) {
         balls.push(new Ball(ballColors[i]));
       }
     }
 
     function draw() {
-      // Fundo com tema azulado: azul escuro (RGB 0, 77, 153)
       background(0, 77, 153);
 
-      // Rotaciona lentamente a cena
       rotationAngle += 0.005;
       rotateY(rotationAngle);
       rotateX(rotationAngle * 0.5);
 
-      // Desenha a esfera container com contorno light-blue (RGB 230, 243, 255)
+      // Desenha a esfera container
       noFill();
       stroke(230, 243, 255);
       strokeWeight(2);
@@ -347,21 +394,17 @@
 
     class Ball {
       constructor(col) {
-        this.r = 10; // Raio duplicado (10)
-        // Posição inicial: ponto aleatório dentro da esfera container
+        this.r = 10;
         this.pos = p5.Vector.random3D();
         this.pos.mult(random(0, containerRadius - this.r));
-        // Velocidade inicial: direção aleatória
         this.vel = p5.Vector.random3D();
         this.vel.mult(random(1, 3));
-        // Define a cor da bola
         this.col = col;
         this.trail = [];
         this.trailMaxLength = 30;
       }
 
       update() {
-        // Armazena a posição atual para a trilha
         this.trail.push(this.pos.copy());
         if (this.trail.length > this.trailMaxLength) {
           this.trail.shift();
@@ -373,13 +416,11 @@
           let dot = this.vel.dot(n);
           let reflection = p5.Vector.mult(n, 2 * dot);
           this.vel.sub(reflection);
-          // Garante que a bola permaneça dentro do container
           this.pos = n.copy().mult(containerRadius - this.r);
         }
       }
 
       show() {
-        // Desenha a trilha com transparência progressiva
         for (let i = 0; i < this.trail.length - 1; i++) {
           let alphaVal = map(i, 0, this.trail.length - 1, 50, 255);
           stroke(red(this.col), green(this.col), blue(this.col), alphaVal);
@@ -388,7 +429,6 @@
           let p2 = this.trail[i + 1];
           line(p1.x, p1.y, p1.z, p2.x, p2.y, p2.z);
         }
-        // Desenha a bola
         noStroke();
         fill(this.col);
         push();
@@ -399,17 +439,15 @@
     }
   </script>
 
-  <!-- Script para o cursor customizado -->
+  <!-- Script para o cursor customizado, efeito ripple e parallax do logotipo -->
   <script>
     const cursor = document.getElementById('customCursor');
 
-    // Atualiza a posição do cursor customizado conforme o mouse se move
     document.addEventListener('mousemove', (e) => {
       cursor.style.left = e.clientX + 'px';
       cursor.style.top = e.clientY + 'px';
     });
 
-    // Exemplo: aumenta o cursor ao clicar
     document.addEventListener('mousedown', () => {
       cursor.style.transform = 'translate(-50%, -50%) scale(1.5)';
       cursor.style.backgroundColor = 'rgba(255, 255, 255, 0.2)';
@@ -418,6 +456,60 @@
     document.addEventListener('mouseup', () => {
       cursor.style.transform = 'translate(-50%, -50%) scale(1)';
       cursor.style.backgroundColor = 'transparent';
+    });
+
+    // Efeito Ripple ao clicar
+    document.addEventListener('click', (e) => {
+      const ripple = document.createElement('div');
+      ripple.classList.add('ripple');
+      ripple.style.left = `${e.clientX}px`;
+      ripple.style.top = `${e.clientY}px`;
+      document.body.appendChild(ripple);
+      setTimeout(() => {
+        ripple.remove();
+      }, 600);
+    });
+
+    // Efeito Parallax no logotipo
+    document.addEventListener('mousemove', (e) => {
+      const logo = document.querySelector('.logo-container img');
+      const centerX = window.innerWidth / 2;
+      const centerY = window.innerHeight / 2;
+      const moveX = (e.clientX - centerX) * 0.005;
+      const moveY = (e.clientY - centerY) * 0.005;
+      logo.style.transform = `translate(${moveX}px, ${moveY}px)`;
+    });
+  </script>
+
+  <!-- Script para o efeito de partículas no botão de contato -->
+  <script>
+    const contactButton = document.querySelector('.contact-button');
+
+    contactButton.addEventListener('mousemove', (e) => {
+      const particle = document.createElement('div');
+      particle.classList.add('particle');
+
+      // Calcula a posição relativa do mouse dentro do botão
+      const rect = contactButton.getBoundingClientRect();
+      const x = e.clientX - rect.left;
+      const y = e.clientY - rect.top;
+      particle.style.left = x + 'px';
+      particle.style.top = y + 'px';
+
+      // Gera um deslocamento aleatório para a animação
+      const angle = Math.random() * 2 * Math.PI;
+      const distance = Math.random() * 30 + 10; // entre 10 e 40px
+      const tx = Math.cos(angle) * distance;
+      const ty = Math.sin(angle) * distance;
+      particle.style.setProperty('--tx', tx + 'px');
+      particle.style.setProperty('--ty', ty + 'px');
+
+      contactButton.appendChild(particle);
+
+      // Remove o elemento ao final da animação
+      particle.addEventListener('animationend', () => {
+        particle.remove();
+      });
     });
   </script>
 </body>
