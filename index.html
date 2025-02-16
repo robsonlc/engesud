@@ -183,7 +183,6 @@
       align-items: center;
       gap: 10px;
       box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
-      /* Para o efeito de partículas, o botão precisa ser relativo */
       position: relative;
       overflow: hidden;
     }
@@ -221,7 +220,7 @@
       }
     }
     
-    /* Efeito Ripple */
+    /* Efeito Ripple para clique na página */
     .ripple {
       position: absolute;
       width: 20px;
@@ -242,28 +241,6 @@
       to {
         transform: translate(-50%, -50%) scale(20);
         opacity: 0;
-      }
-    }
-    
-    /* Efeito Partículas no botão (Item 1) */
-    .particle {
-      position: absolute;
-      width: 6px;
-      height: 6px;
-      background: rgba(255, 255, 255, 0.7);
-      border-radius: 50%;
-      pointer-events: none;
-      animation: particle-animation 0.8s ease-out forwards;
-    }
-    
-    @keyframes particle-animation {
-      from {
-        opacity: 1;
-        transform: translate(0, 0) scale(1);
-      }
-      to {
-        opacity: 0;
-        transform: translate(var(--tx), var(--ty)) scale(0);
       }
     }
     
@@ -342,13 +319,14 @@
   <!-- Elemento do cursor customizado -->
   <div class="custom-cursor" id="customCursor"></div>
 
-  <!-- p5.js Sketch como fundo animado -->
+  <!-- p5.js Sketch com fundo animado e efeito de pulso no clique -->
   <script>
     let balls = [];
     const numBalls = 2;
     const containerRadius = 300;
     let rotationAngle = 0;
     let ballColors = [];
+    let pulses = []; // Array para armazenar os pulsos
 
     function setup() {
       const canvas = createCanvas(windowWidth, windowHeight, WEBGL);
@@ -356,13 +334,13 @@
       canvas.style('z-index', '-1');
       frameRate(60);
 
-      // Define as cores para as 2 bolas
+      // Cores iniciais das duas bolas
       ballColors = [
         color(255, 150, 50),  // Laranja
         color(50, 255, 150)   // Verde
       ];
 
-      // Cria as 2 bolas
+      // Cria as bolas iniciais
       for (let i = 0; i < numBalls; i++) {
         balls.push(new Ball(ballColors[i]));
       }
@@ -371,6 +349,7 @@
     function draw() {
       background(0, 77, 153);
 
+      // Aplica rotação para dar dinamismo
       rotationAngle += 0.005;
       rotateY(rotationAngle);
       rotateX(rotationAngle * 0.5);
@@ -381,10 +360,19 @@
       strokeWeight(2);
       sphere(containerRadius, 12, 12);
 
-      // Atualiza e exibe cada bola
+      // Atualiza e desenha cada bola
       for (let ball of balls) {
         ball.update();
         ball.show();
+      }
+
+      // Atualiza e desenha os pulsos (efeito de pulso no clique)
+      for (let i = pulses.length - 1; i >= 0; i--) {
+        pulses[i].update();
+        pulses[i].show();
+        if (pulses[i].isFinished()) {
+          pulses.splice(i, 1);
+        }
       }
     }
 
@@ -392,6 +380,15 @@
       resizeCanvas(windowWidth, windowHeight);
     }
 
+    // Ao clicar, adiciona um novo pulso na posição do clique (convertida para coordenadas WEBGL)
+    function mousePressed() {
+      // Em WEBGL, a origem é o centro: converte as coordenadas
+      let x = mouseX - width / 2;
+      let y = mouseY - height / 2;
+      pulses.push(new Pulse(x, y));
+    }
+
+    // Classe para as bolas (objetos já existentes)
     class Ball {
       constructor(col) {
         this.r = 10;
@@ -437,9 +434,34 @@
         pop();
       }
     }
+
+    // Classe para o efeito de pulso (onda que expande e desaparece) na posição do clique
+    class Pulse {
+      constructor(x, y) {
+        this.x = x;
+        this.y = y;
+        this.r = 0;
+        this.maxR = 200;  // Raio máximo do pulso
+      }
+      update() {
+        this.r += 4; // Velocidade de expansão
+      }
+      show() {
+        push();
+        translate(this.x, this.y, 0);
+        noFill();
+        stroke(255, map(this.r, 0, this.maxR, 255, 0)); // Fading out
+        strokeWeight(4);
+        ellipse(0, 0, this.r, this.r);
+        pop();
+      }
+      isFinished() {
+        return this.r > this.maxR;
+      }
+    }
   </script>
 
-  <!-- Script para o cursor customizado, efeito ripple e parallax do logotipo -->
+  <!-- Script para cursor customizado, efeito ripple e parallax do logotipo -->
   <script>
     const cursor = document.getElementById('customCursor');
 
@@ -458,7 +480,7 @@
       cursor.style.backgroundColor = 'transparent';
     });
 
-    // Efeito Ripple ao clicar
+    // Efeito Ripple ao clicar na página
     document.addEventListener('click', (e) => {
       const ripple = document.createElement('div');
       ripple.classList.add('ripple');
@@ -478,38 +500,6 @@
       const moveX = (e.clientX - centerX) * 0.005;
       const moveY = (e.clientY - centerY) * 0.005;
       logo.style.transform = `translate(${moveX}px, ${moveY}px)`;
-    });
-  </script>
-
-  <!-- Script para o efeito de partículas no botão de contato -->
-  <script>
-    const contactButton = document.querySelector('.contact-button');
-
-    contactButton.addEventListener('mousemove', (e) => {
-      const particle = document.createElement('div');
-      particle.classList.add('particle');
-
-      // Calcula a posição relativa do mouse dentro do botão
-      const rect = contactButton.getBoundingClientRect();
-      const x = e.clientX - rect.left;
-      const y = e.clientY - rect.top;
-      particle.style.left = x + 'px';
-      particle.style.top = y + 'px';
-
-      // Gera um deslocamento aleatório para a animação
-      const angle = Math.random() * 2 * Math.PI;
-      const distance = Math.random() * 30 + 10; // entre 10 e 40px
-      const tx = Math.cos(angle) * distance;
-      const ty = Math.sin(angle) * distance;
-      particle.style.setProperty('--tx', tx + 'px');
-      particle.style.setProperty('--ty', ty + 'px');
-
-      contactButton.appendChild(particle);
-
-      // Remove o elemento ao final da animação
-      particle.addEventListener('animationend', () => {
-        particle.remove();
-      });
     });
   </script>
 </body>
