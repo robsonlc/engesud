@@ -23,7 +23,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
   <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
   
   <!-- Font Awesome -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
@@ -59,6 +59,7 @@
       transform: translate(-50%, -50%);
       transition: transform 0.1s ease, background-color 0.2s ease;
       z-index: 10000;
+      mix-blend-mode: difference;
     }
     body {
       font-family: 'Poppins', sans-serif;
@@ -87,33 +88,48 @@
     .logo-container {
       margin-bottom: 3rem;
       animation: fadeInDown 1.2s ease-out;
+      position: relative;
+    }
+    .logo-container::after {
+      content: '';
+      position: absolute;
+      bottom: -20px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 50%;
+      height: 3px;
+      background: linear-gradient(90deg, transparent, #fff, transparent);
+      border-radius: 2px;
     }
     .logo-container img {
       max-width: 300px;
       height: auto;
       filter: drop-shadow(0 6px 8px rgba(0,0,0,0.25));
-      transition: transform var(--transition-duration) ease, filter var(--transition-duration) ease;
+      transition: all var(--transition-duration) cubic-bezier(0.4, 0, 0.2, 1);
       border-radius: 15px;
       will-change: transform;
     }
     .logo-container img:hover {
       transform: translateY(-8px) scale(1.02);
-      filter: drop-shadow(0 8px 12px rgba(0,0,0,0.3));
+      filter: drop-shadow(0 8px 12px rgba(0,0,0,0.3)) brightness(1.1);
     }
     .content-box {
       background: rgba(255,255,255,0.15);
       padding: 3rem;
-      border-radius: 15px;
-      box-shadow: 0 10px 40px rgba(0,77,153,0.25);
+      border-radius: 20px;
+      box-shadow: 0 10px 40px rgba(0,77,153,0.25),
+                  inset 0 0 20px rgba(255,255,255,0.1);
       border: 2px solid rgba(255,255,255,0.5);
       max-width: 650px;
       width: 90%;
       backdrop-filter: blur(8px);
-      transition: transform 0.3s ease, border-color 0.3s ease;
+      transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
     }
     .content-box:hover {
       transform: translateY(-5px);
       border-color: rgba(255,255,255,0.7);
+      box-shadow: 0 15px 50px rgba(0,77,153,0.3),
+                  inset 0 0 30px rgba(255,255,255,0.15);
     }
     h1 {
       position: absolute;
@@ -125,7 +141,6 @@
       clip: rect(0,0,0,0);
       border: 0;
     }
-    /* Caixa de descrição com altura fixa */
     .description {
       min-height: 150px;
       height: 150px;
@@ -136,7 +151,7 @@
       font-weight: 300;
       letter-spacing: 0.6px;
       text-align: center;
-      text-shadow: 1px 1px 2px rgba(0,0,0,0.2);
+      text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
     }
     .contact {
       margin-top: 35px;
@@ -146,31 +161,47 @@
       text-align: center;
     }
     .contact p {
-      margin-bottom: 15px;
+      margin-bottom: 20px;
       text-shadow: 1px 1px 2px rgba(0,0,0,0.2);
+      font-weight: 600;
     }
     .contact-button {
       text-decoration: none;
       color: var(--primary-blue);
-      font-weight: 600;
-      background: #ffffff;
-      padding: 14px 32px;
-      border-radius: 12px;
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      font-weight: 700;
+      background: linear-gradient(135deg, #ffffff, #f0f0f0);
+      padding: 16px 36px;
+      border-radius: 15px;
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
       display: inline-flex;
       align-items: center;
-      gap: 10px;
-      box-shadow: 0 5px 15px rgba(0,0,0,0.15);
+      gap: 12px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.15),
+                  inset 0 1px 2px rgba(255,255,255,0.5);
       position: relative;
       overflow: hidden;
     }
+    .contact-button::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(255,255,255,0.8), transparent);
+      transition: 0.5s;
+    }
     .contact-button:hover {
       transform: translateY(-3px) scale(1.05);
-      box-shadow: 0 8px 20px rgba(0,0,0,0.25);
-      filter: brightness(1.1);
+      box-shadow: 0 8px 25px rgba(0,0,0,0.2);
+      color: #004080;
+    }
+    .contact-button:hover::before {
+      left: 100%;
     }
     .contact-button i {
-      font-size: 1.3rem;
+      font-size: 1.4rem;
+      color: #25D366;
     }
     @keyframes fadeInUp {
       from { opacity: 0; transform: translateY(25px); }
@@ -188,7 +219,7 @@
       border-radius: 50%;
       transform: translate(-50%, -50%);
       pointer-events: none;
-      animation: ripple-animation 0.6s ease-out;
+      animation: ripple-animation 0.6s cubic-bezier(0.4, 0, 0.2, 1);
       z-index: 9999;
     }
     @keyframes ripple-animation {
@@ -202,26 +233,75 @@
       background: rgba(255,255,255,0.7);
       border-radius: 50%;
       pointer-events: none;
-      animation: particle-animation 0.8s ease-out forwards;
+      animation: particle-animation 0.8s cubic-bezier(0.4, 0, 0.2, 1) forwards;
     }
     @keyframes particle-animation {
       from { opacity: 1; transform: translate(0, 0) scale(1); }
       to { opacity: 0; transform: translate(var(--tx), var(--ty)) scale(0); }
     }
+
+    /* Responsividade aprimorada */
     @media (max-width: 768px) {
-      .logo-container img { max-width: 240px; }
-      .description { font-size: 1.15rem; line-height: 1.7; }
-      .content-box { padding: 2.2rem; }
-      .contact-button { padding: 12px 26px; }
+      .logo-container img { 
+        max-width: 240px; 
+      }
+      .description { 
+        font-size: 1.15rem; 
+        line-height: 1.7;
+        min-height: 120px;
+        height: auto;
+      }
+      .content-box { 
+        padding: 2.2rem;
+        width: 95%; 
+      }
+      .contact-button { 
+        padding: 14px 30px;
+        font-size: 1.1rem;
+      }
     }
+
     @media (max-width: 480px) {
-      .logo-container { margin-bottom: 2rem; }
-      .logo-container img { max-width: 200px; }
-      .content-box { padding: 1.8rem; }
-      .description { font-size: 1.1rem; }
+      .logo-container { 
+        margin-bottom: 2rem; 
+      }
+      .logo-container img { 
+        max-width: 200px; 
+      }
+      .content-box { 
+        padding: 1.8rem;
+        border-radius: 15px;
+      }
+      .description { 
+        font-size: 1.05rem;
+        margin-bottom: 1rem;
+      }
+      .contact p {
+        font-size: 1.1rem;
+      }
+      .contact-button {
+        padding: 12px 24px;
+        font-size: 1rem;
+      }
     }
+
+    /* Suporte a temas escuro/claro */
+    @media (prefers-color-scheme: dark) {
+      .content-box {
+        background: rgba(0,0,0,0.2);
+      }
+      .contact-button {
+        background: linear-gradient(135deg, #f8f8f8, #e8e8e8);
+      }
+    }
+
+    /* Melhor suporte a acessibilidade */
     @media (prefers-reduced-motion: reduce) {
-      * { animation-duration: 0.001ms !important; animation-iteration-count: 1 !important; transition-duration: 0.001ms !important; }
+      * { 
+        animation-duration: 0.001ms !important; 
+        animation-iteration-count: 1 !important; 
+        transition-duration: 0.001ms !important;
+      }
     }
   </style>
 </head>
