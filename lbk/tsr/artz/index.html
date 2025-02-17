@@ -180,48 +180,87 @@
       border: none;
     }
 
-    /* Rodapé */
-    .footer {
-      background: var(--primary-color); /* Cor sólida */
-      color: #fff;
-      text-align: center;
-      padding: 3rem 2rem; /* Mais espaço */
-      border-radius: var(--border-radius) var(--border-radius) 0 0; /* Borda apenas na parte superior */
-      margin-top: 3rem;
-       position: relative; /*Para o botão do WhatsApp*/
-    }
+   /* Rodapé */
+.footer {
+  background: var(--primary-color);
+  color: #fff;
+  text-align: center;
+  padding: 3rem 2rem; /* Padding inicial */
+  border-radius: var(--border-radius) var(--border-radius) 0 0;
+  margin-top: 3rem;
+  position: relative;
+}
 
-    .footer img {
-      width: 120px; /* Reduzido o tamanho do logo */
-      border-radius: var(--border-radius);
-      margin-bottom: 1.5rem;
-      transition: transform 0.3s ease;
-    }
+.footer img {
+  width: 120px; /* Tamanho inicial do logo */
+  border-radius: var(--border-radius);
+  margin-bottom: 1.5rem;
+  transition: transform 0.3s ease;
+}
 
-    .footer img:hover {
-      transform: scale(1.05);
-    }
+.footer img:hover {
+  transform: scale(1.05);
+}
 
-    .footer p {
-      margin: 0.8rem 0; /* Reduzido o espaçamento */
-      font-size: 1rem;
-    }
+.footer p {
+  margin: 0.8rem 0;
+  font-size: 1rem; /* Tamanho inicial da fonte */
+}
 
-    .footer a {
-      color: #fff;
-      text-decoration: none;
-      transition: color 0.3s ease; /* Transição na cor */
-    }
+.footer a {
+  color: #fff;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
 
-    .footer a:hover {
-      color: var(--accent-color); /* Cor mais clara no hover */
-       text-decoration: underline;
-    }
-    .footer-last-updated {
-        font-size: 0.8rem;
-        opacity: 0.8;
-        margin-top: 1.5rem;
-    }
+.footer a:hover {
+  color: var(--accent-color);
+  text-decoration: underline;
+}
+
+.footer-last-updated {
+  font-size: 0.8rem;
+  opacity: 0.8;
+  margin-top: 1.5rem;
+}
+
+/* Media Queries para o Rodapé (Responsividade) */
+@media (max-width: 768px) {
+  .footer {
+    padding: 2rem 1rem; /* Reduz o padding */
+  }
+
+  .footer img {
+    width: 100px; /* Reduz o tamanho do logo */
+  }
+
+  .footer p {
+    font-size: 0.9rem; /* Reduz a fonte */
+  }
+}
+
+@media (max-width: 480px) {
+  .footer {
+    padding: 1.5rem 0.5rem; /* Reduz ainda mais o padding */
+  }
+
+  .footer img {
+    width: 80px; /* Reduz mais o logo */
+    margin-bottom: 1rem; /* Reduz o espaço abaixo do logo */
+  }
+
+  .footer p {
+    font-size: 0.8rem;/*Diminui mais ainda*/
+  }
+
+  /* Opção: Quebrar linhas em telas muito pequenas (descomente se quiser) */
+  /*
+  .footer > * {
+    display: block;
+    margin-bottom: 0.5rem;
+  }
+  */
+}
 
     /* Botão WhatsApp Flutuante */
     .whatsapp-button {
