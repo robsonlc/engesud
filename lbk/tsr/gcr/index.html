@@ -328,13 +328,13 @@
 
             // Função para gerar miniaturas e imagens da galeria (MODIFICADA)
             function setupGallery() {
-                const jpgImages = Array.from({ length: 20 }, (_, i) => ({ // Limite para as primeiras 20 imagens JPG
+                const jpgImages = Array.from({ length: 16 }, (_, i) => ({ // Limite para as primeiras 16 imagens JPG
                     src: `https://www.engesudsmart.com.br/lbk/tsr/gcr/midia/IMG%20(${i + 1}).JPG`,
                     type: 'jpg'
                 }));
 
 
-                //Como o limite é 20, e nenhuma PNG está entre as 20 primeiras, não precisa do PNG
+
                 allImages = [...jpgImages];
 
                 allImages.forEach((image, index) => {
