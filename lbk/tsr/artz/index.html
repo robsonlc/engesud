@@ -4,50 +4,68 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Grande Oportunidade - Porto Belo e Itapema</title>
-  <meta property="og:title" content="Proposta de Investimento">
-  <meta property="og:description" content="Área de 1.055.218,20 m² em Porto Belo e Itapema, próximo ao futuro projeto Viva Park, perfil de Smart City.">
-  <meta property="og:image" content="https://i.postimg.cc/jjJDZ1yY/image.png">
-  <meta property="og:image:width" content="800">
-  <meta property="og:image:height" content="800">
+  <!-- Metatags Open Graph Aprimoradas -->
+  <meta property="og:title" content="Grande Oportunidade de Investimento: Área Excepcional em Porto Belo e Itapema">
+  <meta property="og:description" content="Descubra uma área de 1.055.218,20 m² com enorme potencial de valorização, localizada estrategicamente entre Porto Belo e Itapema, próxima a futuros empreendimentos como o Viva Park. Ideal para investidores e loteadores.">
+  <meta property="og:image" content="https://i.postimg.cc/jjJDZ1yY/image.png">  <!-- Use uma imagem de alta qualidade e relevante -->
+  <meta property="og:image:width" content="1200">  <!-- Dimensões ideais para Open Graph -->
+  <meta property="og:image:height" content="630">
   <meta property="og:url" content="https://www.engesudsmart.com.br/lbk/tsr/artz">
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="Engesud Smart">
+  <meta name="twitter:card" content="summary_large_image"> <!-- Adiciona suporte ao Twitter Card -->
+  <meta name="twitter:title" content="Grande Oportunidade de Investimento: Porto Belo e Itapema">
+  <meta name="twitter:description" content="Área de 1.055.218,20 m² com alto potencial. Saiba mais!">
+  <meta name="twitter:image" content="https://i.postimg.cc/jjJDZ1yY/image.png">
+
+  <!-- Favicon -->
   <link rel="shortcut icon" href="https://i.postimg.cc/dQ6DTGL6/ZQ2U8eO.png" type="image/x-icon">
+  <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <!-- Adicionado Font Awesome para ícones -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
   <style>
+    /* Variáveis CSS (Custom Properties) */
     :root {
-      --primary-color: #2563eb;
-      --secondary-color: #f8fafc;
-      --accent-color: #dbeafe;
-      --text-color: #1e293b;
+      --primary-color: #003366;  /* Azul mais escuro e profissional */
+      --secondary-color: #f5f5f5; /* Cinza claro, melhor para leitura */
+      --accent-color: #e0e0e0;  /* Cinza claro para destaques, menos vibrante */
+      --text-color: #333;    /* Cor de texto mais escura para contraste */
       --font-family: 'Poppins', sans-serif;
+      --border-radius: 8px;   /* Bordas mais suaves */
+      --box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Sombra mais sutil */
+      --header-overlay: rgba(0, 0, 0, 0.6); /* Variável para o overlay */
+      --header-bg-color: rgba(0, 51, 102, 0.2); /* Cor de fundo opcional, levemente transparente */
     }
-    
+
+    /* Reset e Estilos Globais */
     * {
       box-sizing: border-box;
       margin: 0;
       padding: 0;
     }
-    
+
     body {
-      margin: 0;
-      padding: 0;
       font-family: var(--font-family);
       background-color: var(--secondary-color);
       color: var(--text-color);
-      line-height: 1.7;
+      line-height: 1.6; /* Espaçamento entre linhas ligeiramente reduzido */
     }
-    
+
+    /* Cabeçalho */
     .header {
       position: relative;
-      background: url('https://i.postimg.cc/QCNxGYKt/image.png') center/cover fixed no-repeat;
-      min-height: 400px;
+      background: var(--header-bg-color) url('https://i.postimg.cc/QCNxGYKt/image.png') center/cover fixed no-repeat; /* Adiciona a cor de fundo */
+      min-height: 50vh;
       display: flex;
       align-items: center;
       justify-content: center;
-      padding: 2rem;
+      padding: 5rem 2rem; /* Aumenta o padding superior e inferior */
+      text-align: center;
+      color: #fff;
     }
-    
+
     .header::after {
       content: "";
       position: absolute;
@@ -55,216 +73,287 @@
       left: 0;
       width: 100%;
       height: 100%;
-      background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.7));
-    }
-    
-    .header h1 {
-      position: relative;
+      background: var(--header-overlay); /* Usa a variável para o overlay */
       z-index: 1;
-      color: #fff;
-      font-size: clamp(2rem, 5vw, 3.5rem);
-      font-weight: 700;
-      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-      text-align: center;
+    }
+
+    .header-content {
+      position: relative;
+      z-index: 2;
       max-width: 800px;
     }
-    
+
+    .header h1 {
+      font-size: clamp(2.5rem, 6vw, 4rem);
+      font-weight: 700;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
+      margin-bottom: 1rem;
+    }
+
+    .header p {
+      font-size: clamp(1rem, 2vw, 1.25rem);
+      opacity: 0.9;
+    }
+
+
+    /* Container Principal */
     .container {
-      width: 92%;
-      max-width: 1200px;
-      margin: -80px auto 40px;
+      width: 90%; /* Reduz a largura em telas maiores */
+      max-width: 1100px; /* Reduz a largura máxima */
+      margin: 3rem auto 4rem;  /*Remove margem superior negativa*/
       background-color: #fff;
-      border-radius: 20px;
-      padding: 40px;
-      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+      border-radius: var(--border-radius);
+      padding: 2.5rem; /* Mais espaço interno */
+      box-shadow: var(--box-shadow);
       position: relative;
       z-index: 2;
     }
-    
+
+    /* Títulos */
     h2 {
       color: var(--primary-color);
-      font-size: clamp(1.5rem, 3vw, 2rem);
-      margin-bottom: 1.5rem;
-      line-height: 1.3;
+      font-size: clamp(1.8rem, 4vw, 2.5rem); /* Títulos maiores */
+      margin-bottom: 1.2rem; /* Reduzido o espaço abaixo do título */
+      line-height: 1.2;
+      text-align: center; /* Centraliza o título principal */
     }
-    
+
     h3 {
       color: var(--primary-color);
-      font-size: clamp(1.2rem, 2vw, 1.5rem);
-      margin: 2rem 0 1rem;
+      font-size: clamp(1.3rem, 2.5vw, 1.8rem); /* Títulos de seção maiores */
+      margin: 2.5rem 0 1rem; /* Mais espaço acima do título */
+      border-bottom: 2px solid var(--accent-color); /* Adiciona uma linha abaixo dos subtítulos */
+      padding-bottom: 0.5rem; /* Espaço entre o texto e a linha */
     }
-    
+
+    /* Destaque */
     .highlight {
-      background: linear-gradient(135deg, var(--accent-color), #fff);
-      padding: 25px;
-      border-radius: 15px;
-      margin-bottom: 30px;
-      border-left: 5px solid var(--primary-color);
+      background-color: var(--accent-color); /* Cor de fundo sólida */
+      padding: 1.5rem; /* Reduzido o padding */
+      border-radius: var(--border-radius);
+      margin-bottom: 2rem; /* Reduzido a margem inferior */
+      border-left: none; /* Remove a borda lateral */
+      box-shadow: var(--box-shadow); /* Adiciona sombra */
     }
-    
+
     .highlight p {
       margin: 0;
       font-size: 1.1rem;
+      font-weight: 500; /* Texto em negrito */
     }
-    
+
+    /* Lista */
     ul {
       list-style: none;
       padding: 0;
     }
-    
+
     ul li {
-      padding: 12px 0;
-      padding-left: 25px;
+      padding: 0.8rem 0; /* Reduzido o padding */
+      padding-left: 2rem; /* Aumenta o espaço para o ícone */
       position: relative;
       font-size: 1.05rem;
     }
-    
+
     ul li::before {
-      content: "•";
+      content: "\f00c"; /* Ícone de check do Font Awesome */
+      font-family: "Font Awesome 6 Free"; /* Especifica a fonte */
+      font-weight: 900; /* Peso para o ícone sólido */
       color: var(--primary-color);
-      font-weight: bold;
       position: absolute;
-      left: 0;
+      left: 0; /* Posiciona o ícone à esquerda */
+      top: 0.9rem;  /* Ajuste vertical */
+      font-size: 1rem; /* Aumenta um pouco o tamanho */
     }
-    
+
+    /* Container do Mapa */
     .map-container {
-      margin: 2rem 0;
-      border-radius: 15px;
-      overflow: hidden;
-      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+      margin: 2.5rem 0; /* Aumenta o espaçamento */
+      border-radius: var(--border-radius);
+      overflow: hidden; /* Garante que as bordas do iframe respeitem o border-radius */
+      box-shadow: var(--box-shadow);
     }
-    
+
     iframe {
       width: 100%;
-      height: 500px;
+      height: 450px; /* Reduzida a altura do mapa */
       border: none;
     }
-    
+
+    /* Rodapé */
     .footer {
-      background: linear-gradient(135deg, var(--primary-color), #1d4ed8);
+      background: var(--primary-color); /* Cor sólida */
       color: #fff;
       text-align: center;
-      padding: 40px 20px;
-      border-radius: 20px;
-      margin-top: 40px;
+      padding: 3rem 2rem; /* Mais espaço */
+      border-radius: var(--border-radius) var(--border-radius) 0 0; /* Borda apenas na parte superior */
+      margin-top: 3rem;
+       position: relative; /*Para o botão do WhatsApp*/
     }
-    
+
     .footer img {
-      width: 140px;
-      border-radius: 15px;
-      margin-bottom: 20px;
+      width: 120px; /* Reduzido o tamanho do logo */
+      border-radius: var(--border-radius);
+      margin-bottom: 1.5rem;
       transition: transform 0.3s ease;
     }
-    
+
     .footer img:hover {
       transform: scale(1.05);
     }
-    
+
     .footer p {
-      margin: 10px 0;
-      font-size: 1.1rem;
+      margin: 0.8rem 0; /* Reduzido o espaçamento */
+      font-size: 1rem;
     }
-    
+
     .footer a {
       color: #fff;
       text-decoration: none;
-      transition: opacity 0.3s ease;
-    }
-    
-    .footer a:hover {
-      opacity: 0.8;
-    }
-    
-    .feature-card {
-      opacity: 0;
-      transform: translateY(30px);
-      transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
-    }
-    
-    @media (max-width: 768px) {
-      .container {
-        width: 95%;
-        padding: 25px;
-        margin-top: -50px;
-      }
-      
-      .header {
-        min-height: 300px;
-      }
-      
-      iframe {
-        height: 350px;
-      }
-      
-      .highlight {
-        padding: 20px;
-      }
-      
-      ul li {
-        font-size: 1rem;
-      }
-    }
-    
-    @media (max-width: 480px) {
-      .container {
-        width: 98%;
-        padding: 20px;
-        margin-top: -40px;
-      }
-      
-      .header {
-        min-height: 250px;
-      }
-      
-      .highlight {
-        padding: 15px;
-      }
-      
-      .footer {
-        padding: 30px 15px;
-      }
-      
-      iframe {
-        height: 300px;
-      }
+      transition: color 0.3s ease; /* Transição na cor */
     }
 
-    /* Animações suaves ao scroll */
+    .footer a:hover {
+      color: var(--accent-color); /* Cor mais clara no hover */
+       text-decoration: underline;
+    }
+    .footer-last-updated {
+        font-size: 0.8rem;
+        opacity: 0.8;
+        margin-top: 1.5rem;
+    }
+
+    /* Botão WhatsApp Flutuante */
+    .whatsapp-button {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background-color: #25d366; /* Cor do WhatsApp */
+      color: #fff;
+      padding: 12px 15px;
+      border-radius: 50%; /* Circular */
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.25);
+      text-decoration: none;
+      font-size: 1.4rem;
+      display: flex; /* Flexbox para alinhar o ícone */
+      align-items: center;
+      justify-content: center;
+      transition: background-color 0.3s ease;
+      z-index: 1000; /* Garante que fica acima de tudo */
+    }
+
+    .whatsapp-button:hover {
+      background-color: #128c7e; /* Cor mais escura no hover */
+    }
+    .whatsapp-button i {
+       margin-right: 0; /*Sem margem extra */
+    }
+
+    /* Animações */
     .fade-up {
       opacity: 0;
-      transform: translateY(20px);
-      transition: all 0.6s ease-out;
+      transform: translateY(30px); /* Aumenta a distância da animação */
+      transition: all 0.8s ease-out; /* Transição mais suave */
     }
 
     .fade-up.visible {
       opacity: 1;
       transform: translateY(0);
     }
+
+    /* Media Queries (Responsividade) */
+    @media (max-width: 768px) {
+      .container {
+        width: 95%;
+        padding: 1.5rem; /* Reduzido o padding */
+      }
+
+      .header {
+        min-height: 40vh; /* Reduz a altura do header */
+        padding: 3rem 1rem; /* Reduz o padding em telas menores */
+      }
+        .header h1 {
+             font-size: 2.2rem;
+         }
+         .header p {
+             font-size: 1rem;
+         }
+
+      iframe {
+        height: 350px;
+      }
+       h2, h3 {
+          text-align: left; /*Alinha de volta à esquerda em telas menores */
+       }
+      .whatsapp-button {
+        padding: 10px 12px; /*Reduz o padding em telas menores*/
+        font-size: 1.2rem;
+      }
+
+    }
+
+    @media (max-width: 480px) {
+      .container {
+        width: 98%;
+        padding: 1rem;
+      }
+
+      .header {
+        min-height: 30vh; /* Reduz ainda mais a altura */
+        padding: 2rem 0.5rem;
+      }
+
+      h2 {
+        font-size: 1.6rem; /* Reduz o tamanho dos títulos */
+      }
+       h3{
+          font-size: 1.2rem;
+       }
+
+      .highlight {
+        padding: 1rem;
+      }
+
+      .footer {
+        padding: 2rem 1rem;
+      }
+
+      iframe {
+        height: 250px; /* Reduz ainda mais */
+      }
+       .whatsapp-button{
+          bottom: 10px; /*Posiciona mais perto da borda inferior*/
+          right: 10px;
+       }
+    }
   </style>
 </head>
 <body>
 
   <header class="header">
-    <h1>Grande Oportunidade em Porto Belo e Itapema</h1>
+    <div class="header-content">
+      <h1>Grande Oportunidade em Porto Belo e Itapema</h1>
+      <p>Área de 1.055.218,20 m² para empreendimento de alto potencial.</p>
+    </div>
   </header>
 
   <main class="container">
-    <h2 class="fade-up">Área de 1.055.218,20 m² para empreendimento de alto potencial</h2>
-    
-    <div class="highlight feature-card">
-      <p>Localização estratégica próxima a Balneário Camboriú, fácil acesso à BR 101, e grande potencial de valorização com novos empreendimentos nas proximidades.</p>
+    <h2 class="fade-up">Área Excepcional para Investimento</h2>
+
+    <div class="highlight feature-card fade-up">
+      <p>Localização estratégica próxima a Balneário Camboriú, fácil acesso à BR 101 e grande potencial de valorização com novos empreendimentos, incluindo o futuro Viva Park.</p>
     </div>
 
-    <h3 class="fade-up">Detalhes do Negócio:</h3>
-    <ul class="feature-card">
-      <li><strong>Aporte Inicial:</strong> R$ 35 milhões, com devolução ou lotes no futuro empreendimento.</li>
-      <li><strong>Divisão do Empreendimento:</strong> 50% para o proprietário, 50% para o loteador.</li>
-      <li><strong>Modelo de Negócio:</strong> Aporte retornável com correção monetária.</li>
+    <h3 class="fade-up">Detalhes do Negócio</h3>
+    <ul class="feature-card fade-up">
+      <li>Aporte Inicial: R$ 35 milhões, com opção de devolução ou lotes no futuro empreendimento.</li>
+      <li>Divisão do Empreendimento: 50% para o proprietário, 50% para o loteador.</li>
+      <li>Modelo de Negócio: Aporte retornável com correção monetária, garantindo segurança e retorno.</li>
     </ul>
 
-    <h3 class="fade-up">Mapa da Área</h3>
-    <div class="map-container feature-card">
-      <iframe src="https://www.google.com/maps/d/embed?mid=1YZWpfEwpBtc1nTI5iWMrG2FM8G6xm2A&ehbc=2E312F" 
+    <h3 class="fade-up">Localização Privilegiada</h3>
+    <div class="map-container feature-card fade-up">
+      <iframe src="https://www.google.com/maps/d/embed?mid=1YZWpfEwpBtc1nTI5iWMrG2FM8G6xm2A&ehbc=2E312F"
               allowfullscreen>
       </iframe>
     </div>
@@ -277,28 +366,29 @@
     <p><strong>Engesud Engenharia e Intermediação LTDA</strong></p>
     <p>Robson Luis da Costa | <a href="https://wa.me/4497013489" title="Whatsapp">+55 (44) 99701-3489</a></p>
     <p><a href="https://www.engesudsmart.com.br" target="_blank">www.engesudsmart.com.br</a></p>
-    <p>Última atualização: 10 de outubro de 2024</p>
+    <p class="footer-last-updated">Última atualização: 10 de outubro de 2024</p>
   </footer>
+    <a href="https://wa.me/4497013489" class="whatsapp-button" target="_blank" title="Entre em contato pelo WhatsApp">
+      <i class="fab fa-whatsapp"></i>
+   </a>
 
   <script>
     document.addEventListener('DOMContentLoaded', function() {
-      // Animação dos cards
-      const cards = document.querySelectorAll('.feature-card, .fade-up');
+      // Animação dos cards e elementos .fade-up
+      const animatedElements = document.querySelectorAll('.feature-card, .fade-up');
       const observer = new IntersectionObserver((entries, observer) => {
         entries.forEach(entry => {
           if (entry.isIntersecting) {
-            entry.target.style.opacity = 1;
-            entry.target.style.transform = 'translateY(0)';
             entry.target.classList.add('visible');
-            observer.unobserve(entry.target);
+            observer.unobserve(entry.target); // Parar de observar após a animação
           }
         });
       }, {
         threshold: 0.1,
-        rootMargin: '0px 0px -50px 0px'
+        rootMargin: '0px 0px -50px 0px' // Ajuste para a animação começar um pouco antes
       });
-      
-      cards.forEach(card => observer.observe(card));
+
+      animatedElements.forEach(element => observer.observe(element));
     });
   </script>
 
