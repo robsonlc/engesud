@@ -21,7 +21,6 @@
       --accent-color: #dbeafe;
       --text-color: #1e293b;
       --font-family: 'Poppins', sans-serif;
-      --transition-speed: 0.3s;
     }
     
     * {
@@ -31,6 +30,8 @@
     }
     
     body {
+      margin: 0;
+      padding: 0;
       font-family: var(--font-family);
       background-color: var(--secondary-color);
       color: var(--text-color);
@@ -39,7 +40,7 @@
     
     .header {
       position: relative;
-      background: url('https://i.postimg.cc/QCNxGYKt/image.png') center/cover no-repeat;
+      background: url('https://i.postimg.cc/QCNxGYKt/image.png') center/cover fixed no-repeat;
       min-height: 400px;
       display: flex;
       align-items: center;
@@ -54,8 +55,7 @@
       left: 0;
       width: 100%;
       height: 100%;
-      background: rgba(0, 0, 0, 0.6);
-      mix-blend-mode: multiply;
+      background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.7));
     }
     
     .header h1 {
@@ -64,11 +64,9 @@
       color: #fff;
       font-size: clamp(2rem, 5vw, 3.5rem);
       font-weight: 700;
-      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
       text-align: center;
       max-width: 800px;
-      letter-spacing: 0.5px;
-      padding: 0 1rem;
     }
     
     .container {
@@ -78,7 +76,7 @@
       background-color: #fff;
       border-radius: 20px;
       padding: 40px;
-      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
       position: relative;
       z-index: 2;
     }
@@ -88,14 +86,12 @@
       font-size: clamp(1.5rem, 3vw, 2rem);
       margin-bottom: 1.5rem;
       line-height: 1.3;
-      letter-spacing: 0.5px;
     }
     
     h3 {
       color: var(--primary-color);
       font-size: clamp(1.2rem, 2vw, 1.5rem);
       margin: 2rem 0 1rem;
-      letter-spacing: 0.3px;
     }
     
     .highlight {
@@ -129,21 +125,19 @@
       font-weight: bold;
       position: absolute;
       left: 0;
-      top: 0;
     }
     
     .map-container {
       margin: 2rem 0;
       border-radius: 15px;
       overflow: hidden;
-      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
     }
     
     iframe {
       width: 100%;
       height: 500px;
       border: none;
-      display: block;
     }
     
     .footer {
@@ -153,18 +147,13 @@
       padding: 40px 20px;
       border-radius: 20px;
       margin-top: 40px;
-      transition: background var(--transition-speed);
-    }
-    
-    .footer:hover {
-      background: linear-gradient(135deg, #1d4ed8, var(--primary-color));
     }
     
     .footer img {
       width: 140px;
       border-radius: 15px;
       margin-bottom: 20px;
-      transition: transform var(--transition-speed);
+      transition: transform 0.3s ease;
     }
     
     .footer img:hover {
@@ -179,22 +168,17 @@
     .footer a {
       color: #fff;
       text-decoration: none;
-      transition: opacity var(--transition-speed);
+      transition: opacity 0.3s ease;
     }
     
     .footer a:hover {
       opacity: 0.8;
     }
     
-    .feature-card, .fade-up {
+    .feature-card {
       opacity: 0;
       transform: translateY(30px);
-      transition: opacity 0.6s ease-out, transform 0.6s ease-out;
-    }
-    
-    .visible {
-      opacity: 1;
-      transform: translateY(0);
+      transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
     }
     
     @media (max-width: 768px) {
@@ -244,6 +228,18 @@
         height: 300px;
       }
     }
+
+    /* Animações suaves ao scroll */
+    .fade-up {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: all 0.6s ease-out;
+    }
+
+    .fade-up.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
   </style>
 </head>
 <body>
@@ -256,7 +252,7 @@
     <h2 class="fade-up">Área de 1.055.218,20 m² para empreendimento de alto potencial</h2>
     
     <div class="highlight feature-card">
-      <p>Localização estratégica próxima a Balneário Camboriú, fácil acesso à BR 101 e grande potencial de valorização com novos empreendimentos nas proximidades.</p>
+      <p>Localização estratégica próxima a Balneário Camboriú, fácil acesso à BR 101, e grande potencial de valorização com novos empreendimentos nas proximidades.</p>
     </div>
 
     <h3 class="fade-up">Detalhes do Negócio:</h3>
@@ -268,7 +264,9 @@
 
     <h3 class="fade-up">Mapa da Área</h3>
     <div class="map-container feature-card">
-      <iframe src="https://www.google.com/maps/d/embed?mid=1YZWpfEwpBtc1nTI5iWMrG2FM8G6xm2A&ehbc=2E312F" allowfullscreen></iframe>
+      <iframe src="https://www.google.com/maps/d/embed?mid=1YZWpfEwpBtc1nTI5iWMrG2FM8G6xm2A&ehbc=2E312F" 
+              allowfullscreen>
+      </iframe>
     </div>
   </main>
 
@@ -284,10 +282,13 @@
 
   <script>
     document.addEventListener('DOMContentLoaded', function() {
-      const elements = document.querySelectorAll('.feature-card, .fade-up');
+      // Animação dos cards
+      const cards = document.querySelectorAll('.feature-card, .fade-up');
       const observer = new IntersectionObserver((entries, observer) => {
         entries.forEach(entry => {
           if (entry.isIntersecting) {
+            entry.target.style.opacity = 1;
+            entry.target.style.transform = 'translateY(0)';
             entry.target.classList.add('visible');
             observer.unobserve(entry.target);
           }
@@ -297,7 +298,7 @@
         rootMargin: '0px 0px -50px 0px'
       });
       
-      elements.forEach(el => observer.observe(el));
+      cards.forEach(card => observer.observe(card));
     });
   </script>
 
