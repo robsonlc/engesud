@@ -16,430 +16,68 @@
     <link rel="shortcut icon" href="https://i.imgur.com/HjwVm8x.png" type="image/x-icon">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <style>
-        body {
-            font-family: 'Nunito', sans-serif;
-            margin: 0;
-            padding: 0;
-            color: #495057;
-            background-color: #f8f9fa;
-            line-height: 1.6;
-            -webkit-font-smoothing: antialiased;
-            -moz-osx-font-smoothing: grayscale;
-        }
-
-        .container {
-            max-width: 1140px;
-            margin: 0 auto;
-            padding: 30px;
-        }
-
-        header {
-            background: url('https://i.imgur.com/FPCY0cb.png') center/cover no-repeat;
-            /* Removida a opacidade para não afetar o conteúdo */
-            text-align: center;
-            padding: 100px 20px;
-            color: #fff;
-            position: relative;
-            overflow: hidden;
-        }
-
-        header::before {
-            content: "";
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background-color: rgba(0, 0, 0, 0.7); /* Overlay para máximo contraste */
-            z-index: 0;
-        }
-
-        .header-content {
-            position: relative;
-            z-index: 1;
-            background-color: rgba(0, 0, 0, 0.2); /* Fundo semi-transparente atrás do texto */
-            padding: 20px;
-            border-radius: 10px;
-            display: inline-block;
-        }
-
-        header h1 {
-            font-size: 2.5rem;
-            margin-bottom: 0;
-            font-weight: 700;
-            text-shadow: 2px 2px 3px rgba(0,0,0,0.7);
-        }
-
-        header .subheadline {
-            display: none;
-        }
-
-        .section {
-            padding: 50px 0;
-            background-color: #fff;
-            border-bottom: 1px solid #dee2e6;
-        }
-
-        .section-title {
-            font-size: 2rem;
-            text-align: center;
-            margin-bottom: 30px;
-            color: #343a40;
-            font-weight: 600;
-            position: relative;
-            padding-bottom: 10px;
-            display: inline-block;
-        }
-
-        .section-title::after {
-            content: '';
-            position: absolute;
-            left: 50%;
-            bottom: 0;
-            transform: translateX(-50%);
-            height: 3px;
-            width: 40px;
-            background-color: #007bff;
-        }
-
-        .confidential {
-            text-align: center;
-            font-size: 1.2rem;
-            color: #dc3545;
-            margin-bottom: 20px;
-            font-weight: 600;
-        }
-
-        .area-exclusiva {
-            font-size: 1.3rem;
-            font-weight: bolder;
-            margin-top: 10px;
-            color: #dc3545;
-        }
-        .exclamations {
-            display: none;
-        }
-
-        .feature-card {
-            background-color: #fff;
-            padding: 25px;
-            border-radius: 8px;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
-            margin-bottom: 20px;
-            text-align: left;
-            transition: transform 0.3s ease, opacity 0.3s ease;
-            opacity: 0;
-            transform: translateY(20px);
-            border: 1px solid #eee;
-        }
-
-        .feature-card i {
-            font-size: 2.2rem;
-            color: #007bff;
-            margin-bottom: 15px;
-        }
-
-        .feature-card h3 {
-            color: #343a40;
-            margin-bottom: 10px;
-            font-size: 1.3rem;
-            font-weight: 600;
-        }
-
-        .feature-card p {
-            color: #6c757d;
-            font-size: 0.95rem;
-        }
-
-        .business-formats, .project-details, .location-highlights {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 25px;
-        }
-
-        .business-option, .project-type, .location-highlights > div {
-            background-color: #fff;
-            padding: 25px;
-            border-radius: 8px;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
-            border: 1px solid #eee;
-        }
-
-        .business-option h3, .project-type h3, .location-highlights > div h3 {
-            color: #343a40;
-            margin-bottom: 15px;
-            font-size: 1.2rem;
-            font-weight: 600;
-        }
-
-        .project-type ul, .location-highlights > div ul {
-            list-style: none;
-            padding: 0;
-        }
-
-        .project-type ul li, .location-highlights > div ul li {
-            margin-bottom: 10px;
-            line-height: 1.5;
-            color: #6c757d;
-            font-size: 0.95rem;
-        }
-
-        .vgv-total {
-            text-align: center;
-            margin-top: 30px;
-            font-size: 1.2rem;
-            font-weight: bold;
-            color: #343a40;
-            word-break: break-word;
-            overflow-wrap: break-word;
-        }
-
-        .vgv-value {
-            font-size: 1.8rem;
-            color: #28a745;
-        }
-
-        .location-highlights ul {
-            padding-left: 20px;
-        }
-
-        .google-maps {
-            margin-top: 30px;
-            border-radius: 8px;
-            overflow: hidden;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
-            border: 1px solid #eee;
-            width: 100%;
-        }
-
-        .google-maps iframe {
-            width: 100%;
-            height: 400px;
-        }
-
-        .implantation-images {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            gap: 15px;
-            margin-top: 25px;
-        }
-
-        .implantation-images img {
-            max-width: 100%;
-            height: auto;
-            border-radius: 8px;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
-            transition: transform 0.3s ease;
-            border: 1px solid #eee;
-        }
-
-        .implantation-images img:hover {
-            transform: scale(1.02);
-        }
+        /* Estilos (Mantidos como no original, sem alterações) */
+        body { font-family: 'Nunito', sans-serif; margin: 0; padding: 0; color: #495057; background-color: #f8f9fa; line-height: 1.6; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
+        .container { max-width: 1140px; margin: 0 auto; padding: 30px; }
+        header { background: url('https://i.imgur.com/FPCY0cb.png') center/cover no-repeat; text-align: center; padding: 100px 20px; color: #fff; position: relative; overflow: hidden; }
+        header::before { content: ""; position: absolute; top: 0; left: 0; right: 0; bottom: 0; background-color: rgba(0, 0, 0, 0.7); z-index: 0; }
+        .header-content { position: relative; z-index: 1; background-color: rgba(0, 0, 0, 0.2); padding: 20px; border-radius: 10px; display: inline-block; }
+        header h1 { font-size: 2.5rem; margin-bottom: 0; font-weight: 700; text-shadow: 2px 2px 3px rgba(0,0,0,0.7); }
+        header .subheadline { display: none; }
+        .section { padding: 50px 0; background-color: #fff; border-bottom: 1px solid #dee2e6; }
+        .section-title { font-size: 2rem; text-align: center; margin-bottom: 30px; color: #343a40; font-weight: 600; position: relative; padding-bottom: 10px; display: inline-block; }
+        .section-title::after { content: ''; position: absolute; left: 50%; bottom: 0; transform: translateX(-50%); height: 3px; width: 40px; background-color: #007bff; }
+        .confidential { text-align: center; font-size: 1.2rem; color: #dc3545; margin-bottom: 20px; font-weight: 600; }
+        .area-exclusiva { font-size: 1.3rem; font-weight: bolder; margin-top: 10px; color: #dc3545; }
+        .exclamations { display: none; }
+        .feature-card { background-color: #fff; padding: 25px; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.05); margin-bottom: 20px; text-align: left; transition: transform 0.3s ease, opacity 0.3s ease; opacity: 0; transform: translateY(20px); border: 1px solid #eee; }
+        .feature-card i { font-size: 2.2rem; color: #007bff; margin-bottom: 15px; }
+        .feature-card h3 { color: #343a40; margin-bottom: 10px; font-size: 1.3rem; font-weight: 600; }
+        .feature-card p { color: #6c757d; font-size: 0.95rem; }
+        .business-formats, .project-details, .location-highlights { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 25px; }
+        .business-option, .project-type, .location-highlights > div { background-color: #fff; padding: 25px; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.05); border: 1px solid #eee; }
+        .business-option h3, .project-type h3, .location-highlights > div h3 { color: #343a40; margin-bottom: 15px; font-size: 1.2rem; font-weight: 600; }
+        .project-type ul, .location-highlights > div ul { list-style: none; padding: 0; }
+        .project-type ul li, .location-highlights > div ul li { margin-bottom: 10px; line-height: 1.5; color: #6c757d; font-size: 0.95rem; }
+        .vgv-total { text-align: center; margin-top: 30px; font-size: 1.2rem; font-weight: bold; color: #343a40; word-break: break-word; overflow-wrap: break-word; }
+        .vgv-value { font-size: 1.8rem; color: #28a745; }
+        .location-highlights ul { padding-left: 20px; }
+        .google-maps { margin-top: 30px; border-radius: 8px; overflow: hidden; box-shadow: 0 2px 8px rgba(0,0,0,0.05); border: 1px solid #eee; width: 100%; }
+        .google-maps iframe { width: 100%; height: 400px; }
+        .implantation-images { display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 15px; margin-top: 25px; }
+        .implantation-images img { max-width: 100%; height: auto; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.05); transition: transform 0.3s ease; border: 1px solid #eee; }
+        .implantation-images img:hover { transform: scale(1.02); }
 
         /* Galeria Lightbox */
-        #gallery .section-title {
-            margin-bottom: 40px;
-        }
-
-        .image-gallery-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
-            gap: 8px;
-        }
-
-        .gallery-thumbnail {
-            aspect-ratio: 1 / 1;
-            overflow: hidden;
-            border-radius: 6px;
-            cursor: pointer;
-            box-shadow: 0 1px 4px rgba(0,0,0,0.05);
-            transition: transform 0.2s ease, box-shadow 0.2s ease;
-            border: 1px solid #eee;
-        }
-
-        .gallery-thumbnail:hover {
-            transform: scale(1.03);
-            box-shadow: 0 3px 8px rgba(0,0,0,0.1);
-        }
-
-        .gallery-thumbnail img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            display: block;
-        }
-
-        .lightbox {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(0, 0, 0, 0.85);
-            z-index: 1000;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            opacity: 0;
-            visibility: hidden;
-            transition: opacity 0.3s ease, visibility 0.3s ease;
-        }
-
-        .lightbox.active {
-            opacity: 1;
-            visibility: visible;
-        }
-
-        .lightbox-content {
-            position: relative;
-            max-width: 92%;
-            max-height: 92%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .lightbox-image {
-            max-width: 100%;
-            max-height: 100%;
-            border-radius: 8px;
-            box-shadow: 0 8px 20px rgba(0,0,0,0.4);
-            transform: scale(1);
-            transition: transform 0.2s ease;
-            border: 2px solid #fff;
-        }
-
-        .lightbox-controls {
-            position: absolute;
-            top: 15px;
-            right: 15px;
-            display: flex;
-            gap: 8px;
-        }
-
-        .lightbox-control-btn {
-            background-color: rgba(255, 255, 255, 0.7);
-            color: #495057;
-            border: none;
-            padding: 8px;
-            border-radius: 50%;
-            cursor: pointer;
-            opacity: 0.7;
-            transition: opacity 0.2s ease;
-        }
-
-        .lightbox-control-btn:hover {
-            opacity: 0.9;
-        }
-
-        .lightbox-nav-btn {
-            position: absolute;
-            top: 50%;
-            transform: translateY(-50%);
-            background-color: rgba(255, 255, 255, 0.6);
-            color: #495057;
-            border: none;
-            padding: 12px;
-            border-radius: 50%;
-            cursor: pointer;
-            opacity: 0.6;
-            transition: opacity 0.2s ease;
-        }
-
-        .lightbox-nav-btn:hover {
-            opacity: 0.8;
-        }
-
-        .lightbox-nav-btn.prev {
-            left: 15px;
-        }
-
-        .lightbox-nav-btn.next {
-            right: 15px;
-        }
-
-        .zoom-controls {
-            position: absolute;
-            bottom: 15px;
-            right: 15px;
-            display: flex;
-            gap: 8px;
-        }
-
-        .zoom-btn {
-            background-color: rgba(255, 255, 255, 0.7);
-            color: #495057;
-            border: none;
-            padding: 8px;
-            border-radius: 50%;
-            cursor: pointer;
-            opacity: 0.7;
-            transition: opacity 0.2s ease;
-        }
-
-        .zoom-btn:hover {
-            opacity: 0.9;
-        }
-
-        .virtual-tour-embed {
-            margin-top: 25px;
-            border-radius: 8px;
-            overflow: hidden;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
-            border: 1px solid #eee;
-        }
-
-        .virtual-tour-link-text {
-            text-align: center;
-            margin-top: 12px;
-            color: #6c757d;
-            font-size: 0.95rem;
-        }
-
-        footer {
-            background-color: #343a40;
-            color: #fff;
-            padding: 30px 0;
-            text-align: center;
-        }
-
-        .footer-container {
-            max-width: 800px;
-            margin: 0 auto;
-        }
-
-        .footer-logo {
-            max-width: 150px;
-            height: auto;
-            margin-bottom: 15px;
-            border-radius: 10px;
-        }
-
-        footer a {
-            color: #fff;
-            text-decoration: none;
-            transition: color 0.2s ease;
-        }
-
-        footer a:hover {
-            text-decoration: underline;
-            color: #f8f9fa;
-        }
-
-        footer p {
-            margin: 6px 0;
-            font-size: 0.9em;
-        }
-
-        .copyright-notice {
-            color: #ddd;
-            font-size: 0.85em;
-            margin-top: 20px;
-            display: none;
-        }
-
-        /* Disclaimer VGV */
+        #gallery .section-title { margin-bottom: 40px; }
+        .image-gallery-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); gap: 8px; }
+        .gallery-thumbnail { aspect-ratio: 1 / 1; overflow: hidden; border-radius: 6px; cursor: pointer; box-shadow: 0 1px 4px rgba(0,0,0,0.05); transition: transform 0.2s ease, box-shadow 0.2s ease; border: 1px solid #eee; }
+        .gallery-thumbnail:hover { transform: scale(1.03); box-shadow: 0 3px 8px rgba(0,0,0,0.1); }
+        .gallery-thumbnail img { width: 100%; height: 100%; object-fit: cover; display: block; }
+        .lightbox { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0, 0, 0, 0.85); z-index: 1000; display: flex; align-items: center; justify-content: center; opacity: 0; visibility: hidden; transition: opacity 0.3s ease, visibility 0.3s ease; }
+        .lightbox.active { opacity: 1; visibility: visible; }
+        .lightbox-content { position: relative; max-width: 92%; max-height: 92%; display: flex; align-items: center; justify-content: center; }
+        .lightbox-image { max-width: 100%; max-height: 100%; border-radius: 8px; box-shadow: 0 8px 20px rgba(0,0,0,0.4); transform: scale(1); transition: transform 0.2s ease; border: 2px solid #fff; }
+        .lightbox-controls { position: absolute; top: 15px; right: 15px; display: flex; gap: 8px; }
+        .lightbox-control-btn { background-color: rgba(255, 255, 255, 0.7); color: #495057; border: none; padding: 8px; border-radius: 50%; cursor: pointer; opacity: 0.7; transition: opacity 0.2s ease; }
+        .lightbox-control-btn:hover { opacity: 0.9; }
+        .lightbox-nav-btn { position: absolute; top: 50%; transform: translateY(-50%); background-color: rgba(255, 255, 255, 0.6); color: #495057; border: none; padding: 12px; border-radius: 50%; cursor: pointer; opacity: 0.6; transition: opacity 0.2s ease; }
+        .lightbox-nav-btn:hover { opacity: 0.8; }
+        .lightbox-nav-btn.prev { left: 15px; }
+        .lightbox-nav-btn.next { right: 15px; }
+        .zoom-controls { position: absolute; bottom: 15px; right: 15px; display: flex; gap: 8px; }
+        .zoom-btn { background-color: rgba(255, 255, 255, 0.7); color: #495057; border: none; padding: 8px; border-radius: 50%; cursor: pointer; opacity: 0.7; transition: opacity 0.2s ease; }
+        .zoom-btn:hover { opacity: 0.9; }
+        .virtual-tour-embed { margin-top: 25px; border-radius: 8px; overflow: hidden; box-shadow: 0 2px 8px rgba(0,0,0,0.05); border: 1px solid #eee; }
+        .virtual-tour-link-text { text-align: center; margin-top: 12px; color: #6c757d; font-size: 0.95rem; }
+        footer { background-color: #343a40; color: #fff; padding: 30px 0; text-align: center; }
+        .footer-container { max-width: 800px; margin: 0 auto; }
+        .footer-logo { max-width: 150px; height: auto; margin-bottom: 15px; border-radius: 10px; }
+        footer a { color: #fff; text-decoration: none; transition: color 0.2s ease; }
+        footer a:hover { text-decoration: underline; color: #f8f9fa; }
+        footer p { margin: 6px 0; font-size: 0.9em; }
+        .copyright-notice { color: #ddd; font-size: 0.85em; margin-top: 20px; display: none;}
+          /* Disclaimer VGV */
         .vgv-disclaimer {
             font-size: 0.85rem;
             color: #6c757d;
@@ -450,83 +88,36 @@
 
         /* Estilos Responsivos */
         @media (max-width: 992px) {
-            .container {
-                padding: 25px;
-            }
-            header {
-                padding: 50px 15px;
-            }
-            header h1 {
-                font-size: 2rem;
-            }
-            .section {
-                padding: 40px 0;
-            }
-            .section-title {
-                font-size: 1.8rem;
-                margin-bottom: 25px;
-            }
-            .business-formats, .project-details, .location-highlights {
-                grid-template-columns: 1fr;
-                gap: 20px;
-            }
-            .implantation-images {
-                grid-template-columns: 1fr;
-                gap: 15px;
-            }
-            .google-maps iframe {
-                height: 350px;
-            }
+            .container { padding: 25px; }
+            header { padding: 50px 15px; }
+            header h1 { font-size: 2rem; }
+            .section { padding: 40px 0; }
+            .section-title { font-size: 1.8rem; margin-bottom: 25px; }
+            .business-formats, .project-details, .location-highlights { grid-template-columns: 1fr; gap: 20px; }
+            .implantation-images { grid-template-columns: 1fr; gap: 15px; }
+            .google-maps iframe { height: 350px; }
         }
 
         @media (max-width: 768px) {
-            .container {
-                padding: 15px;
-            }
-            header {
-                padding: 60px 15px;
-            }
-            header h1 {
-                font-size: 2em;
-            }
-            .section {
-                padding: 30px 0;
-            }
-            .section-title {
-                font-size: 1.6em;
-                margin-bottom: 20px;
-            }
-            .feature-card {
-                padding: 15px;
-            }
-            .business-option, .project-type, .location-highlights > div {
-                padding: 15px;
-            }
-            .virtual-tour-embed iframe {
-                height: 300px;
-            }
+            .container { padding: 15px; }
+            header { padding: 60px 15px; }
+            header h1 { font-size: 2em; }
+            .section { padding: 30px 0; }
+            .section-title { font-size: 1.6em; margin-bottom: 20px; }
+            .feature-card { padding: 15px; }
+            .business-option, .project-type, .location-highlights > div { padding: 15px; }
+            .virtual-tour-embed iframe { height: 300px; }
         }
 
         @media (max-width: 576px) {
-            header {
-                padding: 40px 10px;
-            }
-            header h1 {
-                font-size: 1.6em;
-            }
-            .section-title {
-                font-size: 1.4em;
-            }
-            .feature-card {
-                padding: 10px;
-            }
-            .business-option, .project-type, .location-highlights > div {
-                padding: 10px;
-            }
-            .virtual-tour-embed iframe {
-                height: 200px;
-            }
+            header { padding: 40px 10px; }
+            header h1 { font-size: 1.6em; }
+            .section-title { font-size: 1.4em; }
+            .feature-card { padding: 10px; }
+            .business-option, .project-type, .location-highlights > div { padding: 10px; }
+            .virtual-tour-embed iframe { height: 200px; }
         }
+
     </style>
     <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
 </head>
@@ -735,25 +326,16 @@
             let zoomLevel = 1;
             let allImages = []; // Array para armazenar todas as imagens
 
-            // Função para gerar miniaturas e imagens da galeria
+            // Função para gerar miniaturas e imagens da galeria (MODIFICADA)
             function setupGallery() {
-                const jpgImages = Array.from({ length: 71 }, (_, i) => ({ // Range corrigido para 71
+                const jpgImages = Array.from({ length: 20 }, (_, i) => ({ // Limite para as primeiras 20 imagens JPG
                     src: `https://www.engesudsmart.com.br/lbk/tsr/gcr/midia/IMG%20(${i + 1}).JPG`,
                     type: 'jpg'
                 }));
 
-                const excludedPngs = [1, 2, 5, 9, 10, 11, 18];
-                const pngImages = Array.from({ length: 18 }, (_, i) => { // Range corrigido para 18
-                    if (!excludedPngs.includes(i + 1)) {
-                        return {
-                            src: `https://www.engesudsmart.com.br/lbk/tsr/gcr/midia/IMG%20(${i + 1}).PNG`,
-                            type: 'png'
-                        };
-                    }
-                    return null;
-                }).filter(Boolean);
 
-                allImages = [...jpgImages, ...pngImages];
+                //Como o limite é 20, e nenhuma PNG está entre as 20 primeiras, não precisa do PNG
+                allImages = [...jpgImages];
 
                 allImages.forEach((image, index) => {
                     const thumbDiv = document.createElement('div');
@@ -766,6 +348,7 @@
                     galleryGrid.appendChild(thumbDiv);
                 });
             }
+
 
             setupGallery();
 
