@@ -1,173 +1,253 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="shortcut icon" href="https://i.imgur.com/HjwVm8x.png" type="image/x-icon">
-    <title>Em Breve</title>
-    <style>
-        body {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            margin: 0;
-            font-family: Arial, sans-serif;
-            background-color: #000;
-            overflow: hidden;
-            color: white;
-        }
-        h1 {
-            text-align: center;
-            font-size: 3em;
-            animation: fadeIn 3s ease-in-out infinite alternate;
-        }
-        @keyframes fadeIn {
-            0% { opacity: 0; transform: scale(0.9); }
-            100% { opacity: 1; transform: scale(1.1); }
-        }
-        .stars {
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            background: url('https://raw.githubusercontent.com/robsonlc/engesud/main/lbk/tsr/osha/stars.png') repeat;
-            z-index: -1;
-            animation: moveStars 50s linear infinite;
-        }
-        @keyframes moveStars {
-            from { transform: translateY(0); }
-            to { transform: translateY(-1000px); }
-        }
-        .shooting-star {
-            position: absolute;
-            width: 2px;
-            height: 150px;
-            background: linear-gradient(white, rgba(255, 255, 255, 0));
-            animation: shootingStar 2s ease-out infinite;
-        }
-        @keyframes shootingStar {
-            from {
-                top: -10%;
-                left: 100%;
-            }
-            to {
-                top: 100%;
-                left: -10%;
-            }
-        }
-        .glowing-text {
-            color: #fff;
-            text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 20px #ff00ff, 0 0 30px #ff00ff, 0 0 40px #ff00ff, 0 0 50px #ff00ff, 0 0 60px #ff00ff;
-            animation: glow 1s ease-in-out infinite alternate;
-        }
-        @keyframes glow {
-            from {
-                text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 20px #ff00ff, 0 0 30px #ff00ff, 0 0 40px #ff00ff, 0 0 50px #ff00ff, 0 0 60px #ff00ff;
-            }
-            to {
-                text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #ff00ff, 0 0 40px #ff00ff, 0 0 50px #ff00ff, 0 0 60px #ff00ff, 0 0 70px #ff00ff;
-            }
-        }
-        .floating-objects {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            width: 10px;
-            height: 10px;
-            background: red;
-            border-radius: 50%;
-            animation: float 5s ease-in-out infinite;
-        }
-        @keyframes float {
-            0%, 100% {
-                transform: translateY(0) translateX(0);
-            }
-            50% {
-                transform: translateY(-20px) translateX(20px);
-            }
-        }
-        .twinkling-stars {
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            background: transparent;
-            overflow: hidden;
-            z-index: 1;
-        }
-        .twinkling-stars::before, .twinkling-stars::after {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: transparent;
-            opacity: 0.5;
-            animation: twinkling 1.5s infinite ease-in-out alternate;
-        }
-        .twinkling-stars::after {
-            animation-delay: 0.75s;
-        }
-        @keyframes twinkling {
-            0% { background: rgba(255, 255, 255, 0.1); }
-            100% { background: rgba(255, 255, 255, 0.3); }
-        }
-        .nebula {
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            background: radial-gradient(circle at center, rgba(255, 0, 255, 0.2), transparent);
-            z-index: 0;
-            animation: pulse 3s infinite;
-        }
-        @keyframes pulse {
-            0%, 100% { transform: scale(1); }
-            50% { transform: scale(1.1); }
-        }
-        .comet {
-            position: absolute;
-            width: 2px;
-            height: 250px;
-            background: linear-gradient(white, rgba(255, 255, 255, 0));
-            animation: comet 3s ease-out infinite;
-        }
-        @keyframes comet {
-            from {
-                top: -20%;
-                left: 120%;
-            }
-            to {
-                top: 120%;
-                left: -20%;
-            }
-        }
-        .meteor {
-            position: absolute;
-            width: 3px;
-            height: 200px;
-            background: linear-gradient(white, rgba(255, 255, 255, 0));
-            animation: meteor 4s ease-out infinite;
-        }
-        @keyframes meteor {
-            from {
-                top: -30%;
-                left: 110%;
-            }
-            to {
-                top: 110%;
-                left: -30%;
-            }
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Oportunidade Premium de Investimento Imobiliário</title>
+  
+  <!-- Meta Tags OG -->
+  <meta property="og:url" content="https://www.engesudsmart.com.br/lbk/tsr/grt">
+  <meta property="og:image" content="https://i.postimg.cc/KjgNw95M/image.png">
+  
+  <!-- Favicon -->
+  <link rel="shortcut icon" href="https://i.postimg.cc/dQ6DTGL6/ZQ2U8eO.png" type="image/x-icon">
+  
+  <style>
+    :root {
+      --primary: #2c5282;
+      --secondary: #4299e1;
+      --accent: #ed8936;
+      --background: #f7fafc;
+      --text: #2d3748;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      line-height: 1.6;
+      background-color: var(--background);
+      color: var(--text);
+    }
+
+    header {
+      position: relative;
+      height: 400px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      color: #fff;
+      background: linear-gradient(rgba(44, 82, 130, 0.9), rgba(44, 82, 130, 0.7));
+    }
+
+    header::before {
+      content: "";
+      position: absolute;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: url('https://i.postimg.cc/4djMYHLp/image.png') center/cover no-repeat;
+      opacity: 0.3;
+      z-index: -1;
+    }
+
+    header h1 {
+      font-size: 3rem;
+      font-weight: 700;
+      margin: 0;
+      padding: 0 20px;
+      text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+    }
+
+    main {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 40px 20px;
+    }
+
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 30px;
+      margin-bottom: 40px;
+    }
+
+    .feature-card {
+      background: #fff;
+      border-radius: 12px;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+      padding: 25px;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .feature-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 15px rgba(0,0,0,0.15);
+    }
+
+    .feature-card h2 {
+      color: var(--primary);
+      font-size: 1.5rem;
+      margin-bottom: 15px;
+      border-bottom: 2px solid var(--secondary);
+      padding-bottom: 8px;
+    }
+
+    .feature-card p {
+      color: var(--text);
+      font-size: 1.1rem;
+    }
+
+    .map-container {
+      position: relative;
+      padding-bottom: 56.25%;
+      height: 0;
+      overflow: hidden;
+      border-radius: 12px;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+      margin: 40px 0;
+    }
+
+    .map-container iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      border: 0;
+    }
+
+    footer {
+      background: linear-gradient(to right, var(--primary), var(--secondary));
+      color: #fff;
+      text-align: center;
+      padding: 40px 20px;
+      margin-top: 40px;
+    }
+
+    footer img {
+      max-width: 180px;
+      border-radius: 10px;
+      margin-bottom: 20px;
+      transition: transform 0.3s ease;
+    }
+
+    footer img:hover {
+      transform: scale(1.05);
+    }
+
+    footer a {
+      color: #fff;
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+
+    footer a:hover {
+      color: var(--accent);
+    }
+
+    .contact-info {
+      margin: 20px 0;
+      font-size: 1.1rem;
+    }
+
+    .update-info {
+      font-size: 0.9rem;
+      opacity: 0.8;
+      margin-top: 20px;
+    }
+
+    @media (max-width: 768px) {
+      header h1 {
+        font-size: 2rem;
+      }
+
+      .feature-card {
+        padding: 20px;
+      }
+
+      .feature-card h2 {
+        font-size: 1.3rem;
+      }
+
+      .feature-card p {
+        font-size: 1rem;
+      }
+    }
+  </style>
 </head>
 <body>
-    <div class="stars"></div>
-    <div class="twinkling-stars"></div>
-    <div class="shooting-star"></div>
-    <div class="nebula"></div>
-    <div class="comet"></div>
-    <div class="meteor"></div>
-    <h1 class="glowing-text">Logo entrará no ar</h1>
-    <div class="floating-objects"></div>
+  <header>
+    <h1>Oportunidade Premium de Investimento Imobiliário</h1>
+  </header>
+  
+  <main>
+    <section class="cards">
+      <div class="feature-card">
+        <h2>Área Total</h2>
+        <p>39.684,00 m² em dois lotes - A1: 19.715,30 m² e A2: 19.903,54 m²</p>
+      </div>
+      <div class="feature-card">
+        <h2>Avaliação</h2>
+        <p>R$ 14.841.000,00</p>
+      </div>
+      <div class="feature-card">
+        <h2>Venda à Vista</h2>
+        <p>Conforme corretor local, pode vender em dinheiro por até R$ 8,50 milhões</p>
+      </div>
+      <div class="feature-card">
+        <h2>Zoneamento</h2>
+        <p>Potencial para verticalizar até 18 pavimentos com taxa de ocupação de 70%</p>
+      </div>
+      <div class="feature-card">
+        <h2>Estratégia</h2>
+        <p>Intercalar grupo investidor para aquisição e construtora para desenvolvimento de empreendimentos</p>
+      </div>
+    </section>
+    
+    <section class="map-container">
+      <iframe src="https://www.google.com/maps/d/embed?mid=1UXUPc-ZsYcKlpFwzpiFZ2e78U6BbYBk&ehbc=2E312F" allowfullscreen></iframe>
+    </section>
+  </main>
+  
+  <footer>
+    <a href="http://www.engesudsmart.com.br" target="_blank" title="www.engesudsmart.com.br">
+      <img src="https://i.postimg.cc/FsKzb1S4/3YKn2xW.png" alt="Logo Engesud">
+    </a>
+    <div class="contact-info">
+      <p><strong>Engesud Engenharia e Intermediação LTDA</strong></p>
+      <p>Robson Luis da Costa | <a href="https://wa.me/554497013489" title="Whatsapp">+55 (44) 99701-3489</a></p>
+      <p><a href="https://www.engesudsmart.com.br" target="_blank">www.engesudsmart.com.br</a></p>
+    </div>
+    <p class="update-info">Última atualização: 18 de fevereiro de 2025</p>
+  </footer>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const cards = document.querySelectorAll('.feature-card');
+      
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.style.opacity = 1;
+            entry.target.style.transform = 'translateY(0)';
+          }
+        });
+      }, {
+        threshold: 0.1
+      });
+      
+      cards.forEach(card => {
+        card.style.opacity = 0;
+        card.style.transform = 'translateY(30px)';
+        card.style.transition = 'all 0.6s cubic-bezier(0.4, 0, 0.2, 1)';
+        observer.observe(card);
+      });
+    });
+  </script>
 </body>
 </html>
