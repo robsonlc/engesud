@@ -42,7 +42,7 @@
       align-items: center;
       text-align: center;
       color: #fff;
-      background: linear-gradient(rgba(44, 82, 130, 0.9), rgba(44, 82, 130, 0.7));
+      background: linear-gradient(rgba(44,82,130,0.9), rgba(44,82,130,0.7));
     }
 
     header::before {
@@ -127,6 +127,17 @@
       font-size: 1.1rem;
     }
 
+    /* Seção da imagem ilustrativa e mapa */
+    .map-section {
+      margin-bottom: 40px;
+    }
+    
+    .map-section img {
+      width: 100%;
+      border-radius: 12px;
+      margin-bottom: 20px;
+    }
+    
     .map-container {
       position: relative;
       padding-bottom: 56.25%;
@@ -134,9 +145,8 @@
       overflow: hidden;
       border-radius: 12px;
       box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-      margin: 40px 0;
     }
-
+    
     .map-container iframe {
       position: absolute;
       top: 0;
@@ -207,13 +217,14 @@
 </head>
 <body>
   <header>
-    <h1>Oportunidade Premium de Investimento Imobiliário MCMV</h1>
+    <h1>Oportunidade Premium de Investimento Imobiliário</h1>
   </header>
   
   <nav>
     <ul>
       <li><a href="index.html">Início</a></li>
       <li><a href="simul.html">Simulação</a></li>
+      <li><a href="pesquisa.html">Pesquisa</a></li>
     </ul>
   </nav>
   
@@ -221,7 +232,7 @@
     <section class="cards">
       <div class="feature-card">
         <h2>Área Total</h2>
-        <p>39.684,00 m² em dois lotes - Área 1: 19.715,30 m² e Área 2: 19.903,54 m²</p>
+        <p>39.684,00 m² em dois lotes<br>Área 1: 19.715,30 m²<br>Área 2: 19.903,54 m²</p>
       </div>
       <div class="feature-card">
         <h2>Avaliação</h2>
@@ -233,16 +244,20 @@
       </div>
       <div class="feature-card">
         <h2>Zoneamento</h2>
-        <p>Potencial para verticalizar até 18 pavimentos com taxa de ocupação de 70%</p>
+        <p>Potencial para verticalizar até 18 pavimentos<br>com taxa de ocupação de 70%</p>
       </div>
       <div class="feature-card">
         <h2>Estratégia</h2>
-        <p>Intercalar grupo investidor para aquisição e construtora para desenvolvimento de empreendimentos</p>
+        <p>Intercalar grupo investidor para aquisição<br>e construtora para desenvolvimento</p>
       </div>
     </section>
     
-    <section class="map-container">
-      <iframe src="https://www.google.com/maps/d/embed?mid=1UXUPc-ZsYcKlpFwzpiFZ2e78U6BbYBk&ehbc=2E312F" allowfullscreen></iframe>
+    <!-- Seção da imagem ilustrativa e mapa -->
+    <section class="map-section">
+      <img src="https://i.postimg.cc/fRWN8t47/image.png" alt="Localização dos lotes e principais vias de acesso">
+      <div class="map-container">
+        <iframe src="https://www.google.com/maps/d/embed?mid=1UXUPc-ZsYcKlpFwzpiFZ2e78U6BbYBk&ehbc=2E312F" allowfullscreen></iframe>
+      </div>
     </section>
   </main>
   
@@ -269,9 +284,7 @@
             entry.target.style.transform = 'translateY(0)';
           }
         });
-      }, {
-        threshold: 0.1
-      });
+      }, { threshold: 0.1 });
       
       cards.forEach(card => {
         card.style.opacity = 0;
