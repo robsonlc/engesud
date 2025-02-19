@@ -13,87 +13,189 @@
   <link rel="shortcut icon" href="https://i.postimg.cc/dQ6DTGL6/ZQ2U8eO.png" type="image/x-icon">
   
   <style>
-    /* Estilos Globais */
-    body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-      background-color: #f4f4f4;
-      color: #333;
-      line-height: 1.6;
+    :root {
+      --primary: #2c5282;
+      --secondary: #4299e1;
+      --accent: #ed8936;
+      --background: #f7fafc;
+      --text: #2d3748;
     }
+    
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      line-height: 1.6;
+      background-color: var(--background);
+      color: var(--text);
+    }
+    
     header {
       position: relative;
-      height: 200px;
+      height: 400px;
       display: flex;
       justify-content: center;
       align-items: center;
       text-align: center;
-      background: url('https://i.postimg.cc/4djMYHLp/image.png') center/cover no-repeat;
-      opacity: 0.8;
       color: #fff;
+      background: linear-gradient(rgba(44, 82, 130, 0.9), rgba(44, 82, 130, 0.7));
     }
+    
+    header::before {
+      content: "";
+      position: absolute;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: url('https://i.postimg.cc/4djMYHLp/image.png') center/cover no-repeat;
+      opacity: 0.3;
+      z-index: -1;
+    }
+    
     header h1 {
-      background: rgba(0, 0, 0, 0.5);
+      font-size: 3rem;
+      font-weight: 700;
+      text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+      padding: 0 20px;
+    }
+    
+    nav {
+      background: var(--primary);
       padding: 10px 20px;
-      border-radius: 5px;
-      font-size: 2rem;
     }
+    
+    nav ul {
+      list-style: none;
+      display: flex;
+      justify-content: center;
+    }
+    
+    nav ul li {
+      margin: 0 15px;
+    }
+    
+    nav ul li a {
+      color: #fff;
+      text-decoration: none;
+      font-weight: bold;
+      transition: color 0.3s ease;
+    }
+    
+    nav ul li a:hover {
+      color: var(--accent);
+    }
+    
     main {
-      padding: 20px;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 40px 20px;
     }
+    
     .simulation-step {
       background: #fff;
-      padding: 15px;
-      margin-bottom: 15px;
-      border-radius: 8px;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      border-radius: 12px;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+      padding: 25px;
+      margin-bottom: 30px;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      opacity: 0;
+      transform: translateY(30px);
     }
+    
     .simulation-step h2 {
-      margin-top: 0;
-      color: #005a9c;
+      color: var(--primary);
+      font-size: 1.8rem;
+      margin-bottom: 15px;
+      border-bottom: 2px solid var(--secondary);
+      padding-bottom: 8px;
     }
-    .simulation-step ul {
-      list-style: none;
-      padding-left: 0;
-    }
-    .simulation-step ul li {
+    
+    .simulation-step p,
+    .simulation-step li {
+      font-size: 1.1rem;
       margin: 8px 0;
     }
+    
+    .simulation-step ul {
+      list-style: none;
+      padding-left: 20px;
+    }
+    
     footer {
-      background: #333;
+      background: linear-gradient(to right, var(--primary), var(--secondary));
       color: #fff;
       text-align: center;
-      padding: 20px;
-      font-size: 0.9rem;
+      padding: 40px 20px;
+      margin-top: 40px;
     }
+    
     footer img {
-      max-width: 150px;
-      border-radius: 8px;
-      margin-bottom: 10px;
+      max-width: 180px;
+      border-radius: 10px;
+      margin-bottom: 20px;
+      transition: transform 0.3s ease;
     }
+    
+    footer img:hover {
+      transform: scale(1.05);
+    }
+    
     footer a {
       color: #fff;
       text-decoration: none;
+      transition: color 0.3s ease;
     }
+    
+    footer a:hover {
+      color: var(--accent);
+    }
+    
+    .contact-info {
+      margin: 20px 0;
+      font-size: 1.1rem;
+    }
+    
+    .update-info {
+      font-size: 0.9rem;
+      opacity: 0.8;
+      margin-top: 20px;
+    }
+    
     @media (max-width: 768px) {
-      header {
-        height: 150px;
-      }
       header h1 {
+        font-size: 2rem;
+      }
+      
+      .simulation-step {
+        padding: 20px;
+      }
+      
+      .simulation-step h2 {
         font-size: 1.5rem;
+      }
+      
+      .simulation-step p,
+      .simulation-step li {
+        font-size: 1rem;
       }
     }
   </style>
 </head>
 <body>
-  <!-- Cabeçalho -->
   <header>
     <h1>Simulação de Contas de Viabilidade</h1>
   </header>
   
-  <!-- Conteúdo Principal -->
+  <nav>
+    <ul>
+      <li><a href="index.html">Início</a></li>
+      <li><a href="simul.html">Simulação</a></li>
+    </ul>
+  </nav>
+  
   <main>
-    <!-- Passo 1: Dados Iniciais -->
     <div class="simulation-step">
       <h2>1. Dados Iniciais</h2>
       <ul>
@@ -102,14 +204,12 @@
       </ul>
     </div>
     
-    <!-- Passo 2: Preço do Metro Quadrado para o Investidor -->
     <div class="simulation-step">
       <h2>2. Preço do Metro Quadrado para o Investidor</h2>
       <p>Cálculo: <em>R$ 9.000.000,00 / 39.684 m²</em></p>
       <p><strong>Resultado:</strong> Aproximadamente R$ 226,70 por m²</p>
     </div>
     
-    <!-- Passo 3: Cálculo do VGV -->
     <div class="simulation-step">
       <h2>3. Cálculo do VGV (Valor Geral de Vendas)</h2>
       <ul>
@@ -120,7 +220,6 @@
       </ul>
     </div>
     
-    <!-- Passo 4: Venda à Construtora via Permuta Financeira -->
     <div class="simulation-step">
       <h2>4. Venda à Construtora via Permuta Financeira</h2>
       <p>
@@ -133,7 +232,6 @@
       </ul>
     </div>
     
-    <!-- Passo 5: Rentabilidade para o Investidor -->
     <div class="simulation-step">
       <h2>5. Rentabilidade para o Investidor</h2>
       <ul>
@@ -143,14 +241,12 @@
       </ul>
     </div>
     
-    <!-- Passo 6: Preço Efetivo de Venda para a Construtora -->
     <div class="simulation-step">
       <h2>6. Preço Efetivo de Venda para a Construtora</h2>
       <p>Cálculo: <em>R$ 24.633.000,00 / 39.684 m²</em></p>
       <p><strong>Resultado:</strong> Aproximadamente R$ 620,70 por m²</p>
     </div>
     
-    <!-- Passo 7: Cronograma de Desenvolvimento -->
     <div class="simulation-step">
       <h2>7. Cronograma de Desenvolvimento</h2>
       <ul>
@@ -162,7 +258,6 @@
       </ul>
     </div>
     
-    <!-- Passo 8: Conclusão & Disclaimer -->
     <div class="simulation-step">
       <h2>8. Conclusão & Disclaimer</h2>
       <p>
@@ -174,17 +269,40 @@
     </div>
   </main>
   
-  <!-- Rodapé -->
   <footer>
     <a href="http://www.engesudsmart.com.br" target="_blank" title="www.engesudsmart.com.br">
       <img src="https://i.postimg.cc/FsKzb1S4/3YKn2xW.png" alt="Logo Engesud">
     </a>
-    <p><strong>Engesud Engenharia e Intermediação LTDA</strong></p>
-    <p>Robson Luis da Costa | <a href="https://wa.me/554497013489" title="Whatsapp">+55 (44) 99701-3489</a></p>
-    <p><a href="https://www.engesudsmart.com.br" target="_blank">www.engesudsmart.com.br</a></p>
-    <p>Última atualização: 18 de fevereiro de 2025</p>
+    <div class="contact-info">
+      <p><strong>Engesud Engenharia e Intermediação LTDA</strong></p>
+      <p>Robson Luis da Costa | <a href="https://wa.me/554497013489" title="Whatsapp">+55 (44) 99701-3489</a></p>
+      <p><a href="https://www.engesudsmart.com.br" target="_blank">www.engesudsmart.com.br</a></p>
+    </div>
+    <p class="update-info">Última atualização: 18 de fevereiro de 2025</p>
   </footer>
   
-  <!-- Este conteúdo é protegido por direitos autorais creditados à Engesud Engenharia e Intermediação LTDA -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const steps = document.querySelectorAll('.simulation-step');
+      
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.style.opacity = 1;
+            entry.target.style.transform = 'translateY(0)';
+          }
+        });
+      }, {
+        threshold: 0.1
+      });
+      
+      steps.forEach(step => {
+        step.style.opacity = 0;
+        step.style.transform = 'translateY(30px)';
+        step.style.transition = 'all 0.6s cubic-bezier(0.4, 0, 0.2, 1)';
+        observer.observe(step);
+      });
+    });
+  </script>
 </body>
 </html>
