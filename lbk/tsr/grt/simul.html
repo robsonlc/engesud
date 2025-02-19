@@ -42,7 +42,7 @@
       align-items: center;
       text-align: center;
       color: #fff;
-      background: linear-gradient(rgba(44, 82, 130, 0.9), rgba(44, 82, 130, 0.7));
+      background: linear-gradient(rgba(44,82,130,0.9), rgba(44,82,130,0.7));
     }
     
     header::before {
@@ -223,6 +223,7 @@
     <ul>
       <li><a href="index.html">Início</a></li>
       <li><a href="simul.html">Simulação</a></li>
+      <li><a href="pesquisa.html">Pesquisa</a></li>
     </ul>
   </nav>
   
@@ -251,27 +252,17 @@
     
     <div class="simulation-step" id="step2">
       <h2>2. Preço do Metro Quadrado para o Investidor</h2>
-      <p>
-        Cálculo: R$ 9.000.000,00 / 39.684 m²<br>
-        <strong>Resultado:</strong> <span id="precoMetroInvestidor">R$ 226,70</span> por m²
-      </p>
+      <p>Cálculo: R$ 9.000.000,00 / 39.684 m²<br>
+      <strong>Resultado:</strong> <span id="precoMetroInvestidor">R$ 226,70</span> por m²</p>
     </div>
     
     <div class="simulation-step" id="step3">
       <h2>3. Cálculo do VGV (Valor Geral de Vendas)</h2>
       <ul>
-        <li>
-          <strong>Densidade:</strong> <span id="densityDisplay">27</span> UH/1.000 m² (T+12 Pavimentos)
-        </li>
-        <li>
-          <strong>Número Total de UH:</strong> <span id="uhTotal">1.071</span>
-        </li>
-        <li>
-          <strong>Ticket Médio:</strong> <span id="ticketMedioDisplay">R$ 240.000,00</span>
-        </li>
-        <li>
-          <strong>VGV Total:</strong> <span id="vgvTotal">R$ 257.152.320,00</span>
-        </li>
+        <li><strong>Densidade:</strong> <span id="densityDisplay">27</span> UH/1.000 m² (T+12 Pavimentos)</li>
+        <li><strong>Número Total de UH:</strong> <span id="uhTotal">1.071</span></li>
+        <li><strong>Ticket Médio:</strong> <span id="ticketMedioDisplay">R$ 240.000,00</span></li>
+        <li><strong>VGV Total:</strong> <span id="vgvTotal">R$ 257.152.320,00</span></li>
       </ul>
     </div>
     
@@ -281,12 +272,8 @@
         O investidor, após adquirir os 2 lotes por R$ 9.000.000,00, vende à construtora na modalidade de permuta financeira, recebendo:
       </p>
       <ul>
-        <li>
-          <strong>Taxa de Permuta:</strong> <span id="permutaTaxaDisplay">10%</span> do VGV
-        </li>
-        <li>
-          <strong>Valor Recebido:</strong> <span id="permutaAmount">R$ 25.715.232,00</span>
-        </li>
+        <li><strong>Taxa de Permuta:</strong> <span id="permutaTaxaDisplay">10%</span> do VGV</li>
+        <li><strong>Valor Recebido:</strong> <span id="permutaAmount">R$ 25.715.232,00</span></li>
       </ul>
     </div>
     
@@ -294,18 +281,14 @@
       <h2>5. Rentabilidade para o Investidor</h2>
       <ul>
         <li><strong>Investimento Inicial:</strong> R$ 9.000.000,00</li>
-        <li>
-          <strong>Lucro Bruto:</strong> <span id="profit">R$ 16.715.232,00</span>
-        </li>
+        <li><strong>Lucro Bruto:</strong> <span id="profit">R$ 16.715.232,00</span></li>
       </ul>
     </div>
     
     <div class="simulation-step" id="step6">
       <h2>6. Preço Efetivo de Venda para a Construtora</h2>
-      <p>
-        Cálculo: Valor recebido via permuta / Área Total<br>
-        <strong>Resultado:</strong> <span id="precoEfetivoConstrutora">R$ 647,90</span> por m²
-      </p>
+      <p>Cálculo: Valor recebido via permuta / Área Total<br>
+      <strong>Resultado:</strong> <span id="precoEfetivoConstrutora">R$ 647,90</span> por m²</p>
     </div>
     
     <div class="simulation-step" id="step7">
