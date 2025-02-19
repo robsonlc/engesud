@@ -29,24 +29,21 @@
 
     body {
       font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-      margin: 0;
-      padding: 0;
       background-color: var(--background-color);
       color: #333;
       line-height: 1.6;
     }
 
     header {
-      /* Imagem de fundo suave */
       background: url('https://i.postimg.cc/vBCn93xK/image.png') center/cover no-repeat;
       background-color: rgba(255, 255, 255, 0.3);
       background-blend-mode: overlay;
-      min-height: 250px;
+      min-height: 200px;
       display: flex;
       align-items: center;
       justify-content: center;
       position: relative;
-      opacity: 0.9; /* Ajuste de transparência */
+      opacity: 0.9;
     }
 
     header::before {
@@ -60,6 +57,17 @@
       pointer-events: none;
     }
 
+    header .header-content {
+      z-index: 1;
+      text-align: center;
+    }
+
+    header .header-content h1 {
+      color: var(--primary-color);
+      font-size: clamp(1.5rem, 4vw, 2.5rem);
+      margin-bottom: 1rem;
+    }
+
     .container {
       width: 90%;
       max-width: 1200px;
@@ -67,16 +75,11 @@
       padding: 1rem;
     }
 
-    h1, h2 {
+    h2 {
       color: var(--primary-color);
       text-align: center;
       margin-bottom: 1.5rem;
       line-height: 1.3;
-    }
-
-    h1 {
-      font-size: clamp(1.5rem, 4vw, 2.5rem);
-      margin-bottom: 2rem;
     }
 
     p {
@@ -202,7 +205,7 @@
 
     footer img {
       max-width: 120px;
-      border-radius: 10px; /* cantos arredondados */
+      border-radius: 10px;
       transition: transform var(--transition-speed);
     }
 
@@ -222,7 +225,7 @@
     }
 
     @media (max-width: 480px) {
-      h1 {
+      header .header-content h1 {
         font-size: 1.5rem;
       }
 
@@ -233,14 +236,16 @@
   </style>
 </head>
 <body>
-  <header></header>
+  <header>
+    <div class="header-content">
+      <h1>Área Disponível em Rondonópolis - MT</h1>
+    </div>
+  </header>
 
   <div class="container">
-    <h1>Área Disponível em Rondonópolis - MT</h1>
     <p style="text-align: center;">
       Apresentamos uma área bem localizada em Rondonópolis, com grande potencial de desenvolvimento imobiliário.
-      Ideal para empreendimentos verticais de habitação social, 
-      conforme estudo a ser apresentado na página seguinte.
+      Ideal para empreendimentos verticais de habitação social, conforme estudo a ser apresentado na página seguinte.
     </p>
 
     <!-- Mapa -->
