@@ -12,14 +12,21 @@
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="Engesud Smart">
   <title>Proposta de Parceria - Empreendimento Imobiliário</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
   <style>
     :root {
-      --primary-color: #4CAF50;
-      --secondary-color: #388e3c;
-      --text-color: #333;
-      --light-bg: #f9f9f9;
-      --border-radius: 12px;
-      --box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+      --primary-color: #1e40af; /* Darker Blue for Professional Look */
+      --secondary-color: #2563eb; /* Slightly Lighter Blue */
+      --accent-color: #f59e0b;
+      --text-color: #374151; /* Darker Gray for Text */
+      --light-bg: #f9f9f9; /* Lighter Background */
+      --card-bg: #ffffff; /* White Card Background */
+      --border-radius: 0.75rem; /* Slightly Reduced Border Radius */
+      --box-shadow: 0 5px 10px rgba(0, 0, 0, 0.08); /* Softer Shadow */
+      --heading-font: 'Roboto', sans-serif;
+      --body-font: 'Roboto', sans-serif;
     }
 
     * {
@@ -28,204 +35,237 @@
       box-sizing: border-box;
     }
 
+    html {
+      scroll-behavior: smooth;
+    }
+
     body {
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      line-height: 1.8;
+      font-family: var(--body-font);
+      line-height: 1.7; /* Improved Line Height */
       color: var(--text-color);
       background-color: var(--light-bg);
+      overflow-x: hidden;
+      -webkit-font-smoothing: antialiased; /* Smooth font rendering for better aesthetics */
     }
 
     header {
-      background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)),
-        url('https://i.imgur.com/X5ipykj.png') center/cover no-repeat;
-      height: 300px;
+      background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), /* Slightly lighter overlay */
+                  url('https://i.imgur.com/X5ipykj.png') center/cover no-repeat;
+      min-height: 50vh; /* Reduced header height */
       display: flex;
       align-items: center;
       justify-content: center;
-      color: white;
-      text-align: center;
+      padding: 2rem;
       position: relative;
+      text-align: center; /* Center text in header */
     }
 
     header h1 {
-      font-size: 3rem;
-      font-weight: 700;
-      text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
-      padding: 0 20px;
+      font-size: clamp(2rem, 4vw, 3rem); /* Reduced max font size */
+      font-weight: 700; /* Slightly reduced font weight */
+      color: white;
+      max-width: 800px; /* Slightly narrower max width */
+      margin: 0 auto;
+      text-shadow: 1px 1px 3px rgba(0,0,0,0.4); /* Reduced text shadow */
+      animation: fadeIn 1s ease-out;
+    }
+
+    .header-overlay { /* Optional overlay if needed for better text readability on different images */
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.5); /* Adjust opacity as needed */
     }
 
     .content {
-      max-width: 1100px;
-      margin: -50px auto 0;
-      padding: 40px;
-      background-color: white;
+      max-width: 1100px; /* Slightly reduced max width */
+      margin: -70px auto 0; /* Adjusted negative margin */
+      padding: 2.5rem; /* Increased padding */
+      background-color: var(--card-bg);
       box-shadow: var(--box-shadow);
       border-radius: var(--border-radius);
       position: relative;
     }
 
     h2 {
-      font-size: 2.2rem;
-      margin-bottom: 20px;
-      color: var(--secondary-color);
-      border-bottom: 3px solid var(--primary-color);
-      padding-bottom: 10px;
+      font-family: var(--heading-font);
+      font-size: clamp(1.6rem, 3vw, 2.2rem); /* Adjusted font size */
+      color: var(--primary-color);
+      margin-bottom: 1.2rem; /* Adjusted margin */
+      font-weight: 700;
+      position: relative;
+      padding-bottom: 0.4rem; /* Adjusted padding */
     }
 
-    p {
-      margin: 15px 0;
-      font-size: 1.1rem;
-      color: #555;
+    h2::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 50px; /* Reduced underline width */
+      height: 3px; /* Reduced underline height */
+      background: var(--accent-color);
+      border-radius: 2px;
     }
 
-    .details {
-      margin: 30px 0;
-      padding: 25px;
-      background-color: #f8f9fa;
+    .details, .feature-card {
+      background-color: var(--card-bg); /* Using variable for consistency */
       border-radius: var(--border-radius);
-      border-left: 5px solid var(--primary-color);
-    }
-
-    .svg-container {
-      margin: 30px auto;
-      padding: 20px;
-      background: white;
-      border-radius: var(--border-radius);
+      padding: 2rem;
+      margin-bottom: 2rem; /* Consistent bottom margin */
       box-shadow: var(--box-shadow);
-      max-width: 900px;
-      overflow: hidden;
+      transition: transform 0.2s ease-in-out; /* Smoother transition */
     }
 
-    .svg-container object {
-      width: 100%;
-      height: auto;
-      min-height: 500px;
-      display: block;
-      margin: 0 auto;
-      transition: transform 0.3s ease;
+    .details:hover, .feature-card:hover {
+      transform: translateY(-3px); /* Reduced hover lift */
+      box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1); /* Slightly stronger shadow on hover */
     }
 
-    .svg-container:hover object {
-      transform: scale(1.02);
+    .feature-cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Adjusted minmax for wider cards */
+      gap: 1.5rem; /* Reduced gap */
+      margin: 2rem 0; /* Adjusted margin */
+    }
+
+    .feature-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 3px; /* Reduced accent line width */
+      height: 100%;
+      background: var(--accent-color);
+      transform: scaleY(0);
+      transition: transform 0.2s ease-in-out; /* Smoother transition */
+      transform-origin: top; /* Animate from top */
+    }
+
+    .feature-card:hover::before {
+      transform: scaleY(1);
     }
 
     .map {
-      margin: 40px 0;
-      text-align: center;
+      margin: 2rem 0; /* Adjusted margin */
     }
 
-    iframe, img {
+    .map iframe {
+      width: 100%;
+      height: 400px; /* Reduced map height */
+      border: none;
+      border-radius: var(--border-radius);
+      box-shadow: var(--box-shadow);
+    }
+
+    img {
       max-width: 100%;
+      height: auto;
       border-radius: var(--border-radius);
       box-shadow: var(--box-shadow);
-      margin: 20px 0;
-    }
-
-    .action-buttons {
-      margin: 40px 0;
-      text-align: center;
-      display: flex;
-      gap: 20px;
-      flex-wrap: wrap;
-      justify-content: center;
-    }
-
-    .action-button {
-      background-color: var(--primary-color);
-      color: white;
-      padding: 15px 30px;
-      border-radius: 25px;
-      text-decoration: none;
-      font-weight: bold;
-      display: inline-flex;
-      align-items: center;
-      gap: 10px;
-      transition: all 0.3s ease;
-      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-    }
-
-    .action-button:hover {
-      background-color: var(--secondary-color);
-      transform: translateY(-2px);
-      box-shadow: 0 6px 12px rgba(0,0,0,0.15);
-    }
-
-    /* Seção de Feature Cards com animação */
-    .feature-cards {
-      display: flex;
-      gap: 20px;
-      flex-wrap: wrap;
-      margin: 40px 0;
-    }
-
-    .feature-card {
-      background-color: white;
-      border-radius: var(--border-radius);
-      box-shadow: var(--box-shadow);
-      padding: 20px;
-      flex: 1 1 30%;
-      min-width: 250px;
-      opacity: 0;
-      transform: translateY(20px);
-      transition: all 0.5s ease-out;
+      margin: 1rem 0; /* Reduced image margin */
     }
 
     footer {
-      margin-top: 60px;
-      padding: 40px 20px;
-      background: linear-gradient(to right, #2c3e50, #3498db);
+      background: var(--primary-color); /* Using primary color for footer */
       color: white;
+      padding: 2.5rem 1.5rem; /* Adjusted padding */
       text-align: center;
+      margin-top: 3rem; /* Adjusted margin */
+    }
+
+    footer img {
+      max-width: 150px; /* Reduced logo size in footer */
+      box-shadow: none;
+      margin-bottom: 0.5rem; /* Added margin below logo */
     }
 
     footer a {
       color: white;
       text-decoration: none;
+      transition: color 0.2s ease-in-out; /* Smoother transition */
     }
 
-    footer img {
-      max-width: 150px;
-      margin-bottom: 20px;
-      border-radius: var(--border-radius);
+    footer a:hover {
+      color: var(--accent-color);
     }
 
     footer p {
-      margin: 10px 0;
-      font-size: 1.1rem;
+      margin-bottom: 0.5rem; /* Added margin to footer paragraphs */
     }
 
-    @media (max-width: 768px) {
-      header h1 {
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(10px); } /* Reduced initial translateY */
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* --- Media Queries for Responsiveness --- */
+
+    @media (max-width: 992px) { /* Medium screens (tablets) */
+      .content {
+        padding: 2rem;
+        margin-top: -60px; /* Adjust content margin */
+      }
+
+      h2 {
         font-size: 2rem;
       }
-      .content {
-        padding: 20px;
-        margin-top: -30px;
+
+      .feature-cards {
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Adjust card min width */
       }
+
+      .map iframe {
+        height: 350px; /* Adjust map height */
+      }
+    }
+
+    @media (max-width: 768px) { /* Small screens (phones and smaller tablets) */
+      header {
+        min-height: 40vh; /* Further reduced header height */
+      }
+      header h1 {
+        font-size: 2.5rem; /* Adjust header font size for smaller screens */
+      }
+
+      .content {
+        margin-top: -50px; /* Adjust content margin */
+        padding: 1.5rem;
+      }
+
+      .details, .feature-card {
+        padding: 1.5rem;
+      }
+
       h2 {
         font-size: 1.8rem;
       }
-      p {
-        font-size: 1rem;
-      }
-      .svg-container {
-        padding: 10px;
-        margin: 20px auto;
-      }
-      .svg-container object {
-        min-height: 300px;
-      }
-      .action-buttons {
-        flex-direction: column;
-        align-items: stretch;
-        padding: 0 20px;
-      }
-      .action-button {
-        text-align: center;
-        justify-content: center;
-      }
+
       .feature-cards {
-        flex-direction: column;
+        grid-template-columns: 1fr; /* Stack cards on smaller screens */
+      }
+
+      .map iframe {
+        height: 300px;
+      }
+    }
+
+    @media (max-width: 480px) { /* Very small screens (smaller phones) */
+      header {
+        min-height: 30vh; /* Minimum header height for very small screens */
+      }
+      header h1 {
+        font-size: 1.8rem; /* Further adjust header font size */
+      }
+      .content {
+        padding: 1rem;
+        margin-top: -40px; /* Adjust content margin */
+      }
+
+      h2 {
+        font-size: 1.6rem;
       }
     }
   </style>
@@ -234,20 +274,16 @@
   <header>
     <h1>Proposta de Parceria - Empreendimento Imobiliário</h1>
   </header>
+
   <div class="content">
     <div class="details">
       <h2>Informações do Terreno</h2>
-      <p>O terreno disponível para negociação é composto por dois lotes, subdivididos em fases. A Fase 1 conta com uma área de 12.142,73 m² e a Fase 2 com 11.744,06 m², conforme a imagem já apresentada abaixo. O proprietário será responsável por entregar a área com infraestrutura de água, esgoto e energia elétrica, além de realizar a pavimentação da diretriz viária longitudinal.</p>
+      <p>O terreno disponível para negociação é composto por três lotes, subdivididos em fases. A fase 1 conta com uma área de 11.74,06 m², a fase 2 com 18.566,51 m² e fase 3 com 12.142,73 m², conforme a imagem já apresentada abaixo. O proprietário será responsável por entregar a área com infraestrutura de água, esgoto e energia elétrica, além de realizar a pavimentação da diretriz viária longitudinal.</p>
     </div>
 
     <div class="details">
       <h2>Viabilidade do Empreendimento</h2>
-      <p>De acordo com análise prévia, o terreno permite a implantação de dois empreendimentos imobiliários, cada um composto por até 6 torres residenciais multifamiliares verticais (T+3), com 8 apartamentos por pavimento. Cada empreendimento totaliza 192 unidades habitacionais de 44 m², com 2 quartos, banheiro, sala de jantar/tv, cozinha, lavanderia e sacada gourmet com churrasqueira. A permuta física envolverá a entrega de 38 apartamentos, correspondendo a 10% do total, ao proprietário.</p>
-      <div class="svg-container">
-        <object data="https://www.engesudsmart.com.br/lbk/tsr/ngb/napkin-ngb.svg" type="image/svg+xml">
-          Seu navegador não suporta SVG
-        </object>
-      </div>
+      <p>De acordo com análise prévia, o terreno permite a implantação de três empreendimentos imobiliários, dois deles compostos por até 6 torres residenciais multifamiliares verticais (T+3), com 8 apartamentos por pavimento e outro com 9 torres de mesma tipologia. Cada empreendimento totaliza 192 unidades habitacionais de 44 m², com 2 quartos, banheiro, sala de jantar/tv, cozinha, lavanderia e sacada gourmet com churrasqueira. A permuta física envolverá a entrega de quantidade de apartamentos correspondentes a 10% do total, ao proprietário.</p>
     </div>
 
     <div class="details">
@@ -258,34 +294,21 @@
 
     <div class="map">
       <h2>Localização</h2>
-      <iframe src="https://www.google.com/maps/d/embed?mid=1rRhhyU79CdJVl1wO5W6bar6obExoV8c&ehbc=2E312F" width="100%" height="450"></iframe>
+      <iframe src="https://www.google.com/maps/d/embed?mid=1rRhhyU79CdJVl1wO5W6bar6obExoV8c&ehbc=2E312F"></iframe>
     </div>
 
-    <div class="action-buttons">
-      <a href="https://www.engesudsmart.com.br/lbk/tsr/ngb/docs/Matr%C3%ADcula%2043.866.pdf" class="action-button">
-        📄 Matrícula 43.866 - Fase 1
-      </a>
-      <a href="https://www.engesudsmart.com.br/lbk/tsr/ngb/docs/Subdivis%C3%A3o%20lote%2083-F%20-%20Matricula.pdf" class="action-button">
-        📑 Planta de Subdivisão dos Lotes
-      </a>
-      <a href="https://wa.me/4497013489" class="action-button">
-        💬 Iniciar Conversa no WhatsApp
-      </a>
-    </div>
-
-    <!-- Seção de Feature Cards para demonstrar a animação -->
     <div class="feature-cards">
       <div class="feature-card">
         <h3>Inovação</h3>
-        <p>Projetos modernos e inovadores para transformar espaços.</p>
+        <p>Projetos modernos e inovadores para transformar espaços em ambientes excepcionais de moradia.</p>
       </div>
       <div class="feature-card">
         <h3>Qualidade</h3>
-        <p>Padrões elevados que garantem durabilidade e conforto.</p>
+        <p>Padrões elevados de construção que garantem durabilidade, conforto e satisfação aos moradores.</p>
       </div>
       <div class="feature-card">
         <h3>Valor Agregado</h3>
-        <p>Investimento seguro com potencial de valorização garantida.</p>
+        <p>Investimento seguro com potencial de valorização garantida e retorno consistente.</p>
       </div>
     </div>
   </div>
@@ -297,27 +320,33 @@
     <p><strong>Engesud Engenharia e Intermediação LTDA</strong></p>
     <p>Robson Luis da Costa | <a href="https://wa.me/4497013489" title="Whatsapp">+55 (44) 99701-3489</a></p>
     <p><a href="https://www.engesudsmart.com.br" target="_blank">www.engesudsmart.com.br</a></p>
-    <p>Última atualização: 10 de julho de 2024</p>
+    <p>Última atualização: 19 de fevereiro de 2025</p>
   </footer>
-  <!-- Este conteúdo é protegido por direitos autorais creditados à Engesud Engenharia e Intermediação LTDA, inscrita no CNPJ 40.601.637/0001-58 -->
 
   <script>
     document.addEventListener('DOMContentLoaded', function() {
-      // Adiciona animação aos cards quando estes se tornam visíveis
-      const cards = document.querySelectorAll('.feature-card');
-      const observer = new IntersectionObserver((entries) => {
+      const observerOptions = {
+        root: null,
+        rootMargin: '0px',
+        threshold: 0.1
+      };
+
+      const observer = new IntersectionObserver((entries, observer) => {
         entries.forEach(entry => {
           if (entry.isIntersecting) {
-            entry.target.style.opacity = 1;
+            entry.target.style.opacity = '1';
             entry.target.style.transform = 'translateY(0)';
+            observer.unobserve(entry.target);
           }
         });
-      });
-      cards.forEach(card => {
-        card.style.opacity = 0;
-        card.style.transform = 'translateY(20px)';
-        card.style.transition = 'all 0.5s ease-out';
-        observer.observe(card);
+      }, observerOptions);
+
+      const animateElements = document.querySelectorAll('.details, .feature-card, .map');
+      animateElements.forEach(el => {
+        el.style.opacity = '0';
+        el.style.transform = 'translateY(20px)';
+        el.style.transition = 'all 0.4s ease-out'; /* Slightly faster animation */
+        observer.observe(el);
       });
     });
   </script>
