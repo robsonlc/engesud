@@ -17,14 +17,14 @@
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
   <style>
     :root {
-      --primary-color: #1e40af;
-      --secondary-color: #2563eb;
-      --accent-color: #f59e0b;
-      --text-color: #333333;
-      --light-bg: #f4f7fa;
+      --primary-color: #374151; /* Tom de cinza mais escuro para primária */
+      --secondary-color: #6b7280; /* Cinza um pouco mais claro para secundária */
+      --accent-color: #ea580c; /* Laranja mais queimado/terracota para acento */
+      --text-color: #374151; /* Cinza escuro para texto principal, igual à primária para consistência */
+      --light-bg: #f9fafb; /* Branco levemente acinzentado para fundo claro */
       --card-bg: #ffffff;
-      --border-radius: 1rem;
-      --box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+      --border-radius: 0.75rem; /* Bordas um pouco menos arredondadas para sobriedade */
+      --box-shadow: 0 2px 4px rgba(0, 0, 0, 0.08); /* Sombra mais sutil */
       --heading-font: 'Roboto', sans-serif;
       --body-font: 'Roboto', sans-serif;
     }
@@ -92,41 +92,41 @@
     .details {
       background-color: var(--card-bg);
       border-radius: var(--border-radius);
-      padding: 2.5rem;
-      margin-bottom: 2.5rem;
+      padding: 2rem; /* Reduzir um pouco o padding interno */
+      margin-bottom: 2rem; /* Reduzir um pouco a margem inferior */
       box-shadow: var(--box-shadow);
       transform: translateY(0);
-      transition: all 0.3s ease;
+      transition: box-shadow 0.3s ease; /* Remover translateY no hover para menos efeito */
     }
 
     .details:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
+      /* transform: translateY(-2px); Remover elevação no hover */
+      box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1); /* Sombra mais sutil no hover */
     }
 
     .phase-card {
-      background: white;
-      border-radius: 0.8rem;
-      padding: 1.5rem;
-      margin: 1rem 0;
-      border-left: 4px solid var(--accent-color);
-      transition: all 0.3s ease;
+      background: var(--light-bg); /* Cor de fundo mais clara e sóbria */
+      border-radius: 0.5rem; /* Bordas menos arredondadas no card de lote */
+      padding: 1rem 1.25rem; /* Ajustar padding interno */
+      margin: 0.75rem 0; /* Ajustar margens */
+      border-left: 3px solid var(--accent-color); /* Borda lateral mais fina */
+      transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out; /* Animação mais rápida e suave */
     }
 
     .phase-card:hover {
-      transform: translateX(10px);
-      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+      transform: translateX(5px); /* Movimento menos exagerado no hover */
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.08); /* Sombra mais sutil no hover do card de lote */
     }
 
     .phase-title {
-      font-size: 1.2rem;
+      font-size: 1.1rem; /* Título de lote um pouco menor */
       color: var(--primary-color);
-      margin-bottom: 0.5rem;
-      font-weight: 600;
+      margin-bottom: 0.3rem; /* Menos margem abaixo do título */
+      font-weight: 500; /* Peso da fonte um pouco mais leve */
     }
 
     .phase-area {
-      font-size: 1.1rem;
+      font-size: 1rem; /* Área do lote um pouco menor */
       color: var(--secondary-color);
     }
 
@@ -140,24 +140,24 @@
     .doc-link {
       display: flex;
       align-items: center;
-      gap: 0.5rem;
-      padding: 1rem;
+      gap: 0.4rem; /* Menos espaço entre ícone e texto */
+      padding: 0.8rem 1rem; /* Padding interno menor */
       background-color: var(--light-bg);
       color: var(--primary-color);
       text-decoration: none;
-      border-radius: 0.5rem;
-      transition: all 0.3s ease;
+      border-radius: 0.4rem; /* Bordas menos arredondadas no link de documento */
+      transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out, transform 0.2s ease-in-out; /* Animações mais rápidas */
     }
 
     .doc-link:hover {
       background-color: var(--primary-color);
       color: white;
-      transform: translateY(-2px);
+      transform: translateY(0); /* Remover elevação no hover do link de documento */
     }
 
     .doc-link svg {
-      width: 24px;
-      height: 24px;
+      width: 20px; /* Ícones de documento menores */
+      height: 20px;
     }
 
     .map-container {
@@ -169,15 +169,15 @@
 
     .map-container iframe {
       width: 100%;
-      height: 500px;
+      height: 450px; /* Mapa um pouco menor */
       border: none;
     }
 
     footer {
       background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
       color: white;
-      padding: 3rem;
-      margin-top: 4rem;
+      padding: 2.5rem; /* Padding de footer um pouco menor */
+      margin-top: 3rem; /* Margem superior do footer menor */
       text-align: center;
     }
 
@@ -187,36 +187,27 @@
     }
 
     .footer-logo {
-      max-width: 180px;
-      margin-bottom: 2rem;
+      max-width: 160px; /* Logo do footer um pouco menor */
+      margin-bottom: 1.5rem; /* Margem inferior do logo menor */
       transition: transform 0.3s ease;
-    }
-
-    .footer-logo:hover {
-      transform: scale(1.05);
     }
 
     .contact-info {
       display: grid;
-      gap: 1rem;
-      margin: 2rem 0;
+      gap: 0.8rem; /* Menos espaço entre itens de contato */
+      margin: 1.5rem 0; /* Margem menor para informações de contato */
     }
 
     .contact-item {
       display: flex;
       align-items: center;
       justify-content: center;
-      gap: 0.5rem;
+      gap: 0.4rem; /* Menos espaço entre ícone e texto no item de contato */
     }
 
-    .contact-item a {
-      color: white;
-      text-decoration: none;
-      transition: color 0.3s ease;
-    }
-
-    .contact-item a:hover {
-      color: var(--accent-color);
+    .contact-item svg {
+      width: 20px; /* Ícones de contato menores */
+      height: 20px;
     }
 
     @keyframes fadeIn {
@@ -226,25 +217,64 @@
 
     @media (max-width: 768px) {
       header {
-        min-height: 50vh;
+        min-height: 40vh; /* Header menor em telas pequenas */
       }
 
       .content {
-        margin-top: -40px;
-        padding: 1.5rem;
+        margin-top: -30px; /* Menos sobreposição em telas pequenas */
+        padding: 1rem; /* Padding menor no conteúdo em telas pequenas */
+      }
+
+      .details {
+        padding: 1.5rem; /* Padding menor nos detalhes em telas pequenas */
+        margin-bottom: 2rem; /* Margem menor nos detalhes em telas pequenas */
       }
 
       .phase-card {
-        padding: 1rem;
-      }
-
-      .docs-section {
-        grid-template-columns: 1fr;
+        padding: 1rem; /* Padding menor no card de lote em telas pequenas */
       }
 
       .map-container iframe {
-        height: 400px;
+        height: 350px; /* Mapa menor em telas pequenas */
       }
+
+      footer {
+        padding: 2rem; /* Padding do footer menor em telas pequenas */
+        margin-top: 2rem; /* Margem superior do footer menor em telas pequenas */
+      }
+
+      .footer-logo {
+        max-width: 140px; /* Logo do footer menor em telas pequenas */
+        margin-bottom: 1rem; /* Margem inferior do logo menor em telas pequenas */
+      }
+    }
+
+    /* Image Zoom Styles */
+    .image-zoom-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.85);
+      display: none;
+      justify-content: center;
+      align-items: center;
+      z-index: 1000;
+      cursor: pointer;
+    }
+
+    .image-zoom-content {
+      max-width: 90%;
+      max-height: 90%;
+    }
+
+    .zoomed-image {
+      max-width: 100%;
+      max-height: 100%;
+      border-radius: var(--border-radius);
+      box-shadow: var(--box-shadow);
+      object-fit: contain;
     }
   </style>
 </head>
@@ -271,7 +301,7 @@
         <div class="phase-title">Lote 3</div>
         <div class="phase-area">Área total: 18.556,51 m²</div>
       </div>
-      
+
       <div class="docs-section">
         <a href="https://www.engesudsmart.com.br/lbk/tsr/ngb/docs/%C3%81rea%20da%20matricula%2043867%20-%2011744_m2.pdf" target="_blank" class="doc-link">
           <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -314,7 +344,7 @@
         <li>Valorização projetada para o empreendimento</li>
         <li>Excelente localização e conveniência para futuros moradores</li>
       </ul>
-      <img src="https://i.postimg.cc/QNzVjdv1/image.png" alt="Esquema Google Earth com marcações" style="width: 100%; margin: 2rem 0;">
+      <img src="https://i.postimg.cc/QNzVjdv1/image.png" alt="Esquema Google Earth com marcações" style="width: 100%; margin: 2rem 0;" id="croquiImage">
     </div>
 
     <div class="map-container">
@@ -328,7 +358,7 @@
       <a href="http://www.engesudsmart.com.br" target="_blank">
         <img src="https://i.imgur.com/3YKn2xW.png" alt="Logo Engesud" class="footer-logo">
       </a>
-      
+
       <div class="contact-info">
         <div class="contact-item">
           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -337,14 +367,14 @@
           </svg>
           <span>Engesud Engenharia e Intermediação LTDA</span>
         </div>
-        
+
         <div class="contact-item">
           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
             <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
           </svg>
           <a href="https://wa.me/4497013489">+55 (44) 99701-3489</a>
         </div>
-        
+
         <div class="contact-item">
           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
             <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
@@ -353,15 +383,22 @@
           <a href="https://www.engesudsmart.com.br" target="_blank">www.engesudsmart.com.br</a>
         </div>
       </div>
-      
+
       <p>Última atualização: 19 de fevereiro de 2025</p>
     </div>
   </footer>
 
+  <!-- Image Zoom Overlay -->
+  <div class="image-zoom-overlay" id="imageZoomOverlay">
+    <div class="image-zoom-content">
+      <img src="" alt="Zoomed Image" class="zoomed-image" id="zoomedImg">
+    </div>
+  </div>
+
   <script>
     document.addEventListener('DOMContentLoaded', function() {
       const animateElements = document.querySelectorAll('.details, .map-container');
-      
+
       const observerOptions = {
         root: null,
         rootMargin: '0px',
@@ -383,6 +420,31 @@
         el.style.transform = 'translateY(20px)';
         el.style.transition = 'all 0.5s ease-out';
         observer.observe(el);
+      });
+
+      // Zoom para a imagem original (já existente)
+      const zoomableImage = document.getElementById('zoomableImage');
+      const imageZoomOverlay = document.getElementById('imageZoomOverlay');
+      const zoomedImg = document.getElementById('zoomedImg');
+
+      zoomableImage.addEventListener('click', function() {
+        zoomedImg.src = this.src;
+        imageZoomOverlay.style.display = 'flex';
+      });
+
+      // Zoom para a imagem do Croqui (NOVO)
+      const croquiImage = document.getElementById('croquiImage'); // Novo ID
+      croquiImage.addEventListener('click', function() { // Novo EventListener para croquiImage
+        zoomedImg.src = this.src; // Reutiliza o mesmo overlay e imagem zoomedImg
+        imageZoomOverlay.style.display = 'flex';
+      });
+
+
+      imageZoomOverlay.addEventListener('click', function(event) {
+        if (event.target === imageZoomOverlay) {
+          imageZoomOverlay.style.display = 'none';
+          zoomedImg.src = '';
+        }
       });
     });
   </script>
