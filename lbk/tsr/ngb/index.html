@@ -49,7 +49,7 @@
     }
 
     header {
-      background: linear-gradient(135deg, rgba(30, 64, 175, 0.9), rgba(37, 99, 235, 0.7)),
+      background: linear-gradient(135deg, rgba(30, 64, 175, 0.95), rgba(37, 99, 235, 0.8)), /* Gradiente mais escuro */
                   url('https://i.postimg.cc/vHPhYfbX/X5ipykj.png') center/cover no-repeat;
       min-height: 50vh;
       display: flex;
@@ -66,18 +66,40 @@
       color: white;
       max-width: 900px;
       margin: 0 auto;
-      text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.3);
+      text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5); /* Sombra de texto levemente mais forte */
       animation: fadeIn 1s ease-out;
+      position: relative; /* Necessário para o pseudo-elemento ::before */
+      padding: 0.5rem 1rem; /* Adicionado padding horizontal e vertical ao redor do texto */
+      box-decoration-break: clone; /* Evita que o padding quebre em múltiplas linhas */
+      -webkit-box-decoration-break: clone; /* Para navegadores WebKit */
+    }
+
+    /* Camada sutilmente sólida atrás do texto */
+    header h1::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      background-color: rgba(0, 0, 0, 0.15); /* Preto levemente transparente */
+      border-radius: 0.5rem; /* Arredondamento para combinar com o estilo geral */
+      z-index: -1; /* Garante que fique atrás do texto */
     }
 
     .content {
       max-width: 1200px;
-      margin: -80px auto 0;
+      margin: 0 auto 0; /* Removida a margem superior negativa */
       padding: 3rem;
       background-color: var(--card-bg);
       box-shadow: var(--box-shadow);
       border-radius: var(--border-radius);
       position: relative;
+    }
+
+    /* Nova regra: margem superior negativa no primeiro .details dentro de .content */
+    .content > .details:first-child {
+      margin-top: -80px; /* Ajuste este valor! Comece com -80px e teste */
     }
 
     h2 {
@@ -209,10 +231,13 @@
     @media (max-width: 992px) {
       .content {
         padding: 2rem;
-        margin-top: -60px;
+        margin-top: 0px; /* Removida a margem negativa aqui também, por consistência */
       }
       .map iframe {
         height: 400px;
+      }
+      .content > .details:first-child { /* Ajuste a margem negativa para telas menores se necessário */
+        margin-top: -60px; /* Exemplo: pode precisar de um valor menor em telas menores */
       }
     }
 
@@ -224,11 +249,14 @@
         font-size: 2.8rem;
       }
       .content {
-        margin-top: -50px;
+        margin-top: 0px; /* Removida a margem negativa aqui também */
         padding: 1.5rem;
       }
       .feature-cards {
         grid-template-columns: 1fr;
+      }
+      .content > .details:first-child { /* Ajuste a margem negativa para telas menores se necessário */
+        margin-top: -50px; /* Exemplo: pode precisar de um valor menor em telas menores */
       }
     }
 
@@ -238,10 +266,13 @@
       }
       .content {
         padding: 1rem;
-        margin-top: -40px;
+        margin-top: 0px; /* Removida a margem negativa aqui também */
       }
       h2 {
         font-size: 1.6rem;
+      }
+      .content > .details:first-child { /* Ajuste a margem negativa para telas menores se necessário */
+        margin-top: -40px; /* Exemplo: pode precisar de um valor menor em telas menores */
       }
     }
 
