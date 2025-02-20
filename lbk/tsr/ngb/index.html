@@ -49,372 +49,319 @@
     }
 
     header {
-      background: linear-gradient(135deg, rgba(30, 64, 175, 0.95), rgba(37, 99, 235, 0.8)), /* Gradiente mais escuro */
+      background: linear-gradient(135deg, rgba(30, 64, 175, 0.95), rgba(37, 99, 235, 0.8)),
                   url('https://i.postimg.cc/vHPhYfbX/X5ipykj.png') center/cover no-repeat;
-      min-height: 50vh;
+      min-height: 60vh;
       display: flex;
       align-items: center;
       justify-content: center;
       padding: 2rem;
       position: relative;
+    }
+
+    .header-content {
       text-align: center;
+      max-width: 1000px;
+      animation: fadeIn 1s ease-out;
     }
 
     header h1 {
-      font-size: clamp(2.2rem, 4.5vw, 3.5rem);
+      font-size: clamp(2.5rem, 5vw, 4rem);
       font-weight: 700;
       color: white;
-      max-width: 900px;
-      margin: 0 auto;
-      text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5); /* Sombra de texto levemente mais forte */
-      animation: fadeIn 1s ease-out;
-      position: relative; /* Necessário para o pseudo-elemento ::before */
-      padding: 0.5rem 1rem; /* Adicionado padding horizontal e vertical ao redor do texto */
-      box-decoration-break: clone; /* Evita que o padding quebre em múltiplas linhas */
-      -webkit-box-decoration-break: clone; /* Para navegadores WebKit */
+      text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5);
+      margin-bottom: 1.5rem;
     }
 
-    /* Camada sutilmente sólida atrás do texto */
-    header h1::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      right: 0;
-      bottom: 0;
-      left: 0;
-      background-color: rgba(0, 0, 0, 0.15); /* Preto levemente transparente */
-      border-radius: 0.5rem; /* Arredondamento para combinar com o estilo geral */
-      z-index: -1; /* Garante que fique atrás do texto */
+    header p {
+      font-size: clamp(1.2rem, 2vw, 1.5rem);
+      color: white;
+      max-width: 800px;
+      margin: 0 auto;
+      opacity: 0.9;
     }
 
     .content {
       max-width: 1200px;
-      margin: 0 auto 0; /* Removida a margem superior negativa */
+      margin: -80px auto 0;
       padding: 3rem;
-      background-color: var(--card-bg);
-      box-shadow: var(--box-shadow);
-      border-radius: var(--border-radius);
       position: relative;
+      z-index: 2;
     }
 
-    /* Nova regra: margem superior negativa no primeiro .details dentro de .content */
-    .content > .details:first-child {
-      margin-top: -80px; /* Ajuste este valor! Comece com -80px e teste */
-    }
-
-    h2 {
-      font-family: var(--heading-font);
-      font-size: clamp(1.8rem, 3vw, 2.4rem);
-      color: var(--primary-color);
-      margin-bottom: 1.5rem;
-      font-weight: 700;
-      position: relative;
-      padding-bottom: 0.5rem;
-    }
-
-    h2::after {
-      content: '';
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      width: 60px;
-      height: 4px;
-      background: var(--accent-color);
-      border-radius: 2px;
-    }
-
-    .details, .feature-card {
+    .details {
       background-color: var(--card-bg);
       border-radius: var(--border-radius);
       padding: 2.5rem;
       margin-bottom: 2.5rem;
       box-shadow: var(--box-shadow);
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      transform: translateY(0);
+      transition: all 0.3s ease;
     }
 
-    .details:hover, .feature-card:hover {
+    .details:hover {
       transform: translateY(-5px);
-      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.12);
+      box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
     }
 
-    .feature-cards {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-      gap: 2rem;
-      margin: 2.5rem 0;
+    .phase-card {
+      background: white;
+      border-radius: 0.8rem;
+      padding: 1.5rem;
+      margin: 1rem 0;
+      border-left: 4px solid var(--accent-color);
+      transition: all 0.3s ease;
     }
 
-    .feature-card h3 {
+    .phase-card:hover {
+      transform: translateX(10px);
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+    }
+
+    .phase-title {
+      font-size: 1.2rem;
+      color: var(--primary-color);
+      margin-bottom: 0.5rem;
+      font-weight: 600;
+    }
+
+    .phase-area {
+      font-size: 1.1rem;
       color: var(--secondary-color);
-      font-size: 1.4rem;
-      margin-bottom: 0.8rem;
     }
 
-    .map {
-      margin: 2.5rem 0;
-    }
-
-    .map iframe {
-      width: 100%;
-      height: 450px;
-      border: none;
-      border-radius: var(--border-radius);
-      box-shadow: var(--box-shadow);
-    }
-
-    img {
-      max-width: 100%;
-      height: auto;
-      border-radius: var(--border-radius);
-      box-shadow: var(--box-shadow);
-      margin: 1.5rem auto;
-      display: block;
-      cursor: pointer;
+    .docs-section {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1rem;
+      margin-top: 1.5rem;
     }
 
     .doc-link {
-      display: inline-block;
-      padding: 0.6rem 1.2rem;
-      background-color: var(--secondary-color);
-      color: white;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 1rem;
+      background-color: var(--light-bg);
+      color: var(--primary-color);
       text-decoration: none;
       border-radius: 0.5rem;
-      margin: 0.5rem 0.5rem 0 0;
-      transition: background-color 0.3s ease;
+      transition: all 0.3s ease;
     }
 
     .doc-link:hover {
       background-color: var(--primary-color);
+      color: white;
+      transform: translateY(-2px);
+    }
+
+    .doc-link svg {
+      width: 24px;
+      height: 24px;
+    }
+
+    .map-container {
+      position: relative;
+      border-radius: var(--border-radius);
+      overflow: hidden;
+      margin: 2rem 0;
+    }
+
+    .map-container iframe {
+      width: 100%;
+      height: 500px;
+      border: none;
     }
 
     footer {
       background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
       color: white;
-      padding: 3rem 2rem;
-      text-align: center;
+      padding: 3rem;
       margin-top: 4rem;
-      border-top-left-radius: var(--border-radius);
-      border-top-right-radius: var(--border-radius);
+      text-align: center;
     }
 
-    footer img {
-      max-width: 160px;
-      margin-bottom: 1rem;
+    .footer-content {
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    .footer-logo {
+      max-width: 180px;
+      margin-bottom: 2rem;
       transition: transform 0.3s ease;
     }
 
-    footer img:hover {
+    .footer-logo:hover {
       transform: scale(1.05);
     }
 
-    footer p {
-      margin-bottom: 0.8rem;
-      font-size: 1rem;
+    .contact-info {
+      display: grid;
+      gap: 1rem;
+      margin: 2rem 0;
     }
 
-    footer a {
+    .contact-item {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+    }
+
+    .contact-item a {
       color: white;
       text-decoration: none;
-      font-weight: 500;
       transition: color 0.3s ease;
     }
 
-    footer a:hover {
+    .contact-item a:hover {
       color: var(--accent-color);
     }
 
     @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(15px); }
+      from { opacity: 0; transform: translateY(20px); }
       to { opacity: 1; transform: translateY(0); }
-    }
-
-    @media (max-width: 992px) {
-      .content {
-        padding: 2rem;
-        margin-top: 0px; /* Removida a margem negativa aqui também, por consistência */
-      }
-      .map iframe {
-        height: 400px;
-      }
-      .content > .details:first-child { /* Ajuste a margem negativa para telas menores se necessário */
-        margin-top: -60px; /* Exemplo: pode precisar de um valor menor em telas menores */
-      }
     }
 
     @media (max-width: 768px) {
       header {
-        min-height: 40vh;
+        min-height: 50vh;
       }
-      header h1 {
-        font-size: 2.8rem;
-      }
+
       .content {
-        margin-top: 0px; /* Removida a margem negativa aqui também */
+        margin-top: -40px;
         padding: 1.5rem;
       }
-      .feature-cards {
+
+      .phase-card {
+        padding: 1rem;
+      }
+
+      .docs-section {
         grid-template-columns: 1fr;
       }
-      .content > .details:first-child { /* Ajuste a margem negativa para telas menores se necessário */
-        margin-top: -50px; /* Exemplo: pode precisar de um valor menor em telas menores */
+
+      .map-container iframe {
+        height: 400px;
       }
-    }
-
-    @media (max-width: 480px) {
-      header h1 {
-        font-size: 2rem;
-      }
-      .content {
-        padding: 1rem;
-        margin-top: 0px; /* Removida a margem negativa aqui também */
-      }
-      h2 {
-        font-size: 1.6rem;
-      }
-      .content > .details:first-child { /* Ajuste a margem negativa para telas menores se necessário */
-        margin-top: -40px; /* Exemplo: pode precisar de um valor menor em telas menores */
-      }
-    }
-
-    /* Image Zoom Styles */
-    .image-zoom-overlay {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background-color: rgba(0, 0, 0, 0.85);
-      display: none;
-      justify-content: center;
-      align-items: center;
-      z-index: 1000;
-      cursor: pointer;
-    }
-
-    .image-zoom-content {
-      max-width: 90%;
-      max-height: 90%;
-    }
-
-    .zoomed-image {
-      max-width: 100%;
-      max-height: 100%;
-      border-radius: var(--border-radius);
-      box-shadow: var(--box-shadow);
-      object-fit: contain;
-    }
-
-    /* Estilos para destaque das fases e áreas */
-    .phase-highlight {
-      position: relative; /* Necessário para posicionar o SVG relative ao texto */
-      display: inline-block; /* Para o SVG não ocupar a linha toda */
-      background-color: rgba(245, 158, 11, 0.15);
-      padding: 0.2rem 0.4rem;
-      border-radius: 0.3rem;
-      font-weight: 500;
-      overflow: hidden; /* Importante para cortar a animação do sublinhado */
-    }
-
-    .svg-underline {
-      position: absolute; /* Posiciona o SVG absolutamente dentro do .phase-highlight */
-      left: 0;
-      bottom: 0;
-      width: 100%;
-      height: auto; /* Ajusta a altura automaticamente */
-      pointer-events: none; /* Garante que o SVG não interfere com eventos de mouse no texto */
-    }
-
-    .svg-underline path {
-      stroke-width: 2; /* Espessura do sublinhado */
-      stroke: var(--accent-color); /* Cor do sublinhado (cor de acento) */
-      fill: none; /* Sem preenchimento */
-      stroke-dasharray: 100; /* Comprimento total do traço (igual à largura do SVG) */
-      stroke-dashoffset: 100; /* Inicialmente, esconde o traço completamente */
-      transition: stroke-dashoffset 0.5s ease-out; /* Animação da propriedade stroke-dashoffset */
-    }
-
-    .phase-highlight:hover .svg-underline path,
-    .phase-highlight:focus .svg-underline path { /* Animação no hover e focus (acessibilidade) */
-      stroke-dashoffset: 0; /* No hover/focus, mostra o traço completamente */
-    }
-
-    .area-highlight {
-      background-color: rgba(37, 99, 235, 0.1); /* Mantendo o background suave para "Área" */
-      padding: 0.2rem 0.4rem;
-      border-radius: 0.3rem;
-      font-weight: 500;
     }
   </style>
 </head>
 <body>
   <header>
-    <h1>Proposta de Parceria - Empreendimento Imobiliário</h1>
+    <div class="header-content">
+      <h1>Proposta de Parceria Imobiliária</h1>
+      <p>Empreendimento residencial multifamiliar em Marialva-PR</p>
+    </div>
   </header>
 
   <div class="content">
     <div class="details">
       <h2>Informações do Terreno</h2>
-      <p>O terreno disponível para negociação é composto por três lotes, subdivididos em fases.</p>
-      <p><span class="phase-highlight">
-          Fase 1:
-          <svg viewBox="0 0 100 5" class="svg-underline">
-            <path d="M0,4 L100,4" />
+      <div class="phase-card">
+        <div class="phase-title">Fase 1</div>
+        <div class="phase-area">Área total: 11.744 m²</div>
+      </div>
+      <div class="phase-card">
+        <div class="phase-title">Fase 2</div>
+        <div class="phase-area">Área total: 18.556,51 m²</div>
+      </div>
+      <div class="phase-card">
+        <div class="phase-title">Fase 3</div>
+        <div class="phase-area">Área total: 12.142,73 m²</div>
+      </div>
+      
+      <div class="docs-section">
+        <a href="https://www.engesudsmart.com.br/lbk/tsr/ngb/docs/%C3%81rea%20da%20matricula%2043867%20-%2011744_m2.pdf" target="_blank" class="doc-link">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
           </svg>
-        </span> Área de <span class="area-highlight">11.744 m²</span></p>
-      <p><span class="phase-highlight">
-          Fase 2:
-          <svg viewBox="0 0 100 5" class="svg-underline">
-            <path d="M0,4 L100,4" />
+          Croqui da Matrícula 43.867
+        </a>
+        <a href="https://www.engesudsmart.com.br/lbk/tsr/ngb/docs/Matr%C3%ADcula%2043770.pdf" target="_blank" class="doc-link">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
           </svg>
-        </span> Área de <span class="area-highlight">18.556,51 m²</span></p>
-      <p><span class="phase-highlight">
-          Fase 3:
-          <svg viewBox="0 0 100 5" class="svg-underline">
-            <path d="M0,4 L100,4" />
+          Matrícula 43.770
+        </a>
+        <a href="https://www.engesudsmart.com.br/lbk/tsr/ngb/docs/Matr%C3%ADcula%2043.866.pdf" target="_blank" class="doc-link">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
           </svg>
-        </span> Área de <span class="area-highlight">12.142,73 m²</span></p>
-      <p>Documentos relacionados:</p>
-      <a href="https://www.engesudsmart.com.br/lbk/tsr/ngb/docs/%C3%81rea%20da%20matricula%2043867%20-%2011744_m2.pdf" target="_blank" class="doc-link">Croqui da Matrícula 43.867</a>
-      <a href="https://www.engesudsmart.com.br/lbk/tsr/ngb/docs/Matr%C3%ADcula%2043770.pdf" target="_blank" class="doc-link">Matrícula 43.770</a>
-      <a href="https://www.engesudsmart.com.br/lbk/tsr/ngb/docs/Matr%C3%ADcula%2043.866.pdf" target="_blank" class="doc-link">Matrícula 43.866</a>
+          Matrícula 43.866
+        </a>
+      </div>
     </div>
 
     <div class="details">
       <h2>Viabilidade do Empreendimento</h2>
-      <p>De acordo com análise prévia, o terreno permite a implantação de três empreendimentos imobiliários, dois deles compostos por até 6 torres residenciais multifamiliares verticais (T+3), com 8 apartamentos por pavimento, e outro com 9 torres de mesma tipologia. A permuta física envolverá a entrega de apartamentos prontos ao proprietário, correspondentes a 10% do total construído.</p>
+      <p>De acordo com análise prévia, o terreno permite a implantação de três empreendimentos imobiliários:</p>
+      <ul>
+        <li>Dois empreendimentos com até 6 torres residenciais multifamiliares verticais (T+3)</li>
+        <li>Um empreendimento com 9 torres de mesma tipologia</li>
+        <li>8 apartamentos por pavimento em cada torre</li>
+        <li>Permuta física: 10% do total construído em apartamentos prontos</li>
+      </ul>
     </div>
 
     <div class="details">
       <h2>Área e Infraestrutura</h2>
-      <p>Além da área do projeto, destaca-se que o Supermercado Nova Era de Marialva construirá uma nova loja em área vizinha de 6.000 m², valorizando o empreendimento e oferecendo conveniência aos futuros moradores. </p>
-      <img src="https://i.postimg.cc/QNzVjdv1/image.png" alt="Esquema Google Earth com marcações" id="zoomableImage">
+      <p>Destaques da região:</p>
+      <ul>
+        <li>Nova loja do Supermercado Nova Era de Marialva em construção</li>
+        <li>Área comercial de 6.000 m² em terreno vizinho</li>
+        <li>Valorização projetada para o empreendimento</li>
+        <li>Excelente localização e conveniência para futuros moradores</li>
+      </ul>
+      <img src="https://i.postimg.cc/QNzVjdv1/image.png" alt="Esquema Google Earth com marcações" style="width: 100%; margin: 2rem 0;">
     </div>
 
-    <div class="map">
+    <div class="map-container">
       <h2>Localização</h2>
-      <iframe src="https://www.google.com/maps/d/embed?mid=1rRhhyU79CdJVl1wO5W6bar6obExoV8c&ehbc=2E312F" width="640" height="480"></iframe>
-    </div>
-
-
-  <footer>
-    <a href="http://www.engesudsmart.com.br" target="_blank" title="www.engesudsmart.com.br">
-      <img src="https://i.imgur.com/3YKn2xW.png" alt="Logo Engesud">
-    </a>
-    <p><strong>Engesud Engenharia e Intermediação LTDA</strong></p>
-    <p>Contato: Robson Luis da Costa | <a href="https://wa.me/4497013489" title="Whatsapp">+55 (44) 99701-3489</a></p>
-    <p>Website: <a href="https://www.engesudsmart.com.br" target="_blank">www.engesudsmart.com.br</a></p>
-    <p>Última atualização: 19 de fevereiro de 2025</p>
-  </footer>
-
-  <!-- Image Zoom Overlay -->
-  <div class="image-zoom-overlay" id="imageZoomOverlay">
-    <div class="image-zoom-content">
-      <img src="" alt="Zoomed Image" class="zoomed-image" id="zoomedImg">
+      <iframe src="https://www.google.com/maps/d/embed?mid=1rRhhyU79CdJVl1wO5W6bar6obExoV8c&ehbc=2E312F"></iframe>
     </div>
   </div>
 
+  <footer>
+    <div class="footer-content">
+      <a href="http://www.engesudsmart.com.br" target="_blank">
+        <img src="https://i.imgur.com/3YKn2xW.png" alt="Logo Engesud" class="footer-logo">
+      </a>
+      
+      <div class="contact-info">
+        <div class="contact-item">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+            <circle cx="12" cy="10" r="3"></circle>
+          </svg>
+          <span>Engesud Engenharia e Intermediação LTDA</span>
+        </div>
+        
+        <div class="contact-item">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+          </svg>
+          <a href="https://wa.me/4497013489">+55 (44) 99701-3489</a>
+        </div>
+        
+        <div class="contact-item">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+            <polyline points="22,6 12,13 2,6"></polyline>
+          </svg>
+          <a href="https://www.engesudsmart.com.br" target="_blank">www.engesudsmart.com.br</a>
+        </div>
+      </div>
+      
+      <p>Última atualização: 19 de fevereiro de 2025</p>
+    </div>
+  </footer>
+
   <script>
     document.addEventListener('DOMContentLoaded', function() {
+      const animateElements = document.querySelectorAll('.details, .map-container');
+      
       const observerOptions = {
         root: null,
         rootMargin: '0px',
@@ -431,28 +378,11 @@
         });
       }, observerOptions);
 
-      const animateElements = document.querySelectorAll('.details, .feature-card, .map');
       animateElements.forEach(el => {
         el.style.opacity = '0';
         el.style.transform = 'translateY(20px)';
         el.style.transition = 'all 0.5s ease-out';
         observer.observe(el);
-      });
-
-      const zoomableImage = document.getElementById('zoomableImage');
-      const imageZoomOverlay = document.getElementById('imageZoomOverlay');
-      const zoomedImg = document.getElementById('zoomedImg');
-
-      zoomableImage.addEventListener('click', function() {
-        zoomedImg.src = this.src;
-        imageZoomOverlay.style.display = 'flex';
-      });
-
-      imageZoomOverlay.addEventListener('click', function(event) {
-        if (event.target === imageZoomOverlay) {
-          imageZoomOverlay.style.display = 'none';
-          zoomedImg.src = '';
-        }
       });
     });
   </script>
