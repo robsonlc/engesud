@@ -12,14 +12,13 @@
     <meta property="og:url" content="https://www.engesudsmart.com.br/lbk/tsr/dena">
     <meta property="og:type" content="website">
     <meta property="og:site_name" content="Engesud Smart">
-<!-- Favicon para melhor visualização em guias -->
-<link rel="shortcut icon" href="https://i.imgur.com/ZQ2U8eO.png" type="image/x-icon">
+    <link rel="shortcut icon" href="https://i.imgur.com/ZQ2U8eO.png" type="image/x-icon">
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
 
         :root {
             --primary-color: #1a365d;
-            --secondary-color: #2c5282;
+            --secondary-color: #2c5282; 
             --accent-color: #4299e1;
             --background-color: #f7fafc;
             --text-color: #2d3748;
@@ -44,7 +43,7 @@
 
         header {
             background: url('https://i.postimg.cc/NjTk4zrn/oQ5OyuB.png') center/cover no-repeat;
-            height: 500px;
+            height: 60vh;
             display: flex;
             justify-content: center;
             align-items: center;
@@ -59,17 +58,17 @@
             left: 0;
             right: 0;
             bottom: 0;
-            background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.7));
+            background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.7));
         }
 
         header h1 {
-            font-size: 3.5rem;
+            font-size: clamp(2rem, 5vw, 3.5rem);
             text-align: center;
             padding: 30px;
             position: relative;
             z-index: 1;
             text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
-            max-width: 800px;
+            max-width: 1000px;
             animation: fadeIn 1s ease-out;
         }
 
@@ -80,7 +79,7 @@
 
         .content {
             flex: 1;
-            padding: 60px 30px;
+            padding: min(5vw, 60px);
             max-width: 1200px;
             margin: -60px auto 40px;
             background: var(--white);
@@ -88,6 +87,7 @@
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
             position: relative;
             z-index: 2;
+            width: 95%;
         }
 
         h2, h3 {
@@ -97,20 +97,20 @@
         }
 
         h2 {
-            font-size: 2.2rem;
+            font-size: clamp(1.8rem, 4vw, 2.2rem);
             border-bottom: 3px solid var(--accent-color);
             padding-bottom: 10px;
             display: inline-block;
         }
 
         h3 {
-            font-size: 1.8rem;
+            font-size: clamp(1.5rem, 3vw, 1.8rem);
             margin-top: 40px;
         }
 
         p {
             margin-bottom: 20px;
-            font-size: 1.1rem;
+            font-size: clamp(1rem, 2vw, 1.1rem);
             color: var(--text-color);
         }
 
@@ -133,13 +133,14 @@
         }
 
         iframe {
-            height: 500px;
+            height: 60vh;
             border: none;
+            min-height: 350px;
         }
 
         .buttons {
-            display: flex;
-            flex-wrap: wrap;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
             gap: 15px;
             margin-top: 30px;
         }
@@ -148,12 +149,17 @@
             background: var(--primary-color);
             color: var(--white);
             text-decoration: none;
-            padding: 15px 30px;
+            padding: 15px 20px;
             border-radius: 8px;
             font-weight: 500;
             box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
             transition: all 0.3s ease;
-            font-size: 1rem;
+            font-size: 0.9rem;
+            text-align: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100%;
         }
 
         .button-link:hover {
@@ -163,79 +169,71 @@
         }
 
         footer {
-        background-color: var(--primary-color);
-        color: var(--white);
-        padding: 40px 0;
-        margin-top: auto;
-        text-align: center;
-    }
+            background-color: var(--primary-color);
+            color: var(--white);
+            padding: 40px 20px;
+            margin-top: auto;
+            text-align: center;
+        }
 
-    .footer-content {
-        max-width: 1200px;
-        margin: 0 auto;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        gap: 20px;
-    }
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 20px;
+        }
 
-    .footer-logo img {
-        height: 70px; /* Garantindo altura consistente */
-        width: auto;
-        display: block; /* Assegura que a imagem respeite o layout */
-    }
+        .footer-logo img {
+            height: 70px;
+            width: auto;
+            margin-bottom: 20px;
+        }
 
-    .footer-info p {
-        font-size: 1rem;
-        margin: 5px 0;
-        color: var(--white);
-    }
+        footer p {
+            margin: 5px 0;
+            font-size: 0.9rem;
+            color: var(--white);
+        }
 
-    footer a {
-        color: var(--white);
-        text-decoration: none;
-        font-weight: 500;
-        transition: color 0.3s;
-    }
+        footer a {
+            color: var(--white);
+            text-decoration: none;
+            transition: color 0.3s;
+        }
 
-    footer a:hover {
-        color: var(--accent-color);
-    }
+        footer a:hover {
+            color: var(--accent-color);
+        }
 
         @media (max-width: 768px) {
             header {
-                height: 400px;
-            }
-
-            header h1 {
-                font-size: 2rem;
-                padding: 20px;
+                height: 50vh;
             }
 
             .content {
+                margin-top: -40px;
                 padding: 30px 20px;
-                margin: -40px 15px 20px;
             }
 
-            h2 {
-                font-size: 1.8rem;
-            }
-
-            h3 {
-                font-size: 1.5rem;
-            }
-
-            p {
-                font-size: 1rem;
-            }
-
-            iframe {
-                height: 350px;
+            .buttons {
+                grid-template-columns: 1fr;
             }
 
             .button-link {
-                width: 100%;
-                text-align: center;
+                padding: 12px 15px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            header h1 {
+                padding: 15px;
+            }
+
+            .content {
+                width: 92%;
+                padding: 20px 15px;
             }
         }
     </style>
@@ -251,34 +249,32 @@
 
         <h3>Mapa de Localização</h3>
         <div class="mapa">
-            <iframe src="https://www.google.com/maps/d/embed?mid=17VwXQR2h0xSN7W29m_XPriSYK0PnkfQ&ehbc=2E312F"></iframe>
+            <iframe src="https://www.google.com/maps/d/embed?mid=17VwXQR2h0xSN7W29m_XPriSYK0PnkfQ&ehbc=2E312F" loading="lazy"></iframe>
         </div>
 
         <h3>Zoneamento e Polígono da Área</h3>
         <div class="zoneamento">
-            <img src="https://i.postimg.cc/7LnMvJ9M/zl4ww7Y.png" alt="Mapa de Zoneamento - Sarandi">
+            <img src="https://i.postimg.cc/7LnMvJ9M/zl4ww7Y.png" alt="Mapa de Zoneamento - Sarandi" loading="lazy">
         </div>
 
         <h3>Documentos Relacionados</h3>
         <div class="buttons">
-            <a href="https://www.engesudsmart.com.br/lbk/tsr/dena/docs/MAPAS DE ZONAS DE ADENSAMENTO - NOVO.pdf" target="_blank" class="button-link">MAPA DE ZONAS DE ADENSAMENTO</a>
-            <a href="https://www.engesudsmart.com.br/lbk/tsr/dena/docs/Lei Complementar nº 412-2022 - Dispõe sobre o Uso e Ocupação do Solo Urbano do município de Sarandi..pdf" target="_blank" class="button-link">Lei Complementar nº 412-2022</a>
-            <a href="https://www.engesudsmart.com.br/lbk/tsr/dena/docs/Lei Complementar nº 413-2022 - Dispõe sobre o Parcelamento do Solo Urbano do Município de Sarandi..pdf" target="_blank" class="button-link">Lei Complementar nº 413-2022</a>
+            <a href="https://www.engesudsmart.com.br/lbk/tsr/dena/docs/MAPAS DE ZONAS DE ADENSAMENTO - NOVO.pdf" target="_blank" rel="noopener noreferrer" class="button-link">MAPA DE ZONAS DE ADENSAMENTO</a>
+            <a href="https://www.engesudsmart.com.br/lbk/tsr/dena/docs/Lei Complementar nº 412-2022 - Dispõe sobre o Uso e Ocupação do Solo Urbano do município de Sarandi..pdf" target="_blank" rel="noopener noreferrer" class="button-link">Lei Complementar nº 412-2022</a>
+            <a href="https://www.engesudsmart.com.br/lbk/tsr/dena/docs/Lei Complementar nº 413-2022 - Dispõe sobre o Parcelamento do Solo Urbano do Município de Sarandi..pdf" target="_blank" rel="noopener noreferrer" class="button-link">Lei Complementar nº 413-2022</a>
         </div>
     </div>
 
     <footer>
-    <div class="footer-content">
-        <div class="footer-logo">
-            <!-- Removido o filtro de brilho para garantir a exibição correta -->
-            <img src="https://i.imgur.com/3YKn2xW.png" alt="Logotipo Engesud">
+        <div class="footer-content">
+            <a href="http://www.engesudsmart.com.br" target="_blank" rel="noopener noreferrer" class="footer-logo">
+                <img src="https://i.postimg.cc/FsKzb1S4/3YKn2xW.png" alt="Logo Engesud">
+            </a>
+            <p><strong>Engesud Engenharia e Intermediação LTDA</strong></p>
+            <p>Robson Luis da Costa | <a href="https://wa.me/4497013489" target="_blank" rel="noopener noreferrer">+55 (44) 99701-3489</a></p>
+            <p><a href="https://www.engesudsmart.com.br" target="_blank" rel="noopener noreferrer">www.engesudsmart.com.br</a></p>
+            <p>Última atualização: 20 de fevereiro de 2025</p>
         </div>
-        <div class="footer-info">
-            <p>Robson Luis da Costa - Engenheiro Civil</p>
-            <p>+55 (44) 99701-3489</p>
-            <p><a href="https://wa.me/4497013489">Entre em contato via WhatsApp</a></p>
-        </div>
-    </div>
-</footer>
+    </footer>
 </body>
 </html>
