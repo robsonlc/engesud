@@ -14,17 +14,17 @@
   <title>Proposta de Parceria - Empreendimento Imobiliário</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
   <style>
     :root {
       --primary-color: #1e40af;
       --secondary-color: #2563eb;
       --accent-color: #f59e0b;
-      --text-color: #374151;
-      --light-bg: #f9f9f9;
+      --text-color: #333333;
+      --light-bg: #f4f7fa;
       --card-bg: #ffffff;
-      --border-radius: 0.75rem;
-      --box-shadow: 0 5px 10px rgba(0, 0, 0, 0.08);
+      --border-radius: 1rem;
+      --box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
       --heading-font: 'Roboto', sans-serif;
       --body-font: 'Roboto', sans-serif;
     }
@@ -41,7 +41,7 @@
 
     body {
       font-family: var(--body-font);
-      line-height: 1.7;
+      line-height: 1.8;
       color: var(--text-color);
       background-color: var(--light-bg);
       overflow-x: hidden;
@@ -49,8 +49,8 @@
     }
 
     header {
-      background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)),
-                  url('https://i.imgur.com/X5ipykj.png') center/cover no-repeat;
+      background: linear-gradient(135deg, rgba(30, 64, 175, 0.9), rgba(37, 99, 235, 0.7)),
+                  url('https://i.postimg.cc/vHPhYfbX/X5ipykj.png') center/cover no-repeat;
       min-height: 50vh;
       display: flex;
       align-items: center;
@@ -61,28 +61,19 @@
     }
 
     header h1 {
-      font-size: clamp(2rem, 4vw, 3rem);
+      font-size: clamp(2.2rem, 4.5vw, 3.5rem);
       font-weight: 700;
       color: white;
-      max-width: 800px;
+      max-width: 900px;
       margin: 0 auto;
-      text-shadow: 1px 1px 3px rgba(0,0,0,0.4);
+      text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.3);
       animation: fadeIn 1s ease-out;
     }
 
-    .header-overlay {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background-color: rgba(0, 0, 0, 0.5);
-    }
-
     .content {
-      max-width: 1100px;
-      margin: -70px auto 0;
-      padding: 2.5rem;
+      max-width: 1200px;
+      margin: -80px auto 0;
+      padding: 3rem;
       background-color: var(--card-bg);
       box-shadow: var(--box-shadow);
       border-radius: var(--border-radius);
@@ -91,12 +82,12 @@
 
     h2 {
       font-family: var(--heading-font);
-      font-size: clamp(1.6rem, 3vw, 2.2rem);
+      font-size: clamp(1.8rem, 3vw, 2.4rem);
       color: var(--primary-color);
-      margin-bottom: 1.2rem;
+      margin-bottom: 1.5rem;
       font-weight: 700;
       position: relative;
-      padding-bottom: 0.4rem;
+      padding-bottom: 0.5rem;
     }
 
     h2::after {
@@ -104,8 +95,8 @@
       position: absolute;
       bottom: 0;
       left: 0;
-      width: 50px;
-      height: 3px;
+      width: 60px;
+      height: 4px;
       background: var(--accent-color);
       border-radius: 2px;
     }
@@ -113,48 +104,37 @@
     .details, .feature-card {
       background-color: var(--card-bg);
       border-radius: var(--border-radius);
-      padding: 2rem;
-      margin-bottom: 2rem;
+      padding: 2.5rem;
+      margin-bottom: 2.5rem;
       box-shadow: var(--box-shadow);
-      transition: transform 0.2s ease-in-out;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
     }
 
     .details:hover, .feature-card:hover {
-      transform: translateY(-3px);
-      box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+      transform: translateY(-5px);
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.12);
     }
 
     .feature-cards {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 1.5rem;
-      margin: 2rem 0;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 2rem;
+      margin: 2.5rem 0;
     }
 
-    .feature-card::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 3px;
-      height: 100%;
-      background: var(--accent-color);
-      transform: scaleY(0);
-      transition: transform 0.2s ease-in-out;
-      transform-origin: top;
-    }
-
-    .feature-card:hover::before {
-      transform: scaleY(1);
+    .feature-card h3 {
+      color: var(--secondary-color);
+      font-size: 1.4rem;
+      margin-bottom: 0.8rem;
     }
 
     .map {
-      margin: 2rem 0;
+      margin: 2.5rem 0;
     }
 
     .map iframe {
       width: 100%;
-      height: 400px;
+      height: 450px;
       border: none;
       border-radius: var(--border-radius);
       box-shadow: var(--box-shadow);
@@ -165,43 +145,64 @@
       height: auto;
       border-radius: var(--border-radius);
       box-shadow: var(--box-shadow);
-      margin: 1rem 0;
-      display: block; /* To allow margin: auto for centering */
-      margin-left: auto;
-      margin-right: auto;
-      cursor: pointer; /* Indicate image is clickable */
+      margin: 1.5rem auto;
+      display: block;
+      cursor: pointer;
+    }
+
+    .doc-link {
+      display: inline-block;
+      padding: 0.6rem 1.2rem;
+      background-color: var(--secondary-color);
+      color: white;
+      text-decoration: none;
+      border-radius: 0.5rem;
+      margin: 0.5rem 0.5rem 0 0;
+      transition: background-color 0.3s ease;
+    }
+
+    .doc-link:hover {
+      background-color: var(--primary-color);
     }
 
     footer {
-      background: var(--primary-color);
+      background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
       color: white;
-      padding: 2.5rem 1.5rem;
+      padding: 3rem 2rem;
       text-align: center;
-      margin-top: 3rem;
+      margin-top: 4rem;
+      border-top-left-radius: var(--border-radius);
+      border-top-right-radius: var(--border-radius);
     }
 
     footer img {
-      max-width: 150px;
-      box-shadow: none;
-      margin-bottom: 0.5rem;
+      max-width: 160px;
+      margin-bottom: 1rem;
+      transition: transform 0.3s ease;
+    }
+
+    footer img:hover {
+      transform: scale(1.05);
+    }
+
+    footer p {
+      margin-bottom: 0.8rem;
+      font-size: 1rem;
     }
 
     footer a {
       color: white;
       text-decoration: none;
-      transition: color 0.2s ease-in-out;
+      font-weight: 500;
+      transition: color 0.3s ease;
     }
 
     footer a:hover {
       color: var(--accent-color);
     }
 
-    footer p {
-      margin-bottom: 0.5rem;
-    }
-
     @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(10px); }
+      from { opacity: 0; transform: translateY(15px); }
       to { opacity: 1; transform: translateY(0); }
     }
 
@@ -210,17 +211,8 @@
         padding: 2rem;
         margin-top: -60px;
       }
-
-      h2 {
-        font-size: 2rem;
-      }
-
-      .feature-cards {
-        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      }
-
       .map iframe {
-        height: 350px;
+        height: 400px;
       }
     }
 
@@ -229,69 +221,48 @@
         min-height: 40vh;
       }
       header h1 {
-        font-size: 2.5rem;
+        font-size: 2.8rem;
       }
-
       .content {
         margin-top: -50px;
         padding: 1.5rem;
       }
-
-      .details, .feature-card {
-        padding: 1.5rem;
-      }
-
-      h2 {
-        font-size: 1.8rem;
-      }
-
       .feature-cards {
         grid-template-columns: 1fr;
-      }
-
-      .map iframe {
-        height: 300px;
       }
     }
 
     @media (max-width: 480px) {
-      header {
-        min-height: 30vh;
-      }
       header h1 {
-        font-size: 1.8rem;
+        font-size: 2rem;
       }
       .content {
         padding: 1rem;
         margin-top: -40px;
       }
-
       h2 {
         font-size: 1.6rem;
       }
     }
 
-    /* --- Image Zoom Styles --- */
+    /* Image Zoom Styles */
     .image-zoom-overlay {
       position: fixed;
       top: 0;
       left: 0;
       width: 100%;
       height: 100%;
-      background-color: rgba(0, 0, 0, 0.8);
-      display: none; /* Hidden by default */
+      background-color: rgba(0, 0, 0, 0.85);
+      display: none;
       justify-content: center;
       align-items: center;
-      z-index: 1000; /* Ensure it's on top */
-      cursor: pointer; /* Close cursor */
+      z-index: 1000;
+      cursor: pointer;
     }
 
     .image-zoom-content {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      max-width: 90%; /* Max width of zoomed image */
-      max-height: 90%; /* Max height of zoomed image */
+      max-width: 90%;
+      max-height: 90%;
     }
 
     .zoomed-image {
@@ -299,7 +270,7 @@
       max-height: 100%;
       border-radius: var(--border-radius);
       box-shadow: var(--box-shadow);
-      object-fit: contain; /* Ensures the image fits within its container */
+      object-fit: contain;
     }
   </style>
 </head>
@@ -311,23 +282,27 @@
   <div class="content">
     <div class="details">
       <h2>Informações do Terreno</h2>
-      <p>O terreno disponível para negociação é composto por três lotes, subdivididos em fases. A fase 1 conta com uma área de 11.74,06 m², a fase 2 com 18.566,51 m² e fase 3 com 12.142,73 m², conforme a imagem já apresentada abaixo. O proprietário será responsável por entregar a área com infraestrutura de água, esgoto e energia elétrica, além de realizar a pavimentação da diretriz viária longitudinal.</p>
+      <p>O terreno disponível para negociação é composto por três lotes, subdivididos em fases. A fase 1 possui uma área de 11.744 m², a fase 2 com 18.556,51 m² e a fase 3 com 12.142,73 m².</p>
+      <p>Documentos relacionados:</p>
+      <a href="https://www.engesudsmart.com.br/lbk/tsr/ngb/docs/%C3%81rea%20da%20matricula%2043867%20-%2011744_m2.pdf" target="_blank" class="doc-link">Croqui da Matrícula 43.867</a>
+      <a href="https://www.engesudsmart.com.br/lbk/tsr/ngb/docs/Matr%C3%ADcula%2043770.pdf" target="_blank" class="doc-link">Matrícula 43.770</a>
+      <a href="https://www.engesudsmart.com.br/lbk/tsr/ngb/docs/Matr%C3%ADcula%2043.866.pdf" target="_blank" class="doc-link">Matrícula 43.866</a>
     </div>
 
     <div class="details">
       <h2>Viabilidade do Empreendimento</h2>
-      <p>De acordo com análise prévia, o terreno permite a implantação de três empreendimentos imobiliários, dois deles compostos por até 6 torres residenciais multifamiliares verticais (T+3), com 8 apartamentos por pavimento e outro com 9 torres de mesma tipologia. A permuta física envolverá a entrega de quantidade de apartamentos correspondentes a 10% do total, ao proprietário.</p>
+      <p>De acordo com análise prévia, o terreno permite a implantação de três empreendimentos imobiliários, dois deles compostos por até 6 torres residenciais multifamiliares verticais (T+3), com 8 apartamentos por pavimento, e outro com 9 torres de mesma tipologia. A permuta física envolverá a entrega de apartamentos prontos ao proprietário, correspondentes a 10% do total construído.</p>
     </div>
 
     <div class="details">
       <h2>Área e Infraestrutura</h2>
-      <p>Além da área do projeto, destaca-se que o Supermercado Nova Era de Marialva construirá uma nova loja em área vizinha de 6.000 m². Isso valoriza o empreendimento e oferece conveniência aos futuros moradores. A área restante poderá ser utilizada para futuras fases de expansão do projeto.</p>
-      <img src="https://i.postimg.cc/9FvfdWTG/image.png" alt="Esquema Google Earth com marcações" id="zoomableImage">
+      <p>Além da área do projeto, destaca-se que o Supermercado Nova Era de Marialva construirá uma nova loja em área vizinha de 6.000 m², valorizando o empreendimento e oferecendo conveniência aos futuros moradores. </p>
+      <img src="https://i.postimg.cc/QNzVjdv1/image.png" alt="Esquema Google Earth com marcações" id="zoomableImage">
     </div>
 
     <div class="map">
       <h2>Localização</h2>
-      <iframe src="https://www.google.com/maps/d/embed?mid=1rRhhyU79CdJVl1wO5W6bar6obExoV8c&ehbc=2E312F"></iframe>
+      <iframe src="https://www.google.com/maps/d/embed?mid=1rRhhyU79CdJVl1wO5W6bar6obExoV8c&ehbc=2E312F" width="640" height="480"></iframe>
     </div>
 
     <div class="feature-cards">
@@ -351,8 +326,8 @@
       <img src="https://i.imgur.com/3YKn2xW.png" alt="Logo Engesud">
     </a>
     <p><strong>Engesud Engenharia e Intermediação LTDA</strong></p>
-    <p>Robson Luis da Costa | <a href="https://wa.me/4497013489" title="Whatsapp">+55 (44) 99701-3489</a></p>
-    <p><a href="https://www.engesudsmart.com.br" target="_blank">www.engesudsmart.com.br</a></p>
+    <p>Contato: Robson Luis da Costa | <a href="https://wa.me/4497013489" title="Whatsapp">+55 (44) 99701-3489</a></p>
+    <p>Website: <a href="https://www.engesudsmart.com.br" target="_blank">www.engesudsmart.com.br</a></p>
     <p>Última atualização: 19 de fevereiro de 2025</p>
   </footer>
 
@@ -365,7 +340,6 @@
 
   <script>
     document.addEventListener('DOMContentLoaded', function() {
-      // --- Intersection Observer for Animations ---
       const observerOptions = {
         root: null,
         rootMargin: '0px',
@@ -386,24 +360,23 @@
       animateElements.forEach(el => {
         el.style.opacity = '0';
         el.style.transform = 'translateY(20px)';
-        el.style.transition = 'all 0.4s ease-out';
+        el.style.transition = 'all 0.5s ease-out';
         observer.observe(el);
       });
 
-      // --- Image Zoom Functionality ---
       const zoomableImage = document.getElementById('zoomableImage');
       const imageZoomOverlay = document.getElementById('imageZoomOverlay');
       const zoomedImg = document.getElementById('zoomedImg');
 
       zoomableImage.addEventListener('click', function() {
-        zoomedImg.src = this.src; // Set zoomed image source to clicked image source
-        imageZoomOverlay.style.display = 'flex'; // Show the overlay
+        zoomedImg.src = this.src;
+        imageZoomOverlay.style.display = 'flex';
       });
 
       imageZoomOverlay.addEventListener('click', function(event) {
-        if (event.target === imageZoomOverlay) { // Only close if clicked on the overlay itself, not the image
-          imageZoomOverlay.style.display = 'none'; // Hide the overlay
-          zoomedImg.src = ''; // Optionally clear the zoomed image source
+        if (event.target === imageZoomOverlay) {
+          imageZoomOverlay.style.display = 'none';
+          zoomedImg.src = '';
         }
       });
     });
