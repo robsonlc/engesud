@@ -17,14 +17,14 @@
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
   <style>
     :root {
-      --primary-color: #1e40af; /* Darker Blue for Professional Look */
-      --secondary-color: #2563eb; /* Slightly Lighter Blue */
+      --primary-color: #1e40af;
+      --secondary-color: #2563eb;
       --accent-color: #f59e0b;
-      --text-color: #374151; /* Darker Gray for Text */
-      --light-bg: #f9f9f9; /* Lighter Background */
-      --card-bg: #ffffff; /* White Card Background */
-      --border-radius: 0.75rem; /* Slightly Reduced Border Radius */
-      --box-shadow: 0 5px 10px rgba(0, 0, 0, 0.08); /* Softer Shadow */
+      --text-color: #374151;
+      --light-bg: #f9f9f9;
+      --card-bg: #ffffff;
+      --border-radius: 0.75rem;
+      --box-shadow: 0 5px 10px rgba(0, 0, 0, 0.08);
       --heading-font: 'Roboto', sans-serif;
       --body-font: 'Roboto', sans-serif;
     }
@@ -41,48 +41,48 @@
 
     body {
       font-family: var(--body-font);
-      line-height: 1.7; /* Improved Line Height */
+      line-height: 1.7;
       color: var(--text-color);
       background-color: var(--light-bg);
       overflow-x: hidden;
-      -webkit-font-smoothing: antialiased; /* Smooth font rendering for better aesthetics */
+      -webkit-font-smoothing: antialiased;
     }
 
     header {
-      background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), /* Slightly lighter overlay */
+      background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)),
                   url('https://i.imgur.com/X5ipykj.png') center/cover no-repeat;
-      min-height: 50vh; /* Reduced header height */
+      min-height: 50vh;
       display: flex;
       align-items: center;
       justify-content: center;
       padding: 2rem;
       position: relative;
-      text-align: center; /* Center text in header */
+      text-align: center;
     }
 
     header h1 {
-      font-size: clamp(2rem, 4vw, 3rem); /* Reduced max font size */
-      font-weight: 700; /* Slightly reduced font weight */
+      font-size: clamp(2rem, 4vw, 3rem);
+      font-weight: 700;
       color: white;
-      max-width: 800px; /* Slightly narrower max width */
+      max-width: 800px;
       margin: 0 auto;
-      text-shadow: 1px 1px 3px rgba(0,0,0,0.4); /* Reduced text shadow */
+      text-shadow: 1px 1px 3px rgba(0,0,0,0.4);
       animation: fadeIn 1s ease-out;
     }
 
-    .header-overlay { /* Optional overlay if needed for better text readability on different images */
+    .header-overlay {
       position: absolute;
       top: 0;
       left: 0;
       width: 100%;
       height: 100%;
-      background-color: rgba(0, 0, 0, 0.5); /* Adjust opacity as needed */
+      background-color: rgba(0, 0, 0, 0.5);
     }
 
     .content {
-      max-width: 1100px; /* Slightly reduced max width */
-      margin: -70px auto 0; /* Adjusted negative margin */
-      padding: 2.5rem; /* Increased padding */
+      max-width: 1100px;
+      margin: -70px auto 0;
+      padding: 2.5rem;
       background-color: var(--card-bg);
       box-shadow: var(--box-shadow);
       border-radius: var(--border-radius);
@@ -91,12 +91,12 @@
 
     h2 {
       font-family: var(--heading-font);
-      font-size: clamp(1.6rem, 3vw, 2.2rem); /* Adjusted font size */
+      font-size: clamp(1.6rem, 3vw, 2.2rem);
       color: var(--primary-color);
-      margin-bottom: 1.2rem; /* Adjusted margin */
+      margin-bottom: 1.2rem;
       font-weight: 700;
       position: relative;
-      padding-bottom: 0.4rem; /* Adjusted padding */
+      padding-bottom: 0.4rem;
     }
 
     h2::after {
@@ -104,31 +104,31 @@
       position: absolute;
       bottom: 0;
       left: 0;
-      width: 50px; /* Reduced underline width */
-      height: 3px; /* Reduced underline height */
+      width: 50px;
+      height: 3px;
       background: var(--accent-color);
       border-radius: 2px;
     }
 
     .details, .feature-card {
-      background-color: var(--card-bg); /* Using variable for consistency */
+      background-color: var(--card-bg);
       border-radius: var(--border-radius);
       padding: 2rem;
-      margin-bottom: 2rem; /* Consistent bottom margin */
+      margin-bottom: 2rem;
       box-shadow: var(--box-shadow);
-      transition: transform 0.2s ease-in-out; /* Smoother transition */
+      transition: transform 0.2s ease-in-out;
     }
 
     .details:hover, .feature-card:hover {
-      transform: translateY(-3px); /* Reduced hover lift */
-      box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1); /* Slightly stronger shadow on hover */
+      transform: translateY(-3px);
+      box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
     }
 
     .feature-cards {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Adjusted minmax for wider cards */
-      gap: 1.5rem; /* Reduced gap */
-      margin: 2rem 0; /* Adjusted margin */
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 1.5rem;
+      margin: 2rem 0;
     }
 
     .feature-card::before {
@@ -136,12 +136,12 @@
       position: absolute;
       top: 0;
       left: 0;
-      width: 3px; /* Reduced accent line width */
+      width: 3px;
       height: 100%;
       background: var(--accent-color);
       transform: scaleY(0);
-      transition: transform 0.2s ease-in-out; /* Smoother transition */
-      transform-origin: top; /* Animate from top */
+      transition: transform 0.2s ease-in-out;
+      transform-origin: top;
     }
 
     .feature-card:hover::before {
@@ -149,12 +149,12 @@
     }
 
     .map {
-      margin: 2rem 0; /* Adjusted margin */
+      margin: 2rem 0;
     }
 
     .map iframe {
       width: 100%;
-      height: 400px; /* Reduced map height */
+      height: 400px;
       border: none;
       border-radius: var(--border-radius);
       box-shadow: var(--box-shadow);
@@ -165,27 +165,31 @@
       height: auto;
       border-radius: var(--border-radius);
       box-shadow: var(--box-shadow);
-      margin: 1rem 0; /* Reduced image margin */
+      margin: 1rem 0;
+      display: block; /* To allow margin: auto for centering */
+      margin-left: auto;
+      margin-right: auto;
+      cursor: pointer; /* Indicate image is clickable */
     }
 
     footer {
-      background: var(--primary-color); /* Using primary color for footer */
+      background: var(--primary-color);
       color: white;
-      padding: 2.5rem 1.5rem; /* Adjusted padding */
+      padding: 2.5rem 1.5rem;
       text-align: center;
-      margin-top: 3rem; /* Adjusted margin */
+      margin-top: 3rem;
     }
 
     footer img {
-      max-width: 150px; /* Reduced logo size in footer */
+      max-width: 150px;
       box-shadow: none;
-      margin-bottom: 0.5rem; /* Added margin below logo */
+      margin-bottom: 0.5rem;
     }
 
     footer a {
       color: white;
       text-decoration: none;
-      transition: color 0.2s ease-in-out; /* Smoother transition */
+      transition: color 0.2s ease-in-out;
     }
 
     footer a:hover {
@@ -193,20 +197,18 @@
     }
 
     footer p {
-      margin-bottom: 0.5rem; /* Added margin to footer paragraphs */
+      margin-bottom: 0.5rem;
     }
 
     @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(10px); } /* Reduced initial translateY */
+      from { opacity: 0; transform: translateY(10px); }
       to { opacity: 1; transform: translateY(0); }
     }
 
-    /* --- Media Queries for Responsiveness --- */
-
-    @media (max-width: 992px) { /* Medium screens (tablets) */
+    @media (max-width: 992px) {
       .content {
         padding: 2rem;
-        margin-top: -60px; /* Adjust content margin */
+        margin-top: -60px;
       }
 
       h2 {
@@ -214,24 +216,24 @@
       }
 
       .feature-cards {
-        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Adjust card min width */
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
       }
 
       .map iframe {
-        height: 350px; /* Adjust map height */
+        height: 350px;
       }
     }
 
-    @media (max-width: 768px) { /* Small screens (phones and smaller tablets) */
+    @media (max-width: 768px) {
       header {
-        min-height: 40vh; /* Further reduced header height */
+        min-height: 40vh;
       }
       header h1 {
-        font-size: 2.5rem; /* Adjust header font size for smaller screens */
+        font-size: 2.5rem;
       }
 
       .content {
-        margin-top: -50px; /* Adjust content margin */
+        margin-top: -50px;
         padding: 1.5rem;
       }
 
@@ -244,7 +246,7 @@
       }
 
       .feature-cards {
-        grid-template-columns: 1fr; /* Stack cards on smaller screens */
+        grid-template-columns: 1fr;
       }
 
       .map iframe {
@@ -252,21 +254,52 @@
       }
     }
 
-    @media (max-width: 480px) { /* Very small screens (smaller phones) */
+    @media (max-width: 480px) {
       header {
-        min-height: 30vh; /* Minimum header height for very small screens */
+        min-height: 30vh;
       }
       header h1 {
-        font-size: 1.8rem; /* Further adjust header font size */
+        font-size: 1.8rem;
       }
       .content {
         padding: 1rem;
-        margin-top: -40px; /* Adjust content margin */
+        margin-top: -40px;
       }
 
       h2 {
         font-size: 1.6rem;
       }
+    }
+
+    /* --- Image Zoom Styles --- */
+    .image-zoom-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.8);
+      display: none; /* Hidden by default */
+      justify-content: center;
+      align-items: center;
+      z-index: 1000; /* Ensure it's on top */
+      cursor: pointer; /* Close cursor */
+    }
+
+    .image-zoom-content {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      max-width: 90%; /* Max width of zoomed image */
+      max-height: 90%; /* Max height of zoomed image */
+    }
+
+    .zoomed-image {
+      max-width: 100%;
+      max-height: 100%;
+      border-radius: var(--border-radius);
+      box-shadow: var(--box-shadow);
+      object-fit: contain; /* Ensures the image fits within its container */
     }
   </style>
 </head>
@@ -289,7 +322,7 @@
     <div class="details">
       <h2>Área e Infraestrutura</h2>
       <p>Além da área do projeto, destaca-se que o Supermercado Nova Era de Marialva construirá uma nova loja em área vizinha de 6.000 m². Isso valoriza o empreendimento e oferece conveniência aos futuros moradores. A área restante poderá ser utilizada para futuras fases de expansão do projeto.</p>
-      <img src="https://i.postimg.cc/9FvfdWTG/image.png" alt="Esquema Google Earth com marcações">
+      <img src="https://i.postimg.cc/9FvfdWTG/image.png" alt="Esquema Google Earth com marcações" id="zoomableImage">
     </div>
 
     <div class="map">
@@ -323,8 +356,16 @@
     <p>Última atualização: 19 de fevereiro de 2025</p>
   </footer>
 
+  <!-- Image Zoom Overlay -->
+  <div class="image-zoom-overlay" id="imageZoomOverlay">
+    <div class="image-zoom-content">
+      <img src="" alt="Zoomed Image" class="zoomed-image" id="zoomedImg">
+    </div>
+  </div>
+
   <script>
     document.addEventListener('DOMContentLoaded', function() {
+      // --- Intersection Observer for Animations ---
       const observerOptions = {
         root: null,
         rootMargin: '0px',
@@ -345,8 +386,25 @@
       animateElements.forEach(el => {
         el.style.opacity = '0';
         el.style.transform = 'translateY(20px)';
-        el.style.transition = 'all 0.4s ease-out'; /* Slightly faster animation */
+        el.style.transition = 'all 0.4s ease-out';
         observer.observe(el);
+      });
+
+      // --- Image Zoom Functionality ---
+      const zoomableImage = document.getElementById('zoomableImage');
+      const imageZoomOverlay = document.getElementById('imageZoomOverlay');
+      const zoomedImg = document.getElementById('zoomedImg');
+
+      zoomableImage.addEventListener('click', function() {
+        zoomedImg.src = this.src; // Set zoomed image source to clicked image source
+        imageZoomOverlay.style.display = 'flex'; // Show the overlay
+      });
+
+      imageZoomOverlay.addEventListener('click', function(event) {
+        if (event.target === imageZoomOverlay) { // Only close if clicked on the overlay itself, not the image
+          imageZoomOverlay.style.display = 'none'; // Hide the overlay
+          zoomedImg.src = ''; // Optionally clear the zoomed image source
+        }
       });
     });
   </script>
