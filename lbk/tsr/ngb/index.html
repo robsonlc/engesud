@@ -174,40 +174,69 @@
     }
 
     footer {
-      background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+      background: linear-gradient(135deg, rgba(30, 64, 175, 0.95), rgba(37, 99, 235, 0.8)); /* MESMO gradiente do header */
       color: white;
-      padding: 2.5rem; /* Padding de footer um pouco menor */
-      margin-top: 3rem; /* Margem superior do footer menor */
+      padding: 2.5rem 3rem; /* Ajustar padding, um pouco mais horizontal */
+      margin-top: 3rem;
       text-align: center;
+      border-top-left-radius: var(--border-radius); /* Manter bordas arredondadas no topo */
+      border-top-right-radius: var(--border-radius);
     }
 
     .footer-content {
-      max-width: 800px;
+      max-width: 900px; /* Aumentar um pouco a largura máxima do conteúdo do footer */
       margin: 0 auto;
     }
 
     .footer-logo {
-      max-width: 160px; /* Logo do footer um pouco menor */
-      margin-bottom: 1.5rem; /* Margem inferior do logo menor */
+      max-width: 160px;
+      margin-bottom: 1.5rem;
       transition: transform 0.3s ease;
+      display: block; /* Para centralizar corretamente */
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .footer-logo:hover {
+      transform: scale(1.05);
     }
 
     .contact-info {
-      display: grid;
-      gap: 0.8rem; /* Menos espaço entre itens de contato */
-      margin: 1.5rem 0; /* Margem menor para informações de contato */
+      display: flex; /* Alterar para flexbox para melhor controle do layout em linha */
+      flex-direction: column; /* Manter os itens em coluna em telas menores */
+      align-items: center; /* Centralizar itens horizontalmente */
+      justify-content: center; /* Centralizar verticalmente (se necessário, para mais de uma linha) */
+      gap: 0.8rem;
+      margin: 1.5rem 0;
     }
 
     .contact-item {
       display: flex;
       align-items: center;
       justify-content: center;
-      gap: 0.4rem; /* Menos espaço entre ícone e texto no item de contato */
+      gap: 0.4rem;
+      font-size: 1rem; /* Tamanho de fonte consistente */
+      font-weight: 400; /* Peso da fonte normal, removendo o negrito */
     }
 
-    .contact-item svg {
-      width: 20px; /* Ícones de contato menores */
-      height: 20px;
+    .contact-item span {
+      color: white; /* Garantir que o span também tenha cor branca */
+    }
+
+    .contact-item a {
+      color: white;
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+
+    .contact-item a:hover {
+      color: var(--accent-color);
+    }
+
+    footer p {
+      margin-bottom: 0.5rem; /* Reduzir um pouco a margem inferior dos parágrafos */
+      font-size: 0.9rem; /* Tamanho da fonte para "Última atualização" um pouco menor */
+      color: rgba(255, 255, 255, 0.8); /* Cor mais suave para "Última atualização" */
     }
 
     @keyframes fadeIn {
@@ -246,6 +275,15 @@
       .footer-logo {
         max-width: 140px; /* Logo do footer menor em telas pequenas */
         margin-bottom: 1rem; /* Margem inferior do logo menor em telas pequenas */
+      }
+      .contact-info {
+        margin: 1rem 0;
+      }
+      .contact-item {
+        font-size: 0.9rem; /* Tamanho da fonte menor em telas menores */
+      }
+      footer p {
+        font-size: 0.8rem; /* Tamanho da fonte menor em telas menores */
       }
     }
 
