@@ -303,6 +303,47 @@
       box-shadow: var(--box-shadow);
       object-fit: contain;
     }
+
+    /* Estilos para destaque das fases e áreas */
+    .phase-highlight {
+      position: relative; /* Necessário para posicionar o SVG relative ao texto */
+      display: inline-block; /* Para o SVG não ocupar a linha toda */
+      background-color: rgba(245, 158, 11, 0.15);
+      padding: 0.2rem 0.4rem;
+      border-radius: 0.3rem;
+      font-weight: 500;
+      overflow: hidden; /* Importante para cortar a animação do sublinhado */
+    }
+
+    .svg-underline {
+      position: absolute; /* Posiciona o SVG absolutamente dentro do .phase-highlight */
+      left: 0;
+      bottom: 0;
+      width: 100%;
+      height: auto; /* Ajusta a altura automaticamente */
+      pointer-events: none; /* Garante que o SVG não interfere com eventos de mouse no texto */
+    }
+
+    .svg-underline path {
+      stroke-width: 2; /* Espessura do sublinhado */
+      stroke: var(--accent-color); /* Cor do sublinhado (cor de acento) */
+      fill: none; /* Sem preenchimento */
+      stroke-dasharray: 100; /* Comprimento total do traço (igual à largura do SVG) */
+      stroke-dashoffset: 100; /* Inicialmente, esconde o traço completamente */
+      transition: stroke-dashoffset 0.5s ease-out; /* Animação da propriedade stroke-dashoffset */
+    }
+
+    .phase-highlight:hover .svg-underline path,
+    .phase-highlight:focus .svg-underline path { /* Animação no hover e focus (acessibilidade) */
+      stroke-dashoffset: 0; /* No hover/focus, mostra o traço completamente */
+    }
+
+    .area-highlight {
+      background-color: rgba(37, 99, 235, 0.1); /* Mantendo o background suave para "Área" */
+      padding: 0.2rem 0.4rem;
+      border-radius: 0.3rem;
+      font-weight: 500;
+    }
   </style>
 </head>
 <body>
@@ -313,7 +354,25 @@
   <div class="content">
     <div class="details">
       <h2>Informações do Terreno</h2>
-      <p>O terreno disponível para negociação é composto por três lotes, subdivididos em fases. A fase 1 possui uma área de 11.744 m², a fase 2 com 18.556,51 m² e a fase 3 com 12.142,73 m².</p>
+      <p>O terreno disponível para negociação é composto por três lotes, subdivididos em fases.</p>
+      <p><span class="phase-highlight">
+          Fase 1:
+          <svg viewBox="0 0 100 5" class="svg-underline">
+            <path d="M0,4 L100,4" />
+          </svg>
+        </span> Área de <span class="area-highlight">11.744 m²</span></p>
+      <p><span class="phase-highlight">
+          Fase 2:
+          <svg viewBox="0 0 100 5" class="svg-underline">
+            <path d="M0,4 L100,4" />
+          </svg>
+        </span> Área de <span class="area-highlight">18.556,51 m²</span></p>
+      <p><span class="phase-highlight">
+          Fase 3:
+          <svg viewBox="0 0 100 5" class="svg-underline">
+            <path d="M0,4 L100,4" />
+          </svg>
+        </span> Área de <span class="area-highlight">12.142,73 m²</span></p>
       <p>Documentos relacionados:</p>
       <a href="https://www.engesudsmart.com.br/lbk/tsr/ngb/docs/%C3%81rea%20da%20matricula%2043867%20-%2011744_m2.pdf" target="_blank" class="doc-link">Croqui da Matrícula 43.867</a>
       <a href="https://www.engesudsmart.com.br/lbk/tsr/ngb/docs/Matr%C3%ADcula%2043770.pdf" target="_blank" class="doc-link">Matrícula 43.770</a>
@@ -336,7 +395,6 @@
       <iframe src="https://www.google.com/maps/d/embed?mid=1rRhhyU79CdJVl1wO5W6bar6obExoV8c&ehbc=2E312F" width="640" height="480"></iframe>
     </div>
 
-   
 
   <footer>
     <a href="http://www.engesudsmart.com.br" target="_blank" title="www.engesudsmart.com.br">
