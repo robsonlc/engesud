@@ -299,7 +299,7 @@
       justify-content: center;
       align-items: center;
       z-index: 1000;
-      cursor: pointer;
+      cursor: pointer; /* Cursor para fechar o zoom */
     }
 
     .image-zoom-content {
@@ -313,6 +313,11 @@
       border-radius: var(--border-radius);
       box-shadow: var(--box-shadow);
       object-fit: contain;
+    }
+
+    img[id="zoomableImage"], /* Aplica cursor para a imagem original */
+    img[id="croquiImage"] { /* Aplica cursor para a imagem do croqui */
+      cursor: zoom-in; /* Cursor de lupa de zoom */
     }
   </style>
 </head>
@@ -339,6 +344,8 @@
         <div class="phase-title">Lote 3</div>
         <div class="phase-area">Área total: 18.556,51 m²</div>
       </div>
+
+      <img src="https://i.postimg.cc/QNzVjdv1/image.png" alt="Esquema Google Earth com marcações" style="width: 100%; margin: 2rem 0;" id="croquiImage">
 
       <div class="docs-section">
         <a href="https://www.engesudsmart.com.br/lbk/tsr/ngb/docs/%C3%81rea%20da%20matricula%2043867%20-%2011744_m2.pdf" target="_blank" class="doc-link">
@@ -382,7 +389,7 @@
         <li>Valorização projetada para o empreendimento</li>
         <li>Excelente localização e conveniência para futuros moradores</li>
       </ul>
-      <img src="https://i.postimg.cc/QNzVjdv1/image.png" alt="Esquema Google Earth com marcações" style="width: 100%; margin: 2rem 0;" id="croquiImage">
+      <img src="https://i.postimg.cc/QNzVjdv1/image.png" alt="Esquema Google Earth com marcações" style="width: 100%; margin: 2rem 0;" id="zoomableImage">
     </div>
 
     <div class="map-container">
