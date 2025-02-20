@@ -17,14 +17,14 @@
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
   <style>
     :root {
-      --primary-color: #374151; /* Tom de cinza mais escuro para primária */
-      --secondary-color: #6b7280; /* Cinza um pouco mais claro para secundária */
-      --accent-color: #ea580c; /* Laranja mais queimado/terracota para acento */
-      --text-color: #374151; /* Cinza escuro para texto principal, igual à primária para consistência */
-      --light-bg: #f9fafb; /* Branco levemente acinzentado para fundo claro */
+      --primary-color: #374151;
+      --secondary-color: #6b7280;
+      --accent-color: #ea580c;
+      --text-color: #374151;
+      --light-bg: #f9fafb;
       --card-bg: #ffffff;
-      --border-radius: 0.75rem; /* Bordas um pouco menos arredondadas para sobriedade */
-      --box-shadow: 0 2px 4px rgba(0, 0, 0, 0.08); /* Sombra mais sutil */
+      --border-radius: 0.75rem;
+      --box-shadow: 0 2px 4px rgba(0, 0, 0, 0.08);
       --heading-font: 'Roboto', sans-serif;
       --body-font: 'Roboto', sans-serif;
     }
@@ -92,41 +92,40 @@
     .details {
       background-color: var(--card-bg);
       border-radius: var(--border-radius);
-      padding: 2rem; /* Reduzir um pouco o padding interno */
-      margin-bottom: 2rem; /* Reduzir um pouco a margem inferior */
+      padding: 2rem;
+      margin-bottom: 2rem;
       box-shadow: var(--box-shadow);
       transform: translateY(0);
-      transition: box-shadow 0.3s ease; /* Remover translateY no hover para menos efeito */
+      transition: box-shadow 0.3s ease;
     }
 
     .details:hover {
-      /* transform: translateY(-2px); Remover elevação no hover */
-      box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1); /* Sombra mais sutil no hover */
+      box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
     }
 
     .phase-card {
-      background: var(--light-bg); /* Cor de fundo mais clara e sóbria */
-      border-radius: 0.5rem; /* Bordas menos arredondadas no card de lote */
-      padding: 1rem 1.25rem; /* Ajustar padding interno */
-      margin: 0.75rem 0; /* Ajustar margens */
-      border-left: 3px solid var(--accent-color); /* Borda lateral mais fina */
-      transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out; /* Animação mais rápida e suave */
+      background: var(--light-bg);
+      border-radius: 0.5rem;
+      padding: 1rem 1.25rem;
+      margin: 0.75rem 0;
+      border-left: 3px solid var(--accent-color);
+      transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
     }
 
     .phase-card:hover {
-      transform: translateX(5px); /* Movimento menos exagerado no hover */
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.08); /* Sombra mais sutil no hover do card de lote */
+      transform: translateX(5px);
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.08);
     }
 
     .phase-title {
-      font-size: 1.1rem; /* Título de lote um pouco menor */
+      font-size: 1.1rem;
       color: var(--primary-color);
-      margin-bottom: 0.3rem; /* Menos margem abaixo do título */
-      font-weight: 500; /* Peso da fonte um pouco mais leve */
+      margin-bottom: 0.3rem;
+      font-weight: 500;
     }
 
     .phase-area {
-      font-size: 1rem; /* Área do lote um pouco menor */
+      font-size: 1rem;
       color: var(--secondary-color);
     }
 
@@ -140,23 +139,23 @@
     .doc-link {
       display: flex;
       align-items: center;
-      gap: 0.4rem; /* Menos espaço entre ícone e texto */
-      padding: 0.8rem 1rem; /* Padding interno menor */
+      gap: 0.4rem;
+      padding: 0.8rem 1rem;
       background-color: var(--light-bg);
       color: var(--primary-color);
       text-decoration: none;
-      border-radius: 0.4rem; /* Bordas menos arredondadas no link de documento */
-      transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out, transform 0.2s ease-in-out; /* Animações mais rápidas */
+      border-radius: 0.4rem;
+      transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out, transform 0.2s ease-in-out;
     }
 
     .doc-link:hover {
       background-color: var(--primary-color);
       color: white;
-      transform: translateY(0); /* Remover elevação no hover do link de documento */
+      transform: translateY(0);
     }
 
     .doc-link svg {
-      width: 20px; /* Ícones de documento menores */
+      width: 20px;
       height: 20px;
     }
 
@@ -169,22 +168,22 @@
 
     .map-container iframe {
       width: 100%;
-      height: 450px; /* Mapa um pouco menor */
+      height: 450px;
       border: none;
     }
 
     footer {
-      background: linear-gradient(135deg, rgba(30, 64, 175, 0.95), rgba(37, 99, 235, 0.8)); /* MESMO gradiente do header */
+      background: linear-gradient(135deg, rgba(30, 64, 175, 0.95), rgba(37, 99, 235, 0.8));
       color: white;
-      padding: 2.5rem 3rem; /* Ajustar padding, um pouco mais horizontal */
+      padding: 2.5rem 3rem;
       margin-top: 3rem;
       text-align: center;
-      border-top-left-radius: var(--border-radius); /* Manter bordas arredondadas no topo */
+      border-top-left-radius: var(--border-radius);
       border-top-right-radius: var(--border-radius);
     }
 
     .footer-content {
-      max-width: 900px; /* Aumentar um pouco a largura máxima do conteúdo do footer */
+      max-width: 900px;
       margin: 0 auto;
     }
 
@@ -192,7 +191,7 @@
       max-width: 160px;
       margin-bottom: 1.5rem;
       transition: transform 0.3s ease;
-      display: block; /* Para centralizar corretamente */
+      display: block;
       margin-left: auto;
       margin-right: auto;
     }
@@ -202,10 +201,10 @@
     }
 
     .contact-info {
-      display: flex; /* Alterar para flexbox para melhor controle do layout em linha */
-      flex-direction: column; /* Manter os itens em coluna em telas menores */
-      align-items: center; /* Centralizar itens horizontalmente */
-      justify-content: center; /* Centralizar verticalmente (se necessário, para mais de uma linha) */
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
       gap: 0.8rem;
       margin: 1.5rem 0;
     }
@@ -215,12 +214,12 @@
       align-items: center;
       justify-content: center;
       gap: 0.4rem;
-      font-size: 1rem; /* Tamanho de fonte consistente */
-      font-weight: 400; /* Peso da fonte normal, removendo o negrito */
+      font-size: 1rem;
+      font-weight: 400;
     }
 
     .contact-item span {
-      color: white; /* Garantir que o span também tenha cor branca */
+      color: white;
     }
 
     .contact-item a {
@@ -234,9 +233,9 @@
     }
 
     footer p {
-      margin-bottom: 0.5rem; /* Reduzir um pouco a margem inferior dos parágrafos */
-      font-size: 0.9rem; /* Tamanho da fonte para "Última atualização" um pouco menor */
-      color: rgba(255, 255, 255, 0.8); /* Cor mais suave para "Última atualização" */
+      margin-bottom: 0.5rem;
+      font-size: 0.9rem;
+      color: rgba(255, 255, 255, 0.8);
     }
 
     @keyframes fadeIn {
@@ -246,44 +245,44 @@
 
     @media (max-width: 768px) {
       header {
-        min-height: 40vh; /* Header menor em telas pequenas */
+        min-height: 40vh;
       }
 
       .content {
-        margin-top: -30px; /* Menos sobreposição em telas pequenas */
-        padding: 1rem; /* Padding menor no conteúdo em telas pequenas */
+        margin-top: -30px;
+        padding: 1rem;
       }
 
       .details {
-        padding: 1.5rem; /* Padding menor nos detalhes em telas pequenas */
-        margin-bottom: 2rem; /* Margem menor nos detalhes em telas pequenas */
+        padding: 1.5rem;
+        margin-bottom: 2rem;
       }
 
       .phase-card {
-        padding: 1rem; /* Padding menor no card de lote em telas pequenas */
+        padding: 1rem;
       }
 
       .map-container iframe {
-        height: 350px; /* Mapa menor em telas pequenas */
+        height: 350px;
       }
 
       footer {
-        padding: 2rem; /* Padding do footer menor em telas pequenas */
-        margin-top: 2rem; /* Margem superior do footer menor em telas pequenas */
+        padding: 2rem;
+        margin-top: 2rem;
       }
 
       .footer-logo {
-        max-width: 140px; /* Logo do footer menor em telas pequenas */
-        margin-bottom: 1rem; /* Margem inferior do logo menor em telas pequenas */
+        max-width: 140px;
+        margin-bottom: 1rem;
       }
       .contact-info {
         margin: 1rem 0;
       }
       .contact-item {
-        font-size: 0.9rem; /* Tamanho da fonte menor em telas menores */
+        font-size: 0.9rem;
       }
       footer p {
-        font-size: 0.8rem; /* Tamanho da fonte menor em telas menores */
+        font-size: 0.8rem;
       }
     }
 
@@ -299,7 +298,7 @@
       justify-content: center;
       align-items: center;
       z-index: 1000;
-      cursor: pointer; /* Cursor para fechar o zoom */
+      cursor: pointer;
     }
 
     .image-zoom-content {
@@ -315,9 +314,9 @@
       object-fit: contain;
     }
 
-    img[id="zoomableImage"], /* Aplica cursor para a imagem original */
-    img[id="croquiImage"] { /* Aplica cursor para a imagem do croqui */
-      cursor: zoom-in; /* Cursor de lupa de zoom */
+    img[id="zoomableImage"],
+    img[id="croquiImage"] {
+      cursor: zoom-in;
     }
   </style>
 </head>
@@ -345,7 +344,7 @@
         <div class="phase-area">Área total: 18.556,51 m²</div>
       </div>
 
-      <img src="https://i.postimg.cc/QNzVjdv1/image.png" alt="Esquema Google Earth com marcações" style="width: 100%; margin: 2rem 0;" id="croquiImage">
+      <img src="https://i.postimg.cc/QNzVjdv1/image.png" alt="Esquema Google Earth com marcações" style="width: 100%; margin: 2rem 0;" id="zoomableImage">
 
       <div class="docs-section">
         <a href="https://www.engesudsmart.com.br/lbk/tsr/ngb/docs/%C3%81rea%20da%20matricula%2043867%20-%2011744_m2.pdf" target="_blank" class="doc-link">
@@ -389,7 +388,6 @@
         <li>Valorização projetada para o empreendimento</li>
         <li>Excelente localização e conveniência para futuros moradores</li>
       </ul>
-      <img src="https://i.postimg.cc/QNzVjdv1/image.png" alt="Esquema Google Earth com marcações" style="width: 100%; margin: 2rem 0;" id="zoomableImage">
     </div>
 
     <div class="map-container">
@@ -467,20 +465,13 @@
         observer.observe(el);
       });
 
-      // Zoom para a imagem original (já existente)
+      // Zoom for the original image
       const zoomableImage = document.getElementById('zoomableImage');
       const imageZoomOverlay = document.getElementById('imageZoomOverlay');
       const zoomedImg = document.getElementById('zoomedImg');
 
       zoomableImage.addEventListener('click', function() {
         zoomedImg.src = this.src;
-        imageZoomOverlay.style.display = 'flex';
-      });
-
-      // Zoom para a imagem do Croqui (NOVO)
-      const croquiImage = document.getElementById('croquiImage'); // Novo ID
-      croquiImage.addEventListener('click', function() { // Novo EventListener para croquiImage
-        zoomedImg.src = this.src; // Reutiliza o mesmo overlay e imagem zoomedImg
         imageZoomOverlay.style.display = 'flex';
       });
 
