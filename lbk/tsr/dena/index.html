@@ -17,11 +17,11 @@
         @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
 
         :root {
-            --primary-color: #1a365d;
-            --secondary-color: #2c5282; 
-            --accent-color: #4299e1;
-            --background-color: #f7fafc;
-            --text-color: #2d3748;
+            --primary-color: #2c3e50;
+            --secondary-color: #34495e;
+            --accent-color: #3498db;
+            --background-color: #ecf0f1;
+            --text-color: #2c3e50;
             --white: #ffffff;
         }
 
@@ -35,7 +35,7 @@
             font-family: 'Poppins', sans-serif;
             background-color: var(--background-color);
             color: var(--text-color);
-            line-height: 1.8;
+            line-height: 1.6;
             display: flex;
             flex-direction: column;
             min-height: 100vh;
@@ -43,7 +43,7 @@
 
         header {
             background: url('https://i.postimg.cc/NjTk4zrn/oQ5OyuB.png') center/cover no-repeat;
-            height: 60vh;
+            height: 50vh;
             display: flex;
             justify-content: center;
             align-items: center;
@@ -58,120 +58,104 @@
             left: 0;
             right: 0;
             bottom: 0;
-            background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.7));
+            background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.6));
         }
 
         header h1 {
-            font-size: clamp(2rem, 5vw, 3.5rem);
+            font-size: clamp(1.8rem, 4vw, 2.5rem);
             text-align: center;
-            padding: 30px;
+            padding: 20px;
             position: relative;
             z-index: 1;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
             max-width: 1000px;
-            animation: fadeIn 1s ease-out;
-        }
-
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(20px); }
-            to { opacity: 1; transform: translateY(0); }
         }
 
         .content {
             flex: 1;
-            padding: min(5vw, 60px);
-            max-width: 1200px;
-            margin: -60px auto 40px;
+            padding: 40px 20px;
+            max-width: 1000px;
+            margin: -40px auto 40px;
             background: var(--white);
-            border-radius: 20px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
             position: relative;
             z-index: 2;
-            width: 95%;
+            width: 90%;
         }
 
         h2, h3 {
             color: var(--primary-color);
-            margin-bottom: 25px;
+            margin-bottom: 20px;
             font-weight: 600;
         }
 
         h2 {
-            font-size: clamp(1.8rem, 4vw, 2.2rem);
-            border-bottom: 3px solid var(--accent-color);
-            padding-bottom: 10px;
+            font-size: clamp(1.5rem, 3vw, 1.8rem);
+            border-bottom: 2px solid var(--accent-color);
+            padding-bottom: 8px;
             display: inline-block;
         }
 
         h3 {
-            font-size: clamp(1.5rem, 3vw, 1.8rem);
-            margin-top: 40px;
+            font-size: clamp(1.2rem, 2.5vw, 1.4rem);
+            margin-top: 30px;
         }
 
         p {
-            margin-bottom: 20px;
+            margin-bottom: 15px;
             font-size: clamp(1rem, 2vw, 1.1rem);
             color: var(--text-color);
+            line-height: 1.6;
         }
 
         .mapa, .zoneamento {
-            margin: 40px 0;
-            border-radius: 15px;
+            margin: 30px 0;
+            border-radius: 10px;
             overflow: hidden;
-            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
-            transition: transform 0.3s ease;
-        }
-
-        .mapa:hover, .zoneamento:hover {
-            transform: translateY(-5px);
         }
 
         iframe, .zoneamento img {
             width: 100%;
-            border-radius: 15px;
-            transition: all 0.3s ease;
+            border-radius: 10px;
         }
 
         iframe {
-            height: 60vh;
+            height: 50vh;
             border: none;
-            min-height: 350px;
+            min-height: 300px;
         }
 
         .buttons {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            display: flex;
+            flex-wrap: wrap;
             gap: 15px;
+            justify-content: center;
             margin-top: 30px;
         }
 
         .button-link {
-            background: var(--primary-color);
+            background: var(--accent-color);
             color: var(--white);
             text-decoration: none;
-            padding: 15px 20px;
-            border-radius: 8px;
+            padding: 12px 20px;
+            border-radius: 5px;
             font-weight: 500;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-            transition: all 0.3s ease;
+            transition: background 0.3s ease;
             font-size: 0.9rem;
             text-align: center;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            height: 100%;
+            flex: 1 1 250px;
+            max-width: 300px;
         }
 
         .button-link:hover {
-            background: var(--accent-color);
-            transform: translateY(-3px);
-            box-shadow: 0 6px 20px rgba(66, 153, 225, 0.3);
+            background: var(--primary-color);
         }
 
         footer {
-            background-color: var(--primary-color);
+            background-color: var(--secondary-color);
             color: var(--white);
-            padding: 40px 20px;
+            padding: 20px;
             margin-top: auto;
             text-align: center;
         }
@@ -182,25 +166,23 @@
             display: flex;
             flex-direction: column;
             align-items: center;
-            gap: 20px;
+            gap: 10px;
         }
 
         .footer-logo img {
-            height: 70px;
-            width: auto;
-            margin-bottom: 20px;
+            height: 40px;
+            margin-bottom: 10px;
         }
 
         footer p {
             margin: 5px 0;
-            font-size: 0.9rem;
+            font-size: 0.8rem;
             color: var(--white);
         }
 
         footer a {
             color: var(--white);
             text-decoration: none;
-            transition: color 0.3s;
         }
 
         footer a:hover {
@@ -209,31 +191,33 @@
 
         @media (max-width: 768px) {
             header {
-                height: 50vh;
+                height: 40vh;
             }
 
             .content {
-                margin-top: -40px;
-                padding: 30px 20px;
-            }
-
-            .buttons {
-                grid-template-columns: 1fr;
-            }
-
-            .button-link {
-                padding: 12px 15px;
+                padding: 30px 15px;
+                margin-top: -30px;
+                width: 95%;
             }
         }
 
         @media (max-width: 480px) {
             header h1 {
-                padding: 15px;
+                font-size: 1.5rem;
+                padding: 10px;
             }
 
             .content {
-                width: 92%;
-                padding: 20px 15px;
+                padding: 20px 10px;
+            }
+
+            .button-link {
+                padding: 10px 15px;
+                font-size: 0.8rem;
+            }
+
+            iframe {
+                height: 30vh;
             }
         }
     </style>
@@ -273,7 +257,7 @@
             <p><strong>Engesud Engenharia e Intermediação LTDA</strong></p>
             <p>Robson Luis da Costa | <a href="https://wa.me/4497013489" target="_blank" rel="noopener noreferrer">+55 (44) 99701-3489</a></p>
             <p><a href="https://www.engesudsmart.com.br" target="_blank" rel="noopener noreferrer">www.engesudsmart.com.br</a></p>
-            <p>Última atualização: 20 de fevereiro de 2025</p>
+            <p>Última atualização: 2 de agosto de 2024</p>
         </div>
     </footer>
 </body>
