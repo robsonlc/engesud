@@ -1,173 +1,345 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-br">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="shortcut icon" href="https://i.imgur.com/HjwVm8x.png" type="image/x-icon">
-    <title>Em Breve</title>
-    <style>
-        body {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            margin: 0;
-            font-family: Arial, sans-serif;
-            background-color: #000;
-            overflow: hidden;
-            color: white;
-        }
-        h1 {
-            text-align: center;
-            font-size: 3em;
-            animation: fadeIn 3s ease-in-out infinite alternate;
-        }
-        @keyframes fadeIn {
-            0% { opacity: 0; transform: scale(0.9); }
-            100% { opacity: 1; transform: scale(1.1); }
-        }
-        .stars {
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            background: url('https://raw.githubusercontent.com/robsonlc/engesud/main/lbk/tsr/osha/stars.png') repeat;
-            z-index: -1;
-            animation: moveStars 50s linear infinite;
-        }
-        @keyframes moveStars {
-            from { transform: translateY(0); }
-            to { transform: translateY(-1000px); }
-        }
-        .shooting-star {
-            position: absolute;
-            width: 2px;
-            height: 150px;
-            background: linear-gradient(white, rgba(255, 255, 255, 0));
-            animation: shootingStar 2s ease-out infinite;
-        }
-        @keyframes shootingStar {
-            from {
-                top: -10%;
-                left: 100%;
-            }
-            to {
-                top: 100%;
-                left: -10%;
-            }
-        }
-        .glowing-text {
-            color: #fff;
-            text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 20px #ff00ff, 0 0 30px #ff00ff, 0 0 40px #ff00ff, 0 0 50px #ff00ff, 0 0 60px #ff00ff;
-            animation: glow 1s ease-in-out infinite alternate;
-        }
-        @keyframes glow {
-            from {
-                text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 20px #ff00ff, 0 0 30px #ff00ff, 0 0 40px #ff00ff, 0 0 50px #ff00ff, 0 0 60px #ff00ff;
-            }
-            to {
-                text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #ff00ff, 0 0 40px #ff00ff, 0 0 50px #ff00ff, 0 0 60px #ff00ff, 0 0 70px #ff00ff;
-            }
-        }
-        .floating-objects {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            width: 10px;
-            height: 10px;
-            background: red;
-            border-radius: 50%;
-            animation: float 5s ease-in-out infinite;
-        }
-        @keyframes float {
-            0%, 100% {
-                transform: translateY(0) translateX(0);
-            }
-            50% {
-                transform: translateY(-20px) translateX(20px);
-            }
-        }
-        .twinkling-stars {
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            background: transparent;
-            overflow: hidden;
-            z-index: 1;
-        }
-        .twinkling-stars::before, .twinkling-stars::after {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: transparent;
-            opacity: 0.5;
-            animation: twinkling 1.5s infinite ease-in-out alternate;
-        }
-        .twinkling-stars::after {
-            animation-delay: 0.75s;
-        }
-        @keyframes twinkling {
-            0% { background: rgba(255, 255, 255, 0.1); }
-            100% { background: rgba(255, 255, 255, 0.3); }
-        }
-        .nebula {
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            background: radial-gradient(circle at center, rgba(255, 0, 255, 0.2), transparent);
-            z-index: 0;
-            animation: pulse 3s infinite;
-        }
-        @keyframes pulse {
-            0%, 100% { transform: scale(1); }
-            50% { transform: scale(1.1); }
-        }
-        .comet {
-            position: absolute;
-            width: 2px;
-            height: 250px;
-            background: linear-gradient(white, rgba(255, 255, 255, 0));
-            animation: comet 3s ease-out infinite;
-        }
-        @keyframes comet {
-            from {
-                top: -20%;
-                left: 120%;
-            }
-            to {
-                top: 120%;
-                left: -20%;
-            }
-        }
-        .meteor {
-            position: absolute;
-            width: 3px;
-            height: 200px;
-            background: linear-gradient(white, rgba(255, 255, 255, 0));
-            animation: meteor 4s ease-out infinite;
-        }
-        @keyframes meteor {
-            from {
-                top: -30%;
-                left: 110%;
-            }
-            to {
-                top: 110%;
-                left: -30%;
-            }
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Área para ZEIS em Rondonópolis - MCMV</title>
+  <meta property="og:url" content="https://www.engesudsmart.com.br/lbk/tsr/rondo/cerrado">
+  <meta property="og:image" content="https://i.postimg.cc/c1YDQpLp/image.png">
+  <link rel="shortcut icon" href="https://i.postimg.cc/QCp6V4Wr/HjwVm8x.png" type="image/x-icon">
+  <style>
+    :root {
+      --primary-color: #2c3e50;
+      --secondary-color: #34495e;
+      --background-color: #f4f4f4;
+      --card-shadow: 0 4px 6px rgba(0,0,0,0.1);
+      --transition-speed: 0.3s;
+    }
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      background-color: var(--background-color);
+      color: #333;
+      line-height: 1.6;
+    }
+    header {
+      background: url('https://i.postimg.cc/htP61KvC/image.png') center/cover no-repeat;
+      background-color: rgba(255, 255, 255, 0.3);
+      background-blend-mode: overlay;
+      min-height: 200px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+    }
+    header::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(rgba(255,255,255,0.7), rgba(255,255,255,0.3));
+      pointer-events: none;
+    }
+    header .header-content {
+      z-index: 1;
+      text-align: center;
+    }
+    header .header-content h1 {
+      color: var(--primary-color);
+      font-size: clamp(1.5rem, 4vw, 2.5rem);
+      margin-bottom: 1rem;
+    }
+    .container {
+      width: 90%;
+      max-width: 1200px;
+      margin: 2rem auto;
+      padding: 1rem;
+    }
+    h2 {
+      color: var(--primary-color);
+      text-align: center;
+      margin-bottom: 1.5rem;
+      font-size: clamp(1.2rem, 3vw, 2rem);
+    }
+    p {
+      margin-bottom: 1rem;
+    }
+    .feature-cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.5rem;
+      margin-bottom: 2rem;
+    }
+    .feature-card {
+      background: #fff;
+      border-radius: 12px;
+      padding: 2rem;
+      box-shadow: var(--card-shadow);
+      transition: transform var(--transition-speed), box-shadow var(--transition-speed);
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    .feature-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+    }
+    .map-container,
+    .zoneamento-container,
+    .documentos-container {
+      background: #fff;
+      border-radius: 12px;
+      box-shadow: var(--card-shadow);
+      padding: 2rem;
+      margin-bottom: 2rem;
+    }
+    .map-container iframe {
+      width: 100%;
+      height: 450px;
+      border: none;
+      border-radius: 8px;
+    }
+    .zoneamento-container img {
+      max-width: 100%;
+      height: auto;
+      display: block;
+      margin: 0 auto;
+      border-radius: 8px;
+      cursor: zoom-in;
+      transition: transform var(--transition-speed);
+    }
+    .zoneamento-container img:hover {
+      transform: scale(1.02);
+    }
+    .cta-button {
+      display: inline-block;
+      margin-top: 1rem;
+      padding: 0.6rem 1.2rem;
+      background-color: var(--primary-color);
+      color: #fff;
+      text-decoration: none;
+      border-radius: 8px;
+      transition: background-color var(--transition-speed);
+      font-weight: 500;
+      text-align: center;
+    }
+    .cta-button:hover {
+      background-color: var(--secondary-color);
+    }
+    .modal {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0,0,0,0.9);
+      z-index: 1000;
+      opacity: 0;
+      transition: opacity var(--transition-speed);
+    }
+    .modal.show {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      opacity: 1;
+    }
+    .modal-content {
+      position: relative;
+      max-width: 90%;
+      max-height: 90vh;
+    }
+    .modal-content img {
+      max-width: 100%;
+      max-height: 90vh;
+      object-fit: contain;
+    }
+    .close-button {
+      position: absolute;
+      top: -40px;
+      right: 0;
+      color: #fff;
+      font-size: 2.5rem;
+      cursor: pointer;
+      transition: transform var(--transition-speed);
+    }
+    .close-button:hover {
+      transform: rotate(90deg);
+    }
+    footer {
+      background-color: var(--primary-color);
+      color: #fff;
+      padding: 2rem 0;
+      margin-top: 3rem;
+    }
+    footer .container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 1rem;
+    }
+    footer a {
+      color: #fff;
+      text-decoration: none;
+      transition: color var(--transition-speed);
+    }
+    footer a:hover {
+      color: #3498db;
+    }
+    footer img {
+      max-width: 120px;
+      border-radius: 10px;
+      transition: transform var(--transition-speed);
+    }
+    footer img:hover {
+      transform: scale(1.05);
+    }
+    @media (max-width: 768px) {
+      .container {
+        width: 95%;
+        padding: 0.5rem;
+      }
+      .feature-card {
+        padding: 1.5rem;
+      }
+      .map-container, .zoneamento-container, .documentos-container {
+        padding: 1rem;
+      }
+      .map-container iframe {
+        height: 350px;
+      }
+    }
+    @media (max-width: 480px) {
+      header .header-content h1 {
+        font-size: 1.5rem;
+      }
+      .map-container iframe {
+        height: 300px;
+      }
+    }
+  </style>
 </head>
 <body>
-    <div class="stars"></div>
-    <div class="twinkling-stars"></div>
-    <div class="shooting-star"></div>
-    <div class="nebula"></div>
-    <div class="comet"></div>
-    <div class="meteor"></div>
-    <h1 class="glowing-text">Logo entrará no ar</h1>
-    <div class="floating-objects"></div>
+  <header>
+    <div class="header-content">
+      <h1>Área para ZEIS em Rondonópolis - Oportunidade MCMV</h1>
+    </div>
+  </header>
+
+  <div class="container">
+    <!-- Cards com informações principais -->
+    <div class="feature-cards">
+      <div class="feature-card">
+        <h2>Área de 27,44 Hectares</h2>
+        <p>Área total de 27,44 hectares, dividida em três sublotes pertencentes à mesma família, ideal para transformação em Zona Especial de Interesse Social (ZEIS).</p>
+      </div>
+      <div class="feature-card">
+        <h2>Localização Estratégica</h2>
+        <p>Situada em Rondonópolis, com acesso facilitado a serviços e infraestrutura urbana, essencial para empreendimentos habitacionais.</p>
+      </div>
+      <div class="feature-card">
+        <h2>Oportunidade para MCMV</h2>
+        <p>Potencial para viabilizar empreendimentos do programa Minha Casa Minha Vida, com adensamento para torres de T+3 ou T+7 pavimentos mediante conversão para ZEIS.</p>
+      </div>
+    </div>
+
+    <!-- Seção de mapa -->
+    <div class="map-container">
+      <h2>Localização no Mapa</h2>
+      <iframe src="https://www.google.com/maps/d/embed?mid=1WZNzPwUPuXD54kOaoOINldKBFO5TXtQ&ehbc=2E312F"></iframe>
+    </div>
+
+    <!-- Seção de zoneamento -->
+    <div class="zoneamento-container">
+      <h2>Zoneamento Atual: Zona de Média Densidade</h2>
+      <img src="https://i.postimg.cc/HWtCwZ3k/image.png" alt="Mapa de Zoneamento da Área" id="zoneamento-img">
+      <p>Veja a Legislação de Planejamento Urbano de Rondonópolis <a href="https://www.rondonopolis.mt.gov.br/plano-diretor/materiais" target="_blank">aqui</a></p>
+    </div>
+
+    <!-- Seção de documentos -->
+    <div class="documentos-container">
+      <h2>Documentos Adicionais</h2>
+      <p><a class="cta-button" href="https://www.engesudsmart.com.br/lbk/tsr/rondo/cerrado/croqui.pdf" target="_blank">Ver Croqui de Desmembramento (PDF)</a></p>
+    </div>
+  </div>
+
+  <!-- Modal para ampliar imagem -->
+  <div class="modal" id="image-modal">
+    <div class="modal-content">
+      <span class="close-button" id="close-modal">×</span>
+      <img src="" alt="Imagem ampliada" id="modal-image">
+    </div>
+  </div>
+
+  <footer>
+    <div class="container">
+      <a href="http://www.engesudsmart.com.br" target="_blank" title="www.engesudsmart.com.br">
+        <img src="https://i.postimg.cc/FsKzb1S4/3YKn2xW.png" alt="Logo Engesud">
+      </a>
+      <p><strong>Engesud Engenharia e Intermediação LTDA</strong></p>
+      <p>Robson Luis da Costa | <a href="https://wa.me/4497013489" title="Whatsapp">+55 (44) 99701-3489</a></p>
+      <p><a href="https://www.engesudsmart.com.br" target="_blank">www.engesudsmart.com.br</a></p>
+      <p>Última atualização: dd de mm de aaaa</p>
+    </div>
+  </footer>
+
+  <!-- Este conteúdo é protegido por direitos autorais creditados à Engesud Engenharia e Intermediação LTDA, inscrita no CNPJ 40.601.637/0001-58 -->
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      // Animação dos cards
+      const cards = document.querySelectorAll('.feature-card');
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.style.opacity = '1';
+            entry.target.style.transform = 'translateY(0)';
+          }
+        });
+      }, { threshold: 0.1 });
+      cards.forEach(card => {
+        card.style.opacity = '0';
+        card.style.transform = 'translateY(20px)';
+        card.style.transition = 'all 0.5s ease-out';
+        observer.observe(card);
+      });
+
+      // Modal para zoom da imagem do zoneamento
+      const zoneamentoImg = document.getElementById('zoneamento-img');
+      const modal = document.getElementById('image-modal');
+      const modalImage = document.getElementById('modal-image');
+      const closeModal = document.getElementById('close-modal');
+
+      function openModal() {
+        modal.classList.add('show');
+        modalImage.src = zoneamentoImg.src;
+        document.body.style.overflow = 'hidden';
+      }
+
+      function closeModalHandler() {
+        modal.classList.remove('show');
+        document.body.style.overflow = 'auto';
+      }
+
+      zoneamentoImg.addEventListener('click', openModal);
+      closeModal.addEventListener('click', closeModalHandler);
+      modal.addEventListener('click', (e) => {
+        if (e.target === modal) {
+          closeModalHandler();
+        }
+      });
+
+      document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape') {
+          closeModalHandler();
+        }
+      });
+    });
+  </script>
 </body>
 </html>
