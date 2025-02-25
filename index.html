@@ -14,7 +14,7 @@
   <meta property="og:locale" content="pt_BR">
 
   <title>Engesud Engenharia</title>
-  
+
   <!-- Favicon -->
   <link rel="shortcut icon" href="https://i.imgur.com/HjwVm8x.png" type="image/x-icon" />
 
@@ -24,7 +24,7 @@
 
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
-  
+
   <!-- Font Awesome -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 
@@ -242,37 +242,37 @@
 
     /* Responsividade aprimorada */
     @media (max-width: 768px) {
-      .logo-container img { 
-        max-width: 240px; 
+      .logo-container img {
+        max-width: 240px;
       }
-      .description { 
-        font-size: 1.15rem; 
+      .description {
+        font-size: 1.15rem;
         line-height: 1.7;
         min-height: 120px;
         height: auto;
       }
-      .content-box { 
+      .content-box {
         padding: 2.2rem;
-        width: 95%; 
+        width: 95%;
       }
-      .contact-button { 
+      .contact-button {
         padding: 14px 30px;
         font-size: 1.1rem;
       }
     }
 
     @media (max-width: 480px) {
-      .logo-container { 
-        margin-bottom: 2rem; 
+      .logo-container {
+        margin-bottom: 2rem;
       }
-      .logo-container img { 
-        max-width: 200px; 
+      .logo-container img {
+        max-width: 200px;
       }
-      .content-box { 
+      .content-box {
         padding: 1.8rem;
         border-radius: 15px;
       }
-      .description { 
+      .description {
         font-size: 1.05rem;
         margin-bottom: 1rem;
       }
@@ -297,9 +297,9 @@
 
     /* Melhor suporte a acessibilidade */
     @media (prefers-reduced-motion: reduce) {
-      * { 
-        animation-duration: 0.001ms !important; 
-        animation-iteration-count: 1 !important; 
+      * {
+        animation-duration: 0.001ms !important;
+        animation-iteration-count: 1 !important;
         transition-duration: 0.001ms !important;
       }
     }
@@ -337,28 +337,8 @@
     let rotationAngle = 0;
     let ballColors = [];
     let particles = [];
-    let explosionIndex = 0;
-    let clickCount = 0;
-    
-    // Easter egg: exibe mensagem temporária
-    function showEasterEgg(message) {
-      const egg = document.createElement('div');
-      egg.textContent = message;
-      egg.style.position = 'fixed';
-      egg.style.left = (Math.random() * (window.innerWidth - 150)) + 'px';
-      egg.style.top = (Math.random() * (window.innerHeight - 50)) + 'px';
-      egg.style.padding = '10px 15px';
-      egg.style.backgroundColor = 'rgba(0, 0, 0, 0.7)';
-      egg.style.color = '#fff';
-      egg.style.borderRadius = '8px';
-      egg.style.opacity = '1';
-      egg.style.transition = 'opacity 2s ease';
-      egg.style.zIndex = '10000';
-      document.body.appendChild(egg);
-      setTimeout(() => { egg.style.opacity = '0'; }, 1000);
-      setTimeout(() => { egg.remove(); }, 3000);
-    }
-    
+    let clickCount = 0; // Reintroduce click counter
+
     function setup() {
       const canvas = createCanvas(windowWidth, windowHeight, WEBGL);
       canvas.position(0, 0);
@@ -369,56 +349,49 @@
         balls.push(new Ball(ballColors[i]));
       }
     }
-    
+
     function getBackgroundColor() {
       return color(0,77,153);
     }
-    
+
     function draw() {
       background(getBackgroundColor());
       rotationAngle += 0.005;
       rotateY(rotationAngle);
       rotateX(rotationAngle * 0.5);
-      
+
       noFill();
       stroke(230,243,255);
       strokeWeight(2);
       sphere(containerRadius, 12, 12);
-      
+
       for (let ball of balls) {
         ball.update();
         ball.show();
       }
-      
+
       for (let i = particles.length - 1; i >= 0; i--) {
         particles[i].update();
         particles[i].show();
         if (particles[i].isFinished()) particles.splice(i, 1);
       }
     }
-    
+
     function windowResized() {
       resizeCanvas(windowWidth, windowHeight);
     }
-    
+
     function mousePressed() {
-      clickCount++;
-      
-      // Easter eggs nos cliques 5, 15, 25 e 35
-      if (clickCount === 5) showEasterEgg("Negócios de Alto Valor");
-      else if (clickCount === 15) showEasterEgg("Inovação e Confiança");
-      else if (clickCount === 25) showEasterEgg("Soluções Inovadoras");
-      else if (clickCount === 35) showEasterEgg("Liderando o Mercado Imobiliário");
-      
-      if (clickCount < 10) {
-        let ballPos = balls[explosionIndex].pos;
-        let ballCol = balls[explosionIndex].col;
-        for (let i = 0; i < 20; i++) {
-          particles.push(new Particle(ballPos.x, ballPos.y, ballCol));
-        }
-        explosionIndex = (explosionIndex + 1) % balls.length;
-      } else if (clickCount === 10) {
-        // Na fase com a foto: substitui a descrição e oculta o texto "Entre em contato conosco"
+      clickCount++; // Increment click counter
+
+      let ballPos = balls[0].pos; // Always explode from the first ball
+      let ballCol = balls[0].col;
+      for (let i = 0; i < 20; i++) {
+        particles.push(new Particle(ballPos.x, ballPos.y, ballCol));
+      }
+
+      if (clickCount === 10) {
+        // On the 10th click: replace description with photo and hide contact text
         document.querySelector('.description').innerHTML =
           '<div style="text-align:center; opacity:0; animation: fadeInPhoto 1s forwards;">' +
             '<img src="https://i.postimg.cc/C53P2J7Q/image.png" alt="Retrato Profissional" style="max-width:100px; display:block; margin:0 auto; border-radius:50%;">' +
@@ -427,101 +400,9 @@
         // Oculta o texto "Entre em contato conosco"
         const contactText = document.querySelector('.contact p');
         if(contactText) contactText.style.display = 'none';
-        for (let ball of balls) {
-          for (let i = 0; i < 20; i++) {
-            particles.push(new Particle(ball.pos.x, ball.pos.y, color(255,0,0)));
-          }
-        }
-        let avgX = 0, avgY = 0, avgZ = 0;
-        for (let ball of balls) {
-          avgX += ball.pos.x;
-          avgY += ball.pos.y;
-          avgZ += ball.pos.z;
-        }
-        avgX /= balls.length; avgY /= balls.length; avgZ /= balls.length;
-        let newRedBall = new Ball(color(255,0,0));
-        newRedBall.r = 20;
-        newRedBall.pos = createVector(avgX, avgY, avgZ);
-        newRedBall.vel = p5.Vector.random3D();
-        newRedBall.vel.mult(random(1,3)*2);
-        balls = [newRedBall];
-        explosionIndex = 0;
-      } else if (clickCount < 20) {
-        let ballPos = balls[0].pos;
-        let ballCol = balls[0].col;
-        for (let i = 0; i < 20; i++) {
-          particles.push(new Particle(ballPos.x, ballPos.y, ballCol));
-        }
-      } else if (clickCount === 20) {
-        let ballPos = balls[0].pos;
-        for (let i = 0; i < 20; i++) {
-          particles.push(new Particle(ballPos.x, ballPos.y, color(0,0,0)));
-        }
-        let newGrayBall = new Ball(color(128,128,128));
-        newGrayBall.r = balls[0].r * 2;
-        newGrayBall.pos = balls[0].pos.copy();
-        newGrayBall.vel = p5.Vector.random3D();
-        newGrayBall.vel.mult(random(1,3)*2);
-        balls = [newGrayBall];
-        explosionIndex = 0;
-      } else if (clickCount < 30) {
-        let ballPos = balls[0].pos;
-        let ballCol = balls[0].col;
-        for (let i = 0; i < 20; i++) {
-          particles.push(new Particle(ballPos.x, ballPos.y, ballCol));
-        }
-      } else if (clickCount === 30) {
-        let ballPos = balls[0].pos;
-        for (let i = 0; i < 20; i++) {
-          particles.push(new Particle(ballPos.x, ballPos.y, color(255,204,0)));
-        }
-        let newYellowBall = new Ball(color(255,204,0));
-        // Reduzindo o tamanho em 1/3: novo raio = (2 * r) * (2/3)
-        newYellowBall.r = balls[0].r * 2 * (2/3);
-        newYellowBall.pos = balls[0].pos.copy();
-        newYellowBall.vel = p5.Vector.random3D();
-        newYellowBall.vel.mult(random(1,3)*4);
-        newYellowBall.trailMaxLength = 60;
-        balls = [newYellowBall];
-        explosionIndex = 0;
-      } else if (clickCount < 40) {
-        let ballPos = balls[0].pos;
-        let ballCol = balls[0].col;
-        for (let i = 0; i < 20; i++) {
-          particles.push(new Particle(ballPos.x, ballPos.y, ballCol));
-        }
-      } else if (clickCount === 40) {
-        let ballPos = balls[0].pos;
-        for (let i = 0; i < 20; i++) {
-          particles.push(new Particle(ballPos.x, ballPos.y, color(255,255,255)));
-        }
-        // Restaura o texto original na descrição
-        document.querySelector('.description').innerHTML =
-          '<p>Excelência em projetos imobiliários e intermediação de áreas para incorporação e loteamento.</p>';
-        // Restaura o contato original
-        document.querySelector('.contact').innerHTML =
-          '<p>Entre em contato conosco:</p>' +
-          '<a href="https://wa.me/554497013489" target="_blank" class="contact-button" rel="noopener">' +
-            '<i class="fab fa-whatsapp" aria-hidden="true"></i>' +
-            '<span>Fale pelo WhatsApp</span>' +
-          '</a>';
-        let originalColors = [color(255,150,50), color(50,255,150)];
-        balls = [];
-        for (let i = 0; i < 2; i++) {
-          balls.push(new Ball(originalColors[i]));
-        }
-        explosionIndex = 0;
-        clickCount = 0;
-      } else {
-        let ballPos = balls[explosionIndex].pos;
-        let ballCol = balls[explosionIndex].col;
-        for (let i = 0; i < 20; i++) {
-          particles.push(new Particle(ballPos.x, ballPos.y, ballCol));
-        }
-        explosionIndex = (explosionIndex + 1) % balls.length;
       }
     }
-    
+
     class Ball {
       constructor(col) {
         this.r = 10;
@@ -563,7 +444,7 @@
         pop();
       }
     }
-    
+
     class Particle {
       constructor(x, y, col) {
         this.pos = createVector(x, y, 0);
@@ -589,7 +470,7 @@
       }
     }
   </script>
-  
+
   <script>
     const cursor = document.getElementById('custom-cursor') || document.getElementById('customCursor');
     document.addEventListener('mousemove', (e) => {
