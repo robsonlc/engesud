@@ -3,13 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Meta tags Open Graph -->
     <meta property="og:url" content="https://www.engesudsmart.com.br/lbk/tsr/edi" />
     <meta property="og:image" content="https://i.imgur.com/LfvnS3G.png" />
     <meta property="og:title" content="Oportunidade de Desenvolvimento - Área em Ibipitanga" />
     <meta property="og:description" content="Área de 44 alqueires disponível para desenvolvimento de condomínio horizontal fechado." />
     <title>Oportunidade de Desenvolvimento - Área em Ibipitanga</title>
-    <!-- Favicon para melhor visualização em guias -->
-<link rel="shortcut icon" href="https://i.imgur.com/ZQ2U8eO.png" type="image/x-icon">
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="https://i.postimg.cc/QCp6V4Wr/HjwVm8x.png" type="image/x-icon">
     <style>
         :root {
             --primary-color: #4CAF50;
@@ -33,16 +34,27 @@
             background-color: var(--light-bg);
         }
 
+        /* Cabeçalho com fundo e opacidade */
         header {
-            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), 
-                        url('https://i.imgur.com/3jHnO8C.png') center/cover no-repeat;
+            position: relative;
             height: 300px;
             display: flex;
             align-items: center;
             justify-content: center;
             color: white;
             text-align: center;
-            position: relative;
+        }
+
+        header::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('https://i.imgur.com/3jHnO8C.png') center/cover no-repeat;
+            opacity: 0.3;
+            z-index: -1;
         }
 
         header h1 {
@@ -144,7 +156,7 @@
         footer img {
             max-width: 150px;
             margin-bottom: 20px;
-            border-radius: 10px;
+            border-radius: 10px; /* Cantos arredondados para o logotipo */
         }
 
         footer .contact {
@@ -206,8 +218,11 @@
 
         <div class="map">
             <h2>Localização no Google Maps</h2>
+            <!-- Incorporação do mapa do Google -->
             <iframe src="https://www.google.com/maps/d/embed?mid=1OP-kbpVcnrOUdmi9-G5gxKVo64eM8dw&ehbc=2E312F" width="640" height="480"></iframe>
+            <!-- Imagem de localização -->
             <p><img src="https://i.imgur.com/DWc47CX.png" alt="Imagem com localização no Google Maps das áreas"></p>
+            <!-- Imagem SVG do esquema -->
             <p><img src="https://www.engesudsmart.com.br/lbk/tsr/edi/Esq.%2044%20alq.svg" alt="Esquema da área de 44 alqueires"></p>
         </div>
 
@@ -231,12 +246,38 @@
         </div>
     </div>
 
+    <!-- Rodapé -->
     <footer>
-        <img src="https://i.imgur.com/6z1r7cp.jpeg" alt="Logotipo da Engesud">
-        <div class="contact">
-            <p>Robson Luis da Costa - Engenheiro Civil e Corretor de Imóveis - CRECI-PR nº 41.250</p>
-            <p>Contato: +55 (44) 99701-3489</p>
-        </div>
+        <a href="http://www.engesudsmart.com.br" target="_blank" title="www.engesudsmart.com.br">
+            <img src="https://i.postimg.cc/FsKzb1S4/3YKn2xW.png" alt="Logo Engesud">
+        </a>
+        <p><strong>Engesud Engenharia e Intermediação LTDA</strong></p>
+        <p>Robson Luis da Costa | <a href="https://wa.me/4497013489" title="Whatsapp">+55 (44) 99701-3489</a></p>
+        <p><a href="https://www.engesudsmart.com.br" target="_blank">www.engesudsmart.com.br</a></p>
+        <p>Última atualização: 10 de julho de 2024</p>
+        <!-- Este conteúdo é protegido por direitos autorais creditados à Engesud Engenharia e Intermediação LTDA, inscrita no CNPJ 40.601.637/0001-58 -->
     </footer>
+
+    <!-- Animação JavaScript -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Adiciona classe de animação aos cards quando visíveis
+            const cards = document.querySelectorAll('.feature-card');
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.opacity = 1;
+                        entry.target.style.transform = 'translateY(0)';
+                    }
+                });
+            });
+            cards.forEach(card => {
+                card.style.opacity = 0;
+                card.style.transform = 'translateY(20px)';
+                card.style.transition = 'all 0.5s ease-out';
+                observer.observe(card);
+            });
+        });
+    </script>
 </body>
 </html>
