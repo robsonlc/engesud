@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
@@ -30,7 +29,7 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 
   <!-- p5.js Library -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.0/p5.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.0/p5.min.js"></script>
 
   <style>
     /* Reset e estilos básicos */
@@ -63,7 +62,7 @@
       min-height: 100vh;
       color: #fff;
       position: relative;
-      background: transparent;
+      background: #004d99;
       overflow-x: hidden;
     }
     canvas {
@@ -234,7 +233,6 @@
     const numBalls = 2;
     const containerRadius = 300;
     let rotationAngle = 0;
-    let ballColors = [color(255,150,50), color(50,255,150)];
     let particles = [];
     let explosionIndex = 0;
     let clickCount = 0;
@@ -244,13 +242,20 @@
       canvas.position(0, 0);
       canvas.style('z-index', '-1');
       frameRate(60);
+      
+      // Definindo as cores corretamente
+      const ballColors = [
+        color(255, 150, 50), 
+        color(50, 255, 150)
+      ];
+      
       for (let i = 0; i < numBalls; i++) {
         balls.push(new Ball(ballColors[i]));
       }
     }
 
     function getBackgroundColor() {
-      return color(0,77,153);
+      return color(0, 77, 153);
     }
 
     function draw() {
@@ -260,7 +265,7 @@
       rotateX(rotationAngle * 0.5);
 
       noFill();
-      stroke(230,243,255);
+      stroke(230, 243, 255);
       strokeWeight(2);
       sphere(containerRadius, 12, 12);
 
@@ -286,18 +291,25 @@
         let ballPos = balls[explosionIndex].pos;
         let ballCol = balls[explosionIndex].col;
         for (let i = 0; i < 20; i++) {
-          particles.push(new Particle(ballPos.x, ballPos.y, ballCol));
+          particles.push(new Particle(ballPos.x, ballPos.y, ballPos.z, ballCol));
         }
         explosionIndex = (explosionIndex + 1) % balls.length;
       } else if (clickCount === 10) {
         for (let ball of balls) {
           for (let i = 0; i < 20; i++) {
-            particles.push(new Particle(ball.pos.x, ball.pos.y, ball.col));
+            particles.push(new Particle(ball.pos.x, ball.pos.y, ball.pos.z, ball.col));
           }
         }
         explosionIndex = 0;
       } else if (clickCount === 20) {
         balls = [];
+        
+        // Corrigido para definir cores novamente
+        const ballColors = [
+          color(255, 150, 50), 
+          color(50, 255, 150)
+        ];
+        
         for (let i = 0; i < numBalls; i++) {
           balls.push(new Ball(ballColors[i]));
         }
@@ -307,7 +319,7 @@
         let ballPos = balls[explosionIndex].pos;
         let ballCol = balls[explosionIndex].col;
         for (let i = 0; i < 20; i++) {
-          particles.push(new Particle(ballPos.x, ballPos.y, ballCol));
+          particles.push(new Particle(ballPos.x, ballPos.y, ballPos.z, ballCol));
         }
         explosionIndex = (explosionIndex + 1) % balls.length;
       }
@@ -319,24 +331,27 @@
         this.pos = p5.Vector.random3D();
         this.pos.mult(random(0, containerRadius - this.r));
         this.vel = p5.Vector.random3D();
-        this.vel.mult(random(1,3));
+        this.vel.mult(random(1, 3));
         this.col = col;
         this.trail = [];
         this.trailMaxLength = 30;
       }
+      
       update() {
         this.trail.push(this.pos.copy());
         if (this.trail.length > this.trailMaxLength) this.trail.shift();
+        
         this.pos.add(this.vel);
         let d = this.pos.mag();
         if (d > containerRadius - this.r) {
           let n = this.pos.copy().normalize();
           let dot = this.vel.dot(n);
-          let reflection = p5.Vector.mult(n, 2*dot);
+          let reflection = p5.Vector.mult(n, 2 * dot);
           this.vel.sub(reflection);
           this.pos = n.copy().mult(containerRadius - this.r);
         }
       }
+      
       show() {
         for (let i = 0; i < this.trail.length - 1; i++) {
           let alphaVal = map(i, 0, this.trail.length - 1, 50, 255);
@@ -346,6 +361,7 @@
           let p2 = this.trail[i+1];
           line(p1.x, p1.y, p1.z, p2.x, p2.y, p2.z);
         }
+        
         noStroke();
         fill(this.col);
         push();
@@ -356,17 +372,19 @@
     }
 
     class Particle {
-      constructor(x, y, col) {
-        this.pos = createVector(x, y, 0);
+      constructor(x, y, z, col) {
+        this.pos = createVector(x, y, z);
         this.vel = p5.Vector.random3D();
-        this.vel.mult(random(1,3));
+        this.vel.mult(random(1, 3));
         this.lifespan = 255;
         this.col = col;
       }
+      
       update() {
         this.pos.add(this.vel);
         this.lifespan -= 5;
       }
+      
       show() {
         push();
         noStroke();
@@ -375,6 +393,7 @@
         sphere(3);
         pop();
       }
+      
       isFinished() {
         return this.lifespan < 0;
       }
@@ -382,19 +401,23 @@
   </script>
 
   <script>
-    const cursor = document.getElementById('custom-cursor');
+    const cursor = document.getElementById('customCursor');
+    
     document.addEventListener('mousemove', (e) => {
       cursor.style.left = e.clientX + 'px';
       cursor.style.top = e.clientY + 'px';
     });
+    
     document.addEventListener('mousedown', () => {
       cursor.style.transform = 'translate(-50%, -50%) scale(1.5)';
       cursor.style.backgroundColor = 'rgba(255,255,255,0.2)';
     });
+    
     document.addEventListener('mouseup', () => {
       cursor.style.transform = 'translate(-50%, -50%) scale(1)';
       cursor.style.backgroundColor = 'transparent';
     });
+    
     document.addEventListener('click', (e) => {
       const ripple = document.createElement('div');
       ripple.classList.add('ripple');
@@ -403,13 +426,28 @@
       document.body.appendChild(ripple);
       setTimeout(() => { ripple.remove(); }, 600);
     });
+    
+    // Corrigido para evitar conflito com a animação do logo no hover
+    let logoHover = false;
+    const logo = document.querySelector('.logo-container img');
+    
+    logo.addEventListener('mouseenter', () => {
+      logoHover = true;
+    });
+    
+    logo.addEventListener('mouseleave', () => {
+      logoHover = false;
+      logo.style.transform = '';
+    });
+    
     document.addEventListener('mousemove', (e) => {
-      const logo = document.querySelector('.logo-container img');
-      const centerX = window.innerWidth / 2;
-      const centerY = window.innerHeight / 2;
-      const moveX = (e.clientX - centerX) * 0.005;
-      const moveY = (e.clientY - centerY) * 0.005;
-      logo.style.transform = `translate(${moveX}px, ${moveY}px)`;
+      if (!logoHover) {
+        const centerX = window.innerWidth / 2;
+        const centerY = window.innerHeight / 2;
+        const moveX = (e.clientX - centerX) * 0.005;
+        const moveY = (e.clientY - centerY) * 0.005;
+        logo.style.transform = `translate(${moveX}px, ${moveY}px)`;
+      }
     });
   </script>
 </body>
