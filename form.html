@@ -1,1 +1,416 @@
 
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Formulário de Contato - Engesud Engenharia">
+
+  <!-- Open Graph Meta Tags -->
+  <meta property="og:title" content="Formulário de Contato - Engesud Engenharia">
+  <meta property="og:description" content="Preencha o formulário para entrar em contato com a Engesud Engenharia.">
+  <meta property="og:image" content="https://i.imgur.com/3YKn2xW.png">
+  <meta property="og:url" content="https://www.engesudsmart.com.br/form.html">
+  <meta property="og:locale" content="pt_BR">
+
+  <title>Formulário de Contato - Engesud Engenharia</title>
+
+  <!-- Favicon -->
+  <link rel="shortcut icon" href="https://i.imgur.com/HjwVm8x.png" type="image/x-icon" />
+
+  <!-- Preconnect -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+  <!-- p5.js Library -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.0/p5.js"></script>
+
+  <style>
+    /* Reset e estilos básicos */
+    *, *::before, *::after {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    :root {
+      --primary-blue: #0066cc;
+      --light-blue: #e6f3ff;
+      --dark-blue: #004d99;
+      --transition-duration: 0.4s;
+    }
+    body, html { cursor: none; }
+    .custom-cursor {
+      width: 20px;
+      height: 20px;
+      position: fixed;
+      border: 2px solid #fff;
+      border-radius: 50%;
+      pointer-events: none;
+      transform: translate(-50%, -50%);
+      transition: transform 0.1s ease, background-color 0.2s ease;
+      z-index: 10000;
+      mix-blend-mode: difference;
+    }
+    body {
+      font-family: 'Poppins', sans-serif;
+      min-height: 100vh;
+      color: #fff;
+      position: relative;
+      background: transparent;
+      overflow-x: hidden;
+    }
+    canvas {
+      position: fixed;
+      top: 0;
+      left: 0;
+      z-index: -1;
+    }
+    .container {
+      position: relative;
+      z-index: 2;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      padding: 20px;
+    }
+    .logo-container {
+      margin-bottom: 3rem;
+      animation: fadeInDown 1.2s ease-out;
+      position: relative;
+    }
+    .logo-container::after {
+      content: '';
+      position: absolute;
+      bottom: -20px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 50%;
+      height: 3px;
+      background: linear-gradient(90deg, transparent, #fff, transparent);
+      border-radius: 2px;
+    }
+    .logo-container img {
+      max-width: 300px;
+      height: auto;
+      filter: drop-shadow(0 6px 8px rgba(0,0,0,0.25));
+      transition: all var(--transition-duration) cubic-bezier(0.4, 0, 0.2, 1);
+      border-radius: 15px;
+      will-change: transform;
+    }
+    .logo-container img:hover {
+      transform: translateY(-8px) scale(1.02);
+      filter: drop-shadow(0 8px 12px rgba(0,0,0,0.3)) brightness(1.1);
+    }
+    .content-box {
+      background: rgba(255,255,255,0.15);
+      padding: 3rem;
+      border-radius: 20px;
+      box-shadow: 0 10px 40px rgba(0,77,153,0.25),
+                  inset 0 0 20px rgba(255,255,255,0.1);
+      border: 2px solid rgba(255,255,255,0.5);
+      max-width: 700px;
+      width: 90%;
+      backdrop-filter: blur(8px);
+      transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    .content-box:hover {
+      transform: translateY(-5px);
+      border-color: rgba(255,255,255,0.7);
+      box-shadow: 0 15px 50px rgba(0,77,153,0.3),
+                  inset 0 0 30px rgba(255,255,255,0.15);
+    }
+    h1 {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      padding: 0;
+      margin: -1px;
+      overflow: hidden;
+      clip: rect(0,0,0,0);
+      border: 0;
+    }
+    .contact {
+      margin-top: 35px;
+      font-size: 1.2rem;
+      animation: fadeInUp 1.2s ease-in-out 1s forwards;
+      opacity: 0;
+      text-align: center;
+    }
+    .contact iframe {
+      max-width: 100%;
+      border: none;
+      border-radius: 15px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.15);
+    }
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(25px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes fadeInDown {
+      from { opacity: 0; transform: translateY(-25px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    .ripple {
+      position: absolute;
+      width: 20px;
+      height: 20px;
+      background: rgba(255,255,255,0.5);
+      border-radius: 50%;
+      transform: translate(-50%, -50%);
+      pointer-events: none;
+      animation: ripple-animation 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+      z-index: 9999;
+    }
+    @keyframes ripple-animation {
+      from { transform: translate(-50%, -50%) scale(1); opacity: 0.8; }
+      to { transform: translate(-50%, -50%) scale(20); opacity: 0; }
+    }
+    /* Responsividade aprimorada */
+    @media (max-width: 768px) {
+      .logo-container img { 
+        max-width: 240px; 
+      }
+      .content-box { 
+        padding: 2.2rem;
+        width: 95%; 
+      }
+      .contact iframe {
+        width: 100%;
+        height: 600px;
+      }
+    }
+    @media (max-width: 480px) {
+      .logo-container { 
+        margin-bottom: 2rem; 
+      }
+      .logo-container img { 
+        max-width: 200px; 
+      }
+      .content-box { 
+        padding: 1.8rem;
+        border-radius: 15px;
+      }
+      .contact iframe {
+        width: 100%;
+        height: 500px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <main class="container">
+    <div class="logo-container">
+      <img src="https://i.imgur.com/3YKn2xW.png" alt="Logotipo Engesud">
+    </div>
+    <article class="content-box">
+      <h1>Formulário de Contato - Engesud Engenharia</h1>
+      <section class="contact">
+        <iframe 
+          src="https://docs.google.com/forms/d/e/1FAIpQLSdXnqeCEs8z3ovQpXY5SdWtG3bZ3ZwRBdZlaBQfHjOHbnPISA/viewform?embedded=true" 
+          width="640" 
+          height="682" 
+          frameborder="0" 
+          marginheight="0" 
+          marginwidth="0"
+        >Carregando…</iframe>
+      </section>
+    </article>
+  </main>
+
+  <div class="custom-cursor" id="customCursor"></div>
+
+  <!-- p5.js Sketch -->
+  <script>
+    let balls = [];
+    const numBalls = 2;
+    const containerRadius = 300;
+    let rotationAngle = 0;
+    let ballColors = [color(255,150,50), color(50,255,150)];
+    let particles = [];
+    let explosionIndex = 0;
+    let clickCount = 0;
+
+    function setup() {
+      const canvas = createCanvas(windowWidth, windowHeight, WEBGL);
+      canvas.position(0, 0);
+      canvas.style('z-index', '-1');
+      frameRate(60);
+      for (let i = 0; i < numBalls; i++) {
+        balls.push(new Ball(ballColors[i]));
+      }
+    }
+
+    function getBackgroundColor() {
+      return color(0,77,153);
+    }
+
+    function draw() {
+      background(getBackgroundColor());
+      rotationAngle += 0.005;
+      rotateY(rotationAngle);
+      rotateX(rotationAngle * 0.5);
+
+      noFill();
+      stroke(230,243,255);
+      strokeWeight(2);
+      sphere(containerRadius, 12, 12);
+
+      for (let ball of balls) {
+        ball.update();
+        ball.show();
+      }
+
+      for (let i = particles.length - 1; i >= 0; i--) {
+        particles[i].update();
+        particles[i].show();
+        if (particles[i].isFinished()) particles.splice(i, 1);
+      }
+    }
+
+    function windowResized() {
+      resizeCanvas(windowWidth, windowHeight);
+    }
+
+    function mousePressed() {
+      clickCount++;
+      if (clickCount < 10) {
+        let ballPos = balls[explosionIndex].pos;
+        let ballCol = balls[explosionIndex].col;
+        for (let i = 0; i < 20; i++) {
+          particles.push(new Particle(ballPos.x, ballPos.y, ballCol));
+        }
+        explosionIndex = (explosionIndex + 1) % balls.length;
+      } else if (clickCount === 10) {
+        for (let ball of balls) {
+          for (let i = 0; i < 20; i++) {
+            particles.push(new Particle(ball.pos.x, ball.pos.y, ball.col));
+          }
+        }
+        explosionIndex = 0;
+      } else if (clickCount === 20) {
+        balls = [];
+        for (let i = 0; i < numBalls; i++) {
+          balls.push(new Ball(ballColors[i]));
+        }
+        explosionIndex = 0;
+        clickCount = 0;
+      } else {
+        let ballPos = balls[explosionIndex].pos;
+        let ballCol = balls[explosionIndex].col;
+        for (let i = 0; i < 20; i++) {
+          particles.push(new Particle(ballPos.x, ballPos.y, ballCol));
+        }
+        explosionIndex = (explosionIndex + 1) % balls.length;
+      }
+    }
+
+    class Ball {
+      constructor(col) {
+        this.r = 10;
+        this.pos = p5.Vector.random3D();
+        this.pos.mult(random(0, containerRadius - this.r));
+        this.vel = p5.Vector.random3D();
+        this.vel.mult(random(1,3));
+        this.col = col;
+        this.trail = [];
+        this.trailMaxLength = 30;
+      }
+      update() {
+        this.trail.push(this.pos.copy());
+        if (this.trail.length > this.trailMaxLength) this.trail.shift();
+        this.pos.add(this.vel);
+        let d = this.pos.mag();
+        if (d > containerRadius - this.r) {
+          let n = this.pos.copy().normalize();
+          let dot = this.vel.dot(n);
+          let reflection = p5.Vector.mult(n, 2*dot);
+          this.vel.sub(reflection);
+          this.pos = n.copy().mult(containerRadius - this.r);
+        }
+      }
+      show() {
+        for (let i = 0; i < this.trail.length - 1; i++) {
+          let alphaVal = map(i, 0, this.trail.length - 1, 50, 255);
+          stroke(red(this.col), green(this.col), blue(this.col), alphaVal);
+          strokeWeight(2);
+          let p1 = this.trail[i];
+          let p2 = this.trail[i+1];
+          line(p1.x, p1.y, p1.z, p2.x, p2.y, p2.z);
+        }
+        noStroke();
+        fill(this.col);
+        push();
+        translate(this.pos.x, this.pos.y, this.pos.z);
+        sphere(this.r, 6, 6);
+        pop();
+      }
+    }
+
+    class Particle {
+      constructor(x, y, col) {
+        this.pos = createVector(x, y, 0);
+        this.vel = p5.Vector.random3D();
+        this.vel.mult(random(1,3));
+        this.lifespan = 255;
+        this.col = col;
+      }
+      update() {
+        this.pos.add(this.vel);
+        this.lifespan -= 5;
+      }
+      show() {
+        push();
+        noStroke();
+        fill(red(this.col), green(this.col), blue(this.col), this.lifespan);
+        translate(this.pos.x, this.pos.y, this.pos.z);
+        sphere(3);
+        pop();
+      }
+      isFinished() {
+        return this.lifespan < 0;
+      }
+    }
+  </script>
+
+  <script>
+    const cursor = document.getElementById('custom-cursor');
+    document.addEventListener('mousemove', (e) => {
+      cursor.style.left = e.clientX + 'px';
+      cursor.style.top = e.clientY + 'px';
+    });
+    document.addEventListener('mousedown', () => {
+      cursor.style.transform = 'translate(-50%, -50%) scale(1.5)';
+      cursor.style.backgroundColor = 'rgba(255,255,255,0.2)';
+    });
+    document.addEventListener('mouseup', () => {
+      cursor.style.transform = 'translate(-50%, -50%) scale(1)';
+      cursor.style.backgroundColor = 'transparent';
+    });
+    document.addEventListener('click', (e) => {
+      const ripple = document.createElement('div');
+      ripple.classList.add('ripple');
+      ripple.style.left = `${e.clientX}px`;
+      ripple.style.top = `${e.clientY}px`;
+      document.body.appendChild(ripple);
+      setTimeout(() => { ripple.remove(); }, 600);
+    });
+    document.addEventListener('mousemove', (e) => {
+      const logo = document.querySelector('.logo-container img');
+      const centerX = window.innerWidth / 2;
+      const centerY = window.innerHeight / 2;
+      const moveX = (e.clientX - centerX) * 0.005;
+      const moveY = (e.clientY - centerY) * 0.005;
+      logo.style.transform = `translate(${moveX}px, ${moveY}px)`;
+    });
+  </script>
+</body>
+</html>
