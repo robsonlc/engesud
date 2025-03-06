@@ -39,6 +39,9 @@
 
 **Análise de Viabilidade:** Em síntese, a **oferta planejada de 2.000 a 3.000 unidades** em Miringuava tende a **encontrar demanda suficiente na RMC**, desde que o projeto seja bem estruturado. Os **pontos fortes da localização**, somados aos **investimentos em infraestrutura já em andamento**, criam um ambiente propício para um novo bairro residencial. Não obstante, é crucial mitigar riscos: acompanhar de perto os movimentos da concorrência (novos lançamentos populares em Curitiba e SJP), calibrar os preços das unidades dentro dos limites do MCMV e do poder aquisitivo local, e gerenciar a execução da obra em etapas para **garantir liquidez e absorção**. Com base nos dados levantados e tendências atuais, a perspectiva é **favorável** – o empreendimento tem potencial de se tornar **referência em habitação de interesse social** na Grande Curitiba, atendendo uma demanda real por moradia digna e impulsionando o desenvolvimento socioeconômico de Miringuava. Os estudos indicam que, com as devidas cautelas e parcerias, o projeto é **viável tanto tecnicamente quanto mercadologicamente**, oferecendo rentabilidade atrativa aos investidores e cumprindo um importante papel social na redução do déficit habitacional regional.
 
+![Imagem 3 - Análise Final](https://www.engesudsmart.com.br/lbk/tsr/mrg/img3.svg)
+
+
 **Fontes e Referências:**
 
 * IBGE/Portal G1 – **Censo 2022**: crescimento populacional de SJP (+24,6% em 12 anos) e da RMC ([Região Metropolitana de Curitiba cresce 10% em 12 anos, indica Censo](https://gazetadoparana.com.br/artigo/regi%C3%A3o-metropolitana-de-curitiba-cresce-10-em-12-anos-indica-censo#:~:text=2022%20foram%20151,a%20taxa%20foi%20de%207%2C6)) ([Região Metropolitana de Curitiba cresce 10% em 12 anos, indica Censo](https://gazetadoparana.com.br/artigo/regi%C3%A3o-metropolitana-de-curitiba-cresce-10-em-12-anos-indica-censo#:~:text=Tijucas%20do%20Sul%20e%20Tunas,explica.%20Na%20capital)).  
