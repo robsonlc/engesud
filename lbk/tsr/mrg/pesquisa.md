@@ -1,5 +1,3 @@
-[https://www.engesudsmart.com.br/lbk/tsr/mrglbk/tsr/mrg/pesquisa.html](https://www.engesudsmart.com.br/lbk/tsr/mrglbk/tsr/mrg/pesquisa.html) 
-
 **Análise de Viabilidade para Empreendimento MCMV em Miringuava (São José dos Pinhais)**
 
 ## **Demanda Habitacional e Perfil de Consumo**
