@@ -65,7 +65,7 @@
       background: #004d99;
       overflow-x: hidden;
     }
-    canvas {
+    #p5Canvas {
       position: fixed;
       top: 0;
       left: 0;
@@ -206,6 +206,8 @@
   </style>
 </head>
 <body>
+  <div id="p5Canvas"></div>
+  
   <main class="container">
     <div class="logo-container">
       <img src="https://i.imgur.com/3YKn2xW.png" alt="Logotipo Engesud">
@@ -229,175 +231,103 @@
 
   <!-- p5.js Sketch -->
   <script>
-    let balls = [];
-    const numBalls = 2;
-    const containerRadius = 300;
-    let rotationAngle = 0;
-    let particles = [];
-    let explosionIndex = 0;
-    let clickCount = 0;
+    // Criação da instância p5.js para evitar conflitos com escopo global
+    const sketch = (p) => {
+      let particles = [];
+      const numParticles = 50;
+      const connectionDistance = 150;
 
-    function setup() {
-      const canvas = createCanvas(windowWidth, windowHeight, WEBGL);
-      canvas.position(0, 0);
-      canvas.style('z-index', '-1');
-      frameRate(60);
-      
-      // Definindo as cores corretamente
-      const ballColors = [
-        color(255, 150, 50), 
-        color(50, 255, 150)
-      ];
-      
-      for (let i = 0; i < numBalls; i++) {
-        balls.push(new Ball(ballColors[i]));
-      }
-    }
+      p.setup = function() {
+        const canvas = p.createCanvas(window.innerWidth, window.innerHeight);
+        canvas.parent('p5Canvas');
+        p.frameRate(60);
 
-    function getBackgroundColor() {
-      return color(0, 77, 153);
-    }
-
-    function draw() {
-      background(getBackgroundColor());
-      rotationAngle += 0.005;
-      rotateY(rotationAngle);
-      rotateX(rotationAngle * 0.5);
-
-      noFill();
-      stroke(230, 243, 255);
-      strokeWeight(2);
-      sphere(containerRadius, 12, 12);
-
-      for (let ball of balls) {
-        ball.update();
-        ball.show();
-      }
-
-      for (let i = particles.length - 1; i >= 0; i--) {
-        particles[i].update();
-        particles[i].show();
-        if (particles[i].isFinished()) particles.splice(i, 1);
-      }
-    }
-
-    function windowResized() {
-      resizeCanvas(windowWidth, windowHeight);
-    }
-
-    function mousePressed() {
-      clickCount++;
-      if (clickCount < 10) {
-        let ballPos = balls[explosionIndex].pos;
-        let ballCol = balls[explosionIndex].col;
-        for (let i = 0; i < 20; i++) {
-          particles.push(new Particle(ballPos.x, ballPos.y, ballPos.z, ballCol));
+        // Criar partículas
+        for (let i = 0; i < numParticles; i++) {
+          particles.push(new Particle());
         }
-        explosionIndex = (explosionIndex + 1) % balls.length;
-      } else if (clickCount === 10) {
-        for (let ball of balls) {
-          for (let i = 0; i < 20; i++) {
-            particles.push(new Particle(ball.pos.x, ball.pos.y, ball.pos.z, ball.col));
+      };
+
+      p.draw = function() {
+        p.background(0, 77, 153); // Cor de fundo consistente com o tema
+
+        // Atualizar e desenhar partículas
+        for (let i = 0; i < particles.length; i++) {
+          particles[i].update();
+          particles[i].show();
+          
+          // Conectar partículas próximas
+          for (let j = i + 1; j < particles.length; j++) {
+            let d = p.dist(
+              particles[i].pos.x, 
+              particles[i].pos.y, 
+              particles[j].pos.x, 
+              particles[j].pos.y
+            );
+            if (d < connectionDistance) {
+              let alpha = p.map(d, 0, connectionDistance, 150, 0);
+              p.stroke(255, 255, 255, alpha);
+              p.strokeWeight(1);
+              p.line(
+                particles[i].pos.x, particles[i].pos.y,
+                particles[j].pos.x, particles[j].pos.y
+              );
+            }
           }
         }
-        explosionIndex = 0;
-      } else if (clickCount === 20) {
-        balls = [];
-        
-        // Corrigido para definir cores novamente
-        const ballColors = [
-          color(255, 150, 50), 
-          color(50, 255, 150)
-        ];
-        
-        for (let i = 0; i < numBalls; i++) {
-          balls.push(new Ball(ballColors[i]));
-        }
-        explosionIndex = 0;
-        clickCount = 0;
-      } else {
-        let ballPos = balls[explosionIndex].pos;
-        let ballCol = balls[explosionIndex].col;
-        for (let i = 0; i < 20; i++) {
-          particles.push(new Particle(ballPos.x, ballPos.y, ballPos.z, ballCol));
-        }
-        explosionIndex = (explosionIndex + 1) % balls.length;
-      }
-    }
+      };
 
-    class Ball {
-      constructor(col) {
-        this.r = 10;
-        this.pos = p5.Vector.random3D();
-        this.pos.mult(random(0, containerRadius - this.r));
-        this.vel = p5.Vector.random3D();
-        this.vel.mult(random(1, 3));
-        this.col = col;
-        this.trail = [];
-        this.trailMaxLength = 30;
-      }
-      
-      update() {
-        this.trail.push(this.pos.copy());
-        if (this.trail.length > this.trailMaxLength) this.trail.shift();
-        
-        this.pos.add(this.vel);
-        let d = this.pos.mag();
-        if (d > containerRadius - this.r) {
-          let n = this.pos.copy().normalize();
-          let dot = this.vel.dot(n);
-          let reflection = p5.Vector.mult(n, 2 * dot);
-          this.vel.sub(reflection);
-          this.pos = n.copy().mult(containerRadius - this.r);
-        }
-      }
-      
-      show() {
-        for (let i = 0; i < this.trail.length - 1; i++) {
-          let alphaVal = map(i, 0, this.trail.length - 1, 50, 255);
-          stroke(red(this.col), green(this.col), blue(this.col), alphaVal);
-          strokeWeight(2);
-          let p1 = this.trail[i];
-          let p2 = this.trail[i+1];
-          line(p1.x, p1.y, p1.z, p2.x, p2.y, p2.z);
-        }
-        
-        noStroke();
-        fill(this.col);
-        push();
-        translate(this.pos.x, this.pos.y, this.pos.z);
-        sphere(this.r, 6, 6);
-        pop();
-      }
-    }
+      p.windowResized = function() {
+        p.resizeCanvas(window.innerWidth, window.innerHeight);
+      };
 
-    class Particle {
-      constructor(x, y, z, col) {
-        this.pos = createVector(x, y, z);
-        this.vel = p5.Vector.random3D();
-        this.vel.mult(random(1, 3));
-        this.lifespan = 255;
-        this.col = col;
+      p.mouseMoved = function() {
+        // Interação sutil com o mouse
+        for (let particle of particles) {
+          let d = p.dist(p.mouseX, p.mouseY, particle.pos.x, particle.pos.y);
+          if (d < 100) {
+            let force = p5.Vector.sub(
+              p.createVector(p.mouseX, p.mouseY), 
+              particle.pos
+            ).limit(0.5);
+            particle.vel.add(force);
+          }
+        }
+      };
+
+      class Particle {
+        constructor() {
+          this.pos = p.createVector(p.random(p.width), p.random(p.height));
+          this.vel = p5.Vector.random2D().mult(p.random(0.5, 1.5));
+          this.size = p.random(3, 6);
+          this.color = p.color(255, p.random(150, 255), p.random(50, 150), 200);
+        }
+
+        update() {
+          this.pos.add(this.vel);
+          
+          // Limites da tela com efeito de "rebote suave"
+          if (this.pos.x < 0 || this.pos.x > p.width) this.vel.x *= -0.9;
+          if (this.pos.y < 0 || this.pos.y > p.height) this.vel.y *= -0.9;
+          
+          // Manter partículas dentro da tela
+          this.pos.x = p.constrain(this.pos.x, 0, p.width);
+          this.pos.y = p.constrain(this.pos.y, 0, p.height);
+          
+          // Reduzir velocidade gradualmente
+          this.vel.mult(0.98);
+        }
+
+        show() {
+          p.noStroke();
+          p.fill(this.color);
+          p.ellipse(this.pos.x, this.pos.y, this.size);
+        }
       }
-      
-      update() {
-        this.pos.add(this.vel);
-        this.lifespan -= 5;
-      }
-      
-      show() {
-        push();
-        noStroke();
-        fill(red(this.col), green(this.col), blue(this.col), this.lifespan);
-        translate(this.pos.x, this.pos.y, this.pos.z);
-        sphere(3);
-        pop();
-      }
-      
-      isFinished() {
-        return this.lifespan < 0;
-      }
-    }
+    };
+
+    // Inicia o sketch com uma nova instância de p5
+    new p5(sketch);
   </script>
 
   <script>
