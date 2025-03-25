@@ -41,7 +41,7 @@
     :root {
       --primary-blue: #0066cc;
       --light-blue: #e6f3ff;
-      --dark-blue: #004d99;
+      --dark-blue: #004d99; /* Consistent background color */
       --transition-duration: 0.4s;
     }
     @keyframes fadeInPhoto {
@@ -57,23 +57,30 @@
       border-radius: 50%;
       pointer-events: none;
       transform: translate(-50%, -50%);
-      transition: transform 0.1s ease, background-color 0.2s ease;
+      transition: transform 0.1s ease, background-color 0.2s ease, width 0.2s ease, height 0.2s ease; /* Added width/height transition */
       z-index: 10000;
       mix-blend-mode: difference;
+    }
+    /* Add hover effect for cursor */
+    .custom-cursor.hover {
+        width: 30px;
+        height: 30px;
+        background-color: rgba(255, 255, 255, 0.3);
     }
     body {
       font-family: 'Poppins', sans-serif;
       min-height: 100vh;
       color: #fff;
       position: relative;
-      background: #004d99; /* Cor de fallback */
+      background: var(--dark-blue); /* Use CSS variable */
       overflow-x: hidden;
     }
-    canvas {
+    /* Container for p5 canvas */
+    #p5Canvas {
       position: fixed;
       top: 0;
       left: 0;
-      z-index: -1;
+      z-index: -1; /* Ensure it's behind content */
     }
     .container {
       position: relative;
@@ -178,6 +185,8 @@
                   inset 0 1px 2px rgba(255,255,255,0.5);
       position: relative;
       overflow: hidden;
+      /* Add pointer cursor specifically for links */
+      cursor: pointer;
     }
     .contact a::before {
       content: '';
@@ -231,25 +240,25 @@
     }
     /* Responsividade aprimorada */
     @media (max-width: 768px) {
-      .logo-container img { 
-        max-width: 240px; 
+      .logo-container img {
+        max-width: 240px;
       }
-      .description { 
-        font-size: 1.15rem; 
+      .description {
+        font-size: 1.15rem;
         line-height: 1.7;
         min-height: 120px;
         height: auto;
       }
-      .content-box { 
+      .content-box {
         padding: 2.2rem;
-        width: 95%; 
+        width: 95%;
       }
       .contact {
         flex-direction: column;
         align-items: center;
         gap: 15px;
       }
-      .contact a { 
+      .contact a {
         padding: 14px 30px;
         font-size: 1.1rem;
         width: 100%;
@@ -258,17 +267,17 @@
       }
     }
     @media (max-width: 480px) {
-      .logo-container { 
-        margin-bottom: 2rem; 
+      .logo-container {
+        margin-bottom: 2rem;
       }
-      .logo-container img { 
-        max-width: 200px; 
+      .logo-container img {
+        max-width: 200px;
       }
-      .content-box { 
+      .content-box {
         padding: 1.8rem;
         border-radius: 15px;
       }
-      .description { 
+      .description {
         font-size: 1.05rem;
         margin-bottom: 1rem;
       }
@@ -280,6 +289,9 @@
   </style>
 </head>
 <body>
+  <!-- Div container for the p5 canvas -->
+  <div id="p5Canvas"></div>
+
   <main class="container">
     <div class="logo-container">
       <img src="https://i.imgur.com/3YKn2xW.png" alt="Logotipo Engesud">
@@ -296,7 +308,7 @@
           <i class="fab fa-whatsapp" aria-hidden="true"></i>
           <span>Fale pelo WhatsApp</span>
         </a>
-        <a href="form.html" target="_blank" rel="noopener">
+        <a href="form.html" rel="noopener"> <!-- Removed target="_blank" if not desired -->
           <i class="fas fa-building" aria-hidden="true"></i>
           <span>Novos Negócios</span>
         </a>
@@ -306,232 +318,180 @@
 
   <div class="custom-cursor" id="customCursor"></div>
 
-  <!-- p5.js Sketch -->
+  <!-- Updated p5.js Sketch (Minimalist Particle Network) -->
   <script>
-    let balls = [];
-    const numBalls = 2;
-    const containerRadius = 300;
-    let rotationAngle = 0;
-    let particles = [];
-    let explosionIndex = 0;
-    let clickCount = 0;
+    const sketch = (p) => {
+      let particles = [];
+      const numParticles = p.max(30, Math.floor(window.innerWidth / 35)); // Adjust particle count based on width
+      const connectionDistance = 120; // How close particles need to be to connect
+      const mouseInfluenceDist = 100; // How close mouse needs to be to affect particles
 
-    function setup() {
-      const canvas = createCanvas(windowWidth, windowHeight, WEBGL);
-      canvas.position(0, 0);
-      canvas.style('z-index', '-1');
-      frameRate(60);
-      
-      // Definindo as cores corretamente
-      const ballColors = [
-        color(255, 150, 50), 
-        color(50, 255, 150)
-      ];
-      
-      for (let i = 0; i < numBalls; i++) {
-        balls.push(new Ball(ballColors[i]));
-      }
-    }
-
-    function getBackgroundColor() {
-      return color(0, 77, 153);
-    }
-
-    function draw() {
-      background(getBackgroundColor());
-      rotationAngle += 0.005;
-      rotateY(rotationAngle);
-      rotateX(rotationAngle * 0.5);
-
-      noFill();
-      stroke(230, 243, 255);
-      strokeWeight(2);
-      sphere(containerRadius, 12, 12);
-
-      for (let ball of balls) {
-        ball.update();
-        ball.show();
-      }
-
-      for (let i = particles.length - 1; i >= 0; i--) {
-        particles[i].update();
-        particles[i].show();
-        if (particles[i].isFinished()) particles.splice(i, 1);
-      }
-    }
-
-    function windowResized() {
-      resizeCanvas(windowWidth, windowHeight);
-    }
-
-    function mousePressed() {
-      clickCount++;
-      if (clickCount < 10) {
-        let ballPos = balls[explosionIndex].pos;
-        let ballCol = balls[explosionIndex].col;
-        for (let i = 0; i < 20; i++) {
-          particles.push(new Particle(ballPos.x, ballPos.y, ballPos.z, ballCol));
+      class Particle {
+        constructor() {
+          this.pos = p.createVector(p.random(p.width), p.random(p.height));
+          this.vel = p5.Vector.random2D().mult(p.random(0.2, 0.8)); // Slower speeds
+          this.acc = p.createVector(0, 0);
+          this.size = p.random(2, 4); // Smaller particles
+          this.maxSpeed = 1;
         }
-        explosionIndex = (explosionIndex + 1) % balls.length;
-      } else if (clickCount === 10) {
-        for (let ball of balls) {
-          for (let i = 0; i < 20; i++) {
-            particles.push(new Particle(ball.pos.x, ball.pos.y, ball.pos.z, ball.col));
+
+        applyForce(force) {
+          this.acc.add(force);
+        }
+
+        update() {
+          this.vel.add(this.acc);
+          this.vel.limit(this.maxSpeed);
+          this.pos.add(this.vel);
+          this.acc.mult(0); // Reset acceleration
+
+          // Edge wrapping
+          if (this.pos.x < -this.size) this.pos.x = p.width + this.size;
+          if (this.pos.x > p.width + this.size) this.pos.x = -this.size;
+          if (this.pos.y < -this.size) this.pos.y = p.height + this.size;
+          if (this.pos.y > p.height + this.size) this.pos.y = -this.size;
+        }
+
+        show() {
+          p.noStroke();
+          p.fill(255, 255, 255, 180); // Semi-transparent white
+          p.ellipse(this.pos.x, this.pos.y, this.size);
+        }
+
+        connect(others) {
+          for (let other of others) {
+            if (other === this) continue; // Don't connect to self
+            let d = p.dist(this.pos.x, this.pos.y, other.pos.x, other.pos.y);
+            if (d < connectionDistance) {
+              let alpha = p.map(d, 0, connectionDistance, 100, 0); // Fade line with distance
+              p.stroke(255, 255, 255, alpha);
+              p.strokeWeight(0.5); // Thinner lines
+              p.line(this.pos.x, this.pos.y, other.pos.x, other.pos.y);
+            }
           }
         }
-        explosionIndex = 0;
-      } else if (clickCount === 20) {
-        document.querySelector('.description').innerHTML =
-          '<p>Excelência em projetos imobiliários e intermediação de áreas para incorporação e loteamento.</p>';
-        
-        // Reinicializar as bolas
-        balls = [];
-        
-        // Definir cores novamente
-        const ballColors = [
-          color(255, 150, 50), 
-          color(50, 255, 150)
-        ];
-        
-        for (let i = 0; i < numBalls; i++) {
-          balls.push(new Ball(ballColors[i]));
-        }
-        explosionIndex = 0;
-        clickCount = 0;
-      } else {
-        let ballPos = balls[explosionIndex].pos;
-        let ballCol = balls[explosionIndex].col;
-        for (let i = 0; i < 20; i++) {
-          particles.push(new Particle(ballPos.x, ballPos.y, ballPos.z, ballCol));
-        }
-        explosionIndex = (explosionIndex + 1) % balls.length;
-      }
-    }
 
-    class Ball {
-      constructor(col) {
-        this.r = 10;
-        this.pos = p5.Vector.random3D();
-        this.pos.mult(random(0, containerRadius - this.r));
-        this.vel = p5.Vector.random3D();
-        this.vel.mult(random(1, 3));
-        this.col = col;
-        this.trail = [];
-        this.trailMaxLength = 30;
-      }
-      
-      update() {
-        this.trail.push(this.pos.copy());
-        if (this.trail.length > this.trailMaxLength) this.trail.shift();
-        
-        this.pos.add(this.vel);
-        let d = this.pos.mag();
-        if (d > containerRadius - this.r) {
-          let n = this.pos.copy().normalize();
-          let dot = this.vel.dot(n);
-          let reflection = p5.Vector.mult(n, 2 * dot);
-          this.vel.sub(reflection);
-          this.pos = n.copy().mult(containerRadius - this.r);
+        avoidMouse(mousePos) {
+            let d = p.dist(this.pos.x, this.pos.y, mousePos.x, mousePos.y);
+            if (d < mouseInfluenceDist) {
+                let flee = p5.Vector.sub(this.pos, mousePos);
+                flee.setMag(p.map(d, 0, mouseInfluenceDist, this.maxSpeed * 2, 0)); // Stronger avoidance closer
+                this.applyForce(flee);
+            }
         }
       }
-      
-      show() {
-        for (let i = 0; i < this.trail.length - 1; i++) {
-          let alphaVal = map(i, 0, this.trail.length - 1, 50, 255);
-          stroke(red(this.col), green(this.col), blue(this.col), alphaVal);
-          strokeWeight(2);
-          let p1 = this.trail[i];
-          let p2 = this.trail[i+1];
-          line(p1.x, p1.y, p1.z, p2.x, p2.y, p2.z);
-        }
-        
-        noStroke();
-        fill(this.col);
-        push();
-        translate(this.pos.x, this.pos.y, this.pos.z);
-        sphere(this.r, 6, 6);
-        pop();
-      }
-    }
 
-    class Particle {
-      constructor(x, y, z, col) {
-        this.pos = createVector(x, y, z);
-        this.vel = p5.Vector.random3D();
-        this.vel.mult(random(1, 3));
-        this.lifespan = 255;
-        this.col = col;
-      }
-      
-      update() {
-        this.pos.add(this.vel);
-        this.lifespan -= 5;
-      }
-      
-      show() {
-        push();
-        noStroke();
-        fill(red(this.col), green(this.col), blue(this.col), this.lifespan);
-        translate(this.pos.x, this.pos.y, this.pos.z);
-        sphere(3);
-        pop();
-      }
-      
-      isFinished() {
-        return this.lifespan < 0;
-      }
-    }
+      p.setup = function() {
+        const canvas = p.createCanvas(window.innerWidth, window.innerHeight);
+        canvas.parent('p5Canvas'); // Attach canvas to the container div
+        p.frameRate(60);
+
+        for (let i = 0; i < numParticles; i++) {
+          particles.push(new Particle());
+        }
+      };
+
+      p.draw = function() {
+        p.background(0, 77, 153); // Use the consistent dark blue background
+
+        const mousePos = p.createVector(p.mouseX, p.mouseY);
+
+        for (let i = 0; i < particles.length; i++) {
+          particles[i].avoidMouse(mousePos);
+          particles[i].update();
+          particles[i].show();
+          // Pass only subsequent particles for connection check to avoid duplicates
+          particles[i].connect(particles.slice(i + 1));
+        }
+      };
+
+      p.windowResized = function() {
+        p.resizeCanvas(window.innerWidth, window.innerHeight);
+        // Optional: Recalculate particle count or reset positions on resize
+        // particles = []; // Clear existing
+        // const newNumParticles = p.max(30, Math.floor(window.innerWidth / 35));
+        // for (let i = 0; i < newNumParticles; i++) {
+        //   particles.push(new Particle());
+        // }
+      };
+    };
+
+    // Start the sketch in instance mode
+    new p5(sketch);
+
   </script>
 
+  <!-- Cursor and interaction script (slightly modified) -->
   <script>
     const cursor = document.getElementById('customCursor');
-    
+    const interactiveElements = document.querySelectorAll('a, button'); // Elements that should trigger cursor hover
+
     document.addEventListener('mousemove', (e) => {
       cursor.style.left = e.clientX + 'px';
       cursor.style.top = e.clientY + 'px';
     });
-    
+
     document.addEventListener('mousedown', () => {
-      cursor.style.transform = 'translate(-50%, -50%) scale(1.5)';
-      cursor.style.backgroundColor = 'rgba(255,255,255,0.2)';
+      cursor.style.transform = 'translate(-50%, -50%) scale(1.3)'; // Slightly smaller scale on click
+      cursor.style.backgroundColor = 'rgba(255,255,255,0.15)';
     });
-    
+
     document.addEventListener('mouseup', () => {
       cursor.style.transform = 'translate(-50%, -50%) scale(1)';
       cursor.style.backgroundColor = 'transparent';
     });
-    
+
+    // Add/remove hover class for cursor enlargement
+    interactiveElements.forEach(el => {
+      el.addEventListener('mouseenter', () => cursor.classList.add('hover'));
+      el.addEventListener('mouseleave', () => cursor.classList.remove('hover'));
+    });
+
     document.addEventListener('click', (e) => {
-      const ripple = document.createElement('div');
-      ripple.classList.add('ripple');
-      ripple.style.left = `${e.clientX}px`;
-      ripple.style.top = `${e.clientY}px`;
-      document.body.appendChild(ripple);
-      setTimeout(() => { ripple.remove(); }, 600);
-    });
-    
-    // Corrigido para evitar conflito com a animação do logo no hover
-    let logoHover = false;
-    const logo = document.querySelector('.logo-container img');
-    
-    logo.addEventListener('mouseenter', () => {
-      logoHover = true;
-    });
-    
-    logo.addEventListener('mouseleave', () => {
-      logoHover = false;
-      logo.style.transform = '';
-    });
-    
-    document.addEventListener('mousemove', (e) => {
-      if (!logoHover) {
-        const centerX = window.innerWidth / 2;
-        const centerY = window.innerHeight / 2;
-        const moveX = (e.clientX - centerX) * 0.005;
-        const moveY = (e.clientY - centerY) * 0.005;
-        logo.style.transform = `translate(${moveX}px, ${moveY}px)`;
+      // Ripple effect (only if not clicking on interactive elements to avoid double effects)
+      if (!e.target.closest('a, button')) {
+          const ripple = document.createElement('div');
+          ripple.classList.add('ripple');
+          ripple.style.left = `${e.clientX}px`;
+          ripple.style.top = `${e.clientY}px`;
+          document.body.appendChild(ripple);
+          setTimeout(() => { ripple.remove(); }, 600);
       }
     });
+
+    // Logo parallax effect (kept as is, check for conflicts if needed)
+    let logoHover = false;
+    const logo = document.querySelector('.logo-container img');
+
+    if (logo) { // Check if logo exists before adding listeners
+        logo.addEventListener('mouseenter', () => {
+          logoHover = true;
+          cursor.classList.add('hover'); // Make cursor large on logo hover too
+        });
+
+        logo.addEventListener('mouseleave', () => {
+          logoHover = false;
+          logo.style.transform = ''; // Reset transform
+          cursor.classList.remove('hover');
+        });
+
+        document.addEventListener('mousemove', (e) => {
+          if (!logoHover) {
+            const centerX = window.innerWidth / 2;
+            const centerY = window.innerHeight / 2;
+            const moveX = (e.clientX - centerX) * 0.005;
+            const moveY = (e.clientY - centerY) * 0.005;
+            // Apply parallax only if not being hovered/scaled by CSS
+            if (!logo.matches(':hover')) {
+                 logo.style.transform = `translate(${moveX}px, ${moveY}px)`;
+            }
+          } else {
+              // Make sure hover scale takes precedence over parallax
+              logo.style.transform = 'translateY(-8px) scale(1.02)';
+          }
+        });
+    }
+
   </script>
 </body>
 </html>
