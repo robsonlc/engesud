@@ -1,174 +1,205 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="shortcut icon" href="https://i.imgur.com/HjwVm8x.png" type="image/x-icon">
-    <title>Em Breve</title>
-    <style>
-        body {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            margin: 0;
-            font-family: Arial, sans-serif;
-            background-color: #000;
-            overflow: hidden;
-            color: white;
-        }
-        h1 {
-            text-align: center;
-            font-size: 3em;
-            animation: fadeIn 3s ease-in-out infinite alternate;
-        }
-        @keyframes fadeIn {
-            0% { opacity: 0; transform: scale(0.9); }
-            100% { opacity: 1; transform: scale(1.1); }
-        }
-        .stars {
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            background: url('https://raw.githubusercontent.com/robsonlc/engesud/main/lbk/tsr/osha/stars.png') repeat;
-            z-index: -1;
-            animation: moveStars 50s linear infinite;
-        }
-        @keyframes moveStars {
-            from { transform: translateY(0); }
-            to { transform: translateY(-1000px); }
-        }
-        .shooting-star {
-            position: absolute;
-            width: 2px;
-            height: 150px;
-            background: linear-gradient(white, rgba(255, 255, 255, 0));
-            animation: shootingStar 2s ease-out infinite;
-        }
-        @keyframes shootingStar {
-            from {
-                top: -10%;
-                left: 100%;
-            }
-            to {
-                top: 100%;
-                left: -10%;
-            }
-        }
-        .glowing-text {
-            color: #fff;
-            text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 20px #ff00ff, 0 0 30px #ff00ff, 0 0 40px #ff00ff, 0 0 50px #ff00ff, 0 0 60px #ff00ff;
-            animation: glow 1s ease-in-out infinite alternate;
-        }
-        @keyframes glow {
-            from {
-                text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 20px #ff00ff, 0 0 30px #ff00ff, 0 0 40px #ff00ff, 0 0 50px #ff00ff, 0 0 60px #ff00ff;
-            }
-            to {
-                text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #ff00ff, 0 0 40px #ff00ff, 0 0 50px #ff00ff, 0 0 60px #ff00ff, 0 0 70px #ff00ff;
-            }
-        }
-        .floating-objects {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            width: 10px;
-            height: 10px;
-            background: red;
-            border-radius: 50%;
-            animation: float 5s ease-in-out infinite;
-        }
-        @keyframes float {
-            0%, 100% {
-                transform: translateY(0) translateX(0);
-            }
-            50% {
-                transform: translateY(-20px) translateX(20px);
-            }
-        }
-        .twinkling-stars {
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            background: transparent;
-            overflow: hidden;
-            z-index: 1;
-        }
-        .twinkling-stars::before, .twinkling-stars::after {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: transparent;
-            opacity: 0.5;
-            animation: twinkling 1.5s infinite ease-in-out alternate;
-        }
-        .twinkling-stars::after {
-            animation-delay: 0.75s;
-        }
-        @keyframes twinkling {
-            0% { background: rgba(255, 255, 255, 0.1); }
-            100% { background: rgba(255, 255, 255, 0.3); }
-        }
-        .nebula {
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            background: radial-gradient(circle at center, rgba(255, 0, 255, 0.2), transparent);
-            z-index: 0;
-            animation: pulse 3s infinite;
-        }
-        @keyframes pulse {
-            0%, 100% { transform: scale(1); }
-            50% { transform: scale(1.1); }
-        }
-        .comet {
-            position: absolute;
-            width: 2px;
-            height: 250px;
-            background: linear-gradient(white, rgba(255, 255, 255, 0));
-            animation: comet 3s ease-out infinite;
-        }
-        @keyframes comet {
-            from {
-                top: -20%;
-                left: 120%;
-            }
-            to {
-                top: 120%;
-                left: -20%;
-            }
-        }
-        .meteor {
-            position: absolute;
-            width: 3px;
-            height: 200px;
-            background: linear-gradient(white, rgba(255, 255, 255, 0));
-            animation: meteor 4s ease-out infinite;
-        }
-        @keyframes meteor {
-            from {
-                top: -30%;
-                left: 110%;
-            }
-            to {
-                top: 110%;
-                left: -30%;
-            }
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta property="og:url" content="https://www.engesudsmart.com.br/lbk/tsr/emi" />
+  <meta property="og:image" content="https://i.postimg.cc/Vv6xS8dT/ZUc9kOn.png" />
+  <meta property="og:title" content="Oportunidade - Ibipitanga Maringá" />
+  <meta property="og:description" content="6 alqueires para desenvolvimento urbano com zoneamento condicionado." />
+  <title>Oportunidade - Ibipitanga Maringá</title>
+  <link rel="shortcut icon" href="https://i.postimg.cc/QCp6V4Wr/HjwVm8x.png" type="image/x-icon">
+  <style>
+    :root {
+      --primary-color: #4CAF50;
+      --secondary-color: #388e3c;
+      --text-color: #333;
+      --light-bg: #f9f9f9;
+      --border-radius: 12px;
+      --box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: var(--light-bg);
+      color: var(--text-color);
+      line-height: 1.8;
+    }
+    header {
+      background: url('https://i.postimg.cc/vB3RHBHf/K6zn8Dt.png') center/cover no-repeat;
+      height: 240px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+    }
+    header::after {
+      content: "";
+      position: absolute;
+      width: 100%; height: 100%;
+      background: rgba(0,0,0,0.5);
+      top: 0; left: 0;
+    }
+    header h1 {
+      color: white;
+      z-index: 1;
+      font-size: 2.4rem;
+      text-shadow: 2px 2px 4px rgba(0,0,0,0.4);
+    }
+    .content {
+      max-width: 1100px;
+      margin: -60px auto 0;
+      padding: 40px;
+      background: white;
+      box-shadow: var(--box-shadow);
+      border-radius: var(--border-radius);
+      position: relative;
+      z-index: 1;
+    }
+    h2 {
+      font-size: 1.8rem;
+      margin-bottom: 20px;
+      color: var(--secondary-color);
+      border-bottom: 2px solid var(--primary-color);
+      padding-bottom: 10px;
+    }
+    p { margin: 15px 0; font-size: 1.1rem; color: #555; }
+    .map iframe {
+      width: 100%; height: 480px;
+      border: none;
+      border-radius: var(--border-radius);
+      box-shadow: var(--box-shadow);
+    }
+    .property-info {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+      background: #f8f9fa;
+      padding: 20px;
+      border-radius: var(--border-radius);
+      margin-top: 30px;
+    }
+    .property-info div {
+      background: white;
+      padding: 15px;
+      border-radius: var(--border-radius);
+      box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+    }
+    .property-info h3 {
+      margin-bottom: 10px;
+      color: var(--secondary-color);
+    }
+    .action-buttons {
+      margin: 40px 0;
+      text-align: center;
+      display: flex;
+      gap: 20px;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+    .action-button {
+      background: var(--primary-color);
+      color: white;
+      padding: 14px 28px;
+      border-radius: 25px;
+      text-decoration: none;
+      font-weight: bold;
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      transition: all 0.3s ease;
+    }
+    .action-button:hover {
+      background: var(--secondary-color);
+      transform: translateY(-2px);
+    }
+    footer {
+      background: linear-gradient(to right, #2c3e50, #3498db);
+      color: white;
+      text-align: center;
+      padding: 40px 20px;
+      margin-top: 60px;
+    }
+    footer img {
+      max-width: 150px;
+      border-radius: 12px;
+      margin-bottom: 15px;
+    }
+    footer p a {
+      color: white;
+      text-decoration: underline;
+    }
+    @media (max-width: 768px) {
+      .content { padding: 20px; margin-top: -30px; }
+      header h1 { font-size: 2rem; }
+      h2 { font-size: 1.5rem; }
+    }
+  </style>
 </head>
 <body>
-    <div class="stars"></div>
-    <div class="twinkling-stars"></div>
-    <div class="shooting-star"></div>
-    <div class="nebula"></div>
-    <div class="comet"></div>
-    <div class="meteor"></div>
-    <h1 class="glowing-text">Logo entrará no ar</h1>
-    <div class="floating-objects"></div>
+  <header><h1>Ibipitanga - Maringá</h1></header>
+  <div class="content">
+    <h2>Oportunidade Urbana</h2>
+    <p>Apresentamos uma excelente área para desenvolvimento urbano, localizada na região da Ibipitanga em Maringá. Com zoneamento de urbanização condicionada, esta é uma oportunidade única para investimento em condomínio horizontal ou projetos planejados.</p>
+
+    <div class="property-info">
+      <div>
+        <h3>Dados da Propriedade</h3>
+        <p>Área Total: 6 alqueires</p>
+        <p>Expectativa: R$ 2,50 milhões/alqueire</p>
+        <p>Zoneamento: Urbanização Condicionada</p>
+      </div>
+      <div>
+        <h3>Localização</h3>
+        <p>Ibipitanga, Maringá - PR</p>
+        <p>Próximo ao Jardim Munique</p>
+        <p>Fácil acesso à malha urbana</p>
+      </div>
+    </div>
+
+    <div class="map">
+      <h2>Visualização no Mapa</h2>
+      <iframe src="https://www.google.com/maps/d/embed?mid=1ybF3o711LwxVDzU74T7Kc2Gk4sGbc7I&ehbc=2E312F" allowfullscreen></iframe>
+    </div>
+
+    <div class="action-buttons">
+      <a href="https://www3.maringa.pr.gov.br/site/index.php?sessao=422d107f31mg42" target="_blank" class="action-button" rel="noopener noreferrer">
+        📋 Normas Urbanísticas de Maringá
+      </a>
+      <a href="https://wa.me/4497013489?text=Tenho%20interesse%20na%20%C3%A1rea%20Ibipitanga" class="action-button">
+        💬 Conversar no WhatsApp
+      </a>
+    </div>
+  </div>
+
+  <footer>
+    <a href="http://www.engesudsmart.com.br" target="_blank">
+      <img src="https://i.postimg.cc/FsKzb1S4/3YKn2xW.png" alt="Logo Engesud">
+    </a>
+    <p><strong>Engesud Engenharia e Intermediação LTDA</strong></p>
+    <p>Robson Luis da Costa | <a href="https://wa.me/4497013489">+55 (44) 99701-3489</a></p>
+    <p><a href="https://www.engesudsmart.com.br" target="_blank">www.engesudsmart.com.br</a></p>
+    <p>Última atualização: 12 de 03 de 2024</p>
+  </footer>
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const cards = document.querySelectorAll('.property-info div');
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.style.opacity = 1;
+            entry.target.style.transform = 'translateY(0)';
+          }
+        });
+      });
+      cards.forEach(card => {
+        card.style.opacity = 0;
+        card.style.transform = 'translateY(20px)';
+        card.style.transition = 'all 0.5s ease-out';
+        observer.observe(card);
+      });
+    });
+  </script>
+  <!-- Este conteúdo é protegido por direitos autorais creditados à Engesud Engenharia e Intermediação LTDA, inscrita no CNPJ 40.601.637/0001-58 -->
 </body>
 </html>
-
