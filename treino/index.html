@@ -1,326 +1,400 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta property="og:url" content="https://www.engesudsmart.com.br/treino">
-    <meta property="og:image" content="https://i.imgur.com/x8WfR8m.png">
-    <title>Plano de Treino Semanal</title>
-    <link rel="shortcut icon" href="https://i.imgur.com/HjwVm8x.png" type="image/x-icon">
-    <style>
-        :root {
-            --primary-color: #4CAF50;
-            --secondary-color: #45a049;
-            --text-color: #333;
-            --background-color: #f5f5f5;
-        }
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+<title>Plano de Treino Semanal</title>
+<link rel="shortcut icon" href="https://i.imgur.com/HjwVm8x.png" type="image/png" />
 
-        body {
-            font-family: 'Roboto', Arial, sans-serif;
-            color: var(--text-color);
-            background-color: var(--background-color);
-            line-height: 1.6;
-        }
+<meta property="og:url" content="https://www.engesudsmart.com.br/treino" />
+<meta property="og:image" content="https://i.imgur.com/x8WfR8m.png" />
 
-        header {
-            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), 
-                        url('https://i.imgur.com/doi27ld.png') center/cover no-repeat;
-            height: 200px;
-            text-align: center;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            color: white;
-        }
+<style>
+:root {
+    --primary-color: #4CAF50;
+    --secondary-color: #45a049;
+    --text-color: #333;
+    --background-color: #f5f5f5;
+    --header-height: 200px;
+}
 
-        header h1 {
-            font-size: 2.5rem;
-            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
-            animation: fadeIn 1s ease-in;
-        }
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
-        nav {
-            position: sticky;
-            top: 0;
-            display: flex;
-            justify-content: center;
-            background-color: var(--primary-color);
-            padding: 10px 0;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
-            z-index: 100;
-            overflow-x: auto;
-        }
+body {
+    font-family: 'Roboto', Arial, sans-serif;
+    color: var(--text-color);
+    background-color: var(--background-color);
+    line-height: 1.6;
+}
 
-        nav a {
-            text-decoration: none;
-            color: white;
-            padding: 10px 20px;
-            font-size: 1rem;
-            transition: all 0.3s ease;
-            white-space: nowrap;
-        }
+/* Header aprimorado */
+header {
+    background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), 
+               url('https://i.imgur.com/doi27ld.png') center/cover no-repeat;
+    height: var(--header-height);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    text-align: center;
+    padding: 0 15px;
+}
 
-        nav a:hover {
-            background-color: var(--secondary-color);
-            transform: translateY(-2px);
-        }
+header h1 {
+    font-size: 2.5rem;
+    text-shadow: 2px 2px 5px rgba(0,0,0,0.7);
+    animation: fadeIn 1s ease-in;
+}
 
-        nav a.active {
-            background-color: var(--secondary-color);
-            border-bottom: 3px solid white;
-        }
+/* Navegação melhorada */
+nav {
+    position: sticky;
+    top: 0;
+    background-color: var(--primary-color);
+    padding: 10px 0;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.15);
+    z-index: 999;
+    overflow-x: auto;
+    display: flex;
+    justify-content: center;
+    flex-wrap: nowrap;
+}
 
-        .content {
-            display: none;
-            padding: 20px;
-            max-width: 800px;
-            margin: 0 auto;
-            background: white;
-            border-radius: 8px;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-            margin-top: 20px;
-            animation: slideIn 0.5s ease-out;
-        }
+nav a {
+    color: #fff;
+    text-decoration: none;
+    padding: 10px 20px;
+    font-size: 1rem;
+    transition: background 0.3s ease, transform 0.3s ease;
+    white-space: nowrap;
+    border-bottom: 3px solid transparent;
+}
 
-        .content.active {
-            display: block;
-        }
+nav a:hover,
+nav a.active {
+    background-color: var(--secondary-color);
+    transform: translateY(-2px);
+    border-bottom: 3px solid white;
+}
 
-        .content h2 {
-            color: var(--primary-color);
-            margin-bottom: 20px;
-            border-bottom: 2px solid var(--primary-color);
-            padding-bottom: 10px;
-        }
+.content {
+    display: none;
+    padding: 20px;
+    max-width: 800px;
+    margin: 20px auto;
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 3px 8px rgba(0,0,0,0.1);
+    animation: slideIn 0.5s ease-out;
+}
 
-        .content ul {
-            list-style-position: inside;
-            padding-left: 20px;
-        }
+.content.active {
+    display: block;
+}
 
-        .content li {
-            margin-bottom: 10px;
-            position: relative;
-        }
+.content h2 {
+    color: var(--primary-color);
+    border-bottom: 2px solid var(--primary-color);
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+}
 
-        .content li::before {
-            content: "•";
-            color: var(--primary-color);
-            font-weight: bold;
-            margin-right: 10px;
-        }
+.content ul {
+    list-style: none;
+    padding-left: 0;
+}
 
-        .exercise-timer {
-            background-color: #f0f0f0;
-            padding: 15px;
-            border-radius: 5px;
-            margin-top: 20px;
-            text-align: center;
-        }
+.content li {
+    margin-bottom: 10px;
+    padding-left: 20px;
+    position: relative;
+}
 
-        footer {
-            text-align: center;
-            padding: 20px;
-            background-color: #333;
-            color: white;
-            margin-top: 40px;
-        }
+.content li::before {
+    content: "•";
+    color: var(--primary-color);
+    font-weight: bold;
+    position: absolute;
+    left: 0;
+}
 
-        @keyframes fadeIn {
-            from { opacity: 0; }
-            to { opacity: 1; }
-        }
+/* Timer aprimorado */
+.exercise-timer {
+    background-color: #f0f0f0;
+    padding: 15px;
+    border-radius: 5px;
+    margin-top: 20px;
+    text-align: center;
+}
 
-        @keyframes slideIn {
-            from {
-                transform: translateY(20px);
-                opacity: 0;
-            }
-            to {
-                transform: translateY(0);
-                opacity: 1;
-            }
-        }
+.exercise-timer h3 {
+    margin-bottom: 10px;
+}
 
-        @media (max-width: 768px) {
-            header h1 {
-                font-size: 2rem;
-            }
+#timer {
+    font-weight: bold;
+    font-size: 1.5em;
+    margin: 10px 0;
+}
 
-            nav {
-                padding: 5px;
-            }
+button {
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius:5px;
+    margin: 5px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
 
-            nav a {
-                padding: 8px 12px;
-                font-size: 0.9rem;
-            }
+button:hover {
+    background-color: var(--secondary-color);
+}
 
-            .content {
-                margin: 10px;
-                padding: 15px;
-            }
-        }
-    </style>
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: var(--text-color);
+    color: #fff;
+    margin-top: 40px;
+}
+
+/* Animações */
+@keyframes fadeIn {
+    from {opacity: 0;}
+    to {opacity: 1;}
+}
+
+@keyframes slideIn {
+    from {transform: translateY(20px); opacity: 0;}
+    to {transform: translateY(0); opacity:1;}
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    header h1 {
+        font-size: 2rem;
+    }
+    nav a {
+        font-size: 0.9rem;
+        padding: 8px 12px;
+    }
+    .content {
+        margin: 10px;
+        padding: 15px;
+    }
+}
+</style>
 </head>
+
 <body>
-    <header>
-        <h1>Plano de Treino Semanal</h1>
-    </header>
 
-    <nav>
-        <a href="#" class="nav-link active" onclick="showContent('monday')">Segunda</a>
-        <a href="#" class="nav-link" onclick="showContent('tuesday')">Terça</a>
-        <a href="#" class="nav-link" onclick="showContent('wednesday')">Quarta</a>
-        <a href="#" class="nav-link" onclick="showContent('thursday')">Quinta</a>
-        <a href="#" class="nav-link" onclick="showContent('friday')">Sexta</a>
-        <a href="#" class="nav-link" onclick="showContent('saturday')">Sábado</a>
-        <a href="#" class="nav-link" onclick="showContent('sunday')">Domingo</a>
-    </nav>
+<header>
+    <h1>Plano de Treino Semanal</h1>
+</header>
 
-    <div class="content active" id="monday">
-        <h2>Segunda-feira – Força no Condomínio</h2>
-        <ul>
-            <li>Aquecimento: 10 minutos de caminhada rápida ou corrida leve na esteira.</li>
-            <li>Supino reto (halteres ou barra): 3 séries de 12 repetições.</li>
-            <li>Agachamento livre: 3 séries de 12 repetições.</li>
-            <li>Remada baixa (máquina): 3 séries de 12 repetições.</li>
-            <li>Prancha abdominal: 3 séries de 30 segundos.</li>
-            <li>Finalizar: Alongamento leve (5 minutos).</li>
-        </ul>
-        <div class="exercise-timer">
-            <h3>Cronômetro de Exercício</h3>
-            <div id="timer">00:00</div>
-            <button onclick="startTimer()" id="startBtn">Iniciar</button>
-            <button onclick="resetTimer()" id="resetBtn">Resetar</button>
-        </div>
+<nav>
+    <a href="#" class="nav-link active" data-day="monday">Segunda</a>
+    <a href="#" class="nav-link" data-day="tuesday">Terça</a>
+    <a href="#" class="nav-link" data-day="wednesday">Quarta</a>
+    <a href="#" class="nav-link" data-day="thursday">Quinta</a>
+    <a href="#" class="nav-link" data-day="friday">Sexta</a>
+    <a href="#" class="nav-link" data-day="saturday">Sábado</a>
+    <a href="#" class="nav-link" data-day="sunday">Domingo</a>
+</nav>
+
+<main>
+
+<div class="content active" id="monday">
+    <h2>Segunda-feira – Força no Condomínio</h2>
+    <ul>
+        <li>Aquecimento: 10 minutos de caminhada rápida ou corrida leve na esteira.</li>
+        <li>Supino reto (halteres ou barra): 3 séries de 12 repetições.</li>
+        <li>Agachamento livre: 3 séries de 12 repetições.</li>
+        <li>Remada baixa (máquina): 3 séries de 12 repetições.</li>
+        <li>Prancha abdominal: 3 séries de 30 segundos.</li>
+        <li>Finalizar: Alongamento leve (5 minutos).</li>
+    </ul>
+    <div class="exercise-timer">
+        <h3>Cronômetro de Exercício</h3>
+        <div id="timer">00:00</div>
+        <button id="startBtn">Iniciar</button>
+        <button id="resetBtn">Resetar</button>
     </div>
+</div>
 
-    <div class="content" id="tuesday">
-        <h2>Terça-feira – Caminhada no Parque do Ingá</h2>
-        <ul>
-            <li>Objetivo: Estímulo cardiovascular e relaxamento.</li>
-            <li>Atividade: 45 minutos de caminhada em ritmo moderado ao redor do parque.</li>
-            <li>Opcional: Inclua alguns minutos de corrida leve.</li>
-        </ul>
-    </div>
+<div class="content" id="tuesday">
+    <h2>Terça-feira – Caminhada no Parque do Ingá</h2>
+    <ul>
+        <li>Objetivo: Estímulo cardiovascular e relaxamento.</li>
+        <li>Atividade: 45 minutos de caminhada em ritmo moderado ao redor do parque.</li>
+        <li>Opcional: Inclua alguns minutos de corrida leve.</li>
+    </ul>
+</div>
 
-    <div class="content" id="wednesday">
-        <h2>Quarta-feira – Natação no Condomínio</h2>
-        <ul>
-            <li>Aquecimento: 4 piscinas de nado leve.</li>
-            <li>Treino principal:</li>
+<div class="content" id="wednesday">
+    <h2>Quarta-feira – Natação no Condomínio</h2>
+    <ul>
+        <li>Aquecimento: 4 piscinas de nado leve.</li>
+        <li>Treino principal:
             <ul>
                 <li>4 séries de 50m crawl em ritmo moderado.</li>
                 <li>2 séries de 50m costas.</li>
                 <li>2 séries de 50m peito.</li>
             </ul>
-            <li>Desaceleração: 2 piscinas de nado leve.</li>
-            <li>Total: 30-40 minutos.</li>
-        </ul>
-    </div>
+        </li>
+        <li>Desaceleração: 2 piscinas de nado leve.</li>
+        <li>Total: 30-40 minutos.</li>
+    </ul>
+</div>
 
-    <div class="content" id="thursday">
-        <h2>Quinta-feira – Treino de Força e Funcional</h2>
-        <ul>
-            <li>Aquecimento: 10 minutos de bicicleta ergométrica.</li>
-            <li>Afundo alternado com halteres: 3 séries de 10 repetições em cada perna.</li>
-            <li>Desenvolvimento de ombros com halteres: 3 séries de 12 repetições.</li>
-            <li>Elevação de quadril no solo: 3 séries de 15 repetições.</li>
-            <li>Abdominais bicicleta: 3 séries de 20 repetições.</li>
-            <li>Finalizar: Alongamento para pernas e costas.</li>
-        </ul>
-    </div>
+<div class="content" id="thursday">
+    <h2>Quinta-feira – Treino de Força e Funcional</h2>
+    <ul>
+        <li>Aquecimento: 10 minutos de bicicleta ergométrica.</li>
+        <li>Afundo alternado com halteres: 3 séries de 10 repetições em cada perna.</li>
+        <li>Desenvolvimento de ombros com halteres: 3 séries de 12 repetições.</li>
+        <li>Elevação de quadril no solo: 3 séries de 15 repetições.</li>
+        <li>Abdominais bicicleta: 3 séries de 20 repetições.</li>
+        <li>Finalizar: Alongamento para pernas e costas.</li>
+    </ul>
+</div>
 
-    <div class="content" id="friday">
-        <h2>Sexta-feira – Caminhada no Parque do Ingá</h2>
-        <ul>
-            <li>Objetivo: Fechar a semana com atividade aeróbica e relaxamento.</li>
-            <li>Atividade: 45-60 minutos de caminhada em ritmo moderado.</li>
-            <li>Dica: Aproveite para respirar fundo e curtir o ambiente.</li>
-        </ul>
-    </div>
+<div class="content" id="friday">
+    <h2>Sexta-feira – Caminhada no Parque do Ingá</h2>
+    <ul>
+        <li>Objetivo: Fechar a semana com atividade aeróbica e relaxamento.</li>
+        <li>Atividade: 45-60 minutos de caminhada em ritmo moderado.</li>
+        <li>Dica: Aproveite para respirar fundo e curtir o ambiente.</li>
+    </ul>
+</div>
 
-    <div class="content" id="saturday">
-        <h2>Sábado – Natação Recreativa</h2>
-        <ul>
-            <li>Objetivo: Relaxar e manter o movimento.</li>
-            <li>Atividade: 30 minutos de natação em ritmo leve, sem foco em técnica ou distância.</li>
-        </ul>
-    </div>
+<div class="content" id="saturday">
+    <h2>Sábado – Natação Recreativa</h2>
+    <ul>
+        <li>Objetivo: Relaxar e manter o movimento.</li>
+        <li>Atividade: 30 minutos de natação em ritmo leve, sem foco em técnica ou distância.</li>
+    </ul>
+</div>
 
-    <div class="content" id="sunday">
-        <h2>Domingo – Descanso Ativo ou Alongamento</h2>
-        <ul>
-            <li>Objetivo: Recuperar o corpo.</li>
-            <li>Atividade:</li>
+<div class="content" id="sunday">
+    <h2>Domingo – Descanso Ativo ou Alongamento</h2>
+    <ul>
+        <li>Objetivo: Recuperar o corpo.</li>
+        <li>Atividade:
             <ul>
                 <li>20-30 minutos de alongamento leve.</li>
                 <li>Opcional: Yoga ou caminhada leve (20 minutos).</li>
             </ul>
-        </ul>
-    </div>
+        </li>
+    </ul>
+</div>
 
-    <footer>
-        <p>© 2024 Plano de Treino Semanal. Todos os direitos reservados.</p>
-    </footer>
+</main>
 
-    <script>
-        let timer;
-        let seconds = 0;
-        let isRunning = false;
+<footer>
+<p>© 2024 Plano de Treino Semanal. Todos os direitos reservados.</p>
+</footer>
 
-        function showContent(day) {
-            const contents = document.querySelectorAll('.content');
-            const navLinks = document.querySelectorAll('.nav-link');
-            
-            contents.forEach(content => content.classList.remove('active'));
-            navLinks.forEach(link => link.classList.remove('active'));
-            
-            document.getElementById(day).classList.add('active');
-            event.target.classList.add('active');
-        }
+<script>
+// Timer aprimorado
+let timerInterval = null;
+let seconds = 0;
+let running = false;
 
-        function startTimer() {
-            if (!isRunning) {
-                isRunning = true;
-                document.getElementById('startBtn').textContent = 'Pausar';
-                timer = setInterval(() => {
-                    seconds++;
-                    const minutes = Math.floor(seconds / 60);
-                    const remainingSeconds = seconds % 60;
-                    document.getElementById('timer').textContent = 
-                        `${String(minutes).padStart(2, '0')}:${String(remainingSeconds).padStart(2, '0')}`;
-                }, 1000);
-            } else {
-                clearInterval(timer);
-                isRunning = false;
-                document.getElementById('startBtn').textContent = 'Continuar';
-            }
-        }
+const timerDisplay = document.getElementById('timer');
+const startBtn = document.getElementById('startBtn');
+const resetBtn = document.getElementById('resetBtn');
 
-        function resetTimer() {
-            clearInterval(timer);
-            isRunning = false;
+startBtn.addEventListener('click', () => {
+    if(!running){
+        running = true;
+        startBtn.textContent = 'Pausar';
+        timerInterval = setInterval(() => {
+            seconds++;
+            updateTimerDisplay();
+        }, 1000);
+    } else {
+        clearInterval(timerInterval);
+        running = false;
+        startBtn.textContent = 'Continuar';
+    }
+});
+
+resetBtn.addEventListener('click', () => {
+    clearInterval(timerInterval);
+    seconds = 0;
+    running = false;
+    updateTimerDisplay();
+    startBtn.textContent = 'Iniciar';
+});
+
+function updateTimerDisplay(){
+    const mins = Math.floor(seconds/60);
+    const secs = seconds % 60;
+    timerDisplay.textContent = 
+        `${String(mins).padStart(2,'0')}:${String(secs).padStart(2,'0')}`;
+}
+
+// Navegação aprimorada
+const navLinks = document.querySelectorAll('.nav-link');
+const contents = document.querySelectorAll('.content');
+
+navLinks.forEach(link => {
+    link.addEventListener('click',(e)=>{
+        e.preventDefault();
+        const day = link.dataset.day;
+
+        navLinks.forEach(l=>l.classList.remove('active'));
+        link.classList.add('active');
+
+        contents.forEach(c=>c.classList.remove('active'));
+        const currentContent = document.getElementById(day);
+        currentContent.classList.add('active');
+
+        // Resetar cronômetro quando trocar de aba e estiver parado
+        if(!running){
             seconds = 0;
-            document.getElementById('timer').textContent = '00:00';
-            document.getElementById('startBtn').textContent = 'Iniciar';
+            updateTimerDisplay();
+            startBtn.textContent='Iniciar';
         }
+    });
+});
 
-        document.addEventListener('DOMContentLoaded', () => {
-            showContent('monday');
-            
-            // Detectar qual dia da semana é hoje e mostrar automaticamente
-            const days = ['sunday', 'monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday'];
-            const today = new Date().getDay();
-            showContent(days[today]);
-        });
-    </script>
+// Carregar o dia atual automaticamente
+document.addEventListener('DOMContentLoaded', ()=>{
+    const weekDays = ['sunday','monday','tuesday','wednesday','thursday','friday','saturday'];
+    const today = new Date().getDay();
+    const todayId = weekDays[today];
+
+    // Ativa nav do dia atual
+    navLinks.forEach(l=>{
+        if(l.dataset.day === todayId){
+            l.classList.add('active');
+        } else {
+            l.classList.remove('active');
+        }
+    });
+
+    contents.forEach(c=>{
+        if(c.id === todayId){
+            c.classList.add('active');
+        } else {
+            c.classList.remove('active');
+        }
+    });
+
+    // Reset timer
+    seconds=0;
+    updateTimerDisplay();
+    startBtn.textContent='Iniciar';
+});
+</script>
 </body>
 </html>
