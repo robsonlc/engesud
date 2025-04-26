@@ -3,172 +3,117 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="shortcut icon" href="https://i.imgur.com/HjwVm8x.png" type="image/x-icon">
-    <title>Em Breve</title>
+    <title>Oportunidade de Incorporação – Área 41.777,61 m²</title>
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="Oportunidade de Incorporação – Área 41.777,61 m²"/>
+    <meta property="og:description" content="Apresentação da área de 41.777,61 m² com grande potencial para desenvolvimento imobiliário. Expectativa de preço: R$ 1.500,00/m²."/>
+    <meta property="og:url" content="https://www.engesudsmart.com.br/lbk/tsr/yam"/>
+    <meta property="og:image" content="https://postimg.cc/HV63dvq5"/>
+    <meta property="og:type" content="website"/>
+    <meta property="og:site_name" content="Engesud Engenharia e Intermediação LTDA"/>
+
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="https://i.postimg.cc/QCp6V4Wr/HjwVm8x.png" type="image/x-icon"/>
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet"/>
+
     <style>
-        body {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            margin: 0;
-            font-family: Arial, sans-serif;
-            background-color: #000;
-            overflow: hidden;
-            color: white;
+        :root {
+            --primary-color: #1a365d;
+            --secondary-color: #2b6cb0;
+            --accent-color: #3182ce;
+            --bg-color: #f7fafc;
+            --text-color: #2d3748;
+            --footer-bg: #2d3748;
+            --footer-text: #ffffff;
+            --link-color: #4299e1;
         }
-        h1 {
-            text-align: center;
-            font-size: 3em;
-            animation: fadeIn 3s ease-in-out infinite alternate;
-        }
-        @keyframes fadeIn {
-            0% { opacity: 0; transform: scale(0.9); }
-            100% { opacity: 1; transform: scale(1.1); }
-        }
-        .stars {
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            background: url('https://raw.githubusercontent.com/robsonlc/engesud/main/lbk/tsr/osha/stars.png') repeat;
-            z-index: -1;
-            animation: moveStars 50s linear infinite;
-        }
-        @keyframes moveStars {
-            from { transform: translateY(0); }
-            to { transform: translateY(-1000px); }
-        }
-        .shooting-star {
-            position: absolute;
-            width: 2px;
-            height: 150px;
-            background: linear-gradient(white, rgba(255, 255, 255, 0));
-            animation: shootingStar 2s ease-out infinite;
-        }
-        @keyframes shootingStar {
-            from {
-                top: -10%;
-                left: 100%;
-            }
-            to {
-                top: 100%;
-                left: -10%;
-            }
-        }
-        .glowing-text {
-            color: #fff;
-            text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 20px #ff00ff, 0 0 30px #ff00ff, 0 0 40px #ff00ff, 0 0 50px #ff00ff, 0 0 60px #ff00ff;
-            animation: glow 1s ease-in-out infinite alternate;
-        }
-        @keyframes glow {
-            from {
-                text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 20px #ff00ff, 0 0 30px #ff00ff, 0 0 40px #ff00ff, 0 0 50px #ff00ff, 0 0 60px #ff00ff;
-            }
-            to {
-                text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #ff00ff, 0 0 40px #ff00ff, 0 0 50px #ff00ff, 0 0 60px #ff00ff, 0 0 70px #ff00ff;
-            }
-        }
-        .floating-objects {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            width: 10px;
-            height: 10px;
-            background: red;
-            border-radius: 50%;
-            animation: float 5s ease-in-out infinite;
-        }
-        @keyframes float {
-            0%, 100% {
-                transform: translateY(0) translateX(0);
-            }
-            50% {
-                transform: translateY(-20px) translateX(20px);
-            }
-        }
-        .twinkling-stars {
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            background: transparent;
-            overflow: hidden;
-            z-index: 1;
-        }
-        .twinkling-stars::before, .twinkling-stars::after {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: transparent;
-            opacity: 0.5;
-            animation: twinkling 1.5s infinite ease-in-out alternate;
-        }
-        .twinkling-stars::after {
-            animation-delay: 0.75s;
-        }
-        @keyframes twinkling {
-            0% { background: rgba(255, 255, 255, 0.1); }
-            100% { background: rgba(255, 255, 255, 0.3); }
-        }
-        .nebula {
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            background: radial-gradient(circle at center, rgba(255, 0, 255, 0.2), transparent);
-            z-index: 0;
-            animation: pulse 3s infinite;
-        }
-        @keyframes pulse {
-            0%, 100% { transform: scale(1); }
-            50% { transform: scale(1.1); }
-        }
-        .comet {
-            position: absolute;
-            width: 2px;
-            height: 250px;
-            background: linear-gradient(white, rgba(255, 255, 255, 0));
-            animation: comet 3s ease-out infinite;
-        }
-        @keyframes comet {
-            from {
-                top: -20%;
-                left: 120%;
-            }
-            to {
-                top: 120%;
-                left: -20%;
-            }
-        }
-        .meteor {
-            position: absolute;
-            width: 3px;
-            height: 200px;
-            background: linear-gradient(white, rgba(255, 255, 255, 0));
-            animation: meteor 4s ease-out infinite;
-        }
-        @keyframes meteor {
-            from {
-                top: -30%;
-                left: 110%;
-            }
-            to {
-                top: 110%;
-                left: -30%;
-            }
-        }
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+        body { font-family: "Inter", system-ui, -apple-system, sans-serif; background: var(--bg-color); color: var(--text-color); line-height: 1.7; }
+        header { position: relative; min-height: 60vh; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; padding: 80px 20px; background: url("https://postimg.cc/QFVmtkDz") center / cover no-repeat; }
+        header::before { content: ""; position: absolute; inset: 0; background: rgba(0,0,0,0.7); z-index: 0; }
+        header h1, header p { position: relative; z-index: 1; color: #ffffff; text-shadow: 2px 2px 4px rgba(0,0,0,0.3); }
+        header h1 { font-size: 3.5rem; font-weight: 800; margin-bottom: 20px; }
+        header p { font-size: 1.4rem; }
+        .container { max-width: 1200px; margin: 0 auto; padding: 40px; background: #ffffff; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); margin-top: -60px; position: relative; z-index: 2; }
+        h2 { color: var(--primary-color); font-size: 2rem; margin: 40px 0 20px; border-bottom: 3px solid var(--accent-color); padding-bottom: 10px; display: inline-block; }
+        p, ul { font-size: 1.1rem; margin-bottom: 25px; }
+        ul { padding-left: 25px; }
+        ul li { margin-bottom: 15px; }
+        .highlight { color: var(--accent-color); font-weight: 600; }
+        .map-container { margin: 40px 0; border-radius: 12px; overflow: hidden; box-shadow: 0 8px 20px rgba(0,0,0,0.15); }
+        .map-container iframe { width: 100%; height: 500px; border: none; }
+        .button-container { text-align: center; margin: 40px 0; }
+        .cta-button { display: inline-block; background: var(--primary-color); color: #ffffff; padding: 15px 30px; border-radius: 8px; font-weight: 600; font-size: 1.1rem; text-decoration: none; transition: all 0.3s ease; box-shadow: 0 4px 6px rgba(0,0,0,0.1); }
+        .cta-button:hover { background: var(--secondary-color); transform: translateY(-2px); box-shadow: 0 6px 12px rgba(0,0,0,0.15); }
+        footer { background: var(--footer-bg); color: var(--footer-text); padding: 50px 20px; text-align: center; margin-top: 60px; }
+        footer img { max-width: 150px; margin-bottom: 20px; border-radius: 16px; }
+        footer p { margin: 8px 0; font-size: 1.1rem; }
+        footer a { color: var(--link-color); font-weight: 600; text-decoration: none; transition: color 0.3s ease; }
+        footer a:hover { color: #ffffff; }
+        .last-update { margin-top: 20px; font-size: 0.9rem; color: #a0aec0; }
+        @media (max-width: 768px) { header h1 { font-size: 2.5rem; } header p { font-size: 1.2rem; } .container { padding: 20px; margin-top: -40px; } h2 { font-size: 1.8rem; } }
+        @media (min-width: 1400px) { .container { max-width: 1400px; } }
     </style>
 </head>
 <body>
-    <div class="stars"></div>
-    <div class="twinkling-stars"></div>
-    <div class="shooting-star"></div>
-    <div class="nebula"></div>
-    <div class="comet"></div>
-    <div class="meteor"></div>
-    <h1 class="glowing-text">Logo entrará no ar</h1>
-    <div class="floating-objects"></div>
+    <header>
+        <h1>Oportunidade de Incorporação</h1>
+        <p>Área de 41.777,61 m² – Maringá/PR</p>
+    </header>
+
+    <main class="container">
+        <p>Apresentamos uma excelente oportunidade de incorporação imobiliária com <span class="highlight">41.777,61 m²</span> em localização estratégica em Maringá/PR. O proprietário sinaliza expectativa de preço de <span class="highlight">R$ 1.500,00/m²</span> e está aberto a parcerias imobiliárias, financeiras ou físicas para otimizar o desenvolvimento da área.</p>
+
+        <h2>Localização</h2>
+        <div class="map-container">
+            <iframe src="https://www.google.com/maps/d/embed?mid=1xuWeTAsJB0BUVS3vKOBxR4lupfRnzAw&ehbc=2E312F"></iframe>
+        </div>
+
+        <h2>Pontos de Destaque</h2>
+        <ul>
+            <li><strong>Investimento no viaduto da Avenida Colombo</strong>, melhorando significativamente a mobilidade urbana na região.</li>
+            <li><strong>Recém-aprovado zoneamento de uso misto</strong>, permitindo combinação de residências, comércio e serviços no mesmo empreendimento.</li>
+            <li>Zona urbana consolidada, com acesso facilitado às principais avenidas de Maringá.</li>
+            <li>Potencial para projetos verticais ou uso misto, conforme tendência de adensamento urbano.</li>
+        </ul>
+
+        <div class="button-container">
+            <a class="cta-button" href="https://wa.me/4497013489" target="_blank" title="Fale pelo WhatsApp">Solicitar Informações</a>
+        </div>
+    </main>
+
+    <footer>
+        <a href="http://www.engesudsmart.com.br" target="_blank" title="www.engesudsmart.com.br"><img src="https://i.postimg.cc/FsKzb1S4/3YKn2xW.png" alt="Logo Engesud"/></a>
+        <p><strong>Engesud Engenharia e Intermediação LTDA</strong></p>
+        <p>Robson Luis da Costa | <a href="https://wa.me/4497013489" target="_blank" title="WhatsApp">+55 (44) 99701-3489</a></p>
+        <p><a href="https://www.engesudsmart.com.br" target="_blank">www.engesudsmart.com.br</a></p>
+        <p class="last-update">Última atualização: 26 de abril de 2025</p>
+    </footer>
+
+    <!-- Este conteúdo é protegido por direitos autorais creditados à Engesud Engenharia e Intermediação LTDA, inscrita no CNPJ 40.601.637/0001-58 -->
+
+    <!-- Animação: revela cards quando entram na viewport -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const cards = document.querySelectorAll('.feature-card');
+            const observer = new IntersectionObserver(entries => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.opacity = 1;
+                        entry.target.style.transform = 'translateY(0)';
+                    }
+                });
+            }, { threshold: 0.15 });
+            cards.forEach(card => {
+                card.style.opacity = 0;
+                card.style.transform = 'translateY(20px)';
+                card.style.transition = 'all 0.5s ease-out';
+                observer.observe(card);
+            });
+        });
+    </script>
 </body>
 </html>
-
