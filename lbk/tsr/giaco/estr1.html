@@ -1,1 +1,67 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Estruturação da Operação Giacopini / Nobel</title>
+    <script src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script>
+    <script>
+        mermaid.initialize({ startOnLoad: true });
+    </script>
+    <style>
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background-color: #ecf0f1; margin: 0; padding: 0; }
+        .container { background: #fff; padding: 30px 20px; border-radius: 12px; max-width: 1000px; margin: 30px auto; box-shadow: 0 4px 12px rgba(0,0,0,0.1); }
+        h1 { color: #2980b9; font-size: 28px; text-align: center; }
+        h2 { color: #2c3e50; border-bottom: 2px solid #2980b9; padding-bottom: 5px; margin-top: 30px; }
+        ul { line-height: 1.8; font-size: 16px; color: #34495e; padding-left: 20px; }
+        li { margin-bottom: 8px; }
+        .mermaid { background: #ffffff; border: 1px solid #bdc3c7; border-radius: 8px; padding: 20px; margin-top: 20px; overflow-x: auto; }
+        p { text-align: center; font-size: 14px; color: #7f8c8d; margin-top: 40px; }
+        @media (max-width: 600px) {
+            .container { padding: 15px 10px; }
+            h1 { font-size: 22px; }
+            h2 { font-size: 18px; }
+            ul { font-size: 14px; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Estruturação Proposta - Operação Giacopini / Nobel</h1>
+        <h2>Resumo da Proposta</h2>
+        <ul>
+            <li>Divanir Giacopini propõe entrega da Chácara (R$ 7 milhões) + R$ 1,5 milhão em dinheiro para adquirir o terreno do Nobel (21.000m²).</li>
+            <li>Terreno do Nobel transferido para Divanir e parceiro Equity para futura exploração imobiliária.</li>
+            <li>Contrato de opção ou MoU de exclusividade por 90 a 180 dias para estruturar parceiro.</li>
+            <li>Carteira da MRV permanece como prêmio bônus futuro, caso as resolutivas sejam superadas.</li>
+            <li>Divisão do prêmio: Nobel primeiro reembolsa os R$ 7 milhões, saldo (R$ 4,5 milhões estimados) é dividido conforme acordo.</li>
+        </ul>
+
+        <h2>Fluxo da Operação</h2>
+        <div class="mermaid">
+flowchart TD
+A[MoU de 90-180 dias] --> B[Troca: Chacara + dinheiro pelo Nobel]
+B --> C[Divanir e parceiro recebem terreno]
+C --> D[Divanir busca financiamento ou estrutura projeto]
+D --> E[Desenvolvimento do projeto]
+B --> F[Contrato MRV se superadas resolutivas]
+F --> G[Inicio dos recebiveis MRV]
+G --> H1[Nobel recebe 7M como reembolso]
+G --> H2[Delta 4.5M vira bonus]
+H2 --> H2a[Nobel recebe maior parte do bonus]
+H2 --> H2b[Divanir recebe parte acordada]
+        </div>
+
+        <h2>Observações Importantes</h2>
+        <ul>
+            <li>A operação isola totalmente o risco da MRV do negócio principal.</li>
+            <li>Nobel permanece seguro com ativo real e potencial prêmio adicional.</li>
+            <li>Divanir ganha ativo desembaraçado para uso imediato como colateral para funding ou desenvolvimento.</li>
+            <li>Essa estrutura é praticada no mercado como "ativo + earn-out condicionado".</li>
+        </ul>
+
+        <p><strong>Engesud Smart - Apresentação Confidencial para fins de estudo e negociação</strong></p>
+    </div>
+</body>
+</html>
 
