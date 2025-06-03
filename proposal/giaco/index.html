@@ -9,44 +9,62 @@
     mermaid.initialize({ startOnLoad: true });
   </script>
   <style>
-    body {
+    * {
+      box-sizing: border-box;
+    }
+    html, body {
       margin: 0;
       padding: 0;
+      height: 100%;
+      width: 100%;
       background-color: #121212;
       color: #e0e0e0;
       font-family: sans-serif;
       overflow: hidden;
     }
+    .slider {
+      display: flex;
+      flex-direction: row;
+      width: 100%;
+      height: 100vh;
+      overflow-x: auto;
+      overflow-y: hidden;
+      scroll-snap-type: x mandatory;
+      -webkit-overflow-scrolling: touch;
+      scroll-behavior: smooth;
+    }
     .slide {
+      flex: 0 0 100%;
+      height: 100vh;
+      scroll-snap-align: start;
+      padding: 2em 1em;
       display: flex;
       flex-direction: column;
       justify-content: center;
       align-items: center;
-      height: 100vh;
-      width: 100vw;
-      padding: 2em;
-      box-sizing: border-box;
-      scroll-snap-align: start;
-      flex-shrink: 0;
-    }
-    .slider {
-      display: flex;
-      flex-direction: row;
-      width: 100vw;
-      height: 100vh;
-      overflow-x: scroll;
-      scroll-snap-type: x mandatory;
-      -webkit-overflow-scrolling: touch;
+      text-align: center;
     }
     h1, h2 {
       color: #ffffff;
+      margin-bottom: 0.5em;
+    }
+    p, ul {
+      font-size: 1.1em;
+      line-height: 1.6em;
+      max-width: 90%;
+      margin: 0 auto;
+    }
+    ul {
+      list-style: none;
+      padding: 0;
+    }
+    ul li::before {
+      content: "• ";
+      color: #90caf9;
     }
     .highlight {
       color: #90caf9;
       font-weight: bold;
-    }
-    ul {
-      padding-left: 1.2em;
     }
     .links a {
       display: inline-block;
@@ -56,13 +74,22 @@
       color: white;
       text-decoration: none;
       border-radius: 6px;
+      font-size: 1em;
     }
     .mermaid {
       background-color: #263238;
       border-radius: 8px;
       padding: 1em;
-      width: 100%;
+      width: 90%;
       max-width: 400px;
+    }
+    @media (min-width: 768px) {
+      .slider {
+        height: 100vh;
+      }
+      .slide {
+        padding: 3em;
+      }
     }
   </style>
 </head>
