@@ -2,7 +2,7 @@
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
   <title>Parceria ProZeis - Lote Giacopini | Proposta de Desenvolvimento Imobiliário</title>
   <script type="module">
     import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs';
@@ -106,8 +106,8 @@
     }
     .stats-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 2em;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 1.5em;
       margin: 2em 0;
       width: 100%;
     }
@@ -115,7 +115,7 @@
       background: rgba(255, 255, 255, 0.08);
       border: 1px solid rgba(144, 202, 249, 0.3);
       border-radius: 12px;
-      padding: 2em;
+      padding: 1.5em;
       text-align: center;
       transition: transform 0.3s ease, box-shadow 0.3s ease;
     }
@@ -124,14 +124,14 @@
       box-shadow: 0 10px 25px rgba(30, 136, 229, 0.2);
     }
     .stat-number {
-      font-size: 2.5em;
+      font-size: 2.2em;
       font-weight: bold;
       color: #90caf9;
       display: block;
       margin-bottom: 0.3em;
     }
     .stat-label {
-      font-size: 1.1em;
+      font-size: 1em;
       color: #b0bec5;
       text-transform: uppercase;
       letter-spacing: 1px;
@@ -213,7 +213,7 @@
       color: white;
       text-decoration: none;
       border-radius: 10px;
-      font-size: 1.1em;
+      font-size: 1em;
       font-weight: 500;
       transition: all 0.3s ease;
       text-align: center;
@@ -232,13 +232,16 @@
     }
     .slide-indicator {
       position: fixed;
-      top: 2em;
-      right: 2em;
+      bottom: 1em;
+      left: 50%;
+      transform: translateX(-50%);
       background: rgba(0, 0, 0, 0.5);
-      padding: 0.5em 1em;
+      padding: 0.3em 0.8em;
       border-radius: 20px;
-      font-size: 0.9em;
+      font-size: 0.8em;
       z-index: 10;
+      color: #e0e0e0;
+      text-shadow: 0 1px 3px rgba(0,0,0,0.5);
     }
     @media (max-width: 768px) {
       .slide {
@@ -250,27 +253,44 @@
       h2 {
         font-size: 1.8em;
       }
+      p {
+        font-size: 1em;
+      }
       .stats-grid {
         grid-template-columns: 1fr;
         gap: 1em;
       }
       .stat-card {
-        padding: 1.5em;
+        padding: 1em;
       }
       .documents-grid {
         grid-template-columns: 1fr;
+      }
+      .advantage-item {
+        padding: 1em;
+      }
+      .warning-box, .opportunity-box {
+        padding: 1em;
+      }
+      .mermaid {
+        padding: 1em;
+      }
+      .slide-indicator {
+        font-size: 0.7em;
+        padding: 0.2em 0.6em;
       }
     }
   </style>
 </head>
 <body>
+  <!-- Slide Indicator (repositioned to bottom center) -->
   <div class="slide-indicator">
-    Deslize para navegar →
+    1/8 – Deslize para navegar
   </div>
 
   <div class="slider">
     <!-- Slide 1: Apresentação -->
-    <div class="slide">
+    <div class="slide" data-index="1">
       <div class="content">
         <h1>Parceria Estratégica ProZeis</h1>
         <p class="subtitle">Projeto Lote Giacopini</p>
@@ -282,7 +302,7 @@
     </div>
 
     <!-- Slide 2: Resumo Executivo -->
-    <div class="slide">
+    <div class="slide" data-index="2">
       <div class="content">
         <h2>Resumo Executivo</h2>
         <div class="stats-grid">
@@ -299,12 +319,38 @@
             <span class="stat-label">Valor Estimado</span>
           </div>
         </div>
-        <p>Desenvolvimento imobiliário através de <span class="highlight">permuta financeira</span> com distribuição de recebimentos conforme evolução das vendas.</p>
+        <p>Desenvolvimento imobiliário através de <span class="highlight">permuta financeira</span>, com pagamentos escalonados conforme vendas. Proposta vinculada a condições jurídicas claras para minimizar riscos do proprietário.</p>
       </div>
     </div>
 
-    <!-- Slide 3: Características do Terreno -->
-    <div class="slide">
+    <!-- Slide 3: Programa ProZEIS -->
+    <div class="slide" data-index="3">
+      <div class="content">
+        <h2>Oportunidade: Programa ProZEIS</h2>
+        <div class="opportunity-box">
+          <strong>Por que ProZEIS?</strong> Incentivos fiscais e urbanísticos para áreas de habitação de interesse social, permitindo <span class="highlight">ampliação do potencial construtivo</span> e valorização do terreno.
+        </div>
+        <p>O ProZEIS concede benefícios como:</p>
+        <ul style="text-align:left; max-width:600px; margin:1em auto; list-style-type: none; padding-left: 0;">
+          <li style="margin: 0.8em 0; position: relative; padding-left: 1.5em; color: #e0e0e0;">
+            <span style="position:absolute; left:0; top:0; color:#4caf50; font-size:1.2em;">✓</span>
+            Redução de outorga onerosa para adensamento
+          </li>
+          <li style="margin: 0.8em 0; position: relative; padding-left: 1.5em; color: #e0e0e0;">
+            <span style="position:absolute; left:0; top:0; color:#4caf50; font-size:1.2em;">✓</span>
+            Prioridade em licenciamento municipal
+          </li>
+          <li style="margin: 0.8em 0; position: relative; padding-left: 1.5em; color: #e0e0e0;">
+            <span style="position:absolute; left:0; top:0; color:#4caf50; font-size:1.2em;">✓</span>
+            Possibilidade de <span class="highlight">verticalização adicional</span> para incremento do VGV
+          </li>
+        </ul>
+        <p>Para o Lote Giacopini, a conversão para ProZEIS significa <span class="highlight">valorização extra</span> do ativo e melhor atração de investidores.</p>
+      </div>
+    </div>
+
+    <!-- Slide 4: Características do Terreno -->
+    <div class="slide" data-index="4">
       <div class="content">
         <h2>Características do Terreno</h2>
         <div class="stats-grid">
@@ -321,70 +367,58 @@
             <span class="stat-label">Aproveitamento</span>
           </div>
         </div>
-        <p>Terreno estrategicamente localizado com <span class="highlight">excelente potencial de adensamento</span> e aproveitamento otimizado para desenvolvimento habitacional.</p>
+        <p>Terreno estratégico com testada de 241,6 m para Rua Argentina (RJ), em zona ZP01 e ZR2. Excelente potencial para adensamento, alinhado às exigências do ProZEIS e marcos regulatórios municipais.</p>
       </div>
     </div>
 
-    <!-- Slide 4: Vantagens Competitivas -->
-    <div class="slide">
+    <!-- Slide 5: Vantagens da Parceria -->
+    <div class="slide" data-index="5">
       <div class="content">
         <h2>Vantagens da Parceria</h2>
         <div class="advantages-list">
           <div class="advantage-item">
-            <strong>Fluxo de Caixa Distribuído:</strong> Recebimento escalonado conforme cronograma de vendas, reduzindo riscos e melhorando liquidez.
+            <strong>Fluxo de Caixa Distribuído:</strong> Pagamentos escalonados conforme cronograma de vendas, reduzindo riscos e melhorando liquidez para o proprietário.
           </div>
           <div class="advantage-item">
-            <strong>Potencial de Adensamento:</strong> MRV busca aprovação para unidades adicionais, maximizando o VGV do empreendimento.
+            <strong>Potencial de Adensamento:</strong> MRV busca aprovar adensamento adicional pelo ProZEIS, maximizando o VGV final do empreendimento.
           </div>
           <div class="advantage-item">
-            <strong>Parceria Consolidada:</strong> Desenvolvimento com construtora nacional de reconhecida solidez financeira e técnica.
+            <strong>Condição Segura:</strong> Transferência da matrícula somente após aprovação de todos os projetos e licenças, garantindo segurança jurídica ao proprietário.
           </div>
           <div class="advantage-item">
-            <strong>Gestão Profissional:</strong> Transferência de riscos operacionais para empresa especializada no segmento.
+            <strong>Parceria Consolidada:</strong> Desenvolvimento com construtora de sólida reputação técnica e financeira, minimizando incertezas operacionais.
           </div>
         </div>
       </div>
     </div>
 
-    <!-- Slide 5: Aspectos Jurídicos -->
-    <div class="slide">
+    <!-- Slide 6: Aspectos Jurídicos -->
+    <div class="slide" data-index="6">
       <div class="content">
         <h2>Segurança Jurídica</h2>
         <div class="warning-box">
-          <strong>Condicionantes Legais:</strong> Todo o processo está condicionado à completa regularização documental do imóvel e obtenção das aprovações legais necessárias.
+          <strong>Condições Essenciais:</strong> A efetivação do negócio depende de:</br>
+          • Regularização completa da documentação do imóvel;</br>
+          • Conversão em Zona Especial ProZEIS e obtenção de licenças municipais, estaduais e federais;</br>
+          • Análise de custo de outorga onerosa e viabilidade de infraestrutura (água, esgoto, drenagem).
         </div>
-        <p>O avanço do projeto depende integralmente da <span class="highlight">conformidade jurídica total</span>. Nenhuma etapa será executada sem a devida documentação e aprovações dos órgãos competentes.</p>
+        <p>Transferência da matrícula será realizada somente após a confirmação de todas as aprovações necessárias (projetos e licenças), reduzindo a insegurança jurídica. Nenhuma etapa é executada sem a documentação adequada.</p>
         <div class="advantages-list" style="max-width: 500px;">
           <div class="advantage-item">Due diligence jurídica completa</div>
           <div class="advantage-item">Regularização cartorial</div>
-          <div class="advantage-item">Aprovações municipais</div>
-          <div class="advantage-item">Licenças ambientais</div>
-        </div>
-      </div>
-    </div>
-
-    <!-- Slide 6: Janela de Oportunidade -->
-    <div class="slide">
-      <div class="content">
-        <h2>Janela de Oportunidade</h2>
-        <div class="opportunity-box">
-          <strong>Momento Estratégico:</strong> A legislação atual do ProZeis viabiliza esta estrutura de negócio. Alterações futuras podem impactar a viabilidade do modelo.
-        </div>
-        <p>A <span class="highlight">conjuntura regulatória presente</span> oferece condições favoráveis que podem não se manter indefinidamente. É recomendável avaliar a proposta considerando este contexto temporal.</p>
-        <div class="stat-card" style="max-width: 400px; margin: 2em auto;">
-          <span class="stat-label" style="color: #ffc107;">Recomendação</span>
-          <p style="margin: 1em 0; color: #e0e0e0;">Análise e decisão em prazo adequado para aproveitamento do cenário regulatório favorável</p>
+          <div class="advantage-item">Aprovações municipais e ambientais</div>
+          <div class="advantage-item">Licenças de órgãos públicos competentes</div>
         </div>
       </div>
     </div>
 
     <!-- Slide 7: Estrutura do Negócio -->
-    <div class="slide">
+    <div class="slide" data-index="7">
       <div class="content">
         <h2>Estrutura do Negócio</h2>
         <div class="mermaid">
           graph TD
-            A[Proprietário - Sr. Divanir] -->|Permuta 8% VGV| B[MRV Engenharia]
+            A[Proprietário – Sr. Divanir] -->|Permuta 8% VGV| B[MRV Engenharia]
             B --> C[Desenvolvimento do Projeto]
             C --> D[560 Unidades Habitacionais]
             D --> E[Processo de Vendas]
@@ -396,37 +430,25 @@
             style D fill:#ff9800,stroke:#ffb74d,color:#fff
             style F fill:#9c27b0,stroke:#ba68c8,color:#fff
         </div>
-        <p>Fluxo operacional transparente com <span class="highlight">marcos bem definidos</span> e repasses proporcionais ao desenvolvimento do empreendimento.</p>
+        <p>Fluxo operacional transparente, com marcos claramente definidos e repasses proporcionais à evolução das vendas. Contrato definitivo somente após validação de todos os requisitos legais.</p>
       </div>
     </div>
 
-    <!-- Slide 8: Documentação -->
-    <div class="slide">
+    <!-- Slide 8: Documentação Técnica -->
+    <div class="slide" data-index="8">
       <div class="content">
         <h2>Documentação Técnica</h2>
-        <p>Acesso aos documentos fundamentais para análise detalhada da proposta:</p>
+        <p>Para análise completa, acesse os documentos fundamentais abaixo:</p>
         <div class="documents-grid">
-          <a href="#" class="doc-link">
+          <a href="https://www.engesudsmart.com.br/proposal/giaco/Proposta%20Giacopini%20-%202025.pdf" class="doc-link" target="_blank">
             Proposta Comercial MRV
           </a>
-          <a href="#" class="doc-link">
-            Minuta do Termo de Aceite
-          </a>
-          <a href="#" class="doc-link">
+          <a href="https://www.engesudsmart.com.br/proposal/giaco/Matricula_65895_cod77149.pdf" class="doc-link" target="_blank">
             Matrícula do Imóvel
-          </a>
-          <a href="#" class="doc-link">
-            Estudo de Viabilidade
-          </a>
-          <a href="#" class="doc-link">
-            Análise Jurídica Preliminar
-          </a>
-          <a href="#" class="doc-link">
-            Memorial Descritivo
           </a>
         </div>
         <p style="font-size: 0.9em; color: #b0bec5; margin-top: 2em;">
-          * Documentos sujeitos à análise técnica e jurídica antes da formalização
+          * Documentos sujeitos à análise técnica e jurídica antes da assinatura do contrato definitivo.
         </p>
       </div>
     </div>
@@ -437,7 +459,6 @@
     document.addEventListener('keydown', function(e) {
       const slider = document.querySelector('.slider');
       const slideWidth = slider.clientWidth;
-      
       if (e.key === 'ArrowRight') {
         slider.scrollLeft += slideWidth;
       } else if (e.key === 'ArrowLeft') {
@@ -445,14 +466,13 @@
       }
     });
 
-    // Atualizar indicador de slide
+    // Atualizar indicador de slide conforme scroll
     const slider = document.querySelector('.slider');
     const indicator = document.querySelector('.slide-indicator');
-    
     slider.addEventListener('scroll', function() {
       const slideIndex = Math.round(this.scrollLeft / this.clientWidth) + 1;
       const totalSlides = document.querySelectorAll('.slide').length;
-      indicator.textContent = `${slideIndex}/${totalSlides} - Use ← → para navegar`;
+      indicator.textContent = `${slideIndex}/${totalSlides} – Deslize para navegar`;
     });
   </script>
 </body>
