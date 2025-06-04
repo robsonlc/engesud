@@ -57,8 +57,43 @@
         },
       ];
 
+      const containerRef = React.useRef(null);
+
+      React.useEffect(() => {
+        const container = containerRef.current;
+        if (!container) return;
+
+        let startY = 0;
+
+        function onTouchStart(e) {
+          startY = e.touches[0].clientY;
+        }
+
+        function onTouchEnd(e) {
+          const endY = e.changedTouches[0].clientY;
+          const diff = startY - endY;
+          if (Math.abs(diff) > 50) {
+            const height = container.clientHeight;
+            container.scrollBy({
+              top: diff > 0 ? height : -height,
+              behavior: 'smooth'
+            });
+          }
+        }
+
+        container.addEventListener('touchstart', onTouchStart);
+        container.addEventListener('touchend', onTouchEnd);
+        return () => {
+          container.removeEventListener('touchstart', onTouchStart);
+          container.removeEventListener('touchend', onTouchEnd);
+        };
+      }, []);
+
       return (
-        <div className="snap-y snap-mandatory overflow-y-auto h-[100dvh]">
+        <div
+          ref={containerRef}
+          className="snap-y snap-mandatory overflow-y-auto h-[100dvh] touch-pan-y"
+        >
           {slides.map((slide, index) => (
             <section
               key={index}
