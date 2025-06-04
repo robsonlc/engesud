@@ -1,0 +1,58 @@
+import React from "react";
+
+export default function ConsensoMikasaMenin() {
+  const slides = [
+    {
+      title: "MI Kaza & Menin",
+      subtitle: "Facilitador de Consenso Contratual",
+      content:
+        "Esta apresentação visa sintetizar os pontos pacificados, destacar os ajustes pendentes e sugerir caminhos para o equilíbrio contratual.",
+    },
+    {
+      title: "O que já está pacificado",
+      content:
+        "✔ Comissão por conta da Construtora Menin\n✔ Seguro garantia bancado pela MI Kaza\n✔ Permuta ajustada de 8% para 8,5%",
+    },
+    {
+      title: "Pontos ainda sensíveis",
+      content:
+        "• Garantias em caso de inadimplência\n• Forma de execução em fases e segurança contratual\n• Eventual necessidade futura de SPE",
+    },
+    {
+      title: "Sugestão conciliatória",
+      content:
+        "➡ Manutenção da cláusula de garantia com possibilidade de caução alternativa\n➡ Assinatura de nova escritura apenas em fase de contratação\n➡ Procuração específica para registro e tramitação sem transferência imediata",
+    },
+    {
+      title: "Próximos passos",
+      content:
+        "• Marcar videoconferência final\n• Validar juridicamente os ajustes conciliatórios\n• Formalizar com nova versão da minuta",
+    },
+    {
+      title: "Mensagem da Engesud Smart",
+      content:
+        "Nosso papel é facilitar um caminho comum e seguro, onde ambas as partes avancem com confiança. Estamos à disposição para apoiar esse consenso.",
+    },
+  ];
+
+  return (
+    <div className="snap-y snap-mandatory overflow-y-scroll h-screen bg-black text-white font-sans">
+      {slides.map((slide, index) => (
+        <section
+          key={index}
+          className="snap-start flex flex-col items-center justify-center min-h-screen p-8"
+        >
+          <h1 className="text-3xl font-bold mb-4 text-center">{slide.title}</h1>
+          {slide.subtitle && (
+            <h2 className="text-xl font-semibold mb-4 text-center">
+              {slide.subtitle}
+            </h2>
+          )}
+          <p className="max-w-md text-center whitespace-pre-line leading-relaxed">
+            {slide.content}
+          </p>
+        </section>
+      ))}
+    </div>
+  );
+}
