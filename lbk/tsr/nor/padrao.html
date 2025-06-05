@@ -4,6 +4,7 @@
   <meta charset="utf-8" />
   <title>Fluxo de Viabilidade – Construtora Menin</title>
   <link rel="shortcut icon" href="https://i.imgur.com/HjwVm8x.png" type="image/x-icon">
+
   <!-- Mermaid via JSDelivr -->
   <script type="module">
     import mermaid from "https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs";
@@ -18,6 +19,7 @@
       }
     });
   </script>
+
   <style>
     body {
       margin: 0;
@@ -66,6 +68,7 @@
       border-radius: 8px;
       padding: 2rem;
       border: 1px solid #e1e8ed;
+      overflow-x: auto;
     }
     
     .legend {
@@ -107,135 +110,138 @@
     .phase-3 { background-color: #e8f5e8; }
     .phase-4 { background-color: #fff3e0; }
     .phase-5 { background-color: #fce4ec; }
+    .phase-6 { background-color: #f1f8e9; }
   </style>
 </head>
 <body>
   <div class="container">
     <div class="header">
       <h1>Processo de Viabilidade de Empreendimentos</h1>
-      <div class="subtitle">Construtora Menin - Mi Kaza • Discussão de Fluxo Operacional</div>
+      <div class="subtitle">
+        Construtora Menin – Mi Kaza • Discussão de Fluxo Operacional
+      </div>
     </div>
     
     <div class="content">
       <div class="mermaid">
 flowchart TD
-    %% FASE 1: PROSPECÇÃO E ANÁLISE INICIAL
-    subgraph FASE1 ["FASE 1: PROSPECÇÃO & ANÁLISE INICIAL"]
-        A["Prospecção de Terreno"] 
-        B{"Análise de Viabilidade<br/>Técnico-Financeira"}
-        C["Negociação com<br/>Proprietário"]
-        Z["Arquivar/<br/>Monitorar Mercado"]
-    end
-    
-    %% FASE 2: CONTRATAÇÃO E DUE DILIGENCE
-    subgraph FASE2 ["FASE 2: CONTRATAÇÃO & DUE DILIGENCE"]
-        D["Elaboração da Minuta<br/>Opção/Permuta"]
-        E["Due Diligence Jurídica<br/>Matrícula • Passivos • Restrições"]
-        F{"Pareceres Jurídicos<br/>+ Ajustes Necessários"}
-        G["Assinatura do<br/>Instrumento de Opção"]
-    end
-    
-    %% FASE 3: PROJETO E APROVAÇÕES
-    subgraph FASE3 ["FASE 3: PROJETOS & APROVAÇÕES"]
-        H["Master Plan &<br/>Projetos Preliminares"]
-        I["Protocolos e Aprovação<br/>Prefeitura • Órgãos Ambientais"]
-        J{"Aprovação<br/>Obtida?"}
-        K["Registro da Incorporação<br/>+ Constituição da SPE"]
-    end
-    
-    %% FASE 4: ESTRUTURAÇÃO FINANCEIRA
-    subgraph FASE4 ["FASE 4: ESTRUTURAÇÃO FINANCEIRA"]
-        L["Contratação<br/>Financiamento CEF/MCMV"]
-        M["Constituição de Garantias<br/>Seguro-Garantia ou Caução 100%"]
-        N{"Hipoteca<br/>Necessária?"}
-        O["Constituição de Hipoteca<br/>em favor da CEF"]
-        P["Liberação de Recursos &<br/>Execução da Infraestrutura"]
-    end
-    
-    %% FASE 5: EXECUÇÃO E COMERCIALIZAÇÃO
-    subgraph FASE5 ["FASE 5: EXECUÇÃO & COMERCIALIZAÇÃO"]
-        Q{"Gatilho Atingido?<br/>70% Vendas OU<br/>Fundo Reserva 10%"}
-        R["Início das Obras<br/>da Fase"]
-        S["Intensificar Comercialização<br/>Fundo cobre permuta"]
-        T["Monitoramento<br/>Cronograma & Penalidades<br/>0,5% VGV/dia"]
-        U{"Fase<br/>Concluída?"}
-        V["Próxima Fase ou<br/>Preparar Encerramento"]
-    end
-    
-    %% FASE 6: ENCERRAMENTO
-    subgraph FASE6 ["FASE 6: ENCERRAMENTO"]
-        W["Conclusão Geral &<br/>Obtenção do Habite-se"]
-        X["Liquidação de Garantias<br/>Liberação da Hipoteca"]
-        Y["Entrega & Encerramento<br/>do Empreendimento"]
-    end
-    
-    %% FLUXOS PRINCIPAIS
-    A --> B
-    B -->|Aprovada| C
-    B -->|Reprovada| Z
-    C --> D
-    D --> E
-    E --> F
-    F -->|Conforme| G
-    F -->|Pendências| D
-    G --> H
-    H --> I
-    I --> J
-    J -->|Sim| K
-    J -->|Não| I
-    K --> L
-    L --> M
-    M --> N
-    N -->|Sim| O
-    N -->|Não| P
-    O --> P
-    P --> Q
-    Q -->|Requisito Atendido| R
-    Q -->|Não Atendido| S
-    S --> Q
-    R --> T
-    T --> U
-    U -->|Sim| V
-    U -->|Não| T
-    V -->|Há mais fases| Q
-    V -->|Último| W
-    W --> X
-    X --> Y
-    
-    %% ESTILOS
-    classDef fase1Fill fill:#e3f2fd,stroke:#1976d2,stroke-width:2px
-    classDef fase2Fill fill:#f3e5f5,stroke:#7b1fa2,stroke-width:2px
-    classDef fase3Fill fill:#e8f5e8,stroke:#388e3c,stroke-width:2px
-    classDef fase4Fill fill:#fff3e0,stroke:#f57c00,stroke-width:2px
-    classDef fase5Fill fill:#fce4ec,stroke:#c2185b,stroke-width:2px
-    classDef fase6Fill fill:#f1f8e9,stroke:#558b2f,stroke-width:2px
-    classDef decisionFill fill:#fff9c4,stroke:#f9a825,stroke-width:3px
-    classDef negativeFill fill:#ffebee,stroke:#d32f2f,stroke-width:2px
-    
-    class A,B,C fase1Fill
-    class D,E,F,G fase2Fill
-    class H,I,J,K fase3Fill
-    class L,M,N,O,P fase4Fill
-    class Q,R,S,T,U,V fase5Fill
-    class W,X,Y fase6Fill
-    class B,F,J,N,Q,U decisionFill
-    class Z negativeFill
+  %% FASE 1: PROSPECÇÃO E ANÁLISE INICIAL
+  subgraph FASE1 ["FASE 1: PROSPECÇÃO & ANÁLISE INICIAL"]
+    A["Prospecção de Terreno"]
+    B{"Análise de Viabilidade<br/>Técnico-Financeira"}
+    C["Negociação com<br/>Proprietário"]
+    Z["Arquivar/<br/>Monitorar Mercado"]
+  end
+
+  %% FASE 2: CONTRATAÇÃO E DUE DILIGENCE
+  subgraph FASE2 ["FASE 2: CONTRATAÇÃO & DUE DILIGENCE"]
+    D["Elaboração da Minuta<br/>Opção/Permuta"]
+    E["Due Diligence Jurídica<br/>Matrícula • Passivos • Restrições"]
+    F{"Pareceres Jurídicos<br/>+ Ajustes Necessários"}
+    G["Assinatura do<br/>Instrumento de Opção"]
+  end
+
+  %% FASE 3: PROJETO E APROVAÇÕES
+  subgraph FASE3 ["FASE 3: PROJETOS & APROVAÇÕES"]
+    H["Master Plan &<br/>Projetos Preliminares"]
+    I["Protocolos e Aprovação<br/>Prefeitura • Órgãos Ambientais"]
+    J{"Aprovação<br/>Obtida?"}
+    K["Registro da Incorporação<br/>+ Constituição da SPE"]
+  end
+
+  %% FASE 4: ESTRUTURAÇÃO FINANCEIRA
+  subgraph FASE4 ["FASE 4: ESTRUTURAÇÃO FINANCEIRA"]
+    L["Contratação<br/>Financiamento CEF/MCMV"]
+    M["Constituição de Garantias<br/>Seguro-Garantia ou Caução 100&#37;"]
+    N{"Hipoteca<br/>Necessária?"}
+    O["Constituição de Hipoteca<br/>em favor da CEF"]
+    P["Liberação de Recursos &<br/>Execução da Infraestrutura"]
+  end
+
+  %% FASE 5: EXECUÇÃO E COMERCIALIZAÇÃO
+  subgraph FASE5 ["FASE 5: EXECUÇÃO & COMERCIALIZAÇÃO"]
+    Q{"Gatilho Atingido?<br/>70&#37; Vendas OU<br/>Fundo Reserva 10&#37;"}
+    R["Início das Obras<br/>da Fase"]
+    S["Intensificar Comercialização<br/>(Fundo cobre permuta)"]
+    T["Monitoramento<br/>Cronograma & Penalidades<br/>0,5&#37; VGV/dia"]
+    U{"Fase<br/>Concluída?"}
+    V["Próxima Fase ou<br/>Preparar Encerramento"]
+  end
+
+  %% FASE 6: ENCERRAMENTO
+  subgraph FASE6 ["FASE 6: ENCERRAMENTO"]
+    W["Conclusão Geral &<br/>Obtenção do Habite-se"]
+    X["Liquidação de Garantias<br/>Liberação da Hipoteca"]
+    Y["Entrega & Encerramento<br/>do Empreendimento"]
+  end
+
+  %% FLUXOS PRINCIPAIS
+  A --> B
+  B -->|Aprovada| C
+  B -->|Reprovada| Z
+  C --> D
+  D --> E
+  E --> F
+  F -->|Conforme| G
+  F -->|Pendências| D
+  G --> H
+  H --> I
+  I --> J
+  J -->|Sim| K
+  J -->|Não| I
+  K --> L
+  L --> M
+  M --> N
+  N -->|Sim| O
+  N -->|Não| P
+  O --> P
+  P --> Q
+  Q -->|Requisito Atendido| R
+  Q -->|Não Atendido| S
+  S --> Q
+  R --> T
+  T --> U
+  U -->|Sim| V
+  U -->|Não| T
+  V -->|Há mais fases| Q
+  V -->|Último| W
+  W --> X
+  X --> Y
+
+  %% ESTILOS POR CLASSE
+  classDef fase1Fill fill:#e3f2fd,stroke:#1976d2,stroke-width:2px;
+  classDef fase2Fill fill:#f3e5f5,stroke:#7b1fa2,stroke-width:2px;
+  classDef fase3Fill fill:#e8f5e8,stroke:#388e3c,stroke-width:2px;
+  classDef fase4Fill fill:#fff3e0,stroke:#f57c00,stroke-width:2px;
+  classDef fase5Fill fill:#fce4ec,stroke:#c2185b,stroke-width:2px;
+  classDef fase6Fill fill:#f1f8e9,stroke:#558b2f,stroke-width:2px;
+  classDef decisionFill fill:#fff9c4,stroke:#f9a825,stroke-width:3px;
+  classDef negativeFill fill:#ffebee,stroke:#d32f2f,stroke-width:2px;
+
+  class A,B,C fase1Fill;
+  class D,E,F,G fase2Fill;
+  class H,I,J,K fase3Fill;
+  class L,M,N,O,P fase4Fill;
+  class Q,R,S,T,U,V fase5Fill;
+  class W,X,Y fase6Fill;
+  class B,F,J,N,Q,U decisionFill;
+  class Z negativeFill;
       </div>
-      
+
       <div class="legend">
         <h3>Legenda das Fases</h3>
         <div class="legend-grid">
           <div class="legend-item">
             <div class="legend-color phase-1"></div>
-            <span><strong>Fase 1:</strong> Prospecção & Análise Inicial</span>
+            <span><strong>Fase 1:</strong> Prospecção &amp; Análise Inicial</span>
           </div>
           <div class="legend-item">
             <div class="legend-color phase-2"></div>
-            <span><strong>Fase 2:</strong> Contratação & Due Diligence</span>
+            <span><strong>Fase 2:</strong> Contratação &amp; Due Diligence</span>
           </div>
           <div class="legend-item">
             <div class="legend-color phase-3"></div>
-            <span><strong>Fase 3:</strong> Projetos & Aprovações</span>
+            <span><strong>Fase 3:</strong> Projetos &amp; Aprovações</span>
           </div>
           <div class="legend-item">
             <div class="legend-color phase-4"></div>
@@ -243,10 +249,10 @@ flowchart TD
           </div>
           <div class="legend-item">
             <div class="legend-color phase-5"></div>
-            <span><strong>Fase 5:</strong> Execução & Comercialização</span>
+            <span><strong>Fase 5:</strong> Execução &amp; Comercialização</span>
           </div>
           <div class="legend-item">
-            <div class="legend-color phase-5"></div>
+            <div class="legend-color phase-6"></div>
             <span><strong>Fase 6:</strong> Encerramento do Projeto</span>
           </div>
         </div>
