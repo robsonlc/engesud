@@ -1,204 +1,907 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Apresentação executiva da estruturação de negócio – modelo responsivo pronto para compartilhamento.">
-  <meta property="og:title" content="Operação Georgeto">
-  <meta property="og:description" content="Slide único interativo destacando proposta de valor, números‑chave e cronograma do empreendimento.">
-  <meta property="og:image" content="https://via.placeholder.com/800x800.png?text=Thumbnail+da+Apresenta%C3%A7%C3%A3o">
-  <meta property="og:url" content="https://example.com/sua‑apresentacao">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Apresentação executiva -- Operação Georgeto" />
+  <meta property="og:title" content="Operação Georgeto" />
+  <meta property="og:description" content="Proposta de estruturação do negócio com SPE + SCP" />
+  <meta property="og:image" content="https://via.placeholder.com/800x800.png?text=Operacao+Georgeto" />
+  <meta property="og:url" content="https://example.com/operacao-georgeto" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" />
+<link rel="shortcut icon" href="https://i.postimg.cc/QCp6V4Wr/HjwVm8x.png  " type="image/x-icon">
+
   <title>Operação Georgeto | Engesud Smart</title>
+
   <style>
     :root {
       --primary: #1e3a8a;
+      --primary-light: #3b82f6;
       --secondary: #059669;
+      --secondary-light: #10b981;
       --bg: #f8fafc;
+      --bg-secondary: #ffffff;
       --text: #1f2937;
+      --text-light: #6b7280;
       --accent: #f59e0b;
+      --accent-light: #fbbf24;
+      --border: #e5e7eb;
+      --shadow: 0 10px 25px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+      --shadow-lg: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
     }
-    * { box-sizing: border-box; margin: 0; padding: 0; }
-    body { font-family: 'Inter', sans-serif; background: var(--bg); color: var(--text); line-height: 1.6; scroll-behavior: smooth; }
-    section { padding: 80px 5%; }
+
+    * { 
+      box-sizing: border-box; 
+      margin: 0; 
+      padding: 0; 
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.7;
+      scroll-behavior: smooth;
+      overflow-x: hidden;
+    }
+
+    /* ---------- Container ---------- */
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
 
     /* ---------- Navigation ---------- */
-    .nav { position: fixed; top: 0; left: 0; width: 100%; display: flex; justify-content: center; background: rgba(255, 255, 255, 0.9); backdrop-filter: saturate(180%) blur(10px); box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1); z-index: 50; }
-    .nav ul { display: flex; gap: 24px; list-style: none; padding: 16px; }
-    .nav a { color: var(--text); font-weight: 600; text-decoration: none; position: relative; }
+    .nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      background: rgba(255, 255, 255, 0.95);
+      backdrop-filter: saturate(180%) blur(20px);
+      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+      z-index: 50;
+      transition: all 0.3s ease;
+    }
+
+    .nav.scrolled {
+      background: rgba(255, 255, 255, 0.98);
+      box-shadow: var(--shadow);
+    }
+
+    .nav ul { 
+      display: flex; 
+      gap: 32px; 
+      list-style: none; 
+      padding: 20px 32px;
+      margin: 0;
+    }
+
+    .nav a {
+      color: var(--text);
+      font-weight: 500;
+      text-decoration: none;
+      position: relative;
+      padding: 8px 0;
+      transition: all 0.3s ease;
+      font-size: 0.95rem;
+    }
+
+    .nav a:hover {
+      color: var(--primary);
+    }
+
     .nav a.active::after,
-    .nav a:hover::after { content: ''; position: absolute; left: 0; bottom: -4px; width: 100%; height: 2px; background: var(--secondary); }
+    .nav a:hover::after {
+      content: '';
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 100%;
+      height: 3px;
+      background: linear-gradient(90deg, var(--primary), var(--secondary));
+      border-radius: 2px;
+      transform: scaleX(0);
+      animation: slideIn 0.3s ease forwards;
+    }
+
+    @keyframes slideIn {
+      to { transform: scaleX(1); }
+    }
+
+    /* ---------- Mobile Menu ---------- */
+    .mobile-menu-btn {
+      display: none;
+      flex-direction: column;
+      gap: 4px;
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 8px;
+    }
+
+    .mobile-menu-btn span {
+      width: 25px;
+      height: 3px;
+      background: var(--text);
+      transition: all 0.3s ease;
+    }
 
     /* ---------- Hero ---------- */
-    .hero { min-height: 100vh; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; background: linear-gradient(115deg, var(--primary) 0%, var(--secondary) 100%); color: #fff; }
-    .hero h1 { font-size: clamp(2.5rem, 5vw, 4rem); font-weight: 700; margin-bottom: 1rem; }
-    .hero p { font-size: clamp(1rem, 2vw, 1.25rem); max-width: 700px; margin-bottom: 2rem; }
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 35%, var(--secondary) 100%);
+      color: #fff;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grid" width="10" height="10" patternUnits="userSpaceOnUse"><path d="M 10 0 L 0 0 0 10" fill="none" stroke="rgba(255,255,255,0.1)" stroke-width="0.5"/></pattern></defs><rect width="100" height="100" fill="url(%23grid)"/></svg>');
+      opacity: 0.3;
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      max-width: 900px;
+      animation: fadeInUp 1s ease;
+    }
+
+    .hero h1 {
+      font-size: clamp(2.5rem, 6vw, 5rem);
+      font-weight: 800;
+      margin-bottom: 1.5rem;
+      letter-spacing: -0.02em;
+      background: linear-gradient(135deg, #fff 0%, rgba(255,255,255,0.8) 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .hero p {
+      font-size: clamp(1.1rem, 2.5vw, 1.4rem);
+      max-width: 700px;
+      margin: 0 auto 3rem;
+      opacity: 0.95;
+      font-weight: 400;
+    }
+
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
 
     /* ---------- Buttons ---------- */
-    .btn { background: #fff; color: var(--primary); padding: 14px 32px; border-radius: 9999px; font-weight: 600; transition: all .3s; display: inline-block; }
-    .btn:hover { background: var(--accent); color: #fff; }
+    .btn {
+      background: #fff;
+      color: var(--primary);
+      padding: 16px 40px;
+      border-radius: 50px;
+      font-weight: 600;
+      transition: all 0.3s ease;
+      display: inline-block;
+      text-decoration: none;
+      font-size: 1.1rem;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+      border: 2px solid transparent;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .btn::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+      transition: left 0.5s ease;
+    }
+
+    .btn:hover::before {
+      left: 100%;
+    }
+
+    .btn:hover {
+      background: var(--accent);
+      color: #fff;
+      transform: translateY(-2px);
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+    }
+
+    .btn-secondary {
+      background: transparent;
+      color: #fff;
+      border: 2px solid rgba(255,255,255,0.3);
+      margin-left: 1rem;
+    }
+
+    .btn-secondary:hover {
+      background: rgba(255,255,255,0.1);
+      border-color: #fff;
+    }
+
+    /* ---------- Sections ---------- */
+    section { 
+      padding: 100px 0;
+    }
+
+    h2 {
+      font-size: clamp(2rem, 4vw, 3rem);
+      font-weight: 700;
+      margin-bottom: 1.5rem;
+      text-align: center;
+      color: var(--primary);
+      position: relative;
+    }
+
+    h2::after {
+      content: '';
+      position: absolute;
+      bottom: -10px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 80px;
+      height: 4px;
+      background: linear-gradient(90deg, var(--primary), var(--secondary));
+      border-radius: 2px;
+    }
+
+    h3 {
+      font-size: 1.5rem;
+      font-weight: 600;
+      margin-bottom: 1rem;
+      color: var(--primary);
+    }
+
+    h4 {
+      font-size: 1.25rem;
+      font-weight: 600;
+      margin-bottom: 0.5rem;
+      color: var(--primary);
+    }
+
+    p {
+      font-size: 1.1rem;
+      color: var(--text-light);
+      margin-bottom: 1.5rem;
+      max-width: 800px;
+      margin-left: auto;
+      margin-right: auto;
+      text-align: center;
+    }
+
+    /* ---------- Cards ---------- */
+    .card {
+      background: var(--bg-secondary);
+      border-radius: 20px;
+      padding: 40px;
+      box-shadow: var(--shadow);
+      border: 1px solid var(--border);
+      transition: all 0.3s ease;
+      height: 100%;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+      box-shadow: var(--shadow-lg);
+    }
 
     /* ---------- Stats ---------- */
-    .stats { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 32px; text-align: center; margin-top: 40px; }
-    .stats .value { font-size: 2.5rem; font-weight: 700; color: var(--primary); }
+    .stats {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 40px;
+      margin-top: 60px;
+    }
+
+    .stat-card {
+      text-align: center;
+      background: var(--bg-secondary);
+      padding: 40px 30px;
+      border-radius: 20px;
+      box-shadow: var(--shadow);
+      border: 1px solid var(--border);
+      transition: all 0.3s ease;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .stat-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 4px;
+      background: linear-gradient(90deg, var(--primary), var(--secondary));
+    }
+
+    .stat-card:hover {
+      transform: translateY(-8px);
+      box-shadow: var(--shadow-lg);
+    }
+
+    .stats .value {
+      font-size: 3rem;
+      font-weight: 800;
+      background: linear-gradient(135deg, var(--primary), var(--secondary));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      margin-bottom: 10px;
+      counter-reset: counter;
+    }
+
+    .stats .label {
+      font-size: 1.1rem;
+      color: var(--text-light);
+      font-weight: 500;
+    }
 
     /* ---------- Diagram ---------- */
-    .diagram { display: flex; flex-wrap: wrap; gap: 40px; align-items: center; }
-    .diagram img { max-width: 420px; width: 100%; border-radius: 16px; box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05); }
+    .diagram {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+      align-items: center;
+      margin-top: 60px;
+    }
+
+    .diagram .mermaid {
+      background: var(--bg-secondary);
+      border-radius: 20px;
+      padding: 30px;
+      box-shadow: var(--shadow);
+      border: 1px solid var(--border);
+    }
+
+    .diagram-content {
+      padding: 20px;
+    }
+
+    .diagram-content h3 {
+      font-size: 2rem;
+      margin-bottom: 20px;
+    }
+
+    .diagram-content p {
+      text-align: left;
+      margin-bottom: 30px;
+    }
+
+    .diagram-content ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    .diagram-content li {
+      padding: 12px 0;
+      padding-left: 30px;
+      position: relative;
+      color: var(--text);
+      font-weight: 500;
+    }
+
+    .diagram-content li::before {
+      content: '✓';
+      position: absolute;
+      left: 0;
+      color: var(--secondary);
+      font-weight: 700;
+      font-size: 1.2rem;
+    }
 
     /* ---------- Timeline ---------- */
-    .timeline { position: relative; padding-left: 40px; margin-top: 20px; }
-    .timeline::before { content: ''; position: absolute; top: 0; left: 16px; width: 4px; height: 100%; background: var(--secondary); }
-    .timeline-item { margin-bottom: 40px; position: relative; }
-    .timeline-item::before { content: ''; position: absolute; left: -32px; top: 0; width: 16px; height: 16px; background: var(--secondary); border-radius: 50%; }
+    .timeline-container {
+      margin-top: 60px;
+      max-width: 800px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .timeline {
+      position: relative;
+      padding-left: 50px;
+    }
+
+    .timeline::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 20px;
+      width: 4px;
+      height: 100%;
+      background: linear-gradient(180deg, var(--primary), var(--secondary));
+      border-radius: 2px;
+    }
+
+    .timeline-item {
+      margin-bottom: 50px;
+      position: relative;
+      background: var(--bg-secondary);
+      padding: 30px;
+      border-radius: 15px;
+      box-shadow: var(--shadow);
+      border: 1px solid var(--border);
+      transition: all 0.3s ease;
+    }
+
+    .timeline-item:hover {
+      transform: translateX(10px);
+      box-shadow: var(--shadow-lg);
+    }
+
+    .timeline-item::before {
+      content: '';
+      position: absolute;
+      left: -44px;
+      top: 35px;
+      width: 20px;
+      height: 20px;
+      background: var(--secondary);
+      border-radius: 50%;
+      border: 4px solid var(--bg-secondary);
+      box-shadow: 0 0 0 2px var(--secondary);
+    }
+
+    .timeline-item h4 {
+      font-size: 1.4rem;
+      margin-bottom: 15px;
+    }
+
+    .timeline-item p {
+      text-align: left;
+      margin: 0;
+    }
 
     /* ---------- Footer ---------- */
-    footer { text-align: center; padding: 40px 5%; background: #111; color: #fff; }
+    footer {
+      text-align: center;
+      padding: 60px 20px;
+      background: linear-gradient(135deg, #111 0%, #1f2937 100%);
+      color: #fff;
+      margin-top: 80px;
+    }
+
+    .footer-content {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .footer-content h3 {
+      color: #fff;
+      margin-bottom: 20px;
+      font-size: 1.5rem;
+    }
+
+    .footer-content p {
+      opacity: 0.8;
+      margin-bottom: 30px;
+    }
+
+    .contact-info {
+      display: flex;
+      justify-content: center;
+      gap: 40px;
+      margin-top: 30px;
+    }
+
+    .contact-item {
+      color: var(--secondary-light);
+      font-weight: 500;
+    }
+
+    /* ---------- Responsive ---------- */
+    @media (max-width: 768px) {
+      .nav ul {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background: rgba(255, 255, 255, 0.98);
+        backdrop-filter: blur(20px);
+        padding: 20px;
+        box-shadow: var(--shadow);
+      }
+
+      .nav ul.show {
+        display: flex;
+      }
+
+      .mobile-menu-btn {
+        display: flex;
+        margin: 16px 20px;
+      }
+
+      .btn-secondary {
+        margin-left: 0;
+        margin-top: 1rem;
+      }
+
+      .diagram {
+        grid-template-columns: 1fr;
+        gap: 40px;
+      }
+
+      .contact-info {
+        flex-direction: column;
+        gap: 20px;
+      }
+
+      .timeline {
+        padding-left: 30px;
+      }
+
+      .timeline::before {
+        left: 10px;
+      }
+
+      .timeline-item::before {
+        left: -24px;
+      }
+
+      section {
+        padding: 60px 0;
+      }
+    }
+
+    /* ---------- Animations ---------- */
+    .fade-in {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: all 0.6s ease;
+    }
+
+    .fade-in.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
 
     /* ---------- Dark mode ---------- */
     @media (prefers-color-scheme: dark) {
-      body { background: #0f172a; color: #e2e8f0; }
-      .nav { background: rgba(15, 23, 42, 0.9); }
-      .hero { background: linear-gradient(115deg, #1e40af 0%, #10b981 100%); }
+      :root {
+        --bg: #0f172a;
+        --bg-secondary: #1e293b;
+        --text: #e2e8f0;
+        --text-light: #94a3b8;
+        --border: #334155;
+      }
+
+      .nav {
+        background: rgba(15, 23, 42, 0.95);
+      }
+
+      .nav.scrolled {
+        background: rgba(15, 23, 42, 0.98);
+      }
+
+      .btn {
+        background: var(--bg-secondary);
+        color: #fff;
+      }
+
+      .mobile-menu-btn span {
+        background: var(--text);
+      }
     }
   </style>
+
+  <!-- Mermaid.js -->
+  <script src="https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js"></script>
+  <script>mermaid.initialize({ startOnLoad: true, theme: 'default' });</script>
 </head>
 <body>
   <!-- ---------- Navigation ---------- -->
-  <nav class="nav">
-    <ul>
-      <li><a href="#inicio" class="active">Início</a></li>
-      <li><a href="#sobre">Sobre</a></li>
-      <li><a href="#numeros">Números</a></li>
-      <li><a href="#estrutura">Estrutura</a></li>
-      <li><a href="#cronograma">Cronograma</a></li>
-      <li><a href="#contato">Contato</a></li>
+  <nav class="nav" id="navbar">
+    <button class="mobile-menu-btn" onclick="toggleMenu()">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+    <ul id="nav-menu">
+      <li><a href="#inicio" class="active" onclick="setActive(this)">Início</a></li>
+      <li><a href="#sobre" onclick="setActive(this)">Sobre</a></li>
+      <li><a href="#numeros" onclick="setActive(this)">Números</a></li>
+      <li><a href="#estrutura" onclick="setActive(this)">Estrutura</a></li>
+      <li><a href="#cronograma" onclick="setActive(this)">Cronograma</a></li>
+      <li><a href="#contato" onclick="setActive(this)">Contato</a></li>
     </ul>
   </nav>
 
   <!-- ---------- Hero ---------- -->
   <section id="inicio" class="hero">
-    <h1>Operação Georgeto</h1>
-    <p>Apresentação executiva da estruturação deste empreendimento, destacando proposta de valor, modelagem financeira e cronograma estratégico.</p>
-    <a href="#sobre" class="btn">Descubra Mais</a>
+    <div class="hero-content">
+      <h1>Operação Georgeto</h1>
+      <p>Apresentação executiva da estruturação deste empreendimento, destacando proposta de valor, modelagem financeira e cronograma estratégico para maximização de resultados.</p>
+      <div>
+        <a href="#sobre" class="btn">Descubra Mais</a>
+        <a href="#contato" class="btn btn-secondary">Entre em Contato</a>
+      </div>
+    </div>
   </section>
 
   <!-- ---------- Sobre ---------- -->
   <section id="sobre">
-    <h2>Visão Geral</h2>
-    <p>Descreva aqui o problema de mercado, a solução proposta e o diferencial competitivo. Mantenha linguagem clara e objetiva.</p>
+    <div class="container">
+      <h2>Visão Geral do Projeto</h2>
+      <p>A Operação Georgeto representa uma oportunidade única de estruturação imobiliária que combina inovação, sustentabilidade e rentabilidade. Nossa proposta integra as melhores práticas do mercado com uma modelagem financeira robusta, oferecendo segurança jurídica e retornos atrativos para todos os stakeholders envolvidos.</p>
+      
+      <div class="card" style="margin-top: 40px; text-align: left;">
+        <h3>Diferenciais Competitivos</h3>
+        <ul style="list-style: none; padding: 0;">
+          <li style="padding: 10px 0; padding-left: 30px; position: relative;">
+            <span style="position: absolute; left: 0; color: var(--secondary); font-weight: 700;">●</span>
+            Estrutura jurídica SPE + SCP otimizada para eficiência tributária
+          </li>
+          <li style="padding: 10px 0; padding-left: 30px; position: relative;">
+            <span style="position: absolute; left: 0; color: var(--secondary); font-weight: 700;">●</span>
+            Alinhamento de incentivos entre proprietário, desenvolvedor e investidor
+          </li>
+          <li style="padding: 10px 0; padding-left: 30px; position: relative;">
+            <span style="position: absolute; left: 0; color: var(--secondary); font-weight: 700;">●</span>
+            Contratos turn-key com garantias de prazo e qualidade
+          </li>
+          <li style="padding: 10px 0; padding-left: 30px; position: relative;">
+            <span style="position: absolute; left: 0; color: var(--secondary); font-weight: 700;">●</span>
+            Modelagem financeira transparente com métricas de risco controladas
+          </li>
+        </ul>
+      </div>
+    </div>
   </section>
 
   <!-- ---------- Números ---------- -->
   <section id="numeros">
-    <h2>Nossos Números</h2>
-    <div class="stats">
-      <div>
-        <div class="value">R$ <span data-target="150">0</span> MM</div>
-        <p>CAPEX Estimado</p>
-      </div>
-      <div>
-        <div class="value"><span data-target="38">0</span> %</div>
-        <p>Taxa de Retorno (TIR)</p>
-      </div>
-      <div>
-        <div class="value"><span data-target="24">0</span> m</div>
-        <p>Prazo do Projeto</p>
-      </div>
-      <div>
-        <div class="value"><span data-target="8">0</span> %</div>
-        <p>Permuta Financeira</p>
+    <div class="container">
+      <h2>Indicadores Financeiros</h2>
+      <p>Projeções baseadas em análise de mercado, devido diligence técnica e modelagem conservadora de cenários.</p>
+      
+      <div class="stats">
+        <div class="stat-card">
+          <div class="value">R$ <span class="counter" data-target="150">0</span> MM</div>
+          <div class="label">CAPEX Estimado</div>
+        </div>
+        <div class="stat-card">
+          <div class="value"><span class="counter" data-target="38">0</span>%</div>
+          <div class="label">Taxa de Retorno (TIR)</div>
+        </div>
+        <div class="stat-card">
+          <div class="value"><span class="counter" data-target="24">0</span> meses</div>
+          <div class="label">Prazo do Projeto</div>
+        </div>
+        <div class="stat-card">
+          <div class="value"><span class="counter" data-target="8">0</span>%</div>
+          <div class="label">Permuta Financeira</div>
+        </div>
       </div>
     </div>
   </section>
 
   <!-- ---------- Estrutura ---------- -->
   <section id="estrutura">
-    <h2>Estrutura de Negócio</h2>
-    <div class="diagram">
-      <img src="https://via.placeholder.com/420x280.png?text=Diagrama" alt="Diagrama da Estrutura" />
-      <div>
-        <h3>SPE + SCP</h3>
-        <p>Explique brevemente como a Sociedade de Propósito Específico se relaciona com a Sociedade em Conta de Participação, destacando a mitigação de riscos e otimização fiscal.</p>
-        <ul>
-          <li>Tríade: Proprietário · Desenvolvedor · Investidor</li>
-          <li>Governança robusta, alinhamento de incentivos</li>
-          <li>Segurança jurídica – contratos “turn‑key”</li>
-        </ul>
+    <div class="container">
+      <h2>Estrutura de Negócio</h2>
+      <p>Modelo societário que concilia segurança jurídica, eficiência tributária e alinhamento de incentivos.</p>
+      
+      <div class="diagram">
+        <div class="mermaid">
+          graph TD
+            P[Proprietário<br/>Terreno] --> SPE[SPE<br/>Sociedade de<br/>Propósito Específico]
+            D[Desenvolvedor<br/>Expertise Técnica] --> SPE
+            I[Investidor<br/>Capital] --> SPE
+            SPE --> SCP[SCP<br/>Sociedade em<br/>Conta de Participação]
+            SCP --> E[Empreendimento<br/>Georgeto]
+            
+            style P fill:#e1f5fe
+            style D fill:#f3e5f5
+            style I fill:#e8f5e8
+            style SPE fill:#fff3e0
+            style SCP fill:#fce4ec
+            style E fill:#e0f2f1
+        </div>
+        
+        <div class="diagram-content">
+          <h3>Governança & Compliance</h3>
+          <p>Estrutura societária desenhada para maximizar eficiência operacional e tributária, garantindo transparência e alinhamento entre todos os participantes.</p>
+          
+          <ul>
+            <li>Tríade estratégica: Proprietário, Desenvolvedor e Investidor</li>
+            <li>Governança corporativa robusta com comitês especializados</li>
+            <li>Compliance integral e gestão proativa de riscos</li>
+            <li>Contratos turn-key asseguram prazos e padrão de qualidade</li>
+            <li>Auditoria independente e relatórios mensais de progresso</li>
+          </ul>
+        </div>
       </div>
     </div>
   </section>
 
   <!-- ---------- Cronograma ---------- -->
   <section id="cronograma">
-    <h2>Cronograma Macro</h2>
-    <div class="timeline">
-      <div class="timeline-item">
-        <h4>Mês 0‑3: Due Diligence</h4>
-        <p>Auditoria legal, ambiental e aprovação conceitual.</p>
-      </div>
-      <div class="timeline-item">
-        <h4>Mês 4‑9: Projetos & Aprovações</h4>
-        <p>Elaboração de projeto executivo e trâmite em órgãos públicos.</p>
-      </div>
-      <div class="timeline-item">
-        <h4>Mês 10‑24: Execução & Vendas</h4>
-        <p>Obras de infraestrutura, etapas construtivas e lançamento comercial.</p>
+    <div class="container">
+      <h2>Cronograma Executivo</h2>
+      <p>Planejamento detalhado com marcos estratégicos e entregáveis mensuráveis para cada fase do projeto.</p>
+      
+      <div class="timeline-container">
+        <div class="timeline">
+          <div class="timeline-item fade-in">
+            <h4>Fase 1 (Meses 0-3): Due Diligence Completa</h4>
+            <p>Auditoria jurídica, ambiental e técnica. Aprovação conceitual do projeto, análise de viabilidade econômica e estruturação dos contratos iniciais.</p>
+          </div>
+          
+          <div class="timeline-item fade-in">
+            <h4>Fase 2 (Meses 4-8): Licenciamento e Projetos</h4>
+            <p>Obtenção de licenças e alvarás necessários. Desenvolvimento dos projetos executivos, especificações técnicas e cronograma detalhado de obras.</p>
+          </div>
+          
+          <div class="timeline-item fade-in">
+            <h4>Fase 3 (Meses 9-18): Execução das Obras</h4>
+            <p>Início das obras de infraestrutura e construção. Gestão rigorosa de cronograma, qualidade e custos com relatórios mensais de progresso.</p>
+          </div>
+          
+          <div class="timeline-item fade-in">
+            <h4>Fase 4 (Meses 19-24): Finalização e Entrega</h4>
+            <p>Conclusão das obras, habite-se, comercialização das unidades e transferência de propriedade. Liquidação da SPE e distribuição dos resultados.</p>
+          </div>
+        </div>
       </div>
     </div>
   </section>
 
-  <!-- ---------- Contato ---------- -->
-  <section id="contato">
-    <h2>Vamos Conversar</h2>
-    <p>Entre em contato para discutir detalhes, alinhar expectativas e seguir para um Memorando de Entendimentos (MOU).</p>
-    <a href="https://wa.me/55XXXXXXXXXXXX" class="btn">Falar no WhatsApp</a>
-  </section>
-
   <!-- ---------- Footer ---------- -->
-  <footer>
-    <p>&copy; 2025 Engesud Smart · Todos os direitos reservados</p>
+  <footer id="contato">
+    <div class="footer-content">
+      <h3>Entre em Contato</h3>
+      <p>Estamos prontos para apresentar os detalhes completos da Operação Georgeto e discutir oportunidades de participação.</p>
+      
+      <div class="contact-info">
+        <div class="contact-item">📧 contato@engesud.com.br</div>
+        <div class="contact-item">📱 (11) 9999-9999</div>
+        <div class="contact-item">📍 São Paulo, SP</div>
+      </div>
+      
+      <p style="margin-top: 40px; opacity: 0.6; font-size: 0.9rem;">
+        © 2025 Engesud Smart. Todos os direitos reservados.
+      </p>
+    </div>
   </footer>
 
-  <!-- ---------- JavaScript ---------- -->
   <script>
-    // Smooth scroll & active link highlight
-    document.addEventListener('DOMContentLoaded', () => {
-      const links = document.querySelectorAll('.nav a');
-      links.forEach(link => {
-        link.addEventListener('click', e => {
-          e.preventDefault();
-          document.querySelector(link.hash).scrollIntoView({ behavior: 'smooth' });
-        });
-      });
-      const sections = [...document.querySelectorAll('section[id]')];
-      const navObserver = new IntersectionObserver(entries => {
-        entries.forEach(entry => {
-          const id = entry.target.getAttribute('id');
-          if (entry.isIntersecting) {
-            links.forEach(l => l.classList.toggle('active', l.hash === '#' + id));
-          }
-        });
-      }, { threshold: 0.6 });
-      sections.forEach(sec => navObserver.observe(sec));
+    // Navigation scroll effect
+    window.addEventListener('scroll', function() {
+      const navbar = document.getElementById('navbar');
+      if (window.scrollY > 100) {
+        navbar.classList.add('scrolled');
+      } else {
+        navbar.classList.remove('scrolled');
+      }
     });
 
-    // Animated counters
-    const counters = document.querySelectorAll('[data-target]');
-    counters.forEach(counter => {
-      const update = () => {
-        const target = +counter.getAttribute('data-target');
-        const current = +counter.innerText.replace(/\D/g, '');
-        const increment = Math.ceil(target / 200);
-        if (current < target) {
-          counter.innerText = current + increment;
-          setTimeout(update, 20);
-        } else {
-          counter.innerText = target;
+    // Mobile menu toggle
+    function toggleMenu() {
+      const menu = document.getElementById('nav-menu');
+      menu.classList.toggle('show');
+    }
+
+    // Active navigation link
+    function setActive(element) {
+      document.querySelectorAll('.nav a').forEach(a => a.classList.remove('active'));
+      element.classList.add('active');
+      
+      // Close mobile menu after click
+      document.getElementById('nav-menu').classList.remove('show');
+    }
+
+    // Counter animation
+    function animateCounters() {
+      const counters = document.querySelectorAll('.counter');
+      counters.forEach(counter => {
+        const target = parseInt(counter.getAttribute('data-target'));
+        const increment = target / 100;
+        let current = 0;
+        
+        const timer = setInterval(() => {
+          current += increment;
+          if (current >= target) {
+            counter.textContent = target;
+            clearInterval(timer);
+          } else {
+            counter.textContent = Math.floor(current);
+          }
+        }, 20);
+      });
+    }
+
+    // Intersection Observer for animations
+    const observerOptions = {
+      threshold: 0.1,
+      rootMargin: '0px 0px -50px 0px'
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          
+          // Trigger counter animation when stats section is visible
+          if (entry.target.id === 'numeros') {
+            setTimeout(animateCounters, 500);
+          }
         }
-      };
-      update();
+      });
+    }, observerOptions);
+
+    // Observe sections for animation
+    document.addEventListener('DOMContentLoaded', function() {
+      const sections = document.querySelectorAll('section');
+      const fadeElements = document.querySelectorAll('.fade-in');
+      
+      sections.forEach(section => observer.observe(section));
+      fadeElements.forEach(element => observer.observe(element));
+
+      // Smooth scroll for navigation links
+      document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+          e.preventDefault();
+          const target = document.querySelector(this.getAttribute('href'));
+          if (target) {
+            target.scrollIntoView({
+              behavior: 'smooth',
+              block: 'start'
+            });
+          }
+        });
+      });
+    });
+
+    // Update active nav link on scroll
+    window.addEventListener('scroll', function() {
+      const sections = document.querySelectorAll('section[id]');
+      const navLinks = document.querySelectorAll('.nav a');
+      
+      let current = '';
+      
+      sections.forEach(section => {
+        const sectionTop = section.offsetTop - 100;
+        const sectionHeight = section.clientHeight;
+        
+        if (window.scrollY >= sectionTop && window.scrollY < sectionTop + sectionHeight) {
+          current = section.getAttribute('id');
+        }
+      });
+      
+      navLinks.forEach(link => {
+        link.classList.remove('active');
+        if (link.getAttribute('href') === `#${current}`) {
+          link.classList.add('active');
+        }
+      });
     });
   </script>
 </body>
