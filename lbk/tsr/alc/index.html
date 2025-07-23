@@ -9,23 +9,27 @@
     <meta property="og:url" content="https://www.engesudsmart.com.br/lbk/tsr/alc">
     <title>Oportunidade Imobiliária - 145.200 m²</title>
     <link rel="shortcut icon" href="https://i.postimg.cc/QCp6V4Wr/HjwVm8x.png" type="image/x-icon">
+    
+    <!-- Font Awesome para ícones -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
     <style>
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: Arial, sans-serif;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         }
 
         body {
-            line-height: 1.6;
+            line-height: 1.7;
             color: #333;
+            background-color: #f8f9fa;
         }
 
         header {
-            background: url('https://i.postimg.cc/qhct4sRF/image.jpg') center/cover no-repeat;
-            opacity: 0.3;
-            height: 300px;
+            background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://i.postimg.cc/qhct4sRF/image.jpg') center/cover no-repeat;
+            height: 350px;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -34,50 +38,103 @@
         }
 
         header h1 {
-            font-size: 2.5rem;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+            font-size: 2.8rem;
+            text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.7);
         }
 
         .container {
-            max-width: 1200px;
-            margin: 0 auto;
+            max-width: 1100px;
+            margin: 40px auto;
             padding: 20px;
+        }
+
+        .section-title {
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+            color: #2c3e50;
+            position: relative;
+            padding-bottom: 10px;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 60px;
+            height: 4px;
+            background-color: #27ae60;
         }
 
         .feature-card {
-            background: #f9f9f9;
-            border-radius: 10px;
-            padding: 20px;
-            margin: 20px 0;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            background: #ffffff;
+            border-radius: 12px;
+            padding: 25px;
+            margin: 25px 0;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .feature-card h3 {
+            font-size: 1.4rem;
+            margin-bottom: 15px;
+            color: #2c3e50;
+        }
+
+        .feature-card ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .feature-card li {
+            margin: 12px 0;
+            font-size: 1.05rem;
+        }
+
+        .feature-card li i {
+            margin-right: 10px;
+            color: #27ae60;
         }
 
         .map-container {
-            margin: 20px 0;
+            margin: 40px 0;
             text-align: center;
         }
 
         .map-container iframe {
             width: 100%;
-            max-width: 640px;
+            max-width: 700px;
             height: 480px;
+            border-radius: 12px;
             border: none;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
         }
 
         footer {
-            background: #333;
+            background: #2c3e50;
             color: #fff;
-            padding: 20px;
+            padding: 30px 20px;
             text-align: center;
         }
 
         footer img {
-            max-width: 150px;
+            max-width: 160px;
             border-radius: 15px;
+            margin-bottom: 15px;
+        }
+
+        footer p {
+            margin: 8px 0;
+            font-size: 1rem;
         }
 
         footer a {
-            color: #fff;
+            color: #27ae60;
             text-decoration: none;
         }
 
@@ -87,15 +144,15 @@
 
         @media (max-width: 768px) {
             header h1 {
-                font-size: 1.8rem;
+                font-size: 2rem;
             }
 
             .container {
-                padding: 10px;
+                padding: 15px;
             }
 
             .map-container iframe {
-                height: 300px;
+                height: 350px;
             }
         }
     </style>
@@ -107,16 +164,18 @@
 
     <div class="container">
         <div class="feature-card">
-            <h2>Detalhes da Propriedade</h2>
-            <p><strong>Área Total:</strong> 145.200 m² (6 alqueires paulistas)</p>
-            <p><strong>Negociação:</strong> Proprietário nega parceria inicial, mas aberto a propostas que combinem aporte financeiro e parceria.</p>
-           <p><strong>Data:</strong> 08/02/2024</p>
-            <p><strong>Valor:</strong> R$ 15,62</p>
+            <h3 class="section-title">Detalhes da Propriedade</h3>
+            <ul>
+                <li><i class="fas fa-map-marker-alt"></i> <strong>Área Total:</strong> 145.200 m² (6 alqueires paulistas)</li>
+                <li><i class="fas fa-handshake"></i> <strong>Negociação:</strong> Proprietário nega parceria inicial, mas está aberto a propostas que combinem aporte financeiro e parceria.</li>
+                <li><i class="fas fa-calendar-day"></i> <strong>Data:</strong> 08/02/2024</li>
+                <li><i class="fas fa-tag"></i> <strong>Valor:</strong> R$ 15,62 / m²</li>
+            </ul>
         </div>
 
         <div class="map-container">
-            <h2>Localização</h2>
-            <iframe src="https://www.google.com/maps/d/embed?mid=1ybF3o711LwxVDzU74T7Kc2Gk4sGbc7I&ehbc=2E312F" width="640" height="480"></iframe>
+            <h3 class="section-title">Localização</h3>
+            <iframe src="https://www.google.com/maps/d/embed?mid=1ybF3o711LwxVDzU74T7Kc2Gk4sGbc7I&ehbc=2E312F"></iframe>
         </div>
     </div>
 
@@ -125,7 +184,7 @@
             <img src="https://i.postimg.cc/FsKzb1S4/3YKn2xW.png" alt="Logo Engesud">
         </a>
         <p><strong>Engesud Engenharia e Intermediação LTDA</strong></p>
-        <p>Robson Luis da Costa | <a href="https://wa.me/4497013489" title="Whatsapp">+55 (44) 99701-3489</a></p>
+        <p>Robson Luis da Costa | <a href="https://wa.me/4497013489" title="Whatsapp"><i class="fab fa-whatsapp"></i> +55 (44) 99701-3489</a></p>
         <p><a href="https://www.engesudsmart.com.br" target="_blank">www.engesudsmart.com.br</a></p>
         <p>Última atualização: 23 de julho de 2025</p>
     </footer>
@@ -133,7 +192,7 @@
     <!-- Este conteúdo é protegido por direitos autorais creditados à Engesud Engenharia e Intermediação LTDA, inscrita no CNPJ 40.601.637/0001-58 -->
 
     <script>
-        document.addEventListener('DOMContentLoaded', function() {
+        document.addEventListener('DOMContentLoaded', function () {
             const cards = document.querySelectorAll('.feature-card');
             const observer = new IntersectionObserver((entries) => {
                 entries.forEach(entry => {
@@ -142,11 +201,11 @@
                         entry.target.style.transform = 'translateY(0)';
                     }
                 });
-            });
+            }, { threshold: 0.1 });
             cards.forEach(card => {
                 card.style.opacity = 0;
                 card.style.transform = 'translateY(20px)';
-                card.style.transition = 'all 0.5s ease-out';
+                card.style.transition = 'all 0.6s ease-out';
                 observer.observe(card);
             });
         });
