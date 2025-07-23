@@ -9,10 +9,7 @@
     <meta property="og:url" content="https://www.engesudsmart.com.br/lbk/tsr/alc">
     <title>Oportunidade Imobiliária - 145.200 m²</title>
     <link rel="shortcut icon" href="https://i.postimg.cc/QCp6V4Wr/HjwVm8x.png" type="image/x-icon">
-    
-    <!-- Font Awesome para ícones -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-
     <style>
         * {
             margin: 0;
@@ -115,6 +112,41 @@
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
         }
 
+        .action-buttons {
+            margin: 25px 0;
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .action-buttons a {
+            display: inline-block;
+            padding: 12px 24px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1rem;
+            transition: background 0.3s ease;
+        }
+
+        .feasibility-link {
+            background: #2c3e50;
+            color: #fff;
+        }
+
+        .feasibility-link:hover {
+            background: #34495e;
+        }
+
+        .whatsapp-share {
+            background: #27ae60;
+            color: #fff;
+        }
+
+        .whatsapp-share:hover {
+            background: #219653;
+        }
+
         footer {
             background: #2c3e50;
             color: #fff;
@@ -154,6 +186,16 @@
             .map-container iframe {
                 height: 350px;
             }
+
+            .action-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .action-buttons a {
+                width: 100%;
+                text-align: center;
+            }
         }
     </style>
 </head>
@@ -167,10 +209,14 @@
             <h3 class="section-title">Detalhes da Propriedade</h3>
             <ul>
                 <li><i class="fas fa-map-marker-alt"></i> <strong>Área Total:</strong> 145.200 m² (6 alqueires paulistas)</li>
-                <li><i class="fas fa-handshake"></i> <strong>Negociação:</strong> Proprietário nega parceria inicial, mas está aberto a propostas que combinem aporte financeiro e parceria.</li>
-
+                <li><i class="fas fa-handshake"></i> <strong>Negociação:</strong> Terrenista nega parceria inicial, mas está aberto a propostas que combinem aporte financeiro e parceria.</li>
+        
             </ul>
         </div>
+
+        <div class="action-buttons">
+            <a href="feasibility/index.html" class="feasibility-link">Ver Análise de Viabilidade</a>
+
 
         <div class="map-container">
             <h3 class="section-title">Localização</h3>
@@ -191,7 +237,7 @@
     <!-- Este conteúdo é protegido por direitos autorais creditados à Engesud Engenharia e Intermediação LTDA, inscrita no CNPJ 40.601.637/0001-58 -->
 
     <script>
-        document.addEventListener('DOMContentLoaded', function () {
+        document.addEventListener('DOMContentLoaded', function() {
             const cards = document.querySelectorAll('.feature-card');
             const observer = new IntersectionObserver((entries) => {
                 entries.forEach(entry => {
