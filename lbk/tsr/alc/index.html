@@ -6,168 +6,202 @@
     <link rel="shortcut icon" href="https://i.imgur.com/HjwVm8x.png" type="image/x-icon">
     <title>Em Breve</title>
     <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
         body {
             display: flex;
             justify-content: center;
             align-items: center;
             height: 100vh;
             margin: 0;
-            font-family: Arial, sans-serif;
-            background-color: #000;
+            font-family: 'Segoe UI', sans-serif;
+            background: radial-gradient(ellipse at bottom, #0d0d2b 0%, #000000 100%);
             overflow: hidden;
             color: white;
+            perspective: 1000px;
         }
+
         h1 {
             text-align: center;
-            font-size: 3em;
-            animation: fadeIn 3s ease-in-out infinite alternate;
+            font-size: 3.5em;
+            animation: glow 2s ease-in-out infinite alternate, floatText 6s ease-in-out infinite;
+            transform-style: preserve-3d;
+            transition: transform 0.1s;
         }
-        @keyframes fadeIn {
-            0% { opacity: 0; transform: scale(0.9); }
-            100% { opacity: 1; transform: scale(1.1); }
+
+        @keyframes glow {
+            from {
+                text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 20px #ff00ff, 0 0 30px #ff00ff, 0 0 40px #ff00ff;
+            }
+            to {
+                text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #00ffff, 0 0 40px #00ffff, 0 0 50px #00ffff;
+            }
         }
+
+        @keyframes floatText {
+            0%, 100% { transform: translateY(0) rotateX(5deg); }
+            50% { transform: translateY(-15px) rotateX(-5deg); }
+        }
+
         .stars {
             position: absolute;
             width: 100%;
             height: 100%;
             background: url('https://raw.githubusercontent.com/robsonlc/engesud/main/lbk/tsr/osha/stars.png') repeat;
             z-index: -1;
-            animation: moveStars 50s linear infinite;
+            animation: moveStars 100s linear infinite;
         }
+
         @keyframes moveStars {
             from { transform: translateY(0); }
             to { transform: translateY(-1000px); }
         }
+
         .shooting-star {
             position: absolute;
             width: 2px;
             height: 150px;
             background: linear-gradient(white, rgba(255, 255, 255, 0));
-            animation: shootingStar 2s ease-out infinite;
+            animation: shootingStar 3s linear infinite;
+            top: 10%;
+            left: 90%;
         }
+
         @keyframes shootingStar {
-            from {
-                top: -10%;
-                left: 100%;
-            }
-            to {
-                top: 100%;
-                left: -10%;
-            }
+            from { transform: translate(0, 0); opacity: 1; }
+            to { transform: translate(-100vw, 100vh); opacity: 0; }
         }
-        .glowing-text {
-            color: #fff;
-            text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 20px #ff00ff, 0 0 30px #ff00ff, 0 0 40px #ff00ff, 0 0 50px #ff00ff, 0 0 60px #ff00ff;
-            animation: glow 1s ease-in-out infinite alternate;
-        }
-        @keyframes glow {
-            from {
-                text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 20px #ff00ff, 0 0 30px #ff00ff, 0 0 40px #ff00ff, 0 0 50px #ff00ff, 0 0 60px #ff00ff;
-            }
-            to {
-                text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #ff00ff, 0 0 40px #ff00ff, 0 0 50px #ff00ff, 0 0 60px #ff00ff, 0 0 70px #ff00ff;
-            }
-        }
-        .floating-objects {
+
+        .planet {
             position: absolute;
-            top: 50%;
-            left: 50%;
-            width: 10px;
-            height: 10px;
-            background: red;
+            width: 120px;
+            height: 120px;
             border-radius: 50%;
-            animation: float 5s ease-in-out infinite;
+            background: radial-gradient(circle at 30% 30%, #4a00e0, #8e2de2);
+            box-shadow: 0 0 60px rgba(142, 45, 226, 0.6);
+            top: 20%;
+            left: 10%;
+            z-index: 0;
+            animation: floatPlanet 15s infinite ease-in-out;
         }
-        @keyframes float {
-            0%, 100% {
-                transform: translateY(0) translateX(0);
-            }
-            50% {
-                transform: translateY(-20px) translateX(20px);
-            }
+
+        @keyframes floatPlanet {
+            0%, 100% { transform: translateY(0) rotate(0deg); }
+            50% { transform: translateY(-30px) rotate(5deg); }
         }
-        .twinkling-stars {
+
+        .particles {
             position: absolute;
             width: 100%;
             height: 100%;
-            background: transparent;
-            overflow: hidden;
-            z-index: 1;
+            z-index: 0;
         }
-        .twinkling-stars::before, .twinkling-stars::after {
+
+        .particle {
+            position: absolute;
+            width: 4px;
+            height: 4px;
+            background: #fff;
+            border-radius: 50%;
+            animation: floatParticle 8s infinite ease-in-out;
+        }
+
+        @keyframes floatParticle {
+            0% { transform: translate(0, 0); opacity: 0; }
+            10% { opacity: 1; }
+            90% { opacity: 1; }
+            100% { transform: translate(var(--tx), var(--ty)); opacity: 0; }
+        }
+
+        .nebula {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle at 20% 80%, rgba(132, 0, 255, 0.2), transparent 70%),
+                        radial-gradient(circle at 80% 20%, rgba(0, 200, 255, 0.2), transparent 70%);
+            z-index: -1;
+            animation: pulseNebula 10s infinite alternate;
+        }
+
+        @keyframes pulseNebula {
+            0% { opacity: 0.3; }
+            100% { opacity: 0.6; }
+        }
+
+        .glowing-orb {
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            background: #00ffff;
+            border-radius: 50%;
+            box-shadow: 0 0 20px 10px rgba(0, 255, 255, 0.7);
+            top: 70%;
+            left: 80%;
+            animation: floatOrb 8s infinite ease-in-out;
+        }
+
+        @keyframes floatOrb {
+            0%, 100% { transform: translate(0, 0); }
+            50% { transform: translate(20px, -30px); }
+        }
+
+        .twinkling-stars::before {
             content: '';
             position: absolute;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
-            background: transparent;
-            opacity: 0.5;
-            animation: twinkling 1.5s infinite ease-in-out alternate;
+            background-image: 
+                radial-gradient(2px 2px at 20px 30px, #eee, transparent),
+                radial-gradient(2px 2px at 40px 70px, rgba(255,255,255,0.7), transparent),
+                radial-gradient(1px 1px at 90px 40px, #fff, transparent);
+            background-repeat: repeat;
+            background-size: 200px 100px;
+            animation: twinkle 3s linear infinite;
         }
-        .twinkling-stars::after {
-            animation-delay: 0.75s;
+
+        @keyframes twinkle {
+            from { background-position: 0 0; }
+            to { background-position: 200px 100px; }
         }
-        @keyframes twinkling {
-            0% { background: rgba(255, 255, 255, 0.1); }
-            100% { background: rgba(255, 255, 255, 0.3); }
-        }
-        .nebula {
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            background: radial-gradient(circle at center, rgba(255, 0, 255, 0.2), transparent);
-            z-index: 0;
-            animation: pulse 3s infinite;
-        }
-        @keyframes pulse {
-            0%, 100% { transform: scale(1); }
-            50% { transform: scale(1.1); }
-        }
-        .comet {
-            position: absolute;
-            width: 2px;
-            height: 250px;
-            background: linear-gradient(white, rgba(255, 255, 255, 0));
-            animation: comet 3s ease-out infinite;
-        }
-        @keyframes comet {
-            from {
-                top: -20%;
-                left: 120%;
-            }
-            to {
-                top: 120%;
-                left: -20%;
-            }
-        }
-        .meteor {
-            position: absolute;
-            width: 3px;
-            height: 200px;
-            background: linear-gradient(white, rgba(255, 255, 255, 0));
-            animation: meteor 4s ease-out infinite;
-        }
-        @keyframes meteor {
-            from {
-                top: -30%;
-                left: 110%;
-            }
-            to {
-                top: 110%;
-                left: -30%;
-            }
-        }
+
     </style>
 </head>
 <body>
     <div class="stars"></div>
+    <div class="nebula"></div>
     <div class="twinkling-stars"></div>
     <div class="shooting-star"></div>
-    <div class="nebula"></div>
-    <div class="comet"></div>
-    <div class="meteor"></div>
+    <div class="planet"></div>
+    <div class="particles" id="particles"></div>
+    <div class="glowing-orb"></div>
     <h1 class="glowing-text">Logo entrará no ar</h1>
-    <div class="floating-objects"></div>
+
+    <script>
+        // Gerar partículas flutuantes
+        const particlesContainer = document.getElementById('particles');
+        for (let i = 0; i < 100; i++) {
+            const particle = document.createElement('div');
+            particle.classList.add('particle');
+            particle.style.left = `${Math.random() * 100}%`;
+            particle.style.top = `${Math.random() * 100}%`;
+            particle.style.setProperty('--tx', `${(Math.random() - 0.5) * 100}px`);
+            particle.style.setProperty('--ty', `${(Math.random() - 0.5) * 100}px`);
+            particle.style.animationDuration = `${Math.random() * 5 + 5}s`;
+            particlesContainer.appendChild(particle);
+        }
+
+        // Efeito de paralaxe com o mouse
+        document.body.addEventListener('mousemove', (e) => {
+            const x = (window.innerWidth / 2 - e.clientX) / 50;
+            const y = (window.innerHeight / 2 - e.clientY) / 50;
+            document.querySelector('h1').style.transform = `rotateX(${y}deg) rotateY(${x}deg)`;
+        });
+    </script>
 </body>
 </html>
