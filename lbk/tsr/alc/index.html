@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta property="og:title" content="Oportunidade Imobiliária - 145.200 m²">
-    <meta property="og:description" content="Área de 145.200 m² (6 alqueires paulistas) disponível para negociação. Confira os detalhes!">
+    <meta property="og:description" content="Área de 145.200 m² (6 alqueires paulistas) com croqui de 200 lotes de 400 m² e possibilidade de expansão com mais 3 alqueires. Confira os detalhes!">
     <meta property="og:image" content="https://i.postimg.cc/PLk1mrB1/image.jpg">
     <meta property="og:url" content="https://www.engesudsmart.com.br/lbk/tsr/alc">
     <title>Oportunidade Imobiliária - 145.200 m²</title>
@@ -112,6 +112,24 @@
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
         }
 
+        .croqui-container {
+            margin: 40px 0;
+            text-align: center;
+        }
+
+        .croqui-container img {
+            width: 100%;
+            max-width: 700px;
+            border-radius: 12px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .croqui-container p {
+            margin-top: 15px;
+            font-size: 1.05rem;
+            color: #333;
+        }
+
         .action-buttons {
             margin: 25px 0;
             display: flex;
@@ -183,7 +201,8 @@
                 padding: 15px;
             }
 
-            .map-container iframe {
+            .map-container iframe,
+            .croqui-container img {
                 height: 350px;
             }
 
@@ -210,20 +229,24 @@
             <ul>
                 <li><i class="fas fa-map-marker-alt"></i> <strong>Área Total:</strong> 145.200 m² (6 alqueires paulistas)</li>
                 <li><i class="fas fa-handshake"></i> <strong>Negociação:</strong> Terrenista nega parceria inicial, mas está aberto a propostas que combinem aporte financeiro e parceria.</li>
-                <li><i class="fas fa-user"></i> <strong>Solicitante:</strong> Robson Costa</li>
-                <li><i class="fas fa-calendar-alt"></i> <strong>Data:</strong> 08/02/2024</li>
-                <li><i class="fas fa-dollar-sign"></i> <strong>Valor:</strong> R$ 15,62</li>
+            
             </ul>
         </div>
 
         <div class="action-buttons">
             <a href="feasibility/index.html" class="feasibility-link">Ver Análise de Viabilidade</a>
-           
+          
         </div>
 
         <div class="map-container">
             <h3 class="section-title">Localização</h3>
             <iframe src="https://www.google.com/maps/d/embed?mid=1ybF3o711LwxVDzU74T7Kc2Gk4sGbc7I&ehbc=2E312F"></iframe>
+        </div>
+
+        <div class="croqui-container">
+            <h3 class="section-title">Croqui do Loteamento</h3>
+            <img src="https://i.postimg.cc/hfw4CTkT/croqui-estudo.png" alt="Croqui do Loteamento">
+            <p>Esquema preliminar do loteamento com 200 lotes de 400 m² no terreno de 145.200 m². Destaque em vermelho tracejado indica 3 alqueires adicionais (72.600 m²) disponíveis para uma parceria 50%-50% com a mesma loteadora, possibilitando maior escala na negociação.</p>
         </div>
     </div>
 
@@ -241,7 +264,7 @@
 
     <script>
         document.addEventListener('DOMContentLoaded', function() {
-            const cards = document.querySelectorAll('.feature-card');
+            const cards = document.querySelectorAll('.feature-card, .croqui-container');
             const observer = new IntersectionObserver((entries) => {
                 entries.forEach(entry => {
                     if (entry.isIntersecting) {
