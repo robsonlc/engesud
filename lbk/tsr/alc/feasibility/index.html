@@ -106,6 +106,27 @@
             background: #f8f9fa;
         }
 
+        .audio-container {
+            margin: 20px 0;
+            text-align: center;
+        }
+
+        .audio-container audio {
+            border-radius: 8px;
+            outline: none;
+        }
+
+        .audio-container audio::-webkit-media-controls-panel {
+            background-color: #2c3e50;
+            color: #fff;
+        }
+
+        .audio-container p {
+            margin-top: 10px;
+            font-size: 1rem;
+            color: #333;
+        }
+
         .action-buttons {
             margin: 25px 0;
             display: flex;
@@ -207,6 +228,13 @@
         <div class="feature-card">
             <h3 class="section-title">Análise de Viabilidade Preliminar do Loteamento (Loteadora, Investidor e Terrenista)</h3>
             <p>Simulação financeira para o terreno de 145.200 m² (6 alqueires paulistas), dividido em 200 lotes urbanos de 400 m² cada. Parceria 50%-50% entre terrenista e loteador, com investidor terceirizado adquirindo 50 lotes do terrenista. Vendas previstas para iniciar em 23 de julho de 2028 (36 meses).</p>
+            <div class="audio-container">
+                <audio controls autoplay>
+                    <source src="https://www.engesudsmart.com.br/lbk/tsr/alc/áudio1.mp3" type="audio/mpeg">
+                    Seu navegador não suporta o elemento de áudio.
+                </audio>
+                <p>Áudio explicativo da análise de viabilidade</p>
+            </div>
             <table>
                 <tr><th>Descrição</th><th>Valor</th></tr>
                 <tr><td>Área Total</td><td>145.200 m² (6 alqueires paulistas)</td></tr>
@@ -260,6 +288,14 @@
                 card.style.transition = 'all 0.6s ease-out';
                 observer.observe(card);
             });
+
+            const audio = document.querySelector('audio');
+            const playPromise = audio.play();
+            if (playPromise !== undefined) {
+                playPromise.catch(() => {
+                    alert('A reprodução automática foi bloqueada. Clique no player para ouvir a explicação da tabela de viabilidade.');
+                });
+            }
         });
     </script>
 </body>
