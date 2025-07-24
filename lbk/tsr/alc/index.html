@@ -99,15 +99,24 @@
         }
 
         .audio-container {
-            margin: 40px 0;
+            background: #ffffff;
+            border-radius: 12px;
+            padding: 25px;
+            margin: 25px 0;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
             text-align: center;
+        }
+
+        .audio-container:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
         }
 
         .audio-container audio {
             width: 100%;
             max-width: 700px;
             border-radius: 12px;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
         }
 
         .map-container {
@@ -246,9 +255,8 @@
         </div>
 
         <div class="audio-container">
-        
-            <audio controls>
-                <source src="https://www.engesudsmart.com.br/lbk/tsr/alc/áudio2.mp3" type="audio/mpeg">
+           <audio controls autoplay muted>
+                <source src="https://www.engesudsmart.com.br/lbk/tsr/alc/áudio1.mp3" type="audio/mpeg">
                 Seu navegador não suporta o elemento de áudio.
             </audio>
         </div>
@@ -298,6 +306,17 @@
                 card.style.transition = 'all 0.6s ease-out';
                 observer.observe(card);
             });
+
+            // Enable audio unmute on user interaction
+            const audio = document.querySelector('audio');
+            document.body.addEventListener('click', function() {
+                if (audio.muted) {
+                    audio.muted = false;
+                    audio.play().catch(error => {
+                        console.log('Autoplay failed:', error);
+                    });
+                }
+            }, { once: true });
         });
     </script>
 </body>
