@@ -98,6 +98,18 @@
             color: #27ae60;
         }
 
+        .audio-container {
+            margin: 40px 0;
+            text-align: center;
+        }
+
+        .audio-container audio {
+            width: 100%;
+            max-width: 700px;
+            border-radius: 12px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
         .map-container {
             margin: 40px 0;
             text-align: center;
@@ -202,7 +214,8 @@
             }
 
             .map-container iframe,
-            .croqui-container img {
+            .croqui-container img,
+            .audio-container audio {
                 height: 350px;
             }
 
@@ -229,13 +242,19 @@
             <ul>
                 <li><i class="fas fa-map-marker-alt"></i> <strong>Área Total:</strong> 145.200 m² (6 alqueires paulistas)</li>
                 <li><i class="fas fa-handshake"></i> <strong>Negociação:</strong> Terrenista nega parceria inicial, mas está aberto a propostas que combinem aporte financeiro e parceria.</li>
-            
             </ul>
+        </div>
+
+        <div class="audio-container">
+            <h3 class="section-title">Apresentação do Empreendimento</h3>
+            <audio controls>
+                <source src="https://www.engesudsmart.com.br/lbk/tsr/alc/áudio1.mp3" type="audio/mpeg">
+                Seu navegador não suporta o elemento de áudio.
+            </audio>
         </div>
 
         <div class="action-buttons">
             <a href="feasibility/index.html" class="feasibility-link">Ver Análise Preliminar de Viabilidade</a>
-          
         </div>
 
         <div class="map-container">
@@ -264,7 +283,7 @@
 
     <script>
         document.addEventListener('DOMContentLoaded', function() {
-            const cards = document.querySelectorAll('.feature-card, .croqui-container');
+            const cards = document.querySelectorAll('.feature-card, .croqui-container, .audio-container');
             const observer = new IntersectionObserver((entries) => {
                 entries.forEach(entry => {
                     if (entry.isIntersecting) {
