@@ -7,7 +7,7 @@
 
   <!-- OpenGraph tags para pré-visualização no WhatsApp -->
   <meta property="og:title" content="Disponibilidade de Área para Estudos de Viabilidade - Sensia Incorporadora">
-  <meta property="og:description" content="Informações sobre área disponível para análise de viabilidade.">
+  <meta property="og:description" content="Não está mais disponível.">
   <meta property="og:image" content="https://i.imgur.com/Vh90i6w.png">
   <meta property="og:image:width" content="800">
   <meta property="og:image:height" content="800">
@@ -23,29 +23,19 @@
 
   <style>
     :root {
-      --primary-color: #007bff; /* More standard blue */
-      --secondary-color: #343a40; /* Darker, professional gray */
-      --accent-color: #dc3545; /* Standard red for emphasis */
+      --primary-color: #007bff;
+      --secondary-color: #343a40;
       --background-color: #f8f9fa;
-      --text-color: #495057; /* Slightly softer text color */
+      --text-color: #495057;
       --light-gray: #e9ecef;
       --border-color: #dee2e6;
     }
 
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
 
-    html {
-      font-size: 16px;
-      scroll-behavior: smooth;
-    }
+    html { font-size: 16px; scroll-behavior: smooth; }
 
     body {
-      margin: 0;
-      padding: 0;
       font-family: 'Roboto', sans-serif;
       background-color: var(--background-color);
       color: var(--text-color);
@@ -79,108 +69,36 @@
     }
 
     h1 {
-      font-size: clamp(2rem, 5vw, 3rem);
+      font-size: clamp(1.9rem, 4.5vw, 2.8rem);
       color: var(--secondary-color);
       border-bottom: 2px solid var(--primary-color);
       padding-bottom: 0.75rem;
       text-align: center;
-      margin-bottom: 2.5rem;
+      margin-bottom: 2rem;
       font-weight: 700;
     }
 
-    h2 {
-      font-size: clamp(1.5rem, 3.5vw, 2.25rem);
-      color: var(--primary-color);
-      margin: 2.5rem 0 1.25rem;
+    .notice-card {
+      border: 1px solid var(--light-gray);
+      border-radius: 8px;
+      background: #fff;
+      padding: 2rem 1.5rem;
+      text-align: center;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.06);
+      margin-top: 1.25rem;
+    }
+
+    .notice-title {
+      font-size: clamp(1.2rem, 2.8vw, 1.6rem);
+      color: var(--secondary-color);
       font-weight: 700;
+      margin-bottom: 0.75rem;
     }
 
-    h3 {
-      font-size: clamp(1.1rem, 2.75vw, 1.6rem);
-      color: var(--accent-color);
-      margin: 2rem 0 1.25rem;
-      font-weight: 600;
-    }
-
-    p {
-      margin-bottom: 1.25rem;
-      text-align: justify;
+    .notice-text {
       font-size: clamp(1rem, 2vw, 1.1rem);
       color: var(--text-color);
-    }
-
-    .content-image {
-      width: 100%;
-      max-width: 800px;
-      height: auto;
-      display: block;
-      margin: 2.5rem auto;
-      border-radius: 6px;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.08);
-      transition: transform 0.3s ease;
-      border: 1px solid var(--light-gray);
-    }
-
-    .feature-card {
-      background-color: #fff;
-      border-radius: 6px;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.06);
-      padding: 1.75rem;
-      margin: 1.75rem 0;
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-      border: 1px solid var(--light-gray);
-    }
-
-    .table-container {
-      width: 100%;
-      overflow-x: auto;
-      margin: 1.75rem 0;
-      border-radius: 6px;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.06);
-      border: 1px solid var(--light-gray);
-    }
-
-    table {
-      width: 100%;
-      border-collapse: collapse;
-      white-space: normal;
-    }
-
-    th, td {
-      padding: 1.25rem;
-      text-align: left;
-      border-bottom: 1px solid var(--border-color);
-    }
-
-    th {
-      background-color: var(--primary-color);
-      color: white;
-      font-weight: 700;
-    }
-
-    tbody tr:last-child td {
-      border-bottom: none;
-    }
-
-    iframe {
-      width: 100%;
-      height: 400px;
-      min-height: 250px;
-      border: none;
-      border-radius: 6px;
-      margin: 1.75rem 0;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.08);
-    }
-
-    ul {
-      padding-left: 1.75rem;
-      margin: 1.25rem 0;
-    }
-
-    li {
-      margin-bottom: 0.6rem;
-      font-size: clamp(1rem, 2vw, 1.1rem);
-      list-style-type: disc;
+      font-weight: 400;
     }
 
     footer {
@@ -213,19 +131,7 @@
       font-size: clamp(0.9rem, 1.6vw, 1rem);
     }
 
-    footer a:hover {
-      text-decoration: underline;
-    }
-
-    .table-container a {
-      color: var(--primary-color);
-      text-decoration: none;
-      font-weight: 500;
-    }
-
-    .table-container a:hover {
-      text-decoration: underline;
-    }
+    footer a:hover { text-decoration: underline; }
 
     @media screen and (max-width: 768px) {
       .container {
@@ -233,30 +139,11 @@
         padding: 2rem;
         top: -3rem;
       }
-
-      header {
-        height: 25vh;
-      }
-
-      .table-container {
-        margin-left: -1rem;
-        margin-right: -1rem;
-        width: calc(100% + 2rem);
-        border-radius: 0;
-        border-left: none;
-        border-right: none;
-      }
-
-      iframe {
-        height: 350px;
-      }
+      header { height: 25vh; }
     }
 
     @media screen and (max-width: 480px) {
-      html {
-        font-size: 15px;
-      }
-
+      html { font-size: 15px; }
       .container {
         width: 100%;
         padding: 1.5rem;
@@ -264,42 +151,8 @@
         top: -2rem;
         margin-bottom: 1rem;
       }
-
-      header {
-        height: 20vh;
-        margin-bottom: 2rem;
-      }
-
-      h1 {
-        font-size: 2.2rem;
-      }
-
-      h2 {
-        font-size: 1.7rem;
-      }
-
-      h3 {
-        font-size: 1.3rem;
-      }
-
-      .content-image {
-        margin: 1.5rem auto;
-      }
-
-      footer {
-        padding: 2rem 1rem;
-      }
-    }
-
-    @media (hover: hover) {
-      .content-image:hover {
-        transform: scale(1.01);
-      }
-
-      .feature-card:hover {
-        transform: translateY(-3px);
-        box-shadow: 0 5px 12px rgba(0,0,0,0.15);
-      }
+      header { height: 20vh; margin-bottom: 2rem; }
+      .notice-card { padding: 1.6rem 1rem; }
     }
   </style>
 </head>
@@ -307,180 +160,33 @@
   <header></header>
 
   <div class="container">
-
     <h1>Disponibilidade de Área para Estudos de Viabilidade - Sensia Incorporadora</h1>
 
-    <h2>Contexto e Disponibilidade</h2>
-    <p>
-      Está disponível para análise uma área de aproximadamente <strong>33.643,07 m²</strong>, 
-      pertencente ao proprietário <strong>Domingos Bertoncelo</strong>, visando 
-      a possível implantação de empreendimento residencial pela <strong>Sensia Incorporadora</strong>, 
-      integrante do grupo <strong>MRV Engenharia</strong>.
-    </p>
-    <p>
-      O proprietário mantém uma expectativa de <strong>R$ 2.000/m²</strong> 
-      e manifesta abertura para parcerias de natureza financeira. Toda a infraestrutura 
-      das quadras será disponibilizada de forma completa pelo proprietário.
-    </p>
-
-    <figure>
-      <img class="content-image" src="https://i.imgur.com/QWUHzGr.png" alt="Levantamento Topográfico - Quadras">
-      <figcaption style="text-align: center; font-size: 0.9rem; color: var(--text-color);">
-        Levantamento Topográfico - Quadras
-      </figcaption>
-    </figure>
-
-    <h2>Localização</h2>
-    <p>
-      A área situa-se em uma região que apresenta potencial de crescimento e demanda 
-      para projetos de médio padrão. Recomenda-se a realização de estudos de mercado 
-      que avaliem características do público-alvo, concorrência e tendências de ocupação 
-      para definir o perfil dos empreendimentos.
-    </p>
-
-    <figure>
-      <img class="content-image" src="https://i.imgur.com/dQd83cy.png" alt="Mapa com demarcação da área e diretrizes">
-      <figcaption style="text-align: center; font-size: 0.9rem; color: var(--text-color);">
-        Mapa com demarcação da área e diretrizes
-      </figcaption>
-    </figure>
-
-    <h2>Sobre a Sensia Incorporadora</h2>
-    <div class="feature-card">
-      <h3>Sensia - Grupo MRV</h3>
-      <p>
-        A <strong>Sensia Incorporadora</strong> é uma empresa do grupo <strong>MRV Engenharia</strong>, 
-        voltada para empreendimentos de média renda. Seus projetos destacam-se pela adoção 
-        de inovações tecnológicas, soluções sustentáveis e flexibilidade nas plantas, 
-        atributos que colaboram para a valorização do imóvel e para maior atratividade junto ao público.
-      </p>
+    <div class="notice-card" role="status" aria-live="polite">
+      <div class="notice-title">Acesso à área</div>
+      <div class="notice-text">Não está mais disponível</div>
     </div>
-
-    <h2>Documentos Disponíveis</h2>
-    <p>
-      A área encontra-se subdividida em duas matrículas. Os arquivos podem ser acessados 
-      por meio dos links abaixo:
-    </p>
-    <div class="table-container">
-      <table>
-        <thead>
-          <tr>
-            <th>Matrícula</th>
-            <th>Link para Download</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>95.927</td>
-            <td>
-              <a 
-                href="https://www.engesudsmart.com.br/bert/teaser/Sensia/Matrícula 95.927.pdf" 
-                target="_blank" 
-                rel="noopener noreferrer">
-                Acessar Matrícula 95.927
-              </a>
-            </td>
-          </tr>
-          <tr>
-            <td>95.928</td>
-            <td>
-              <a 
-                href="https://www.engesudsmart.com.br/bert/teaser/Sensia/Matrícula 95.928.pdf" 
-                target="_blank" 
-                rel="noopener noreferrer">
-                Acessar Matrícula 95.928
-              </a>
-            </td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
-
-    <h2>Estudos de Viabilidade</h2>
-    <p>
-      O objetivo principal é identificar a viabilidade técnica e econômica do empreendimento, 
-      incluindo definição de número de pavimentos, tipologia das unidades e estratégias de 
-      comercialização. A negociação poderá adotar formas de parceria financeira de acordo 
-      com as avaliações e cenários projetados pela Sensia.
-    </p>
-
-    <h2>Mapa da Área</h2>
-    <div style="border-radius: 6px; overflow: hidden; box-shadow: 0 4px 10px rgba(0,0,0,0.08);">
-      <iframe
-        src="https://www.google.com/maps/d/embed?mid=1su7tJFdvH9HxcycJMU7ruo_am1fpttc&ehbc=2E312F"
-        style="border: none;">
-      </iframe>
-    </div>
-
-    <h2>Considerações Finais</h2>
-    <ul>
-      <li>A Sensia poderá enviar propostas formais após conclusão dos estudos técnicos e de mercado.</li>
-      <li>O proprietário compromete-se a fornecer infraestrutura completa das quadras.</li>
-      <li>A expectativa de valor <strong>R$ 2.000/m²</strong> poderá ser ajustada conforme a modelagem financeira.</li>
-      <li>A formalização de eventuais contratos deverá contemplar prazos, custos e formas de pagamento.</li>
-    </ul>
-
-    <p>
-      Mais detalhes ou esclarecimentos poderão ser obtidos pelos canais de contato 
-      listados no rodapé. Recomenda-se a realização de reuniões específicas para 
-      apresentação de estudos técnicos, análise de cenários e finalização de entendimentos.
-    </p>
-
   </div>
 
   <footer>
     <div class="footer-content">
-      <a 
-        href="http://www.engesudsmart.com.br" 
-        target="_blank" 
-        title="www.engesudsmart.com.br" 
-        rel="noopener noreferrer">
+      <a href="http://www.engesudsmart.com.br" target="_blank" title="www.engesudsmart.com.br" rel="noopener noreferrer">
         <img src="https://i.imgur.com/3YKn2xW.png" alt="Logo Engesud">
       </a>
       <p><strong>Engesud Engenharia e Intermediação LTDA</strong></p>
       <p>
-        Robson Luis da Costa | 
-        <a 
-          href="https://wa.me/5544997013489" 
-          title="Whatsapp" 
-          rel="noopener noreferrer">
+        Robson Luis da Costa |
+        <a href="https://wa.me/5544997013489" title="Whatsapp" rel="noopener noreferrer">
           +55 (44) 99701-3489
         </a>
       </p>
       <p>
-        <a 
-          href="https://www.engesudsmart.com.br" 
-          target="_blank" 
-          rel="noopener noreferrer">
+        <a href="https://www.engesudsmart.com.br" target="_blank" rel="noopener noreferrer">
           www.engesudsmart.com.br
         </a>
       </p>
       <p>Última atualização: 06 de janeiro de 2025</p>
     </div>
   </footer>
-
-  <!-- Este conteúdo é protegido por direitos autorais creditados à Engesud Engenharia e Intermediação LTDA, inscrita no CNPJ 40.601.637/0001-58 -->
-
-  <!-- Animação JavaScript -->
-  <script>
-    document.addEventListener('DOMContentLoaded', function() {
-      // Animação de exibição para os cards
-      const cards = document.querySelectorAll('.feature-card');
-      const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-          if (entry.isIntersecting) {
-            entry.target.style.opacity = 1;
-            entry.target.style.transform = 'translateY(0)';
-          }
-        });
-      });
-      cards.forEach(card => {
-        card.style.opacity = 0;
-        card.style.transform = 'translateY(20px)';
-        card.style.transition = 'all 0.5s ease-out';
-        observer.observe(card);
-      });
-    });
-  </script>
 </body>
 </html>
